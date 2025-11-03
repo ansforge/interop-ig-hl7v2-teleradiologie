@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0 |
-| Draft as of 2025-11-03 | *Computable Name*:CISIS_TLR |
+| Draft as of 2025-11-03 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
  [Add a brief description of this IG in English] 
@@ -47,7 +47,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
 
 * ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
 
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [CISIS_TLR](index.md), [CompetenceCS](CodeSystem-competence-code-system.md)...Show 7 more,[EyeColor](StructureDefinition-EyeColor.md),[EyeColorVS](ValueSet-EyeColorVS.md),[FrPatient](StructureDefinition-fr-patient.md),[MeltingPotVS](ValueSet-MeltingPotVS.md),[ModifiedAdministrativeGender](ValueSet-ModifiedAdministrativeGender.md),[TypeCarteCS](CodeSystem-type-carte-code-system.md)and[TypeCarteVS](ValueSet-TypeCarteVS.md)
+* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [CISIS_TLR_HL7_V2](index.md), [CompetenceCS](CodeSystem-competence-code-system.md)...Show 7 more,[EyeColor](StructureDefinition-EyeColor.md),[EyeColorVS](ValueSet-EyeColorVS.md),[FrPatient](StructureDefinition-fr-patient.md),[MeltingPotVS](ValueSet-MeltingPotVS.md),[ModifiedAdministrativeGender](ValueSet-ModifiedAdministrativeGender.md),[TypeCarteCS](CodeSystem-type-carte-code-system.md)and[TypeCarteVS](ValueSet-TypeCarteVS.md)
 
 
 * This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact [https://www.snomed.org/get-snomed](https://www.snomed.org/get-snomed) or [info@snomed.org](mailto:info@snomed.org).
@@ -65,10 +65,10 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
   "id" : "ans.hl7v2.fr.teleradiologie",
   "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
   "version" : "0.1.0",
-  "name" : "CISIS_TLR",
+  "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2025-11-03T08:54:00+00:00",
+  "date" : "2025-11-03T09:21:03+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {

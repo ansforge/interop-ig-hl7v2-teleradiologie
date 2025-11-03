@@ -1,4 +1,4 @@
-CISIS_TLR : Validation Results
+CISIS_TLR_HL7_V2 : Validation Results
 =========================================
 
 err = 8, warn = 6, info = 8

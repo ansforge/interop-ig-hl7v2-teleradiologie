@@ -1,9 +1,9 @@
-CISIS_TLR : Validation Results
+CISIS_TLR_HL7_V2 : Validation Results
 =========================================
 
 err = 8, warn = 6, info = 8
 IG Publisher Version: 2.0.25
-Generated Mon Nov 03 08:54:54 UTC 2025. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
+Generated Mon Nov 03 09:21:57 UTC 2025. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
  Build Errors : 0 / 2 / 0
  /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/CodeSystem-competence-code-system : 2 / 1 / 2
  /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/CodeSystem-type-carte-code-system : 2 / 0 / 2

@@ -11,17 +11,17 @@
   fhir:id [ fhir:v "ans.hl7v2.fr.teleradiologie"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : ImplementationGuide ans.hl7v2.fr.teleradiologie</b></p><a name=\"ans.hl7v2.fr.teleradiologie\"> </a><a name=\"hcans.hl7v2.fr.teleradiologie\"> </a><h2>CISIS_TLR</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie</pre></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : ImplementationGuide ans.hl7v2.fr.teleradiologie</b></p><a name=\"ans.hl7v2.fr.teleradiologie\"> </a><a name=\"hcans.hl7v2.fr.teleradiologie\"> </a><h2>CISIS_TLR_HL7_V2</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie</pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:url [
      fhir:v "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie"^^xsd:anyURI ;
      fhir:l <https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie>
   ] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
-  fhir:name [ fhir:v "CISIS_TLR"] ; # 
+  fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-11-03T08:54:00+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-11-03T09:21:03+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;

@@ -3,14 +3,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="ans.hl7v2.fr.teleradiologie"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narratif généré : ImplementationGuide ans.hl7v2.fr.teleradiologie</b></p><a name="ans.hl7v2.fr.teleradiologie"> </a><a name="hcans.hl7v2.fr.teleradiologie"> </a><h2>CISIS_TLR</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narratif généré : ImplementationGuide ans.hl7v2.fr.teleradiologie</b></p><a name="ans.hl7v2.fr.teleradiologie"> </a><a name="hcans.hl7v2.fr.teleradiologie"> </a><h2>CISIS_TLR_HL7_V2</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie"/>
   <version value="0.1.0"/>
-  <name value="CISIS_TLR"/>
+  <name value="CISIS_TLR_HL7_V2"/>
   <title value="Volet Téléradiologie"/>
   <status value="draft"/>
-  <date value="2025-11-03T08:54:00+00:00"/>
+  <date value="2025-11-03T09:21:03+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
