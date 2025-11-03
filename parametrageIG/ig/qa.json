@@ -1,19 +1,19 @@
 {
-  "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/ImplementationGuide/ans.fhir.fr.[code]",
-  "name" : "ExampleIG",
-  "title" : "ANS IG Example",
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
+  "name" : "CISIS_TLR",
+  "title" : "Volet Téléradiologie",
   "description" : "",
   "status" : "draft",
-  "package-id" : "ans.fhir.fr.[code]",
+  "package-id" : "ans.hl7v2.fr.teleradiologie",
   "ig-ver" : "0.1.0",
-  "date" : "Fri, 31 Oct, 2025 17:02:48 +0000",
-  "dateISO8601" : "2025-10-31T17:02:48+00:00",
-  "errs" : 2,
-  "warnings" : 13,
+  "date" : "Mon, 03 Nov, 2025 08:54:00 +0000",
+  "dateISO8601" : "2025-11-03T08:54:00+00:00",
+  "errs" : 8,
+  "warnings" : 6,
   "hints" : 8,
   "suppressed-hints" : 0,
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "5.0.0 (3)",
-  "maxMemory" : 1186548840
+  "maxMemory" : 1035927568
 }

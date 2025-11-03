@@ -1,6 +1,6 @@
 {
   "version" : "0.1.0",
-  "date" : "20251031170248",
+  "date" : "20251103085400",
   "notForPublication" : true,
-  "name" : "ans.fhir.fr.[code].r4"
+  "name" : "ans.hl7v2.fr.teleradiologie.r4"
 }

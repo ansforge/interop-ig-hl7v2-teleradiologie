@@ -1,4 +1,4 @@
-# ModifiedAdministrativeGender - ANS IG Example v0.1.0
+# ModifiedAdministrativeGender - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/[code]/ValueSet/ModifiedAdministrativeGender | *Version*:0.1.0 |
-| Draft as of 2025-10-31 | *Computable Name*:ModifiedAdministrativeGender |
+| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/ModifiedAdministrativeGender | *Version*:0.1.0 |
+| Draft as of 2025-11-03 | *Computable Name*:ModifiedAdministrativeGender |
 
  
 AdministrativeGender without unknown code 
@@ -53,12 +53,12 @@ Ce jeu de valeur (ValueSet) exclut les codes selon les règles suivantes :
 {
   "resourceType" : "ValueSet",
   "id" : "ModifiedAdministrativeGender",
-  "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/ValueSet/ModifiedAdministrativeGender",
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/ModifiedAdministrativeGender",
   "version" : "0.1.0",
   "name" : "ModifiedAdministrativeGender",
   "title" : "ModifiedAdministrativeGender",
   "status" : "draft",
-  "date" : "2025-10-31T17:02:48+00:00",
+  "date" : "2025-11-03T08:54:00+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {

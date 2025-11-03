@@ -1,17 +1,17 @@
 Source File	Size	loadResources	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo	checkR4R4B	generateNarratives	validate	loadLists	checkConformanceResources	checkConformanceResources2	checkConformanceResources3	generateLogicalMaps	validateExpressions	scanForUsageStats	checkURLsUnique	processProvenanceDetails	generate1	generate2	generateLogicals	makeDependencies	generateExampleZip	generateValidationPack	scanProfilesForR5	scanExamplesForR5
-/fsh-generated/resources/ImplementationGuide-ans.fhir.fr.[code].json	4716	-	0	0	0	0	0	0	13	76	0	0	0	0	0	0	0	0	0	0	71	110	0	0	0	4	0	2
-fsh-generated/resources/CodeSystem-competence-code-system.json	6320	19	0	0	0	0	0	0	2	37	0	0	0	0	0	0	0	0	0	0	39	690	0	0	0	1	0	0
-fsh-generated/resources/CodeSystem-type-carte-code-system.json	1008	13	0	0	1	0	0	0	1	22	0	0	0	0	0	0	0	0	0	0	15	46	0	0	0	1	0	0
-fsh-generated/resources/Patient-frpatient-exemple.json	453	12	0	0	0	0	0	0	0	337	0	0	0	0	0	0	0	0	0	0	12	15	0	0	0	0	0	0
-fsh-generated/resources/StructureDefinition-EyeColor.json	1311	13	0	13	0	0	0	0	0	68	0	0	0	0	0	0	0	0	0	0	45	461	0	0	0	2	1	1
-fsh-generated/resources/StructureDefinition-fr-patient.json	2350	13	0	103	0	0	0	0	0	51	0	0	0	0	0	0	0	2	0	0	191	476	0	0	0	15	0	2
-fsh-generated/resources/ValueSet-EyeColorVS.json	669	12	0	0	0	0	0	0	0	496	0	0	0	0	0	0	0	0	0	0	20	285	0	0	0	1	0	0
-fsh-generated/resources/ValueSet-MeltingPotVS.json	881	15	0	0	0	0	0	0	1	204	0	0	0	0	0	0	0	0	0	0	11	249	0	0	0	0	0	0
-fsh-generated/resources/ValueSet-ModifiedAdministrativeGender.json	646	15	0	0	0	0	0	0	0	17	0	0	0	0	0	0	0	0	0	0	10	72	0	0	0	1	0	0
-fsh-generated/resources/ValueSet-TypeCarteVS.json	417	12	0	0	0	0	0	0	0	19	0	0	0	0	0	0	0	0	0	0	7	52	0	0	0	0	0	0
+/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json	4769	-	0	0	0	0	0	0	16	79	0	0	0	0	0	0	0	0	0	0	115	167	0	0	0	4	0	1
+fsh-generated/resources/CodeSystem-competence-code-system.json	6329	20	0	0	1	0	0	0	2	39	0	0	1	0	0	0	0	0	0	0	74	937	0	0	0	2	0	0
+fsh-generated/resources/CodeSystem-type-carte-code-system.json	1017	14	0	0	0	0	0	0	0	24	0	0	0	0	0	0	0	0	0	0	50	90	0	0	0	1	0	1
+fsh-generated/resources/Patient-frpatient-exemple.json	462	15	0	0	1	0	0	0	0	280	0	0	0	0	0	0	0	0	0	0	33	50	0	0	0	0	0	0
+fsh-generated/resources/StructureDefinition-EyeColor.json	1338	15	0	15	0	0	0	0	1	85	0	0	0	0	0	0	0	0	0	0	64	517	0	0	0	2	1	0
+fsh-generated/resources/StructureDefinition-fr-patient.json	2377	14	0	108	0	0	0	0	0	87	0	0	0	0	0	0	0	2	0	0	186	492	0	0	0	14	0	1
+fsh-generated/resources/ValueSet-EyeColorVS.json	678	15	0	0	0	0	0	0	0	487	0	0	0	0	0	0	0	0	0	0	44	325	0	0	0	1	0	1
+fsh-generated/resources/ValueSet-MeltingPotVS.json	908	14	0	0	0	0	0	0	0	183	0	0	0	0	0	0	0	0	0	0	31	253	0	0	0	0	0	0
+fsh-generated/resources/ValueSet-ModifiedAdministrativeGender.json	655	15	0	0	0	0	0	0	1	13	0	0	0	0	0	0	0	0	0	0	29	46	0	0	0	0	0	0
+fsh-generated/resources/ValueSet-TypeCarteVS.json	435	14	0	0	1	0	0	0	0	12	0	0	0	0	0	0	0	0	0	0	33	44	0	0	0	1	0	0
 /fsh-generated/includes/fsh-link-references.md	453	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /fsh-generated/includes/menu.xml	2166	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-/input/data/features.yml	164	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/data/features.yml	172	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/st_flux1.md	119	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/st_flux2.md	118	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/specifications_techniques.md	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -25,6 +25,6 @@ fsh-generated/resources/ValueSet-TypeCarteVS.json	417	12	0	0	0	0	0	0	0	19	0	0	0	
 /template/config	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /template/config/_config.yml	140	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/images	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-/input/images/anImage.png	36288	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/images/anImage.png	36288	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
 /input/images/ci-sis-logo.png	61365	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-/temp/pages/_includes/artifacts.xml	5610	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	1	0	0	0	0	0	0
+/temp/pages/_includes/artifacts.xml	5610	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	0	0	0	0	0	0	0

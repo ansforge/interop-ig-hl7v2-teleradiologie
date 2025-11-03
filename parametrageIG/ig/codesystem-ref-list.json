@@ -26,7 +26,7 @@
       "ValueSet-MeltingPotVS.html" : "Melting Pot Value Set"
     },
     {
-      "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/competence-code-system",
+      "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/competence-code-system",
       "version" : "0.1.0",
       "status" : "draft",
       "name" : "CompetenceCS",
@@ -37,7 +37,7 @@
       "ValueSet-MeltingPotVS.html" : "Melting Pot Value Set"
     },
     {
-      "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/type-carte-code-system",
+      "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/type-carte-code-system",
       "version" : "0.1.0",
       "status" : "draft",
       "name" : "TypeCarteCS",
@@ -45,8 +45,8 @@
       "description" : "Type de carte professionnelle et personnelle.",
       "uses" : {
       },
-      "ValueSet-TypeCarteVS.html" : "Type Carte Value Set",
-      "ValueSet-MeltingPotVS.html" : "Melting Pot Value Set"
+      "ValueSet-MeltingPotVS.html" : "Melting Pot Value Set",
+      "ValueSet-TypeCarteVS.html" : "Type Carte Value Set"
     }
   ]
 }

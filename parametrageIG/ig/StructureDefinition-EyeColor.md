@@ -1,4 +1,4 @@
-# EyeColor - ANS IG Example v0.1.0
+# EyeColor - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/[code]/StructureDefinition/EyeColor | *Version*:0.1.0 |
-| Draft as of 2025-10-31 | *Computable Name*:EyeColor |
+| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/StructureDefinition/EyeColor | *Version*:0.1.0 |
+| Draft as of 2025-11-03 | *Computable Name*:EyeColor |
 
 Eye color extension
 
@@ -21,7 +21,7 @@ Eye color extension
 
 * Use this Extension: [Patient français](StructureDefinition-fr-patient.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/ans.fhir.fr.[code]|current/StructureDefinition/EyeColor)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/ans.hl7v2.fr.teleradiologie|current/StructureDefinition/EyeColor)
 
 ### Formal Views of Extension Content
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-EyeColor.csv), [Exce
 {
   "resourceType" : "StructureDefinition",
   "id" : "EyeColor",
-  "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/StructureDefinition/EyeColor",
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/StructureDefinition/EyeColor",
   "version" : "0.1.0",
   "name" : "EyeColor",
   "status" : "draft",
-  "date" : "2025-10-31T17:02:48+00:00",
+  "date" : "2025-11-03T08:54:00+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -106,7 +106,7 @@ Other representations of profile: [CSV](StructureDefinition-EyeColor.csv), [Exce
       {
         "id" : "Extension.url",
         "path" : "Extension.url",
-        "fixedUri" : "https://interop.esante.gouv.fr/ig/fhir/[code]/StructureDefinition/EyeColor"
+        "fixedUri" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/StructureDefinition/EyeColor"
       },
       {
         "id" : "Extension.value[x]",
@@ -118,7 +118,7 @@ Other representations of profile: [CSV](StructureDefinition-EyeColor.csv), [Exce
         ],
         "binding" : {
           "strength" : "required",
-          "valueSet" : "https://interop.esante.gouv.fr/ig/fhir/[code]/ValueSet/EyeColorVS"
+          "valueSet" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/EyeColorVS"
         }
       }
     ]

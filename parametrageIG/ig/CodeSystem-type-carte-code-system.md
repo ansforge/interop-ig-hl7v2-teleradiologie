@@ -1,4 +1,4 @@
-# Type de carte - ANS IG Example v0.1.0
+# Type de carte - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/type-carte-code-system | *Version*:0.1.0 |
-| Draft as of 2025-10-31 | *Computable Name*:TypeCarteCS |
+| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/type-carte-code-system | *Version*:0.1.0 |
+| Draft as of 2025-11-03 | *Computable Name*:TypeCarteCS |
 
  
 Type de carte professionnelle et personnelle. 
@@ -27,12 +27,12 @@ Type de carte professionnelle et personnelle.
 {
   "resourceType" : "CodeSystem",
   "id" : "type-carte-code-system",
-  "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/type-carte-code-system",
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/type-carte-code-system",
   "version" : "0.1.0",
   "name" : "TypeCarteCS",
   "title" : "Type de carte",
   "status" : "draft",
-  "date" : "2025-10-31T17:02:48+00:00",
+  "date" : "2025-11-03T08:54:00+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {

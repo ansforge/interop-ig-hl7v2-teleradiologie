@@ -10,8 +10,8 @@
       "oids" : ["2.16.840.1.113883.4.642.4.2"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-administrative-gender.html" : "AdministrativeGender",
-      "ValueSet-ModifiedAdministrativeGender.html" : "ModifiedAdministrativeGender"
+      "ValueSet-ModifiedAdministrativeGender.html" : "ModifiedAdministrativeGender",
+      "http://hl7.org/fhir/R4/valueset-administrative-gender.html" : "AdministrativeGender"
     },
     {
       "url" : "http://hl7.org/fhir/identifier-use",
@@ -99,7 +99,7 @@
       "http://hl7.org/fhir/R4/valueset-marital-status.html" : "MaritalStatus"
     },
     {
-      "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/competence-code-system",
+      "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/competence-code-system",
       "version" : "0.1.0",
       "status" : "draft",
       "name" : "CompetenceCS",
@@ -110,7 +110,7 @@
       "ValueSet-MeltingPotVS.html" : "Melting Pot Value Set"
     },
     {
-      "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/type-carte-code-system",
+      "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/type-carte-code-system",
       "version" : "0.1.0",
       "status" : "draft",
       "name" : "TypeCarteCS",
@@ -118,8 +118,8 @@
       "description" : "Type de carte professionnelle et personnelle.",
       "uses" : {
       },
-      "ValueSet-TypeCarteVS.html" : "Type Carte Value Set",
-      "ValueSet-MeltingPotVS.html" : "Melting Pot Value Set"
+      "ValueSet-MeltingPotVS.html" : "Melting Pot Value Set",
+      "ValueSet-TypeCarteVS.html" : "Type Carte Value Set"
     },
     {
       "url" : "urn:ietf:bcp:47",

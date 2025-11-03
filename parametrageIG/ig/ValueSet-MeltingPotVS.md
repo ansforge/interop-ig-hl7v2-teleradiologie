@@ -1,4 +1,4 @@
-# Melting Pot Value Set - ANS IG Example v0.1.0
+# Melting Pot Value Set - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/[code]/ValueSet/MeltingPotVS | *Version*:0.1.0 |
-| Draft as of 2025-10-31 | *Computable Name*:MeltingPotVS |
+| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/MeltingPotVS | *Version*:0.1.0 |
+| Draft as of 2025-11-03 | *Computable Name*:MeltingPotVS |
 
  
 Melting Pot Value Set. 
@@ -23,8 +23,8 @@ Ce jeu de valeurs nest pas utilisé ici ; il peut être utilisé autre part (par
 Ce jeu de valeur (ValueSet) inclut les codes selon les règles suivantes :
 
 * Inclut ce(s) code(s) tel quil(s) est (sont) défini(s) dans [`http://snomed.info/sct`](http://www.snomed.org/)version Not Stated (use latest from terminology server)
-* Inclut ce(s) code(s) tel quil(s) est (sont) défini(s) dans [`https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/competence-code-system`](CodeSystem-competence-code-system.md)version 📦0.1.0 
-* Inclut tous les codes définis dans [`https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/type-carte-code-system`](CodeSystem-type-carte-code-system.md)version 📦0.1.0
+* Inclut ce(s) code(s) tel quil(s) est (sont) défini(s) dans [`https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/competence-code-system`](CodeSystem-competence-code-system.md)version 📦0.1.0 
+* Inclut tous les codes définis dans [`https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/type-carte-code-system`](CodeSystem-type-carte-code-system.md)version 📦0.1.0
 
  
 
@@ -59,12 +59,12 @@ Ce jeu de valeur (ValueSet) contient 7 concepts
 {
   "resourceType" : "ValueSet",
   "id" : "MeltingPotVS",
-  "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/ValueSet/MeltingPotVS",
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/MeltingPotVS",
   "version" : "0.1.0",
   "name" : "MeltingPotVS",
   "title" : "Melting Pot Value Set",
   "status" : "draft",
-  "date" : "2025-10-31T17:02:48+00:00",
+  "date" : "2025-11-03T08:54:00+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -104,7 +104,7 @@ Ce jeu de valeur (ValueSet) contient 7 concepts
         ]
       },
       {
-        "system" : "https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/competence-code-system",
+        "system" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/competence-code-system",
         "concept" : [
           {
             "code" : "C01"
@@ -112,7 +112,7 @@ Ce jeu de valeur (ValueSet) contient 7 concepts
         ]
       },
       {
-        "system" : "https://interop.esante.gouv.fr/ig/fhir/[code]/CodeSystem/type-carte-code-system"
+        "system" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/type-carte-code-system"
       }
     ]
   }

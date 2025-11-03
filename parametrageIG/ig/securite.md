@@ -1,4 +1,4 @@
-# Sécurité - ANS IG Example v0.1.0
+# Sécurité - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Autres Ressources**](autres_ressources.md)
