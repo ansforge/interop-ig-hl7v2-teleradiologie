@@ -1,23 +1,20 @@
-ExampleIG : Validation Results
+CISIS_TLR_HL7_V2 : Validation Results
 =========================================
 
-err = 3, warn = 3, info = 0
-IG Publisher Version: 2.0.21
-Generated Tue Oct 14 13:20:09 UTC 2025. FHIR version 4.0.1 for ans.fhir.fr.[code]#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/fhir/[code])
- Build Errors : 6 / 3 / 0
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.fhir.fr.[code] : 3 / 0 / 1
+err = 1, warn = 2, info = 0
+IG Publisher Version: 2.0.26
+Generated Thu Nov 06 14:46:43 UTC 2025. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
+ Build Errors : 6 / 2 / 0
+ /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 1
 </table>
 == n/a ==
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 223, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 224, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 225, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 231, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 232, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 233, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
-WARNING: /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/output/searchform.html#/html/body/div/div/div/a/img/div/a/img/div/p/img/footer/div/div/div/div/div/div/a/img/div/a/img/script at Line 255, column 7: The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed)
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 224, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 225, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 226, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 232, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 233, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 234, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
-== fsh-generated/resources/ImplementationGuide-ans.fhir.fr.[code].json ==
-ERROR: ImplementationGuide/ans.fhir.fr.[code]: ImplementationGuide.id: Invalid Resource id: Invalid Characters ('ans.fhir.fr.[code]')
-ERROR: ImplementationGuide/ans.fhir.fr.[code]: ImplementationGuide.packageId: id value 'ans.fhir.fr.[code]' is not valid
-ERROR: ImplementationGuide/ans.fhir.fr.[code]: ImplementationGuide.definition: ImplementationGuide.definition.resource: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1)
+== fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json ==
+ERROR: ImplementationGuide/ans.hl7v2.fr.teleradiologie: ImplementationGuide.definition: ImplementationGuide.definition.resource: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1)

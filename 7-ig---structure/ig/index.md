@@ -1,4 +1,4 @@
-# Accueil - ANS IG Example v0.1.0
+# Accueil - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
 * **Accueil**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/fhir/[code]/ImplementationGuide/ans.fhir.fr.[code] | *Version*:0.1.0 |
-| Draft as of 2025-10-14 | *Computable Name*:ExampleIG |
+| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0 |
+| Draft as of 2025-11-06 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
  [Add a brief description of this IG in English] 
@@ -17,19 +17,19 @@
 
 ### Introduction
 
-Définir ici de quoi parle l’IG (En termes non expert, compréhensible par un patient). Rajouter également les détails techniques sur le contexte et le besoin de cet IG
+Définir ici de quoi parle l'IG (En termes non expert, compréhensible par un patient). Rajouter également les détails techniques sur le contexte et le besoin de cet IG
 
-Les principales sections de l’IG sont :
+Les principales sections de l'IG sont :
 
-* Le contexte de l’IG, quelle problématique il résout
+* Le contexte de l'IG, quelle problématique il résout
 * Ce que les Implémenteurs doivent mettre en place
-* Un onglet “Ressources de conformité” pour s’assurer d’un schéma global entre tous les IGs
+* Un onglet "Ressources de conformité" pour s'assurer d'un schéma global entre tous les IGs
 
 ### Périmètre du projet
 
 Définir en quelques lignes en anglais quel est le périmètre du projet
 
-Toujours laisser l’onglet “Ressources de conformité” pour s’assurer d’une cohérence globales entre tous les IGs
+Toujours laisser l'onglet "Ressources de conformité" pour s'assurer d'une cohérence globales entre tous les IGs
 
 ### Auteurs et contributeurs
 
@@ -47,7 +47,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
 
 * ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
 
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [ExampleIG](index.md)
+* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [CISIS_TLR_HL7_V2](index.md)
 
 
 
@@ -57,13 +57,13 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
 ```json
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "ans.fhir.fr.[code]",
-  "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/ImplementationGuide/ans.fhir.fr.[code]",
+  "id" : "ans.hl7v2.fr.teleradiologie",
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
   "version" : "0.1.0",
-  "name" : "ExampleIG",
-  "title" : "ANS IG Example",
+  "name" : "CISIS_TLR_HL7_V2",
+  "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2025-10-14T13:19:26+00:00",
+  "date" : "2025-11-06T14:45:56+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -87,7 +87,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
       ]
     }
   ],
-  "packageId" : "ans.fhir.fr.[code]",
+  "packageId" : "ans.hl7v2.fr.teleradiologie",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [
@@ -256,7 +256,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
           },
           {
             "url" : "value",
-            "valueString" : "https://interop.esante.gouv.fr/ig/fhir/[code]/history.html"
+            "valueString" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -598,7 +598,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
           },
           {
             "url" : "value",
-            "valueString" : "https://interop.esante.gouv.fr/ig/fhir/[code]/history.html"
+            "valueString" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"

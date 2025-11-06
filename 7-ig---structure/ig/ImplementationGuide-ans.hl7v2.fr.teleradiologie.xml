@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="ans.fhir.fr.[code]"/>
+  <id value="ans.hl7v2.fr.teleradiologie"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narratif généré : ImplementationGuide ans.fhir.fr.[code]</b></p><a name="ans.fhir.fr.[code]"> </a><a name="hcans.fhir.fr.[code]"> </a><h2>ExampleIG</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/[code]/ImplementationGuide/ans.fhir.fr.[code]</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narratif généré : ImplementationGuide ans.hl7v2.fr.teleradiologie</b></p><a name="ans.hl7v2.fr.teleradiologie"> </a><a name="hcans.hl7v2.fr.teleradiologie"> </a><h2>CISIS_TLR_HL7_V2</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie</pre></div>
   </text>
-  <url value="https://interop.esante.gouv.fr/ig/fhir/[code]/ImplementationGuide/ans.fhir.fr.[code]"/>
+  <url value="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie"/>
   <version value="0.1.0"/>
-  <name value="ExampleIG"/>
-  <title value="ANS IG Example"/>
+  <name value="CISIS_TLR_HL7_V2"/>
+  <title value="Volet Téléradiologie"/>
   <status value="draft"/>
-  <date value="2025-10-14T13:19:26+00:00"/>
+  <date value="2025-11-06T14:45:56+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -26,7 +26,7 @@
       <display value="FRANCE"/>
     </coding>
   </jurisdiction>
-  <packageId value="ans.fhir.fr.[code]"/>
+  <packageId value="ans.hl7v2.fr.teleradiologie"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
   <dependsOn id="hl7tx">
@@ -131,7 +131,7 @@
         <valueString value="path-history"/>
       </extension>
       <extension url="value">
-        <valueString value="https://interop.esante.gouv.fr/ig/fhir/[code]/history.html"/>
+        <valueString value="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -342,7 +342,7 @@
         <valueCode value="path-history"/>
       </extension>
       <extension url="value">
-        <valueString value="https://interop.esante.gouv.fr/ig/fhir/[code]/history.html"/>
+        <valueString value="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">

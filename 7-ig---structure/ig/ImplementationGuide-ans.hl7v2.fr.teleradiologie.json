@@ -1,16 +1,16 @@
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "ans.fhir.fr.[code]",
+  "id" : "ans.hl7v2.fr.teleradiologie",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : ImplementationGuide ans.fhir.fr.[code]</b></p><a name=\"ans.fhir.fr.[code]\"> </a><a name=\"hcans.fhir.fr.[code]\"> </a><h2>ExampleIG</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/fhir/[code]/ImplementationGuide/ans.fhir.fr.[code]</pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narratif généré : ImplementationGuide ans.hl7v2.fr.teleradiologie</b></p><a name=\"ans.hl7v2.fr.teleradiologie\"> </a><a name=\"hcans.hl7v2.fr.teleradiologie\"> </a><h2>CISIS_TLR_HL7_V2</h2><p>LURL officielle pour ce guide dimplémentation est : </p><pre>https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie</pre></div>"
   },
-  "url" : "https://interop.esante.gouv.fr/ig/fhir/[code]/ImplementationGuide/ans.fhir.fr.[code]",
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
   "version" : "0.1.0",
-  "name" : "ExampleIG",
-  "title" : "ANS IG Example",
+  "name" : "CISIS_TLR_HL7_V2",
+  "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2025-10-14T13:19:26+00:00",
+  "date" : "2025-11-06T14:45:56+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -26,7 +26,7 @@
       "display" : "FRANCE"
     }]
   }],
-  "packageId" : "ans.fhir.fr.[code]",
+  "packageId" : "ans.hl7v2.fr.teleradiologie",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [{
@@ -167,7 +167,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "https://interop.esante.gouv.fr/ig/fhir/[code]/history.html"
+        "valueString" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -457,7 +457,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "https://interop.esante.gouv.fr/ig/fhir/[code]/history.html"
+        "valueString" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
