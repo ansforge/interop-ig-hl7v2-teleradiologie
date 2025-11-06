@@ -4,14 +4,11 @@
 
 * [Accueil](index.md)
 * [Historique des versions](change-log.md)
-* [Flux 02](st_flux2.md)
-* [Flux 01](st_flux1.md)
 * [Artifacts Summary](artifacts.md)
-* [Specifications Techniques](specifications_techniques.md)
+* [Volume 2 : Détail des transactions](specifications_techniques.md)
 * [Sécurité](securite.md)
 * [Autres Ressources](autres_ressources.md)
-* [Spécification fonctionelles](specifications_fonctionnelles.md)
-* [Construction Des Flux](construction_des_flux.md)
+* [Volume 1 : Etude fonctionnelle](specifications_fonctionnelles.md)
 * [Normes et standard](norme_standard.md)
 * [Téléchargements et usages](downloads.md)
 

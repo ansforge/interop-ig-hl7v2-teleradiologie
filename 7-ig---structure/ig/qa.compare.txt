@@ -4,16 +4,26 @@ CISIS_TLR_HL7_V2 : Validation Results
 err = 1, warn = 2, info = 0
 $--
 Generated $--. FHIR version $-- for ans.hl7v2.fr.teleradiologie#$-- (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
- Build Errors : 6 / 2 / 0
+ Build Errors : 16 / 2 / 0
  /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 1
 </table>
 == n/a ==
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 224, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 225, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 226, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 232, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 233, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 234, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
+ERROR: artifacts.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: autres_ressources.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: change-log.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 218, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 219, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 220, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 226, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 227, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 228, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
+ERROR: index.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: norme_standard.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: securite.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: specifications_fonctionnelles.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
+ERROR: toc.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 114, column 10: The link 'exemples.html' for "Exemples de messages" cannot be resolved
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 == fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json ==
