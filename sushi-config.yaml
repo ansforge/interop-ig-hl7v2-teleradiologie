@@ -36,6 +36,8 @@ pages:
             title: Références documentaires
     change-log.md:
         title: Historique des versions
+    tests.md:
+        title: Test
     downloads.md:
         title: Téléchargements
 menu:
