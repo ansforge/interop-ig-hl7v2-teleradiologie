@@ -28,7 +28,7 @@ pages:
         title: Normes et Standards
     specifications_techniques.md:
         title: "Volume 2 : Détail des transactions"
-    Annexes.md:
+    annexes.md:
         title: Annexes
         exemples.md:
             title: Exemples de messages
