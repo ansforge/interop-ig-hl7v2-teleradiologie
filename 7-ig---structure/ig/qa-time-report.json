@@ -1,60 +1,60 @@
 {
-  "date" : "Tue, 09 Dec, 2025 09:28:39 +0000",
+  "date" : "Tue, 09 Dec, 2025 09:33:28 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
       "name" : "/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json",
-      "size" : 2693,
+      "size" : 2811,
       "processes" : [
         {
           "activity" : "load",
-          "start" : 26,
-          "length" : 37
+          "start" : 25,
+          "length" : 28
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 27,
-          "length" : 14
+          "start" : 26,
+          "length" : 17
         },
         {
           "activity" : "generateNarratives",
-          "start" : 27,
-          "length" : 76
+          "start" : 26,
+          "length" : 79
         },
         {
           "activity" : "validate",
-          "start" : 27,
-          "length" : 10051
+          "start" : 26,
+          "length" : 5689
         },
         {
           "activity" : "scanForUsageStats",
-          "start" : 37,
+          "start" : 31,
           "length" : 1
         },
         {
-          "activity" : "checkURLsUnique",
-          "start" : 37,
+          "activity" : "validate",
+          "start" : 31,
           "length" : 1
         },
         {
           "activity" : "generate1",
-          "start" : 37,
-          "length" : 81
+          "start" : 32,
+          "length" : 76
         },
         {
           "activity" : "generate2",
-          "start" : 41,
-          "length" : 63
+          "start" : 35,
+          "length" : 65
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 45,
-          "length" : 3
+          "start" : 39,
+          "length" : 2
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 47,
-          "length" : 3
+          "start" : 41,
+          "length" : 2
         }
       ]
     },
@@ -68,7 +68,14 @@
     },
     {
       "name" : "/input/pagecontent/st_flux1.md",
-      "size" : 119
+      "size" : 119,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/st_flux2.md",
@@ -80,19 +87,7 @@
     },
     {
       "name" : "/input/pagecontent/tests.md",
-      "size" : 1184,
-      "processes" : [
-        {
-          "activity" : "validate",
-          "start" : 27,
-          "length" : 1
-        },
-        {
-          "activity" : "generate2",
-          "start" : 41,
-          "length" : 1
-        }
-      ]
+      "size" : 1184
     },
     {
       "name" : "/input/pagecontent/norme_standard.md",
@@ -100,14 +95,7 @@
     },
     {
       "name" : "/input/pagecontent/doc-ref.md",
-      "size" : 36,
-      "processes" : [
-        {
-          "activity" : "checkConformanceResources",
-          "start" : 37,
-          "length" : 1
-        }
-      ]
+      "size" : 36
     },
     {
       "name" : "/input/pagecontent/specifications_fonctionnelles.md",
@@ -118,8 +106,8 @@
       "size" : 900,
       "processes" : [
         {
-          "activity" : "scan",
-          "start" : 27,
+          "activity" : "generate2",
+          "start" : 35,
           "length" : 1
         }
       ]
@@ -146,18 +134,18 @@
     },
     {
       "name" : "/input/pagecontent/index.md",
-      "size" : 1828,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 41,
-          "length" : 1
-        }
-      ]
+      "size" : 1828
     },
     {
       "name" : "/template/config",
-      "size" : 0
+      "size" : 0,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/template/config/_config.yml",

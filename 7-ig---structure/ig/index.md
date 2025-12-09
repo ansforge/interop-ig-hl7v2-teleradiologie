@@ -58,7 +58,7 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2025-12-09T09:28:39+00:00",
+  "date" : "2025-12-09T09:33:28+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -893,6 +893,17 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
           ],
           "nameUrl" : "change-log.html",
           "title" : "Historique des versions",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "tests.html"
+            }
+          ],
+          "nameUrl" : "tests.html",
+          "title" : "Test",
           "generation" : "markdown"
         },
         {

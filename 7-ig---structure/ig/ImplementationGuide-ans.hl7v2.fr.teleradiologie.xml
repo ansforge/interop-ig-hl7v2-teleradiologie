@@ -10,7 +10,7 @@
   <name value="CISIS_TLR_HL7_V2"/>
   <title value="Volet Téléradiologie"/>
   <status value="draft"/>
-  <date value="2025-12-09T09:28:39+00:00"/>
+  <date value="2025-12-09T09:33:28+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -534,6 +534,14 @@
         </extension>
         <nameUrl value="change-log.html"/>
         <title value="Historique des versions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="tests.html"/>
+        </extension>
+        <nameUrl value="tests.html"/>
+        <title value="Test"/>
         <generation value="markdown"/>
       </page>
       <page>
