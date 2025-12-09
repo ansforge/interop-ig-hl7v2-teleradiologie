@@ -1,10 +1,9 @@
-# Téléchargements et usages - Volet Téléradiologie v0.1.0
+# Téléchargements - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
-* [**Autres Ressources**](autres_ressources.md)
-* **Téléchargements et usages**
+* **Téléchargements**
 
-## Téléchargements et usages
+## Téléchargements
 
 ### Téléchargement
 

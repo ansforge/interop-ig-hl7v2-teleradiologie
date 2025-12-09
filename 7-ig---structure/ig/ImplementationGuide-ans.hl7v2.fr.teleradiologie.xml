@@ -10,7 +10,7 @@
   <name value="CISIS_TLR_HL7_V2"/>
   <title value="Volet Téléradiologie"/>
   <status value="draft"/>
-  <date value="2025-12-09T08:38:54+00:00"/>
+  <date value="2025-12-09T09:21:40+00:00"/>
   <publisher value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
   <contact>
     <name value="Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"/>
@@ -506,25 +506,25 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="autres_ressources.html"/>
+          <valueUrl value="annexes.html"/>
         </extension>
-        <nameUrl value="autres_ressources.html"/>
-        <title value="Autres Ressources"/>
+        <nameUrl value="annexes.html"/>
+        <title value="Annexes"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="securite.html"/>
+            <valueUrl value="exemples.html"/>
           </extension>
-          <nameUrl value="securite.html"/>
-          <title value="Sécurité"/>
+          <nameUrl value="exemples.html"/>
+          <title value="Exemples de messages"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="downloads.html"/>
+            <valueUrl value="doc-ref.html"/>
           </extension>
-          <nameUrl value="downloads.html"/>
-          <title value="Téléchargements et usages"/>
+          <nameUrl value="doc-ref.html"/>
+          <title value="Références documentaires"/>
           <generation value="markdown"/>
         </page>
       </page>
@@ -534,6 +534,14 @@
         </extension>
         <nameUrl value="change-log.html"/>
         <title value="Historique des versions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="downloads.html"/>
+        </extension>
+        <nameUrl value="downloads.html"/>
+        <title value="Téléchargements"/>
         <generation value="markdown"/>
       </page>
     </page>

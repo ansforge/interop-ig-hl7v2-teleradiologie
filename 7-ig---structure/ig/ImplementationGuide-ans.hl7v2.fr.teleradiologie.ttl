@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-12-09T08:38:54+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-12-09T09:21:40+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -1442,16 +1442,16 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "autres_ressources.html"^^xsd:anyURI ;
-             fhir:l fhir:autres_ressources.html
+             fhir:v "annexes.html"^^xsd:anyURI ;
+             fhir:l fhir:annexes.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "autres_ressources.html"^^xsd:anyURI ;
-           fhir:l fhir:autres_ressources.html
+           fhir:v "annexes.html"^^xsd:anyURI ;
+           fhir:l fhir:annexes.html
          ] ;
-         fhir:title [ fhir:v "Autres Ressources" ] ;
+         fhir:title [ fhir:v "Annexes" ] ;
          fhir:generation [ fhir:v "markdown" ] ;
          fhir:page ( [
            fhir:extension ( [
@@ -1461,16 +1461,16 @@
              ] ;
              fhir:value [
                a fhir:Url ;
-               fhir:v "securite.html"^^xsd:anyURI ;
-               fhir:l fhir:securite.html
+               fhir:v "exemples.html"^^xsd:anyURI ;
+               fhir:l fhir:exemples.html
              ]
            ] ) ;
            fhir:name [
              a fhir:Url ;
-             fhir:v "securite.html"^^xsd:anyURI ;
-             fhir:l fhir:securite.html
+             fhir:v "exemples.html"^^xsd:anyURI ;
+             fhir:l fhir:exemples.html
            ] ;
-           fhir:title [ fhir:v "Sécurité" ] ;
+           fhir:title [ fhir:v "Exemples de messages" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] [
            fhir:extension ( [
@@ -1480,16 +1480,16 @@
              ] ;
              fhir:value [
                a fhir:Url ;
-               fhir:v "downloads.html"^^xsd:anyURI ;
-               fhir:l fhir:downloads.html
+               fhir:v "doc-ref.html"^^xsd:anyURI ;
+               fhir:l fhir:doc-ref.html
              ]
            ] ) ;
            fhir:name [
              a fhir:Url ;
-             fhir:v "downloads.html"^^xsd:anyURI ;
-             fhir:l fhir:downloads.html
+             fhir:v "doc-ref.html"^^xsd:anyURI ;
+             fhir:l fhir:doc-ref.html
            ] ;
-           fhir:title [ fhir:v "Téléchargements et usages" ] ;
+           fhir:title [ fhir:v "Références documentaires" ] ;
            fhir:generation [ fhir:v "markdown" ]
          ] )
        ] [
@@ -1510,6 +1510,25 @@
            fhir:l fhir:change-log.html
          ] ;
          fhir:title [ fhir:v "Historique des versions" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "downloads.html"^^xsd:anyURI ;
+             fhir:l fhir:downloads.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "downloads.html"^^xsd:anyURI ;
+           fhir:l fhir:downloads.html
+         ] ;
+         fhir:title [ fhir:v "Téléchargements" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;

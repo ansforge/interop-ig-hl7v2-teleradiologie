@@ -3,14 +3,15 @@
 ## Pages
 
 * [Accueil](index.md)
+* [Références documentaires](doc-ref.md)
 * [Historique des versions](change-log.md)
 * [Artifacts Summary](artifacts.md)
 * [Volume 2 : Détail des transactions](specifications_techniques.md)
-* [Sécurité](securite.md)
-* [Autres Ressources](autres_ressources.md)
+* [Annexes](annexes.md)
 * [Volume 1 : Etude fonctionnelle](specifications_fonctionnelles.md)
 * [Normes et Standards](norme_standard.md)
-* [Téléchargements et usages](downloads.md)
+* [Exemples de messages](exemples.md)
+* [Téléchargements](downloads.md)
 
 ## Resources
 

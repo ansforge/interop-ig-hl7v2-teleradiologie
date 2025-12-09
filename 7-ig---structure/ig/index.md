@@ -58,7 +58,7 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2025-12-09T08:38:54+00:00",
+  "date" : "2025-12-09T09:21:40+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -853,33 +853,33 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "autres_ressources.html"
+              "valueUrl" : "annexes.html"
             }
           ],
-          "nameUrl" : "autres_ressources.html",
-          "title" : "Autres Ressources",
+          "nameUrl" : "annexes.html",
+          "title" : "Annexes",
           "generation" : "markdown",
           "page" : [
             {
               "extension" : [
                 {
                   "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "securite.html"
+                  "valueUrl" : "exemples.html"
                 }
               ],
-              "nameUrl" : "securite.html",
-              "title" : "Sécurité",
+              "nameUrl" : "exemples.html",
+              "title" : "Exemples de messages",
               "generation" : "markdown"
             },
             {
               "extension" : [
                 {
                   "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "downloads.html"
+                  "valueUrl" : "doc-ref.html"
                 }
               ],
-              "nameUrl" : "downloads.html",
-              "title" : "Téléchargements et usages",
+              "nameUrl" : "doc-ref.html",
+              "title" : "Références documentaires",
               "generation" : "markdown"
             }
           ]
@@ -893,6 +893,17 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
           ],
           "nameUrl" : "change-log.html",
           "title" : "Historique des versions",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "downloads.html"
+            }
+          ],
+          "nameUrl" : "downloads.html",
+          "title" : "Téléchargements",
           "generation" : "markdown"
         }
       ]
