@@ -43,8 +43,6 @@ menu:
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
         "Exemples de messages": exemples.html
-    Autres ressources:
-        Sécurité: securite.html
-        Téléchargements et usage: downloads.html
-        "Spécifications FHIR ": new-tab {{site.data.fhir.path}}index.html
-        "Site de l'ANS ": new-tab https://esante.gouv.fr/
+    Test: tests.html
+    Historique des versions: change-log.html
+    Téléchargements: download.html
