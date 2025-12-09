@@ -1,5 +1,5 @@
 {
-  "date" : "Tue, 09 Dec, 2025 09:21:40 +0000",
+  "date" : "Tue, 09 Dec, 2025 09:28:39 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -14,55 +14,53 @@
         {
           "activity" : "checkR4R4B",
           "start" : 27,
-          "length" : 15
+          "length" : 14
         },
         {
           "activity" : "generateNarratives",
           "start" : 27,
-          "length" : 82
+          "length" : 76
         },
         {
           "activity" : "validate",
           "start" : 27,
-          "length" : 6119
+          "length" : 10051
         },
         {
           "activity" : "scanForUsageStats",
-          "start" : 33,
+          "start" : 37,
+          "length" : 1
+        },
+        {
+          "activity" : "checkURLsUnique",
+          "start" : 37,
           "length" : 1
         },
         {
           "activity" : "generate1",
-          "start" : 34,
-          "length" : 84
+          "start" : 37,
+          "length" : 81
         },
         {
           "activity" : "generate2",
-          "start" : 36,
-          "length" : 66
+          "start" : 41,
+          "length" : 63
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 40,
-          "length" : 2
+          "start" : 45,
+          "length" : 3
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 42,
-          "length" : 2
+          "start" : 47,
+          "length" : 3
         }
       ]
     },
     {
       "name" : "/fsh-generated/includes/menu.xml",
-      "size" : 1807,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 36,
-          "length" : 1
-        }
-      ]
+      "size" : 1807
     },
     {
       "name" : "/input/data/features.yml",
@@ -85,8 +83,13 @@
       "size" : 1184,
       "processes" : [
         {
+          "activity" : "validate",
+          "start" : 27,
+          "length" : 1
+        },
+        {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 41,
           "length" : 1
         }
       ]
@@ -100,8 +103,8 @@
       "size" : 36,
       "processes" : [
         {
-          "activity" : "validate",
-          "start" : 33,
+          "activity" : "checkConformanceResources",
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -112,7 +115,14 @@
     },
     {
       "name" : "/input/pagecontent/securite.md",
-      "size" : 900
+      "size" : 900,
+      "processes" : [
+        {
+          "activity" : "scan",
+          "start" : 27,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/construction_des_flux.md",
@@ -128,14 +138,7 @@
     },
     {
       "name" : "/input/pagecontent/downloads.md",
-      "size" : 1727,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 36,
-          "length" : 1
-        }
-      ]
+      "size" : 1727
     },
     {
       "name" : "/input/pagecontent/change-log.md",
@@ -143,18 +146,18 @@
     },
     {
       "name" : "/input/pagecontent/index.md",
-      "size" : 1828
-    },
-    {
-      "name" : "/template/config",
-      "size" : 0,
+      "size" : 1828,
       "processes" : [
         {
-          "activity" : "scan",
-          "start" : 27,
+          "activity" : "generate2",
+          "start" : 41,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/template/config",
+      "size" : 0
     },
     {
       "name" : "/template/config/_config.yml",
@@ -162,14 +165,7 @@
     },
     {
       "name" : "/input/images",
-      "size" : 0,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 36,
-          "length" : 1
-        }
-      ]
+      "size" : 0
     },
     {
       "name" : "/input/images/anImage.png",
