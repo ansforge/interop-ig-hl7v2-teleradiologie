@@ -36,9 +36,8 @@ pages:
             title: Références documentaires
     change-log.md:
         title: Historique des versions
-    download.md:
+    downloads.md:
         title: "Téléchargements"
-        generation: markdown
 menu:
     Accueil: index.html
     Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html
@@ -49,4 +48,4 @@ menu:
         Références documentaires: doc-ref.html
     Test: tests.html
     Historique des versions: change-log.html
-    Téléchargements: download.html
+    Téléchargements: downloads.html
