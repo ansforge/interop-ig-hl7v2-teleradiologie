@@ -37,7 +37,7 @@ pages:
     change-log.md:
         title: Historique des versions
     downloads.md:
-        title: "Téléchargements"
+        title: Téléchargements
 menu:
     Accueil: index.html
     Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html
