@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0 |
-| Draft as of 2025-11-12 | *Computable Name*:CISIS_TLR_HL7_V2 |
+| Draft as of 2025-12-09 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
  [Add a brief description of this IG in English] 
@@ -43,12 +43,7 @@ Toujours laisser l’onglet “Ressources de conformité” pour s’assurer d�
 
 ### Propriété intellectuelle
 
-Certaines ressources sémantiques de ce guide sont protégées par des droits de propriété intellectuelle couverte par les déclarations ci-dessous. L’utilisation de ces ressources est soumise à l’acceptation et au respect des conditions précisées dans la licence d’utilisation de chacune d’entre elle.
-
-* ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
-
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [CISIS_TLR_HL7_V2](index.md)
-
+Pas dusage de PI externe (autre que celles de la spécification FHIR)
 
 
 
@@ -63,7 +58,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2025-11-12T10:43:51+00:00",
+  "date" : "2025-12-09T08:38:54+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -101,7 +96,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
       ],
       "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId" : "hl7.terminology.r4",
-      "version" : "6.5.0"
+      "version" : "7.0.0"
     },
     {
       "id" : "hl7ext",
