@@ -1,65 +1,9 @@
 [
   {
-    "id" : "competence-code-system",
-    "type" : "CodeSystem",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/competence-code-system",
-    "version" : "0.1.0",
-    "name" : "CompetenceCS"
-  },
-  {
-    "id" : "type-carte-code-system",
-    "type" : "CodeSystem",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/type-carte-code-system",
-    "version" : "0.1.0",
-    "name" : "TypeCarteCS"
-  },
-  {
     "id" : "ans.hl7v2.fr.teleradiologie",
     "type" : "ImplementationGuide",
     "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
     "version" : "0.1.0",
     "name" : "CISIS_TLR_HL7_V2"
-  },
-  {
-    "id" : "EyeColor",
-    "type" : "StructureDefinition",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/StructureDefinition/EyeColor",
-    "version" : "0.1.0",
-    "name" : "EyeColor"
-  },
-  {
-    "id" : "fr-patient",
-    "type" : "StructureDefinition",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/StructureDefinition/fr-patient",
-    "version" : "0.1.0",
-    "name" : "FrPatient"
-  },
-  {
-    "id" : "EyeColorVS",
-    "type" : "ValueSet",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/EyeColorVS",
-    "version" : "0.1.0",
-    "name" : "EyeColorVS"
-  },
-  {
-    "id" : "MeltingPotVS",
-    "type" : "ValueSet",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/MeltingPotVS",
-    "version" : "0.1.0",
-    "name" : "MeltingPotVS"
-  },
-  {
-    "id" : "ModifiedAdministrativeGender",
-    "type" : "ValueSet",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/ModifiedAdministrativeGender",
-    "version" : "0.1.0",
-    "name" : "ModifiedAdministrativeGender"
-  },
-  {
-    "id" : "TypeCarteVS",
-    "type" : "ValueSet",
-    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ValueSet/TypeCarteVS",
-    "version" : "0.1.0",
-    "name" : "TypeCarteVS"
   }
 ]

@@ -1,7 +1,7 @@
-# Specifications Techniques - Volet Téléradiologie v0.1.0
+# Volume 2 : Détail des transactions - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
-* **Specifications Techniques**
+* **Volume 2 : Détail des transactions**
 
-## Specifications Techniques
+## Volume 2 : Détail des transactions
 

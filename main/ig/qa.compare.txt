@@ -1,51 +1,24 @@
 CISIS_TLR_HL7_V2 : Validation Results
 =========================================
 
-err = 8, warn = 6, info = 8
+err = 1, warn = 3, info = 1
 $--
 Generated $--. FHIR version $-- for ans.hl7v2.fr.teleradiologie#$-- (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
- Build Errors : 0 / 2 / 0
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/CodeSystem-competence-code-system : 2 / 1 / 2
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/CodeSystem-type-carte-code-system : 2 / 0 / 2
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 0 / 0 / 1
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/Patient-frpatient-exemple : 0 / 1 / 1
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/StructureDefinition-EyeColor : 0 / 2 / 1
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/StructureDefinition-fr-patient : 0 / 0 / 4
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ValueSet-EyeColorVS : 1 / 0 / 2
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ValueSet-MeltingPotVS : 1 / 0 / 3
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ValueSet-ModifiedAdministrativeGender : 1 / 0 / 1
- /home/runner/work/interop-ig-teleradiologie/interop-ig-teleradiologie/igSource/fsh-generated/resources/ValueSet-TypeCarteVS : 1 / 0 / 1
+ Build Errors : 8 / 3 / 0
+ /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 2
 </table>
 == n/a ==
+ERROR: annexes.html#/html/body/div/div/div/div/div/ul/li/a at Line 191, column 8: The link './exemples' for "Exemples de messages" cannot be resolved
+ERROR: annexes.html#/html/body/div/div/div/div/div/ul/li/a at Line 192, column 8: The link './exemples' for "Références documentaires" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 210, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 211, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 212, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 218, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 219, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 220, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
+WARNING: /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/output/searchform.html#/html/body/div/div/div/a/img/div/a/img/div/p/img/footer/div/div/div/div/div/div/a/img/div/a/img/script at Line 255, column 7: The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed)
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
-== fsh-generated/resources/CodeSystem-competence-code-system.json ==
-INFORMATION: CodeSystem/competence-code-system: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
-ERROR: CodeSystem/competence-code-system: CodeSystem: Code systems published by HL7 SHALL conform to the ShareableCodeSystem profile, which says that the element CodeSystem.experimental is mandatory, but it is not present
-ERROR: CodeSystem/competence-code-system: CodeSystem: Code systems published by HL7 SHALL conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
-WARNING: CodeSystem/competence-code-system: CodeSystem.concept[5]: HL7 Defined CodeSystems should ensure that every concept has a definition
-== fsh-generated/resources/CodeSystem-type-carte-code-system.json ==
-INFORMATION: CodeSystem/type-carte-code-system: CodeSystem: CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
-ERROR: CodeSystem/type-carte-code-system: CodeSystem: Code systems published by HL7 SHALL conform to the ShareableCodeSystem profile, which says that the element CodeSystem.experimental is mandatory, but it is not present
-ERROR: CodeSystem/type-carte-code-system: CodeSystem: Code systems published by HL7 SHALL conform to the ShareableCodeSystem profile, which says that the element CodeSystem.caseSensitive is mandatory, but it is not present
 == fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json ==
-== fsh-generated/resources/Patient-frpatient-exemple.json ==
-WARNING: Patient/frpatient-exemple: Patient.identifier[0].system: No definition could be found for URL value 'urn:oid:1.2.250.1.213.1.4.8'
-== fsh-generated/resources/StructureDefinition-EyeColor.json ==
-WARNING: StructureDefinition/EyeColor: StructureDefinition.context[0]: Review the extension type for EyeColor: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-WARNING: StructureDefinition.where(url = 'https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/StructureDefinition/EyeColor'): The Implementation Guide contains no examples for this extension
-== fsh-generated/resources/StructureDefinition-fr-patient.json ==
-INFORMATION: StructureDefinition/fr-patient: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
-INFORMATION: StructureDefinition/fr-patient: StructureDefinition.differential.element[3].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-INFORMATION: StructureDefinition/fr-patient: StructureDefinition.snapshot.element[10].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
-== fsh-generated/resources/ValueSet-EyeColorVS.json ==
-INFORMATION: ValueSet/EyeColorVS: ValueSet.compose.include[0]: The concepts in the value set include have not been validated because the terminology server https://tx.fhir.org/r4 does not support batch validation (tests version < 1.7.8)
-ERROR: ValueSet/EyeColorVS: ValueSet: Value sets published by HL7 SHALL conform to the ShareableValueSet profile, which says that the element ValueSet.experimental is mandatory, but it is not present
-== fsh-generated/resources/ValueSet-MeltingPotVS.json ==
-INFORMATION: ValueSet/MeltingPotVS: ValueSet.compose.include[0]: The concepts in the value set include have not been validated because the terminology server https://tx.fhir.org/r4 does not support batch validation (tests version < 1.7.8)
-INFORMATION: ValueSet/MeltingPotVS: ValueSet.compose.include[1].concept[0]: Reference to draft CodeSystem https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/CodeSystem/competence-code-system|0.1.0
-ERROR: ValueSet/MeltingPotVS: ValueSet: Value sets published by HL7 SHALL conform to the ShareableValueSet profile, which says that the element ValueSet.experimental is mandatory, but it is not present
-== fsh-generated/resources/ValueSet-ModifiedAdministrativeGender.json ==
-ERROR: ValueSet/ModifiedAdministrativeGender: ValueSet: Value sets published by HL7 SHALL conform to the ShareableValueSet profile, which says that the element ValueSet.experimental is mandatory, but it is not present
-== fsh-generated/resources/ValueSet-TypeCarteVS.json ==
-ERROR: ValueSet/TypeCarteVS: ValueSet: Value sets published by HL7 SHALL conform to the ShareableValueSet profile, which says that the element ValueSet.experimental is mandatory, but it is not present
+INFORMATION: ImplementationGuide/ans.hl7v2.fr.teleradiologie: ImplementationGuide.jurisdiction[0]: Reference to draft CodeSystem urn:iso:std:iso:3166|20210120
+ERROR: ImplementationGuide/ans.hl7v2.fr.teleradiologie: ImplementationGuide.definition: ImplementationGuide.definition.resource: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1)

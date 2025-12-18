@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0 |
-| Draft as of 2025-11-06 | *Computable Name*:CISIS_TLR_HL7_V2 |
+| Draft as of 2025-12-18 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
  [Add a brief description of this IG in English] 
@@ -17,19 +17,19 @@
 
 ### Introduction
 
-Définir ici de quoi parle l'IG (En termes non expert, compréhensible par un patient). Rajouter également les détails techniques sur le contexte et le besoin de cet IG
+Définir ici de quoi parle l’IG (En termes non expert, compréhensible par un patient). Rajouter également les détails techniques sur le contexte et le besoin de cet IG
 
-Les principales sections de l'IG sont :
+Les principales sections de l’IG sont :
 
-* Le contexte de l'IG, quelle problématique il résout
+* Le contexte de l’IG, quelle problématique il résout
 * Ce que les Implémenteurs doivent mettre en place
-* Un onglet "Ressources de conformité" pour s'assurer d'un schéma global entre tous les IGs
+* Un onglet “Ressources de conformité” pour s’assurer d’un schéma global entre tous les IGs
 
 ### Périmètre du projet
 
 Définir en quelques lignes en anglais quel est le périmètre du projet
 
-Toujours laisser l'onglet "Ressources de conformité" pour s'assurer d'une cohérence globales entre tous les IGs
+Toujours laisser l’onglet “Ressources de conformité” pour s’assurer d’une cohérence globales entre tous les IGs
 
 ### Auteurs et contributeurs
 
@@ -43,17 +43,7 @@ Toujours laisser l'onglet "Ressources de conformité" pour s'assurer d'une cohé
 
 ### Propriété intellectuelle
 
-Certaines ressources sémantiques de ce guide sont protégées par des droits de propriété intellectuelle couverte par les déclarations ci-dessous. L’utilisation de ces ressources est soumise à l’acceptation et au respect des conditions précisées dans la licence d’utilisation de chacune d’entre elle.
-
-* ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
-
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [CISIS_TLR_HL7_V2](index.md), [CompetenceCS](CodeSystem-competence-code-system.md)...Show 7 more,[EyeColor](StructureDefinition-EyeColor.md),[EyeColorVS](ValueSet-EyeColorVS.md),[FrPatient](StructureDefinition-fr-patient.md),[MeltingPotVS](ValueSet-MeltingPotVS.md),[ModifiedAdministrativeGender](ValueSet-ModifiedAdministrativeGender.md),[TypeCarteCS](CodeSystem-type-carte-code-system.md)and[TypeCarteVS](ValueSet-TypeCarteVS.md)
-
-
-* This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact [https://www.snomed.org/get-snomed](https://www.snomed.org/get-snomed) or [info@snomed.org](mailto:info@snomed.org).
-
-* [SNOMED Clinical Terms&reg; (SNOMED CT&reg;)](http://hl7.org/fhir/R4/codesystem-snomedct.html): [EyeColor](StructureDefinition-EyeColor.md), [EyeColorVS](ValueSet-EyeColorVS.md) and [MeltingPotVS](ValueSet-MeltingPotVS.md)
-
+Pas dusage de PI externe (autre que celles de la spécification FHIR)
 
 
 
@@ -68,7 +58,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2025-11-06T14:04:13+00:00",
+  "date" : "2025-12-18T16:18:34+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -106,7 +96,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
       ],
       "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId" : "hl7.terminology.r4",
-      "version" : "6.5.0"
+      "version" : "7.0.1"
     },
     {
       "id" : "hl7ext",
@@ -463,7 +453,7 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
       },
       {
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-        "valueCode" : "hl7.fhir.uv.tools.r4#0.8.0"
+        "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
       },
       {
         "extension" : [
@@ -804,134 +794,6 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
       }
     ],
-    "resource" : [
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CodeSystem"
-          }
-        ],
-        "reference" : {
-          "reference" : "CodeSystem/competence-code-system"
-        },
-        "name" : "Compétences CodeSystem",
-        "description" : "Compétences des professionnels de santé.",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:extension"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/EyeColor"
-        },
-        "name" : "EyeColor",
-        "description" : "Eye color extension",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/EyeColorVS"
-        },
-        "name" : "EyeColor Value Set",
-        "description" : "Different eye colors.",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Patient"
-          }
-        ],
-        "reference" : {
-          "reference" : "Patient/frpatient-exemple"
-        },
-        "name" : "frpatient-exemple",
-        "description" : "Exemple d'un patient français",
-        "exampleCanonical" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/StructureDefinition/fr-patient"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/MeltingPotVS"
-        },
-        "name" : "Melting Pot Value Set",
-        "description" : "Melting Pot Value Set.",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/ModifiedAdministrativeGender"
-        },
-        "name" : "ModifiedAdministrativeGender",
-        "description" : "AdministrativeGender without unknown code",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/fr-patient"
-        },
-        "name" : "Patient français",
-        "description" : "Description du patient français",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/TypeCarteVS"
-        },
-        "name" : "Type Carte Value Set",
-        "description" : "Type Carte Value Set.",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CodeSystem"
-          }
-        ],
-        "reference" : {
-          "reference" : "CodeSystem/type-carte-code-system"
-        },
-        "name" : "Type de carte",
-        "description" : "Type de carte professionnelle et personnelle.",
-        "exampleBoolean" : false
-      }
-    ],
     "page" : {
       "extension" : [
         {
@@ -958,44 +820,66 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "specifications_fonctionnelles.html"
+            }
+          ],
+          "nameUrl" : "specifications_fonctionnelles.html",
+          "title" : "Volume 1 : Etude fonctionnelle",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "norme_standard.html"
+            }
+          ],
+          "nameUrl" : "norme_standard.html",
+          "title" : "Normes et Standards",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "specifications_techniques.html"
             }
           ],
           "nameUrl" : "specifications_techniques.html",
-          "title" : "Specifications Techniques",
+          "title" : "Volume 2 : Détail des transactions",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "annexes.html"
+            }
+          ],
+          "nameUrl" : "annexes.html",
+          "title" : "Annexes",
           "generation" : "markdown",
           "page" : [
             {
               "extension" : [
                 {
                   "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "construction_des_flux.html"
+                  "valueUrl" : "exemples.html"
                 }
               ],
-              "nameUrl" : "construction_des_flux.html",
-              "title" : "Construction Des Flux",
+              "nameUrl" : "exemples.html",
+              "title" : "Exemples de messages",
               "generation" : "markdown"
             },
             {
               "extension" : [
                 {
                   "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "st_flux1.html"
+                  "valueUrl" : "doc-ref.html"
                 }
               ],
-              "nameUrl" : "st_flux1.html",
-              "title" : "Flux 01",
-              "generation" : "markdown"
-            },
-            {
-              "extension" : [
-                {
-                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "st_flux2.html"
-                }
-              ],
-              "nameUrl" : "st_flux2.html",
-              "title" : "Flux 02",
+              "nameUrl" : "doc-ref.html",
+              "title" : "Références documentaires",
               "generation" : "markdown"
             }
           ]
@@ -1004,36 +888,34 @@ Certaines ressources sémantiques de ce guide sont protégées par des droits de
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "autres_ressources.html"
+              "valueUrl" : "change-log.html"
             }
           ],
-          "nameUrl" : "autres_ressources.html",
-          "title" : "Autres Ressources",
-          "generation" : "markdown",
-          "page" : [
+          "nameUrl" : "change-log.html",
+          "title" : "Historique des versions",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
             {
-              "extension" : [
-                {
-                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "securite.html"
-                }
-              ],
-              "nameUrl" : "securite.html",
-              "title" : "Sécurité",
-              "generation" : "markdown"
-            },
-            {
-              "extension" : [
-                {
-                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "downloads.html"
-                }
-              ],
-              "nameUrl" : "downloads.html",
-              "title" : "Téléchargements et usages",
-              "generation" : "markdown"
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "tests.html"
             }
-          ]
+          ],
+          "nameUrl" : "tests.html",
+          "title" : "Test",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "downloads.html"
+            }
+          ],
+          "nameUrl" : "downloads.html",
+          "title" : "Téléchargements",
+          "generation" : "markdown"
         }
       ]
     },
