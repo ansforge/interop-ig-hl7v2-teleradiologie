@@ -1,0 +1,19 @@
+{
+  "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
+  "name" : "CISIS_TLR_HL7_V2",
+  "title" : "Volet Téléradiologie",
+  "description" : "",
+  "status" : "draft",
+  "package-id" : "ans.hl7v2.fr.teleradiologie",
+  "ig-ver" : "0.1.0",
+  "date" : "Thu, 18 Dec, 2025 16:10:37 +0000",
+  "dateISO8601" : "2025-12-18T16:10:37+00:00",
+  "errs" : 8,
+  "warnings" : 6,
+  "hints" : 17,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 0,
+  "version" : "4.0.1",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 1098825728
+}
