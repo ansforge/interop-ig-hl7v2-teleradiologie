@@ -22,29 +22,32 @@ parameters: #Parameters list - https://build.fhir.org/ig/FHIR/fhir-tools-ig/Code
 pages:
     index.md:
         title: Accueil
+    specifications_fonctionnelles.md:
+        title: "Volume 1 : Etude fonctionnelle"
+    norme_standard.md:
+        title: Normes et Standards
     specifications_techniques.md:
-        construction_des_flux.md:
-        st_flux1.md:
-            title: Flux 01
-        st_flux2.md:
-            title: Flux 02
-    autres_ressources.md:
-        title: Autres Ressources
-        securite.md:
-            title: Sécurité
-        downloads.md:
-            title: Téléchargements et usages
-
+        title: "Volume 2 : Détail des transactions"
+    annexes.md:
+        title: Annexes
+        exemples.md:
+            title: Exemples de messages
+        doc-ref.md:
+            title: Références documentaires
+    change-log.md:
+        title: Historique des versions
+    tests.md:
+        title: Test
+    downloads.md:
+        title: Téléchargements
 menu:
     Accueil: index.html
-    Description des flux:
-        Construction des flux: construction_des_flux.html
-        Flux 01: st_flux1.html
-        Flux 02: st_flux2.html
-    Ressources de conformité: artifacts.html
-    Autres ressources:
-        Sécurité: securite.html
-        Téléchargements et usage: downloads.html
-        "Spécifications FHIR ": new-tab {{site.data.fhir.path}}index.html
-        "Site de l'ANS ": new-tab https://esante.gouv.fr/
-    Documentation: new-tab https://interop.esante.gouv.fr/ig/documentation/
+    Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html
+    Normes et Standards: norme_standard.html
+    Volume 2 – Détail des Transactions: specifications_techniques.html
+    Volume 3 - Annexes:
+        Exemples de messages: exemples.html
+        Références documentaires: doc-ref.html
+    Test: tests.html
+    Historique des versions: change-log.html
+    Téléchargements: downloads.html
