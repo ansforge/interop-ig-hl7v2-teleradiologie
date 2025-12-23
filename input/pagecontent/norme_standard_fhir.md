@@ -70,12 +70,11 @@ pour cette ressource.
 * Ressource [MedicationAdministration](https://hl7.org/fhir/R4/medicationadministration.html) (NM 2) : La ressource MedicationAdministration permet de représenter l'injection ou la consommation d'un médicament pour un patient par un professionnel de santé.
 
 <table>
-<caption><p>Table 18 : Concepts métier – Factorisation par
-Concepts</p></caption>
+<caption><p>Table 18 : Concepts métier – Factorisation par Concepts</p></caption>
 <colgroup>
 <col style="width: 32%" />
 <col style="width: 56%" />
-<col style="width: 10%" />
+
 </colgroup>
 <thead>
 <tr>
@@ -217,7 +216,7 @@ Les interactions qui pourront s’appliquer dans le cas du volet « Téléradiol
 * [Update](https://hl7.org/fhir/R4/http.html#update) pour le remplacement d’une ressource existante sur le serveur grâce à la méthode HTTP PUT ou PATCH.
 Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être [formatée](https://hl7.org/fhir/R4/http.html#mime-type) en XML, JSON ou RDF (Turtle).
 
-Comme évoqué précédemment, les ressources peuvent être concaténées au sein de ressource Bundle. Dans le cas d'un Bundle de type Document, le endpoint à utiliser sera '''base/Bundle'''.
+Comme évoqué précédemment, les ressources peuvent être concaténées au sein de ressource Bundle. Dans le cas d'un Bundle de type Document, le endpoint à utiliser sera `'base/Bundle'`.
 
 Les interactions FHIR implémentent le protocole RESTful, couramment utilisé dans de nombreux
 domaines. Le [Richardson REST Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) définit 4 niveaux de maturité d’une API REST (de 0
@@ -235,7 +234,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
  la transmission d’une demande d’examen d’imagerie peut être réalisée grâce à l'envoie d'une ressource, par exemple DocumentReference ou ServiceRequest via une requête POST reposant sur l'interaction "[create](https://build.fhir.org/http.html#create)".
 
- Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http 201 created accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+ Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
  Ce flux permettrait de couvrir l'ensemble des processus suivants :
  * Créer une demande d'examen d'imagerie
@@ -250,7 +249,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 L'annulation d'une demande d'imagerie peut être réalisée grâce à la suppression d'une ressource, par exemple Appointment via une requête DELETE reposant sur l'interaction "[delete]((https://build.fhir.org/http.html#delete)").
 
-Si la suppression de la ressource s'est correctement effectuée, le consommateur retourne un code http 200 OK. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+Si la suppression de la ressource s'est correctement effectuée, le consommateur retourne un code http `200 OK`. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 <div style="text-align:center;"> {%include flux2.svg%} </div>
 
  Ce flux permettrait de couvrir l'ensemble des processus suivants :
@@ -263,7 +262,7 @@ Si la suppression de la ressource s'est correctement effectuée, le consommateur
 
  la réponse à une demande d’examen d’imagerie peut être réalisée grâce à l'envoie d'une ressource, par exemple ImagingStudy ou GuidanceResponse via une requête POST reposant sur l'interaction "[create](https://build.fhir.org/http.html#create)".
 
- Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http 201 created accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+ Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
 <div style="text-align:center;"> {%include flux3.svg%} </div>
 
@@ -278,7 +277,7 @@ Si la suppression de la ressource s'est correctement effectuée, le consommateur
 
  Le complément d'information post-examen d’imagerie peut être réalisée grâce à l'envoie d'une ressource, par exemple ImagingStudy ou DocumentReference via une requête POST reposant sur l'interaction "[create](https://build.fhir.org/http.html#create)".
 
- Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http 201 created accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+ Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
 <div style="text-align:center;"> {%include flux4.svg%} </div>
 
