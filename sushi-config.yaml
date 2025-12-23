@@ -24,7 +24,7 @@ pages:
         title: Accueil
     specifications_fonctionnelles.md:
         title: "Volume 1 : Etude fonctionnelle"
-    norme_standard.md:
+    norme_standard_fhir.md:
         title: Normes et Standards
     specifications_techniques.md:
         title: "Volume 2 : Détail des transactions"
