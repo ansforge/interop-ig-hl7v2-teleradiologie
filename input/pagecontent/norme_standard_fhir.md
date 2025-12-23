@@ -24,7 +24,7 @@ Des outils sont élaborés pour implémenter et tester des systèmes basés sur 
 • [Des serveurs](https://confluence.hl7.org/display/FHIR/Public+Test+Servers) publiquement accessibles à des fins de tests, dont HAPI, une librairie de
 développement des ressources FHIR en Java.
 
-La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est également utilisée pour tester les ressources FHIR. Les outils [Gazelle FHIR Validator](https://ehealthsuisse.ihe-europe.net/gazelle-documentation/Gazelle-FHIR-Validator/user.html) et [matchbox](https://ahdis.github.io/matchbox/) sont accessibles via le [service de Validation EVS Client](https://interop.esante.gouv.fr/evs/home.seam). Ils permettent de vérifier si :
+La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est également utilisée pour tester les ressources FHIR. L'outil [matchbox](https://ahdis.github.io/matchbox/) est accessible via le [service de Validation EVS Client](https://interop.esante.gouv.fr/evs/home.seam). Il permet de vérifier si :
 o La structure XML ou JSON des ressources est valide ;
 o Les ressources sont conformes aux exigences FHIR ;
 o Les ressources sont conformes aux exigences des profils
@@ -288,6 +288,8 @@ Si la suppression de la ressource s'est correctement effectuée, le consommateur
 * Recevoir un complément d'information post-examen
 
 #### Synthèse
+
+FHIR est un standard moderne, largement adopté dans le domaine de la santé, qui permet d’échanger des données de santé de manière structurée et interopérable.
 L'analyse des ressources FHIR pouvant être exploitées dans le contexte du volet "Téléradiologie" montre que ce standard permet de couvrir tous les différents concepts métiers identifiés. La notion d'acquittement n'est pas clairement développé en FHIR.
 
-Pour le transport, FHIR permet de prendre en compte les différents processus.
+Pour le transport, FHIR permet de prendre en compte les différents processus.  Cependant, il est important de noter que chaque acteur doit être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur ce qui impose la configuration de serveurs FHIR pour chaque acteur.
