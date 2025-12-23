@@ -24,6 +24,8 @@ Un tableau comparatif est proposé en section 5 afin de faciliter la lecture et 
 
 Cette étude s'appuie sur les recommandations et principes du Cadre d'interopérabilité des systèmes d'information de santé (CI-SIS), qui référence les normes et standards internationaux applicables au développement des volets métiers, et constitue le référentiel de doctrine pour l'interopérabilité du système de santé.
 
+<br>
+
 ### Présentation synthétique du volet Téléradiologie
 
 Cette étude s'inscrit dans le cadre des besoins d'interopérabilité associés au volet « Téléradiologie ». Ce volet a pour objectif de décrire les échanges nécessaires à la prise en charge d'un patient lorsque l'interprétation radiologique est réalisée à distance, entre une structure d'imagerie (lieu de réalisation de l'acte) et une plateforme de téléradiologie (lieu d'interprétation).
@@ -48,6 +50,8 @@ Les concepts métiers à véhiculer dans ces flux sont décrits en étape 4 et 5
 - Données techniques et informations post-acte : paramètres de réalisation, incidents, observations du manipulateur.
 
 Le choix final des normes ou standards devra permettre de couvrir l'intégralité des données manipulées dans le cadre de la téléradiologie, ainsi que les scénarios d'échanges entre la structure d'imagerie et le service d'interprétation distant.
+
+<br>
 
 ### Normes et Standards
 
@@ -82,6 +86,8 @@ Dans le cadre du volet Téléradiologie, le standard DICOM joue un rôle essenti
 
 Le standard DICOM est un composant fondamental des systèmes d'imagerie médicale et demeure indispensable pour la gestion, l'archivage et la consultation des images médicales.  
 Néanmoins, il n'est pas adapté pour répondre aux flux fonctionnels du volet Téléradiologie tels que définis dans les spécifications, lesquels relèvent principalement d'échanges transactionnels, organisationnels et décisionnels entre systèmes d'information.
+
+<br>
 
 #### Standard CDA
 
@@ -134,20 +140,13 @@ Le standard CDA est particulièrement adapté à la structuration et à l'échan
 
 Bien que techniquement envisageable, l'utilisation de CDA pour ces flux introduirait une complexité inutile et serait redondante avec la structuration déjà assurée en fin de processus. De plus, les orientations actuelles en matière d'interopérabilité privilégient le recours à FHIR pour les nouveaux besoins d'échange.
 
-## Standard FHIR
+<br>
 
-### Présentation
+{% include norme_standard_fhir.md %}
 
-### Maturité et adoption
-
-### Outillage
-
-### HL7v2 adapté au cas d'usage Téléradiologie
-
-### Synthèse
+<br>
 
 #### Standard HL7 version 2 (HL7 v2)
-
 ##### Présentation
 
 [HL7 version 2 (HL7 v2)](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) est un standard de messagerie développé par l'organisation Health Level Seven International, destiné à l'échange d'informations entre systèmes d'information de santé. Il repose sur l'échange de messages structurés, composés de segments, de champs et de sous-composants, organisés selon des déclencheurs événementiels (triggers). Le standard définit la structure logique des messages ainsi que les règles de codage associées, sans imposer de modèle d'information unique. Cette approche confère à HL7 v2 une grande souplesse d'implémentation et explique en partie son adoption massive dans l'écosystème des systèmes d'information de santé.
@@ -221,7 +220,7 @@ Dans le cadre du flux de transmission de la demande d'examen d'imagerie, les con
 | **ModaliteImagerie** | ORM^O01 | OBX | OBX-2 = CE / TX, OBX-5 |
 | **Antecedents** | ORM^O01 | OBR | OBR-13 |
 
-Tableau 1 : couverture des concepts métier du flux 1 par le standard HL7v2
+<p style="text-align:center;">Table 2 : Couverture des concepts métier du flux 1 par le standard HL7v2</p>
 
 ###### Flux 2 - Annulation de la demande d'examen d'imagerie
 
@@ -238,7 +237,7 @@ Le flux d'annulation de la demande d'examen d'imagerie vise à notifier la plate
 | **NatureDemande** | ORM^O01 | ORC | ORC-1 |
 | **MotifAnnulation** | ORM^O01 | ORC / NTE | ORC-16, NTE-3 |
 
-Tableau 2 : couverture des concepts métier du flux 2 par le standard HL7v2
+<p style="text-align:center;">Table 3 : couverture des concepts métier du flux 2 par le standard HL7v2</p>
 
 ###### Flux 3 - Réponse à la demande d'examen d'imagerie
 
@@ -256,7 +255,7 @@ Le flux de réponse à la demande d'examen d'imagerie correspond à la décision
 | **MotifRefus** | ORM^O01 / ORU^R01 | ORC / NTE | ORC-16, NTE-3 |
 | **ProtocoleImagerie** | ORM^O01 / ORU^R01 | OBX | OBX-5 |
 
-Tableau 3 : couverture des concepts métier du flux 3 par le standard HL7v2
+<p style="text-align:center;">Table 4 : couverture des concepts métier du flux 3 par le standard HL7v2</p>
 
 ###### Flux 4 - Transmission d'un complément d'information post-acte d'imagerie
 
@@ -280,13 +279,15 @@ Le flux de transmission d'un complément d'information post-acte d'imagerie inte
 | **ProduitsAdministres** | ORU^R01 | OBX | OBX-2 = CE / TX, OBX-5 |
 | **codeEvenement (LOINC / CCAM)** | ORU^R01 | OBX | OBX-3 |
 
-Tableau 4 : couverture des concepts métier du flux 4 par le standard HL7v2
+<p style="text-align:center;">Table 5 : couverture des concepts métier du flux 4 par le standard HL7v2</p>
 
 ##### Synthèse
 
 L'analyse des différents flux du volet Téléradiologie met en évidence la capacité du standard HL7 v2 à couvrir, de manière cohérente et opérationnelle, les échanges nécessaires à la mise en œuvre des flux identifiés dans les spécifications fonctionnelles. Ce standard bénéficie d'un haut niveau de maturité, d'un large outillage industriel et d'une interopérabilité éprouvée, en particulier dans le domaine de l'imagerie médicale. La capacité d'HL7 v2 à gérer nativement les statuts d'ordre et à fournir des mécanismes d'accusés de réception constitue à ce titre un élément structurant pour garantir la cohérence, la traçabilité et la fiabilité des échanges entre systèmes distants. L'utilisation conjointe de HL7 v2 et du protocole MLLP permet ainsi de répondre efficacement aux exigences de robustesse et de synchronisation attendues pour ce type de flux transactionnels. Par ailleurs, l'analyse montre que les profils IHE, en particulier IHE Scheduled Workflow (SWF.b) et IHE PAM-FR, apportent un cadre de référence pertinent pour l'usage d'HL7 v2 dans le domaine de l'imagerie. Les briques proposées par ces profils peuvent être mobilisées de manière ciblée, notamment pour la gestion du cycle de vie des demandes et pour la prise en compte des exigences nationales relatives à l'identité patient et à l'INS.
 
 Enfin, si HL7 v2 montre certaines limites en matière de structuration fine des contenus cliniques complexes, celles-ci peuvent être compensées par l'adossement à des standards complémentaires, tels que les documents CDA pour la production et la diffusion du compte-rendu d'imagerie, ou les standards d'imagerie médicale pour l'accès aux images. Dans cette perspective, HL7 v2 s'impose comme un standard socle pertinent pour l'orchestration des flux de téléradiologie, au sein d'une architecture d'interopérabilité plus large et cohérente.
+
+<br>
 
 ### Synthèse
 
@@ -324,7 +325,7 @@ Enfin, si HL7 v2 montre certaines limites en matière de structuration fine des 
 | codeEvenement |     | N/A | ✔   | ✔   |
 | roleProfessionnel |     | N/A | ✔   | ✔   |
 
-Tableau 5 : Couverture des conepts métier par les différents normes et standards étudiés
+<p style="text-align:center;">Table 6 : Couverture des conepts métier par les différents normes et standards étudiés</p>
 
 #### Synthèse comparative des normes et standards étudiés
 
@@ -346,9 +347,11 @@ Cette section présente une synthèse comparative des normes et standards analys
 | Neutralité<br><br>_les spécifications ne limitent pas la concurrence et l'innovation; les spécifications sont basées sur des développements scientifiques et technologiques de pointe._ | ✔   | ✔   | ✔   | ✔   |
 | Qualité<br><br>_la qualité est suffisante pour permettre le développement de produits et de services interopérables concurrents._ | ✔   | ✔   | ✔   | ✔   |
 | Accessibilité<br><br>_Les spécifications sont disponibles au public à des conditions raisonnables (y compris pour un prix raisonnable ou gratuitement)._ | ✔   | ✔   | ✔   | ✔   |
-| Couverture métier |     | **N/A** | ✔   | ✔   |
+| Couverture métier |     | N/A | ✔   | ✔   |
 
-Tableau 6 : Synthèse comparative des normes et standards étudiés
+<p style="text-align:center;">Table 7 : Synthèse comparative des normes et standards étudiés</p>
+
+<br>
 
 ### Analyse et conclusion
 
@@ -365,6 +368,8 @@ Le standard DICOM est indispensable pour la gestion et la mise à disposition de
 Le standard HL7 CDA est adapté à la production et à l'échange de documents cliniques persistants, en particulier le compte-rendu d'imagerie, qui constitue le livrable clinique final du workflow. En dehors du flux de demande d'examen déjà couvert par un volet CI-SIS dédié, l'utilisation de CDA pour les échanges intermédiaires n'apporte pas de valeur ajoutée et introduit une complexité non souhaitée.
 
 ##### FHIR
+
+Le standard HL7 FHIR permet de modéliser finement les concepts métiers associés aux cas d’usage du volet Téléradiologie et de supporter des échanges orientés ressources via des API REST. Il offre des capacités étendues en matière de structuration, d’évolutivité et d’interopérabilité sémantique.
 
 ##### HL7v2
 
