@@ -1,50 +1,50 @@
 {
-  "date" : "Tue, 23 Dec, 2025 09:50:18 +0000",
+  "date" : "Tue, 23 Dec, 2025 10:45:08 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
       "name" : "/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json",
-      "size" : 2811,
+      "size" : 2816,
       "processes" : [
         {
           "activity" : "load",
-          "start" : 26,
-          "length" : 34
+          "start" : 27,
+          "length" : 48
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 38,
-          "length" : 16
+          "start" : 28,
+          "length" : 18
         },
         {
           "activity" : "generateNarratives",
-          "start" : 38,
-          "length" : 81
+          "start" : 28,
+          "length" : 83
         },
         {
           "activity" : "validate",
-          "start" : 38,
-          "length" : 6728
+          "start" : 28,
+          "length" : 8970
         },
         {
           "activity" : "generate1",
-          "start" : 45,
-          "length" : 97
+          "start" : 37,
+          "length" : 79
         },
         {
           "activity" : "generate2",
-          "start" : 48,
-          "length" : 52
+          "start" : 41,
+          "length" : 62
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 52,
+          "start" : 46,
           "length" : 2
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 54,
-          "length" : 2
+          "start" : 48,
+          "length" : 1
         }
       ]
     },
@@ -54,7 +54,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 48,
+          "start" : 41,
           "length" : 1
         }
       ]
@@ -77,7 +77,7 @@
     },
     {
       "name" : "/input/pagecontent/tests.md",
-      "size" : 1184
+      "size" : 1123
     },
     {
       "name" : "/input/pagecontent/norme_standard.md",
@@ -85,7 +85,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 48,
+          "start" : 41,
           "length" : 3
         }
       ]
@@ -100,11 +100,29 @@
     },
     {
       "name" : "/input/pagecontent/securite.md",
-      "size" : 900
+      "size" : 900,
+      "processes" : [
+        {
+          "activity" : "scan",
+          "start" : 28,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/construction_des_flux.md",
       "size" : 0
+    },
+    {
+      "name" : "/input/pagecontent/norme_standard_fhir.md",
+      "size" : 18446,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 41,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/annexes.md",
@@ -112,14 +130,7 @@
     },
     {
       "name" : "/input/pagecontent/exemples.md",
-      "size" : 119,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 48,
-          "length" : 1
-        }
-      ]
+      "size" : 119
     },
     {
       "name" : "/input/pagecontent/downloads.md",
@@ -127,7 +138,14 @@
     },
     {
       "name" : "/input/pagecontent/change-log.md",
-      "size" : 17
+      "size" : 17,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 41,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/index.md",
@@ -159,7 +177,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 48,
+          "start" : 41,
           "length" : 1
         }
       ]
