@@ -126,6 +126,10 @@ pour cette ressource.
 <td>Condition</td>
 </tr>
 <tr>
+<td>Antecedents</td>
+<td>Condition</td>
+</tr>
+<tr>
 <td>MotifAnnulation</td>
 <td>Appointment</td>
 </tr>
