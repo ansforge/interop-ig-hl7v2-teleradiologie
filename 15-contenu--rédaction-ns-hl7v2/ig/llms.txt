@@ -5,12 +5,12 @@
 * [Accueil](index.md)
 * [Références documentaires](doc-ref.md)
 * [Historique des versions](change-log.md)
-* [Normes et Standards](norme_standard_fhir.md)
 * [Artifacts Summary](artifacts.md)
 * [Volume 2 : Détail des transactions](specifications_techniques.md)
 * [Annexes](annexes.md)
 * [Test](tests.md)
 * [Volume 1 : Etude fonctionnelle](specifications_fonctionnelles.md)
+* [Normes et Standards](norme_standard.md)
 * [Exemples de messages](exemples.md)
 * [Téléchargements](downloads.md)
 
