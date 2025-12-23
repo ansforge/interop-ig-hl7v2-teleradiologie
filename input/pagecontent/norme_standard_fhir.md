@@ -70,11 +70,9 @@ pour cette ressource.
 * Ressource [MedicationAdministration](https://hl7.org/fhir/R4/medicationadministration.html) (NM 2) : La ressource MedicationAdministration permet de représenter l'injection ou la consommation d'un médicament pour un patient par un professionnel de santé.
 
 <table>
-<caption><p>Table 18 : Concepts métier – Factorisation par Concepts</p></caption>
 <colgroup>
 <col style="width: 32%" />
 <col style="width: 56%" />
-
 </colgroup>
 <thead>
 <tr>
@@ -197,7 +195,7 @@ pour cette ressource.
 </tr>
 </tbody>
 </table>
-
+<p style="text-align:center;">Table 1 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
 
 #### Transport
 
@@ -230,27 +228,32 @@ Enfin, de nombreux évènements de tests, tels que les Connectathons, et Project
 Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes
 d’architecture, chaque acteur devra par conséquent être à la fois client et serveur.
 Chaque acteur devra également travailler la gestion des authentifications, des autorisations, et autres besoins de sécurité fondamentaux ; ces aspects sortent du périmètre de la présente étude.
+
 ###### Transmettre une demande d'examen d'imagerie
 
  la transmission d’une demande d’examen d’imagerie peut être réalisée grâce à l'envoie d'une ressource, par exemple DocumentReference ou ServiceRequest via une requête POST reposant sur l'interaction "[create](https://build.fhir.org/http.html#create)".
 
  Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
+ <div style="text-align:center;"> {%include flux1.svg%} </div>
+
+<p style="text-align:center;">Figure 1 - Diagramme d'échange FHIR pour le flux 1 - Transmission d'une demande d'examen d'imagerie</p>
+
  Ce flux permettrait de couvrir l'ensemble des processus suivants :
- * Créer une demande d'examen d'imagerie
- * Transmettre la demande d'examen d'imagerie
- * Recevoir la demande d'imagerie
 
- 
-
-<div style="text-align:center;"> {%include flux1.svg%} </div>
+* Créer une demande d'examen d'imagerie
+* Transmettre la demande d'examen d'imagerie
+* Recevoir la demande d'imagerie
 
 ###### Annulation d'une demande d'imagerie
 
 L'annulation d'une demande d'imagerie peut être réalisée grâce à la suppression d'une ressource, par exemple Appointment via une requête DELETE reposant sur l'interaction "[delete]((https://build.fhir.org/http.html#delete)").
 
 Si la suppression de la ressource s'est correctement effectuée, le consommateur retourne un code http `200 OK`. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+
 <div style="text-align:center;"> {%include flux2.svg%} </div>
+
+<p style="text-align:center;">Figure 2 - Diagramme d'échange FHIR pour le flux 2 - Annulation d'une demande d'examen d'imagerie</p>
 
  Ce flux permettrait de couvrir l'ensemble des processus suivants :
 
@@ -266,6 +269,8 @@ Si la suppression de la ressource s'est correctement effectuée, le consommateur
 
 <div style="text-align:center;"> {%include flux3.svg%} </div>
 
+<p style="text-align:center;">Figure 3 - Diagramme d'échange FHIR pour le flux 3 - Réponse à une demande d'examen d'imagerie</p>
+
  Ce flux permettrait de couvrir l'ensemble des processus suivants :
 
 * Etablir le protocole d'imagerie
@@ -280,6 +285,8 @@ Si la suppression de la ressource s'est correctement effectuée, le consommateur
  Si la création de la ressource s'est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
 <div style="text-align:center;"> {%include flux4.svg%} </div>
+
+<p style="text-align:center;">Figure 4 - Diagramme d'échange FHIR pour le flux 4 - Transmission d'un complément d'information post-examen</p>
 
  Ce flux permettrait de couvrir l'ensemble des processus suivants :
 
