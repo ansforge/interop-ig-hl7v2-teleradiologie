@@ -1,5 +1,5 @@
 Source File	Size	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo	checkR4R4B	generateNarratives	validate	loadLists	checkConformanceResources	checkConformanceResources2	checkConformanceResources3	generateLogicalMaps	validateExpressions	scanForUsageStats	checkURLsUnique	processProvenanceDetails	generate1	generate2	generateLogicals	makeDependencies	generateExampleZip	generateValidationPack	scanProfilesForR5	scanExamplesForR5
-/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json	2816	0	0	0	0	0	0	15	76	0	0	0	0	0	0	0	1	0	0	78	64	0	0	0	3	0	2
+/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json	2816	0	0	0	0	0	0	17	89	0	0	0	0	0	0	0	1	1	0	76	64	0	0	0	2	0	2
 /fsh-generated/includes/menu.xml	1807	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
 /input/data/features.yml	172	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/st_flux1.md	119	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
@@ -10,7 +10,7 @@ Source File	Size	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo
 /input/pagecontent/specifications_fonctionnelles.md	0	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/securite.md	900	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/construction_des_flux.md	0	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
-/input/pagecontent/norme_standard_fhir.md	17874	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+/input/pagecontent/norme_standard_fhir.md	18446	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
 /input/pagecontent/annexes.md	80	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/exemples.md	119	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 /input/pagecontent/downloads.md	1727	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0

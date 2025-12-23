@@ -91,6 +91,8 @@ Dans le cadre du volet “téléradiologie” les ressources suivantes pourraien
 | codeEvenement | ImagingStudy |
 | roleProfessionnel | PractitionerRole |
 
+Table 1 : Mise en correspondance des concepts métier avec les ressources FHIR
+
 #### Transport
 
 Le standard FHIR utilise [l’API REST](https://build.fhir.org/http.html) pour l’échange et l’interrogation des ressources via différentes [interactions](https://build.fhir.org/exchange-module.html)
@@ -123,6 +125,8 @@ la transmission d’une demande d’examen d’imagerie peut être réalisée gr
 
 Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
+Figure 1 - Diagramme d'échange FHIR pour le flux 1 - Transmission d'une demande d'examen d'imagerie
+
 Ce flux permettrait de couvrir l’ensemble des processus suivants :
 
 * Créer une demande d’examen d’imagerie
@@ -134,6 +138,8 @@ Ce flux permettrait de couvrir l’ensemble des processus suivants :
 L’annulation d’une demande d’imagerie peut être réalisée grâce à la suppression d’une ressource, par exemple Appointment via une requête DELETE reposant sur l’interaction “[delete]((https://build.fhir.org/http.md#delete)").
 
 Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http `200 OK`. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+
+Figure 2 - Diagramme d'échange FHIR pour le flux 2 - Annulation d'une demande d'examen d'imagerie
 
 Ce flux permettrait de couvrir l’ensemble des processus suivants :
 
@@ -147,6 +153,8 @@ la réponse à une demande d’examen d’imagerie peut être réalisée grâce 
 
 Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
+Figure 3 - Diagramme d'échange FHIR pour le flux 3 - Réponse à une demande d'examen d'imagerie
+
 Ce flux permettrait de couvrir l’ensemble des processus suivants :
 
 * Etablir le protocole d’imagerie
@@ -159,6 +167,8 @@ Ce flux permettrait de couvrir l’ensemble des processus suivants :
 Le complément d’information post-examen d’imagerie peut être réalisée grâce à l’envoie d’une ressource, par exemple ImagingStudy ou DocumentReference via une requête POST reposant sur l’interaction “[create](https://build.fhir.org/http.html#create)”.
 
 Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http `201 created` accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+
+Figure 4 - Diagramme d'échange FHIR pour le flux 4 - Transmission d'un complément d'information post-examen
 
 Ce flux permettrait de couvrir l’ensemble des processus suivants :
 

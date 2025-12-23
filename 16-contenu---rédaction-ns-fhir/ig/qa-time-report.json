@@ -1,5 +1,5 @@
 {
-  "date" : "Tue, 23 Dec, 2025 08:59:59 +0000",
+  "date" : "Tue, 23 Dec, 2025 09:43:01 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,47 +8,57 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 28,
-          "length" : 36
+          "start" : 26,
+          "length" : 30
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 29,
-          "length" : 15
+          "start" : 26,
+          "length" : 17
         },
         {
           "activity" : "generateNarratives",
-          "start" : 29,
-          "length" : 76
+          "start" : 26,
+          "length" : 89
         },
         {
           "activity" : "validate",
-          "start" : 29,
-          "length" : 4342
+          "start" : 26,
+          "length" : 1
+        },
+        {
+          "activity" : "validate",
+          "start" : 26,
+          "length" : 4879
         },
         {
           "activity" : "scanForUsageStats",
-          "start" : 33,
+          "start" : 31,
+          "length" : 1
+        },
+        {
+          "activity" : "checkURLsUnique",
+          "start" : 31,
           "length" : 1
         },
         {
           "activity" : "generate1",
-          "start" : 33,
-          "length" : 78
+          "start" : 31,
+          "length" : 76
         },
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 34,
           "length" : 64
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 40,
-          "length" : 3
+          "start" : 39,
+          "length" : 2
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 42,
+          "start" : 44,
           "length" : 2
         }
       ]
@@ -59,7 +69,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 34,
           "length" : 1
         }
       ]
@@ -90,7 +100,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 34,
           "length" : 1
         }
       ]
@@ -109,12 +119,12 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard_fhir.md",
-      "size" : 17874,
+      "size" : 18446,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
-          "length" : 2
+          "start" : 34,
+          "length" : 1
         }
       ]
     },
@@ -136,7 +146,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 34,
           "length" : 1
         }
       ]
@@ -167,7 +177,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 34,
           "length" : 1
         }
       ]
