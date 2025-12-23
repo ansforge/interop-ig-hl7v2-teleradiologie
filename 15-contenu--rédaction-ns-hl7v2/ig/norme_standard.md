@@ -210,6 +210,7 @@ Dans le cadre du volet “téléradiologie” les ressources suivantes pourraien
 | IdentifiantRDV | Appointment |
 | DateHeurePriseCharge | Appointment |
 | JustificationDemande | Condition |
+| Antecedents | Condition |
 | MotifAnnulation | Appointment |
 | MotifRefus | AppointmentResponse |
 | DocumentDemandeExamen | DocumentReference |
