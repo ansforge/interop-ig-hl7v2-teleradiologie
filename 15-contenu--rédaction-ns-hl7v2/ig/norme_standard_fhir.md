@@ -5,15 +5,15 @@
 
 ## Normes et Standards
 
-### Standard FHIR
+#### Standard FHIR
 
-#### Présentation
+##### Présentation
 
 [FHIR](https://www.hl7.org/fhir/) (Fast Healthcare Interoperability Resources) est un standard élaboré par HL7 qui s’appuie sur un ensemble de ressources, des blocs de données modulaires, qui correspondent à des objets métiers, médicaux ou administratifs. Ces objets sont caractérisés par des éléments de données, des contraintes et des relations avec d’autres objets métiers.
 
 Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées dans des guides d’implémentations (IG)
 
-#### Maturité et adoption
+##### Maturité et adoption
 
 FHIR a mis en œuvre un modèle de maturité de ressources afin de fournir aux développeurs une idée de la maturité d’une ressource avant son utilisation et son implémentation. D’une manière générale, le standard FHIR dans sa version R4 offre encore peu de ressources à l’état normatif donc pouvant être considérées comme stables.
 
@@ -25,7 +25,7 @@ Plusieurs volets publiés dans le domaine du médico-social font appel à ce sta
 
 Il convient de souligner que, bien que FHIR propose actuellement une version R5, les ressources mentionnées dans la suite du document seront basées sur la version R4, afin de se conformer aux guides d’implémentation de l’ANS et de maintenir une interopérabilité avec les différents systèmes mis en place sur le territoire français.
 
-#### Outillage
+##### Outillage
 
 Des outils sont élaborés pour implémenter et tester des systèmes basés sur le standard FHIR, dont :
 
@@ -39,7 +39,7 @@ La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est éga
 * Les ressources sont conformes aux exigences FHIR ;
 * Les ressources sont conformes aux exigences des profils
 
-#### Ressources FHIR adaptées au cas d’usage
+##### Ressources FHIR adaptées au cas d’usage
 
 Le standard FHIR offre la possibilité de construire un document. Chaque document FHIR correspond à une ressource Bundle (NM N) de type « document » rassemblant des ressources indépendantes dans des entrées. La première de ces entrées est obligatoirement constituée d’une ressource Composition qui organise le contenu du document à l’aide de sections. Chaque section peut contenir des informations descriptives (titre, auteur, texte…) et peut référencer une autre ressource contenue dans une entrée du bundle.
 
@@ -93,7 +93,7 @@ Dans le cadre du volet “téléradiologie” les ressources suivantes pourraien
 
 Table 1 : Mise en correspondance des concepts métier avec les ressources FHIR
 
-#### Transport
+##### Transport
 
 Le standard FHIR utilise [l’API REST](https://build.fhir.org/http.html) pour l’échange et l’interrogation des ressources via différentes [interactions](https://build.fhir.org/exchange-module.html)
 
@@ -115,7 +115,7 @@ Les interactions FHIR implémentent le protocole RESTful, couramment utilisé da
 
 Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome. Enfin, de nombreux évènements de tests, tels que les Connectathons, et Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
 
-##### Adaptation au cas d’usage
+###### Adaptation au cas d’usage
 
 Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur. Chaque acteur devra également travailler la gestion des authentifications, des autorisations, et autres besoins de sécurité fondamentaux ; ces aspects sortent du périmètre de la présente étude.
 
@@ -177,7 +177,7 @@ Ce flux permettrait de couvrir l’ensemble des processus suivants :
 * Transmettre un complément d’information post-examen
 * Recevoir un complément d’information post-examen
 
-#### Synthèse
+##### Synthèse
 
 FHIR est un standard moderne, largement adopté dans le domaine de la santé, permettant l’échange de données de santé de manière structurée et interopérable.
 
