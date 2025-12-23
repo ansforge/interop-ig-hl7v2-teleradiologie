@@ -1,0 +1,167 @@
+# Normes et Standards - Volet Téléradiologie v0.1.0
+
+* [**Table of Contents**](toc.md)
+* **Normes et Standards**
+
+## Normes et Standards
+
+### Standard FHIR
+
+#### Présentation
+
+[FHIR](https://www.hl7.org/fhir/) (Fast Healthcare Interoperability Resources) est un standard élaboré par HL7 qui s’appuie sur un ensemble de ressources, des blocs de données modulaires, qui correspondent à des objets métiers, médicaux ou administratifs. Ces objets sont caractérisés par des éléments de données, des contraintes et des relations avec d’autres objets métiers.
+
+Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées sous forme de guides d’implémentations (IG)
+
+#### Maturité et adoption
+
+FHIR a mis en œuvre un modèle de maturité de ressources afin de fournir aux développeurs une idée de la maturité d’une ressource avant son utilisation et son implémentation. D’une manière générale, le standard FHIR dans sa version R4 offre encore peu de ressources à l’état normatif donc pouvant être considérées comme stables.
+
+Dans sa version R5, seules 2 ressources sont passées en statut normatif.
+
+L’ANS exploite les ressources de ce standard dans 12 des 16 volets de la couche Service disponibles sur [l’espace de Publication](https://esante.gouv.fr/offres-services/ci-sis/espace-publication) du CI-SIS.
+
+Plusieurs volets publiés dans le domaine du médico-social font appel à ce standard en limitant l’utilisation à quelques ressources. La majorité des données étant portée par un document CDA ([SI-MDPH – SI-SdO (Suivi des orientations)](https://interop.esante.gouv.fr/ig/cda/tddui/NormesStandards_TransfertDonneesDUI_V1.0.pdf#%5B%7B%22num%22%3A23%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C81%2C551%2C0%5D), [SI-SdO – SI-ESMS (Suivi des orientations)](https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph))
+
+Il convient de souligner que, bien que FHIR propose actuellement une version R5, les ressources mentionnées dans la suite du document seront basées sur la version R4, afin de se conformer aux guides d’implémentation de l’ANS et de maintenir une interopérabilité avec les différents systèmes mis en place sur le territoire français.
+
+#### Outillage
+
+Des outils sont élaborés pour implémenter et tester des systèmes basés sur le standard FHIR, dont : • L’extension pour Visual Studio Code [FHIR tools](https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools); • Un ensemble [d’outils de validation](http://hl7.org/fhir/R4/validation.html) des ressources FHIR ; • [Des serveurs](https://confluence.hl7.org/display/FHIR/Public+Test+Servers) publiquement accessibles à des fins de tests, dont HAPI, une librairie de développement des ressources FHIR en Java.
+
+La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est également utilisée pour tester les ressources FHIR. L’outil [matchbox](https://ahdis.github.io/matchbox/) est accessible via le [service de Validation EVS Client](https://interop.esante.gouv.fr/evs/home.seam). Il permet de vérifier si : o La structure XML ou JSON des ressources est valide ; o Les ressources sont conformes aux exigences FHIR ; o Les ressources sont conformes aux exigences des profils
+
+#### Ressources FHIR adaptées au cas d’usage
+
+Le standard FHIR offre la possibilité de construire un document. Chaque document FHIR correspond à une ressource Bundle (NM N) de type « document » rassemblant des ressources indépendantes dans des entrées. La première de ces entrées est constituée d’une ressource Composition qui organise le contenu du document à l’aide de sections. Chaque section peut contenir des informations descriptives (titre, auteur, texte…) et peut référencer une autre ressource contenue dans une entrée du bundle.
+
+Dans le cadre du volet “téléradiologie” les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations :
+
+* Ressource [Patient](https://hl7.org/fhir/R4/patient.html) (NM N) : La ressource Patient permet de représenter les données concernant l’identification et les coordonnées (télécommunication et adresse) de l’usager ainsi que ses contacts. Un profil français de cette ressource existe, nommé [FrPatient](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-patient-ins.html), pour prendre en compte des spécificités françaises, comme la gestion de l’INS par exemple.
+* Ressource [Organization](https://hl7.org/fhir/R4/organization.html) (NM 3) : La ressource Organization permet de représenter une personne morale telle que l’ESSMS. Un profil français, [FrOrganization](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-organization.html), existe également pour cette ressource.
+* Ressource [Practitioner](https://hl7.org/fhir/R4/practitioner.html) (NM 3) : La ressource Practitioner permet de représenter un professionnel de santé. Un profil français,[FRPractitioner](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner.html) existe également
+* Ressource [PractitionerRole](https://hl7.org/fhir/R4/practitionerrole.html) (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d’un professionnel de santé. Un profile français, [FRPractitionerRole](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner-role.html) existe également.
+* Ressource [ServiceRequest](https://hl7.org/fhir/R4/servicerequest.html) (NM 2) : La ressource ServiceRequest permet de représenter une demande de service, comme par exemple une demande de diagnostic, de traiteent ou d’opérations à effectuer.
+* Ressource [Appointment](https://hl7.org/fhir/R4/appointment.html) (NM 3) : La ressource Appointment permet de représenter un rendez vous ou une demande de rendez vous avec un professionnel de santé, un dispositif médical ou une unité de soin. Un profil français, [FRAppointment](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-appointment.html) existe également.
+* Ressource [AppointmentResponse](https://hl7.org/fhir/R4/appointmentresponse.html) (NM 3) : La ressource AppointmentResponse permet de représenter la réponse à une demande de rendez vous.
+* Ressource [Condition](https://hl7.org/fhir/R4/condition.html) (NM 3) : La ressource Condition permet de représenter une affection,un problème, un diagnostic rencontré par un patient.
+* Ressource [DocumentReference](https://hl7.org/fhir/R4/documentreference.html) (NM 3) : La ressource DocumentReference permet de représenter un document stocké dans différent format ou bien une référence vers ce document.
+* Ressource [ImagingStudy](https://hl7.org/fhir/R4/imagingstudy.html) (NM 3) : La ressource ImagingStudy permet de représenter le contenu d’un objet DICOM.
+* Ressource [GuidanceResponse](https://hl7.org/fhir/R4/guidanceresponse.html) (NM 2) : La ressource GuidanceResponse permet de représenter la réponse à la demande d’imagerie avec les éléments joints par le professionnel de santé effecteur.
+* Ressource [Endpoint](https://hl7.org/fhir/R4/endpoint.html) (NM 2) : La ressource Endpoint permet de représenter un endpoint accessible comme un serveur (web,fhir,dicom,..)
+* Ressource [Device](https://hl7.org/fhir/R4/device.html) (NM 2) : La ressource Device permet de représenter un équipement utilisé lors de la prise en charge du patient, que ce soit un DM ou un équipement autre.
+* Ressource [MedicationAdministration](https://hl7.org/fhir/R4/medicationadministration.html) (NM 2) : La ressource MedicationAdministration permet de représenter l’injection ou la consommation d’un médicament pour un patient par un professionnel de santé.
+
+| | |
+| :--- | :--- |
+| Patient | Patient |
+| PSResponsable | Practitioner |
+| PSEffecteur | Practitioner |
+| IdentifiantDemandeExamen | ServiceRequest |
+| StructureImagerie | Organization |
+| PlateformeTeleradiologie | Organization |
+| NatureDemande | ServiceRequest |
+| DateDemande | ServiceRequest |
+| IdentifiantRDV | Appointment |
+| DateHeurePriseCharge | Appointment |
+| JustificationDemande | Condition |
+| MotifAnnulation | Appointment |
+| MotifRefus | AppointmentResponse |
+| DocumentDemandeExamen | DocumentReference |
+| DocumentsTiers | DocumentsReference |
+| LocalisationAnatomique | BodyStructure |
+| ModaliteImagerie | ImagingStudy |
+| DecisionEffecteur | GuidanceResponse |
+| ProtocoleImagerie | ImagingStudy |
+| URLViewerDRIMBOX | Endpoint |
+| DuréeRétentionImages | ImagingStudy |
+| DateRéalisationExamen | ImagingStudy |
+| IdentificationMatériel | Device |
+| ProduitsAdministres | MedicationAdministration |
+| AccessionNumber | ImagingStudy |
+| StudyUID | ImagingStudy |
+| codeEvenement | ImagingStudy |
+| roleProfessionnel | PractitionerRole |
+
+#### Transport
+
+Le standard FHIR utilise [l’API REST](https://build.fhir.org/http.html) pour l’échange et l’intérrogation des ressources via différentes [intéractions](https://build.fhir.org/exchange-module.html)
+
+Différents niveaux [d’interactions](https://hl7.org/fhir/R4/http.html) sont possibles pour une API REST:
+
+* Instance (s’applique à une ressource en particulier) ;
+* Type (s’applique à un ensemble de ressources de même type) ;
+* Système (s’applique à l’ensemble du système).
+
+Les interactions qui pourront s’appliquer dans le cas du volet « Téléradiologie » sont les interactions au niveau instance suivantes :
+
+* [Create](https://hl7.org/fhir/R4/http.html#create) pour l’ajout d’une nouvelle ressource sur le serveur grâce à la méthode HTTP POST ;
+* [Delete](https://hl7.org/fhir/R4/http.html#delete) pour la suppression d’une ressorce sur le serveur grâce à la méthode HTTP DELETE;
+* [Update](https://hl7.org/fhir/R4/http.html#update) pour le remplacement d’une ressource existante sur le serveur grâce à la méthode HTTP PUT ou PATCH. Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être [formatée](https://hl7.org/fhir/R4/http.html#mime-type) en XML, JSON ou RDF (Turtle).
+
+Comme évoqué précédemment, les ressources peuvent être concaténées au sein de ressource Bundle. Dans le cas d’un Bundle de type Document, le endpoint à utiliser sera ‘'’base/Bundle’’’.
+
+Les interactions FHIR implémentent le protocole RESTful, couramment utilisé dans de nombreux domaines. Le [Richardson REST Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) définit 4 niveaux de maturité d’une API REST (de 0 à 3), FHIR se situe au niveau 2 mais l’utilisation d’extensions peut permettre d’atteindre le niveau 3. L’API FHIR est largement utilisée pour échanger des données de santé
+
+Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome. Enfin, de nombreux évènements de tests, tels que les Connectathons, et Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
+
+##### Adaptation au cas d’usage
+
+Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur. Chaque acteur devra également travailler la gestion des authentifications, des autorisations, et autres besoins de sécurité fondamentaux ; ces aspects sortent du périmètre de la présente étude.
+
+###### Transmettre une demande d’examen d’imagerie
+
+la transmission d’une demande d’examen d’imagerie peut être réalisée grâce à l’envoie d’une ressource, par exemple DocumentReference ou ServiceRequest via une requête POST reposant sur l’intéraction “[create](https://build.fhir.org/http.html#create)”.
+
+Si la création de la ressource s’est correctement effectuée, le consommateur retoune un code http 201 created accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+
+Ce flux permettrait de couvrir l’ensemble des processus suivants :
+
+* Créer une demande d’examen d’imagerie
+* Transmettre la demande d’examen d’imagerie
+* Recevoir la demande d’imagerie
+
+###### Annulation d’une demande d’imagerie
+
+L’annulation d’une demande d’imagerie peut être réalisée grâce à la suppression d’une ressource, par exemple Appointment via une requête DELETE reposant sur l’intéraction “[delete]((https://build.fhir.org/http.md#delete)").
+
+Si la suppression de la ressource s’est correctement effectuée, le consommateur retoune un code http 200 OK. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+
+Ce flux permettrait de couvrir l’ensemble des processus suivants :
+
+* Créer une annulation d’une demande d’examen d’imagerie
+* Transmettre l’annulation de la demande d’examen d’imagerie
+* Recevoir l’annulation de la demande d’examen d’imagerie
+
+###### Réponse à une demande d’examen d’imagerie
+
+la réponse à une demande d’examen d’imagerie peut être réalisée grâce à l’envoie d’une ressource, par exemple ImagingStudy ou GuidanceStudy via une requête POST reposant sur l’intéraction “[create](https://build.fhir.org/http.html#create)”.
+
+Si la création de la ressource s’est correctement effectuée, le consommateur retoune un code http 201 created accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+
+Ce flux permettrait de couvrir l’ensemble des processus suivants :
+
+* Etablir le protocole d’imagerie
+* Générer la réponse métier à la demande
+* Transmettre la réponse métier à la demande
+* Recevoir la réponse métier à la demande
+
+###### Transmettre un complément d’information post-examen
+
+Le complément d’information post-examen d’imagerie peut être réalisée grâce à l’envoie d’une ressource, par exemple ImagingStudy ou DocumentReference via une requête POST reposant sur l’intéraction “[create](https://build.fhir.org/http.html#create)”.
+
+Si la création de la ressource s’est correctement effectuée, le consommateur retoune un code http 201 created accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
+
+Ce flux permettrait de couvrir l’ensemble des processus suivants :
+
+* Réaliser le ou les actes d’imagerie
+* Générer un complément d’information post-examen
+* Transmettre un complément d’information post-examen
+* Recevoir un complément d’information post-examen
+
+#### Synthèse
+
+FHIR est un standard moderne, largement adopté dans le domaine de la santé, qui permet d’échanger des données de santé de manière structurée et interopérable. L’analyse des ressources FHIR pouvant être exploitées dans le contexte du volet “Téléradiologie” montre que ce standard permet de couvrir tous les différents concepts métiers identifiés. La notion d’acquittement n’est pas clairement développé en FHIR.
+
+Pour le transport, FHIR permet de prendre en compte les différents processus. Cependant, il est important de noter que chaque acteur doit être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur ce qui impose la configuration de serveurs FHIR pour chaque acteur.
+
