@@ -1,0 +1,163 @@
+{
+  "date" : "Wed, 24 Dec, 2025 10:08:18 +0000",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [
+    {
+      "name" : "/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json",
+      "size" : 2811,
+      "processes" : [
+        {
+          "activity" : "load",
+          "start" : 38,
+          "length" : 38
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 39,
+          "length" : 17
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 39,
+          "length" : 80
+        },
+        {
+          "activity" : "validate",
+          "start" : 39,
+          "length" : 9851
+        },
+        {
+          "activity" : "generate1",
+          "start" : 49,
+          "length" : 74
+        },
+        {
+          "activity" : "generate2",
+          "start" : 52,
+          "length" : 80
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 57,
+          "length" : 2
+        }
+      ]
+    },
+    {
+      "name" : "/fsh-generated/includes/menu.xml",
+      "size" : 1807,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 52,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "/input/data/features.yml",
+      "size" : 172
+    },
+    {
+      "name" : "/input/pagecontent/st_flux1.md",
+      "size" : 119
+    },
+    {
+      "name" : "/input/pagecontent/st_flux2.md",
+      "size" : 118
+    },
+    {
+      "name" : "/input/pagecontent/specifications_techniques.md",
+      "size" : 0
+    },
+    {
+      "name" : "/input/pagecontent/tests.md",
+      "size" : 1184
+    },
+    {
+      "name" : "/input/pagecontent/norme_standard.md",
+      "size" : 0,
+      "processes" : [
+        {
+          "activity" : "scan",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "/input/pagecontent/doc-ref.md",
+      "size" : 36
+    },
+    {
+      "name" : "/input/pagecontent/specifications_fonctionnelles.md",
+      "size" : 0,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 52,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "/input/pagecontent/securite.md",
+      "size" : 900
+    },
+    {
+      "name" : "/input/pagecontent/construction_des_flux.md",
+      "size" : 0
+    },
+    {
+      "name" : "/input/pagecontent/annexes.md",
+      "size" : 80
+    },
+    {
+      "name" : "/input/pagecontent/exemples.md",
+      "size" : 119
+    },
+    {
+      "name" : "/input/pagecontent/downloads.md",
+      "size" : 1727
+    },
+    {
+      "name" : "/input/pagecontent/change-log.md",
+      "size" : 17
+    },
+    {
+      "name" : "/input/pagecontent/index.md",
+      "size" : 1828,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 52,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "/template/config",
+      "size" : 0
+    },
+    {
+      "name" : "/template/config/_config.yml",
+      "size" : 31
+    },
+    {
+      "name" : "/input/images",
+      "size" : 0
+    },
+    {
+      "name" : "/input/images/anImage.png",
+      "size" : 36288
+    },
+    {
+      "name" : "/input/images/ci-sis-logo.png",
+      "size" : 61365
+    },
+    {
+      "name" : "/temp/pages/_includes/artifacts.xml",
+      "size" : 600
+    }
+  ]
+}
