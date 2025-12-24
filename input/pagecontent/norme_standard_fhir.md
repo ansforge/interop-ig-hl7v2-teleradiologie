@@ -186,7 +186,7 @@ pour cette ressource.
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>StudyUID</td>
+<td>StudyInstanceUID</td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
