@@ -1,5 +1,5 @@
 {
-  "date" : "Tue, 23 Dec, 2025 13:25:54 +0000",
+  "date" : "Wed, 24 Dec, 2025 15:10:27 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,56 +8,54 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 28,
-          "length" : 39
+          "start" : 26,
+          "length" : 28
+        },
+        {
+          "activity" : "scan",
+          "start" : 26,
+          "length" : 1
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 29,
+          "start" : 26,
           "length" : 17
         },
         {
           "activity" : "generateNarratives",
-          "start" : 29,
-          "length" : 85
+          "start" : 26,
+          "length" : 78
         },
         {
           "activity" : "validate",
-          "start" : 29,
-          "length" : 9386
+          "start" : 26,
+          "length" : 7101
         },
         {
           "activity" : "generate1",
-          "start" : 39,
-          "length" : 73
+          "start" : 34,
+          "length" : 81
         },
         {
           "activity" : "generate2",
-          "start" : 42,
-          "length" : 59
+          "start" : 37,
+          "length" : 66
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 47,
+          "start" : 42,
           "length" : 2
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 59,
-          "length" : 2
+          "start" : 44,
+          "length" : 1
         }
       ]
     },
     {
       "name" : "/fsh-generated/includes/menu.xml",
-      "size" : 1807,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 42,
-          "length" : 1
-        }
-      ]
+      "size" : 1807
     },
     {
       "name" : "/input/data/features.yml",
@@ -65,7 +63,14 @@
     },
     {
       "name" : "/input/pagecontent/st_flux1.md",
-      "size" : 119
+      "size" : 119,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 37,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/st_flux2.md",
@@ -81,11 +86,11 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard.md",
-      "size" : 41835,
+      "size" : 41959,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 42,
+          "start" : 37,
           "length" : 5
         }
       ]
@@ -108,11 +113,11 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard_fhir.md",
-      "size" : 18505,
+      "size" : 18513,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 42,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -127,7 +132,14 @@
     },
     {
       "name" : "/input/pagecontent/downloads.md",
-      "size" : 1727
+      "size" : 1727,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 37,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/change-log.md",
@@ -135,14 +147,7 @@
     },
     {
       "name" : "/input/pagecontent/index.md",
-      "size" : 1828,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 42,
-          "length" : 1
-        }
-      ]
+      "size" : 1828
     },
     {
       "name" : "/template/config",
@@ -158,29 +163,22 @@
     },
     {
       "name" : "/input/images/anImage.png",
-      "size" : 36288,
-      "processes" : [
-        {
-          "activity" : "load-configure",
-          "start" : 29,
-          "length" : 1
-        }
-      ]
+      "size" : 36288
     },
     {
       "name" : "/input/images/ci-sis-logo.png",
-      "size" : 61365
-    },
-    {
-      "name" : "/temp/pages/_includes/artifacts.xml",
-      "size" : 600,
+      "size" : 61365,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 42,
+          "start" : 37,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/temp/pages/_includes/artifacts.xml",
+      "size" : 600
     }
   ]
 }
