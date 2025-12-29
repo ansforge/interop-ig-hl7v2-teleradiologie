@@ -9,6 +9,7 @@ Generic: line 0, col 0, Error - The link 'definitions.ttl.zip' for "Définitions
 Generic: line 0, col 0, Error - The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Error - The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Error - The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link '.\spécifications_fonctionnelles.html' for "Spécifications fonctionnelles des échanges - Téléradiologie" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Error - The link '(https://build.fhir.org/http.html#delete)"' for "delete" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Warning - The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed) (INVALID)
 Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide (NOTFOUND)

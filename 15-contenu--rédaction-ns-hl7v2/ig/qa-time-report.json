@@ -1,5 +1,5 @@
 {
-  "date" : "Wed, 24 Dec, 2025 15:10:27 +0000",
+  "date" : "Mon, 29 Dec, 2025 10:57:32 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,48 +8,48 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 26,
-          "length" : 28
-        },
-        {
-          "activity" : "scan",
-          "start" : 26,
-          "length" : 1
+          "start" : 27,
+          "length" : 39
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 26,
-          "length" : 17
+          "start" : 28,
+          "length" : 16
         },
         {
           "activity" : "generateNarratives",
-          "start" : 26,
-          "length" : 78
+          "start" : 28,
+          "length" : 84
         },
         {
           "activity" : "validate",
-          "start" : 26,
-          "length" : 7101
+          "start" : 28,
+          "length" : 6909
+        },
+        {
+          "activity" : "validate",
+          "start" : 35,
+          "length" : 1
         },
         {
           "activity" : "generate1",
-          "start" : 34,
-          "length" : 81
+          "start" : 35,
+          "length" : 65
         },
         {
           "activity" : "generate2",
           "start" : 37,
-          "length" : 66
+          "length" : 63
         },
         {
           "activity" : "generateValidationPack",
           "start" : 42,
-          "length" : 2
+          "length" : 3
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 44,
-          "length" : 1
+          "start" : 45,
+          "length" : 2
         }
       ]
     },
@@ -63,7 +63,15 @@
     },
     {
       "name" : "/input/pagecontent/st_flux1.md",
-      "size" : 119,
+      "size" : 119
+    },
+    {
+      "name" : "/input/pagecontent/st_flux2.md",
+      "size" : 118
+    },
+    {
+      "name" : "/input/pagecontent/specifications_techniques.md",
+      "size" : 0,
       "processes" : [
         {
           "activity" : "generate2",
@@ -73,25 +81,17 @@
       ]
     },
     {
-      "name" : "/input/pagecontent/st_flux2.md",
-      "size" : 118
-    },
-    {
-      "name" : "/input/pagecontent/specifications_techniques.md",
-      "size" : 0
-    },
-    {
       "name" : "/input/pagecontent/tests.md",
       "size" : 1123
     },
     {
       "name" : "/input/pagecontent/norme_standard.md",
-      "size" : 41959,
+      "size" : 43786,
       "processes" : [
         {
           "activity" : "generate2",
           "start" : 37,
-          "length" : 5
+          "length" : 4
         }
       ]
     },
@@ -105,15 +105,29 @@
     },
     {
       "name" : "/input/pagecontent/securite.md",
-      "size" : 900
+      "size" : 900,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 37,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/construction_des_flux.md",
-      "size" : 0
+      "size" : 0,
+      "processes" : [
+        {
+          "activity" : "scan",
+          "start" : 28,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/norme_standard_fhir.md",
-      "size" : 18513,
+      "size" : 18512,
       "processes" : [
         {
           "activity" : "generate2",
@@ -132,14 +146,7 @@
     },
     {
       "name" : "/input/pagecontent/downloads.md",
-      "size" : 1727,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 37,
-          "length" : 1
-        }
-      ]
+      "size" : 1727
     },
     {
       "name" : "/input/pagecontent/change-log.md",
@@ -155,7 +162,14 @@
     },
     {
       "name" : "/template/config/_config.yml",
-      "size" : 31
+      "size" : 31,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 37,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images",
@@ -167,14 +181,7 @@
     },
     {
       "name" : "/input/images/ci-sis-logo.png",
-      "size" : 61365,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 37,
-          "length" : 1
-        }
-      ]
+      "size" : 61365
     },
     {
       "name" : "/temp/pages/_includes/artifacts.xml",

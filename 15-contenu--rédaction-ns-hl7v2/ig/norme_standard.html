@@ -197,7 +197,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h3 id="introduction">Introduction</h3>
 
-<p>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « Spécifications fonctionnelles des échanges - Téléradiologie ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.</p>
+<p><a name="l342">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\spécifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.</p>
 
 <p>Les normes et standards étudiés au sein de cette étude sont les suivants :</p>
 
@@ -221,7 +221,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Sa pertinence au regard des cas d’usage identifiés.</li>
 </ul>
 
-<p>Un tableau comparatif est proposé en section 5 afin de faciliter la lecture et la mise en perspective des standards évalués. Une analyse métier et technique croisée est fournie en section 6 pour éclairer les choix de standardisation envisageables.</p>
+<p>Une synthèse est proposée en section 4 afin de faciliter la lecture et la mise en perspective des normes et standards évalués. Une analyse métier et technique croisée est fournie en section 5 pour éclairer les choix de standardisation envisageables.</p>
 
 <p>Cette étude s’appuie sur les recommandations et principes du Cadre d’interopérabilité des systèmes d’information de santé (CI-SIS), qui référence les normes et standards internationaux applicables au développement des volets métiers, et constitue le référentiel de doctrine pour l’interopérabilité du système de santé.</p>
 
@@ -229,12 +229,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</h3>
 
-<p>Cette étude s’inscrit dans le cadre des besoins d’interopérabilité associés au volet « Téléradiologie ». Ce volet a pour objectif de décrire les échanges nécessaires à la prise en charge d’un patient lorsque l’interprétation radiologique est réalisée à distance, entre une structure d’imagerie (lieu de réalisation de l’acte) et une plateforme de téléradiologie (lieu d’interprétation).</p>
+<p>Cette étude s’inscrit dans le cadre des besoins d’interopérabilité associés au volet « Téléradiologie ». Ce volet a pour objectif de décrire les échanges, et leur contenu, nécessaires à la prise en charge d’un patient lorsque l’interprétation radiologique est réalisée à distance, entre une structure d’imagerie (lieu de réalisation de l’acte) et une plateforme de téléradiologie (lieu d’interprétation).</p>
 
 <p>Les échanges d’informations interviennent principalement entre :</p>
 
 <ul>
-  <li>Le RIS de la structure d’accueil du patient</li>
+  <li>Le RIS (Système d’Information Radiologique) de la structure d’accueil du patient</li>
   <li>Le système d’information de la plateforme de téléradiologie</li>
 </ul>
 
@@ -262,7 +262,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="normes-et-standards-étudiées">Normes et Standards étudiées</h3>
 
-<p>Cette section présente les normes et standards susceptibles d’être utilisés pour structurer ou, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers pris en compte dans cette étude sont issues de la Spécification fonctionnelle des échanges Téléradiologie.</p>
+<p>Cette section présente les normes et standards susceptibles d’être utilisés pour structurer ou, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers pris en compte dans cette étude sont issus de la Spécification fonctionnelle des échanges Téléradiologie.</p>
 
 <h4 id="standard-dicom">Standard DICOM</h4>
 
@@ -302,7 +302,7 @@ Néanmoins, il n’est pas adapté pour répondre aux flux fonctionnels du volet
 
 <h5 id="présentation-1">Présentation</h5>
 
-<p>Le standard <a href="https://hl7.org/cda/stds/online-navigation/index.html">HL7 Clinical Document Architecture (CDA)</a> est un standard de structuration de documents cliniques spécifiant à la fois la structure et la sémantique des informations médicales, en vue de leur échange entre acteurs du système de santé. Il repose sur la syntaxe XML et ne définit pas de mécanisme de transport des documents.</p>
+<p>Le standard <a href="https://hl7.org/cda/stds/online-navigation/index.html">HL7 Clinical Document Architecture (CDA)</a> est un standard de structuration de documents cliniques spécifiant à la fois la structure et la sémantique des informations médicales, en vue de leur compréhension entre acteurs du système de santé. Il repose sur la syntaxe XML et ne définit pas de mécanisme de transport des documents.</p>
 
 <p>HL7 CDA est certifiée par l’ANSI et la version 2 a été adoptée en tant que norme ISO.
 Un document CDA est un document complet pouvant contenir du texte, des images et tout autre type de contenu multimédia. Les propriétés d’un document CDA sont les suivantes :</p>
@@ -631,7 +631,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="transmettre-une-demande-dexamen-dimagerie">Transmettre une demande d’examen d’imagerie</h6>
 
-<p>la transmission d’une demande d’examen d’imagerie peut être réalisée grâce à l’envoie d’une ressource, par exemple DocumentReference ou ServiceRequest via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
+<p>La transmission d’une demande d’examen d’imagerie peut être réalisée grâce à l’envoi d’une ressource, par exemple DocumentReference ou ServiceRequest via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
 
 <p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
@@ -647,9 +647,9 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
   <li>Recevoir la demande d’imagerie</li>
 </ul>
 
-<h6 id="annulation-dune-demande-dimagerie">Annulation d’une demande d’imagerie</h6>
+<h6 id="annulation-dune-demande-dexamen-dimagerie">Annulation d’une demande d’examen d’imagerie</h6>
 
-<p><a name="l1355">​</a>L’annulation d’une demande d’imagerie peut être réalisée grâce à la suppression d’une ressource, par exemple Appointment via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
+<p><a name="l1358">​</a>L’annulation d’une demande d’imagerie peut être réalisée grâce à la suppression d’une ressource, par exemple Appointment via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
 
 <p>Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">200 OK</code>. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
@@ -667,9 +667,9 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="réponse-à-une-demande-dexamen-dimagerie">Réponse à une demande d’examen d’imagerie</h6>
 
-<p>la réponse à une demande d’examen d’imagerie peut être réalisée grâce à l’envoie d’une ressource, par exemple ImagingStudy ou GuidanceResponse via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
+<p>La réponse à une demande d’examen d’imagerie peut être réalisée grâce à l’envoi d’une ressource, par exemple ImagingStudy ou GuidanceResponse via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
 
-<p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
+<p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 3.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
 <div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 600 180" zoomAndPan="magnify" preserveAspectRatio="none" width="600px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:600px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="142" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="142"></line><line y1="36.2969" x1="448" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="448"></line><rect rx="2.5" ry="2.5" width="275" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="275" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="436.5,78.5625,446.5,82.5625,436.5,86.5625,440.5,82.5625"></polygon><line y1="82.5625" x1="142.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="442.5"></line><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 3.1</text><text font-weight="bold" lengthAdjust="spacing" x="202.5" font-size="13" textLength="163" y="62.3638" font-family="sans-serif" fill="#000000">ReponseDemandeIMG</text><text lengthAdjust="spacing" x="365.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="153.5" font-size="13" textLength="84" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP DELETE</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="153.5,122.8281,143.5,126.8281,153.5,130.8281,149.5,126.8281"></polygon><line y1="126.8281" x1="147.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="447.5"></line><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 3.2</text><text font-weight="bold" lengthAdjust="spacing" x="212.5" font-size="13" textLength="229" y="106.6294" font-family="sans-serif" fill="#000000">Resultat ReponseDemandeIMG</text><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="163.5" font-size="13" textLength="46" y="121.7622" font-family="sans-serif" fill="#B22222">200 OK</text></g></svg> </div>
 
@@ -686,9 +686,9 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="transmettre-un-complément-dinformation-post-examen">Transmettre un complément d’information post-examen</h6>
 
-<p>Le complément d’information post-examen d’imagerie peut être réalisée grâce à l’envoie d’une ressource, par exemple ImagingStudy ou DocumentReference via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
+<p>Le complément d’information post-examen d’imagerie peut être réalisé grâce à l’envoi d’une ressource, par exemple ImagingStudy ou DocumentReference via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
 
-<p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
+<p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 4.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
 <div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 646 180" zoomAndPan="magnify" preserveAspectRatio="none" width="646px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:646px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="135" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="135"></line><line y1="36.2969" x1="487" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="487"></line><rect rx="2.5" ry="2.5" width="261" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="261" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="305" x="335" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="342" font-size="14" textLength="291" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="305" x="335" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="342" font-size="14" textLength="291" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="475.5,78.5625,485.5,82.5625,475.5,86.5625,479.5,82.5625"></polygon><line y1="82.5625" x1="135.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="481.5"></line><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 4.1</text><text font-weight="bold" lengthAdjust="spacing" x="195.5" font-size="13" textLength="209" y="62.3638" font-family="sans-serif" fill="#000000">TrasmissionComplémentIMG</text><text lengthAdjust="spacing" x="404.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="146.5" font-size="13" textLength="70" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP POST</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="146.5,122.8281,136.5,126.8281,146.5,130.8281,142.5,126.8281"></polygon><line y1="126.8281" x1="140.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="486.5"></line><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 4.2</text><text font-weight="bold" lengthAdjust="spacing" x="205.5" font-size="13" textLength="275" y="106.6294" font-family="sans-serif" fill="#000000">Resultat TrasmissionComplémentIMG</text><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="156.5" font-size="13" textLength="79" y="121.7622" font-family="sans-serif" fill="#B22222">201 Created</text></g></svg> </div>
 
@@ -793,91 +793,91 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     <tr>
       <td><strong>StructureImagerie</strong></td>
       <td>ORM^O01</td>
-      <td>MSH / ORC</td>
-      <td>MSH-3 Sending Application, MSH-4 Sending Facility  <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
     </tr>
     <tr>
       <td><strong>PlateformeTeleradiologie</strong></td>
       <td>ORM^O01</td>
-      <td>MSH / ORC</td>
+      <td>MSH - Message Header/ ORC - Common Order</td>
       <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
     </tr>
     <tr>
       <td><strong>Patient</strong></td>
       <td>ORM^O01</td>
-      <td>PID</td>
+      <td>PID - Patient Identification</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td><strong>PSResponsable</strong></td>
       <td>ORM^O01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-10 Entered By, ORC-12 Ordering Provider</td>
     </tr>
     <tr>
       <td><strong>PSEffecteur</strong></td>
       <td>ORM^O01</td>
-      <td>ORC / OBR</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
       <td>ORC-11 Verified By / ORC-32 Principal Result Interpreter</td>
     </tr>
     <tr>
       <td><strong>roleProfessionnel</strong></td>
       <td>ORM^O01</td>
-      <td>ORC / OBR</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
       <td>ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter</td>
     </tr>
     <tr>
       <td><strong>IdentifiantDemandeExamen</strong></td>
       <td>ORM^O01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-2 Placer Order Number</td>
     </tr>
     <tr>
       <td><strong>NatureDemande</strong></td>
       <td>ORM^O01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-1 Order Control</td>
     </tr>
     <tr>
       <td><strong>DateDemande</strong></td>
       <td>ORM^O01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-9 Date/Time of Transaction</td>
     </tr>
     <tr>
       <td><strong>IdentifiantRDV</strong></td>
       <td>ORM^O01</td>
-      <td>PV1</td>
-      <td>PV1-19</td>
+      <td>PV1 - Patient Visit</td>
+      <td>PV1-19 Visit Number</td>
     </tr>
     <tr>
       <td><strong>DateHeurePriseCharge</strong></td>
       <td>ORM^O01</td>
-      <td>PV1</td>
-      <td>PV1-44</td>
+      <td>PV1 - Patient Visit</td>
+      <td>PV1-44 Admit Date/Time</td>
     </tr>
     <tr>
       <td><strong>JustificationDemande</strong></td>
       <td>ORM^O01</td>
-      <td>OBR / NTE</td>
-      <td>ORC-31 Reason for Study, NTE-3</td>
+      <td>OBR - Observation Request / NTE - Notes and Comments</td>
+      <td>ORC-31 Reason for Study, NTE-3 Comment</td>
     </tr>
     <tr>
       <td><strong>LocalisationAnatomique</strong></td>
       <td>ORM^O01</td>
-      <td>OBX</td>
+      <td>OBX - Observation/Result</td>
       <td>OBX-2 = CE / TX, OBX-5</td>
     </tr>
     <tr>
       <td><strong>ModaliteImagerie</strong></td>
       <td>ORM^O01</td>
-      <td>OBX</td>
+      <td>OBX - Observation/Result</td>
       <td>OBX-2 = CE / TX, OBX-5</td>
     </tr>
     <tr>
       <td><strong>Antecedents</strong></td>
       <td>ORM^O01</td>
-      <td>OBR</td>
+      <td>OBR - Observation Request</td>
       <td>ORC-31 Relevant Clinical Information</td>
     </tr>
   </tbody>
@@ -902,50 +902,50 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     <tr>
       <td><strong>StructureImagerie</strong></td>
       <td>ORM^O01</td>
-      <td>MSH / ORC</td>
-      <td>MSH-3 Sending Application, MSH-4 Sending Facility  <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
     </tr>
     <tr>
       <td><strong>PlateformeTeleradiologie</strong></td>
       <td>ORM^O01</td>
-      <td>MSH / ORC</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
       <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
     </tr>
     <tr>
       <td><strong>Patient</strong></td>
       <td>ORM^O01</td>
-      <td>PID</td>
+      <td>PID - Patient Identification</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td><strong>PSEffecteur</strong></td>
       <td>ORM^O01</td>
-      <td>ORC / OBR</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
       <td>ORC-11 Verified By / ORC-32 Principal Result Interpreter</td>
     </tr>
     <tr>
       <td><strong>roleProfessionnel</strong></td>
       <td>ORM^O01</td>
-      <td>ORC / OBR</td>
-      <td>ORC-11 Verified By / ORC-32 Principal Result Interpreter</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
+      <td>ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter</td>
     </tr>
     <tr>
       <td><strong>IdentifiantDemandeExamen</strong></td>
       <td>ORM^O01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-2 Placer Order Number</td>
     </tr>
     <tr>
       <td><strong>NatureDemande</strong></td>
       <td>ORM^O01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-1 Order Control</td>
     </tr>
     <tr>
       <td><strong>MotifAnnulation</strong></td>
       <td>ORM^O01</td>
-      <td>ORC / NTE</td>
-      <td>ORC-16 Order Control Code Reason, NTE-3</td>
+      <td>ORC - Common Order / NTE - Notes and Comments</td>
+      <td>ORC-16 Order Control Code Reason, NTE-3 Comment</td>
     </tr>
   </tbody>
 </table>
@@ -969,56 +969,56 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     <tr>
       <td><strong>PlateformeTeleradiologie</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>MSH / ORC</td>
-      <td>MSH-3 Sending Application, MSH-4 Sending Facility  <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
     </tr>
     <tr>
       <td><strong>StructureImagerie</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>MSH / ORC</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
       <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
     </tr>
     <tr>
       <td><strong>Patient</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>PID</td>
+      <td>PID - Patient Identification</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td><strong>PSEffecteur</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-10 Entered By, ORC-12 Ordering Provider</td>
     </tr>
     <tr>
       <td><strong>roleProfessionnel</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>ORC / OBR</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
       <td>ORC-10 Entered By / ORC-11 Verified By</td>
     </tr>
     <tr>
       <td><strong>IdentifiantDemandeExamen</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-2 Placer Order Number</td>
     </tr>
     <tr>
       <td><strong>DecisionEffecteur</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>ORC</td>
+      <td>ORC - Common Order</td>
       <td>ORC-1 Order Control</td>
     </tr>
     <tr>
       <td><strong>MotifRefus</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>ORC / NTE</td>
-      <td>ORC-16 Order Control Code Reason, NTE-3</td>
+      <td>ORC - Common Order / NTE - Notes and Comments</td>
+      <td>ORC-16 Order Control Code Reason, NTE-3 Comment</td>
     </tr>
     <tr>
       <td><strong>ProtocoleImagerie</strong></td>
       <td>ORM^O01 / ORU^R01</td>
-      <td>OBX</td>
-      <td>OBX-5</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = ED/TX, OBX-5</td>
     </tr>
   </tbody>
 </table>
@@ -1027,7 +1027,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h6 id="flux-4---transmission-dun-complément-dinformation-post-acte-dimagerie">Flux 4 - Transmission d’un complément d’information post-acte d’imagerie</h6>
 
-<p>Le flux de transmission d’un complément d’information post-acte d’imagerie intervient à l’issue de la réalisation de l’examen. Il vise à transmettre au radiologue effecteur distant, ou à la plateforme de téléradiologie, des éléments permettant de compléter le contexte d’interprétation et de rédaction du compte-rendu d’imagerie. HL7 v2 permet de porter ce type d’information au travers de messages de résultats, en particulier le message ORU, combinant des segments OBR et OBX. Cette approche est historiquement utilisée dans les workflows d’imagerie pour la diffusion d’informations liées à l’examen réalisé.</p>
+<p>Le flux de transmission d’un complément d’information post-acte d’imagerie intervient à l’issue de la réalisation de l’examen. Il vise à transmettre au radiologue effecteur distant des éléments permettant de compléter le contexte d’interprétation et de rédaction du compte-rendu d’imagerie. Dans les implémentations HL7 v2 existantes, ce type de flux est fréquemment pris en charge au moyen de messages ORU^R01, utilisés pour la transmission d’observations et de résultats. Ce message permet de véhiculer une grande variété d’informations via des segments OBX, mais ne dispose pas de segments dédiés pour porter nativement les identifiants DICOM de l’examen. À l’inverse, le message OMI^O23, introduit pour répondre spécifiquement aux besoins du domaine de l’imagerie, propose le segment IPC (Imaging Procedure Control), permettant de structurer explicitement les informations techniques liées à la procédure d’imagerie, notamment l’Accession Number et le StudyInstanceUID.</p>
 
 <table>
   <thead>
@@ -1041,93 +1041,93 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
   <tbody>
     <tr>
       <td><strong>StructureImagerie</strong></td>
-      <td>ORU^R01</td>
-      <td>MSH / ORC</td>
-      <td>MSH-3 Sending Application, MSH-4 Sending Facility  <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+      <td>OMI^O23</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
     </tr>
     <tr>
       <td><strong>PlateformeTeleradiologie</strong></td>
       <td>ORU^R01</td>
-      <td>MSH / ORC</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
       <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
     </tr>
     <tr>
       <td><strong>Patient</strong></td>
-      <td>ORU^R01</td>
-      <td>PID</td>
+      <td>OMI^O23</td>
+      <td>PID - Patient Identification</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td><strong>IdentifiantDemandeExamen</strong></td>
-      <td>ORU^R01</td>
-      <td>ORC</td>
+      <td>OMI^O23</td>
+      <td>ORC - Common Order</td>
       <td>ORC-2 Placer Order Number</td>
     </tr>
     <tr>
       <td><strong>IdentifiantRDV</strong></td>
-      <td>ORU^R01</td>
-      <td>PV1</td>
-      <td>PV1-19</td>
+      <td>OMI^O23</td>
+      <td>PV1 - Patient Visit</td>
+      <td>PV1-19 Visit Number</td>
     </tr>
     <tr>
       <td><strong>AccessionNumber</strong></td>
-      <td>ORU^R01</td>
-      <td>OBR</td>
-      <td>OBR-3</td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-2 Requested Procedure ID</td>
     </tr>
     <tr>
       <td><strong>StudyInstanceUID</strong></td>
-      <td>ORU^R01</td>
-      <td>OBR</td>
-      <td>OBR-4</td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-3 Study Instance UID</td>
     </tr>
     <tr>
       <td><strong>DateRéalisationExamen</strong></td>
-      <td>ORU^R01</td>
-      <td>OBR</td>
+      <td>OMI^O23</td>
+      <td>OBR - Observation Request</td>
       <td>OBR-7 Observation Date/Time</td>
     </tr>
     <tr>
       <td><strong>LocalisationAnatomique</strong></td>
-      <td>ORU^R01</td>
-      <td>OBX</td>
+      <td>OMI^O23</td>
+      <td>OBX - Observation/Result</td>
       <td>OBX-2 = CE / TX, OBX-5</td>
     </tr>
     <tr>
       <td><strong>ModaliteImagerie</strong></td>
-      <td>ORU^R01</td>
-      <td>OBX</td>
-      <td>OBX-2 = CE / TX, OBX-5</td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-5 Modality</td>
     </tr>
     <tr>
       <td><strong>URLViewerDRIMBOX</strong></td>
-      <td>ORU^R01</td>
-      <td>OBX</td>
-      <td>OBX-2 = ST / TX, OBX-5</td>
+      <td>OMI^O23</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = ST / ED, OBX-5</td>
     </tr>
     <tr>
       <td><strong>DuréeRétentionImages</strong></td>
-      <td>ORU^R01</td>
-      <td>OBX</td>
+      <td>OMI^O23</td>
+      <td>OBX - Observation/Result</td>
       <td>OBX-2 = NM / TX, OBX-5</td>
     </tr>
     <tr>
       <td><strong>IdentificationMatériel</strong></td>
-      <td>ORU^R01</td>
-      <td>OBX</td>
-      <td>OBX-2 = CE / TX, OBX-5</td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-5 Modality</td>
     </tr>
     <tr>
       <td><strong>ProduitsAdministres</strong></td>
-      <td>ORU^R01</td>
-      <td>OBX</td>
+      <td>OMI^O23</td>
+      <td>OBX - Observation/Result</td>
       <td>OBX-2 = CE / TX, OBX-5</td>
     </tr>
     <tr>
       <td><strong>CodeEvenement (LOINC / CCAM)</strong></td>
-      <td>ORU^R01</td>
-      <td>OBX</td>
-      <td>OBX-3</td>
+      <td>OMI^O23</td>
+      <td>OBR - Observation Request</td>
+      <td>OBR-4 Universal Service Identifier</td>
     </tr>
   </tbody>
 </table>
@@ -1163,7 +1163,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
       <th><strong>DICOM</strong></th>
       <th><strong>CDA</strong></th>
       <th><strong>FHIR</strong></th>
-      <th><strong>HL7 v2</strong></th>
+      <th><strong>HL7v2</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -1190,14 +1190,14 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     </tr>
     <tr>
       <td>Existence de guides d’implémentation<br/><br/><em>Les guides référencent les standards de base avec au moins un cas d’usage et une optionalité sur les paramètres pour permettre les extensions.</em></td>
-      <td>&nbsp;</td>
+      <td>✔</td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
     </tr>
     <tr>
       <td>Adapté aux dispositifs mobiles</td>
-      <td>&nbsp;</td>
+      <td>✔</td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -1239,8 +1239,8 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     </tr>
     <tr>
       <td>Couverture métier</td>
-      <td>&nbsp;</td>
-      <td>N/A</td>
+      <td>Partiel</td>
+      <td>Non étudiée</td>
       <td>✔</td>
       <td>✔</td>
     </tr>
@@ -1325,7 +1325,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 24, 2025 15:10+0000">2025-12-24</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 29, 2025 10:57+0000">2025-12-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
