@@ -201,12 +201,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Les normes et standards étudiés au sein de cette étude sont les suivants :</p>
 
-<ul>
-  <li>HL7 Version 2.x (v2)</li>
-  <li>DICOM (Digital Imaging and Communications in Medicine)</li>
-  <li>Standard HL7 CDA : Clinical Document Architecture</li>
-  <li>HL7 FHIR</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th><strong>Standard</strong></th>
+      <th><strong>Modèle de contenu</strong></th>
+      <th><strong>Mécanisme de transport associé</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HL7 Version 2.x (v2)</td>
+      <td>✔</td>
+      <td>Transport externe requis</td>
+    </tr>
+    <tr>
+      <td>DICOM</td>
+      <td>✔</td>
+      <td>✔  (DICOM Upper Layer / DIMSE sur TCP/IP, DICOMweb)</td>
+    </tr>
+    <tr>
+      <td>HL7 CDA</td>
+      <td>✔</td>
+      <td>Transport externe requis</td>
+    </tr>
+    <tr>
+      <td>HL7 FHIR</td>
+      <td>✔</td>
+      <td>✔ (HTTP(S), REST)</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>Les standards seront analysés notamment sur leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit également dans un contexte de mise en œuvre opérationnelle contraint. L’un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d’actes d’imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les plateformes de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.</p>
 
@@ -272,7 +297,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h5 id="maturité-et-adoption">Maturité et adoption</h5>
 
-<p>Le standard DICOM bénéficie d’un très haut niveau de maturité et d’une adoption quasi universelle dans le domaine de l’imagerie médicale. Il est implémenté par l’ensemble des constructeurs de modalités, de PACS, de solutions d’archivage et de visualisation d’images médicales. Son adoption massive et son interopérabilité éprouvée en font un standard incontournable pour la gestion des images médicales, tant au niveau national qu’international.</p>
+<p>Le standard DICOM bénéficie d’un très haut niveau de maturité et d’une adoption quasi universelle dans le domaine de l’imagerie médicale. Il est implémenté par l’ensemble des constructeurs de modalités, de PACS, de solutions d’archivage et de visualisation d’images médicales. Son adoption massive et son interopérabilité éprouvée en font un standard incontournable pour la gestion des images médicales, tant au niveau national qu’international.
+La maturité et l’adoption du standard DICOM sont étroitement liées aux travaux menés depuis plus de vingt ans dans le cadre du domaine IHE Radiology, qui constitue historiquement l’un des premiers et des plus structurants domaines d’IHE. Créé à la fin des années 1990, le domaine IHE Radiology a précisément pour objectif de favoriser l’interopérabilité des systèmes d’imagerie médicale en s’appuyant sur une utilisation du standard DICOM.</p>
+
+<p>Dans ce cadre, DICOM est utilisé comme socle pour la gestion et l’échange des objets d’imagerie (images, études, séries, métadonnées techniques). De nombreux profils IHE du domaine Radiology reposent ainsi directement sur DICOM, parmi lesquels figurent notamment :</p>
+<ul>
+  <li>Scheduled Workflow (SWF), pour l’orchestration du cycle de vie des examens d’imagerie</li>
+  <li>Post-Processing Workflow (PWF), pour la gestion des traitements d’images</li>
+  <li>Consistent Presentation of Images (CPI), pour garantir une présentation cohérente des images entre systèmes</li>
+</ul>
+
+<p>Ces profils, largement implémentés, témoignent de l’adoption massive et de la robustesse de DICOM dans les environnements d’imagerie médicale. Ils illustrent également le rôle central de DICOM dans les architectures d’imagerie, en particulier pour la manipulation, la circulation et la consultation des données d’imagerie.</p>
 
 <h5 id="outillage">Outillage</h5>
 
@@ -286,6 +321,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <p>Ces outils sont spécifiquement conçus pour la manipulation d’images médicales et de leurs métadonnées, dans des architectures d’imagerie dédiées.</p>
+
+<h5 id="transport">Transport</h5>
+
+<p>Le standard DICOM intègre nativement des mécanismes de transport dédiés à l’échange d’objets d’imagerie médicale et de métadonnées associées. Ces mécanismes sont historiquement fondés sur des échanges point à point entre systèmes d’imagerie, reposant sur des services applicatifs définis par le standard et véhiculés sur des protocoles réseau standards.</p>
+
+<p>DICOM supporte également des mécanismes plus récents basés sur les technologies web, regroupés sous l’appellation DICOMweb, permettant l’accès, la recherche et le transfert d’objets d’imagerie via des interfaces HTTP(S).</p>
+
+<p>L’ensemble de ces mécanismes est spécifiquement et exclusivement conçu pour le transport et la manipulation d’objets d’imagerie.</p>
 
 <h5 id="dicom-adapté-au-cas-dusage-téléradiologie">DICOM adapté au cas d’usage Téléradiologie</h5>
 
@@ -476,126 +519,127 @@ pour cette ressource.</p>
 </thead>
 <tbody>
 <tr>
-<td>Patient</td>
+<td><strong>Patient</strong></td>
 <td>Patient</td>
 </tr>
 <tr>
-<td>PSResponsable</td>
+<td><strong>PSResponsable</strong></td>
 <td>Practitioner</td>
 </tr>
 <tr>
-<td>PSEffecteur</td>
+<td><strong>PSEffecteur</strong></td>
 <td>Practitioner</td>
 </tr>
 <tr>
-<td>IdentifiantDemandeExamen</td>
+<td><strong>IdentifiantDemandeExamen</strong></td>
 <td>ServiceRequest</td>
 </tr>
 <tr>
-<td>StructureImagerie</td>
+<td><strong>StructureImagerie</strong></td>
 <td>Organization</td>
 </tr>
 <tr>
-<td>PlateformeTeleradiologie</td>
+<td><strong>PlateformeTeleradiologie</strong></td>
 <td>Organization</td>
 </tr>
 <tr>
-<td>NatureDemande</td>
+<td><strong>NatureDemande</strong></td>
 <td>ServiceRequest</td>
 </tr>
 <tr>
-<td>DateDemande</td>
+<td><strong>DateDemande</strong></td>
 <td>ServiceRequest</td>
 </tr>
 <tr>
-<td>IdentifiantRDV</td>
+<td><strong>IdentifiantRDV</strong></td>
 <td>Appointment</td>
 </tr>
 <tr>
-<td>DateHeurePriseCharge</td>
+<td><strong>DateHeurePriseCharge</strong></td>
 <td>Appointment</td>
 </tr>
 <tr>
-<td>JustificationDemande</td>
+<td><strong>JustificationDemande</strong></td>
 <td>Condition</td>
 </tr>
 <tr>
-<td>Antecedents</td>
+<td><strong>Antecedents</strong></td>
 <td>Condition</td>
 </tr>
 <tr>
-<td>MotifAnnulation</td>
+<td><strong>MotifAnnulation</strong></td>
 <td>Appointment</td>
 </tr>
 <tr>
-<td>MotifRefus</td>
+<td><strong>MotifRefus</strong></td>
 <td>AppointmentResponse</td>
 </tr>
 <tr>
-<td>DocumentDemandeExamen</td>
+<td><strong>DocumentDemandeExamen</strong></td>
 <td>DocumentReference</td>
 </tr>
 <tr>
-<td>DocumentsTiers</td>
+<td><strong>DocumentsTiers</strong></td>
 <td>DocumentReference</td>
 </tr>
 <tr>
-<td>LocalisationAnatomique</td>
+<td><strong>LocalisationAnatomique</strong></td>
 <td>BodyStructure</td>
 </tr>
 <tr>
-<td>ModaliteImagerie</td>
+<td><strong>ModaliteImagerie</strong></td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>DecisionEffecteur</td>
+<td><strong>DecisionEffecteur</strong></td>
 <td>GuidanceResponse</td>
 </tr>
 <tr>
-<td>ProtocoleImagerie</td>
+<td><strong>ProtocoleImagerie</strong></td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>URLViewerDRIMBOX</td>
+<td><strong>URLViewerDRIMBOX</strong></td>
 <td>Endpoint</td>
 </tr>
 <tr>
-<td>DuréeRétentionImages</td>
+<td><strong>DuréeRétentionImages</strong></td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>DateRéalisationExamen</td>
+<td><strong>DateRéalisationExamen</strong></td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>IdentificationMatériel</td>
+<td><strong>IdentificationMatériel</strong></td>
 <td>Device</td>
 </tr>
 <tr>
-<td>ProduitsAdministres</td>
+<td><strong>ProduitsAdministres</strong></td>
 <td>MedicationAdministration</td>
 </tr>
 <tr>
-<td>AccessionNumber</td>
+<td><strong>AccessionNumber</strong></td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>StudyInstanceUID</td>
+<td><strong>StudyInstanceUID</strong></td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>codeEvenement</td>
+<td><strong>codeEvenement</strong></td>
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td>roleProfessionnel</td>
+<td><strong>roleProfessionnel</strong></td>
 <td>PractitionerRole</td>
 </tr>
+
 </tbody>
 </table>
 <p style="text-align:center;">Table 1 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
 
-<h5 id="transport">Transport</h5>
+<h5 id="transport-1">Transport</h5>
 
 <p>Le standard FHIR utilise <a href="https://build.fhir.org/http.html">l’API REST</a> pour l’échange et l’interrogation des ressources via différentes <a href="https://build.fhir.org/exchange-module.html">interactions</a></p>
 
@@ -651,7 +695,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="annulation-dune-demande-dexamen-dimagerie">Annulation d’une demande d’examen d’imagerie</h6>
 
-<p><a name="l1373">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
+<p><a name="l1489">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
 
 <p>Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">200 OK</code>. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
@@ -1178,7 +1222,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     </tr>
     <tr>
       <td>Tests<br/><br/><em>Des tests sont effectués pour des versions de travail (dites STU -Standards for Trial Use) et/ou pour les guides d’implémentation normatifs.</em></td>
-      <td>&nbsp;</td>
+      <td>✔</td>
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
@@ -1212,6 +1256,13 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
       <td>✔</td>
     </tr>
     <tr>
+      <td>Rétrocompatibilité du standard ou de la norme</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>&nbsp;</td>
+      <td>✔</td>
+    </tr>
+    <tr>
       <td>Adoption par le marché et utilisation</td>
       <td>✔</td>
       <td>✔</td>
@@ -1241,9 +1292,16 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     </tr>
     <tr>
       <td>Couverture métier</td>
-      <td>Partiel</td>
+      <td>&nbsp;</td>
       <td>Non étudiée</td>
       <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Adoption par l’écosystème Téléradiologie</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>&nbsp;</td>
       <td>✔</td>
     </tr>
   </tbody>
@@ -1327,7 +1385,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 29, 2025 13:45+0000">2025-12-29</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 29, 2025 15:28+0000">2025-12-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

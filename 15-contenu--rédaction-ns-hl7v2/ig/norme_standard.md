@@ -11,10 +11,12 @@ Le présent document présente l’ensemble des normes et standards susceptibles
 
 Les normes et standards étudiés au sein de cette étude sont les suivants :
 
-* HL7 Version 2.x (v2)
-* DICOM (Digital Imaging and Communications in Medicine)
-* Standard HL7 CDA : Clinical Document Architecture
-* HL7 FHIR
+| | | |
+| :--- | :--- | :--- |
+| HL7 Version 2.x (v2) | ✔ | Transport externe requis |
+| DICOM | ✔ | ✔ (DICOM Upper Layer / DIMSE sur TCP/IP, DICOMweb) |
+| HL7 CDA | ✔ | Transport externe requis |
+| HL7 FHIR | ✔ | ✔ (HTTP(S), REST) |
 
 Les standards seront analysés notamment sur leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit également dans un contexte de mise en œuvre opérationnelle contraint. L’un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d’actes d’imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les plateformes de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.
 
@@ -68,7 +70,15 @@ Le standard [DICOM (Digital Imaging and Communications in Medicine)](https://www
 
 ##### Maturité et adoption
 
-Le standard DICOM bénéficie d’un très haut niveau de maturité et d’une adoption quasi universelle dans le domaine de l’imagerie médicale. Il est implémenté par l’ensemble des constructeurs de modalités, de PACS, de solutions d’archivage et de visualisation d’images médicales. Son adoption massive et son interopérabilité éprouvée en font un standard incontournable pour la gestion des images médicales, tant au niveau national qu’international.
+Le standard DICOM bénéficie d’un très haut niveau de maturité et d’une adoption quasi universelle dans le domaine de l’imagerie médicale. Il est implémenté par l’ensemble des constructeurs de modalités, de PACS, de solutions d’archivage et de visualisation d’images médicales. Son adoption massive et son interopérabilité éprouvée en font un standard incontournable pour la gestion des images médicales, tant au niveau national qu’international. La maturité et l’adoption du standard DICOM sont étroitement liées aux travaux menés depuis plus de vingt ans dans le cadre du domaine IHE Radiology, qui constitue historiquement l’un des premiers et des plus structurants domaines d’IHE. Créé à la fin des années 1990, le domaine IHE Radiology a précisément pour objectif de favoriser l’interopérabilité des systèmes d’imagerie médicale en s’appuyant sur une utilisation du standard DICOM.
+
+Dans ce cadre, DICOM est utilisé comme socle pour la gestion et l’échange des objets d’imagerie (images, études, séries, métadonnées techniques). De nombreux profils IHE du domaine Radiology reposent ainsi directement sur DICOM, parmi lesquels figurent notamment :
+
+* Scheduled Workflow (SWF), pour l’orchestration du cycle de vie des examens d’imagerie
+* Post-Processing Workflow (PWF), pour la gestion des traitements d’images
+* Consistent Presentation of Images (CPI), pour garantir une présentation cohérente des images entre systèmes
+
+Ces profils, largement implémentés, témoignent de l’adoption massive et de la robustesse de DICOM dans les environnements d’imagerie médicale. Ils illustrent également le rôle central de DICOM dans les architectures d’imagerie, en particulier pour la manipulation, la circulation et la consultation des données d’imagerie.
 
 ##### Outillage
 
@@ -80,6 +90,14 @@ L’écosystème DICOM est riche et largement industrialisé. Il comprend notamm
 * des services réseau standardisés (C-STORE, C-FIND, C-MOVE, etc.)
 
 Ces outils sont spécifiquement conçus pour la manipulation d’images médicales et de leurs métadonnées, dans des architectures d’imagerie dédiées.
+
+##### Transport
+
+Le standard DICOM intègre nativement des mécanismes de transport dédiés à l’échange d’objets d’imagerie médicale et de métadonnées associées. Ces mécanismes sont historiquement fondés sur des échanges point à point entre systèmes d’imagerie, reposant sur des services applicatifs définis par le standard et véhiculés sur des protocoles réseau standards.
+
+DICOM supporte également des mécanismes plus récents basés sur les technologies web, regroupés sous l’appellation DICOMweb, permettant l’accès, la recherche et le transfert d’objets d’imagerie via des interfaces HTTP(S).
+
+L’ensemble de ces mécanismes est spécifiquement et exclusivement conçu pour le transport et la manipulation d’objets d’imagerie.
 
 ##### DICOM adapté au cas d’usage Téléradiologie
 
@@ -207,35 +225,35 @@ Dans le cadre du volet “téléradiologie” les ressources suivantes pourraien
 
 | | |
 | :--- | :--- |
-| Patient | Patient |
-| PSResponsable | Practitioner |
-| PSEffecteur | Practitioner |
-| IdentifiantDemandeExamen | ServiceRequest |
-| StructureImagerie | Organization |
-| PlateformeTeleradiologie | Organization |
-| NatureDemande | ServiceRequest |
-| DateDemande | ServiceRequest |
-| IdentifiantRDV | Appointment |
-| DateHeurePriseCharge | Appointment |
-| JustificationDemande | Condition |
-| Antecedents | Condition |
-| MotifAnnulation | Appointment |
-| MotifRefus | AppointmentResponse |
-| DocumentDemandeExamen | DocumentReference |
-| DocumentsTiers | DocumentReference |
-| LocalisationAnatomique | BodyStructure |
-| ModaliteImagerie | ImagingStudy |
-| DecisionEffecteur | GuidanceResponse |
-| ProtocoleImagerie | ImagingStudy |
-| URLViewerDRIMBOX | Endpoint |
-| DuréeRétentionImages | ImagingStudy |
-| DateRéalisationExamen | ImagingStudy |
-| IdentificationMatériel | Device |
-| ProduitsAdministres | MedicationAdministration |
-| AccessionNumber | ImagingStudy |
-| StudyInstanceUID | ImagingStudy |
-| codeEvenement | ImagingStudy |
-| roleProfessionnel | PractitionerRole |
+| **Patient** | Patient |
+| **PSResponsable** | Practitioner |
+| **PSEffecteur** | Practitioner |
+| **IdentifiantDemandeExamen** | ServiceRequest |
+| **StructureImagerie** | Organization |
+| **PlateformeTeleradiologie** | Organization |
+| **NatureDemande** | ServiceRequest |
+| **DateDemande** | ServiceRequest |
+| **IdentifiantRDV** | Appointment |
+| **DateHeurePriseCharge** | Appointment |
+| **JustificationDemande** | Condition |
+| **Antecedents** | Condition |
+| **MotifAnnulation** | Appointment |
+| **MotifRefus** | AppointmentResponse |
+| **DocumentDemandeExamen** | DocumentReference |
+| **DocumentsTiers** | DocumentReference |
+| **LocalisationAnatomique** | BodyStructure |
+| **ModaliteImagerie** | ImagingStudy |
+| **DecisionEffecteur** | GuidanceResponse |
+| **ProtocoleImagerie** | ImagingStudy |
+| **URLViewerDRIMBOX** | Endpoint |
+| **DuréeRétentionImages** | ImagingStudy |
+| **DateRéalisationExamen** | ImagingStudy |
+| **IdentificationMatériel** | Device |
+| **ProduitsAdministres** | MedicationAdministration |
+| **AccessionNumber** | ImagingStudy |
+| **StudyInstanceUID** | ImagingStudy |
+| **codeEvenement** | ImagingStudy |
+| **roleProfessionnel** | PractitionerRole |
 
 Table 1 : Mise en correspondance des concepts métier avec les ressources FHIR
 
@@ -487,16 +505,18 @@ Cette section présente une synthèse comparative des normes et standards analys
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
 | Outillage**Des outils de tests sont mis en œuvre pour valider l’adhérence au standard.** | ✔ | ✔ | ✔ | ✔ |
-| Tests**Des tests sont effectués pour des versions de travail (dites STU -Standards for Trial Use) et/ou pour les guides d’implémentation normatifs.** |   | ✔ | ✔ | ✔ |
+| Tests**Des tests sont effectués pour des versions de travail (dites STU -Standards for Trial Use) et/ou pour les guides d’implémentation normatifs.** | ✔ | ✔ | ✔ | ✔ |
 | Processus de prise en compte des améliorations | ✔ | ✔ | ✔ | ✔ |
 | Existence de guides d’implémentation**Les guides référencent les standards de base avec au moins un cas d’usage et une optionalité sur les paramètres pour permettre les extensions.** | ✔ | ✔ | ✔ | ✔ |
 | Adapté aux dispositifs mobiles | ✔ | ✔ | ✔ | ✔ |
 | Stabilité de la documentation | ✔ | ✔ | ✔ | ✔ |
+| Rétrocompatibilité du standard ou de la norme | ✔ | ✔ |   | ✔ |
 | Adoption par le marché et utilisation | ✔ | ✔ | ✔ | ✔ |
 | Neutralité**les spécifications ne limitent pas la concurrence et l’innovation; les spécifications sont basées sur des développements scientifiques et technologiques de pointe.** | ✔ | ✔ | ✔ | ✔ |
 | Qualité**la qualité est suffisante pour permettre le développement de produits et de services interopérables concurrents.** | ✔ | ✔ | ✔ | ✔ |
 | Accessibilité**Les spécifications sont disponibles au public à des conditions raisonnables (y compris pour un prix raisonnable ou gratuitement).** | ✔ | ✔ | ✔ | ✔ |
-| Couverture métier | Partiel | Non étudiée | ✔ | ✔ |
+| Couverture métier |   | Non étudiée | ✔ | ✔ |
+| Adoption par l’écosystème Téléradiologie | ✔ | ✔ |   | ✔ |
 
 Table 7 : Synthèse comparative des normes et standards étudiés
 
