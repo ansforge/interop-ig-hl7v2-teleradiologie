@@ -1,6 +1,6 @@
 ### Introduction
 
-Le présent document présente l'ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « Spécifications fonctionnelles des échanges - Téléradiologie ». L'objectif de cette étude est d'identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.
+Le présent document présente l'ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « [Spécifications fonctionnelles des échanges - Téléradiologie](.\spécifications_fonctionnelles.html) ». L'objectif de cette étude est d'identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.
 
 Les normes et standards étudiés au sein de cette étude sont les suivants :
 
@@ -20,7 +20,7 @@ La section 2 propose un rappel synthétique du contexte du volet Téléradiologi
 - L'existence d'outillage ;
 - Sa pertinence au regard des cas d'usage identifiés.
 
-Un tableau comparatif est proposé en section 5 afin de faciliter la lecture et la mise en perspective des standards évalués. Une analyse métier et technique croisée est fournie en section 6 pour éclairer les choix de standardisation envisageables.
+Une synthèse est proposée en section 4 afin de faciliter la lecture et la mise en perspective des normes et standards évalués. Une analyse métier et technique croisée est fournie en section 5 pour éclairer les choix de standardisation envisageables.
 
 Cette étude s'appuie sur les recommandations et principes du Cadre d'interopérabilité des systèmes d'information de santé (CI-SIS), qui référence les normes et standards internationaux applicables au développement des volets métiers, et constitue le référentiel de doctrine pour l'interopérabilité du système de santé.
 
@@ -28,11 +28,11 @@ Cette étude s'appuie sur les recommandations et principes du Cadre d'interopér
 
 ### Présentation synthétique du volet Téléradiologie
 
-Cette étude s'inscrit dans le cadre des besoins d'interopérabilité associés au volet « Téléradiologie ». Ce volet a pour objectif de décrire les échanges nécessaires à la prise en charge d'un patient lorsque l'interprétation radiologique est réalisée à distance, entre une structure d'imagerie (lieu de réalisation de l'acte) et une plateforme de téléradiologie (lieu d'interprétation).
+Cette étude s'inscrit dans le cadre des besoins d'interopérabilité associés au volet « Téléradiologie ». Ce volet a pour objectif de décrire les échanges, et leur contenu, nécessaires à la prise en charge d'un patient lorsque l'interprétation radiologique est réalisée à distance, entre une structure d'imagerie (lieu de réalisation de l'acte) et une plateforme de téléradiologie (lieu d'interprétation).
 
 Les échanges d'informations interviennent principalement entre :
 
-- Le RIS de la structure d'accueil du patient
+- Le RIS (Système d'Information Radiologique) de la structure d'accueil du patient
 - Le système d'information de la plateforme de téléradiologie
 
 La présente étude couvre les échanges décrits dans la Spécification fonctionnelle des échanges - Téléradiologie, à savoir :
@@ -55,7 +55,7 @@ Le choix final des normes ou standards devra permettre de couvrir l'intégralit�
 
 ### Normes et Standards étudiées
 
-Cette section présente les normes et standards susceptibles d'être utilisés pour structurer ou, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers pris en compte dans cette étude sont issues de la Spécification fonctionnelle des échanges Téléradiologie.
+Cette section présente les normes et standards susceptibles d'être utilisés pour structurer ou, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers pris en compte dans cette étude sont issus de la Spécification fonctionnelle des échanges Téléradiologie.
 
 #### Standard DICOM
 
@@ -93,7 +93,7 @@ Néanmoins, il n'est pas adapté pour répondre aux flux fonctionnels du volet T
 
 ##### Présentation
 
-Le standard [HL7 Clinical Document Architecture (CDA)](https://hl7.org/cda/stds/online-navigation/index.html) est un standard de structuration de documents cliniques spécifiant à la fois la structure et la sémantique des informations médicales, en vue de leur échange entre acteurs du système de santé. Il repose sur la syntaxe XML et ne définit pas de mécanisme de transport des documents.
+Le standard [HL7 Clinical Document Architecture (CDA)](https://hl7.org/cda/stds/online-navigation/index.html) est un standard de structuration de documents cliniques spécifiant à la fois la structure et la sémantique des informations médicales, en vue de leur compréhension entre acteurs du système de santé. Il repose sur la syntaxe XML et ne définit pas de mécanisme de transport des documents.
 
 HL7 CDA est certifiée par l'ANSI et la version 2 a été adoptée en tant que norme ISO.
 Un document CDA est un document complet pouvant contenir du texte, des images et tout autre type de contenu multimédia. Les propriétés d'un document CDA sont les suivantes : 
@@ -210,21 +210,21 @@ Dans le cadre du flux de transmission de la demande d'examen d'imagerie, les con
 
 | **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
 | --- | --- | --- | --- |
-| **StructureImagerie** | ORM^O01 | MSH / ORC | MSH-3 Sending Application, MSH-4 Sending Facility  <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **PlateformeTeleradiologie** | ORM^O01 | MSH / ORC | MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | ORM^O01 | PID ||
-| **PSResponsable** | ORM^O01 | ORC | ORC-10 Entered By, ORC-12 Ordering Provider |
-| **PSEffecteur** | ORM^O01 | ORC / OBR | ORC-11 Verified By / ORC-32 Principal Result Interpreter |
-| **roleProfessionnel** | ORM^O01 | ORC / OBR | ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter |
-| **IdentifiantDemandeExamen** | ORM^O01 | ORC | ORC-2 Placer Order Number|
-| **NatureDemande** | ORM^O01 | ORC | ORC-1 Order Control|
-| **DateDemande** | ORM^O01 | ORC | ORC-9 Date/Time of Transaction |
-| **IdentifiantRDV** | ORM^O01 | PV1 | PV1-19 |
-| **DateHeurePriseCharge** | ORM^O01 | PV1 | PV1-44 |
-| **JustificationDemande** | ORM^O01 | OBR / NTE | ORC-31 Reason for Study, NTE-3 |
-| **LocalisationAnatomique** | ORM^O01 | OBX | OBX-2 = CE / TX, OBX-5 |
-| **ModaliteImagerie** | ORM^O01 | OBX | OBX-2 = CE / TX, OBX-5 |
-| **Antecedents** | ORM^O01 | OBR | ORC-31 Relevant Clinical Information |
+| **StructureImagerie** | ORM^O01 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
+| **PlateformeTeleradiologie** | ORM^O01 | MSH - Message Header/ ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
+| **Patient** | ORM^O01 | PID - Patient Identification ||
+| **PSResponsable** | ORM^O01 | ORC - Common Order| ORC-10 Entered By, ORC-12 Ordering Provider |
+| **PSEffecteur** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-11 Verified By / ORC-32 Principal Result Interpreter |
+| **roleProfessionnel** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter |
+| **IdentifiantDemandeExamen** | ORM^O01 | ORC - Common Order| ORC-2 Placer Order Number|
+| **NatureDemande** | ORM^O01 | ORC - Common Order| ORC-1 Order Control|
+| **DateDemande** | ORM^O01 | ORC - Common Order| ORC-9 Date/Time of Transaction |
+| **IdentifiantRDV** | ORM^O01 | PV1 - Patient Visit| PV1-19 Visit Number |
+| **DateHeurePriseCharge** | ORM^O01 | PV1 - Patient Visit| PV1-44 Admit Date/Time |
+| **JustificationDemande** | ORM^O01 | OBR - Observation Request / NTE - Notes and Comments| ORC-31 Reason for Study, NTE-3 Comment |
+| **LocalisationAnatomique** | ORM^O01 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
+| **ModaliteImagerie** | ORM^O01 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
+| **Antecedents** | ORM^O01 | OBR - Observation Request| ORC-31 Relevant Clinical Information |
 
 <p style="text-align:center;">Table 2 : Couverture des concepts métier du flux 1 par le standard HL7v2</p>
 
@@ -234,14 +234,14 @@ Le flux d'annulation de la demande d'examen d'imagerie vise à notifier la plate
 
 | **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
 | --- | --- | --- | --- |
-| **StructureImagerie** | ORM^O01 | MSH / ORC | MSH-3 Sending Application, MSH-4 Sending Facility  <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **PlateformeTeleradiologie** | ORM^O01 | MSH / ORC | MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | ORM^O01 | PID ||
-| **PSEffecteur** | ORM^O01 | ORC / OBR | ORC-11 Verified By / ORC-32 Principal Result Interpreter |
-| **roleProfessionnel** | ORM^O01 | ORC / OBR | ORC-11 Verified By / ORC-32 Principal Result Interpreter |
-| **IdentifiantDemandeExamen** | ORM^O01 | ORC | ORC-2 Placer Order Number|
-| **NatureDemande** | ORM^O01 | ORC | ORC-1 Order Control|
-| **MotifAnnulation** | ORM^O01 | ORC / NTE | ORC-16 Order Control Code Reason, NTE-3 |
+| **StructureImagerie** | ORM^O01 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
+| **PlateformeTeleradiologie** | ORM^O01 | MSH - Message Header / ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
+| **Patient** | ORM^O01 | PID - Patient Identification ||
+| **PSEffecteur** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-11 Verified By / ORC-32 Principal Result Interpreter |
+| **roleProfessionnel** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter |
+| **IdentifiantDemandeExamen** | ORM^O01 | ORC - Common Order| ORC-2 Placer Order Number|
+| **NatureDemande** | ORM^O01 | ORC - Common Order| ORC-1 Order Control|
+| **MotifAnnulation** | ORM^O01 | ORC - Common Order / NTE - Notes and Comments| ORC-16 Order Control Code Reason, NTE-3 Comment |
 
 <p style="text-align:center;">Table 3 : couverture des concepts métier du flux 2 par le standard HL7v2</p>
 
@@ -251,39 +251,39 @@ Le flux de réponse à la demande d'examen d'imagerie correspond à la décision
 
 | **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
 | --- | --- | --- | --- |
-| **PlateformeTeleradiologie** | ORM^O01 / ORU^R01 | MSH / ORC | MSH-3 Sending Application, MSH-4 Sending Facility  <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **StructureImagerie** | ORM^O01 / ORU^R01 | MSH / ORC | MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | ORM^O01 / ORU^R01 | PID ||
-| **PSEffecteur** | ORM^O01 / ORU^R01 | ORC | ORC-10 Entered By, ORC-12 Ordering Provider |
-| **roleProfessionnel** | ORM^O01 / ORU^R01 | ORC / OBR | ORC-10 Entered By / ORC-11 Verified By |
-| **IdentifiantDemandeExamen** | ORM^O01 / ORU^R01 | ORC | ORC-2 Placer Order Number|
-| **DecisionEffecteur** | ORM^O01 / ORU^R01 | ORC | ORC-1 Order Control|
-| **MotifRefus** | ORM^O01 / ORU^R01 | ORC / NTE | ORC-16 Order Control Code Reason, NTE-3 |
-| **ProtocoleImagerie** | ORM^O01 / ORU^R01 | OBX | OBX-5 |
+| **PlateformeTeleradiologie** | ORM^O01 / ORU^R01 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
+| **StructureImagerie** | ORM^O01 / ORU^R01 | MSH - Message Header / ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
+| **Patient** | ORM^O01 / ORU^R01 | PID - Patient Identification ||
+| **PSEffecteur** | ORM^O01 / ORU^R01 | ORC - Common Order| ORC-10 Entered By, ORC-12 Ordering Provider |
+| **roleProfessionnel** | ORM^O01 / ORU^R01 | ORC - Common Order / OBR - Observation Request| ORC-10 Entered By / ORC-11 Verified By |
+| **IdentifiantDemandeExamen** | ORM^O01 / ORU^R01 | ORC - Common Order| ORC-2 Placer Order Number|
+| **DecisionEffecteur** | ORM^O01 / ORU^R01 | ORC - Common Order| ORC-1 Order Control|
+| **MotifRefus** | ORM^O01 / ORU^R01 | ORC - Common Order / NTE - Notes and Comments| ORC-16 Order Control Code Reason, NTE-3 Comment |
+| **ProtocoleImagerie** | ORM^O01 / ORU^R01 | OBX - Observation/Result| OBX-2 = ED/TX, OBX-5 |
 
 <p style="text-align:center;">Table 4 : couverture des concepts métier du flux 3 par le standard HL7v2</p>
 
 ###### Flux 4 - Transmission d'un complément d'information post-acte d'imagerie
 
-Le flux de transmission d'un complément d'information post-acte d'imagerie intervient à l'issue de la réalisation de l'examen. Il vise à transmettre au radiologue effecteur distant, ou à la plateforme de téléradiologie, des éléments permettant de compléter le contexte d'interprétation et de rédaction du compte-rendu d'imagerie. HL7 v2 permet de porter ce type d'information au travers de messages de résultats, en particulier le message ORU, combinant des segments OBR et OBX. Cette approche est historiquement utilisée dans les workflows d'imagerie pour la diffusion d'informations liées à l'examen réalisé.
+Le flux de transmission d'un complément d'information post-acte d'imagerie intervient à l'issue de la réalisation de l'examen. Il vise à transmettre au radiologue effecteur distant des éléments permettant de compléter le contexte d'interprétation et de rédaction du compte-rendu d'imagerie. Dans les implémentations HL7 v2 existantes, ce type de flux est fréquemment pris en charge au moyen de messages ORU^R01, utilisés pour la transmission d’observations et de résultats. Ce message permet de véhiculer une grande variété d’informations via des segments OBX, mais ne dispose pas de segments dédiés pour porter nativement les identifiants DICOM de l’examen. À l’inverse, le message OMI^O23, introduit pour répondre spécifiquement aux besoins du domaine de l’imagerie, propose le segment IPC (Imaging Procedure Control), permettant de structurer explicitement les informations techniques liées à la procédure d’imagerie, notamment l’Accession Number et le StudyInstanceUID.
 
 | **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
 | --- | --- | --- | --- |
-| **StructureImagerie** | ORU^R01 | MSH / ORC | MSH-3 Sending Application, MSH-4 Sending Facility  <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **PlateformeTeleradiologie** | ORU^R01 | MSH / ORC | MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | ORU^R01 | PID ||
-| **IdentifiantDemandeExamen** | ORU^R01 | ORC | ORC-2 Placer Order Number|
-| **IdentifiantRDV** | ORU^R01 | PV1 | PV1-19 |
-| **AccessionNumber** | ORU^R01 | OBR | OBR-3 |
-| **StudyInstanceUID** | ORU^R01 | OBR | OBR-4 |
-| **DateRéalisationExamen** | ORU^R01 | OBR | OBR-7 Observation Date/Time |
-| **LocalisationAnatomique** | ORU^R01 | OBX | OBX-2 = CE / TX, OBX-5 |
-| **ModaliteImagerie** | ORU^R01 | OBX | OBX-2 = CE / TX, OBX-5 |
-| **URLViewerDRIMBOX** | ORU^R01 | OBX | OBX-2 = ST / TX, OBX-5 |
-| **DuréeRétentionImages** | ORU^R01 | OBX | OBX-2 = NM / TX, OBX-5 |
-| **IdentificationMatériel** | ORU^R01 | OBX | OBX-2 = CE / TX, OBX-5 |
-| **ProduitsAdministres** | ORU^R01 | OBX | OBX-2 = CE / TX, OBX-5 |
-| **CodeEvenement (LOINC / CCAM)** | ORU^R01 | OBX | OBX-3 |
+| **StructureImagerie** | OMI^O23 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
+| **PlateformeTeleradiologie** | ORU^R01 | MSH - Message Header / ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
+| **Patient** | OMI^O23 | PID - Patient Identification ||
+| **IdentifiantDemandeExamen** | OMI^O23 | ORC - Common Order| ORC-2 Placer Order Number|
+| **IdentifiantRDV** | OMI^O23 | PV1 - Patient Visit| PV1-19 Visit Number |
+| **AccessionNumber** | OMI^O23 | IPC - Imaging Procedure Control| IPC-2 Requested Procedure ID |
+| **StudyInstanceUID** | OMI^O23 | IPC - Imaging Procedure Control| IPC-3 Study Instance UID |
+| **DateRéalisationExamen** | OMI^O23 | OBR - Observation Request| OBR-7 Observation Date/Time |
+| **LocalisationAnatomique** | OMI^O23 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
+| **ModaliteImagerie** | OMI^O23 | IPC - Imaging Procedure Control| IPC-5 Modality |
+| **URLViewerDRIMBOX** | OMI^O23 | OBX - Observation/Result| OBX-2 = ST / ED, OBX-5 |
+| **DuréeRétentionImages** | OMI^O23 | OBX - Observation/Result| OBX-2 = NM / TX, OBX-5 |
+| **IdentificationMatériel** | OMI^O23 | IPC - Imaging Procedure Control| IPC-5 Modality |
+| **ProduitsAdministres** | OMI^O23 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
+| **CodeEvenement (LOINC / CCAM)** | OMI^O23 | OBR - Observation Request| OBR-4 Universal Service Identifier |
 
 <p style="text-align:center;">Table 5 : couverture des concepts métier du flux 4 par le standard HL7v2</p>
 
@@ -307,19 +307,19 @@ Cette section présente une synthèse comparative des normes et standards analys
 - « [Evaluating HIT Standards](https://www.himss.org/sites/hde/files/FileDownloads/2013-09-23-EvaluatingHITStandards-FINAL.pdf) » document sur la comparaison des standards publiés par l'organisation [HIMSS.](https://www.himss.org/)
 - La méthode [CAMSS](https://joinup.ec.europa.eu/collection/common-assessment-method-standards-and-specifications-camss) (Common Assessment method for standards and specifications) soutenue par le programme de la commission européenne concernant les solutions d'interopérabilité pour les administrations publiques. Cette initiative vise à promouvoir la collaboration entre les états membres de l'union européenne dans la définition d'une méthode d'évaluation commune de standards pour le développement des services administratifs en ligne.
 
-| **Critères d'évaluation** | **DICOM** | **CDA** | **FHIR** | **HL7 v2** |
+| **Critères d'évaluation** | **DICOM** | **CDA** | **FHIR** | **HL7v2** |
 | --- | --- | --- | --- | --- |
 | Outillage<br><br>_Des outils de tests sont mis en œuvre pour valider l'adhérence au standard._ | ✔   | ✔   | ✔   | ✔   |
 | Tests<br><br>_Des tests sont effectués pour des versions de travail (dites STU -Standards for Trial Use) et/ou pour les guides d'implémentation normatifs._ |     | ✔   | ✔   | ✔   |
 | Processus de prise en compte des améliorations | ✔   | ✔   | ✔   | ✔   |
-| Existence de guides d'implémentation<br><br>_Les guides référencent les standards de base avec au moins un cas d'usage et une optionalité sur les paramètres pour permettre les extensions._ |     | ✔   | ✔   | ✔   |
-| Adapté aux dispositifs mobiles |     | ✔   | ✔   | ✔   |
+| Existence de guides d'implémentation<br><br>_Les guides référencent les standards de base avec au moins un cas d'usage et une optionalité sur les paramètres pour permettre les extensions._ |  ✔   | ✔   | ✔   | ✔   |
+| Adapté aux dispositifs mobiles |  ✔   | ✔   | ✔   | ✔   |
 | Stabilité de la documentation | ✔   | ✔   | ✔   | ✔   |
 | Adoption par le marché et utilisation | ✔   | ✔   | ✔   | ✔   |
 | Neutralité<br><br>_les spécifications ne limitent pas la concurrence et l'innovation; les spécifications sont basées sur des développements scientifiques et technologiques de pointe._ | ✔   | ✔   | ✔   | ✔   |
 | Qualité<br><br>_la qualité est suffisante pour permettre le développement de produits et de services interopérables concurrents._ | ✔   | ✔   | ✔   | ✔   |
 | Accessibilité<br><br>_Les spécifications sont disponibles au public à des conditions raisonnables (y compris pour un prix raisonnable ou gratuitement)._ | ✔   | ✔   | ✔   | ✔   |
-| Couverture métier |     | N/A | ✔   | ✔   |
+| Couverture métier |Partiel| Non étudiée | ✔   | ✔   |
 
 <p style="text-align:center;">Table 7 : Synthèse comparative des normes et standards étudiés</p>
 
