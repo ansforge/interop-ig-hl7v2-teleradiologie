@@ -2,8 +2,8 @@ CISIS_TLR_HL7_V2 : Validation Results
 =========================================
 
 err = 1, warn = 3, info = 1
-IG Publisher Version: 2.0.29
-Generated Mon Dec 29 15:28:42 UTC 2025. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
+IG Publisher Version: 2.0.29 Out of date - current version is null
+Generated Mon Dec 29 15:33:03 UTC 2025. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
  Build Errors : 10 / 3 / 0
  /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 2
 </table>
