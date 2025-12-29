@@ -1,5 +1,5 @@
 @startuml
 
-"Producteur : Plateforme téléradiologie" -> "Consommateur : Structure(s) d'imagerie" : Flux 3.1 **ReponseDemandeIMG** \n <color #FireBrick>HTTP DELETE</color>
-"Producteur : Plateforme téléradiologie" <-- "Consommateur : Structure(s) d'imagerie" : Flux 3.2 **Resultat ReponseDemandeIMG**\n <color #FireBrick>200 OK</color>
+"Producteur : Plateforme téléradiologie" -> "Consommateur : Structure(s) d'imagerie" : Flux 3.1 **ReponseDemandeIMG** \n <color #FireBrick>HTTP CREATE</color>
+"Producteur : Plateforme téléradiologie" <-- "Consommateur : Structure(s) d'imagerie" : Flux 3.2 **Resultat ReponseDemandeIMG**\n <color #FireBrick>201 Created</color>
 @enduml
