@@ -155,7 +155,9 @@ De plus, les orientations actuelles en matière d’interopérabilité privilég
 
 [FHIR](https://www.hl7.org/fhir/) (Fast Healthcare Interoperability Resources) est un standard élaboré par HL7 qui s’appuie sur un ensemble de ressources, des blocs de données modulaires, qui correspondent à des objets métiers, médicaux ou administratifs. Ces objets sont caractérisés par des éléments de données, des contraintes et des relations avec d’autres objets métiers.
 
-Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées dans des guides d’implémentations (IG)
+Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées dans des guides d’implémentations (IG).
+
+Dans le cadre français, l’[Agence du Numérique en Santé (ANS)](https://www.esante.gouv.fr/) a publié un [guide d’implémentation FHIR](https://hl7.fr/ig/fhir/core/) qui définit des profils FHIR pour répondre aux besoins spécifiques du système de santé français. Ces profils adaptent les ressources FHIR standard pour inclure des contraintes et des extensions spécifiques au contexte français.
 
 ##### Maturité et adoption
 
@@ -181,28 +183,27 @@ La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est éga
 
 * La structure XML ou JSON des ressources est valide ;
 * Les ressources sont conformes aux exigences FHIR ;
-* Les ressources sont conformes aux exigences des profils
+* Les ressources sont conformes aux exigences des profils issues des guides d’implémentation.
 
 ##### Ressources FHIR adaptées au cas d’usage
 
-Le standard FHIR offre la possibilité de construire un document. Chaque document FHIR correspond à une ressource Bundle (NM N) de type « document » rassemblant des ressources indépendantes dans des entrées. La première de ces entrées est obligatoirement constituée d’une ressource Composition qui organise le contenu du document à l’aide de sections. Chaque section peut contenir des informations descriptives (titre, auteur, texte…) et peut référencer une autre ressource contenue dans une entrée du bundle.
-
 Dans le cadre du volet “téléradiologie” les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations :
 
-* Ressource [Patient](https://hl7.org/fhir/R4/patient.html) (NM N) : La ressource Patient permet de représenter les données concernant l’identification et les coordonnées (télécommunication et adresse) de l’usager ainsi que ses contacts. Un profil français de cette ressource existe, nommé [FrPatient](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-patient-ins.html), pour prendre en compte des spécificités françaises, comme la gestion de l’INS par exemple.
-* Ressource [Organization](https://hl7.org/fhir/R4/organization.html) (NM 3) : La ressource Organization permet de représenter une personne morale telle que l’ESSMS. Un profil français, [FrOrganization](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-organization.html), existe également pour cette ressource.
+* Ressource [Patient](https://hl7.org/fhir/R4/patient.html) (NM N) : La ressource Patient permet de représenter les données concernant l’identification et les coordonnées (télécommunication et adresse) du patient ainsi que ses contacts. Un profil français de cette ressource existe, nommé [FrPatient](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-patient-ins.html), pour prendre en compte des spécificités françaises, comme la gestion de l’INS par exemple.
+* Ressource [Organization](https://hl7.org/fhir/R4/organization.html) (NM 3) : La ressource Organization permet de représenter une personne morale telle que le centre de téléradiologie. Un profil français, [FrOrganization](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-organization.html), existe également pour cette ressource.
 * Ressource [Practitioner](https://hl7.org/fhir/R4/practitioner.html) (NM 3) : La ressource Practitioner permet de représenter un professionnel de santé. Un profil français,[FRPractitioner](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner.html) existe également
-* Ressource [PractitionerRole](https://hl7.org/fhir/R4/practitionerrole.html) (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d’un professionnel de santé. Un profile français, [FRPractitionerRole](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner-role.html) existe également.
+* Ressource [PractitionerRole](https://hl7.org/fhir/R4/practitionerrole.html) (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d’un professionnel de santé. Un profil français, [FRPractitionerRole](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner-role.html) existe également.
 * Ressource [ServiceRequest](https://hl7.org/fhir/R4/servicerequest.html) (NM 2) : La ressource ServiceRequest permet de représenter une demande de service, comme par exemple une demande de diagnostic, de traitement ou d’opérations à effectuer.
 * Ressource [Appointment](https://hl7.org/fhir/R4/appointment.html) (NM 3) : La ressource Appointment permet de représenter un rendez vous ou une demande de rendez vous avec un professionnel de santé, un dispositif médical ou une unité de soin. Un profil français, [FRAppointment](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-appointment.html) existe également.
 * Ressource [AppointmentResponse](https://hl7.org/fhir/R4/appointmentresponse.html) (NM 3) : La ressource AppointmentResponse permet de représenter la réponse à une demande de rendez vous.
 * Ressource [Condition](https://hl7.org/fhir/R4/condition.html) (NM 3) : La ressource Condition permet de représenter une affection, un problème, un diagnostic rencontré par un patient.
-* Ressource [DocumentReference](https://hl7.org/fhir/R4/documentreference.html) (NM 3) : La ressource DocumentReference permet de représenter un document stocké dans différent format ou bien une référence vers ce document.
+* Ressource [DocumentReference](https://hl7.org/fhir/R4/documentreference.html) (NM 3) : La ressource DocumentReference permet de représenter un document stocké dans différents formats ou bien une référence vers ce document.
 * Ressource [ImagingStudy](https://hl7.org/fhir/R4/imagingstudy.html) (NM 3) : La ressource ImagingStudy permet de représenter les métadonnées d’un objet DICOM.
 * Ressource [GuidanceResponse](https://hl7.org/fhir/R4/guidanceresponse.html) (NM 2) : La ressource GuidanceResponse permet de représenter la réponse à la demande d’imagerie avec les éléments joints par le professionnel de santé effecteur.
 * Ressource [Endpoint](https://hl7.org/fhir/R4/endpoint.html) (NM 2) : La ressource Endpoint permet de représenter un endpoint accessible comme un serveur (web,fhir,dicom,..)
 * Ressource [Device](https://hl7.org/fhir/R4/device.html) (NM 2) : La ressource Device permet de représenter un équipement utilisé lors de la prise en charge du patient, que ce soit un DM ou un autre équipement .
 * Ressource [MedicationAdministration](https://hl7.org/fhir/R4/medicationadministration.html) (NM 2) : La ressource MedicationAdministration permet de représenter l’injection ou la consommation d’un médicament pour un patient par un professionnel de santé.
+* Ressource [BodyStructure](https://hl7.org/fhir/R4/bodystructure.html) (NM 1) : La ressource BodyStructure permet de représenter une structure anatomique du corps humain.
 
 | | |
 | :--- | :--- |
@@ -280,7 +281,7 @@ Ce flux permettrait de couvrir l’ensemble des processus suivants :
 
 ###### Annulation d’une demande d’examen d’imagerie
 
-L’annulation d’une demande d’imagerie peut être réalisée grâce à la suppression d’une ressource, par exemple Appointment via une requête DELETE reposant sur l’interaction “[delete]((https://build.fhir.org/http.md#delete)").
+L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “[delete]((https://build.fhir.org/http.md#delete)").
 
 Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http `200 OK`. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 

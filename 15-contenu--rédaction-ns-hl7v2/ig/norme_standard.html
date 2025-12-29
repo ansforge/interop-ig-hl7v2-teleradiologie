@@ -373,7 +373,9 @@ Un document CDA est un document complet pouvant contenir du texte, des images et
 <h5 id="présentation-2">Présentation</h5>
 <p><a href="https://www.hl7.org/fhir/">FHIR</a> (Fast Healthcare Interoperability Resources) est un standard élaboré par HL7 qui s’appuie sur un ensemble de ressources, des blocs de données modulaires, qui correspondent à des objets métiers, médicaux ou administratifs. Ces objets sont caractérisés par des éléments de données, des contraintes et des relations avec d’autres objets métiers.</p>
 
-<p>Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées dans des guides d’implémentations (IG)</p>
+<p>Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées dans des guides d’implémentations (IG).</p>
+
+<p>Dans le cadre français, l’<a href="https://www.esante.gouv.fr/">Agence du Numérique en Santé (ANS)</a> a publié un <a href="https://hl7.fr/ig/fhir/core/">guide d’implémentation FHIR</a> qui définit des profils FHIR pour répondre aux besoins spécifiques du système de santé français. Ces profils adaptent les ressources FHIR standard pour inclure des contraintes et des extensions spécifiques au contexte français.</p>
 <h5 id="maturité-et-adoption-2">Maturité et adoption</h5>
 <p>FHIR a mis en œuvre un modèle de maturité de ressources afin de fournir aux développeurs une
 idée de la maturité d’une ressource avant son utilisation et son implémentation. D’une manière
@@ -403,31 +405,28 @@ développement des ressources FHIR en Java.</li>
 <ul>
   <li>La structure XML ou JSON des ressources est valide ;</li>
   <li>Les ressources sont conformes aux exigences FHIR ;</li>
-  <li>Les ressources sont conformes aux exigences des profils</li>
+  <li>Les ressources sont conformes aux exigences des profils issues des guides d’implémentation.</li>
 </ul>
 
 <h5 id="ressources-fhir-adaptées-au-cas-dusage">Ressources FHIR adaptées au cas d’usage</h5>
 
-<p>Le standard FHIR offre la possibilité de construire un document. Chaque document FHIR correspond à une ressource Bundle (NM N) de type « document » rassemblant des ressources indépendantes dans des entrées. La première de ces entrées est obligatoirement constituée d’une ressource Composition qui organise le contenu du document à l’aide de sections. Chaque section peut contenir des informations descriptives (titre, auteur, texte…) et peut référencer une autre ressource contenue dans une entrée du bundle.</p>
-
 <p>Dans le cadre du volet “téléradiologie” les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations :</p>
+
 <ul>
   <li>
     <p>Ressource <a href="https://hl7.org/fhir/R4/patient.html">Patient</a> (NM N) : La ressource Patient permet de représenter les données
-concernant l’identification et les coordonnées (télécommunication et adresse) de l’usager
-ainsi que ses contacts. Un profil français de cette ressource existe, nommé <a href="https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-patient-ins.html">FrPatient</a>, pour
+concernant l’identification et les coordonnées (télécommunication et adresse) du patient ainsi que ses contacts. Un profil français de cette ressource existe, nommé <a href="https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-patient-ins.html">FrPatient</a>, pour
 prendre en compte des spécificités françaises, comme la gestion de l’INS par exemple.</p>
   </li>
   <li>
-    <p>Ressource <a href="https://hl7.org/fhir/R4/organization.html">Organization</a> (NM 3) : La ressource Organization permet de représenter une
-personne morale telle que l’ESSMS. Un profil français, <a href="https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-organization.html">FrOrganization</a>, existe également
+    <p>Ressource <a href="https://hl7.org/fhir/R4/organization.html">Organization</a> (NM 3) : La ressource Organization permet de représenter une personne morale telle que le centre de téléradiologie. Un profil français, <a href="https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-organization.html">FrOrganization</a>, existe également
 pour cette ressource.</p>
   </li>
   <li>
     <p>Ressource <a href="https://hl7.org/fhir/R4/practitioner.html">Practitioner</a> (NM 3) : La ressource Practitioner permet de représenter un professionnel de santé. Un profil français,<a href="https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner.html">FRPractitioner</a> existe également</p>
   </li>
   <li>
-    <p>Ressource <a href="https://hl7.org/fhir/R4/practitionerrole.html">PractitionerRole</a> (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d’un professionnel de santé. Un profile français, <a href="https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner-role.html">FRPractitionerRole</a> existe également.</p>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/practitionerrole.html">PractitionerRole</a> (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d’un professionnel de santé. Un profil français, <a href="https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner-role.html">FRPractitionerRole</a> existe également.</p>
   </li>
   <li>
     <p>Ressource <a href="https://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a> (NM 2) : La ressource ServiceRequest permet de représenter une demande de service, comme par exemple une demande de diagnostic, de traitement ou d’opérations à effectuer.</p>
@@ -442,7 +441,7 @@ pour cette ressource.</p>
     <p>Ressource <a href="https://hl7.org/fhir/R4/condition.html">Condition</a> (NM 3) : La ressource Condition permet de représenter une affection, un problème, un diagnostic rencontré par un patient.</p>
   </li>
   <li>
-    <p>Ressource <a href="https://hl7.org/fhir/R4/documentreference.html">DocumentReference</a> (NM 3) : La ressource DocumentReference permet de représenter un document stocké dans différent format ou bien une référence vers ce document.</p>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/documentreference.html">DocumentReference</a> (NM 3) : La ressource DocumentReference permet de représenter un document stocké dans différents formats ou bien une référence vers ce document.</p>
   </li>
   <li>
     <p>Ressource <a href="https://hl7.org/fhir/R4/imagingstudy.html">ImagingStudy</a> (NM 3) : La ressource ImagingStudy permet de représenter les métadonnées d’un objet DICOM.</p>
@@ -458,6 +457,9 @@ pour cette ressource.</p>
   </li>
   <li>
     <p>Ressource <a href="https://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a> (NM 2) : La ressource MedicationAdministration permet de représenter l’injection ou la consommation d’un médicament pour un patient par un professionnel de santé.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/bodystructure.html">BodyStructure</a> (NM 1) : La ressource BodyStructure permet de représenter une structure anatomique du corps humain.</p>
   </li>
 </ul>
 
@@ -649,7 +651,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="annulation-dune-demande-dexamen-dimagerie">Annulation d’une demande d’examen d’imagerie</h6>
 
-<p><a name="l1358">​</a>L’annulation d’une demande d’imagerie peut être réalisée grâce à la suppression d’une ressource, par exemple Appointment via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
+<p><a name="l1373">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
 
 <p>Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">200 OK</code>. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
@@ -671,7 +673,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 3.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
-<div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 600 180" zoomAndPan="magnify" preserveAspectRatio="none" width="600px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:600px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="142" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="142"></line><line y1="36.2969" x1="448" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="448"></line><rect rx="2.5" ry="2.5" width="275" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="275" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="436.5,78.5625,446.5,82.5625,436.5,86.5625,440.5,82.5625"></polygon><line y1="82.5625" x1="142.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="442.5"></line><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 3.1</text><text font-weight="bold" lengthAdjust="spacing" x="202.5" font-size="13" textLength="163" y="62.3638" font-family="sans-serif" fill="#000000">ReponseDemandeIMG</text><text lengthAdjust="spacing" x="365.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="153.5" font-size="13" textLength="84" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP DELETE</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="153.5,122.8281,143.5,126.8281,153.5,130.8281,149.5,126.8281"></polygon><line y1="126.8281" x1="147.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="447.5"></line><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 3.2</text><text font-weight="bold" lengthAdjust="spacing" x="212.5" font-size="13" textLength="229" y="106.6294" font-family="sans-serif" fill="#000000">Resultat ReponseDemandeIMG</text><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="163.5" font-size="13" textLength="46" y="121.7622" font-family="sans-serif" fill="#B22222">200 OK</text></g></svg> </div>
+<div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 600 180" zoomAndPan="magnify" preserveAspectRatio="none" width="600px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:600px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="142" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="142"></line><line y1="36.2969" x1="448" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="448"></line><rect rx="2.5" ry="2.5" width="275" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="275" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="436.5,78.5625,446.5,82.5625,436.5,86.5625,440.5,82.5625"></polygon><line y1="82.5625" x1="142.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="442.5"></line><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 3.1</text><text font-weight="bold" lengthAdjust="spacing" x="202.5" font-size="13" textLength="163" y="62.3638" font-family="sans-serif" fill="#000000">ReponseDemandeIMG</text><text lengthAdjust="spacing" x="365.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="153.5" font-size="13" textLength="85" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP CREATE</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="153.5,122.8281,143.5,126.8281,153.5,130.8281,149.5,126.8281"></polygon><line y1="126.8281" x1="147.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="447.5"></line><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 3.2</text><text font-weight="bold" lengthAdjust="spacing" x="212.5" font-size="13" textLength="229" y="106.6294" font-family="sans-serif" fill="#000000">Resultat ReponseDemandeIMG</text><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="163.5" font-size="13" textLength="79" y="121.7622" font-family="sans-serif" fill="#B22222">201 Created</text></g></svg> </div>
 
 <p style="text-align:center;">Figure 3 - Diagramme d'échange FHIR pour le flux 3 - Réponse à une demande d'examen d'imagerie</p>
 
@@ -1325,7 +1327,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 29, 2025 10:57+0000">2025-12-29</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 29, 2025 13:45+0000">2025-12-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
