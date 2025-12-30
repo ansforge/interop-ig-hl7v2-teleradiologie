@@ -72,7 +72,7 @@ Cette section présente les normes et standards susceptibles d'être utilisés p
 
 <br>
 
-### Synthèse
+### Synthèse de l'étude
 
 #### Synthèse de la couverture des objets métiers par chaque standard étudié
 
