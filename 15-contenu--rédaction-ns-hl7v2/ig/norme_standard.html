@@ -188,7 +188,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#présentation-synthétique-du-volet-téléradiologie" id="markdown-toc-présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</a></li>
-  <li><a href="#normes-et-standards-étudiées" id="markdown-toc-normes-et-standards-étudiées">Normes et Standards étudiées</a></li>
+  <li><a href="#normes-et-standards-étudiés" id="markdown-toc-normes-et-standards-étudiés">Normes et Standards étudiés</a></li>
   <li><a href="#synthèse-4" id="markdown-toc-synthèse-4">Synthèse</a></li>
   <li><a href="#analyse-et-conclusion" id="markdown-toc-analyse-et-conclusion">Analyse et conclusion</a></li>
   <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
@@ -233,20 +233,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p>Les standards seront analysés notamment sur leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit également dans un contexte de mise en œuvre opérationnelle contraint. L’un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d’actes d’imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les plateformes de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.</p>
+<p style="text-align:center;">Table 1 : Normes et standards étudiés</p>
+
+<p>Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit également dans un contexte de mise en œuvre opérationnelle contraint. L’un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d’actes d’imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les plateformes de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.</p>
 
 <p>Les versions des normes et standards étudiés dans le présent document sont celles disponibles à la date de réalisation de l’étude (décembre 2025).</p>
 
-<p>La section 2 propose un rappel synthétique du contexte du volet Téléradiologie. La section 3 présente individuellement chaque norme ou standard étudié, en détaillant pour chacun :</p>
+<p>L’étude présente un rappel synthétique du contexte du volet Téléradiologie. Elle propose ensuite, pour chacune des normes et standards étudiés, une analyse détaillée comprenant une description générale, leur maturité et leur niveau d’adoption au sein des systèmes de santé, l’existence d’outillage, ainsi que leur pertinence au regard des cas d’usage identifiés.</p>
 
-<ul>
-  <li>Une description générale ;</li>
-  <li>Sa maturité et son niveau d’adoption dans les systèmes de santé ;</li>
-  <li>L’existence d’outillage ;</li>
-  <li>Sa pertinence au regard des cas d’usage identifiés.</li>
-</ul>
-
-<p>Une synthèse est proposée en section 4 afin de faciliter la lecture et la mise en perspective des normes et standards évalués. Une analyse métier et technique croisée est fournie en section 5 pour éclairer les choix de standardisation envisageables.</p>
+<p>Une synthèse comparative est ensuite proposée afin de faciliter la lecture et la mise en perspective des normes et standards évalués. Enfin, une analyse métier et technique croisée vient éclairer les choix de standardisation envisageables.</p>
 
 <p>Cette étude s’appuie sur les recommandations et principes du Cadre d’interopérabilité des systèmes d’information de santé (CI-SIS), qui référence les normes et standards internationaux applicables au développement des volets métiers, et constitue le référentiel de doctrine pour l’interopérabilité du système de santé.</p>
 
@@ -285,15 +280,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><br/></p>
 
-<h3 id="normes-et-standards-étudiées">Normes et Standards étudiées</h3>
+<h3 id="normes-et-standards-étudiés">Normes et Standards étudiés</h3>
 
-<p>Cette section présente les normes et standards susceptibles d’être utilisés pour structurer ou, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers pris en compte dans cette étude sont issus de la Spécification fonctionnelle des échanges Téléradiologie.</p>
+<p>Cette section présente les normes et standards susceptibles d’être utilisés pour structurer et, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers étudiés dans cette étude sont issus de la Spécification fonctionnelle des échanges Téléradiologie.</p>
 
 <h4 id="standard-dicom">Standard DICOM</h4>
 
 <h5 id="présentation">Présentation</h5>
 
-<p>Le standard <a href="https://www.dicomstandard.org/">DICOM (Digital Imaging and Communications in Medicine)</a> est un standard international dédié à la gestion, au stockage, à la transmission et à la visualisation des images médicales. Il définit à la fois un format de fichier pour les images d’imagerie médicale et un ensemble de services réseau permettant l’échange de ces images et des métadonnées associées entre équipements et systèmes d’information d’imagerie (modalités, PACS, visionneuses). DICOM est nativement orienté vers les besoins des domaines de l’imagerie médicale, notamment la radiologie, la médecine nucléaire, la radiothérapie et l’imagerie interventionnelle. Il constitue le socle technique des échanges d’images et d’informations associées au sein des systèmes d’imagerie.</p>
+<p>Le standard <a href="https://www.dicomstandard.org/">DICOM (Digital Imaging and Communications in Medicine)</a> est un standard international dédié à la gestion, au stockage, à la transmission et à la visualisation des images médicales. Il définit à la fois un format de fichier pour l’imagerie médicale et un ensemble de services réseau permettant l’échange de ces images et des métadonnées associées entre équipements et systèmes d’information d’imagerie (modalités, PACS, visionneuses). DICOM est nativement orienté vers les besoins des domaines de l’imagerie médicale, notamment la radiologie, la médecine nucléaire, la radiothérapie et l’imagerie interventionnelle. Il constitue le socle technique des échanges d’images et d’informations associées au sein des systèmes d’imagerie.</p>
 
 <h5 id="maturité-et-adoption">Maturité et adoption</h5>
 
@@ -347,8 +342,8 @@ Néanmoins, il n’est pas adapté pour répondre aux flux fonctionnels du volet
 
 <p>Le standard <a href="https://hl7.org/cda/stds/online-navigation/index.html">HL7 Clinical Document Architecture (CDA)</a> est un standard de structuration de documents cliniques spécifiant à la fois la structure et la sémantique des informations médicales, en vue de leur compréhension entre acteurs du système de santé. Il repose sur la syntaxe XML et ne définit pas de mécanisme de transport des documents.</p>
 
-<p>HL7 CDA est certifiée par l’ANSI et la version 2 a été adoptée en tant que norme ISO.
-Un document CDA est un document complet pouvant contenir du texte, des images et tout autre type de contenu multimédia. Les propriétés d’un document CDA sont les suivantes :</p>
+<p>Le standard HL7 CDA est porté par HL7, organisme accrédité par l’ANSI. La version 2 du standard (CDA R2) a par ailleurs été adoptée comme norme internationale ISO. Un document CDA est un document complet pouvant contenir du texte, des images et tout autre type de contenu multimédia. Les propriétés d’un document CDA sont les suivantes :</p>
+
 <ul>
   <li>Persistance&nbsp;: Tout au long de son existence, le CDA doit rester cohérent, accessible et inaltérable. La durée de vie du document dépendant du cadre législatif.</li>
   <li>Intendance&nbsp;: L’organisation émettrice du document dématérialisé doit en assurer la gestion et le suivi, en mettant à disposition les éventuelles mises à jour.</li>
@@ -382,6 +377,8 @@ Un document CDA est un document complet pouvant contenir du texte, des images et
   <li><a href="https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda">Modèles de contenus CDA</a>, qui définit la structure des données du corps du document.</li>
 </ul>
 
+<p>Par ailleurs, au moment de la présente étude, les orientations nationales et européennes en matière d’interopérabilité évoluent vers des approches plus adaptées aux échanges de données structurées et aux usages transactionnels. Dans ce contexte, le recours au standard CDA tend à être réservé aux documents cliniques établis, et son utilisation pour la mise en œuvre de nouveaux flux d’échange apparaît de moins en moins pertinente.</p>
+
 <h5 id="outillage-1">Outillage</h5>
 
 <p>Un document CDA peut être testé contre un schéma XSD via un éditeur de texte tel que Notepad++. Ce schéma permet uniquement de vérifier la structure du document ainsi que la conformité par rapport au standard.</p>
@@ -398,15 +395,13 @@ Un document CDA est un document complet pouvant contenir du texte, des images et
 
 <h5 id="cda-adapté-au-cas-dusage-téléradiologie">CDA adapté au cas d’usage Téléradiologie</h5>
 
-<p>Le standard CDA est conçu pour structurer et échanger des documents cliniques persistants, porteurs de sens médical, tels que des comptes rendus, des lettres médicales ou des synthèses de prise en charge. Il vise à garantir la lisibilité humaine, la pérennité et la réutilisabilité clinique des documents échangés. Dans le cadre du volet Téléradiologie, les flux étudiés correspondent majoritairement à des échanges transactionnels et organisationnels (annulation de demande, décision de protocolisation, transmission d’informations post-acte), intervenant au fil du workflow de prise en charge. Ces échanges ne constituent pas des documents cliniques à part entière mais relèvent d’une logique d’échanges métiers structurés, contextualisés et à durée de vie limitée.</p>
+<p>Le standard CDA est conçu pour structurer et échanger des documents cliniques persistants, porteurs de sens médical, tels que des comptes rendus, des lettres médicales ou des synthèses de prise en charge. Il vise à garantir la lisibilité humaine, la pérennité et la réutilisabilité clinique des documents échangés. Dans le cadre du volet Téléradiologie, les flux étudiés correspondent majoritairement à des échanges transactionnels et organisationnels (annulation de demande, décision de protocolisation, transmission d’informations post-acte), intervenant au fil du workflow de prise en charge. Ces échanges ne constituent pas des documents cliniques à proprement parlé mais relèvent d’une logique d’échanges métiers structurés, contextualisés et à durée de vie limitée.</p>
 
-<p>À ce titre, seul le flux relatif à la demande d’examen d’imagerie (flux 1) s’inscrit dans une logique documentaire et fait déjà l’objet d’une structuration CDA, par l’intermédiaire du volet CI-SIS dédié à la demande d’acte d’imagerie. Pour les autres flux du périmètre, bien qu’il soit théoriquement possible de représenter les concepts métiers au sein de documents CDA, une telle approche ne correspondrait pas à l’usage naturel du standard. En effet, la structuration documentaire apportée par CDA est déjà pleinement mobilisée en fin de workflow à travers le compte-rendu d’imagerie, qui constitue le livrable clinique de référence, destiné à être partagé et archivé, notamment au sein du DMP du patient.</p>
-
-<p>Par ailleurs, au moment de la présente étude, les orientations nationales et européennes en matière d’interopérabilité privilégient le standard FHIR pour les nouveaux besoins d’échange, en particulier pour les cas d’usage transactionnels et les échanges de données cliniques structurées. Cette dynamique s’inscrit dans une logique de remplacement progressif du standard CDA pour les nouveaux flux.</p>
+<p>Bien qu’il soit théoriquement possible de représenter les concepts métiers au sein de documents CDA, une telle approche ne serait pas adaptée à la finalité du standard. Le CDA est en effet conçu pour structurer des documents cliniques persistants, destinés à être partagés, archivés et réutilisés dans le temps, ce qui ne correspond pas à la nature des flux de téléradiologie, essentiellement transactionnels, contextuels et à durée de vie courte. La structuration documentaire apportée par CDA est en revanche pleinement pertinente en fin de workflow, à travers le compte-rendu d’imagerie, qui constitue le livrable clinique de référence, destiné à être partagé et archivé, notamment au sein du DMP du patient.</p>
 
 <h5 id="synthèse-1">Synthèse</h5>
 
-<p>Le standard CDA est adapté à la structuration et à l’échange de documents cliniques pérennes, tels que le compte-rendu d’imagerie, qui constitue l’aboutissement du workflow de téléradiologie. En revanche, les flux intermédiaires étudiés relèvent d’échanges transactionnels et métiers qui ne s’inscrivent pas dans une logique documentaire.</p>
+<p>Le standard CDA est adapté à la structuration et à l’échange de documents cliniques pérennes, tels que le compte-rendu d’imagerie, qui constitue l’aboutissement du workflow de téléradiologie. En revanche, les flux intermédiaires étudiés dans ce volet relèvent d’échanges transactionnels et métiers qui ne s’inscrivent pas dans une logique documentaire.</p>
 
 <p>De plus, les orientations actuelles en matière d’interopérabilité privilégient le recours à FHIR pour les nouveaux besoins d’échange.</p>
 
@@ -640,7 +635,7 @@ concernant l’identification et les coordonnées (télécommunication et adress
 
 </tbody>
 </table>
-<p style="text-align:center;">Table 1 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
+<p style="text-align:center;">Table 2 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
 
 <h5 id="transport-1">Transport</h5>
 
@@ -693,7 +688,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="annulation-dune-demande-dexamen-dimagerie">Annulation d’une demande d’examen d’imagerie</h6>
 
-<p><a name="l1471">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
+<p><a name="l1459">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
 
 <p>Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">200 OK</code>. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
@@ -782,10 +777,10 @@ La notion d’acquittement n’est toutefois pas explicitement modélisée en FH
 
 <h5 id="maturité-et-adoption-3">Maturité et adoption</h5>
 
-<p>HL7 v2 est un standard hautement mature, dans l’écosystème français, le standard HL7 v2 est ancré dans les pratiques des systèmes d’information de santé, en particulier dans le domaine de l’imagerie médicale. Ce constat repose à la fois sur son usage historique largement répandu et sur les travaux menés dans le cadre du volet Téléradiologie, notamment au travers d’ateliers associant éditeurs de RIS et plateformes de téléradiologie. Ces échanges ont permis de confronter les besoins opérationnels aux capacités des standards existants et ont confirmé le niveau de maturité et d’industrialisation de HL7 v2 pour ce type de cas d’usage.
+<p>HL7 v2 est un standard hautement mature. Dans l’écosystème français, il est solidement ancré dans les pratiques des systèmes d’information de santé, en particulier dans le domaine de l’imagerie médicale. Ce constat repose à la fois sur son usage historique largement répandu et sur les travaux menés dans le cadre du volet Téléradiologie, notamment au travers d’ateliers associant éditeurs de RIS et plateformes de téléradiologie. Ces échanges ont permis de confronter les besoins opérationnels aux capacités des standards existants et ont confirmé le niveau de maturité et d’industrialisation de HL7 v2 pour ce type de cas d’usage.
 Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/Livre-Blanc-TLR_vFinale.pdf">Livre blanc Téléradiologie</a> élaboré par l’Agence du Numérique en Santé en collaboration avec l’écosystème éditeur s’appuie sur des flux fondés sur le standard HL7 v2, renforçant ainsi ce constat.</p>
 
-<p>De plus, la doctrine du CI-SIS incite à l’utilisation du HL7v2 pour le transport des documents CDA notamment en se conformant aux volets de référence suivants :</p>
+<p>De plus, la doctrine du CI-SIS incite à l’utilisation du standard HL7v2 pour le transport des documents CDA notamment en se conformant aux volets de référence suivants :</p>
 
 <ul>
   <li><a href="https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm">Transport d’un document CDA en HL7v2</a></li>
@@ -814,7 +809,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <p>Le standard HL7 v2 est d’ores et déjà présent au sein du workflow global de la téléradiologie par l’intermédiaire du volet Transport de document CDA en HL7 v2, utilisé pour la transmission du compte-rendu d’imagerie depuis la plateforme de téléradiologie vers le RIS de la structure d’imagerie. Par ailleurs, le volet téléradiologie envisage également la transmission, en complément des éléments structurés de la demande d’examen, de documents associés tels que la demande d’examen formalisée ou tout document complémentaire permettant d’enrichir le contexte clinique. Ces flux complémentaires reposent également sur le volet de Transport de documents CDA en HL7 v2, renforçant ainsi la cohérence globale des échanges autour de ce standard.</p>
 
-<p>Au-delà de ces usages existants, plusieurs profils IHE du <a href="https://www.ihe.net/ihe_domains/radiology/">domaine IHE RADIOLOGY</a> s’appuient historiquement sur HL7 v2 pour structurer les échanges liés aux workflows d’imagerie. Le profil <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf">IHE Scheduled Workflow (SWF.b)</a> définit notamment les transactions permettant d’orchestrer le cycle de vie d’un acte d’imagerie, depuis la prescription jusqu’à la production des résultats. Bien que le profil SWF.b ne couvre pas l’intégralité des cas d’usage spécifiques à la téléradiologie, en particulier les étapes de validation médicale distante ou de protocolisation, il propose néanmoins un ensemble de briques fonctionnelles pertinentes, telles que la gestion des demandes d’examen, des statuts associés ou des identifiants d’actes. Ces briques peuvent être mobilisées et adaptées dans le cadre des flux de téléradiologie, sans nécessiter l’adoption exhaustive du profil.</p>
+<p>Au-delà de ces usages existants, plusieurs profils IHE du <a href="https://www.ihe.net/ihe_domains/radiology/">domaine IHE RADIOLOGY</a> s’appuient historiquement sur HL7 v2 pour structurer les échanges liés aux workflows d’imagerie. Le profil <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf">IHE Scheduled Workflow (SWF.b)</a> définit notamment les transactions permettant d’orchestrer le cycle de vie d’un acte d’imagerie, depuis la prescription jusqu’à la production des résultats. Bien que le profil SWF.b ne couvre pas l’intégralité des cas d’usage spécifiques à la téléradiologie, en particulier les étapes de validation médicale distante ou de protocolisation, il propose néanmoins un ensemble de briques fonctionnelles pertinentes, telles que la gestion des demandes d’examen, des statuts associés ou des identifiants d’actes. Ces briques peuvent être mobilisées et adaptées dans le cadre des flux de téléradiologie, sans nécessiter l’adoption exhaustive du profil IHE.</p>
 
 <p>De même, le profil <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a> (Patient Administration Management France), bien qu’orienté vers la gestion administrative des patients et non vers les processus métiers propres à la téléradiologie, constitue une référence nationale pour la gestion de l’identité patient et des traits d’identification, notamment autour de l’INS. Les segments et champs HL7 v2 définis par ce profil peuvent ainsi être réutilisés pour garantir une gestion cohérente et conforme de l’identité du patient dans les flux de téléradiologie, indépendamment des messages métiers échangés.</p>
 
@@ -927,7 +922,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
   </tbody>
 </table>
 
-<p style="text-align:center;">Table 2 : Couverture des concepts métier du flux 1 par le standard HL7v2</p>
+<p style="text-align:center;">Table 3 : Couverture des concepts métier du flux 1 par le standard HL7v2</p>
 
 <h6 id="flux-2---annulation-de-la-demande-dexamen-dimagerie">Flux 2 - Annulation de la demande d’examen d’imagerie</h6>
 
@@ -994,7 +989,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
   </tbody>
 </table>
 
-<p style="text-align:center;">Table 3 : couverture des concepts métier du flux 2 par le standard HL7v2</p>
+<p style="text-align:center;">Table 4 : couverture des concepts métier du flux 2 par le standard HL7v2</p>
 
 <h6 id="flux-3---réponse-à-la-demande-dexamen-dimagerie">Flux 3 - Réponse à la demande d’examen d’imagerie</h6>
 
@@ -1067,7 +1062,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
   </tbody>
 </table>
 
-<p style="text-align:center;">Table 4 : couverture des concepts métier du flux 3 par le standard HL7v2</p>
+<p style="text-align:center;">Table 5 : couverture des concepts métier du flux 3 par le standard HL7v2</p>
 
 <h6 id="flux-4---transmission-dun-complément-dinformation-post-acte-dimagerie">Flux 4 - Transmission d’un complément d’information post-acte d’imagerie</h6>
 
@@ -1176,11 +1171,11 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
   </tbody>
 </table>
 
-<p style="text-align:center;">Table 5 : couverture des concepts métier du flux 4 par le standard HL7v2</p>
+<p style="text-align:center;">Table 6 : couverture des concepts métier du flux 4 par le standard HL7v2</p>
 
 <h5 id="synthèse-3">Synthèse</h5>
 
-<p>L’analyse des différents flux du volet Téléradiologie met en évidence la capacité du standard HL7 v2 à couvrir les échanges nécessaires à la mise en œuvre des flux identifiés dans les spécifications fonctionnelles. Ce standard bénéficie d’un haut niveau de maturité, d’un large outillage industriel et d’une interopérabilité éprouvée, en particulier dans le domaine de l’imagerie médicale. La capacité d’HL7 v2 à gérer nativement les statuts d’ordre et à fournir des mécanismes d’accusés de réception constitue à ce titre un élément structurant pour garantir la cohérence, la traçabilité et la fiabilité des échanges entre systèmes distants. L’utilisation conjointe de HL7 v2 et du protocole MLLP permet ainsi de répondre efficacement aux exigences de robustesse et de synchronisation attendues pour ce type de flux transactionnels. Par ailleurs, l’analyse montre que les profils IHE, en particulier IHE Scheduled Workflow (SWF.b) et IHE PAM-FR, apportent un cadre de référence pertinent pour l’usage d’HL7 v2 dans le domaine de l’imagerie. Les briques proposées par ces profils peuvent être mobilisées de manière ciblée, notamment pour la gestion du cycle de vie des demandes et pour la prise en compte des exigences nationales relatives à l’identité patient et à l’INS.</p>
+<p>L’analyse des différents flux du volet Téléradiologie met en évidence la capacité du standard HL7 v2 à couvrir les concepts métiers échangés au sein des flux identifiés dans les spécifications fonctionnelles. Ce standard bénéficie d’un haut niveau de maturité, d’un large outillage industriel et d’une interopérabilité éprouvée, en particulier dans le domaine de l’imagerie médicale. La capacité d’HL7 v2 à suivre les différentes étapes du traitement d’une demande d’examen et à gérer des accusés de réception contribue à sécuriser et tracer les échanges entre systèmes distants. L’utilisation conjointe de HL7 v2 et du protocole MLLP permet ainsi de répondre efficacement aux exigences de robustesse et de synchronisation attendues pour ce type de flux transactionnels. Par ailleurs, l’analyse montre que les profils IHE, en particulier IHE Scheduled Workflow (SWF.b) et IHE PAM-FR, apportent un cadre de référence pertinent pour l’usage d’HL7 v2 dans le domaine de l’imagerie. Les briques proposées par ces profils peuvent être mobilisées de manière ciblée, notamment pour la gestion du cycle de vie des demandes et pour la prise en compte des exigences nationales relatives à l’identité patient et à l’INS.</p>
 
 <p><br/></p>
 
@@ -1311,7 +1306,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h3 id="analyse-et-conclusion">Analyse et conclusion</h3>
 
-<h4 id="normes-et-standards-étudiés">Normes et Standards étudiés</h4>
+<h4 id="normes-et-standards-étudiés-1">Normes et Standards étudiés</h4>
 
 <p>Cette section a pour objectif de comparer les normes et standards étudiés dans ce document, en vue de choisir le plus approprié pour la spécification du volet « Téléradiologie ».</p>
 
@@ -1321,11 +1316,13 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h5 id="cda">CDA</h5>
 
-<p>Le standard HL7 CDA est adapté à la production et à l’échange de documents cliniques persistants, en particulier le compte-rendu d’imagerie, qui constitue le livrable clinique final du workflow. En dehors du flux de demande d’examen déjà couvert par un volet CI-SIS dédié, l’utilisation de CDA pour les échanges intermédiaires n’est pas adapté au standard. De plus, les orientations européennes vers FHIR limite l’intérêt d’engager de nouveaux travaux basé sur le standard sur CDA.</p>
+<p>Le standard HL7 CDA est adapté à la production et à l’échange de documents cliniques persistants, en particulier le compte-rendu d’imagerie, qui constitue le livrable clinique final du workflow. En dehors du flux de demande d’examen déjà couvert par un volet CI-SIS dédié, l’utilisation de CDA pour les échanges intermédiaires n’est pas adapté au contexte de téléradiologie. De plus, les orientations européennes limitent l’intérêt d’engager de nouveaux travaux basé sur le standard sur CDA.</p>
 
 <h5 id="fhir">FHIR</h5>
 
-<p>Le standard HL7 FHIR permet de couvrir l’ensemble des concepts métier du volet Téléradiologie au travers de ressources structurées et largement adoptées dans le domaine de la santé. Les mécanismes d’acquittement ne sont pas modélisés nativement et reposent sur les échanges HTTP ou sur des ressources spécifiques telles qu’OperationOutcome. La mise en œuvre de FHIR suppose par ailleurs que chaque acteur dispose d’une infrastructure FHIR complète, capable d’assurer les rôles de client et de serveur pour supporter les flux d’échange.</p>
+<p>Le standard HL7 FHIR permet de couvrir l’ensemble des concepts métier du volet Téléradiologie au travers de ressources structurées, largement adoptées dans le domaine de la santé. Les mécanismes d’acquittement ne sont pas modélisés nativement et reposent sur les échanges HTTP ou sur des ressources spécifiques telles qu’OperationOutcome. La mise en œuvre de FHIR suppose par ailleurs que chaque acteur dispose d’une infrastructure FHIR complète, capable d’assurer les rôles de client et de serveur pour supporter les flux d’échange.</p>
+
+<p>D’une manière générale, le standard FHIR, dans sa version R4, repose encore sur un nombre limité de ressources à l’état normatif, pouvant être considérées comme pleinement stables et rétrocompatibles. Dans la version R5, seules deux ressources supplémentaires ont accédé à cet état normatif, ce qui implique une vigilance particulière quant à la gestion des évolutions et à la rétrocompatibilité dans le cadre de mises en œuvre opérationnelles.</p>
 
 <h5 id="hl7v2">HL7v2</h5>
 
@@ -1335,13 +1332,16 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p><strong>La présente étude avait pour objectif d’identifier et de comparer les normes et standards susceptibles de répondre à la mise en œuvre des flux d’échange définis dans les spécifications fonctionnelles du volet Téléradiologie. L’analyse a porté sur un ensemble de standards largement utilisés dans le domaine de l’interopérabilité en santé, évalués au regard de plusieurs critères complémentaires : la capacité à structurer les contenus métiers, la couverture des cas d’usage identifiés, la maturité et le niveau d’adoption au sein de l’écosystème, l’existence d’outillage, ainsi que l’adéquation aux contraintes organisationnelles, techniques et réglementaires du contexte national.</strong></p>
+<p><strong>La présente étude a pour objectif d’identifier et de comparer les normes et standards susceptibles de répondre à la mise en œuvre des flux d’échange définis dans les spécifications fonctionnelles du volet Téléradiologie. L’analyse a porté sur un ensemble de standards largement utilisés dans le domaine de l’interopérabilité en santé, évalués au regard de plusieurs critères complémentaires : la capacité à structurer les contenus métiers, la couverture des cas d’usage identifiés, la maturité et le niveau d’adoption au sein de l’écosystème, l’existence d’outillage, ainsi que l’adéquation aux contraintes organisationnelles, techniques et réglementaires du contexte national.</strong></p>
 
-<p><strong>Parmi les standards étudiés, DICOM et HL7 CDA ont été écartés comme supports principaux des flux du volet Téléradiologie. DICOM est spécifiquement dédié à la gestion, au stockage et à l’échange des objets d’imagerie médicale et ne vise pas la structuration des échanges métiers intervenant tout au long du workflow. Le standard HL7 CDA est, quant à lui, conçu pour la production de documents cliniques persistants et trouve pleinement sa place en fin de parcours pour le compte-rendu d’imagerie. En revanche, son usage pour des échanges transactionnels intermédiaires à durée de vie courte ne correspond pas à son positionnement naturel. Par ailleurs, les orientations européennes et nationales récentes en matière d’interopérabilité privilégient désormais le standard HL7 FHIR pour les nouveaux besoins d’échange de données de santé structurées, ce qui limite la pertinence d’engager de nouveaux travaux fondés sur CDA dans ce contexte.</strong></p>
+<p><strong>Parmi les standards étudiés, DICOM et HL7 CDA ont été écartés comme supports principaux des flux du volet Téléradiologie. DICOM est spécifiquement dédié à la gestion, au stockage et à l’échange des objets d’imagerie médicale et ne vise pas la structuration des échanges métiers intervenant tout au long du workflow. Le standard HL7 CDA est, quant à lui, conçu pour la production de documents cliniques persistants, est pertinent en fin de parcours pour le compte-rendu d’imagerie. En revanche, son usage pour des échanges transactionnels intermédiaires à durée de vie courte ne correspond pas à son positionnement naturel. Par ailleurs, les orientations européennes et nationales récentes en matière d’interopérabilité privilégient désormais le standard HL7 FHIR pour les nouveaux besoins d’échange de données de santé structurées, ce qui limite la pertinence d’engager de nouveaux travaux fondés sur CDA dans ce contexte.</strong></p>
 
 <p><strong>L’analyse met en évidence que le standard HL7 FHIR présente une couverture fonctionnelle et technique complète des besoins du volet Téléradiologie. Sa granularité, son modèle de données explicite et sa capacité à supporter des échanges transactionnels en font un standard particulièrement adapté aux cas d’usage identifiés. Par ailleurs, son alignement avec les orientations européennes en matière d’interopérabilité confirme son rôle structurant dans les trajectoires d’évolution à moyen et long terme des systèmes d’information de santé.</strong></p>
 
-<p><strong>Toutefois, au regard des contraintes opérationnelles analysées dans cette étude, le standard HL7 v2 apparaît comme le plus à même de répondre aux besoins du volet Téléradiologie dans un contexte de mise en œuvre à court terme. HL7 v2 permet de couvrir l’ensemble des concepts métiers identifiés, tout en s’appuyant sur des mécanismes éprouvés pour la gestion de flux transactionnels. Sa maturité, son adoption éprouvée dans le domaine de l’imagerie médicale, ainsi que la disponibilité de profils IHE tels que PAM-FR et SWF.b permettent de capitaliser sur des briques existantes et largement industrialisées. Ce choix garantit ainsi une mise en œuvre pragmatique, limitant les impacts pour les éditeurs de RIS et de plateformes de téléradiologie tout en assurant la compatibilité avec les capacités actuelles du DMP.</strong></p>
+<p><strong>L’étude montre également que le standard HL7 v2 est en mesure de couvrir l’ensemble des concepts métiers du volet Téléradiologie. Il propose des mécanismes natifs adaptés à la gestion des échanges transactionnels, notamment pour le suivi de l’état de traitement des demandes et les accusés de réception. Son usage est bien maîtrisé par l’écosystème, en particulier dans le domaine de l’imagerie médicale, et s’appuie sur un outillage industriel éprouvé ainsi que sur des profils IHE largement diffusés.</strong></p>
+
+<p><strong>En conclusion, au regard des contraintes analysées dans cette étude, le standard HL7 v2 apparaît comme le plus à même de répondre aux besoins du volet Téléradiologie dans un contexte de mise en œuvre à court terme. HL7 v2 permet de couvrir l’ensemble des concepts métiers identifiés, tout en s’appuyant sur des mécanismes éprouvés pour la gestion de flux transactionnels. Sa maturité, son adoption éprouvée dans le domaine de l’imagerie médicale, ainsi que la disponibilité de profils IHE tels que PAM-FR et SWF.b permettent de capitaliser sur des briques existantes et largement industrialisées. Ce choix garantit ainsi une mise en œuvre pragmatique, limitant les impacts pour les éditeurs de RIS et de plateformes de téléradiologie tout en assurant la compatibilité avec les capacités actuelles du DMP.</strong></p>
+
 
 
 
@@ -1383,7 +1383,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 30, 2025 13:44+0000">2025-12-30</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 30, 2025 15:43+0000">2025-12-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
