@@ -4,7 +4,7 @@
 
 Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées dans des guides d'implémentations (IG).
 
-Dans le cadre français, l’[Agence du Numérique en Santé (ANS)](https://www.esante.gouv.fr/) a publié un [guide d'implémentation FHIR](https://hl7.fr/ig/fhir/core/) qui définit des profils FHIR pour répondre aux besoins spécifiques du système de santé français. Ces profils adaptent les ressources FHIR standard pour inclure des contraintes et des extensions spécifiques au contexte français.
+Dans le cadre français, l’association [Interop'Sante](https://www.interopsante.org/) a publié un [guide d'implémentation FHIR](https://hl7.fr/ig/fhir/core/) qui définit des profils FHIR pour répondre aux besoins spécifiques du système de santé français. Ces profils adaptent les ressources FHIR standard pour inclure des contraintes et des extensions spécifiques au contexte français.
 ##### Maturité et adoption
 FHIR a mis en œuvre un modèle de maturité de ressources afin de fournir aux développeurs une
 idée de la maturité d’une ressource avant son utilisation et son implémentation. D’une manière
@@ -12,7 +12,7 @@ générale, le standard FHIR dans sa version R4 offre encore peu de ressources �
 
 Dans sa version R5, seules 2 ressources supplémentaires sont passées à l'état normatif.
 
-L’ANS exploite les ressources de ce standard dans 12 des 16 volets de la couche Service
+L’ANS exploite les ressources de ce standard dans 12 des 17 volets de la couche Service
 disponibles sur [l’espace de Publication](https://esante.gouv.fr/offres-services/ci-sis/espace-publication) du CI-SIS.
 
 Plusieurs volets publiés dans le domaine du médico-social font appel à ce standard en limitant l'utilisation à quelques ressources. La majorité des données étant portée par un document CDA ([SI-MDPH – SI-SdO (Suivi des orientations)](https://interop.esante.gouv.fr/ig/cda/tddui/NormesStandards_TransfertDonneesDUI_V1.0.pdf#%5B%7B%22num%22%3A23%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C81%2C551%2C0%5D), [SI-SdO – SI-ESMS (Suivi des orientations)](https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph))
@@ -33,24 +33,26 @@ La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est éga
 * Les ressources sont conformes aux exigences FHIR ;
 * Les ressources sont conformes aux exigences des profils issues des guides d'implémentation.
 
+Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome.
+Enfin, des évènements de tests, tels que lesProjectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
+
+
 ##### Ressources FHIR adaptées au cas d'usage
 
-Dans le cadre du volet "téléradiologie" les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d'informations :
+Dans le cadre du volet "téléradiologie" les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d'informations. Si des profils de ces ressources existent déjà dans le guide d'implémentation FRCORE il est recommandé de les utiliser ou d'en hériter.
 
 * Ressource [Patient](https://hl7.org/fhir/R4/patient.html) (NM N) : La ressource Patient permet de représenter les données
-concernant l’identification et les coordonnées (télécommunication et adresse) du patient ainsi que ses contacts. Un profil français de cette ressource existe, nommé [FrPatient](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-patient-ins.html), pour
-prendre en compte des spécificités françaises, comme la gestion de l’INS par exemple.
+concernant l’identification et les coordonnées (télécommunication et adresse) du patient ainsi que ses contacts.
 
-* Ressource [Organization](https://hl7.org/fhir/R4/organization.html) (NM 3) : La ressource Organization permet de représenter une personne morale telle que le centre de téléradiologie. Un profil français, [FrOrganization](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-organization.html), existe également
-pour cette ressource.
+* Ressource [Organization](https://hl7.org/fhir/R4/organization.html) (NM 3) : La ressource Organization permet de représenter une personne morale telle que le centre de téléradiologie.
 
-* Ressource [Practitioner](https://hl7.org/fhir/R4/practitioner.html) (NM 3) : La ressource Practitioner permet de représenter un professionnel de santé. Un profil français,[FRPractitioner](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner.html) existe également
+* Ressource [Practitioner](https://hl7.org/fhir/R4/practitioner.html) (NM 3) : La ressource Practitioner permet de représenter un professionnel de santé.
 
-* Ressource [PractitionerRole](https://hl7.org/fhir/R4/practitionerrole.html) (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d'un professionnel de santé. Un profil français, [FRPractitionerRole](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-practitioner-role.html) existe également.
+* Ressource [PractitionerRole](https://hl7.org/fhir/R4/practitionerrole.html) (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d'un professionnel de santé.
 
-* Ressource [ServiceRequest](https://hl7.org/fhir/R4/servicerequest.html) (NM 2) : La ressource ServiceRequest permet de représenter une demande de service, comme par exemple une demande de diagnostic, de traitement ou d'opérations à effectuer.
+* Ressource [ServiceRequest](https://hl7.org/fhir/R4/servicerequest.html) (NM 2) : La ressource ServiceRequest permet de représenter une demande de service, comme par exemple une demande de diagnostic, de traitement ou d'opération à effectuer.
 
-* Ressource [Appointment](https://hl7.org/fhir/R4/appointment.html) (NM 3) : La ressource Appointment permet de représenter un rendez vous ou une demande de rendez vous avec un professionnel de santé, un dispositif médical ou une unité de soin. Un profil français, [FRAppointment](https://hl7.fr/ig/fhir/core/StructureDefinition-fr-core-appointment.html) existe également.
+* Ressource [Appointment](https://hl7.org/fhir/R4/appointment.html) (NM 3) : La ressource Appointment permet de représenter un rendez vous ou une demande de rendez vous avec un professionnel de santé, un dispositif médical ou une unité de soin.
 
 * Ressource [AppointmentResponse](https://hl7.org/fhir/R4/appointmentresponse.html) (NM 3) : La ressource AppointmentResponse permet de représenter la réponse à une demande de rendez vous.
 
@@ -69,6 +71,8 @@ pour cette ressource.
 * Ressource [MedicationAdministration](https://hl7.org/fhir/R4/medicationadministration.html) (NM 2) : La ressource MedicationAdministration permet de représenter l'injection ou la consommation d'un médicament pour un patient par un professionnel de santé.
 
 * Ressource [BodyStructure](https://hl7.org/fhir/R4/bodystructure.html) (NM 1) : La ressource BodyStructure permet de représenter une structure anatomique du corps humain.
+
+Suivant l’analyse des concepts métier identifiés dans la spécification fonctionnelle du volet 'Téléradiologie', on peut les mettre en correspondance avec les ressources FHIR présentées ci-dessus :
 
 <table>
 <colgroup>
@@ -219,14 +223,9 @@ Les interactions qui pourront s’appliquer dans le cas du volet « Téléradiol
 * [Update](https://hl7.org/fhir/R4/http.html#update) pour le remplacement d’une ressource existante sur le serveur grâce à la méthode HTTP PUT ou PATCH.
 Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être [formatée](https://hl7.org/fhir/R4/http.html#mime-type) en XML, JSON ou RDF (Turtle).
 
-Comme évoqué précédemment, les ressources peuvent être concaténées au sein de ressource Bundle. Dans le cas d'un Bundle de type Document, le endpoint à utiliser sera `'base/Bundle'`.
-
 Les interactions FHIR implémentent le protocole RESTful, couramment utilisé dans de nombreux
 domaines. Le [Richardson REST Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) définit 4 niveaux de maturité d’une API REST (de 0
-à 3), FHIR se situe au niveau 2 mais l’utilisation d’extensions peut permettre d’atteindre le niveau 3. L’API FHIR est largement utilisée pour échanger des données de santé
-
-Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome.
-Enfin, de nombreux évènements de tests, tels que les Connectathons, et Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
+à 3), FHIR se situe au niveau 2 mais l’utilisation d’extensions peut permettre d’atteindre le niveau 3.
 
 ###### Adaptation au cas d'usage 
 
@@ -302,7 +301,7 @@ Si la suppression de la ressource s'est correctement effectuée, le consommateur
 
 ##### Synthèse
 
-FHIR est un standard moderne, largement adopté dans le domaine de la santé, permettant l’échange de données de santé de manière structurée et interopérable.
+FHIR est un standard moderne, largement adopté dans le domaine de la santé, permettant l’échange de données de santé de manière structurée et interopérable avec cependant un nombre limité de ressources à l'état normatif.
 
 L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés.
 La notion d’acquittement n’est toutefois pas explicitement modélisée en FHIR et doit être traitée via les mécanismes standards HTTP ou des ressources dédiées comme OperationOutcome.
