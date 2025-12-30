@@ -4,33 +4,21 @@ CISIS_TLR_HL7_V2 : Validation Results
 err = 1, warn = 3, info = 1
 $--
 Generated $--. FHIR version $-- for ans.hl7v2.fr.teleradiologie#$-- (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
- Build Errors : 22 / 3 / 0
+ Build Errors : 10 / 3 / 0
  /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 2
 </table>
 == n/a ==
-ERROR: annexes.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
 ERROR: annexes.html#/html/body/div/div/div/div/div/ul/li/a at Line 213, column 8: The link './exemples' for "Exemples de messages" cannot be resolved
 ERROR: annexes.html#/html/body/div/div/div/div/div/ul/li/a at Line 214, column 8: The link './exemples' for "Références documentaires" cannot be resolved
-ERROR: artifacts.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: change-log.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: doc-ref.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: downloads.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
 ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 232, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
 ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 233, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
 ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 234, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
 ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 240, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
 ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 241, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
 ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 242, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
-ERROR: exemples.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: index.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: norme_standard.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
 ERROR: norme_standard.html#/html/body/div/div/div/div/div/p/a at Line 222, column 152: The link '.\spécifications_fonctionnelles.html' for "Spécifications fonctionnelles des échanges - Téléradiologie" cannot be resolved
 ERROR: norme_standard.html#/html/body/div/div/div/div/div/p/a at Line 713, column 231: The link '(https://build.fhir.org/http.html#delete)"' for "delete" cannot be resolved
 WARNING: /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/output/searchform.html#/html/body/div/div/div/a/img/div/a/img/div/p/img/footer/div/div/div/div/div/div/a/img/div/a/img/script at Line 255, column 7: The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed)
-ERROR: specifications_fonctionnelles.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: specifications_techniques.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: tests.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
-ERROR: toc.html#/html/body/div/div/nav/div/div/ul/li/ul/li/a at Line 110, column 10: The link 'norme_standard.html#présentation-synthétique-du-volet-teleradiologie' for "Présentation synthétique du volet" cannot be resolved (valid targets: 85 targets)
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 == fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json ==
