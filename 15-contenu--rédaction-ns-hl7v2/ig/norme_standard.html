@@ -186,18 +186,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#présentation-synthétique-du-volet-téléradiologie" id="markdown-toc-présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</a></li>
-  <li><a href="#normes-et-standards-étudiés" id="markdown-toc-normes-et-standards-étudiés">Normes et Standards étudiés</a></li>
-  <li><a href="#synthèse-4" id="markdown-toc-synthèse-4">Synthèse</a></li>
-  <li><a href="#analyse-et-conclusion" id="markdown-toc-analyse-et-conclusion">Analyse et conclusion</a></li>
-  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ul>
+      <li><a href="#présentation-synthétique-du-volet-téléradiologie" id="markdown-toc-présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</a></li>
+      <li><a href="#normes-et-standards-étudiés" id="markdown-toc-normes-et-standards-étudiés">Normes et Standards étudiés</a></li>
+      <li><a href="#synthèse-4" id="markdown-toc-synthèse-4">Synthèse</a></li>
+      <li><a href="#analyse-et-conclusion" id="markdown-toc-analyse-et-conclusion">Analyse et conclusion</a></li>
+      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+    </ul>
+  </li>
 </ul>
 
 </div>
-<h3 id="introduction">Introduction</h3>
+<h2 id="introduction">Introduction</h2>
 
-<p><a name="l342">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\spécifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.</p>
+<p><a name="l346">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\spécifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.</p>
 
 <p>Les normes et standards étudiés au sein de cette étude sont les suivants :</p>
 
@@ -688,7 +690,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="annulation-dune-demande-dexamen-dimagerie">Annulation d’une demande d’examen d’imagerie</h6>
 
-<p><a name="l1459">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
+<p><a name="l1463">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
 
 <p>Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">200 OK</code>. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
@@ -754,6 +756,7 @@ La notion d’acquittement n’est toutefois pas explicitement modélisée en FH
 <p><br/></p>
 
 <h4 id="standard-hl7-version-2-hl7-v2">Standard HL7 version 2 (HL7 v2)</h4>
+
 <h5 id="présentation-3">Présentation</h5>
 
 <p><a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185">HL7 version 2 (HL7 v2)</a> est un standard de messagerie développé par l’organisation Health Level Seven International, destiné à l’échange d’informations entre systèmes d’information de santé. Il repose sur l’échange de messages structurés, composés de segments, de champs et de sous-composants, organisés selon des déclencheurs événementiels (triggers). Le standard définit la structure logique des messages ainsi que les règles de codage associées, sans imposer de modèle d’information unique. Cette approche confère à HL7 v2 une grande souplesse d’implémentation et explique en partie son adoption massive dans l’écosystème des systèmes d’information de santé.</p>
@@ -777,16 +780,17 @@ La notion d’acquittement n’est toutefois pas explicitement modélisée en FH
 
 <h5 id="maturité-et-adoption-3">Maturité et adoption</h5>
 
-<p>HL7 v2 est un standard hautement mature. Dans l’écosystème français, il est solidement ancré dans les pratiques des systèmes d’information de santé, en particulier dans le domaine de l’imagerie médicale. Ce constat repose à la fois sur son usage historique largement répandu et sur les travaux menés dans le cadre du volet Téléradiologie, notamment au travers d’ateliers associant éditeurs de RIS et plateformes de téléradiologie. Ces échanges ont permis de confronter les besoins opérationnels aux capacités des standards existants et ont confirmé le niveau de maturité et d’industrialisation de HL7 v2 pour ce type de cas d’usage.
+<p>HL7 v2 est un standard hautement mature, initialement publié à la fin des années 1980 et ayant fait l’objet de nombreuses évolutions successives au travers de plusieurs versions majeures, témoignant de sa stabilité, de sa robustesse. Dans l’écosystème français, il est solidement ancré dans le contexte intra-hospitalier au sein pratiques des systèmes d’information de santé, en particulier dans le domaine de l’imagerie médicale. Ce constat repose à la fois sur son usage historique largement répandu et sur les travaux menés dans le cadre du volet Téléradiologie, notamment au travers d’ateliers associant éditeurs de RIS et plateformes de téléradiologie. Ces échanges ont permis de confronter les besoins opérationnels aux capacités des standards existants et ont confirmé le niveau de maturité et d’industrialisation de HL7 v2 pour ce type de cas d’usage.
 Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/Livre-Blanc-TLR_vFinale.pdf">Livre blanc Téléradiologie</a> élaboré par l’Agence du Numérique en Santé en collaboration avec l’écosystème éditeur s’appuie sur des flux fondés sur le standard HL7 v2, renforçant ainsi ce constat.</p>
 
-<p>De plus, la doctrine du CI-SIS incite à l’utilisation du standard HL7v2 pour le transport des documents CDA notamment en se conformant aux volets de référence suivants :</p>
+<p>De plus, le CI-SIS incite à l’utilisation du standard HL7v2 pour le transport des documents CDA en intra-hospitalier notamment en se conformant aux volets de référence suivants :</p>
 
 <ul>
   <li><a href="https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm">Transport d’un document CDA en HL7v2</a></li>
   <li><a href="https://esante.gouv.fr/volet-de-transmission-au-lps-dun-document-cda">Transmission au LPS d’un document CDA provenant d’un courriel MSSanté</a></li>
 </ul>
 
+<p>Interopsanté</p>
 <h5 id="outillage-3">Outillage</h5>
 
 <p>L’écosystème HL7 v2 bénéficie d’un outillage industriel éprouvé, largement diffusé auprès des acteurs du secteur :</p>
@@ -807,7 +811,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h5 id="hl7v2-adapté-au-cas-dusage-téléradiologie">HL7v2 adapté au cas d’usage Téléradiologie</h5>
 
-<p>Le standard HL7 v2 est d’ores et déjà présent au sein du workflow global de la téléradiologie par l’intermédiaire du volet Transport de document CDA en HL7 v2, utilisé pour la transmission du compte-rendu d’imagerie depuis la plateforme de téléradiologie vers le RIS de la structure d’imagerie. Par ailleurs, le volet téléradiologie envisage également la transmission, en complément des éléments structurés de la demande d’examen, de documents associés tels que la demande d’examen formalisée ou tout document complémentaire permettant d’enrichir le contexte clinique. Ces flux complémentaires reposent également sur le volet de Transport de documents CDA en HL7 v2, renforçant ainsi la cohérence globale des échanges autour de ce standard.</p>
+<p>Le standard HL7 v2 est d’ores et déjà présent au sein du workflow global de la téléradiologie par l’intermédiaire du <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">volet de transmission d’un document CDA-R2 en HL7v2</a>, utilisé pour la transmission du compte-rendu d’imagerie depuis la plateforme de téléradiologie vers le RIS de la structure d’imagerie. Par ailleurs, le volet téléradiologie envisage également la transmission, en complément des éléments structurés de la demande d’examen, de documents associés tels que la demande d’examen formalisée ou tout document complémentaire permettant d’enrichir le contexte clinique. Ces flux complémentaires reposent également sur le volet de Transport de documents CDA en HL7 v2, renforçant ainsi la cohérence globale des échanges autour de ce standard.</p>
 
 <p>Au-delà de ces usages existants, plusieurs profils IHE du <a href="https://www.ihe.net/ihe_domains/radiology/">domaine IHE RADIOLOGY</a> s’appuient historiquement sur HL7 v2 pour structurer les échanges liés aux workflows d’imagerie. Le profil <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf">IHE Scheduled Workflow (SWF.b)</a> définit notamment les transactions permettant d’orchestrer le cycle de vie d’un acte d’imagerie, depuis la prescription jusqu’à la production des résultats. Bien que le profil SWF.b ne couvre pas l’intégralité des cas d’usage spécifiques à la téléradiologie, en particulier les étapes de validation médicale distante ou de protocolisation, il propose néanmoins un ensemble de briques fonctionnelles pertinentes, telles que la gestion des demandes d’examen, des statuts associés ou des identifiants d’actes. Ces briques peuvent être mobilisées et adaptées dans le cadre des flux de téléradiologie, sans nécessiter l’adoption exhaustive du profil IHE.</p>
 
@@ -823,7 +827,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
   <thead>
     <tr>
       <th><strong>Concept métier</strong></th>
-      <th><strong>Message HL7 v2</strong></th>
+      <th><strong>Message HL7v2</strong></th>
       <th><strong>Segment</strong></th>
       <th><strong>Champ(s) HL7 v2</strong></th>
     </tr>
@@ -898,7 +902,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     <tr>
       <td><strong>JustificationDemande</strong></td>
       <td>ORM^O01</td>
-      <td>OBR - Observation Request / NTE - Notes and Comments</td>
+      <td>ORC - Common Order / NTE - Notes and Comments</td>
       <td>ORC-31 Reason for Study, NTE-3 Comment</td>
     </tr>
     <tr>
@@ -926,13 +930,13 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h6 id="flux-2---annulation-de-la-demande-dexamen-dimagerie">Flux 2 - Annulation de la demande d’examen d’imagerie</h6>
 
-<p>Le flux d’annulation de la demande d’examen d’imagerie vise à notifier la plateforme de téléradiologie de l’invalidation d’une demande précédemment transmise. HL7 v2 prévoit nativement ce cas d’usage au travers du segment ORC (Common Order) et plus particulièrement du champ ORC-1 Order Control- Order Control, qui permet de gérer le cycle de vie des ordres, incluant leur création, modification et annulation. Ce mécanisme, largement utilisé dans les workflows d’imagerie décrits par le profil IHE SWF.b, garantit une gestion cohérente et tracée des annulations sans introduire de nouveaux messages spécifiques.</p>
+<p>Le flux d’annulation de la demande d’examen d’imagerie vise à notifier la plateforme de téléradiologie de l’invalidation d’une demande précédemment transmise. HL7 v2 prévoit nativement ce cas d’usage au travers du profil de message ORM^O01. Le segment ORC (Common Order) et plus particulièrement son champ ORC-1 Order Control- Order Control, permet de gérer le cycle de vie des ordres, incluant leur création, modification et annulation. Ce mécanisme, largement utilisé dans les workflows d’imagerie décrits par le profil IHE SWF.b, garantit une gestion cohérente et tracée des annulations sans introduire de nouveaux messages spécifiques.</p>
 
 <table>
   <thead>
     <tr>
       <th><strong>Concept métier</strong></th>
-      <th><strong>Message HL7 v2</strong></th>
+      <th><strong>Message HL7v2</strong></th>
       <th><strong>Segment</strong></th>
       <th><strong>Champ(s) HL7 v2</strong></th>
     </tr>
@@ -947,7 +951,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     <tr>
       <td><strong>PlateformeTeleradiologie</strong></td>
       <td>ORM^O01</td>
-      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH - Message Header</td>
       <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
     </tr>
     <tr>
@@ -959,13 +963,13 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     <tr>
       <td><strong>PSEffecteur</strong></td>
       <td>ORM^O01</td>
-      <td>ORC - Common Order / OBR - Observation Request</td>
+      <td>ORC - Common Order</td>
       <td>ORC-11 Verified By / ORC-32 Principal Result Interpreter</td>
     </tr>
     <tr>
       <td><strong>roleProfessionnel</strong></td>
       <td>ORM^O01</td>
-      <td>ORC - Common Order / OBR - Observation Request</td>
+      <td>ORC - Common Order</td>
       <td>ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter</td>
     </tr>
     <tr>
@@ -993,13 +997,13 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h6 id="flux-3---réponse-à-la-demande-dexamen-dimagerie">Flux 3 - Réponse à la demande d’examen d’imagerie</h6>
 
-<p>Le flux de réponse à la demande d’examen d’imagerie correspond à la décision rendue par le médecin effecteur distant à l’issue de l’analyse de la demande initiale. Cette réponse peut se traduire par une acceptation de la demande, accompagnée d’un protocole d’imagerie, ou par un refus, éventuellement assorti d’un motif explicatif. HL7 v2 ne définit pas de message spécifique dédié à la notion de « réponse à une demande » dans un contexte de téléradiologie. En revanche, le standard propose plusieurs mécanismes permettant de porter cette information, notamment via la gestion des statuts d’ordre (segment ORC) et l’ajout d’informations cliniques ou opérationnelles dans les segments OBR, OBX ou NTE. Ces mécanismes sont historiquement mobilisés dans les workflows d’imagerie décrits par le profil IHE SWF.b.</p>
+<p>Le flux de réponse à la demande d’examen d’imagerie correspond à la décision rendue par le médecin effecteur distant à l’issue de l’analyse de la demande initiale. Cette réponse peut se traduire par une acceptation de la demande, accompagnée d’un protocole d’imagerie, ou par un refus, éventuellement assorti d’un motif explicatif. HL7 v2 ne définit pas de message spécifique dédié à la notion de « réponse à une demande » dans un contexte de téléradiologie. En revanche, le standard propose plusieurs mécanismes permettant de porter cette information, notamment via des profils de message comme ORM^O01 ou ORU^R01 qui assurent la gestion des statuts d’ordre (segment ORC) et l’ajout d’informations cliniques ou opérationnelles dans les segments OBR, OBX ou NTE. Ces mécanismes sont historiquement mobilisés dans les workflows d’imagerie décrits par le profil IHE SWF.b.</p>
 
 <table>
   <thead>
     <tr>
       <th><strong>Concept métier</strong></th>
-      <th><strong>Message HL7 v2</strong></th>
+      <th><strong>Message HL7v2</strong></th>
       <th><strong>Segment</strong></th>
       <th><strong>Champ(s) HL7 v2</strong></th>
     </tr>
@@ -1066,13 +1070,13 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h6 id="flux-4---transmission-dun-complément-dinformation-post-acte-dimagerie">Flux 4 - Transmission d’un complément d’information post-acte d’imagerie</h6>
 
-<p>Le flux de transmission d’un complément d’information post-acte d’imagerie intervient à l’issue de la réalisation de l’examen. Il vise à transmettre au radiologue effecteur distant des éléments permettant de compléter le contexte d’interprétation et de rédaction du compte-rendu d’imagerie. Dans les implémentations HL7 v2 existantes, ce type de flux est fréquemment pris en charge au moyen de messages ORU^R01, utilisés pour la transmission d’observations et de résultats. Ce message permet de véhiculer une grande variété d’informations via des segments OBX, mais ne dispose pas de segments dédiés pour porter nativement les identifiants DICOM de l’examen. À l’inverse, le message OMI^O23, introduit pour répondre spécifiquement aux besoins du domaine de l’imagerie, propose le segment IPC (Imaging Procedure Control), permettant de structurer explicitement les informations techniques liées à la procédure d’imagerie, notamment l’Accession Number et le StudyInstanceUID.</p>
+<p>Le flux de transmission d’un complément d’information post-acte d’imagerie intervient à l’issue de la réalisation de l’examen. Il vise à transmettre au radiologue effecteur distant des éléments permettant de compléter le contexte d’interprétation et de rédaction du compte-rendu d’imagerie. Dans les implémentations HL7 v2 existantes, ce type de flux est fréquemment pris en charge au moyen de messages ORU^R01, utilisés pour la transmission d’observations et de résultats. Ce message permet de véhiculer une grande variété d’informations via des segments OBX, mais ne dispose pas de segments dédiés pour porter nativement les identifiants DICOM de l’examen. À l’inverse, le message OMI^O23, introduit pour répondre spécifiquement aux besoins du domaine de l’imagerie, propose le segment IPC (Imaging Procedure Control), permettant de structurer explicitement les informations techniques liées à la procédure d’imagerie, notamment l’Accession Number et le StudyInstanceUID. Ainsi, le message OMI^O23 est préconisé pour la couverture de flux.</p>
 
 <table>
   <thead>
     <tr>
       <th><strong>Concept métier</strong></th>
-      <th><strong>Message HL7 v2</strong></th>
+      <th><strong>Message HL7v2</strong></th>
       <th><strong>Segment</strong></th>
       <th><strong>Champ(s) HL7 v2</strong></th>
     </tr>
@@ -1086,7 +1090,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     </tr>
     <tr>
       <td><strong>PlateformeTeleradiologie</strong></td>
-      <td>ORU^R01</td>
+      <td>OMI^O23</td>
       <td>MSH - Message Header / ORC - Common Order</td>
       <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
     </tr>
@@ -1175,7 +1179,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h5 id="synthèse-3">Synthèse</h5>
 
-<p>L’analyse des différents flux du volet Téléradiologie met en évidence la capacité du standard HL7 v2 à couvrir les concepts métiers échangés au sein des flux identifiés dans les spécifications fonctionnelles. Ce standard bénéficie d’un haut niveau de maturité, d’un large outillage industriel et d’une interopérabilité éprouvée, en particulier dans le domaine de l’imagerie médicale. La capacité d’HL7 v2 à suivre les différentes étapes du traitement d’une demande d’examen et à gérer des accusés de réception contribue à sécuriser et tracer les échanges entre systèmes distants. L’utilisation conjointe de HL7 v2 et du protocole MLLP permet ainsi de répondre efficacement aux exigences de robustesse et de synchronisation attendues pour ce type de flux transactionnels. Par ailleurs, l’analyse montre que les profils IHE, en particulier IHE Scheduled Workflow (SWF.b) et IHE PAM-FR, apportent un cadre de référence pertinent pour l’usage d’HL7 v2 dans le domaine de l’imagerie. Les briques proposées par ces profils peuvent être mobilisées de manière ciblée, notamment pour la gestion du cycle de vie des demandes et pour la prise en compte des exigences nationales relatives à l’identité patient et à l’INS.</p>
+<p>L’analyse des différents flux du volet Téléradiologie met en évidence la capacité du standard HL7 v2 à couvrir les concepts métiers échangés au sein des flux identifiés dans les spécifications fonctionnelles. Ce standard bénéficie d’un haut niveau de maturité, d’un large outillage industriel et d’une interopérabilité éprouvée dans le domaine de l’imagerie médicale. La capacité d’HL7 v2 à suivre les différentes étapes du traitement d’une demande d’examen et à gérer des accusés de réception contribue à sécuriser et tracer les échanges entre systèmes distants. L’utilisation conjointe de HL7 v2 et du protocole MLLP permet ainsi de répondre efficacement aux exigences de robustesse et de synchronisation attendues pour ce type de flux transactionnels. Par ailleurs, l’analyse montre que les profils IHE, en particulier IHE Scheduled Workflow (SWF.b) et IHE PAM-FR, apportent un cadre de référence pertinent pour l’usage d’HL7 v2 dans le domaine de l’imagerie. Les briques proposées par ces profils peuvent être mobilisées de manière ciblée, notamment pour la gestion du cycle de vie des demandes et pour la prise en compte des exigences nationales relatives à l’identité patient et à l’INS.</p>
 
 <p><br/></p>
 
@@ -1206,6 +1210,27 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>Couverture métier</td>
+      <td>&nbsp;</td>
+      <td>Non étudiée</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Adoption par l’écosystème Téléradiologie</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>&nbsp;</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Rétrocompatibilité du standard ou de la norme</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>&nbsp;</td>
+      <td>✔</td>
+    </tr>
     <tr>
       <td>Outillage<br/><br/><em>Des outils de tests sont mis en œuvre pour valider l’adhérence au standard.</em></td>
       <td>✔</td>
@@ -1249,13 +1274,6 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
       <td>✔</td>
     </tr>
     <tr>
-      <td>Rétrocompatibilité du standard ou de la norme</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>&nbsp;</td>
-      <td>✔</td>
-    </tr>
-    <tr>
       <td>Adoption par le marché et utilisation</td>
       <td>✔</td>
       <td>✔</td>
@@ -1281,20 +1299,6 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
       <td>✔</td>
       <td>✔</td>
       <td>✔</td>
-      <td>✔</td>
-    </tr>
-    <tr>
-      <td>Couverture métier</td>
-      <td>&nbsp;</td>
-      <td>Non étudiée</td>
-      <td>✔</td>
-      <td>✔</td>
-    </tr>
-    <tr>
-      <td>Adoption par l’écosystème Téléradiologie</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>&nbsp;</td>
       <td>✔</td>
     </tr>
   </tbody>
@@ -1383,7 +1387,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 30, 2025 15:43+0000">2025-12-30</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 30, 2025 17:03+0000">2025-12-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
