@@ -42,8 +42,14 @@ pages:
         title: Téléchargements
 menu:
     Accueil: index.html
-    Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html
-    Normes et Standards: norme_standard.html
+    Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html 
+    Normes et Standards: 
+        "Introduction": norme_standard.html#introduction
+        "Présentation synthétique du volet": norme_standard.html#présentation-synthétique-du-volet-teleradiologie
+        "Normes et standards étudiés": norme_standard.html#normes-et-standards-étudiés
+        "Synthèse": norme_standard.html#synthèse
+        "Analyse et conclusion": norme_standard.html#analyse-et-conclusion
+        "Conclusion": norme_standard.html#conclusion
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
         Exemples de messages: exemples.html
