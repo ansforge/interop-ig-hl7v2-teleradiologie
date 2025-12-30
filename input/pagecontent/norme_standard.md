@@ -1,4 +1,4 @@
-### Introduction
+## Introduction
 
 Le présent document présente l'ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « [Spécifications fonctionnelles des échanges - Téléradiologie](.\spécifications_fonctionnelles.html) ». L'objectif de cette étude est d'identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.
 
@@ -56,111 +56,11 @@ Le choix final des normes ou standards devra permettre de couvrir l'intégralit�
 
 Cette section présente les normes et standards susceptibles d'être utilisés pour structurer et, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers étudiés dans cette étude sont issus de la Spécification fonctionnelle des échanges Téléradiologie.
 
-#### Standard DICOM
-
-##### Présentation
-
-Le standard [DICOM (Digital Imaging and Communications in Medicine)](https://www.dicomstandard.org/) est un standard international dédié à la gestion, au stockage, à la transmission et à la visualisation des images médicales. Il définit à la fois un format de fichier pour l'imagerie médicale et un ensemble de services réseau permettant l'échange de ces images et des métadonnées associées entre équipements et systèmes d'information d'imagerie (modalités, PACS, visionneuses). DICOM est nativement orienté vers les besoins des domaines de l'imagerie médicale, notamment la radiologie, la médecine nucléaire, la radiothérapie et l'imagerie interventionnelle. Il constitue le socle technique des échanges d'images et d'informations associées au sein des systèmes d'imagerie.
-
-##### Maturité et adoption
-
-Le standard DICOM bénéficie d'un très haut niveau de maturité et d'une adoption quasi universelle dans le domaine de l'imagerie médicale. Il est implémenté par l'ensemble des constructeurs de modalités, de PACS, de solutions d'archivage et de visualisation d'images médicales. Son adoption massive et son interopérabilité éprouvée en font un standard incontournable pour la gestion des images médicales, tant au niveau national qu'international.
-La maturité et l’adoption du standard DICOM sont étroitement liées aux travaux menés depuis plus de vingt ans dans le cadre du domaine IHE Radiology, qui constitue historiquement l’un des premiers et des plus structurants domaines d’IHE. Créé à la fin des années 1990, le domaine IHE Radiology a précisément pour objectif de favoriser l’interopérabilité des systèmes d’imagerie médicale en s’appuyant sur une utilisation du standard DICOM.
-
-Dans ce cadre, DICOM est utilisé comme socle pour la gestion et l’échange des objets d’imagerie (images, études, séries, métadonnées techniques). De nombreux profils IHE du domaine Radiology reposent ainsi directement sur DICOM, parmi lesquels figurent notamment :
-- Scheduled Workflow (SWF), pour l’orchestration du cycle de vie des examens d’imagerie
-- Post-Processing Workflow (PWF), pour la gestion des traitements d’images
-- Consistent Presentation of Images (CPI), pour garantir une présentation cohérente des images entre systèmes
-
-Ces profils, largement implémentés, témoignent de l’adoption massive et de la robustesse de DICOM dans les environnements d’imagerie médicale. Ils illustrent également le rôle central de DICOM dans les architectures d’imagerie, en particulier pour la manipulation, la circulation et la consultation des données d’imagerie.
-
-##### Outillage
-
-L'écosystème DICOM est riche et largement industrialisé. Il comprend notamment :
-
-- des modalités d'imagerie conformes DICOM
-- des PACS et archives d'imagerie
-- des visionneuses DICOM
-- des services réseau standardisés (C-STORE, C-FIND, C-MOVE, etc.)
-
-Ces outils sont spécifiquement conçus pour la manipulation d'images médicales et de leurs métadonnées, dans des architectures d'imagerie dédiées.
-
-##### Transport
-
-Le standard DICOM intègre nativement des mécanismes de transport dédiés à l’échange d’objets d’imagerie médicale et de métadonnées associées. Ces mécanismes sont historiquement fondés sur des échanges point à point entre systèmes d’imagerie, reposant sur des services applicatifs définis par le standard et véhiculés sur des protocoles réseau standards.
-
-DICOM supporte également des mécanismes plus récents basés sur les technologies web, regroupés sous l’appellation DICOMweb, permettant l’accès, la recherche et le transfert d’objets d’imagerie via des interfaces HTTP(S). 
-
-L’ensemble de ces mécanismes est spécifiquement et exclusivement conçu pour le transport et la manipulation d’objets d’imagerie.
-
-##### DICOM adapté au cas d'usage Téléradiologie
-
-Dans le cadre du volet Téléradiologie, le standard DICOM joue un rôle essentiel pour la mise à disposition et la consultation des images médicales produites lors de la réalisation de l'acte d'imagerie. Toutefois, ce rôle se situe en dehors du périmètre des flux fonctionnels étudiés dans le présent volet. Le standard DICOM n'est pas conçu pour véhiculer des échanges transactionnels ou décisionnels de type métier, ni pour gérer le cycle de vie des demandes ou des décisions médicales associées. À ce titre, il ne permet pas de répondre aux besoins fonctionnels identifiés dans les spécifications du volet Téléradiologie, en dehors de la fourniture d'un accès aux images. Les mécanismes d'accès aux images (PACS, visionneuses, plateformes d'échange) sont généralement intégrés dans des architectures d'imagerie existantes et peuvent être référencés dans les flux du volet Téléradiologie (par exemple via une URL de visionneuse), sans que DICOM ne constitue le standard d'échange principal pour ces flux.
-
-##### Synthèse
-
-Le standard DICOM est un composant fondamental des systèmes d'imagerie médicale et demeure indispensable pour la gestion, l'archivage et la consultation des images médicales.  
-Néanmoins, il n'est pas adapté pour répondre aux flux fonctionnels du volet Téléradiologie tels que définis dans les spécifications, lesquels relèvent principalement d'échanges transactionnels, organisationnels et décisionnels entre systèmes d'information.
+{% include norme_standard_dicom.md %}
 
 <br>
 
-#### Standard CDA
-
-##### Présentation
-
-Le standard [HL7 Clinical Document Architecture (CDA)](https://hl7.org/cda/stds/online-navigation/index.html) est un standard de structuration de documents cliniques spécifiant à la fois la structure et la sémantique des informations médicales, en vue de leur compréhension entre acteurs du système de santé. Il repose sur la syntaxe XML et ne définit pas de mécanisme de transport des documents.
-
-Le standard HL7 CDA est porté par HL7, organisme accrédité par l’ANSI. La version 2 du standard (CDA R2) a par ailleurs été adoptée comme norme internationale ISO. Un document CDA est un document complet pouvant contenir du texte, des images et tout autre type de contenu multimédia. Les propriétés d'un document CDA sont les suivantes :
-
-- Persistance : Tout au long de son existence, le CDA doit rester cohérent, accessible et inaltérable. La durée de vie du document dépendant du cadre législatif. 
-- Intendance : L’organisation émettrice du document dématérialisé doit en assurer la gestion et le suivi, en mettant à disposition les éventuelles mises à jour.
-- Responsabilité : tout document doit être authentifié par une signature. La personne signataire prend la responsabilité du contenue du document.
-- Cohérence : Le document embarque le contexte (médical et de gestion) de son contenu.
-- Intégralité : Chaque document est complet. Le contenu et le contexte restent indissociables.
-- Lisibilité : Le document doit pouvoir être restitué aux personnes habilitées à le lire, dans une présentation prédéterminée par l’auteur du document, au travers d’un outil de visualisation banalisé tel qu’un navigateur Internet.
-
-Un document CDA contient deux parties :
-
-- Un entête (header) : contient les informations nécessaires à l'identification et à la gestion du document. Elle fournit des éléments d'authentification du document, le contexte de soin, les participants, etc.
-- Le corps (body) : contient les informations médicales véhiculées par le document. Il peut être construit suivant 3 niveaux :
-  - Niveau 1 : le corps contient un texte non structuré ou une image
-  - Niveau 2 : le corps est organisé en sections contenant un bloc narratif
-  - Niveau 3 : le corps se présente sous la forme d'un ensemble hiérarchisé de sections pouvant contenir des données structurées dans des entrées, en plus d'un bloc narratif.
-
-##### Maturité et adoption
-
-Le standard HL7 CDA R2 est très répandu à l'international et largement adopté dans le contexte français. L'Agence du Numérique en Santé (ANS) l'exploite notamment dans 31 des 34 volets de la couche Contenu disponibles sur [l'espace de Publication du CI-SIS](https://esante.gouv.fr/offres-services/ci-sis/espace-publication). Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.
-
-Afin de capitaliser l'expérience acquise et de favoriser la réutilisation des développements, la [doctrine du CI-SIS](https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf) incite à l'utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :
-
-- [Structuration minimale de documents de santé](https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante), qui définit la structure des données de l'entête d'un document CDA
-- [Modèles de contenus CDA](https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda), qui définit la structure des données du corps du document.
-
-Par ailleurs, au moment de la présente étude, les orientations nationales et européennes en matière d’interopérabilité évoluent vers des approches plus adaptées aux échanges de données structurées et aux usages transactionnels. Dans ce contexte, le recours au standard CDA tend à être réservé aux documents cliniques établis, et son utilisation pour la mise en œuvre de nouveaux flux d’échange apparaît de moins en moins pertinente.
-
-##### Outillage
-
-Un document CDA peut être testé contre un schéma XSD via un éditeur de texte tel que Notepad++. Ce schéma permet uniquement de vérifier la structure du document ainsi que la conformité par rapport au standard.
-
-La suite d'outil open source [ART-DECOR](https://docs.art-decor.org/) permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d'un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s'agit d'un langage permettant de valider la structure d'un document XML via un ensemble d'assertions.
-
-Les [plateformes Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) (ANS et IHE) sont également utilisées pour tester les documents. L'outil Schematron Validator intègre schéma XSD et schematrons. Accessible via le service de Validation EVS Client, il permet de vérifier si :
-
-- Le document est bien structuré
-- Le document est conforme au schéma XML
-- Le document respecte les règles spécifiées dans le modèle
-
-##### CDA adapté au cas d'usage Téléradiologie
-
-Le standard CDA est conçu pour structurer et échanger des documents cliniques persistants, porteurs de sens médical, tels que des comptes rendus, des lettres médicales ou des synthèses de prise en charge. Il vise à garantir la lisibilité humaine, la pérennité et la réutilisabilité clinique des documents échangés. Dans le cadre du volet Téléradiologie, les flux étudiés correspondent majoritairement à des échanges transactionnels et organisationnels (annulation de demande, décision de protocolisation, transmission d'informations post-acte), intervenant au fil du workflow de prise en charge. Ces échanges ne constituent pas des documents cliniques à proprement parlé mais relèvent d'une logique d'échanges métiers structurés, contextualisés et à durée de vie limitée.
-
-Bien qu’il soit théoriquement possible de représenter les concepts métiers au sein de documents CDA, une telle approche ne serait pas adaptée à la finalité du standard. Le CDA est en effet conçu pour structurer des documents cliniques persistants, destinés à être partagés, archivés et réutilisés dans le temps, ce qui ne correspond pas à la nature des flux de téléradiologie, essentiellement transactionnels, contextuels et à durée de vie courte. La structuration documentaire apportée par CDA est en revanche pleinement pertinente en fin de workflow, à travers le compte-rendu d’imagerie, qui constitue le livrable clinique de référence, destiné à être partagé et archivé, notamment au sein du DMP du patient.
-
-##### Synthèse
-
-Le standard CDA est adapté à la structuration et à l'échange de documents cliniques pérennes, tels que le compte-rendu d'imagerie, qui constitue l'aboutissement du workflow de téléradiologie. En revanche, les flux intermédiaires étudiés dans ce volet relèvent d'échanges transactionnels et métiers qui ne s'inscrivent pas dans une logique documentaire.
-
-De plus, les orientations actuelles en matière d'interopérabilité privilégient le recours à FHIR pour les nouveaux besoins d'échange.
+{% include norme_standard_cda.md %}
 
 <br>
 
@@ -168,143 +68,7 @@ De plus, les orientations actuelles en matière d'interopérabilité privilégie
 
 <br>
 
-#### Standard HL7 version 2 (HL7 v2)
-##### Présentation
-
-[HL7 version 2 (HL7 v2)](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) est un standard de messagerie développé par l'organisation Health Level Seven International, destiné à l'échange d'informations entre systèmes d'information de santé. Il repose sur l'échange de messages structurés, composés de segments, de champs et de sous-composants, organisés selon des déclencheurs événementiels (triggers). Le standard définit la structure logique des messages ainsi que les règles de codage associées, sans imposer de modèle d'information unique. Cette approche confère à HL7 v2 une grande souplesse d'implémentation et explique en partie son adoption massive dans l'écosystème des systèmes d'information de santé.
-
-Il est important de souligner que HL7 v2 ne prescrit pas le protocole de transport ni l'architecture des échanges. Le standard n'émet aucune hypothèse sur :
-
-- la conception ou l'architecture des systèmes émetteurs et récepteurs
-- le mode de communication sous-jacent (synchrone ou asynchrone)
-- les mécanismes de transport, de sécurisation ou de routage des messages
-
-Ainsi, le choix du protocole de transport est laissé à l'initiative des implémenteurs. Néanmoins, dans les usages historiques et recommandés, HL7 v2 est fréquemment associé au protocole MLLP (Minimal Lower Layer Protocol), qui permet l'échange de messages sur des connexions persistantes et facilite la gestion des accusés de réception techniques. Ces accusés de réception (ACK), permettent au système récepteur de notifier l'émetteur de la bonne réception et du traitement du message transmis. Les ACK peuvent être de nature :
-
-- technique, attestant de la bonne réception et de la conformité syntaxique du message
-- applicative, indiquant l'acceptation ou le rejet du message au regard de règles métier ou fonctionnelles.
-
-L'intérêt de ces mécanismes d'accusés de réception réside dans la fiabilité des échanges et dans la maîtrise du cycle de vie des messages.
-
-##### Maturité et adoption
-
-HL7 v2 est un standard hautement mature. Dans l’écosystème français, il est solidement ancré dans les pratiques des systèmes d’information de santé, en particulier dans le domaine de l’imagerie médicale. Ce constat repose à la fois sur son usage historique largement répandu et sur les travaux menés dans le cadre du volet Téléradiologie, notamment au travers d’ateliers associant éditeurs de RIS et plateformes de téléradiologie. Ces échanges ont permis de confronter les besoins opérationnels aux capacités des standards existants et ont confirmé le niveau de maturité et d’industrialisation de HL7 v2 pour ce type de cas d’usage.
-Par ailleurs, le [Livre blanc Téléradiologie](https://industriels.esante.gouv.fr/sites/default/files/media/document/Livre-Blanc-TLR_vFinale.pdf) élaboré par l’Agence du Numérique en Santé en collaboration avec l’écosystème éditeur s’appuie sur des flux fondés sur le standard HL7 v2, renforçant ainsi ce constat. 
-
-De plus, la doctrine du CI-SIS incite à l'utilisation du standard HL7v2 pour le transport des documents CDA notamment en se conformant aux volets de référence suivants :
-
-- [Transport d'un document CDA en HL7v2](https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm)
-- [Transmission au LPS d'un document CDA provenant d'un courriel MSSanté](https://esante.gouv.fr/volet-de-transmission-au-lps-dun-document-cda)
-
-##### Outillage
-
-L'écosystème HL7 v2 bénéficie d'un outillage industriel éprouvé, largement diffusé auprès des acteurs du secteur :
-
-- Moteurs d'interfaces HL7 (Mirth Connect, Rhapsody, Cloverleaf, etc.), permettant la transformation, le routage et la supervision des flux
-- Bibibliothèques logicielles dans la plupart des langages de développement courants (Java, .NET, Python, JavaScript…), telles que [HAPI HL7](https://github.com/hapifhir/hapi-hl7v2), [NHapi](https://github.com/nHapiNET/nHapi) ou [hl7apy](https://crs4.github.io/hl7apy/), facilitant la génération, le parsing, la validation et le transport des messages HL7 v2 au sein des systèmes d’information
-- [Suite d'outil open source du NIST](https://hl7v2-igamt-2.nist.gov/home) permettant de créer et maintenir des guides d'implémentation HL7v2. Elle permet également de tester la conformité d'un message par rapport au guide généré
-- [Les plateformes Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) (ANS et IHE) sont également utilisées pour tester les profils de message. L'outil GazelleHL7Validator intègre les fichiers de définitions. Accessible via le service de Validation EVS Client, il permet de vérifier si :
-  - Le message est bien structuré
-  - Le message respecte les règles spécifiées dans les fichiers de définition
-
-Cet outillage contribue à une mise en œuvre maîtrisée et sécurisée des échanges HL7 v2, y compris dans des environnements hétérogènes ou multi-éditeurs.
-
-##### HL7v2 adapté au cas d'usage Téléradiologie
-
-Le standard HL7 v2 est d'ores et déjà présent au sein du workflow global de la téléradiologie par l'intermédiaire du volet Transport de document CDA en HL7 v2, utilisé pour la transmission du compte-rendu d'imagerie depuis la plateforme de téléradiologie vers le RIS de la structure d'imagerie. Par ailleurs, le volet téléradiologie envisage également la transmission, en complément des éléments structurés de la demande d'examen, de documents associés tels que la demande d'examen formalisée ou tout document complémentaire permettant d'enrichir le contexte clinique. Ces flux complémentaires reposent également sur le volet de Transport de documents CDA en HL7 v2, renforçant ainsi la cohérence globale des échanges autour de ce standard.
-
-Au-delà de ces usages existants, plusieurs profils IHE du [domaine IHE RADIOLOGY](https://www.ihe.net/ihe_domains/radiology/) s'appuient historiquement sur HL7 v2 pour structurer les échanges liés aux workflows d'imagerie. Le profil [IHE Scheduled Workflow (SWF.b)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf) définit notamment les transactions permettant d'orchestrer le cycle de vie d'un acte d'imagerie, depuis la prescription jusqu'à la production des résultats. Bien que le profil SWF.b ne couvre pas l'intégralité des cas d'usage spécifiques à la téléradiologie, en particulier les étapes de validation médicale distante ou de protocolisation, il propose néanmoins un ensemble de briques fonctionnelles pertinentes, telles que la gestion des demandes d'examen, des statuts associés ou des identifiants d'actes. Ces briques peuvent être mobilisées et adaptées dans le cadre des flux de téléradiologie, sans nécessiter l'adoption exhaustive du profil IHE.
-
-De même, le profil [IHE PAM-FR](https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf) (Patient Administration Management France), bien qu'orienté vers la gestion administrative des patients et non vers les processus métiers propres à la téléradiologie, constitue une référence nationale pour la gestion de l'identité patient et des traits d'identification, notamment autour de l'INS. Les segments et champs HL7 v2 définis par ce profil peuvent ainsi être réutilisés pour garantir une gestion cohérente et conforme de l'identité du patient dans les flux de téléradiologie, indépendamment des messages métiers échangés.
-
-Dans cette perspective, l'analyse présentée ci-après vise à démontrer la capacité du standard HL7 v2 à couvrir les concepts métiers identifiés dans les spécifications fonctionnelles du volet Téléradiologie. Les tableaux de couverture proposés s'appuient à la fois sur les usages courants d'HL7 v2 et sur les briques définies dans les profils IHE SWF.b et PAM-FR, afin d'illustrer de manière concrète et opérationnelle la couverture fonctionnelle du standard pour chacun des flux identifiés.
-
-###### Flux 1 - Transmission de la demande d'examen d'imagerie
-
-Dans le cadre du flux de transmission de la demande d'examen d'imagerie, les concepts métiers identifiés dans les spécifications fonctionnelles peuvent être portés par un message HL7 v2 de type ORM, historiquement utilisé pour la prescription et la gestion des actes d'imagerie. Les mappings présentés ci-dessous s'appuient sur les usages courants d'HL7 v2, ainsi que sur les recommandations issues des profils IHE SWF.b et PAM-FR lorsque celles-ci sont pertinentes, notamment pour la gestion de l'identité patient et des acteurs impliqués.
-
-| **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
-| --- | --- | --- | --- |
-| **StructureImagerie** | ORM^O01 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **PlateformeTeleradiologie** | ORM^O01 | MSH - Message Header/ ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | ORM^O01 | PID - Patient Identification ||
-| **PSResponsable** | ORM^O01 | ORC - Common Order| ORC-10 Entered By, ORC-12 Ordering Provider |
-| **PSEffecteur** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-11 Verified By / ORC-32 Principal Result Interpreter |
-| **roleProfessionnel** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter |
-| **IdentifiantDemandeExamen** | ORM^O01 | ORC - Common Order| ORC-2 Placer Order Number|
-| **NatureDemande** | ORM^O01 | ORC - Common Order| ORC-1 Order Control|
-| **DateDemande** | ORM^O01 | ORC - Common Order| ORC-9 Date/Time of Transaction |
-| **IdentifiantRDV** | ORM^O01 | PV1 - Patient Visit| PV1-19 Visit Number |
-| **DateHeurePriseCharge** | ORM^O01 | PV1 - Patient Visit| PV1-44 Admit Date/Time |
-| **JustificationDemande** | ORM^O01 | OBR - Observation Request / NTE - Notes and Comments| ORC-31 Reason for Study, NTE-3 Comment |
-| **LocalisationAnatomique** | ORM^O01 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
-| **ModaliteImagerie** | ORM^O01 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
-| **Antecedents** | ORM^O01 | OBR - Observation Request| ORC-31 Relevant Clinical Information |
-
-<p style="text-align:center;">Table 3 : Couverture des concepts métier du flux 1 par le standard HL7v2</p>
-
-###### Flux 2 - Annulation de la demande d'examen d'imagerie
-
-Le flux d'annulation de la demande d'examen d'imagerie vise à notifier la plateforme de téléradiologie de l'invalidation d'une demande précédemment transmise. HL7 v2 prévoit nativement ce cas d'usage au travers du segment ORC (Common Order) et plus particulièrement du champ ORC-1 Order Control- Order Control, qui permet de gérer le cycle de vie des ordres, incluant leur création, modification et annulation. Ce mécanisme, largement utilisé dans les workflows d'imagerie décrits par le profil IHE SWF.b, garantit une gestion cohérente et tracée des annulations sans introduire de nouveaux messages spécifiques.
-
-| **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
-| --- | --- | --- | --- |
-| **StructureImagerie** | ORM^O01 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **PlateformeTeleradiologie** | ORM^O01 | MSH - Message Header / ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | ORM^O01 | PID - Patient Identification ||
-| **PSEffecteur** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-11 Verified By / ORC-32 Principal Result Interpreter |
-| **roleProfessionnel** | ORM^O01 | ORC - Common Order / OBR - Observation Request| ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter |
-| **IdentifiantDemandeExamen** | ORM^O01 | ORC - Common Order| ORC-2 Placer Order Number|
-| **NatureDemande** | ORM^O01 | ORC - Common Order| ORC-1 Order Control|
-| **MotifAnnulation** | ORM^O01 | ORC - Common Order / NTE - Notes and Comments| ORC-16 Order Control Code Reason, NTE-3 Comment |
-
-<p style="text-align:center;">Table 4 : couverture des concepts métier du flux 2 par le standard HL7v2</p>
-
-###### Flux 3 - Réponse à la demande d'examen d'imagerie
-
-Le flux de réponse à la demande d'examen d'imagerie correspond à la décision rendue par le médecin effecteur distant à l'issue de l'analyse de la demande initiale. Cette réponse peut se traduire par une acceptation de la demande, accompagnée d'un protocole d'imagerie, ou par un refus, éventuellement assorti d'un motif explicatif. HL7 v2 ne définit pas de message spécifique dédié à la notion de « réponse à une demande » dans un contexte de téléradiologie. En revanche, le standard propose plusieurs mécanismes permettant de porter cette information, notamment via la gestion des statuts d'ordre (segment ORC) et l'ajout d'informations cliniques ou opérationnelles dans les segments OBR, OBX ou NTE. Ces mécanismes sont historiquement mobilisés dans les workflows d'imagerie décrits par le profil IHE SWF.b.
-
-| **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
-| --- | --- | --- | --- |
-| **PlateformeTeleradiologie** | ORM^O01 / ORU^R01 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **StructureImagerie** | ORM^O01 / ORU^R01 | MSH - Message Header / ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | ORM^O01 / ORU^R01 | PID - Patient Identification ||
-| **PSEffecteur** | ORM^O01 / ORU^R01 | ORC - Common Order| ORC-10 Entered By, ORC-12 Ordering Provider |
-| **roleProfessionnel** | ORM^O01 / ORU^R01 | ORC - Common Order / OBR - Observation Request| ORC-10 Entered By / ORC-11 Verified By |
-| **IdentifiantDemandeExamen** | ORM^O01 / ORU^R01 | ORC - Common Order| ORC-2 Placer Order Number|
-| **DecisionEffecteur** | ORM^O01 / ORU^R01 | ORC - Common Order| ORC-1 Order Control|
-| **MotifRefus** | ORM^O01 / ORU^R01 | ORC - Common Order / NTE - Notes and Comments| ORC-16 Order Control Code Reason, NTE-3 Comment |
-| **ProtocoleImagerie** | ORM^O01 / ORU^R01 | OBX - Observation/Result| OBX-2 = ED/TX, OBX-5 |
-
-<p style="text-align:center;">Table 5 : couverture des concepts métier du flux 3 par le standard HL7v2</p>
-
-###### Flux 4 - Transmission d'un complément d'information post-acte d'imagerie
-
-Le flux de transmission d'un complément d'information post-acte d'imagerie intervient à l'issue de la réalisation de l'examen. Il vise à transmettre au radiologue effecteur distant des éléments permettant de compléter le contexte d'interprétation et de rédaction du compte-rendu d'imagerie. Dans les implémentations HL7 v2 existantes, ce type de flux est fréquemment pris en charge au moyen de messages ORU^R01, utilisés pour la transmission d’observations et de résultats. Ce message permet de véhiculer une grande variété d’informations via des segments OBX, mais ne dispose pas de segments dédiés pour porter nativement les identifiants DICOM de l’examen. À l’inverse, le message OMI^O23, introduit pour répondre spécifiquement aux besoins du domaine de l’imagerie, propose le segment IPC (Imaging Procedure Control), permettant de structurer explicitement les informations techniques liées à la procédure d’imagerie, notamment l’Accession Number et le StudyInstanceUID.
-
-| **Concept métier** | **Message HL7 v2** | **Segment** | **Champ(s) HL7 v2** |
-| --- | --- | --- | --- |
-| **StructureImagerie** | OMI^O23 | MSH - Message Header / ORC - Common Order| MSH-3 Sending Application, MSH-4 Sending Facility / <br>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
-| **PlateformeTeleradiologie** | ORU^R01 | MSH - Message Header / ORC - Common Order| MSH-5 Receiving Application, MSH-6 Receiving Facility |
-| **Patient** | OMI^O23 | PID - Patient Identification ||
-| **IdentifiantDemandeExamen** | OMI^O23 | ORC - Common Order| ORC-2 Placer Order Number|
-| **IdentifiantRDV** | OMI^O23 | PV1 - Patient Visit| PV1-19 Visit Number |
-| **AccessionNumber** | OMI^O23 | IPC - Imaging Procedure Control| IPC-2 Requested Procedure ID |
-| **StudyInstanceUID** | OMI^O23 | IPC - Imaging Procedure Control| IPC-3 Study Instance UID |
-| **DateRéalisationExamen** | OMI^O23 | OBR - Observation Request| OBR-7 Observation Date/Time |
-| **LocalisationAnatomique** | OMI^O23 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
-| **ModaliteImagerie** | OMI^O23 | IPC - Imaging Procedure Control| IPC-5 Modality |
-| **URLViewerDRIMBOX** | OMI^O23 | OBX - Observation/Result| OBX-2 = ST / ED, OBX-5 |
-| **DuréeRétentionImages** | OMI^O23 | OBX - Observation/Result| OBX-2 = NM / TX, OBX-5 |
-| **IdentificationMatériel** | OMI^O23 | IPC - Imaging Procedure Control| IPC-5 Modality |
-| **ProduitsAdministres** | OMI^O23 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
-| **CodeEvenement (LOINC / CCAM)** | OMI^O23 | OBR - Observation Request| OBR-4 Universal Service Identifier |
-
-<p style="text-align:center;">Table 6 : couverture des concepts métier du flux 4 par le standard HL7v2</p>
-
-##### Synthèse
-
-L'analyse des différents flux du volet Téléradiologie met en évidence la capacité du standard HL7 v2 à couvrir les concepts métiers échangés au sein des flux identifiés dans les spécifications fonctionnelles. Ce standard bénéficie d'un haut niveau de maturité, d'un large outillage industriel et d'une interopérabilité éprouvée, en particulier dans le domaine de l'imagerie médicale. La capacité d’HL7 v2 à suivre les différentes étapes du traitement d’une demande d’examen et à gérer des accusés de réception contribue à sécuriser et tracer les échanges entre systèmes distants. L'utilisation conjointe de HL7 v2 et du protocole MLLP permet ainsi de répondre efficacement aux exigences de robustesse et de synchronisation attendues pour ce type de flux transactionnels. Par ailleurs, l'analyse montre que les profils IHE, en particulier IHE Scheduled Workflow (SWF.b) et IHE PAM-FR, apportent un cadre de référence pertinent pour l'usage d'HL7 v2 dans le domaine de l'imagerie. Les briques proposées par ces profils peuvent être mobilisées de manière ciblée, notamment pour la gestion du cycle de vie des demandes et pour la prise en compte des exigences nationales relatives à l'identité patient et à l'INS.
+{% include norme_standard_hl7v2.md %}
 
 <br>
 
@@ -324,19 +88,19 @@ Cette section présente une synthèse comparative des normes et standards analys
 
 | **Critères d'évaluation** | **DICOM** | **CDA** | **FHIR** | **HL7v2** |
 | --- | --- | --- | --- | --- |
+| Couverture métier || Non étudiée | ✔   | ✔   |
+| Adoption par l'écosystème Téléradiologie |✔ | ✔  |    | ✔   |
+| Rétrocompatibilité du standard ou de la norme | ✔   | ✔   |   | ✔   |
 | Outillage<br><br>_Des outils de tests sont mis en œuvre pour valider l'adhérence au standard._ | ✔   | ✔   | ✔   | ✔   |
 | Tests<br><br>_Des tests sont effectués pour des versions de travail (dites STU -Standards for Trial Use) et/ou pour les guides d'implémentation normatifs._ |  ✔   | ✔   | ✔   | ✔   |
 | Processus de prise en compte des améliorations | ✔   | ✔   | ✔   | ✔   |
 | Existence de guides d'implémentation<br><br>_Les guides référencent les standards de base avec au moins un cas d'usage et une optionalité sur les paramètres pour permettre les extensions._ |  ✔   | ✔   | ✔   | ✔   |
 | Adapté aux dispositifs mobiles |  ✔   | ✔   | ✔   | ✔   |
 | Stabilité de la documentation | ✔   | ✔   | ✔   | ✔   |
-| Rétrocompatibilité du standard ou de la norme | ✔   | ✔   |   | ✔   |
 | Adoption par le marché et utilisation | ✔   | ✔   | ✔   | ✔   |
 | Neutralité<br><br>_les spécifications ne limitent pas la concurrence et l'innovation; les spécifications sont basées sur des développements scientifiques et technologiques de pointe._ | ✔   | ✔   | ✔   | ✔   |
 | Qualité<br><br>_la qualité est suffisante pour permettre le développement de produits et de services interopérables concurrents._ | ✔   | ✔   | ✔   | ✔   |
 | Accessibilité<br><br>_Les spécifications sont disponibles au public à des conditions raisonnables (y compris pour un prix raisonnable ou gratuitement)._ | ✔   | ✔   | ✔   | ✔   |
-| Couverture métier || Non étudiée | ✔   | ✔   |
-| Adoption par l'écosystème Téléradiologie |✔ | ✔  |    | ✔   |
 
 <p style="text-align:center;">Table 7 : Synthèse comparative des normes et standards étudiés</p>
 
