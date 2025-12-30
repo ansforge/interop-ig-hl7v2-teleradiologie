@@ -98,8 +98,30 @@
   <li>
     <a href="specifications_fonctionnelles.html">Volume 1 - Etude fonctionnelle</a>
   </li>
-  <li>
-    <a href="norme_standard.html">Normes et Standards</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Normes et Standards
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="norme_standard.html#introduction">Introduction</a>
+      </li>
+      <li><a name="l181">​</a>
+        <a href="norme_standard.html#présentation-synthétique-du-volet-teleradiologie">Présentation synthétique du volet</a>
+      </li>
+      <li>
+        <a href="norme_standard.html#normes-et-standards-étudiés">Normes et standards étudiés</a>
+      </li>
+      <li>
+        <a href="norme_standard.html#synthèse">Synthèse</a>
+      </li>
+      <li>
+        <a href="norme_standard.html#analyse-et-conclusion">Analyse et conclusion</a>
+      </li>
+      <li>
+        <a href="norme_standard.html#conclusion">Conclusion</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
@@ -186,20 +208,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ul>
-      <li><a href="#présentation-synthétique-du-volet-téléradiologie" id="markdown-toc-présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</a></li>
-      <li><a href="#normes-et-standards-étudiés" id="markdown-toc-normes-et-standards-étudiés">Normes et Standards étudiés</a></li>
-      <li><a href="#synthèse-4" id="markdown-toc-synthèse-4">Synthèse</a></li>
-      <li><a href="#analyse-et-conclusion" id="markdown-toc-analyse-et-conclusion">Analyse et conclusion</a></li>
-      <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-    </ul>
-  </li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#présentation-synthétique-du-volet-téléradiologie" id="markdown-toc-présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</a></li>
+  <li><a href="#normes-et-standards-étudiés" id="markdown-toc-normes-et-standards-étudiés">Normes et Standards étudiés</a></li>
+  <li><a href="#synthèse-4" id="markdown-toc-synthèse-4">Synthèse</a></li>
+  <li><a href="#analyse-et-conclusion" id="markdown-toc-analyse-et-conclusion">Analyse et conclusion</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
 </ul>
 
 </div>
-<h2 id="introduction">Introduction</h2>
+<h3 id="introduction">Introduction</h3>
 
-<p><a name="l346">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\spécifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.</p>
+<p><a name="l383">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\spécifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.</p>
 
 <p>Les normes et standards étudiés au sein de cette étude sont les suivants :</p>
 
@@ -690,7 +710,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <h6 id="annulation-dune-demande-dexamen-dimagerie">Annulation d’une demande d’examen d’imagerie</h6>
 
-<p><a name="l1463">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
+<p><a name="l1500">​</a>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="(https://build.fhir.org/http.html#delete)&quot;">delete</a>.</p>
 
 <p>Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">200 OK</code>. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
 
@@ -1387,7 +1407,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 30, 2025 17:03+0000">2025-12-30</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 30, 2025 17:17+0000">2025-12-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
