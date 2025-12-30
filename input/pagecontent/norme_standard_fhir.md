@@ -205,7 +205,7 @@ Suivant l’analyse des concepts métier identifiés dans la spécification fonc
 
 </tbody>
 </table>
-<p style="text-align:center;">Table 1 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
+<p style="text-align:center;">Table 2 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
 
 ##### Transport
 
