@@ -45,10 +45,10 @@ menu:
     Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html 
     Normes et Standards: 
         Introduction: norme_standard-intro.html
-        "Présentation synthétique du volet": norme_standard-presTLR.html
-        "Normes et standards étudiés": norme_standard-etude.html
-        "Synthèse": norme_standard-synthese.html
-        "Analyse et conclusion": norme_standard-analyseconclu.html
+        Présentation synthétique du volet: norme_standard-presTLR.html
+        Normes et standards étudiés: norme_standard-etude.html
+        Synthèse: norme_standard-synthese.html
+        Analyse et conclusion: norme_standard-analyseconclu.html
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
         Exemples de messages: exemples.html
