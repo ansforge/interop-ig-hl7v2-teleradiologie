@@ -27,7 +27,10 @@ De plus, le CI-SIS incite à l'utilisation du standard HL7v2 pour le transport d
 - [Transport d'un document CDA en HL7v2](https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm)
 - [Transmission au LPS d'un document CDA provenant d'un courriel MSSanté](https://esante.gouv.fr/volet-de-transmission-au-lps-dun-document-cda)
 
-Interopsanté 
+L'ancrage d'HL7 v2 au niveau français est également la conséquence des travaux de l’organisme InteropSanté, qui publie et maintient des spécifications nationales fondées sur HL7 v2, telles que [les contraintes françaises du profil IHE PAM](https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf), [les contraintes françaises sur les types de données HL7 v2](https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf), ainsi que les profils [ILW.FR](https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf) et [LTW.FR](https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf) encadrant les échanges de demandes et de résultats d’examens de biologie, en contexte intra-établissement et inter-organisations. 
+
+Ces spécifications contribuent à une mise en œuvre homogène, interopérable et industrialisée du standard HL7 v2 au niveau national.
+
 ##### Outillage
 
 L'écosystème HL7 v2 bénéficie d'un outillage industriel éprouvé, largement diffusé auprès des acteurs du secteur :
