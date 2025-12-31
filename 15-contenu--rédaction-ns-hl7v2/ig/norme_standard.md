@@ -7,7 +7,7 @@
 
 ### Introduction
 
-Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « [Spécifications fonctionnelles des échanges - Téléradiologie](.\spécifications_fonctionnelles.md) ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires au parcours de téléradiologie.
+Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « [Spécifications fonctionnelles des échanges - Téléradiologie](.\spécifications_fonctionnelles.md) ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.
 
 Les normes et standards étudiés au sein de cette étude sont les suivants :
 
@@ -20,15 +20,15 @@ Les normes et standards étudiés au sein de cette étude sont les suivants :
 
 Table 1 : Normes et standards étudiés
 
-Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit également dans un contexte de mise en œuvre opérationnelle contraint. L’un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d’actes d’imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les plateformes de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.
+Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit dans un contexte de mise en œuvre opérationnelle contraint. L’un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d’examen d’imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les systèmes d’information de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.
 
 Les versions des normes et standards étudiés dans le présent document sont celles disponibles à la date de réalisation de l’étude (décembre 2025).
 
-L’étude présente un rappel synthétique du contexte du volet Téléradiologie. Elle propose ensuite, pour chacune des normes et standards étudiés, une analyse détaillée comprenant une description générale, leur maturité et leur niveau d’adoption au sein des systèmes de santé, l’existence d’outillage, ainsi que leur pertinence au regard des cas d’usage identifiés.
+L’étude présente un rappel synthétique du contexte du volet Téléradiologie. Elle propose ensuite, pour chacune des normes et standards étudiés, une analyse détaillée comprenant une description générale, leur maturité et leur niveau d’adoption au sein des systèmes de santé, l’existence d’outillage dédié, ainsi que leur pertinence au regard des cas d’usage identifiés.
 
-Une synthèse comparative est ensuite proposée afin de faciliter la lecture et la mise en perspective des normes et standards évalués. Enfin, une analyse métier et technique croisée vient éclairer les choix de standardisation envisageables.
+Une synthèse comparative est ensuite proposée afin de faciliter la lecture et la mise en perspective des normes et standards évalués. Enfin, une analyse métier et technique croisée permet d’éclairer les choix de standardisation envisageables.
 
-Cette étude s’appuie sur les recommandations et principes du Cadre d’interopérabilité des systèmes d’information de santé (CI-SIS), qui référence les normes et standards internationaux applicables au développement des volets métiers, et constitue le référentiel de doctrine pour l’interopérabilité du système de santé.
+Cette étude s’appuie sur les recommandations et principes du Cadre d’interopérabilité des systèmes d’information de santé (CI-SIS), qui référence les normes et standards internationaux applicables au développement des volets métiers, et constitue le référentiel institutionnel national de doctrine pour l’interopérabilité du système de santé.
 
 ### Présentation synthétique du volet Téléradiologie
 
@@ -43,17 +43,17 @@ La présente étude couvre les échanges décrits dans la Spécification fonctio
 
 * La transmission d’une demande d’examen d’imagerie
 * L’annulation d’une demande d’examen
-* La réponse à une demande (acceptation avec protocole d’imagerie ou refus)
+* La réponse à une demande d’examen (acceptation avec protocole d’imagerie ou refus)
 * La transmission d’informations complémentaires post-examen
 
-Les concepts métiers à véhiculer dans ces flux sont décrits en étape 4 et 5 de la spécification fonctionnelle et couvrent plusieurs catégories de données essentielles au parcours de téléradiologie :
+Les concepts métiers à véhiculer dans ces flux sont décrits en [étape 4 et 5](./specifications_fonctionnelles.md#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS) de la spécification fonctionnelle et couvrent plusieurs catégories de données essentielles à la pratique de la téléradiologie :
 
-* Données administratives et d’identification : identités patient et professionnels, identifiants de demandes et d’examens, informations de structure.
-* Données cliniques et de prescription : motif d’examen, indications, contexte clinique fourni par le médecin de proximité.
-* Données de protocole d’imagerie : éléments nécessaires à la réalisation de l’acte, fournis par le radiologue distant.
-* Données techniques et informations post-acte : paramètres de réalisation, incidents, observations du manipulateur.
+* Données administratives et d’identification : identités patient et professionnels de santé, identifiants de demandes et d’examens, informations de structure
+* Données cliniques et de prescription : motif d’examen, indications, contexte clinique fourni par le médecin de proximité
+* Données de protocole d’imagerie : éléments nécessaires à la réalisation de l’acte, fournis par le radiologue distant
+* Données techniques et informations post-acte : conditions de réalisation, données documentaires
 
-Le choix final des normes ou standards devra permettre de couvrir l’intégralité des données manipulées dans le cadre de la téléradiologie, ainsi que les scénarios d’échanges entre la structure d’imagerie et le service d’interprétation distant.
+Le choix final des normes ou standards devra permettre de couvrir l’intégralité des données véhiculées dans le cadre de la téléradiologie, ainsi que les scénarios d’échanges entre la structure d’imagerie et le service d’interprétation distant.
 
 ### Normes et Standards étudiés
 
@@ -63,7 +63,7 @@ Cette section présente les normes et standards susceptibles d’être utilisés
 
 ##### Présentation
 
-Le standard [DICOM (Digital Imaging and Communications in Medicine)](https://www.dicomstandard.org/) est un standard international dédié à la gestion, au stockage, à la transmission et à la visualisation des images médicales. Il définit à la fois un format de fichier pour l’imagerie médicale et un ensemble de services réseau permettant l’échange de ces images et des métadonnées associées entre équipements et systèmes d’information d’imagerie (modalités, PACS, visionneuses). DICOM est nativement orienté vers les besoins des domaines de l’imagerie médicale, notamment la radiologie, la médecine nucléaire, la radiothérapie et l’imagerie interventionnelle. Il constitue le socle technique des échanges d’images et d’informations associées au sein des systèmes d’imagerie.
+Le standard [DICOM (Digital Imaging and Communications in Medicine)](https://www.dicomstandard.org/) est un standard international dédié à la gestion, au stockage, à la transmission et à la visualisation des images médicales. Il définit à la fois un format de fichier pour l’imagerie médicale et un ensemble de services réseau permettant l’échange de ces images et des métadonnées associées entre équipements et systèmes d’information d’imagerie (modalités, PACS, visionneuses). DICOM est nativement orienté vers les besoins associés aux domaines de l’imagerie médicale, notamment la radiologie, la médecine nucléaire, la radiothérapie et l’imagerie interventionnelle. Il constitue le socle technique permettant l’échange d’images médicales et d’informations associées au sein des systèmes d’imagerie.
 
 ##### Maturité et adoption
 
@@ -98,7 +98,7 @@ L’ensemble de ces mécanismes est spécifiquement et exclusivement conçu pour
 
 ##### DICOM adapté au cas d’usage Téléradiologie
 
-Dans le cadre du volet Téléradiologie, le standard DICOM joue un rôle essentiel pour la mise à disposition et la consultation des images médicales produites lors de la réalisation de l’acte d’imagerie. Toutefois, ce rôle se situe en dehors du périmètre des flux fonctionnels étudiés dans le présent volet. Le standard DICOM n’est pas conçu pour véhiculer des échanges transactionnels ou décisionnels de type métier, ni pour gérer le cycle de vie des demandes ou des décisions médicales associées. À ce titre, il ne permet pas de répondre aux besoins fonctionnels identifiés dans les spécifications du volet Téléradiologie, en dehors de la fourniture d’un accès aux images. Les mécanismes d’accès aux images (PACS, visionneuses, plateformes d’échange) sont généralement intégrés dans des architectures d’imagerie existantes et peuvent être référencés dans les flux du volet Téléradiologie (par exemple via une URL de visionneuse), sans que DICOM ne constitue le standard d’échange principal pour ces flux.
+Dans le cadre du volet Téléradiologie, le standard DICOM joue un rôle essentiel pour la mise à disposition et l’archivage des images médicales produites lors de la réalisation de l’acte d’imagerie. Toutefois, ce rôle se situe en dehors du périmètre des flux fonctionnels étudiés dans le présent volet. Le standard DICOM n’est pas conçu pour prendre en charge des échanges transactionnels ou décisionnels de type métier, ni pour gérer le cycle de vie des demandes ou des décisions médicales associées. À ce titre, il ne permet pas de répondre aux besoins fonctionnels identifiés dans les spécifications du volet Téléradiologie. Les mécanismes d’accès aux images (PACS, visionneuses, plateformes d’échange) sont généralement intégrés dans des architectures d’imagerie existantes.
 
 ##### Synthèse
 
@@ -374,7 +374,9 @@ De plus, le CI-SIS incite à l’utilisation du standard HL7v2 pour le transport
 * [Transport d’un document CDA en HL7v2](https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm)
 * [Transmission au LPS d’un document CDA provenant d’un courriel MSSanté](https://esante.gouv.fr/volet-de-transmission-au-lps-dun-document-cda)
 
-Interopsanté
+L’ancrage d’HL7 v2 au niveau français est également la conséquence des travaux de l’organisme InteropSanté, qui publie et maintient des spécifications nationales fondées sur HL7 v2, telles que [les contraintes françaises du profil IHE PAM](https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf), [les contraintes françaises sur les types de données HL7 v2](https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf), ainsi que les profils [ILW.FR](https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf) et [LTW.FR](https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf) encadrant les échanges de demandes et de résultats d’examens de biologie, en contexte intra-établissement et inter-organisations.
+
+Ces spécifications contribuent à une mise en œuvre homogène, interopérable et industrialisée du standard HL7 v2 au niveau national.
 
 ##### Outillage
 
@@ -531,7 +533,7 @@ Le standard DICOM est indispensable pour la gestion et la mise à disposition de
 
 ##### CDA
 
-Le standard HL7 CDA est adapté à la production et à l’échange de documents cliniques persistants, en particulier le compte-rendu d’imagerie, qui constitue le livrable clinique final du workflow. En dehors du flux de demande d’examen déjà couvert par un volet CI-SIS dédié, l’utilisation de CDA pour les échanges intermédiaires n’est pas adapté au contexte de téléradiologie. De plus, les orientations européennes limitent l’intérêt d’engager de nouveaux travaux basé sur le standard sur CDA.
+Le standard HL7 CDA est adapté à la production et à l’échange de documents cliniques persistants, en particulier le compte-rendu d’imagerie, qui constitue le livrable clinique final du workflow. En dehors de la structuration du contenu de la demande d’examen déjà couvert par un volet CI-SIS dédié, l’utilisation de CDA pour les échanges intermédiaires n’est pas adapté au contexte de téléradiologie. De plus, les orientations européennes envisagées à moyen terme limitent l’intérêt d’engager de nouveaux travaux basé sur le standard sur CDA.
 
 ##### FHIR
 
@@ -549,7 +551,7 @@ Largement adopté dans l’écosystème de l’imagerie médicale et déjà util
 
 **La présente étude a pour objectif d’identifier et de comparer les normes et standards susceptibles de répondre à la mise en œuvre des flux d’échange définis dans les spécifications fonctionnelles du volet Téléradiologie. L’analyse a porté sur un ensemble de standards largement utilisés dans le domaine de l’interopérabilité en santé, évalués au regard de plusieurs critères complémentaires : la capacité à structurer les contenus métiers, la couverture des cas d’usage identifiés, la maturité et le niveau d’adoption au sein de l’écosystème, l’existence d’outillage, ainsi que l’adéquation aux contraintes organisationnelles, techniques et réglementaires du contexte national.**
 
-**Parmi les standards étudiés, DICOM et HL7 CDA ont été écartés comme supports principaux des flux du volet Téléradiologie. DICOM est spécifiquement dédié à la gestion, au stockage et à l’échange des objets d’imagerie médicale et ne vise pas la structuration des échanges métiers intervenant tout au long du workflow. Le standard HL7 CDA est, quant à lui, conçu pour la production de documents cliniques persistants, est pertinent en fin de parcours pour le compte-rendu d’imagerie. En revanche, son usage pour des échanges transactionnels intermédiaires à durée de vie courte ne correspond pas à son positionnement naturel. Par ailleurs, les orientations européennes et nationales récentes en matière d’interopérabilité privilégient désormais le standard HL7 FHIR pour les nouveaux besoins d’échange de données de santé structurées, ce qui limite la pertinence d’engager de nouveaux travaux fondés sur CDA dans ce contexte.**
+**Parmi les standards étudiés, DICOM et HL7 CDA ont été écartés comme supports principaux des flux du volet Téléradiologie. DICOM est spécifiquement dédié à la gestion, au stockage et à l’échange des objets d’imagerie médicale et ne vise pas la structuration des échanges métiers intervenant tout au long du workflow. Le standard HL7 CDA est, quant à lui, conçu pour la production de documents cliniques persistants, et pertinent en fin de parcours pour le compte-rendu d’imagerie. En revanche, son usage pour des échanges transactionnels intermédiaires à durée de vie courte ne correspond pas à son positionnement naturel. Par ailleurs, les orientations européennes et nationales récentes en matière d’interopérabilité privilégient désormais le standard HL7 FHIR pour les nouveaux besoins d’échange de données de santé structurées, ce qui limite la pertinence d’engager de nouveaux travaux fondés sur CDA dans ce contexte.**
 
 **L’analyse met en évidence que le standard HL7 FHIR présente une couverture fonctionnelle et technique complète des besoins du volet Téléradiologie. Sa granularité, son modèle de données explicite et sa capacité à supporter des échanges transactionnels en font un standard particulièrement adapté aux cas d’usage identifiés. Par ailleurs, son alignement avec les orientations européennes en matière d’interopérabilité confirme son rôle structurant dans les trajectoires d’évolution à moyen et long terme des systèmes d’information de santé.**
 
