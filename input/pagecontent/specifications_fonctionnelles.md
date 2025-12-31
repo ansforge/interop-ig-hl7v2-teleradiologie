@@ -1181,23 +1181,23 @@ Table 31 : Attributs de la classe « AnnulationExamenImagerie »
 
 ##### Classe PersonnePriseCharge
 
-Cf [2.8.1.5](#classe-personneprisecharge)
+Cf [2.1.8.1.5](#classe-personneprisecharge)
 
 ##### Classe Professionnel
 
-Cf [2.8.1.10](#classe-professionnel)
+Cf [2.1.8.1.10](#classe-professionnel)
 
 ##### Classe ExerciceProfessionnel
 
-Cf [2.8.1.11](#classe-exerciceprofessionnel)
+Cf [2.1.8.1.11](#classe-exerciceprofessionnel)
 
 ##### Classe Structure
 
-Cf [2.8.1.12](#classe-structure)
+Cf [2.1.8.1.12](#classe-structure)
 
 ##### Classe SystemeInformation
 
-Cf [2.8.1.13](#classe-systemeinformation)
+Cf [2.1.8.1.13](#classe-systemeinformation)
 
 #### Flux 3 – ReponseDemandeIMG
 
@@ -1236,23 +1236,23 @@ Table 33 : Attributs de la classe « ProtocoleImagerie »
 
 ##### Classe PersonnePriseCharge
 
-Cf [2.8.1.5](#classe-personneprisecharge)
+Cf [2.1.8.1.5](#classe-personneprisecharge)
 
 ##### Classe Professionnel
 
-Cf [2.8.1.10](#classe-professionnel)
+Cf [2.1.8.1.10](#classe-professionnel)
 
 ##### Classe ExerciceProfessionnel
 
-Cf [2.8.1.11](#classe-exerciceprofessionnel)
+Cf [2.1.8.1.11](#classe-exerciceprofessionnel)
 
 ##### Classe Structure
 
-Cf [2.8.1.12](#classe-structure)
+Cf [2.1.8.1.12](#classe-structure)
 
 ##### Classe SystemeInformation
 
-Cf [2.8.1.13](#classe-systemeinformation)
+Cf [2.1.8.1.13](#classe-systemeinformation)
 
 #### Flux 4 – TransmissionComplementIMG
 
@@ -1341,27 +1341,27 @@ Table 37 : Attributs de la classe « ProduitsAdministres »
 
 ##### Classe DemandeExamenImagerie
 
-Cf [2.8.1.1](#classe-demandeexamenimagerie)
+Cf [2.1.8.1.1](#classe-demandeexamenimagerie)
 
 ##### Classe RendezVous
 
-Cf [2.8.1.4](#classe-rendezvous)
+Cf [2.1.8.1.4](#classe-rendezvous)
 
 ##### Classe PersonnePriseCharge
 
-Cf [2.8.1.5](#classe-personneprisecharge)
+Cf [2.1.8.1.5](#classe-personneprisecharge)
 
 ##### Classe ModaliteImagerie
 
-Cf [2.8.1.7](#classe-modaliteimagerie)
+Cf [2.1.8.1.7](#classe-modaliteimagerie)
 
 ##### Classe LocalisationAnatomique
 
-Cf [2.8.1.8](#classe-localisationanatomique)
+Cf [2.1.8.1.8](#classe-localisationanatomique)
 
 ##### Classe SystemeInformation
 
-Cf [2.8.1.13](#classe-systemeinformation)
+Cf [2.1.8.1.13](#classe-systemeinformation)
 
 ### Illustrations
 
