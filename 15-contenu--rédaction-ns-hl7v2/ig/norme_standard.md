@@ -296,7 +296,7 @@ Ce flux permettrait de couvrir l’ensemble des processus suivants :
 
 ###### Annulation d’une demande d’examen d’imagerie
 
-L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “[delete]((https://build.fhir.org/http.md#delete)").
+L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “[delete](https://build.fhir.org/http.html#delete)”.
 
 Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http `200 OK`. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.
 
