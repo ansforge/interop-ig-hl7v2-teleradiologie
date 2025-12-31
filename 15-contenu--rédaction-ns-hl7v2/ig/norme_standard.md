@@ -7,7 +7,7 @@
 
 ### Introduction
 
-Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « [Spécifications fonctionnelles des échanges - Téléradiologie](.\spécifications_fonctionnelles.md) ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.
+Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « [Spécifications fonctionnelles des échanges - Téléradiologie](.\specifications_fonctionnelles.md) ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.
 
 Les normes et standards étudiés au sein de cette étude sont les suivants :
 
