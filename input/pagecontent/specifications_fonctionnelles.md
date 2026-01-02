@@ -1371,5 +1371,5 @@ Cf [2.1.8.1.13](#classe-systemeinformation)
     <img src="DiagSeq-SFE.png"
     alt="Diagramme de séquence"
     title="DiagSeq-SFE"
-    style="width:6.15625in;height:8.99008in">
+    style="width:8in;height:10in">
 </div>
