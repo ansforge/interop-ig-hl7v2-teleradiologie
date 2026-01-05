@@ -122,7 +122,7 @@ Les conditions de mise à disposition d’un compte-rendu d’imagerie au sein d
 
 Enfin, il est important de noter l’émergence d’un dispositif permettant le partage et l’accès aux données d’imagerie médicale au niveau national : le projet DRIM-M. Celui-ci résulte d’un partenariat entre radiologues, médecins nucléaires et pouvoirs publics. L’un des aspects intrinsèques au projet DRIM-M consiste à permettre la visualisation d’images médicales depuis la consultation du compte-rendu d’imagerie associé. Ainsi, afin de s’intégrer au maillage défini au travers du projet DRIM-M, les comptes-rendus d’imagerie doivent faire apparaître un ensemble d’informations relatives à cet usage (lien d’accès permettant la visualisation des images associées au compte-rendu, durée de rétention des données auprès de l’archive d’imagerie médicale, …).
 
-### Lectorat cible
+#### Lectorat cible
 
 Les lecteurs cibles de la présente spécification sont principalement des chefs de projets et développeurs ainsi que toute personne concernée par les travaux de mise en conformité et qui spécifient des projets avec des interfaces interopérables des structures d’imagerie et des plateformes de téléradiologie.
 
@@ -167,12 +167,14 @@ Les différents processus collaboratifs retenus dans le périmètre de la prése
 | **Contraintes fonctionnelles** | Si la demande d’examen rédigée est connue (contexte de planification), en complément des éléments clés associés à la demande d'examen d'imagerie véhiculés dans la transaction, le Créateur initie au moins une transaction supplémentaire correspondant au document Demande d'examen d'imagerie complet (numérisé). |
 | **Scénario nominal** | Le Créateur transmet une demande d’examen d’imagerie au Consommateur. Cette demande peut être accompagnée d’un ou plusieurs documents complémentaires.Le Consommateur réceptionne et analyse la demande d’examen d’imagerie. Si applicable, le consommateur prend également connaissance des informations portées le(s) document(s) annexes. |
 
+Table 1 : Définition du processus collaboratif « Transmettre une demande d'examen d'imagerie »
+
 | | |
 | :--- | :--- |
 | Créateur | Le rôle de Créateur, incarné par le système RIS, est de transmettre une demande d’examen d’imagerie à destination du Consommateur. Cette interaction peut être complétée par un ou plusieurs documents annexes. |
 | Consommateur | Le rôle de Consommateur, incarné par le SI de téléradiologie, est de recevoir la demande d’examen d’imagerie, qui peut être accompagnée d’un ou plusieurs documents associés. |
 
-Table 2 : Définition des acteurs du processus « Transmettre une demande d’examen d’imagerie »
+Table 2 : Définition des acteurs du processus « Transmettre une demande d'examen d'imagerie »
 
 #### Processus collaboratif « Annuler une demande d’examen d’imagerie »
 
@@ -184,6 +186,8 @@ Table 2 : Définition des acteurs du processus « Transmettre une demande d’ex
 | **Post-conditions** | N/A |
 | **Contraintes fonctionnelles** | N/A |
 | **Scénario nominal** | Le Créateur annule une demande d’examen d’imagerie transmise préalablement au Consommateur.Le Consommateur réceptionne l’annulation de la demande d’examen. |
+
+Table 3 : Définition du processus collaboratif « Annuler une demande d'examen d’imagerie »
 
 | | |
 | :--- | :--- |
@@ -203,6 +207,8 @@ Table 4 : Définition des acteurs du processus « Annuler une demande d’examen
 | **Contraintes fonctionnelles** | En cas d’acceptation de la demande :La réponse doit comporter un indicateur d’acquittement positif signifiant l’acceptation de la demande, ainsi que le protocole d’examen élaboré par le médecin effecteur à distance.En cas de refus de la demande :La réponse doit comporter un indicateur de refus qui peut être accompagné de la nature du refus. Dans ce cas, aucun protocole n’est fourni. |
 | **Scénario nominal** | Le Créateur fournit une réponse métier au Consommateur concernant la demande d’examen d’imagerie précédemment reçue.Cette réponse indique la décision prise (acceptation ou refus).En cas d’acceptation, elle inclut le protocole d’imagerie validé.Le Consommateur réceptionne la réponse métier et en prend connaissance afin d’intégrer la décision et, si applicable, les informations portées par le protocole d’imagerie dans son environnement. |
 
+Table 5 : Définition du processus collaboratif « Répondre à une demande d’examen d’imagerie »
+
 | | |
 | :--- | :--- |
 | Créateur | Le rôle de Créateur, incarné par le SI de téléradiologie, est de transmettre la réponse métier établi par le téléradiologue à destination du système RIS |
@@ -220,6 +226,8 @@ Table 6 : Définition des acteurs du processus « Répondre à une demande d’e
 | **Post-conditions** | Mise à disposition des images médicales produites. |
 | **Contraintes fonctionnelles** | N/A |
 | **Scénario nominal** | Le Créateur transmet un complément d’information suite à la réalisation du ou des actes au Consommateur.Le Consommateur réceptionne ces informations et en prend connaissance. |
+
+Table 7 : Définition du processus collaboratif « Transmettre un complément d'information post-examen »
 
 | | |
 | :--- | :--- |
@@ -402,6 +410,8 @@ Table 17 : Synthèse des flux
 | codeEvenement | Code de l’évènement correspondant à l’acte d’imagerie réalisé.Doit être présent : Code(s) LOINC issu(s) du jdv-code-document-imagerie-cisis (1.2.250.1.213.1.1.5.687)Peut être présent : Code(s) CCAM de l’acte d’imagerie | Flux 4 |
 | roleProfessionnel | Indique le rôle joué par le professionnel dans le cadre des échanges de téléradiologie. | Flux 1, 2, 3 |
 
+Table 18 : Concepts métier – Factorisation par Concepts
+
 #### Mise en équivalence MOS
 
 Au travers de ce chapitre une mise en correspondance sera effectuée entre les concepts métier précédemment présentés et les concepts issus du modèle des objets de santé (MOS). L’objectif du MOS étant de définir un ensemble de concepts, décrits de manière homogène et neutre vis-à-vis des technologies, et d’offrir une description commune et mutualisée des informations traitées par les systèmes d’information. Le MOS peut être consulté à l’adresse suivante : [https://mos.esante.gouv.fr/0.html](https://mos.esante.gouv.fr/0.html).
@@ -443,6 +453,8 @@ Le tableau présenté ci-dessous contient les éléments suivants :
 | modaliteImagerie |  |  |  |
 | codeEvenement |  |  |  |
 | roleProfessionnel |  |  |  |
+
+Table 19 : Mise en équivalence MOS
 
 ### Modélisation des flux d’informations
 
@@ -509,6 +521,8 @@ Personne physique bénéficiaire de soins, d’examens, d’actes de prévention
 * Des traits complémentaires provenant du Référentiel National d'IdentitoVigilance (RNIV) : premier prénom de l'acte de naissance, prénom utilisé et nom utilisé.
  |
 
+Table 24 : Attributs de la classe « PersonnePriseCharge »
+
 ##### Classe PersonnePhysique
 
 Informations de la personne physique disjointes des informations constituant l’identité INS.
@@ -541,7 +555,7 @@ Décrit la ou les régions du corps concernées par un examen d’imagerie. En f
 | localisationAnatomique : Code [1..1] | Localisation anatomique examinée dans le cadre de l’examen d’imagerie. Code issu du JDV_RegionAnatomique -CISIS (1.2.250.1.213.1.1.5.695). |
 | precisionTopographique : Code [0..1] | En complément de la localisation anatomique, une précision topographique peut être associée à la localisation anatomique. Code issu du JDV_ModificateurTopographique-CISIS (1.2.250.1.213.1.1.5.688). |
 
-Table 27 : Attributs de la classe « Attributs de la classe « LocalisationAnatomique »
+Table 27 : Attributs de la classe « LocalisationAnatomique »
 
 ##### Classe Antecedents
 
@@ -551,6 +565,8 @@ Ensemble d’informations relatives aux antécédents médicaux significatifs co
 | :--- | :--- |
 | description : Texte [1..1] | Exposé de l’antécédent médical concernant le patient pris en charge. |
 | pertinenceAntecedent : Indicateur [0..1] | Détermine le degré d’importance applicable à la prise en compte de l’antécédent médical. |
+
+Table 28 : Attributs de la classe « Antecedents »
 
 ##### Classe Professionnel
 
@@ -562,7 +578,7 @@ Personnel médical qui participe à la prise en charge du patient. Représente a
 | roleProfessionnel : Code [1..1] | Indique le rôle joué par le professionnel dans le cadre des échanges de téléradiologie. Permet de distinguer s’il s’agit du professionnel de santé demandeur ou du professionnel de santé effecteur. |
 | telecommunication : Telecommunication [0..*] | Adresse(s) de télécommunication du professionnel (numéro de téléphone, adresse email, URL, etc.). |
 
-Table  : Attributs de la classe « Professionnel »
+Table 29 : Attributs de la classe « Professionnel »
 
 ##### Classe ExerciceProfessionnel
 
@@ -575,7 +591,7 @@ Informations décrivant notamment la profession exercée, l’identité d’exer
 | prenomExercice : Texte [0..1]  | Prénom sous lequel exerce le professionnel. |
 | profession : Code [1..1]  | Profession exercée ou future profession de l’étudiant. Code issu du JDV_J01_XdsAuthorSpecialty_CISIS (1.2.250.1.213.1.1.5.461). |
 
-Table 28 : Attributs de la classe « ExerciceProfessionnel »
+Table 30 : Attributs de la classe « ExerciceProfessionnel »
 
 ##### Classe Structure
 
@@ -586,7 +602,7 @@ Représente une entité organisationnelle. En fonction du contexte, peut corresp
 | idNat_struct : Identifiant [1..1] | Identification nationale de l’Entité initiée pour les besoins du SI-CPS. Cette identification est obtenue par la concaténation du type d’identifiant national de structure (provenant de la nomenclature CodeSystem-TRE-G07-TypeIdentifiantStructure) et de l’identifiant de la structure. Voir[Modèle des objets de santé (MOS) – idNat_struct](https://mos.esante.gouv.fr/4.html#_86304fbf-ab15-4640-993a-242c61794854) |
 | denominationStructure : Texte [1..1] | Nom sous lequel l’entité exerce son activité. Dans le cas d’un établissement enregistré dans le FINESS, cet attribut correspond à la notion de “raison sociale d’un établissement” renseignée dans le FINESS. |
 
-Table 29 : Attributs de la classe « Structure »
+Table 31 : Attributs de la classe « Structure »
 
 ##### Classe SystemeInformation
 
@@ -597,7 +613,7 @@ Décrit les caractéristiques du système d’information utilisé par une struc
 | nomApplication : Texte [1..1] | Nom de l’application. |
 | nomOrganisation : Texte [1..1] | Nom de l’organisation. |
 
-Table 30 : Attributs de la classe « SystemeInformation »
+Table 32 : Attributs de la classe « SystemeInformation »
 
 #### Flux 2 – AnnulationDemandeIMG
 
@@ -613,7 +629,7 @@ Représente l’ensemble des informations nécessaires pour formaliser l’annul
 | natureDemande : Code [1..1] | Nature de la demande d’examen (Nouvelle demande ou annulation d’une demande). |
 | motifAnnulation : Texte [0..1] | Motif d’annulation de la demande d’examen d’imagerie. |
 
-Table 31 : Attributs de la classe « AnnulationExamenImagerie »
+Table 33 : Attributs de la classe « AnnulationExamenImagerie »
 
 ##### Classe PersonnePriseCharge
 
@@ -649,7 +665,7 @@ Représente les informations constituant la réponse du médecin effecteur à un
 | decisionEffecteur : Booléen [1..1] | Décision rendue par le médecin effecteur après analyse de la demande d’examen d’imagerie, indiquant si celle-ci est acceptée ou refusée. |
 | motifRefus : Texte [0..1] | Si la demande est refusée par le médecin effecteur, permet de renseigner le motif du refus. |
 
-Table 32 : Attributs de la classe « ReponseDemandeImagerie »
+Table 34 : Attributs de la classe « ReponseDemandeImagerie »
 
 ##### Classe ProtocoleImagerie
 
@@ -659,7 +675,7 @@ Représente le protocole d’imagerie élaboré par le médecin effecteur.
 | :--- | :--- |
 | protocole : Texte [1..1] | Document définissant les conditions de réalisation de l’examen d’imagerie. |
 
-Table 33 : Attributs de la classe « ProtocoleImagerie »
+Table 35 : Attributs de la classe « ProtocoleImagerie »
 
 ##### Classe PersonnePriseCharge
 
@@ -696,6 +712,8 @@ Regroupe l’ensemble des informations permettant d’identifier un examen d’i
 | dateExamenImagerie : DateHeure [1..1] | Date et heure correspondant à la réalisation de l’examen d’imagerie. |
 | codeEvenement : Code [1..1] | Code de l’évènement correspondant à l’acte d’imagerie réalisé.Doit être présent : Code LOINC issu du jdv-code-document-imagerie-cisis (1.2.250.1.213.1.1.5.687)Peut être présent : Code(s) CCAM de l’acte d’imagerie. |
 
+Table 36 : Attributs de la classe « ExamenImagerie »
+
 ##### Classe Images
 
 Regroupe les informations relatives aux images produites lors d’un examen d’imagerie et les modalités permettant leur consultation ou transfert.
@@ -705,7 +723,7 @@ Regroupe les informations relatives aux images produites lors d’un examen d’
 | urlViewerDrimBox : Texte [1..1] | Eléments permettant la construction d’une URL d’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. |
 | dureeRetentionImages : Duree [1..1] | Durée de rétention propre à l’archive impliquée concernant les images médicales associées à l’acte ou aux actes d’imagerie effectué. Cette information doit apparaître explicitement au sein du compte-rendu d’imagerie. |
 
-Table 35 : Attributs de la classe « Images»
+Table 37 : Attributs de la classe « Images»
 
 ##### Classe AppareilImagerieUtilise
 
@@ -716,7 +734,7 @@ Permet d’identifier l’équipement d’imagerie utilisé pour réaliser l’e
 | identifiantAppareilImagerie : SupportIUD [1..1]  | Le support IUD est la manière dont l’IUD est communiqué grâce à l’AIDC et, le cas échéant, son marquage en clair. Correspond à l’identifiant unique d’un appareil d’imagerie médical dans le cas où une technique irradiante est mise en oeuvre (radiologie interventionnelle, scanographie et radiothérapie). |
 | modele : Texte [0..1]  | Modèle de l’appareil d’imagerie utilisé. |
 
-Table 36 : Attributs de la classe « AppareilImagerieUtilise »
+Table 38 : Attributs de la classe « AppareilImagerieUtilise »
 
 ##### Classe ProduitsAdministres
 
@@ -728,7 +746,7 @@ Permet d’identifier le ou les radiopharmaceutiques administrés au patient dan
 | produitAdministre : Code [1..1] | Chaque produit radiopharmaceutique administré doit être identifié pour assurer sa traçabilité. Code issu du jdv ATC niveau 2 “V09” ou “V10”. |
 | numeroLot : Numerique [1..1] | Chaque produit radiopharmaceutique administré doit être associé à son numéro de lot pour assurer sa traçabilité. |
 
-Table 37 : Attributs de la classe « ProduitsAdministres »
+Table 39 : Attributs de la classe « ProduitsAdministres »
 
 ##### Classe DemandeExamenImagerie
 
