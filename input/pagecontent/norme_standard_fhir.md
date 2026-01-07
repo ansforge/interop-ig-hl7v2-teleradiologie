@@ -34,7 +34,7 @@ La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est éga
 * Les ressources sont conformes aux exigences des profils issues des guides d'implémentation.
 
 Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome.
-Enfin, des évènements de tests, tels que lesProjectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
+Enfin, des évènements de tests, tels que les Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
 
 
 ##### Ressources FHIR adaptées au cas d'usage
