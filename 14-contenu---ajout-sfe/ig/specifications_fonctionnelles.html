@@ -404,11 +404,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Il est important de noter que le système RIS, correspondant au système d’information de la structure d’imagerie, est considéré comme étant l’entité responsable des documents Demande d’Examen d’Imagerie et Compte-Rendu d’Imagerie. Cela implique que le système RIS est identifié comme tel au sein de ces documents et qu’il est responsable de la gestion de leur cycle de vie.</p>
 
-<p><strong><u>Note 1 :</u></strong> Le document compte-rendu d’imagerie est rédigé au sein de la plateforme de téléradiologie par un professionnel de santé effecteur, puis, au moyen d’un flux à destination du système RIS, transmis à la structure d’imagerie. Malgré le fait que le ce dernier soit identifié au sein du compte-rendu d’imagerie en tant qu’entité responsable de celui-ci, étant donné que le document a été rédigé depuis un environnement distant, le système RIS ne doit apporter aucune modification au compte-rendu d’imagerie réceptionné, en amont du processus de publication auprès de l’environnement DMP.</p>
+<blockquote class="stu-note">
+    <p>
+    <b>(1) :</b> Le document compte-rendu d’imagerie est rédigé au sein de la plateforme de téléradiologie par un professionnel de santé effecteur, puis, au moyen d’un flux à destination du système RIS, transmis à la structure d’imagerie. Malgré le fait que le ce dernier soit identifié au sein du compte-rendu d’imagerie en tant qu’entité responsable de celui-ci, étant donné que le document a été rédigé depuis un environnement distant, le système RIS ne doit apporter aucune modification au compte-rendu d’imagerie réceptionné, en amont du processus de publication auprès de l’environnement DMP.
+    </p>
+</blockquote>
 
-<p><strong><u>Note 2 :</u></strong> Il peut être pertinent de relever qu’une unique Demande d’Examen d’Imagerie peut conduire à la réalisation de plusieurs actes d’imagerie et donc à la production de plusieurs comptes-rendus d’imagerie. Cet aspect est pris en compte au sein de la présente étude, dans les limites du périmètre défini ci-dessous.</p>
+<blockquote class="stu-note">
+    <p>
+    <b>(2) :</b> Il peut être pertinent de relever qu’une unique Demande d’Examen d’Imagerie peut conduire à la réalisation de plusieurs actes d’imagerie et donc à la production de plusieurs comptes-rendus d’imagerie. Cet aspect est pris en compte au sein de la présente étude, dans les limites du périmètre défini ci-dessous.
+    </p>
+</blockquote>
 
-<p><strong><u>Note 3 :</u></strong> Dans le cadre des groupes de processus associés à la rédaction/validation de la demande d’examen d’imagerie ainsi que la construction du compte-rendu d’imagerie, le professionnel de santé impliqué peut être amené à consulter le DMP du patient concerné. Cela pourrait lui permettre de prendre connaissance d’éventuels antécédents ou d’éléments de compréhension complémentaires concernant le contexte de prise en charge du patient. Cependant, étant donné que les interactions entre les systèmes d’information mis en jeu dans le cadre de la téléradiologie et l’environnement DMP ne sont pas couverts par la présente étude, de tels mécanismes ne seront pas détaillés au sein de la description des processus ci-après. En revanche, la notion de transmission des antécédents relatifs au patient sera abordée au travers des flux décrits ci-après.</p>
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Dans le cadre des groupes de processus associés à la rédaction/validation de la demande d’examen d’imagerie ainsi que la construction du compte-rendu d’imagerie, le professionnel de santé impliqué peut être amené à consulter le DMP du patient concerné. Cela pourrait lui permettre de prendre connaissance d’éventuels antécédents ou d’éléments de compréhension complémentaires concernant le contexte de prise en charge du patient. Cependant, étant donné que les interactions entre les systèmes d’information mis en jeu dans le cadre de la téléradiologie et l’environnement DMP ne sont pas couverts par la présente étude, de tels mécanismes ne seront pas détaillés au sein de la description des processus ci-après. En revanche, la notion de transmission des antécédents relatifs au patient sera abordée au travers des flux décrits ci-après.
+    </p>
+</blockquote>
 
 <p>L’ensemble des informations précisées ci-dessus peuvent être illustrées au sein d’un diagramme de paquetage afin de représenter schématiquement les différentes composantes du domaine « Téléradiologie ».</p>
 
@@ -1240,7 +1252,7 @@ Il décrit les étapes de décision (acceptation ou refus de la demande), la pr�
     <p>Concept métier identifié au sein de la section 2.7.1 du présent document ;</p>
   </li>
   <li>
-    <p>Concept(s) MOS correspondant avec la relation liant le concept métier au concept MOS. La relation peut être de trois types : “ extension “, “ restriction “ ou “ équivalence “. Dans le cas où l’association entre le concept métier et le concept MOS n’est pas applicable, cela sera également signalé au moyen d’un trait diagonal.</p>
+    <p>Concept(s) MOS correspondant avec la relation liant le concept métier au concept MOS. La relation peut être de trois types : “ extension “, “ restriction “ ou “ équivalence “. Lorsque aucune association n’est applicable entre le concept métier et le concept MOS, cette situation est indiquée par trois cases laissées vides.</p>
   </li>
 </ul>
 
@@ -1864,23 +1876,23 @@ Il décrit les étapes de décision (acceptation ou refus de la demande), la pr�
 
 <h5 id="classe-personneprisecharge-1">Classe PersonnePriseCharge</h5>
 
-<p>Cf <a href="#classe-personneprisecharge">2.1.8.1.5</a></p>
+<p>Cf <a href="#classe-personneprisecharge">2.1.7.1.5</a></p>
 
 <h5 id="classe-professionnel-1">Classe Professionnel</h5>
 
-<p>Cf <a href="#classe-professionnel">2.1.8.1.10</a></p>
+<p>Cf <a href="#classe-professionnel">2.1.7.1.10</a></p>
 
 <h5 id="classe-exerciceprofessionnel-1">Classe ExerciceProfessionnel</h5>
 
-<p>Cf <a href="#classe-exerciceprofessionnel">2.1.8.1.11</a></p>
+<p>Cf <a href="#classe-exerciceprofessionnel">2.1.7.1.11</a></p>
 
 <h5 id="classe-structure-1">Classe Structure</h5>
 
-<p>Cf <a href="#classe-structure">2.1.8.1.12</a></p>
+<p>Cf <a href="#classe-structure">2.1.7.1.12</a></p>
 
 <h5 id="classe-systemeinformation-1">Classe SystemeInformation</h5>
 
-<p>Cf <a href="#classe-systemeinformation">2.1.8.1.13</a></p>
+<p>Cf <a href="#classe-systemeinformation">2.1.7.1.13</a></p>
 
 <h4 id="flux-3--reponsedemandeimg">Flux 3 – ReponseDemandeIMG</h4>
 
@@ -1944,23 +1956,23 @@ Il décrit les étapes de décision (acceptation ou refus de la demande), la pr�
 
 <h5 id="classe-personneprisecharge-2">Classe PersonnePriseCharge</h5>
 
-<p>Cf <a href="#classe-personneprisecharge">2.1.8.1.5</a></p>
+<p>Cf <a href="#classe-personneprisecharge">2.1.7.1.5</a></p>
 
 <h5 id="classe-professionnel-2">Classe Professionnel</h5>
 
-<p>Cf <a href="#classe-professionnel">2.1.8.1.10</a></p>
+<p>Cf <a href="#classe-professionnel">2.1.7.1.10</a></p>
 
 <h5 id="classe-exerciceprofessionnel-2">Classe ExerciceProfessionnel</h5>
 
-<p>Cf <a href="#classe-exerciceprofessionnel">2.1.8.1.11</a></p>
+<p>Cf <a href="#classe-exerciceprofessionnel">2.1.7.1.11</a></p>
 
 <h5 id="classe-structure-2">Classe Structure</h5>
 
-<p>Cf <a href="#classe-structure">2.1.8.1.12</a></p>
+<p>Cf <a href="#classe-structure">2.1.7.1.12</a></p>
 
 <h5 id="classe-systemeinformation-2">Classe SystemeInformation</h5>
 
-<p>Cf <a href="#classe-systemeinformation">2.1.8.1.13</a></p>
+<p>Cf <a href="#classe-systemeinformation">2.1.7.1.13</a></p>
 
 <h4 id="flux-4--transmissioncomplementimg">Flux 4 – TransmissionComplementIMG</h4>
 
@@ -2091,27 +2103,27 @@ Il décrit les étapes de décision (acceptation ou refus de la demande), la pr�
 
 <h5 id="classe-demandeexamenimagerie-1">Classe DemandeExamenImagerie</h5>
 
-<p>Cf <a href="#classe-demandeexamenimagerie">2.1.8.1.1</a></p>
+<p>Cf <a href="#classe-demandeexamenimagerie">2.1.7.1.1</a></p>
 
 <h5 id="classe-rendezvous-1">Classe RendezVous</h5>
 
-<p>Cf <a href="#classe-rendezvous">2.1.8.1.4</a></p>
+<p>Cf <a href="#classe-rendezvous">2.1.7.1.4</a></p>
 
 <h5 id="classe-personneprisecharge-3">Classe PersonnePriseCharge</h5>
 
-<p>Cf <a href="#classe-personneprisecharge">2.1.8.1.5</a></p>
+<p>Cf <a href="#classe-personneprisecharge">2.1.7.1.5</a></p>
 
 <h5 id="classe-modaliteimagerie-1">Classe ModaliteImagerie</h5>
 
-<p>Cf <a href="#classe-modaliteimagerie">2.1.8.1.7</a></p>
+<p>Cf <a href="#classe-modaliteimagerie">2.1.7.1.7</a></p>
 
 <h5 id="classe-localisationanatomique-1">Classe LocalisationAnatomique</h5>
 
-<p>Cf <a href="#classe-localisationanatomique">2.1.8.1.8</a></p>
+<p>Cf <a href="#classe-localisationanatomique">2.1.7.1.8</a></p>
 
 <h5 id="classe-systemeinformation-3">Classe SystemeInformation</h5>
 
-<p>Cf <a href="#classe-systemeinformation">2.1.8.1.13</a></p>
+<p>Cf <a href="#classe-systemeinformation">2.1.7.1.13</a></p>
 
 <p><br /></p>
 
@@ -2121,6 +2133,9 @@ Il décrit les étapes de décision (acceptation ou refus de la demande), la pr�
 
 <div class="figure" style="text-align: center;">
     <img src="DiagSeq-SFE.png" alt="Diagramme de séquence" title="DiagSeq-SFE" style="width:8in;height:10in" />
+    <p>
+        Figure 14  : Diagramme de séquence - Téléradiologie
+    </p>
 </div>
 
 
@@ -2164,7 +2179,7 @@ Il décrit les étapes de décision (acceptation ou refus de la demande), la pr�
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 5, 2026 10:14+0000">2026-01-05</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 7, 2026 10:39+0000">2026-01-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
