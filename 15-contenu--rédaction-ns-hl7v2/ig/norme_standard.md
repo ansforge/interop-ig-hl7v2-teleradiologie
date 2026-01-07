@@ -20,7 +20,12 @@ Les normes et standards étudiés au sein de cette étude sont les suivants :
 
 Table 1 : Normes et standards étudiés
 
-Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit dans un contexte de mise en œuvre opérationnelle contraint. L’un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d’examen d’imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les systèmes d’information de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.
+Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit dans un contexte de mise en œuvre opérationnelle contraint. Un objectif central du volet Téléradiologie est de permettre le versement dans le DMP des demandes d’examen d’imagerie et des comptes rendus produits en contexte de téléradiologie. Deux contraintes encadrent cet objectif :
+
+* Le format imposé par le DMP : à ce jour, le DMP n’accepte que des documents cliniques structurés au format CDA.
+* La compatibilité avec l’existant : les délais de mise en œuvre imposent de minimiser les impacts sur les systèmes déjà déployés, notamment les RIS et les plateformes de téléradiologie.
+
+Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.
 
 Les versions des normes et standards étudiés dans le présent document sont celles disponibles à la date de réalisation de l’étude (décembre 2025).
 
@@ -131,9 +136,9 @@ Un document CDA contient deux parties :
 
 ##### Maturité et adoption
 
-Le standard HL7 CDA R2 est très répandu à l’international et largement adopté dans le contexte français. L’Agence du Numérique en Santé (ANS) l’exploite notamment dans 31 des 34 volets de la couche Contenu disponibles sur [l’espace de Publication du CI-SIS](https://esante.gouv.fr/offres-services/ci-sis/espace-publication). Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.
+Le standard HL7 CDA R2 est très répandu à l’international et largement adopté dans le contexte français. Le standard HL7 CDA est le format de référence utilisé dans les volets métiers du CI-SIS disponibles sur [l’espace de Publication du CI-SIS](https://esante.gouv.fr/offres-services/ci-sis/espace-publication). Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.
 
-Afin de capitaliser l’expérience acquise et de favoriser la réutilisation des développements, la [doctrine du CI-SIS](https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf) incite à l’utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :
+Afin de capitaliser l’expérience acquise et de favoriser la réutilisation des développements, la [doctrine du CI-SIS](https://interop.esante.gouv.fr/ig/doctrine/) incite à l’utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :
 
 * [Structuration minimale de documents de santé](https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante), qui définit la structure des données de l’entête d’un document CDA
 * [Modèles de contenus CDA](https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda), qui définit la structure des données du corps du document.
@@ -144,13 +149,16 @@ Par ailleurs, au moment de la présente étude, les orientations nationales et e
 
 Un document CDA peut être testé contre un schéma XSD via un éditeur de texte tel que Notepad++. Ce schéma permet uniquement de vérifier la structure du document ainsi que la conformité par rapport au standard.
 
-La suite d’outil open source [ART-DECOR](https://docs.art-decor.org/) permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d’un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s’agit d’un langage permettant de valider la structure d’un document XML via un ensemble d’assertions.
+La suite d’outil open source [ART-DECOR](https://docs.art-decor.org/) permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d’un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s’agit d’un langage permettant de valider la structure d’un document XML via un ensemble d’assertions. Les schematrons peuvent être utilisés de deux manières :
 
-Les [plateformes Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) (ANS et IHE) sont également utilisées pour tester les documents. L’outil Schematron Validator intègre schéma XSD et schematrons. Accessible via le service de Validation EVS Client, il permet de vérifier si :
+* En mode autonome : exécution directe des schematrons sur un document
+* En mode intégré : via des plateformes de test comme [Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) (ANS et IHE)
 
-* Le document est bien structuré
-* Le document est conforme au schéma XML
-* Le document respecte les règles spécifiées dans le modèle
+L’outil Schematron Validator, accessible via le service EVS Client, combine la validation XSD et schematron. Il permet de vérifier qu’un document :
+
+* Est bien formé (structure XML valide),
+* Est conforme au schéma XSD,
+* Respecte les règles métier définies dans le modèle.
 
 ##### CDA adapté au cas d’usage Téléradiologie
 
@@ -180,11 +188,9 @@ FHIR a mis en œuvre un modèle de maturité de ressources afin de fournir aux d
 
 Dans sa version R5, seules 2 ressources supplémentaires sont passées à l’état normatif.
 
-L’ANS exploite les ressources de ce standard dans 12 des 17 volets de la couche Service disponibles sur [l’espace de Publication](https://esante.gouv.fr/offres-services/ci-sis/espace-publication) du CI-SIS.
+L’ANS exploite les ressources de ce standard dans la majorité des volets de la couche Service disponibles sur [l’espace de Publication](https://esante.gouv.fr/offres-services/ci-sis/espace-publication) du CI-SIS.
 
-Plusieurs volets publiés dans le domaine du médico-social font appel à ce standard en limitant l’utilisation à quelques ressources. La majorité des données étant portée par un document CDA ([SI-MDPH – SI-SdO (Suivi des orientations)](https://interop.esante.gouv.fr/ig/cda/tddui/NormesStandards_TransfertDonneesDUI_V1.0.pdf#%5B%7B%22num%22%3A23%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C81%2C551%2C0%5D), [SI-SdO – SI-ESMS (Suivi des orientations)](https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph))
-
-Il convient de souligner que, bien que FHIR propose actuellement une version R5, les ressources mentionnées dans la suite du document seront basées sur la version R4, afin de se conformer aux guides d’implémentation de l’ANS et de maintenir une interopérabilité avec les différents systèmes mis en place sur le territoire français.
+Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d’une version R5, les ressources présentées dans la suite du document s’appuient sur la version R4, conformément à la stratégie nationale en vigueur. Cette stratégie relative au choix des versions FHIR a été définie dans le cadre de travaux conduits conjointement par Interop’Santé et l’Agence du Numérique en Santé en 2023-2024, puis validée à l’issue d’une [concertation](https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation) portée par l’ANS.
 
 ##### Outillage
 
@@ -352,7 +358,7 @@ Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur
 
 [HL7 version 2 (HL7 v2)](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) est un standard de messagerie développé par l’organisation Health Level Seven International, destiné à l’échange d’informations entre systèmes d’information de santé. Il repose sur l’échange de messages structurés, composés de segments, de champs et de sous-composants, organisés selon des déclencheurs événementiels (triggers). Le standard définit la structure logique des messages ainsi que les règles de codage associées, sans imposer de modèle d’information unique. Cette approche confère à HL7 v2 une grande souplesse d’implémentation et explique en partie son adoption massive dans l’écosystème des systèmes d’information de santé.
 
-Il est important de souligner que HL7 v2 ne prescrit pas le protocole de transport ni l’architecture des échanges. Le standard n’émet aucune hypothèse sur :
+Il est important de souligner que HL7 v2 n’impose pas le protocole de transport ni l’architecture des échanges. Le standard n’émet aucune hypothèse sur :
 
 * la conception ou l’architecture des systèmes émetteurs et récepteurs
 * le mode de communication sous-jacent (synchrone ou asynchrone)
@@ -499,7 +505,7 @@ L’analyse de la couverture des objets métiers montre que les standards HL7 v2
 
 Cette section présente une synthèse comparative des normes et standards analysés dans les sections précédentes. Les items de cette synthèse sont inspirés des documents suivants :
 
-* La [doctrine du CI-SIS](https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf)
+* La [doctrine du CI-SIS](https://interop.esante.gouv.fr/ig/doctrine/)
 * « [Evaluating HIT Standards](https://www.himss.org/sites/hde/files/FileDownloads/2013-09-23-EvaluatingHITStandards-FINAL.pdf) » document sur la comparaison des standards publiés par l’organisation [HIMSS.](https://www.himss.org/)
 * La méthode [CAMSS](https://joinup.ec.europa.eu/collection/common-assessment-method-standards-and-specifications-camss) (Common Assessment method for standards and specifications) soutenue par le programme de la commission européenne concernant les solutions d’interopérabilité pour les administrations publiques. Cette initiative vise à promouvoir la collaboration entre les états membres de l’union européenne dans la définition d’une méthode d’évaluation commune de standards pour le développement des services administratifs en ligne.
 
@@ -533,7 +539,7 @@ Le standard DICOM est indispensable pour la gestion et la mise à disposition de
 
 ##### CDA
 
-Le standard HL7 CDA est adapté à la production et à l’échange de documents cliniques persistants, en particulier le compte-rendu d’imagerie, qui constitue le livrable clinique final du workflow. En dehors de la structuration du contenu de la demande d’examen déjà couvert par un volet CI-SIS dédié, l’utilisation de CDA pour les échanges intermédiaires n’est pas adapté au contexte de téléradiologie. De plus, les orientations européennes envisagées à moyen terme limitent l’intérêt d’engager de nouveaux travaux basé sur le standard sur CDA.
+Le standard HL7 CDA est adapté à la production et à l’échange de documents cliniques persistants, en particulier le compte-rendu d’imagerie, qui constitue le livrable clinique final du workflow. En dehors de la structuration du contenu de la demande d’examen déjà couvert par un volet CI-SIS dédié, l’utilisation de CDA pour les échanges intermédiaires n’est pas adapté au contexte de téléradiologie. De plus, les orientations européennes envisagées à moyen terme limitent l’intérêt d’engager de nouveaux travaux basés sur le standard CDA.
 
 ##### FHIR
 

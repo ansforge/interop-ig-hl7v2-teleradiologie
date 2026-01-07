@@ -80,7 +80,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Wed, Jan 7, 2026 08:44+0000">2026-01-07</span>
+. Generated           <span title="Wed, Jan 7, 2026 09:38+0000">2026-01-07</span>
 
                     <br/>
 
@@ -110,7 +110,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Wed, Jan 7, 2026 08:44+0000">2026-01-07</span>
+. Generated           <span title="Wed, Jan 7, 2026 09:38+0000">2026-01-07</span>
 
                     <br/>
 
@@ -214,7 +214,7 @@ Le standard           <a href="https://www.dicomstandard.org/">DICOM (Digital Im
           <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">esante.gouv.fr</a>
         </td>
         <td>
-Le standard HL7 CDA R2 est très répandu à l’international et largement adopté dans le contexte français. L’Agence du Numérique en Santé (ANS) l’exploite notamment dans 31 des 34 volets de la couche Contenu disponibles sur           <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">l’espace de Publication du CI-SIS</a>
+Le standard HL7 CDA R2 est très répandu à l’international et largement adopté dans le contexte français. Le standard HL7 CDA est le format de référence utilisé dans les volets métiers du CI-SIS disponibles sur           <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">l’espace de Publication du CI-SIS</a>
 . Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.
         </td>
       </tr>
@@ -223,10 +223,10 @@ Le standard HL7 CDA R2 est très répandu à l’international et largement adop
           <a href="norme_standard.html">web</a>
         </td>
         <td>
-          <a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf">esante.gouv.fr</a>
+          <a href="https://interop.esante.gouv.fr/ig/doctrine/">interop.esante.gouv.fr</a>
         </td>
         <td>
-Afin de capitaliser l’expérience acquise et de favoriser la réutilisation des développements, la           <a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf">doctrine du CI-SIS</a>
+Afin de capitaliser l’expérience acquise et de favoriser la réutilisation des développements, la           <a href="https://interop.esante.gouv.fr/ig/doctrine/">doctrine du CI-SIS</a>
  incite à l’utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :
         </td>
       </tr>
@@ -263,7 +263,7 @@ Afin de capitaliser l’expérience acquise et de favoriser la réutilisation de
         </td>
         <td>
 La suite d’outil open source           <a href="https://docs.art-decor.org/">ART-DECOR</a>
- permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d’un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s’agit d’un langage permettant de valider la structure d’un document XML via un ensemble d’assertions.
+ permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d’un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s’agit d’un langage permettant de valider la structure d’un document XML via un ensemble d’assertions. Les schematrons peuvent être utilisés de deux manières :
         </td>
       </tr>
       <tr>
@@ -274,8 +274,8 @@ La suite d’outil open source           <a href="https://docs.art-decor.org/">A
           <a href="https://www.ihe-europe.net/testing-IHE/gazelle">www.ihe-europe.net</a>
         </td>
         <td>
-Les           <a href="https://www.ihe-europe.net/testing-IHE/gazelle">plateformes Gazelle</a>
- (ANS et IHE) sont également utilisées pour tester les documents. L’outil Schematron Validator intègre schéma XSD et schematrons. Accessible via le service de Validation EVS Client, il permet de vérifier si :
+En mode intégré : via des plateformes de test comme           <a href="https://www.ihe-europe.net/testing-IHE/gazelle">Gazelle</a>
+ (ANS et IHE)
         </td>
       </tr>
       <tr>
@@ -312,7 +312,7 @@ Dans le cadre français, l’association           <a href="https://www.interops
           <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">esante.gouv.fr</a>
         </td>
         <td>
-L’ANS exploite les ressources de ce standard dans 12 des 17 volets de la couche Service
+L’ANS exploite les ressources de ce standard dans la majorité des volets de la couche Service
 disponibles sur           <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">l’espace de Publication</a>
  du CI-SIS.
         </td>
@@ -322,25 +322,11 @@ disponibles sur           <a href="https://esante.gouv.fr/offres-services/ci-sis
           <a href="norme_standard.html">web</a>
         </td>
         <td>
-          <a href="https://interop.esante.gouv.fr/ig/cda/tddui/NormesStandards_TransfertDonneesDUI_V1.0.pdf#%5B%7B%22num%22%3A23%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C81%2C551%2C0%5D">interop.esante.gouv.fr</a>
+          <a href="https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation">participez.esante.gouv.fr</a>
         </td>
         <td>
-Plusieurs volets publiés dans le domaine du médico-social font appel à ce standard en limitant l’utilisation à quelques ressources. La majorité des données étant portée par un document CDA (          <a href="https://interop.esante.gouv.fr/ig/cda/tddui/NormesStandards_TransfertDonneesDUI_V1.0.pdf#%5B%7B%22num%22%3A23%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C81%2C551%2C0%5D">SI-MDPH – SI-SdO (Suivi des orientations)</a>
-,           <a href="https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph">SI-SdO – SI-ESMS (Suivi des orientations)</a>
-)
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="norme_standard.html">web</a>
-        </td>
-        <td>
-          <a href="https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph">esante.gouv.fr</a>
-        </td>
-        <td>
-Plusieurs volets publiés dans le domaine du médico-social font appel à ce standard en limitant l’utilisation à quelques ressources. La majorité des données étant portée par un document CDA (          <a href="https://interop.esante.gouv.fr/ig/cda/tddui/NormesStandards_TransfertDonneesDUI_V1.0.pdf#%5B%7B%22num%22%3A23%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C81%2C551%2C0%5D">SI-MDPH – SI-SdO (Suivi des orientations)</a>
-,           <a href="https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph">SI-SdO – SI-ESMS (Suivi des orientations)</a>
-)
+Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d’une version R5, les ressources présentées dans la suite du document s’appuient sur la version R4, conformément à la stratégie nationale en vigueur. Cette stratégie relative au choix des versions FHIR a été définie dans le cadre de travaux conduits conjointement par Interop’Santé et l’Agence du Numérique en Santé en 2023-2024, puis validée à l’issue d’une           <a href="https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation">concertation</a>
+ portée par l’ANS.
         </td>
       </tr>
       <tr>
@@ -625,10 +611,10 @@ De même, le profil           <a href="https://www.interopsante.org/f/07f0be9ab9
           <a href="norme_standard.html">web</a>
         </td>
         <td>
-          <a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf">esante.gouv.fr</a>
+          <a href="https://interop.esante.gouv.fr/ig/doctrine/">interop.esante.gouv.fr</a>
         </td>
         <td>
-La           <a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf">doctrine du CI-SIS</a>
+La           <a href="https://interop.esante.gouv.fr/ig/doctrine/">doctrine du CI-SIS</a>
         </td>
       </tr>
       <tr>
