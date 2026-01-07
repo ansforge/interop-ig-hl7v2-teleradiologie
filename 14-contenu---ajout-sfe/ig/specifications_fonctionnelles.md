@@ -419,7 +419,7 @@ Au travers de ce chapitre une mise en correspondance sera effectuée entre les c
 Le tableau présenté ci-dessous contient les éléments suivants :
 
 * Concept métier identifié au sein de la section 2.7.1 du présent document ;
-* Concept(s) MOS correspondant avec la relation liant le concept métier au concept MOS. La relation peut être de trois types : “ extension “, “ restriction “ ou “ équivalence “. Lorsque aucune association n’est applicable entre le concept métier et le concept MOS, cette situation est indiquée par trois cases laissées vides.
+* Concept(s) MOS correspondant avec la relation liant le concept métier au concept MOS. La relation peut être de trois types : “ extension “, “ restriction “ ou “ équivalence “. Lorsque aucune association n’est applicable entre le concept métier et un concept MOS, cette situation est indiquée par trois cases laissées vides.
 
 | | | | |
 | :--- | :--- | :--- | :--- |
