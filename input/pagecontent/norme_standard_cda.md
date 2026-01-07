@@ -41,7 +41,7 @@ La suite d'outil open source [ART-DECOR](https://docs.art-decor.org/) permet de 
 - En mode autonome : exécution directe des schematrons sur un document
 - En mode intégré : via des plateformes de test comme [Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) (ANS et IHE)
 
-L'outil Schematron Validator, accessible via le service EVS Client, combine la validation XSD et schematron. Il permet de vérifier qu'un document :
+L'outil Schematron Validator, accessible via le service EVS Client de Gazelle, combine la validation XSD et schematron. Il permet de vérifier qu'un document :
 
 - Est bien formé (structure XML valide),
 - Est conforme au schéma XSD,
