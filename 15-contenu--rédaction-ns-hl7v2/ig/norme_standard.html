@@ -214,9 +214,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
+<p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; width: 65%">
+<b>Executive summary</b><br/>
+Cette étude compare les principaux standards d’interopérabilité susceptibles de répondre aux besoins d’échange du volet Téléradiologie, au regard de critères fonctionnels, techniques et réglementaires. DICOM et HL7 CDA ont été écartés comme supports principaux, leur positionnement ne correspondant pas aux échanges transactionnels attendus. HL7 FHIR offre une couverture fonctionnelle complète et s’inscrit dans les orientations de long terme, mais sa mise en œuvre opérationnelle reste exigeante. À court terme, HL7 v2 apparaît comme la solution la plus pragmatique, en raison de sa maturité, de son adoption par l’écosystème et de l’existence de profils IHE largement industrialisés.
+</p>
+
+<p><br/></p>
+
 <h3 id="introduction">Introduction</h3>
 
-<p><a name="l377">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\specifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.</p>
+<p><a name="l387">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\specifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.</p>
 
 <p>Les normes et standards étudiés au sein de cette étude sont les suivants :</p>
 
@@ -294,7 +301,7 @@ Deux contraintes encadrent cet objectif :</p>
   <li>La transmission d’informations complémentaires post-examen</li>
 </ul>
 
-<p><a name="l527">​</a>Les concepts métiers à véhiculer dans ces flux sont décrits en <a href="./specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS">étape 4 et 5</a> de la spécification fonctionnelle et couvrent plusieurs catégories de données essentielles à la pratique de la téléradiologie :</p>
+<p><a name="l537">​</a>Les concepts métiers à véhiculer dans ces flux sont décrits en <a href="./specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS">étape 4 et 5</a> de la spécification fonctionnelle et couvrent plusieurs catégories de données essentielles à la pratique de la téléradiologie :</p>
 
 <ul>
   <li>Données administratives et d’identification : identités patient et professionnels de santé, identifiants de demandes et d’examens, informations de structure</li>
@@ -417,7 +424,7 @@ Néanmoins, il n’est pas adapté pour répondre aux flux fonctionnels du volet
   <li>En mode intégré : via des plateformes de test comme <a href="https://www.ihe-europe.net/testing-IHE/gazelle">Gazelle</a> (ANS et IHE)</li>
 </ul>
 
-<p>L’outil Schematron Validator, accessible via le service EVS Client, combine la validation XSD et schematron. Il permet de vérifier qu’un document :</p>
+<p>L’outil Schematron Validator, accessible via le service EVS Client de Gazelle, combine la validation XSD et schematron. Il permet de vérifier qu’un document :</p>
 
 <ul>
   <li>Est bien formé (structure XML valide),</li>
@@ -1367,13 +1374,13 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p><strong>La présente étude a pour objectif d’identifier et de comparer les normes et standards susceptibles de répondre à la mise en œuvre des flux d’échange définis dans les spécifications fonctionnelles du volet Téléradiologie. L’analyse a porté sur un ensemble de standards largement utilisés dans le domaine de l’interopérabilité en santé, évalués au regard de plusieurs critères complémentaires : la capacité à structurer les contenus métiers, la couverture des cas d’usage identifiés, la maturité et le niveau d’adoption au sein de l’écosystème, l’existence d’outillage, ainsi que l’adéquation aux contraintes organisationnelles, techniques et réglementaires du contexte national.</strong></p>
+<p>La présente étude a pour objectif d’identifier et de comparer les normes et standards susceptibles de répondre à la mise en œuvre des flux d’échange définis dans les spécifications fonctionnelles du volet Téléradiologie. L’analyse a porté sur un ensemble de standards largement utilisés dans le domaine de l’interopérabilité en santé, évalués au regard de plusieurs critères complémentaires : <strong>la capacité à structurer les contenus métiers, la couverture des cas d’usage identifiés, la maturité et le niveau d’adoption au sein de l’écosystème, l’existence d’outillage, ainsi que l’adéquation aux contraintes organisationnelles, techniques et réglementaires du contexte national.</strong></p>
 
-<p><strong>Parmi les standards étudiés, DICOM et HL7 CDA ont été écartés comme supports principaux des flux du volet Téléradiologie. DICOM est spécifiquement dédié à la gestion, au stockage et à l’échange des objets d’imagerie médicale et ne vise pas la structuration des échanges métiers intervenant tout au long du workflow. Le standard HL7 CDA est, quant à lui, conçu pour la production de documents cliniques persistants, et pertinent en fin de parcours pour le compte-rendu d’imagerie. En revanche, son usage pour des échanges transactionnels intermédiaires à durée de vie courte ne correspond pas à son positionnement naturel. Par ailleurs, les orientations européennes et nationales récentes en matière d’interopérabilité privilégient désormais le standard HL7 FHIR pour les nouveaux besoins d’échange de données de santé structurées, ce qui limite la pertinence d’engager de nouveaux travaux fondés sur CDA dans ce contexte.</strong></p>
+<p>Parmi les standards étudiés, <strong>DICOM et HL7 CDA ont été écartés comme supports principaux des flux du volet Téléradiologie.</strong> DICOM est spécifiquement dédié à la gestion, au stockage et à l’échange des objets d’imagerie médicale et ne vise pas la structuration des échanges métiers intervenant tout au long du workflow. Le standard HL7 CDA est, quant à lui, conçu pour la production de documents cliniques persistants, et pertinent en fin de parcours pour le compte-rendu d’imagerie. En revanche, son usage pour des échanges transactionnels intermédiaires à durée de vie courte ne correspond pas à son positionnement naturel. Par ailleurs, les orientations européennes et nationales récentes en matière d’interopérabilité privilégient désormais le standard HL7 FHIR pour les nouveaux besoins d’échange de données de santé structurées, ce qui limite la pertinence d’engager de nouveaux travaux fondés sur CDA dans ce contexte.</p>
 
-<p><strong>L’analyse met en évidence que le standard HL7 FHIR présente une couverture fonctionnelle et technique complète des besoins du volet Téléradiologie. Sa granularité, son modèle de données explicite et sa capacité à supporter des échanges transactionnels en font un standard particulièrement adapté aux cas d’usage identifiés. Par ailleurs, son alignement avec les orientations européennes en matière d’interopérabilité confirme son rôle structurant dans les trajectoires d’évolution à moyen et long terme des systèmes d’information de santé.</strong></p>
+<p><strong>L’analyse met en évidence que le standard HL7 FHIR présente une couverture fonctionnelle et technique complète des besoins du volet Téléradiologie.</strong> Sa granularité, son modèle de données explicite et sa capacité à supporter des échanges transactionnels en font un standard particulièrement adapté aux cas d’usage identifiés. Par ailleurs, son alignement avec les orientations européennes en matière d’interopérabilité confirme son rôle structurant dans les trajectoires d’évolution à moyen et long terme des systèmes d’information de santé.</p>
 
-<p><strong>L’étude montre également que le standard HL7 v2 est en mesure de couvrir l’ensemble des concepts métiers du volet Téléradiologie. Il propose des mécanismes natifs adaptés à la gestion des échanges transactionnels, notamment pour le suivi de l’état de traitement des demandes et les accusés de réception. Son usage est bien maîtrisé par l’écosystème, en particulier dans le domaine de l’imagerie médicale, et s’appuie sur un outillage industriel éprouvé ainsi que sur des profils IHE largement diffusés.</strong></p>
+<p><strong>L’étude montre également que le standard HL7 v2 est en mesure de couvrir l’ensemble des concepts métiers du volet Téléradiologie.</strong> Il propose des mécanismes natifs adaptés à la gestion des échanges transactionnels, notamment pour le suivi de l’état de traitement des demandes et les accusés de réception. Son usage est bien maîtrisé par l’écosystème, en particulier dans le domaine de l’imagerie médicale, et s’appuie sur un outillage industriel éprouvé ainsi que sur des profils IHE largement diffusés.</p>
 
 <p><strong>En conclusion, au regard des contraintes analysées dans cette étude, le standard HL7 v2 apparaît comme le plus à même de répondre aux besoins du volet Téléradiologie dans un contexte de mise en œuvre à court terme. HL7 v2 permet de couvrir l’ensemble des concepts métiers identifiés, tout en s’appuyant sur des mécanismes éprouvés pour la gestion de flux transactionnels. Sa maturité, son adoption éprouvée dans le domaine de l’imagerie médicale, ainsi que la disponibilité de profils IHE tels que PAM-FR et SWF.b permettent de capitaliser sur des briques existantes et largement industrialisées. Ce choix garantit ainsi une mise en œuvre pragmatique, limitant les impacts pour les éditeurs de RIS et de plateformes de téléradiologie tout en assurant la compatibilité avec les capacités actuelles du DMP.</strong></p>
 
@@ -1418,7 +1425,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 7, 2026 09:38+0000">2026-01-07</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 7, 2026 10:06+0000">2026-01-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
