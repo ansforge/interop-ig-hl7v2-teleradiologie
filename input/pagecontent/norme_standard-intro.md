@@ -13,7 +13,13 @@ Les normes et standards étudiés au sein de cette étude sont les suivants :
 
 <p style="text-align:center;">Table 1 : Normes et standards étudiés</p>
 
-Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s'inscrit dans un contexte de mise en œuvre opérationnelle contraint. L'un des objectifs structurants du volet Téléradiologie est de permettre le versement, au sein du Dossier Médical Partagé (DMP), des demandes d'examen d'imagerie et des comptes rendus produits dans le cadre de la téléradiologie. À la date de la présente étude, le DMP supporte exclusivement des documents cliniques structurés au format CDA. Par ailleurs, les échéances de mise en œuvre du volet imposent de privilégier des solutions limitant les impacts sur les systèmes existants, en particulier les logiciels de RIS et les systèmes d'information de téléradiologie déjà largement déployés. Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l'analyse comparative et la conclusion de la présente étude.
+Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s'inscrit dans un contexte de mise en œuvre opérationnelle contraint. Un objectif central du volet Téléradiologie est de permettre le versement dans le DMP des demandes d'examen d'imagerie et des comptes rendus produits en contexte de téléradiologie.
+Deux contraintes encadrent cet objectif :
+
+- Le format imposé par le DMP : à ce jour, le DMP n'accepte que des documents cliniques structurés au format CDA.
+- La compatibilité avec l'existant : les délais de mise en œuvre imposent de minimiser les impacts sur les systèmes déjà déployés, notamment les RIS et les plateformes de téléradiologie. 
+
+Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l'analyse comparative et la conclusion de la présente étude.
 
 Les versions des normes et standards étudiés dans le présent document sont celles disponibles à la date de réalisation de l'étude (décembre 2025).
 

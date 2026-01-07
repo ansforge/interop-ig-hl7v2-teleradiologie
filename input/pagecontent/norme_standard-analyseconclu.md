@@ -10,7 +10,7 @@ Le standard DICOM est indispensable pour la gestion et la mise à disposition de
 
 ##### CDA
 
-Le standard HL7 CDA est adapté à la production et à l'échange de documents cliniques persistants, en particulier le compte-rendu d'imagerie, qui constitue le livrable clinique final du workflow. En dehors de la structuration du contenu de la demande d'examen déjà couvert par un volet CI-SIS dédié, l'utilisation de CDA pour les échanges intermédiaires n'est pas adapté au contexte de téléradiologie. De plus, les orientations européennes envisagées à moyen terme limitent l'intérêt d’engager de nouveaux travaux basé sur le standard sur CDA.
+Le standard HL7 CDA est adapté à la production et à l'échange de documents cliniques persistants, en particulier le compte-rendu d'imagerie, qui constitue le livrable clinique final du workflow. En dehors de la structuration du contenu de la demande d'examen déjà couvert par un volet CI-SIS dédié, l'utilisation de CDA pour les échanges intermédiaires n'est pas adapté au contexte de téléradiologie. De plus, les orientations européennes envisagées à moyen terme limitent l'intérêt d’engager de nouveaux travaux basés sur le standard CDA.
 
 ##### FHIR
 

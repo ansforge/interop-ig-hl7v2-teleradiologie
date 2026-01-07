@@ -8,7 +8,7 @@ L’analyse de la couverture des objets métiers montre que les standards HL7 v2
 
 Cette section présente une synthèse comparative des normes et standards analysés dans les sections précédentes. Les items de cette synthèse sont inspirés des documents suivants :
 
-- La [doctrine du CI-SIS](https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf)
+- La [doctrine du CI-SIS](https://interop.esante.gouv.fr/ig/doctrine/)
 - « [Evaluating HIT Standards](https://www.himss.org/sites/hde/files/FileDownloads/2013-09-23-EvaluatingHITStandards-FINAL.pdf) » document sur la comparaison des standards publiés par l'organisation [HIMSS.](https://www.himss.org/)
 - La méthode [CAMSS](https://joinup.ec.europa.eu/collection/common-assessment-method-standards-and-specifications-camss) (Common Assessment method for standards and specifications) soutenue par le programme de la commission européenne concernant les solutions d'interopérabilité pour les administrations publiques. Cette initiative vise à promouvoir la collaboration entre les états membres de l'union européenne dans la définition d'une méthode d'évaluation commune de standards pour le développement des services administratifs en ligne.
 

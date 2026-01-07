@@ -23,9 +23,9 @@ Un document CDA contient deux parties :
 
 ##### Maturité et adoption
 
-Le standard HL7 CDA R2 est très répandu à l'international et largement adopté dans le contexte français. L'Agence du Numérique en Santé (ANS) l'exploite notamment dans 31 des 34 volets de la couche Contenu disponibles sur [l'espace de Publication du CI-SIS](https://esante.gouv.fr/offres-services/ci-sis/espace-publication). Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.
+Le standard HL7 CDA R2 est très répandu à l'international et largement adopté dans le contexte français. Le standard HL7 CDA est le format de référence utilisé dans les volets métiers du CI-SIS disponibles sur [l'espace de Publication du CI-SIS](https://esante.gouv.fr/offres-services/ci-sis/espace-publication). Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.
 
-Afin de capitaliser l'expérience acquise et de favoriser la réutilisation des développements, la [doctrine du CI-SIS](https://esante.gouv.fr/sites/default/files/media_entity/documents/CI-SIS_DOCTRINE_20210803_V1.1.pdf) incite à l'utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :
+Afin de capitaliser l'expérience acquise et de favoriser la réutilisation des développements, la [doctrine du CI-SIS](https://interop.esante.gouv.fr/ig/doctrine/) incite à l'utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :
 
 - [Structuration minimale de documents de santé](https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante), qui définit la structure des données de l'entête d'un document CDA
 - [Modèles de contenus CDA](https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda), qui définit la structure des données du corps du document.
@@ -36,13 +36,16 @@ Par ailleurs, au moment de la présente étude, les orientations nationales et e
 
 Un document CDA peut être testé contre un schéma XSD via un éditeur de texte tel que Notepad++. Ce schéma permet uniquement de vérifier la structure du document ainsi que la conformité par rapport au standard.
 
-La suite d'outil open source [ART-DECOR](https://docs.art-decor.org/) permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d'un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s'agit d'un langage permettant de valider la structure d'un document XML via un ensemble d'assertions.
+La suite d'outil open source [ART-DECOR](https://docs.art-decor.org/) permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d'un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s'agit d'un langage permettant de valider la structure d'un document XML via un ensemble d'assertions. Les schematrons peuvent être utilisés de deux manières :
 
-Les [plateformes Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) (ANS et IHE) sont également utilisées pour tester les documents. L'outil Schematron Validator intègre schéma XSD et schematrons. Accessible via le service de Validation EVS Client, il permet de vérifier si :
+- En mode autonome : exécution directe des schematrons sur un document
+- En mode intégré : via des plateformes de test comme [Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) (ANS et IHE)
 
-- Le document est bien structuré
-- Le document est conforme au schéma XML
-- Le document respecte les règles spécifiées dans le modèle
+L'outil Schematron Validator, accessible via le service EVS Client, combine la validation XSD et schematron. Il permet de vérifier qu'un document :
+
+- Est bien formé (structure XML valide),
+- Est conforme au schéma XSD,
+- Respecte les règles métier définies dans le modèle.
 
 ##### CDA adapté au cas d'usage Téléradiologie
 

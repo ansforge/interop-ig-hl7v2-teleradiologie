@@ -12,12 +12,10 @@ générale, le standard FHIR dans sa version R4 offre encore peu de ressources �
 
 Dans sa version R5, seules 2 ressources supplémentaires sont passées à l'état normatif.
 
-L’ANS exploite les ressources de ce standard dans 12 des 17 volets de la couche Service
+L’ANS exploite les ressources de ce standard dans la majorité des volets de la couche Service
 disponibles sur [l’espace de Publication](https://esante.gouv.fr/offres-services/ci-sis/espace-publication) du CI-SIS.
 
-Plusieurs volets publiés dans le domaine du médico-social font appel à ce standard en limitant l'utilisation à quelques ressources. La majorité des données étant portée par un document CDA ([SI-MDPH – SI-SdO (Suivi des orientations)](https://interop.esante.gouv.fr/ig/cda/tddui/NormesStandards_TransfertDonneesDUI_V1.0.pdf#%5B%7B%22num%22%3A23%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C81%2C551%2C0%5D), [SI-SdO – SI-ESMS (Suivi des orientations)](https://esante.gouv.fr/volet-si-esms-viatrajectoire-module-ph))
-
-Il convient de souligner que, bien que FHIR propose actuellement une version R5, les ressources mentionnées dans la suite du document seront basées sur la version R4, afin de se conformer aux guides d’implémentation de l’ANS et de maintenir une interopérabilité avec les différents systèmes mis en place sur le territoire français.
+Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d’une version R5, les ressources présentées dans la suite du document s’appuient sur la version R4, conformément à la stratégie nationale en vigueur. Cette stratégie relative au choix des versions FHIR a été définie dans le cadre de travaux conduits conjointement par Interop’Santé et l’Agence du Numérique en Santé en 2023-2024, puis validée à l’issue d’une [concertation](https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation) portée par l’ANS.
 
 ##### Outillage
 Des outils sont élaborés pour implémenter et tester des systèmes basés sur le standard FHIR, dont :

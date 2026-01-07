@@ -4,7 +4,7 @@
 
 [HL7 version 2 (HL7 v2)](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) est un standard de messagerie développé par l'organisation Health Level Seven International, destiné à l'échange d'informations entre systèmes d'information de santé. Il repose sur l'échange de messages structurés, composés de segments, de champs et de sous-composants, organisés selon des déclencheurs événementiels (triggers). Le standard définit la structure logique des messages ainsi que les règles de codage associées, sans imposer de modèle d'information unique. Cette approche confère à HL7 v2 une grande souplesse d'implémentation et explique en partie son adoption massive dans l'écosystème des systèmes d'information de santé.
 
-Il est important de souligner que HL7 v2 ne prescrit pas le protocole de transport ni l'architecture des échanges. Le standard n'émet aucune hypothèse sur :
+Il est important de souligner que HL7 v2 n'impose pas le protocole de transport ni l'architecture des échanges. Le standard n'émet aucune hypothèse sur :
 
 - la conception ou l'architecture des systèmes émetteurs et récepteurs
 - le mode de communication sous-jacent (synchrone ou asynchrone)
