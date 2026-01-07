@@ -156,11 +156,23 @@ La pratique de la téléradiologie peut être découpée en plusieurs groupes de
 
 Il est important de noter que le système RIS, correspondant au système d’information de la structure d’imagerie, est considéré comme étant l’entité responsable des documents Demande d’Examen d’Imagerie et Compte-Rendu d’Imagerie. Cela implique que le système RIS est identifié comme tel au sein de ces documents et qu’il est responsable de la gestion de leur cycle de vie.
 
-**<u>Note 1 :</u>** Le document compte-rendu d’imagerie est rédigé au sein de la plateforme de téléradiologie par un professionnel de santé effecteur, puis, au moyen d’un flux à destination du système RIS, transmis à la structure d’imagerie. Malgré le fait que le ce dernier soit identifié au sein du compte-rendu d’imagerie en tant qu’entité responsable de celui-ci, étant donné que le document a été rédigé depuis un environnement distant, le système RIS ne doit apporter aucune modification au compte-rendu d’imagerie réceptionné, en amont du processus de publication auprès de l’environnement DMP.
+<blockquote class="stu-note">
+    <p>
+    <b>(1) :</b> Le document compte-rendu d’imagerie est rédigé au sein de la plateforme de téléradiologie par un professionnel de santé effecteur, puis, au moyen d’un flux à destination du système RIS, transmis à la structure d’imagerie. Malgré le fait que le ce dernier soit identifié au sein du compte-rendu d’imagerie en tant qu’entité responsable de celui-ci, étant donné que le document a été rédigé depuis un environnement distant, le système RIS ne doit apporter aucune modification au compte-rendu d’imagerie réceptionné, en amont du processus de publication auprès de l’environnement DMP.
+    </p>
+</blockquote>
 
-**<u>Note 2 :</u>** Il peut être pertinent de relever qu’une unique Demande d’Examen d’Imagerie peut conduire à la réalisation de plusieurs actes d’imagerie et donc à la production de plusieurs comptes-rendus d’imagerie. Cet aspect est pris en compte au sein de la présente étude, dans les limites du périmètre défini ci-dessous.
+<blockquote class="stu-note">
+    <p>
+    <b>(2) :</b> Il peut être pertinent de relever qu’une unique Demande d’Examen d’Imagerie peut conduire à la réalisation de plusieurs actes d’imagerie et donc à la production de plusieurs comptes-rendus d’imagerie. Cet aspect est pris en compte au sein de la présente étude, dans les limites du périmètre défini ci-dessous.
+    </p>
+</blockquote>
 
-**<u>Note 3 :</u>** Dans le cadre des groupes de processus associés à la rédaction/validation de la demande d’examen d’imagerie ainsi que la construction du compte-rendu d’imagerie, le professionnel de santé impliqué peut être amené à consulter le DMP du patient concerné. Cela pourrait lui permettre de prendre connaissance d’éventuels antécédents ou d’éléments de compréhension complémentaires concernant le contexte de prise en charge du patient. Cependant, étant donné que les interactions entre les systèmes d’information mis en jeu dans le cadre de la téléradiologie et l’environnement DMP ne sont pas couverts par la présente étude, de tels mécanismes ne seront pas détaillés au sein de la description des processus ci-après. En revanche, la notion de transmission des antécédents relatifs au patient sera abordée au travers des flux décrits ci-après.
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Dans le cadre des groupes de processus associés à la rédaction/validation de la demande d’examen d’imagerie ainsi que la construction du compte-rendu d’imagerie, le professionnel de santé impliqué peut être amené à consulter le DMP du patient concerné. Cela pourrait lui permettre de prendre connaissance d’éventuels antécédents ou d’éléments de compréhension complémentaires concernant le contexte de prise en charge du patient. Cependant, étant donné que les interactions entre les systèmes d’information mis en jeu dans le cadre de la téléradiologie et l’environnement DMP ne sont pas couverts par la présente étude, de tels mécanismes ne seront pas détaillés au sein de la description des processus ci-après. En revanche, la notion de transmission des antécédents relatifs au patient sera abordée au travers des flux décrits ci-après.
+    </p>
+</blockquote>
 
 L’ensemble des informations précisées ci-dessus peuvent être illustrées au sein d’un diagramme de paquetage afin de représenter schématiquement les différentes composantes du domaine « Téléradiologie ».
 
@@ -772,7 +784,7 @@ Le tableau présenté ci-dessous contient les éléments suivants :
 
 - Concept métier identifié au sein de la section 2.7.1 du présent document ;
 
-- Concept(s) MOS correspondant avec la relation liant le concept métier au concept MOS. La relation peut être de trois types : " extension ", " restriction " ou " équivalence ". Dans le cas où l’association entre le concept métier et le concept MOS n’est pas applicable, cela sera également signalé au moyen d’un trait diagonal.
+- Concept(s) MOS correspondant avec la relation liant le concept métier au concept MOS. La relation peut être de trois types : " extension ", " restriction " ou " équivalence ". Lorsque aucune association n’est applicable entre le concept métier et le concept MOS, cette situation est indiquée par trois cases laissées vides.
 
 <table style="width:100%;">
 <colgroup>
@@ -1191,23 +1203,23 @@ Représente l’ensemble des informations nécessaires pour formaliser l’annul
 
 ##### Classe PersonnePriseCharge
 
-Cf [2.1.8.1.5](#classe-personneprisecharge)
+Cf [2.1.7.1.5](#classe-personneprisecharge)
 
 ##### Classe Professionnel
 
-Cf [2.1.8.1.10](#classe-professionnel)
+Cf [2.1.7.1.10](#classe-professionnel)
 
 ##### Classe ExerciceProfessionnel
 
-Cf [2.1.8.1.11](#classe-exerciceprofessionnel)
+Cf [2.1.7.1.11](#classe-exerciceprofessionnel)
 
 ##### Classe Structure
 
-Cf [2.1.8.1.12](#classe-structure)
+Cf [2.1.7.1.12](#classe-structure)
 
 ##### Classe SystemeInformation
 
-Cf [2.1.8.1.13](#classe-systemeinformation)
+Cf [2.1.7.1.13](#classe-systemeinformation)
 
 #### Flux 3 – ReponseDemandeIMG
 
@@ -1246,23 +1258,23 @@ Représente le protocole d’imagerie élaboré par le médecin effecteur.
 
 ##### Classe PersonnePriseCharge
 
-Cf [2.1.8.1.5](#classe-personneprisecharge)
+Cf [2.1.7.1.5](#classe-personneprisecharge)
 
 ##### Classe Professionnel
 
-Cf [2.1.8.1.10](#classe-professionnel)
+Cf [2.1.7.1.10](#classe-professionnel)
 
 ##### Classe ExerciceProfessionnel
 
-Cf [2.1.8.1.11](#classe-exerciceprofessionnel)
+Cf [2.1.7.1.11](#classe-exerciceprofessionnel)
 
 ##### Classe Structure
 
-Cf [2.1.8.1.12](#classe-structure)
+Cf [2.1.7.1.12](#classe-structure)
 
 ##### Classe SystemeInformation
 
-Cf [2.1.8.1.13](#classe-systemeinformation)
+Cf [2.1.7.1.13](#classe-systemeinformation)
 
 #### Flux 4 – TransmissionComplementIMG
 
@@ -1351,27 +1363,27 @@ Permet d’identifier le ou les radiopharmaceutiques administrés au patient dan
 
 ##### Classe DemandeExamenImagerie
 
-Cf [2.1.8.1.1](#classe-demandeexamenimagerie)
+Cf [2.1.7.1.1](#classe-demandeexamenimagerie)
 
 ##### Classe RendezVous
 
-Cf [2.1.8.1.4](#classe-rendezvous)
+Cf [2.1.7.1.4](#classe-rendezvous)
 
 ##### Classe PersonnePriseCharge
 
-Cf [2.1.8.1.5](#classe-personneprisecharge)
+Cf [2.1.7.1.5](#classe-personneprisecharge)
 
 ##### Classe ModaliteImagerie
 
-Cf [2.1.8.1.7](#classe-modaliteimagerie)
+Cf [2.1.7.1.7](#classe-modaliteimagerie)
 
 ##### Classe LocalisationAnatomique
 
-Cf [2.1.8.1.8](#classe-localisationanatomique)
+Cf [2.1.7.1.8](#classe-localisationanatomique)
 
 ##### Classe SystemeInformation
 
-Cf [2.1.8.1.13](#classe-systemeinformation)
+Cf [2.1.7.1.13](#classe-systemeinformation)
 
 <br>
 
@@ -1384,4 +1396,7 @@ Cf [2.1.8.1.13](#classe-systemeinformation)
     alt="Diagramme de séquence"
     title="DiagSeq-SFE"
     style="width:8in;height:10in">
+    <p>
+        Figure 14  : Diagramme de séquence - Téléradiologie
+    </p>
 </div>
