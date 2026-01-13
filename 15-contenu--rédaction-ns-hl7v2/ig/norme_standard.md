@@ -421,14 +421,14 @@ Dans le cadre du flux de transmission de la demande d’examen d’imagerie, les
 | **PlateformeTeleradiologie** | ORM^O01 | MSH - Message Header/ ORC - Common Order | MSH-5 Receiving Application, MSH-6 Receiving Facility |
 | **Patient** | ORM^O01 | PID - Patient Identification |   |
 | **PSResponsable** | ORM^O01 | ORC - Common Order | ORC-10 Entered By, ORC-12 Ordering Provider |
-| **PSEffecteur** | ORM^O01 | ORC - Common Order / OBR - Observation Request | ORC-11 Verified By / ORC-32 Principal Result Interpreter |
-| **roleProfessionnel** | ORM^O01 | ORC - Common Order / OBR - Observation Request | ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter |
+| **PSEffecteur** | ORM^O01 | ORC - Common Order / OBR - Observation Request | ORC-11 Verified By / OBR-32 Principal Result Interpreter |
+| **roleProfessionnel** | ORM^O01 | ORC - Common Order / OBR - Observation Request | ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / OBR-32 Principal Result Interpreter |
 | **IdentifiantDemandeExamen** | ORM^O01 | ORC - Common Order | ORC-2 Placer Order Number |
 | **NatureDemande** | ORM^O01 | ORC - Common Order | ORC-1 Order Control |
 | **DateDemande** | ORM^O01 | ORC - Common Order | ORC-9 Date/Time of Transaction |
 | **IdentifiantRDV** | ORM^O01 | PV1 - Patient Visit | PV1-19 Visit Number |
 | **DateHeurePriseCharge** | ORM^O01 | PV1 - Patient Visit | PV1-44 Admit Date/Time |
-| **JustificationDemande** | ORM^O01 | ORC - Common Order / NTE - Notes and Comments | ORC-31 Reason for Study, NTE-3 Comment |
+| **JustificationDemande** | ORM^O01 | ORC - Common Order / NTE - Notes and Comments | OBR-13 Reason for Study, NTE-3 Comment |
 | **LocalisationAnatomique** | ORM^O01 | OBX - Observation/Result | OBX-2 = CE / TX, OBX-5 |
 | **ModaliteImagerie** | ORM^O01 | OBX - Observation/Result | OBX-2 = CE / TX, OBX-5 |
 | **Antecedents** | ORM^O01 | OBR - Observation Request | ORC-31 Relevant Clinical Information |
@@ -444,8 +444,8 @@ Le flux d’annulation de la demande d’examen d’imagerie vise à notifier la
 | **StructureImagerie** | ORM^O01 | MSH - Message Header / ORC - Common Order | MSH-3 Sending Application, MSH-4 Sending Facility /ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address |
 | **PlateformeTeleradiologie** | ORM^O01 | MSH - Message Header | MSH-5 Receiving Application, MSH-6 Receiving Facility |
 | **Patient** | ORM^O01 | PID - Patient Identification |   |
-| **PSEffecteur** | ORM^O01 | ORC - Common Order | ORC-11 Verified By / ORC-32 Principal Result Interpreter |
-| **roleProfessionnel** | ORM^O01 | ORC - Common Order | ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / ORC-32 Principal Result Interpreter |
+| **PSEffecteur** | ORM^O01 | ORC - Common Order | ORC-11 Verified By / OBR-32 Principal Result Interpreter |
+| **roleProfessionnel** | ORM^O01 | ORC - Common Order | ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / OBR-32 Principal Result Interpreter |
 | **IdentifiantDemandeExamen** | ORM^O01 | ORC - Common Order | ORC-2 Placer Order Number |
 | **NatureDemande** | ORM^O01 | ORC - Common Order | ORC-1 Order Control |
 | **MotifAnnulation** | ORM^O01 | ORC - Common Order / NTE - Notes and Comments | ORC-16 Order Control Code Reason, NTE-3 Comment |
