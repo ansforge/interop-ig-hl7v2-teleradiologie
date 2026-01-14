@@ -695,9 +695,7 @@ concernant l’identification et les coordonnées (télécommunication et adress
 Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être <a href="https://hl7.org/fhir/R4/http.html#mime-type">formatée</a> en XML, JSON ou RDF (Turtle).</li>
 </ul>
 
-<p>Les interactions FHIR implémentent le protocole RESTful, couramment utilisé dans de nombreux
-domaines. Le <a href="http://martinfowler.com/articles/richardsonMaturityModel.html">Richardson REST Maturity Model</a> définit 4 niveaux de maturité d’une API REST (de 0
-à 3), FHIR se situe au niveau 2 mais l’utilisation d’extensions peut permettre d’atteindre le niveau 3.</p>
+<p>Ces opérations peuvent être utilisées via le paradigme <a href="https://hl7.org/fhir/R4/messaging.html">Messaging</a> définis par FHIR. Ce paradigme reprend une méthodologie similaire à celle des messages HL7 v2, en définissant des flux d’échange basés sur l’envoi,suite à un événement déclencheur, et la réception de messages FHIR composés de ressources FHIR contenues dans une ressource Bundle.</p>
 
 <h6 id="adaptation-au-cas-dusage">Adaptation au cas d’usage</h6>
 
@@ -783,10 +781,7 @@ Chaque acteur devra également travailler la gestion des authentifications, des 
 
 <p>FHIR est un standard moderne, largement adopté dans le domaine de la santé, permettant l’échange de données de santé de manière structurée et interopérable avec cependant un nombre limité de ressources à l’état normatif.</p>
 
-<p>L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés.
-La notion d’acquittement n’est toutefois pas explicitement modélisée en FHIR et doit être traitée via les mécanismes standards HTTP ou des ressources dédiées comme OperationOutcome.</p>
-
-<p>Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur FHIR, capable de jouer à la fois les rôles de client et de serveur, afin de supporter l’ensemble des échanges requis.</p>
+<p>L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés. Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur FHIR, capable de jouer à la fois les rôles de client et de serveur, afin de supporter l’ensemble des échanges requis.</p>
 
 <p><br/></p>
 
@@ -1362,9 +1357,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
 <h5 id="fhir">FHIR</h5>
 
-<p>Le standard HL7 FHIR permet de couvrir l’ensemble des concepts métier du volet Téléradiologie au travers de ressources structurées, largement adoptées dans le domaine de la santé. Les mécanismes d’acquittement ne sont pas modélisés nativement et reposent sur les échanges HTTP ou sur des ressources spécifiques telles qu’OperationOutcome. La mise en œuvre de FHIR suppose par ailleurs que chaque acteur dispose d’une infrastructure FHIR complète, capable d’assurer les rôles de client et de serveur pour supporter les flux d’échange.</p>
-
-<p>D’une manière générale, le standard FHIR, dans sa version R4, repose encore sur un nombre limité de ressources à l’état normatif, pouvant être considérées comme pleinement stables et rétrocompatibles. Dans la version R5, seules deux ressources supplémentaires ont accédé à cet état normatif, ce qui implique une vigilance particulière quant à la gestion des évolutions et à la rétrocompatibilité dans le cadre de mises en œuvre opérationnelles.</p>
+<p>Le standard HL7 FHIR permet de couvrir l’ensemble des concepts métier du volet Téléradiologie au travers de ressources structurées, largement adoptées dans le domaine de la santé. La mise en œuvre de FHIR suppose par ailleurs que chaque acteur dispose d’une infrastructure FHIR complète, capable d’assurer les rôles de client et de serveur pour supporter les flux d’échange.</p>
 
 <h5 id="hl7v2">HL7v2</h5>
 
@@ -1425,7 +1418,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 13, 2026 10:23+0000">2026-01-13</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 14, 2026 09:01+0000">2026-01-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

@@ -283,7 +283,7 @@ Les interactions qui pourront s’appliquer dans le cas du volet « Téléradiol
 * [Delete](https://hl7.org/fhir/R4/http.html#delete) pour la suppression d’une ressource sur le serveur grâce à la méthode HTTP DELETE;
 * [Update](https://hl7.org/fhir/R4/http.html#update) pour le remplacement d’une ressource existante sur le serveur grâce à la méthode HTTP PUT ou PATCH. Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être [formatée](https://hl7.org/fhir/R4/http.html#mime-type) en XML, JSON ou RDF (Turtle).
 
-Les interactions FHIR implémentent le protocole RESTful, couramment utilisé dans de nombreux domaines. Le [Richardson REST Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) définit 4 niveaux de maturité d’une API REST (de 0 à 3), FHIR se situe au niveau 2 mais l’utilisation d’extensions peut permettre d’atteindre le niveau 3.
+Ces opérations peuvent être utilisées via le paradigme [Messaging](https://hl7.org/fhir/R4/messaging.html) définis par FHIR. Ce paradigme reprend une méthodologie similaire à celle des messages HL7 v2, en définissant des flux d’échange basés sur l’envoi,suite à un événement déclencheur, et la réception de messages FHIR composés de ressources FHIR contenues dans une ressource Bundle.
 
 ###### Adaptation au cas d’usage
 
@@ -351,9 +351,7 @@ Ce flux permettrait de couvrir l’ensemble des processus suivants :
 
 FHIR est un standard moderne, largement adopté dans le domaine de la santé, permettant l’échange de données de santé de manière structurée et interopérable avec cependant un nombre limité de ressources à l’état normatif.
 
-L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés. La notion d’acquittement n’est toutefois pas explicitement modélisée en FHIR et doit être traitée via les mécanismes standards HTTP ou des ressources dédiées comme OperationOutcome.
-
-Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur FHIR, capable de jouer à la fois les rôles de client et de serveur, afin de supporter l’ensemble des échanges requis.
+L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés. Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur FHIR, capable de jouer à la fois les rôles de client et de serveur, afin de supporter l’ensemble des échanges requis.
 
 #### Standard HL7 version 2 (HL7 v2)
 
@@ -546,9 +544,7 @@ Le standard HL7 CDA est adapté à la production et à l’échange de documents
 
 ##### FHIR
 
-Le standard HL7 FHIR permet de couvrir l’ensemble des concepts métier du volet Téléradiologie au travers de ressources structurées, largement adoptées dans le domaine de la santé. Les mécanismes d’acquittement ne sont pas modélisés nativement et reposent sur les échanges HTTP ou sur des ressources spécifiques telles qu’OperationOutcome. La mise en œuvre de FHIR suppose par ailleurs que chaque acteur dispose d’une infrastructure FHIR complète, capable d’assurer les rôles de client et de serveur pour supporter les flux d’échange.
-
-D’une manière générale, le standard FHIR, dans sa version R4, repose encore sur un nombre limité de ressources à l’état normatif, pouvant être considérées comme pleinement stables et rétrocompatibles. Dans la version R5, seules deux ressources supplémentaires ont accédé à cet état normatif, ce qui implique une vigilance particulière quant à la gestion des évolutions et à la rétrocompatibilité dans le cadre de mises en œuvre opérationnelles.
+Le standard HL7 FHIR permet de couvrir l’ensemble des concepts métier du volet Téléradiologie au travers de ressources structurées, largement adoptées dans le domaine de la santé. La mise en œuvre de FHIR suppose par ailleurs que chaque acteur dispose d’une infrastructure FHIR complète, capable d’assurer les rôles de client et de serveur pour supporter les flux d’échange.
 
 ##### HL7v2
 
