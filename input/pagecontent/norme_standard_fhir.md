@@ -206,10 +206,16 @@ Suivant l’analyse des concepts métier identifiés dans la spécification fonc
 <p style="text-align:center;">Table 2 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
 
 ##### Transport
+FHIR propose plusieurs paradigmes d'échange pour répondre à différents cas d'usage :
 
-Le standard FHIR utilise [l'API REST](https://build.fhir.org/http.html) pour l'échange et l'interrogation des ressources via différentes [interactions](https://build.fhir.org/exchange-module.html)
+* [REST](https://build.fhir.org/http.html) – Le plus répandu. Les ressources sont exposées via une API HTTP classique (GET, POST, PUT, DELETE). Adapté aux échanges synchrones et aux architectures web modernes.
+* [Messaging](https://build.fhir.org/messaging.html) – Échange de messages structurés (Bundle de type "message") déclenchés par un événement. Proche du fonctionnement HL7 v2, adapté aux workflows asynchrones.
+* [Documents](https://build.fhir.org/documents.html) – Échange de documents cliniques complets et signés (Bundle de type "document"), similaire au CDA. Utilisé quand l'intégrité et la persistance du document sont essentielles.
+* [Services](https://hl7.org/fhir/R4/services.html) (SOA/RPC) – Appels d'opérations personnalisées.
 
-Différents niveaux [d’interactions](https://hl7.org/fhir/R4/http.html) sont possibles pour une API REST:
+l'échange et l'interrogation des ressources peut se faire via différentes [interactions](https://build.fhir.org/exchange-module.html)
+
+Différents niveaux [d’interactions](https://hl7.org/fhir/R4/http.html) sont possibles via REST :
 
 * Instance (s’applique à une ressource en particulier) ;
 * Type (s’applique à un ensemble de ressources de même type) ;
@@ -222,13 +228,12 @@ Les interactions qui pourront s’appliquer dans le cas du volet « Téléradiol
 * [Update](https://hl7.org/fhir/R4/http.html#update) pour le remplacement d’une ressource existante sur le serveur grâce à la méthode HTTP PUT ou PATCH.
 Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être [formatée](https://hl7.org/fhir/R4/http.html#mime-type) en XML, JSON ou RDF (Turtle).
 
-Ces opérations peuvent être utilisées via le paradigme [Messaging](https://hl7.org/fhir/R4/messaging.html) définis par FHIR. Ce paradigme reprend une méthodologie similaire à celle des messages HL7 v2, en définissant des flux d’échange basés sur l’envoi,suite à un événement déclencheur, et la réception de messages FHIR composés de ressources FHIR contenues dans une ressource Bundle.
+###### Adaptation au cas d'usage
 
-###### Adaptation au cas d'usage 
-
-Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes
-d’architecture, chaque acteur devra par conséquent être à la fois client et serveur.
+Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur.
 Chaque acteur devra également travailler la gestion des authentifications, des autorisations, et autres besoins de sécurité fondamentaux ; ces aspects sortent du périmètre de la présente étude.
+
+Le paradigme Messaging de FHIR pourrait être envisagé pour la gestion des accusés de réception et l'utilisation de la ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) est recommandée pour véhiculer les messages d’erreurs.
 
 ###### Transmettre une demande d'examen d'imagerie
 
