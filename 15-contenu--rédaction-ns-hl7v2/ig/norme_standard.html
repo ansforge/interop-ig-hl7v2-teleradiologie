@@ -675,10 +675,18 @@ concernant l’identification et les coordonnées (télécommunication et adress
 <p style="text-align:center;">Table 2 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
 
 <h5 id="transport-1">Transport</h5>
+<p>FHIR propose plusieurs paradigmes d’échange pour répondre à différents cas d’usage :</p>
 
-<p>Le standard FHIR utilise <a href="https://build.fhir.org/http.html">l’API REST</a> pour l’échange et l’interrogation des ressources via différentes <a href="https://build.fhir.org/exchange-module.html">interactions</a></p>
+<ul>
+  <li><a href="https://build.fhir.org/http.html">REST</a> – Le plus répandu. Les ressources sont exposées via une API HTTP classique (GET, POST, PUT, DELETE). Adapté aux échanges synchrones et aux architectures web modernes.</li>
+  <li><a href="https://build.fhir.org/messaging.html">Messaging</a> – Échange de messages structurés (Bundle de type “message”) déclenchés par un événement. Proche du fonctionnement HL7 v2, adapté aux workflows asynchrones.</li>
+  <li><a href="https://build.fhir.org/documents.html">Documents</a> – Échange de documents cliniques complets et signés (Bundle de type “document”), similaire au CDA. Utilisé quand l’intégrité et la persistance du document sont essentielles.</li>
+  <li><a href="https://hl7.org/fhir/R4/services.html">Services</a> (SOA/RPC) – Appels d’opérations personnalisées.</li>
+</ul>
 
-<p>Différents niveaux <a href="https://hl7.org/fhir/R4/http.html">d’interactions</a> sont possibles pour une API REST:</p>
+<p>l’échange et l’interrogation des ressources peut se faire via différentes <a href="https://build.fhir.org/exchange-module.html">interactions</a></p>
+
+<p>Différents niveaux <a href="https://hl7.org/fhir/R4/http.html">d’interactions</a> sont possibles via REST :</p>
 
 <ul>
   <li>Instance (s’applique à une ressource en particulier) ;</li>
@@ -695,13 +703,12 @@ concernant l’identification et les coordonnées (télécommunication et adress
 Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être <a href="https://hl7.org/fhir/R4/http.html#mime-type">formatée</a> en XML, JSON ou RDF (Turtle).</li>
 </ul>
 
-<p>Ces opérations peuvent être utilisées via le paradigme <a href="https://hl7.org/fhir/R4/messaging.html">Messaging</a> définis par FHIR. Ce paradigme reprend une méthodologie similaire à celle des messages HL7 v2, en définissant des flux d’échange basés sur l’envoi,suite à un événement déclencheur, et la réception de messages FHIR composés de ressources FHIR contenues dans une ressource Bundle.</p>
-
 <h6 id="adaptation-au-cas-dusage">Adaptation au cas d’usage</h6>
 
-<p>Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes
-d’architecture, chaque acteur devra par conséquent être à la fois client et serveur.
+<p>Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur.
 Chaque acteur devra également travailler la gestion des authentifications, des autorisations, et autres besoins de sécurité fondamentaux ; ces aspects sortent du périmètre de la présente étude.</p>
+
+<p>Le paradigme Messaging de FHIR pourrait être envisagé pour la gestion des accusés de réception et l’utilisation de la ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> est recommandée pour véhiculer les messages d’erreurs.</p>
 
 <h6 id="transmettre-une-demande-dexamen-dimagerie">Transmettre une demande d’examen d’imagerie</h6>
 
@@ -1418,7 +1425,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 14, 2026 09:01+0000">2026-01-14</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 08:30+0000">2026-01-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
