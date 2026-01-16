@@ -233,7 +233,9 @@ Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être [format
 Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur.
 Chaque acteur devra également travailler la gestion des authentifications, des autorisations, et autres besoins de sécurité fondamentaux ; ces aspects sortent du périmètre de la présente étude.
 
-Le paradigme Messaging de FHIR pourrait être envisagé pour la gestion des accusés de réception et l'utilisation de la ressource [OperationOutcome](https://hl7.org/fhir/operationoutcome.html) est recommandée pour véhiculer les messages d’erreurs.
+Le paradigme Messaging de FHIR pourrait être envisagé pour la gestion des accusés de réception et une communication asynchrone. Le paradigme REST permettrait de gérer les échanges de ressources simplement via des requêtes HTTP.
+
+Pour chaque flux d'information identifié dans le volet "Téléradiologie", les échanges FHIR via RESTpourraient s'articuler comme suit :
 
 ###### Transmettre une demande d'examen d'imagerie
 
@@ -305,4 +307,4 @@ Si la suppression de la ressource s'est correctement effectuée, le consommateur
 
 FHIR est un standard moderne, largement adopté dans le domaine de la santé, permettant l’échange de données de santé de manière structurée et interopérable avec cependant un nombre limité de ressources à l'état normatif.
 
-L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés. Le paradigme Messaging permet d'avoir un échange asynchrone entre les acteurs ainsi qu'une gestion des acquittements. Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur FHIR, capable de jouer à la fois les rôles de client et de serveur, afin de supporter l’ensemble des échanges requis.
+L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés. Le paradigme Messaging permet d'avoir un échange asynchrone entre les acteurs ainsi qu'une gestion des acquittements similaire à HL7v2. Pour un échange de ressources plus rapide et simple à mettre en place, le paradigme REST est également envisageable. Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur FHIR, capable de jouer à la fois les rôles de client et de serveur, afin de supporter l’ensemble des échanges requis.
