@@ -162,6 +162,7 @@ Les différents processus collaboratifs retenus dans le périmètre de la prése
 
 | | |
 | :--- | :--- |
+| **Service attendu** | Le Créateur transmet au Consommateur les éléments clés associés à une demande d'examen d'imagerie pour un patient. |
 | **Pré-conditions** | N/A |
 | **Post-conditions** | N/A |
 | **Contraintes fonctionnelles** | Si la demande d’examen rédigée est connue (contexte de planification), en complément des éléments clés associés à la demande d'examen d'imagerie véhiculés dans la transaction, le Créateur initie au moins une transaction supplémentaire correspondant au document Demande d'examen d'imagerie complet (numérisé). |
@@ -182,6 +183,7 @@ Table 2 : Définition des acteurs du processus « Transmettre une demande d'exam
 
 | | |
 | :--- | :--- |
+| **Service attendu** | Le Créateur annule une demande d’examen d’imagerie envoyée préalablement au Consommateur. |
 | **Pré-conditions** | L’envoi d’une annulation n’est possible qu’après l’envoi préalable d’une demande d’examen. Par ailleurs, une fois le processus « Transmettre un complément d’information post-examen » lancé, l’annulation de la demande n’est plus autorisée. |
 | **Post-conditions** | N/A |
 | **Contraintes fonctionnelles** | N/A |
@@ -202,6 +204,7 @@ Table 4 : Définition des acteurs du processus « Annuler une demande d’examen
 
 | | |
 | :--- | :--- |
+| **Service attendu** | Le Créateur fournit une réponse métier à la demande d’examen d’imagerie précédemment reçue.Cette réponse formalise la décision prise concernant la demande (acceptation ou refus) et, en cas d’acceptation, inclut le protocole d’imagerie associé. |
 | **Pré-conditions** | N/A |
 | **Post-conditions** | N/A |
 | **Contraintes fonctionnelles** | En cas d’acceptation de la demande :La réponse doit comporter un indicateur d’acquittement positif signifiant l’acceptation de la demande, ainsi que le protocole d’examen élaboré par le médecin effecteur à distance.En cas de refus de la demande :La réponse doit comporter un indicateur de refus qui peut être accompagné de la nature du refus. Dans ce cas, aucun protocole n’est fourni. |
@@ -222,6 +225,7 @@ Table 6 : Définition des acteurs du processus « Répondre à une demande d’e
 
 | | |
 | :--- | :--- |
+| **Service attendu** | Le Créateur transmet un complément d’information au Consommateur suite à la réalisation du ou des actes d’imagerie. |
 | **Pré-conditions** | Réalisation du ou des actes d’imagerie au sein de la structure d’imagerie. |
 | **Post-conditions** | Mise à disposition des images médicales produites. |
 | **Contraintes fonctionnelles** | N/A |
@@ -396,7 +400,7 @@ Table 17 : Synthèse des flux
 | MotifRefus | Motif du refus de la demande d’examen d’imagerie par le médecin effecteur. | Flux 3 |
 | DocumentDemandeExamen | Document correspondant à la demande d’examen d’imagerie rédigée. | Flux 1 |
 | DocumentsTiers | Documents complémentaires associés à la demande d’examen d’imagerie. | Flux 1 |
-| LocalisationAnatomique | Localisation anatomique examinée dans le cadre de l’acte d’imagerie. Une ou plusieurs régions anatomiques peuvent être ciblées. | Flux 1, 4 |
+| LocalisationAnatomique | Localisation anatomique examinée dans le cadre de l’acte d’imagerie. Une ou plusieurs régions anatomiques peuvent être ciblées. Code issu du JDV_RegionAnatomique-CISIS (1.2.250.1.213.1.1.5.695). | Flux 1, 4 |
 | ModaliteImagerie | Modalité d’imagerie utilisée ou prévue pour réaliser l’examen. Code issu du JDV_modalitedemandeActeImagerie-CISIS (1.2.250.1.213.1.1.5.660). | Flux 1, 4 |
 | DecisionEffecteur | Décision rendue par le médecin effecteur après analyse de la demande d’examen d’imagerie, indiquant si celle-ci est acceptée ou refusée. | Flux 3 |
 | ProtocoleImagerie | Document définissant les conditions de réalisation de l’examen d’imagerie. | Flux 3 |
@@ -552,7 +556,7 @@ Décrit la ou les régions du corps concernées par un examen d’imagerie. En f
 
 | | |
 | :--- | :--- |
-| localisationAnatomique : Code [1..1] | Localisation anatomique examinée dans le cadre de l’examen d’imagerie. Code issu du JDV_RegionAnatomique -CISIS (1.2.250.1.213.1.1.5.695). |
+| localisationAnatomique : Code [1..1] | Localisation anatomique examinée dans le cadre de l’examen d’imagerie. Code issu du JDV_RegionAnatomique-CISIS (1.2.250.1.213.1.1.5.695). |
 | precisionTopographique : Code [0..1] | En complément de la localisation anatomique, une précision topographique peut être associée à la localisation anatomique. Code issu du JDV_ModificateurTopographique-CISIS (1.2.250.1.213.1.1.5.688). |
 
 Table 27 : Attributs de la classe « LocalisationAnatomique »
