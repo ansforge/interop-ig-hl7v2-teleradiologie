@@ -222,13 +222,11 @@ Les différents processus collaboratifs retenus dans le périmètre de la prése
 <col style="width: 21%" />
 <col style="width: 78%" />
 </colgroup>
-<thead>
-<tr>
-<th><strong>Service attendu</strong></th>
-<th>Le Créateur transmet au Consommateur les éléments clés associés à une demande d'examen d'imagerie pour un patient.</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td><strong>Service attendu</strong></td>
+<td>Le Créateur transmet au Consommateur les éléments clés associés à une demande d'examen d'imagerie pour un patient.</td>
+</tr>
 <tr>
 <td><strong>Pré-conditions</strong></td>
 <td>N/A</td>
@@ -275,13 +273,11 @@ Le Consommateur réceptionne et analyse la demande d’examen d’imagerie. Si a
 <col style="width: 21%" />
 <col style="width: 78%" />
 </colgroup>
-<thead>
-<tr>
-<th><strong>Service attendu</strong></th>
-<th>Le Créateur annule une demande d’examen d’imagerie envoyée préalablement au Consommateur.</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td><strong>Service attendu</strong></td>
+<td>Le Créateur annule une demande d’examen d’imagerie envoyée préalablement au Consommateur.</td>
+</tr>
 <tr>
 <td><strong>Pré-conditions</strong></td>
 <td>L’envoi d’une annulation n’est possible qu’après l’envoi préalable d’une demande d’examen. Par ailleurs, une fois le processus « Transmettre un complément d’information post-examen » lancé, l’annulation de la demande n’est plus autorisée.</td>
@@ -329,14 +325,12 @@ Le Consommateur réceptionne l’annulation de la demande d’examen.</td>
 <col style="width: 21%" />
 <col style="width: 78%" />
 </colgroup>
-<thead>
-<tr>
-<th><strong>Service attendu</strong></th>
-<th>Le Créateur fournit une réponse métier à la demande d’examen d’imagerie précédemment reçue.<br />
-Cette réponse formalise la décision prise concernant la demande (acceptation ou refus) et, en cas d’acceptation, inclut le protocole d’imagerie associé.</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td><strong>Service attendu</strong></td>
+<td>Le Créateur fournit une réponse métier à la demande d’examen d’imagerie précédemment reçue.<br />
+Cette réponse formalise la décision prise concernant la demande (acceptation ou refus) et, en cas d’acceptation, inclut le protocole d’imagerie associé.</td>
+</tr>
 <tr>
 <td><strong>Pré-conditions</strong></td>
 <td>N/A</td>
@@ -388,13 +382,11 @@ Cette réponse formalise la décision prise concernant la demande (acceptation o
 <col style="width: 21%" />
 <col style="width: 78%" />
 </colgroup>
-<thead>
-<tr>
-<th><strong>Service attendu</strong></th>
-<th>Le Créateur transmet un complément d’information au Consommateur suite à la réalisation du ou des actes d’imagerie.</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td><strong>Service attendu</strong></td>
+<td>Le Créateur transmet un complément d’information au Consommateur suite à la réalisation du ou des actes d’imagerie.</td>
+</tr>
 <tr>
 <td><strong>Pré-conditions</strong></td>
 <td>Réalisation du ou des actes d’imagerie au sein de la structure d’imagerie.</td>
@@ -707,7 +699,7 @@ Le diagramme d’activité ci-dessous illustre l’action de transmission des in
 </tr>
 <tr>
 <td>LocalisationAnatomique</td>
-<td>Localisation anatomique examinée dans le cadre de l’acte d’imagerie. Une ou plusieurs régions anatomiques peuvent être ciblées.</td>
+<td>Localisation anatomique examinée dans le cadre de l’acte d’imagerie. Une ou plusieurs régions anatomiques peuvent être ciblées. Code issu du JDV_RegionAnatomique-CISIS (1.2.250.1.213.1.1.5.695).</td>
 <td>Flux 1, 4</td>
 </tr>
 <tr>
@@ -1113,7 +1105,7 @@ Décrit la ou les régions du corps concernées par un examen d’imagerie. En f
 
 | **Nom** | **Description** |
 |----|----|
-| localisationAnatomique : Code \[1..1\] | Localisation anatomique examinée dans le cadre de l’examen d’imagerie. Code issu du JDV_RegionAnatomique -CISIS (1.2.250.1.213.1.1.5.695). |
+| localisationAnatomique : Code \[1..1\] | Localisation anatomique examinée dans le cadre de l’examen d’imagerie. Code issu du JDV_RegionAnatomique-CISIS (1.2.250.1.213.1.1.5.695). |
 | precisionTopographique : Code \[0..1\] | En complément de la localisation anatomique, une précision topographique peut être associée à la localisation anatomique. Code issu du JDV_ModificateurTopographique-CISIS (1.2.250.1.213.1.1.5.688). |
 
 <p style="text-align:center;">Table 27 : Attributs de la classe « LocalisationAnatomique »</p>
