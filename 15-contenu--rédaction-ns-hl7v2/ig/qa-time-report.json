@@ -1,5 +1,5 @@
 {
-  "date" : "Fri, 16 Jan, 2026 13:27:21 +0000",
+  "date" : "Tue, 20 Jan, 2026 08:33:19 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,59 +8,61 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 23,
-          "length" : 33
-        },
-        {
-          "activity" : "load-configure",
-          "start" : 24,
-          "length" : 1
+          "start" : 25,
+          "length" : 31
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 24,
-          "length" : 15
+          "start" : 26,
+          "length" : 17
         },
         {
           "activity" : "generateNarratives",
-          "start" : 24,
+          "start" : 26,
           "length" : 78
         },
         {
           "activity" : "validate",
-          "start" : 24,
-          "length" : 5487
+          "start" : 26,
+          "length" : 6011
         },
         {
-          "activity" : "generate1",
-          "start" : 29,
-          "length" : 70
-        },
-        {
-          "activity" : "generate2",
-          "start" : 31,
-          "length" : 61
-        },
-        {
-          "activity" : "generateExampleZip",
-          "start" : 36,
+          "activity" : "scanForUsageStats",
+          "start" : 32,
           "length" : 1
         },
         {
+          "activity" : "generate1",
+          "start" : 32,
+          "length" : 77
+        },
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 64
+        },
+        {
           "activity" : "generateValidationPack",
-          "start" : 36,
-          "length" : 2
+          "start" : 41,
+          "length" : 3
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 39,
+          "start" : 43,
           "length" : 2
         }
       ]
     },
     {
       "name" : "/fsh-generated/includes/menu.xml",
-      "size" : 2502
+      "size" : 2502,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/data/features.yml",
@@ -76,42 +78,44 @@
     },
     {
       "name" : "/input/pagecontent/specifications_techniques.md",
-      "size" : 0,
-      "processes" : [
-        {
-          "activity" : "processProvenanceDetails",
-          "start" : 29,
-          "length" : 1
-        },
-        {
-          "activity" : "generate2",
-          "start" : 31,
-          "length" : 1
-        }
-      ]
+      "size" : 0
     },
     {
       "name" : "/input/pagecontent/norme_standard_cda.md",
-      "size" : 7687
-    },
-    {
-      "name" : "/input/pagecontent/norme_standard-synthese.md",
-      "size" : 3276
-    },
-    {
-      "name" : "/input/pagecontent/norme_standard-analyseconclu.md",
-      "size" : 5918,
+      "size" : 7687,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 31,
+          "start" : 35,
           "length" : 1
         }
       ]
     },
     {
+      "name" : "/input/pagecontent/norme_standard-synthese.md",
+      "size" : 3276,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "/input/pagecontent/norme_standard-analyseconclu.md",
+      "size" : 5918
+    },
+    {
       "name" : "/input/pagecontent/tests.md",
-      "size" : 1123
+      "size" : 1123,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/norme_standard.md",
@@ -123,14 +127,7 @@
     },
     {
       "name" : "/input/pagecontent/doc-ref.md",
-      "size" : 36,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 31,
-          "length" : 1
-        }
-      ]
+      "size" : 36
     },
     {
       "name" : "/input/pagecontent/specifications_fonctionnelles.md",
@@ -146,12 +143,12 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard_fhir.md",
-      "size" : 19064,
+      "size" : 20925,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 31,
-          "length" : 1
+          "start" : 35,
+          "length" : 2
         }
       ]
     },
@@ -165,14 +162,7 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard_dicom.md",
-      "size" : 5259,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 31,
-          "length" : 1
-        }
-      ]
+      "size" : 5259
     },
     {
       "name" : "/input/pagecontent/exemples.md",
@@ -180,7 +170,14 @@
     },
     {
       "name" : "/input/pagecontent/downloads.md",
-      "size" : 1727
+      "size" : 1727,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/change-log.md",
@@ -188,27 +185,27 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard-intro.md",
-      "size" : 3120,
+      "size" : 3120
+    },
+    {
+      "name" : "/input/pagecontent/index.md",
+      "size" : 1828,
       "processes" : [
         {
           "activity" : "scan",
-          "start" : 24,
+          "start" : 26,
           "length" : 1
         }
       ]
     },
     {
-      "name" : "/input/pagecontent/index.md",
-      "size" : 1828
-    },
-    {
       "name" : "/input/pagecontent/norme_standard_hl7v2.md",
-      "size" : 20312,
+      "size" : 20941,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 31,
-          "length" : 2
+          "start" : 35,
+          "length" : 1
         }
       ]
     },
@@ -238,7 +235,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 31,
+          "start" : 35,
           "length" : 1
         }
       ]

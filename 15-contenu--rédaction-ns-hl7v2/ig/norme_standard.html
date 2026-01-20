@@ -466,13 +466,25 @@ disponibles sur <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-pu
 <p>Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d’une version R5, les ressources présentées dans la suite du document s’appuient sur la version R4, conformément à la stratégie nationale en vigueur. Cette stratégie relative au choix des versions FHIR a été définie dans le cadre de travaux conduits conjointement par Interop’Santé et l’Agence du Numérique en Santé en 2023-2024, puis validée à l’issue d’une <a href="https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation">concertation</a> portée par l’ANS.</p>
 
 <h5 id="outillage-2">Outillage</h5>
-<p>Des outils sont élaborés pour implémenter et tester des systèmes basés sur le standard FHIR, dont :</p>
+
+<p>Des outils nombreux et matures sont disponibles pour implémenter et tester des systèmes basés sur le standard FHIR, couvrant la validation syntaxique, sémantique et la conformité aux guides d’implémentation.</p>
+
+<p>Parmi les outils facilitant le développement et la validation des ressources FHIR figurent notamment :</p>
 
 <ul>
-  <li>L’extension pour Visual Studio Code <a href="https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools">FHIR tools</a>;</li>
-  <li>Un ensemble <a href="http://hl7.org/fhir/R4/validation.html">d’outils de validation</a> des ressources FHIR ;</li>
-  <li><a href="https://confluence.hl7.org/display/FHIR/Public+Test+Servers">Des serveurs</a> publiquement accessibles à des fins de tests, dont HAPI, une librairie de
-développement des ressources FHIR en Java.</li>
+  <li>L’extension pour Visual Studio Code <a href="https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools">FHIR Tools</a>, facilitant l’édition, la validation et la navigation dans les ressources FHIR ;</li>
+  <li>Un ensemble <a href="http://hl7.org/fhir/R4/validation.html">d’outils de validation</a> permettant de vérifier la conformité des ressources aux spécifications FHIR et aux profils déclarés ;</li>
+  <li>Des <a href="https://confluence.hl7.org/display/FHIR/Public+Test+Servers">serveurs FHIR publics de test</a>, dont HAPI, qui constitue à la fois un serveur de référence et une librairie de développement FHIR en Java.</li>
+</ul>
+
+<p>Plusieurs frameworks et plateformes de tests spécialisés complètent cet outillage :</p>
+
+<ul>
+  <li>Inferno : framework extensible de tests automatisés pour HL7&reg; FHIR&reg;, successeur de l’outil Crucible, permettant de définir et d’exécuter des tests rigoureux de conformité ;</li>
+  <li>Touchstone (AEGIS) : plateforme d’accélération des implémentations FHIR&reg;, reposant sur le moteur de tests <em>TestScript</em>, proposant des serveurs de référence (<em>WildFHIR</em>) et un large catalogue de scripts de tests open source ;</li>
+  <li>Asbestos (IHE/NIST) : outil de test basé sur <em>TestScript</em>, principalement utilisé pour la validation des implémentations des profils IHE, notamment IHE MHD ; son code source est disponible sur GitHub ;</li>
+  <li>Matchbox (AHDIS) : moteur de validation open source, disponible sur GitHub, largement utilisé pour vérifier la conformité des ressources FHIR aux profils nationaux et internationaux ;</li>
+  <li>ConformanceLab (Interoplab) : plateforme de validation FHIR&reg; permettant aux organisations de configurer, gérer et publier leur propre environnement de tests et de certification basé sur <em>TestScript</em>.</li>
 </ul>
 
 <p>La <a href="https://www.ihe-europe.net/testing-IHE/gazelle">plateforme Gazelle</a> est également utilisée pour tester les ressources FHIR. L’outil <a href="https://ahdis.github.io/matchbox/">matchbox</a> est accessible via le <a href="https://interop.esante.gouv.fr/evs/home.seam">service de Validation EVS Client</a>. Il permet de vérifier si :</p>
@@ -483,12 +495,12 @@ développement des ressources FHIR en Java.</li>
   <li>Les ressources sont conformes aux exigences des profils issues des guides d’implémentation.</li>
 </ul>
 
-<p>Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome.
-Enfin, des évènements de tests, tels que les Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.</p>
+<p>Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome. Enfin, des évènements de tests, tels que les Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.</p>
 
 <h5 id="ressources-fhir-adaptées-au-cas-dusage">Ressources FHIR adaptées au cas d’usage</h5>
 
-<p>Dans le cadre du volet “téléradiologie” les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations. Si des profils de ces ressources existent déjà dans le guide d’implémentation FRCORE il est recommandé de les utiliser ou d’en hériter.</p>
+<p>Dans le cadre de cette étude, l’analyse de l’adaptation du standard HL7 FHIR au volet « Téléradiologie » est menée à un niveau global de couverture des concepts métiers. Elle repose sur la mise en correspondance des concepts identifiés dans les spécifications fonctionnelles avec les ressources FHIR existantes, ou, le cas échéant, avec des attributs portés par ces ressources.
+Les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations. Si des profils de ces ressources existent déjà dans le guide d’implémentation FRCORE il est recommandé de les utiliser ou d’en hériter.</p>
 
 <ul>
   <li>
@@ -860,6 +872,8 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 <p>De même, le profil <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a> (Patient Administration Management France), bien qu’orienté vers la gestion administrative des patients et non vers les processus métiers propres à la téléradiologie, constitue une référence nationale pour la gestion de l’identité patient et des traits d’identification, notamment autour de l’INS. Les segments et champs HL7 v2 définis par ce profil peuvent ainsi être réutilisés pour garantir une gestion cohérente et conforme de l’identité du patient dans les flux de téléradiologie, indépendamment des messages métiers échangés.</p>
 
 <p>Dans cette perspective, l’analyse présentée ci-après vise à démontrer la capacité du standard HL7 v2 à couvrir les concepts métiers identifiés dans les spécifications fonctionnelles du volet Téléradiologie. Les tableaux de couverture proposés s’appuient à la fois sur les usages courants d’HL7 v2 et sur les briques définies dans les profils IHE SWF.b et PAM-FR, afin d’illustrer de manière concrète et opérationnelle la couverture fonctionnelle du standard pour chacun des flux identifiés.</p>
+
+<p>Contrairement à l’approche retenue pour HL7 FHIR, où la couverture des concepts métiers est analysée de manière globale au travers des ressources du modèle d’information, l’adaptation du standard HL7 v2 au volet « Téléradiologie » est étudiée flux par flux. Cette approche s’explique par la nature même du standard, dans lequel la structuration des échanges repose sur des profils de messages distincts, susceptibles de varier selon le type de flux et l’étape du workflow concernée. En conséquence, l’ordre et la logique de couverture des concepts métiers diffèrent de ceux présentés pour FHIR.</p>
 
 <h6 id="flux-1---transmission-de-la-demande-dexamen-dimagerie">Flux 1 - Transmission de la demande d’examen d’imagerie</h6>
 
@@ -1427,7 +1441,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 16, 2026 13:27+0000">2026-01-16</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 20, 2026 08:33+0000">2026-01-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

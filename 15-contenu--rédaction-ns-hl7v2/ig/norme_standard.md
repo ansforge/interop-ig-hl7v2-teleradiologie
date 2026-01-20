@@ -197,11 +197,21 @@ Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d
 
 ##### Outillage
 
-Des outils sont élaborés pour implémenter et tester des systèmes basés sur le standard FHIR, dont :
+Des outils nombreux et matures sont disponibles pour implémenter et tester des systèmes basés sur le standard FHIR, couvrant la validation syntaxique, sémantique et la conformité aux guides d’implémentation.
 
-* L’extension pour Visual Studio Code [FHIR tools](https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools);
-* Un ensemble [d’outils de validation](http://hl7.org/fhir/R4/validation.html) des ressources FHIR ;
-* [Des serveurs](https://confluence.hl7.org/display/FHIR/Public+Test+Servers) publiquement accessibles à des fins de tests, dont HAPI, une librairie de développement des ressources FHIR en Java.
+Parmi les outils facilitant le développement et la validation des ressources FHIR figurent notamment :
+
+* L’extension pour Visual Studio Code [FHIR Tools](https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools), facilitant l’édition, la validation et la navigation dans les ressources FHIR ;
+* Un ensemble [d’outils de validation](http://hl7.org/fhir/R4/validation.html) permettant de vérifier la conformité des ressources aux spécifications FHIR et aux profils déclarés ;
+* Des [serveurs FHIR publics de test](https://confluence.hl7.org/display/FHIR/Public+Test+Servers), dont HAPI, qui constitue à la fois un serveur de référence et une librairie de développement FHIR en Java.
+
+Plusieurs frameworks et plateformes de tests spécialisés complètent cet outillage :
+
+* Inferno : framework extensible de tests automatisés pour HL7® FHIR®, successeur de l’outil Crucible, permettant de définir et d’exécuter des tests rigoureux de conformité ;
+* Touchstone (AEGIS) : plateforme d’accélération des implémentations FHIR®, reposant sur le moteur de tests **TestScript**, proposant des serveurs de référence (**WildFHIR**) et un large catalogue de scripts de tests open source ;
+* Asbestos (IHE/NIST) : outil de test basé sur **TestScript**, principalement utilisé pour la validation des implémentations des profils IHE, notamment IHE MHD ; son code source est disponible sur GitHub ;
+* Matchbox (AHDIS) : moteur de validation open source, disponible sur GitHub, largement utilisé pour vérifier la conformité des ressources FHIR aux profils nationaux et internationaux ;
+* ConformanceLab (Interoplab) : plateforme de validation FHIR® permettant aux organisations de configurer, gérer et publier leur propre environnement de tests et de certification basé sur **TestScript**.
 
 La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est également utilisée pour tester les ressources FHIR. L’outil [matchbox](https://ahdis.github.io/matchbox/) est accessible via le [service de Validation EVS Client](https://interop.esante.gouv.fr/evs/home.seam). Il permet de vérifier si :
 
@@ -213,7 +223,7 @@ Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs p
 
 ##### Ressources FHIR adaptées au cas d’usage
 
-Dans le cadre du volet “téléradiologie” les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations. Si des profils de ces ressources existent déjà dans le guide d’implémentation FRCORE il est recommandé de les utiliser ou d’en hériter.
+Dans le cadre de cette étude, l’analyse de l’adaptation du standard HL7 FHIR au volet « Téléradiologie » est menée à un niveau global de couverture des concepts métiers. Elle repose sur la mise en correspondance des concepts identifiés dans les spécifications fonctionnelles avec les ressources FHIR existantes, ou, le cas échéant, avec des attributs portés par ces ressources. Les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations. Si des profils de ces ressources existent déjà dans le guide d’implémentation FRCORE il est recommandé de les utiliser ou d’en hériter.
 
 * Ressource [Patient](https://hl7.org/fhir/R4/patient.html) (NM N) : La ressource Patient permet de représenter les données concernant l’identification et les coordonnées (télécommunication et adresse) du patient ainsi que ses contacts.
 * Ressource [Organization](https://hl7.org/fhir/R4/organization.html) (NM 3) : La ressource Organization permet de représenter une personne morale telle que le centre de téléradiologie.
@@ -417,6 +427,8 @@ Au-delà de ces usages existants, plusieurs profils IHE du [domaine IHE RADIOLOG
 De même, le profil [IHE PAM-FR](https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf) (Patient Administration Management France), bien qu’orienté vers la gestion administrative des patients et non vers les processus métiers propres à la téléradiologie, constitue une référence nationale pour la gestion de l’identité patient et des traits d’identification, notamment autour de l’INS. Les segments et champs HL7 v2 définis par ce profil peuvent ainsi être réutilisés pour garantir une gestion cohérente et conforme de l’identité du patient dans les flux de téléradiologie, indépendamment des messages métiers échangés.
 
 Dans cette perspective, l’analyse présentée ci-après vise à démontrer la capacité du standard HL7 v2 à couvrir les concepts métiers identifiés dans les spécifications fonctionnelles du volet Téléradiologie. Les tableaux de couverture proposés s’appuient à la fois sur les usages courants d’HL7 v2 et sur les briques définies dans les profils IHE SWF.b et PAM-FR, afin d’illustrer de manière concrète et opérationnelle la couverture fonctionnelle du standard pour chacun des flux identifiés.
+
+Contrairement à l’approche retenue pour HL7 FHIR, où la couverture des concepts métiers est analysée de manière globale au travers des ressources du modèle d’information, l’adaptation du standard HL7 v2 au volet « Téléradiologie » est étudiée flux par flux. Cette approche s’explique par la nature même du standard, dans lequel la structuration des échanges repose sur des profils de messages distincts, susceptibles de varier selon le type de flux et l’étape du workflow concernée. En conséquence, l’ordre et la logique de couverture des concepts métiers diffèrent de ceux présentés pour FHIR.
 
 ###### Flux 1 - Transmission de la demande d’examen d’imagerie
 
