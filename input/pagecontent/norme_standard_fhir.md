@@ -18,26 +18,35 @@ disponibles sur [l’espace de Publication](https://esante.gouv.fr/offres-servic
 Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d’une version R5, les ressources présentées dans la suite du document s’appuient sur la version R4, conformément à la stratégie nationale en vigueur. Cette stratégie relative au choix des versions FHIR a été définie dans le cadre de travaux conduits conjointement par Interop’Santé et l’Agence du Numérique en Santé en 2023-2024, puis validée à l’issue d’une [concertation](https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation) portée par l’ANS.
 
 ##### Outillage
-Des outils sont élaborés pour implémenter et tester des systèmes basés sur le standard FHIR, dont :
 
-* L’extension pour Visual Studio Code [FHIR tools](https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools);
-* Un ensemble [d’outils de validation](http://hl7.org/fhir/R4/validation.html) des ressources FHIR ;
-* [Des serveurs](https://confluence.hl7.org/display/FHIR/Public+Test+Servers) publiquement accessibles à des fins de tests, dont HAPI, une librairie de
-développement des ressources FHIR en Java.
+Des outils nombreux et matures sont disponibles pour implémenter et tester des systèmes basés sur le standard FHIR, couvrant la validation syntaxique, sémantique et la conformité aux guides d’implémentation.
+
+Parmi les outils facilitant le développement et la validation des ressources FHIR figurent notamment :
+
+- L’extension pour Visual Studio Code [FHIR Tools](https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools), facilitant l’édition, la validation et la navigation dans les ressources FHIR ;
+- Un ensemble [d’outils de validation](http://hl7.org/fhir/R4/validation.html) permettant de vérifier la conformité des ressources aux spécifications FHIR et aux profils déclarés ;
+- Des [serveurs FHIR publics de test](https://confluence.hl7.org/display/FHIR/Public+Test+Servers), dont HAPI, qui constitue à la fois un serveur de référence et une librairie de développement FHIR en Java.
+
+Plusieurs frameworks et plateformes de tests spécialisés complètent cet outillage :
+
+- Inferno : framework extensible de tests automatisés pour HL7® FHIR®, successeur de l’outil Crucible, permettant de définir et d’exécuter des tests rigoureux de conformité ;
+- Touchstone (AEGIS) : plateforme d’accélération des implémentations FHIR®, reposant sur le moteur de tests *TestScript*, proposant des serveurs de référence (*WildFHIR*) et un large catalogue de scripts de tests open source ;
+- Asbestos (IHE/NIST) : outil de test basé sur *TestScript*, principalement utilisé pour la validation des implémentations des profils IHE, notamment IHE MHD ; son code source est disponible sur GitHub ;
+- Matchbox (AHDIS) : moteur de validation open source, disponible sur GitHub, largement utilisé pour vérifier la conformité des ressources FHIR aux profils nationaux et internationaux ;
+- ConformanceLab (Interoplab) : plateforme de validation FHIR® permettant aux organisations de configurer, gérer et publier leur propre environnement de tests et de certification basé sur *TestScript*.
 
 La [plateforme Gazelle](https://www.ihe-europe.net/testing-IHE/gazelle) est également utilisée pour tester les ressources FHIR. L'outil [matchbox](https://ahdis.github.io/matchbox/) est accessible via le [service de Validation EVS Client](https://interop.esante.gouv.fr/evs/home.seam). Il permet de vérifier si :
 
-* La structure XML ou JSON des ressources est valide ;
-* Les ressources sont conformes aux exigences FHIR ;
-* Les ressources sont conformes aux exigences des profils issues des guides d'implémentation.
+- La structure XML ou JSON des ressources est valide ;
+- Les ressources sont conformes aux exigences FHIR ;
+- Les ressources sont conformes aux exigences des profils issues des guides d'implémentation.
 
-Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome.
-Enfin, des évènements de tests, tels que les Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
-
+Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome. Enfin, des évènements de tests, tels que les Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.
 
 ##### Ressources FHIR adaptées au cas d'usage
 
-Dans le cadre du volet "téléradiologie" les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d'informations. Si des profils de ces ressources existent déjà dans le guide d'implémentation FRCORE il est recommandé de les utiliser ou d'en hériter.
+Dans le cadre de cette étude, l’analyse de l’adaptation du standard HL7 FHIR au volet « Téléradiologie » est menée à un niveau global de couverture des concepts métiers. Elle repose sur la mise en correspondance des concepts identifiés dans les spécifications fonctionnelles avec les ressources FHIR existantes, ou, le cas échéant, avec des attributs portés par ces ressources.
+Les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d'informations. Si des profils de ces ressources existent déjà dans le guide d'implémentation FRCORE il est recommandé de les utiliser ou d'en hériter.
 
 * Ressource [Patient](https://hl7.org/fhir/R4/patient.html) (NM N) : La ressource Patient permet de représenter les données
 concernant l’identification et les coordonnées (télécommunication et adresse) du patient ainsi que ses contacts.

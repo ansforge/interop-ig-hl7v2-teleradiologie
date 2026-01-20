@@ -54,6 +54,8 @@ De même, le profil [IHE PAM-FR](https://www.interopsante.org/f/07f0be9ab9647f72
 
 Dans cette perspective, l'analyse présentée ci-après vise à démontrer la capacité du standard HL7 v2 à couvrir les concepts métiers identifiés dans les spécifications fonctionnelles du volet Téléradiologie. Les tableaux de couverture proposés s'appuient à la fois sur les usages courants d'HL7 v2 et sur les briques définies dans les profils IHE SWF.b et PAM-FR, afin d'illustrer de manière concrète et opérationnelle la couverture fonctionnelle du standard pour chacun des flux identifiés.
 
+Contrairement à l’approche retenue pour HL7 FHIR, où la couverture des concepts métiers est analysée de manière globale au travers des ressources du modèle d’information, l’adaptation du standard HL7 v2 au volet « Téléradiologie » est étudiée flux par flux. Cette approche s’explique par la nature même du standard, dans lequel la structuration des échanges repose sur des profils de messages distincts, susceptibles de varier selon le type de flux et l’étape du workflow concernée. En conséquence, l’ordre et la logique de couverture des concepts métiers diffèrent de ceux présentés pour FHIR.
+
 ###### Flux 1 - Transmission de la demande d'examen d'imagerie
 
 Dans le cadre du flux de transmission de la demande d'examen d'imagerie, les concepts métiers identifiés dans les spécifications fonctionnelles peuvent être portés par un message HL7 v2 de type ORM, historiquement utilisé pour la prescription et la gestion des actes d'imagerie. Les mappings présentés ci-dessous s'appuient sur les usages courants d'HL7 v2, ainsi que sur les recommandations issues des profils IHE SWF.b et PAM-FR lorsque celles-ci sont pertinentes, notamment pour la gestion de l'identité patient et des acteurs impliqués.
