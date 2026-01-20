@@ -5,7 +5,7 @@
 
 ## Normes et Standards
 
- **Executive summary**
+ **Résumé de l'étude**
  Cette étude compare les principaux standards d’interopérabilité susceptibles de répondre aux besoins d’échange du volet Téléradiologie, au regard de critères fonctionnels, techniques et réglementaires. DICOM et HL7 CDA ont été écartés comme supports principaux, leur positionnement ne correspondant pas aux échanges transactionnels attendus. HL7 FHIR offre une couverture fonctionnelle complète et s’inscrit dans les orientations de long terme, mais sa mise en œuvre opérationnelle reste exigeante. À court terme, HL7 v2 apparaît comme la solution la plus pragmatique, en raison de sa maturité, de son adoption par l’écosystème et de l’existence de profils IHE largement industrialisés. 
 
 ### Introduction
