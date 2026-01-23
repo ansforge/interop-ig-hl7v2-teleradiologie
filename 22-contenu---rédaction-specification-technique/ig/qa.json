@@ -6,8 +6,8 @@
   "status" : "draft",
   "package-id" : "ans.hl7v2.fr.teleradiologie",
   "ig-ver" : "0.1.0",
-  "date" : "Wed, 21 Jan, 2026 10:30:54 +0000",
-  "dateISO8601" : "2026-01-21T10:30:54+00:00",
+  "date" : "Fri, 23 Jan, 2026 16:25:44 +0000",
+  "dateISO8601" : "2026-01-23T16:25:44+00:00",
   "errs" : 1,
   "warnings" : 3,
   "hints" : 1,
@@ -15,5 +15,5 @@
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "5.0.0 (3)",
-  "maxMemory" : 880976360
+  "maxMemory" : 1250637824
 }

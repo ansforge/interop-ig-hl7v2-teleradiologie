@@ -21,7 +21,7 @@ This fragment is available on       <a href="index.html">index.html</a>
     <ul>
       <li>
 
-          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-21 
+          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-23 
           
            
             Liens: Table des matières  |
@@ -53,7 +53,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://esante.gouv.fr/">esante.gouv.fr</a>
@@ -71,7 +71,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://esante.gouv.fr">esante.gouv.fr</a>
@@ -80,7 +80,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Wed, Jan 21, 2026 10:30+0000">2026-01-21</span>
+. Generated           <span title="Fri, Jan 23, 2026 16:25+0000">2026-01-23</span>
 
                     <br/>
 
@@ -101,7 +101,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://github.com/ansforge/interop-ig-teleradiologie/issues/new">github.com</a>
@@ -110,7 +110,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Wed, Jan 21, 2026 10:30+0000">2026-01-21</span>
+. Generated           <span title="Fri, Jan 23, 2026 16:25+0000">2026-01-23</span>
 
                     <br/>
 
@@ -131,7 +131,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://solidarites-sante.gouv.fr">solidarites-sante.gouv.fr</a>
@@ -151,7 +151,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://esante.gouv.fr/">esante.gouv.fr</a>
@@ -650,6 +650,90 @@ Pour plus d’information sur la validation des instances de ressource contre un
 
 
 </img>          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">esante.gouv.fr</a>
+        </td>
+        <td>
+Les données utiles pour publication sur le DMP et pour l’envoi par
+MSSanté de(s) document(s) sont stockées à la fois dans le segment PID du
+message HL7, dans le document CDA-R2 conforme au           <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">volet du CI_SIS Structuration minimale des documents de santé</a>
+ et dans des segments OBX du message HL7 spécifiant les métadonnées complémentaires.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/publications">www.interopsante.org</a>
+        </td>
+        <td>
+Ces deux segments doivent être renseignés conformément à la spécification «           <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a>
+ publiée en 2024. Si l’INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS «           <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a>
+ ».
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">esante.gouv.fr</a>
+        </td>
+        <td>
+Ces deux segments doivent être renseignés conformément à la spécification «           <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a>
+ publiée en 2024. Si l’INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS «           <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a>
+ ».
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">ansforge.github.io</a>
+        </td>
+        <td>
+Utiliser le           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-region-anatomique-cisis.html">ansforge.github.io</a>
+        </td>
+        <td>
+Valeur issue du JDV           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-region-anatomique-cisis.html">JDV_RegionAnatomique-CISIS</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modificateur-topographique-cisis.html">ansforge.github.io</a>
+        </td>
+        <td>
+Valeur issue du JDV           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modificateur-topographique-cisis.html">JDV_ModificateurTopographique-CISIS</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">ansforge.github.io</a>
+        </td>
+        <td>
+Utiliser le           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a>
         </td>
       </tr>
       <tr>
