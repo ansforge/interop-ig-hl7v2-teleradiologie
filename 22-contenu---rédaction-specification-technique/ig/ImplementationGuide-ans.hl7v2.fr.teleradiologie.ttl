@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-23T16:25:44+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-23T16:39:48+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -1452,6 +1452,25 @@
            fhir:l fhir:table_obs.html
          ] ;
          fhir:title [ fhir:v "Table OBSERVATION_TLR" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "sub-id.html"^^xsd:anyURI ;
+             fhir:l fhir:sub-id.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "sub-id.html"^^xsd:anyURI ;
+           fhir:l fhir:sub-id.html
+         ] ;
+         fhir:title [ fhir:v "Utilisation du champ OBX-4 – Observation Sub-ID" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
