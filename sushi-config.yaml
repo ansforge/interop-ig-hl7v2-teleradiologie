@@ -28,12 +28,12 @@ pages:
         title: Normes et Standards
     specifications_techniques.md:
         title: "Volume 2 : Détail des transactions"
-    annexes.md:
-        title: Annexes
-        exemples.md:
-            title: Exemples de messages
-        doc-ref.md:
-            title: Références documentaires
+    table_obs.md:
+        title: Table OBSERVATION_TLR
+    exemples.md:
+        title: Exemples de messages
+    doc-ref.md:
+        title: Références documentaires
     change-log.md:
         title: Historique des versions
     tests.md:
@@ -46,6 +46,7 @@ menu:
     Normes et Standards: norme_standard.html
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
+        Table OBSERVATION_TLR: table_obs.html
         Exemples de messages: exemples.html
         Références documentaires: doc-ref.html
     Test: tests.html
