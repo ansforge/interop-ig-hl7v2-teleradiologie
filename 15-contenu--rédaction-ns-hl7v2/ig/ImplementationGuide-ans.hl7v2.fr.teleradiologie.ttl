@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-20T08:47:57+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-23T16:57:40+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -1442,56 +1442,36 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "annexes.html"^^xsd:anyURI ;
-             fhir:l fhir:annexes.html
+             fhir:v "exemples.html"^^xsd:anyURI ;
+             fhir:l fhir:exemples.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "annexes.html"^^xsd:anyURI ;
-           fhir:l fhir:annexes.html
+           fhir:v "exemples.html"^^xsd:anyURI ;
+           fhir:l fhir:exemples.html
          ] ;
-         fhir:title [ fhir:v "Annexes" ] ;
-         fhir:generation [ fhir:v "markdown" ] ;
-         fhir:page ( [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
-             fhir:value [
-               a fhir:Url ;
-               fhir:v "exemples.html"^^xsd:anyURI ;
-               fhir:l fhir:exemples.html
-             ]
-           ] ) ;
-           fhir:name [
-             a fhir:Url ;
-             fhir:v "exemples.html"^^xsd:anyURI ;
-             fhir:l fhir:exemples.html
+         fhir:title [ fhir:v "Exemples de messages" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
            ] ;
-           fhir:title [ fhir:v "Exemples de messages" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [
-               fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
-             ] ;
-             fhir:value [
-               a fhir:Url ;
-               fhir:v "doc-ref.html"^^xsd:anyURI ;
-               fhir:l fhir:doc-ref.html
-             ]
-           ] ) ;
-           fhir:name [
+           fhir:value [
              a fhir:Url ;
              fhir:v "doc-ref.html"^^xsd:anyURI ;
              fhir:l fhir:doc-ref.html
-           ] ;
-           fhir:title [ fhir:v "Références documentaires" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] )
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "doc-ref.html"^^xsd:anyURI ;
+           fhir:l fhir:doc-ref.html
+         ] ;
+         fhir:title [ fhir:v "Références documentaires" ] ;
+         fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [

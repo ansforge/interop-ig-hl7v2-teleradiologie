@@ -2,22 +2,20 @@ CISIS_TLR_HL7_V2 : Validation Results
 =========================================
 
 err = 1, warn = 3, info = 1
-IG Publisher Version: 2.0.29
-Generated Tue Jan 20 08:48:40 UTC 2026. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
- Build Errors : 10 / 3 / 0
+IG Publisher Version: 2.0.30
+Generated Fri Jan 23 16:58:32 UTC 2026. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
+ Build Errors : 8 / 3 / 0
  /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 2
 </table>
 == n/a ==
-ERROR: annexes.html#/html/body/div/div/div/div/div/ul/li/a at Line 210, column 8: The link './exemples' for "Exemples de messages" cannot be resolved
-ERROR: annexes.html#/html/body/div/div/div/div/div/ul/li/a at Line 211, column 8: The link './exemples' for "Références documentaires" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 229, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 230, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 231, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 237, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 238, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 239, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
-ERROR: norme_standard.html#/html/body/div/div/div/div/div/p/a at Line 226, column 152: The link '.\specifications_fonctionnelles.html' for "Spécifications fonctionnelles des échanges - Téléradiologie" cannot be resolved
-ERROR: norme_standard.html#/html/body/div/div/div/div/div/p/a at Line 304, column 68: The link './specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS' for "étape 4 et 5" cannot be resolved (valid targets: [ans-nav, segment-header, publish-box, volume-1-etude-fonctionnelle, bottom, hl7-logo, segment-post-footer, hl7-search-lnk, ig-search, family-nav, ig-status, top, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb])
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 210, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 211, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 212, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 218, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 219, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 220, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
+ERROR: norme_standard.html#/html/body/div/div/div/div/div/p/a at Line 207, column 152: The link '.\specifications_fonctionnelles.html' for "Spécifications fonctionnelles des échanges - Téléradiologie" cannot be resolved
+ERROR: norme_standard.html#/html/body/div/div/div/div/div/p/a at Line 285, column 68: The link './specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS' for "étape 4 et 5" cannot be resolved (valid targets: [ans-nav, segment-header, publish-box, volume-1-etude-fonctionnelle, bottom, hl7-logo, segment-post-footer, hl7-search-lnk, ig-search, family-nav, ig-status, top, stripe, segment-footer, segment-navbar, segment-content, segment-breadcrumb])
 WARNING: /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/output/searchform.html#/html/body/div/div/div/a/img/div/a/img/div/p/img/footer/div/div/div/div/div/div/a/img/div/a/img/script at Line 255, column 7: The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed)
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
