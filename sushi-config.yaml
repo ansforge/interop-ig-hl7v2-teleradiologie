@@ -30,6 +30,8 @@ pages:
         title: "Volume 2 : Détail des transactions"
     table_obs.md:
         title: Table OBSERVATION_TLR
+    sub-id.md:
+        title: Utilisation du champ OBX-4 – Observation Sub-ID
     exemples.md:
         title: Exemples de messages
     doc-ref.md:
@@ -46,6 +48,7 @@ menu:
     Normes et Standards: norme_standard.html
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
+        Utilisation du champ OBX-4 – Observation Sub-ID: sub-id.html
         Table OBSERVATION_TLR: table_obs.html
         Exemples de messages: exemples.html
         Références documentaires: doc-ref.html
