@@ -28,12 +28,10 @@ pages:
         title: Normes et Standards
     specifications_techniques.md:
         title: "Volume 2 : Détail des transactions"
-    annexes.md:
-        title: Annexes
-        exemples.md:
-            title: Exemples de messages
-        doc-ref.md:
-            title: Références documentaires
+    exemples.md:
+        title: Exemples de messages
+    doc-ref.md:
+        title: Références documentaires
     change-log.md:
         title: Historique des versions
     tests.md:
@@ -43,14 +41,9 @@ pages:
 menu:
     Accueil: index.html
     Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html 
-    Normes et Standards: 
-        "Introduction": norme_standard.html#introduction
-        "Présentation synthétique du volet": norme_standard.html#présentation-synthétique-du-volet-téléradiologie
-        "Normes et standards étudiés": norme_standard.html#normes-et-standards-étudiés
-        "Synthèse": norme_standard.html#synthèse-de-létude
-        "Analyse et conclusion": norme_standard.html#analyse-et-conclusion
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
+        Normes et Standards: norme_standard.html
         Exemples de messages: exemples.html
         Références documentaires: doc-ref.html
     Test: tests.html
