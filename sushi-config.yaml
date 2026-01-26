@@ -42,7 +42,14 @@ pages:
         title: Téléchargements
 menu:
     Accueil: index.html
-    Volume 1 - Etude fonctionnelle: specifications_fonctionnelles.html
+    Volume 1 - Etude fonctionnelle: 
+        "Méthode": specifications_fonctionnelles.html#méthode
+        "Cadre juridique et orientations organisationnelles": specifications_fonctionnelles.html#cadre-juridique-et-orientations-organisationnelles
+        "Organisation du contexte métier": specifications_fonctionnelles.html#organisation-du-contexte-métier
+        "Définition des processus colllaboratifs": specifications_fonctionnelles.html#définition-des-processus-collaboratifs
+        "Description des processus collaboratifs et identification des flux": specifications_fonctionnelles.html#description-des-processus-collaboratifs-et-identification-des-flux
+        "Identification des concepts véhiculés dans les flux": specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-mos
+        "Modélisation des flux d’informations": specifications_fonctionnelles.html#modélisation-des-flux-dinformations
     Normes et Standards: norme_standard.html
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
