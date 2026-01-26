@@ -1,5 +1,5 @@
 {
-  "date" : "Fri, 23 Jan, 2026 16:57:40 +0000",
+  "date" : "Mon, 26 Jan, 2026 08:22:24 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,48 +8,48 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 31,
-          "length" : 28
+          "start" : 24,
+          "length" : 34
+        },
+        {
+          "activity" : "scan",
+          "start" : 25,
+          "length" : 1
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 32,
-          "length" : 15
+          "start" : 25,
+          "length" : 16
         },
         {
           "activity" : "generateNarratives",
-          "start" : 32,
-          "length" : 81
+          "start" : 25,
+          "length" : 75
         },
         {
           "activity" : "validate",
-          "start" : 32,
-          "length" : 8486
-        },
-        {
-          "activity" : "scanForUsageStats",
-          "start" : 41,
-          "length" : 1
+          "start" : 25,
+          "length" : 7728
         },
         {
           "activity" : "generate1",
-          "start" : 41,
-          "length" : 80
+          "start" : 33,
+          "length" : 62
         },
         {
           "activity" : "generate2",
-          "start" : 43,
-          "length" : 69
+          "start" : 35,
+          "length" : 65
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 48,
-          "length" : 2
+          "start" : 39,
+          "length" : 3
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 51,
-          "length" : 1
+          "start" : 43,
+          "length" : 2
         }
       ]
     },
@@ -59,7 +59,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 44,
+          "start" : 35,
           "length" : 1
         }
       ]
@@ -86,21 +86,14 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 44,
+          "start" : 35,
           "length" : 1
         }
       ]
     },
     {
       "name" : "/input/pagecontent/norme_standard-synthese.md",
-      "size" : 3276,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 44,
-          "length" : 1
-        }
-      ]
+      "size" : 3276
     },
     {
       "name" : "/input/pagecontent/norme_standard-analyseconclu.md",
@@ -108,7 +101,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 44,
+          "start" : 35,
           "length" : 1
         }
       ]
@@ -127,7 +120,14 @@
     },
     {
       "name" : "/input/pagecontent/doc-ref.md",
-      "size" : 36
+      "size" : 36,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/specifications_fonctionnelles.md",
@@ -135,14 +135,7 @@
     },
     {
       "name" : "/input/pagecontent/securite.md",
-      "size" : 900,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 44,
-          "length" : 1
-        }
-      ]
+      "size" : 900
     },
     {
       "name" : "/input/pagecontent/construction_des_flux.md",
@@ -150,18 +143,18 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard_fhir.md",
-      "size" : 20925
-    },
-    {
-      "name" : "/input/pagecontent/norme_standard-etude.md",
-      "size" : 528,
+      "size" : 20925,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 44,
+          "start" : 35,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/input/pagecontent/norme_standard-etude.md",
+      "size" : 528
     },
     {
       "name" : "/input/pagecontent/annexes.md",
@@ -169,7 +162,14 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard_dicom.md",
-      "size" : 5259
+      "size" : 5259,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/exemples.md",
@@ -189,7 +189,14 @@
     },
     {
       "name" : "/input/pagecontent/index.md",
-      "size" : 1828
+      "size" : 1828,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/norme_standard_hl7v2.md",
@@ -197,7 +204,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 44,
+          "start" : 35,
           "length" : 1
         }
       ]
@@ -208,14 +215,7 @@
     },
     {
       "name" : "/template/config/_config.yml",
-      "size" : 31,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 44,
-          "length" : 1
-        }
-      ]
+      "size" : 31
     },
     {
       "name" : "/input/images",
@@ -231,7 +231,14 @@
     },
     {
       "name" : "/temp/pages/_includes/artifacts.xml",
-      "size" : 600
+      "size" : 600,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 35,
+          "length" : 1
+        }
+      ]
     }
   ]
 }
