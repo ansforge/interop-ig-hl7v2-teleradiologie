@@ -73,10 +73,10 @@ Dans le cadre du flux de transmission de la demande d'examen d'imagerie, les con
 | **DateDemande** | ORM^O01 | ORC - Common Order| ORC-9 Date/Time of Transaction |
 | **IdentifiantRDV** | ORM^O01 | PV1 - Patient Visit| PV1-19 Visit Number |
 | **DateHeurePriseCharge** | ORM^O01 | PV1 - Patient Visit| PV1-44 Admit Date/Time |
-| **JustificationDemande** | ORM^O01 | ORC - Common Order / NTE - Notes and Comments| OBR-13 Reason for Study, NTE-3 Comment |
+| **JustificationDemande** | ORM^O01 | ORC - Common Order / NTE - Notes and Comments| OBR-31 Reason for Study, NTE-3 Comment |
 | **LocalisationAnatomique** | ORM^O01 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
 | **ModaliteImagerie** | ORM^O01 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
-| **Antecedents** | ORM^O01 | OBR - Observation Request| ORC-31 Relevant Clinical Information |
+| **Antecedents** | ORM^O01 | OBR - Observation Request| OBR-13 Relevant Clinical Information |
 
 <p style="text-align:center;">Table 3 : Couverture des concepts métier du flux 1 par le standard HL7v2</p>
 
