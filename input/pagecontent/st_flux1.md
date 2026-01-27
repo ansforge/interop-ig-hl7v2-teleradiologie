@@ -119,7 +119,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Qualifie le type d'organisation  (2)</p>
+        <p>Qualifie le type d'organisation  (5)</p>
       </td>
     </tr>
     <tr>
@@ -206,7 +206,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 
 <blockquote class="stu-note">
     <p>
-    <b>(2) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
+    <b>(5) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
     Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une <a href="./table_orga.html">table de valeurs locale documentée</a>.
 
     L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS.

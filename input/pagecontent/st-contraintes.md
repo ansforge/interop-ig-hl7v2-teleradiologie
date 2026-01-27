@@ -358,7 +358,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
     </tr>
     <tr>
       <td>
-        <p>PV1-19 <i>(Note 1</i>) et (<i>Note 2</i>)</p>
+        <p>PV1-19 (2)(4) </p>
       </td>
       <td>
         <p>Identifiant de la venue</p>
@@ -367,12 +367,12 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
         <p>CX</p>
       </td>
       <td>
-        <p> C (Note 2)</p>
+        <p> C (3)</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>PV1-44 (<i>Note 1</i>)</p>
+        <p>PV1-44 (2)</p>
       </td>
       <td>
         <p>Date d'entrée du patient</p>
@@ -386,7 +386,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
     </tr>
     <tr>
       <td>
-        <p>PV1-45(<i>Note 1</i>)</p>
+        <p>PV1-45 (2)</p>
       </td>
       <td>
         <p>Date de sortie du patient</p>
@@ -401,9 +401,23 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
   </tbody>
 </table>
 
-*Note 1* : _A noter que ces champs sont à renseigner, s'ils sont connus, par l'acteur CREATEUR afin de pouvoir calculer des indicateurs._
+<blockquote class="stu-note">
+    <p>
+    <b>(2) :</b> A noter que ces champs sont à renseigner, s'ils sont connus, par le système expéditeur afin de pouvoir calculer des indicateurs.
+    </p>
+</blockquote>
 
-*Note 2* : _Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu._
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.
+    </p>
+</blockquote>
+
+<blockquote class="stu-note">
+    <p>
+    <b>(4) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
+    </p>
+</blockquote>
 
 <br>
 

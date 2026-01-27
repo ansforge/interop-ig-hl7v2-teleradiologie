@@ -195,7 +195,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -280,7 +280,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -297,7 +297,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -520,7 +520,7 @@ Le message est composé des segments principaux suivants :
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -605,7 +605,7 @@ Le message est composé des segments principaux suivants :
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -622,7 +622,7 @@ Le message est composé des segments principaux suivants :
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -862,7 +862,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -896,7 +896,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p> [{NTE}]</p>
       </td>
       <td>
-        <p>Comments on the order</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -981,7 +981,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -998,7 +998,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -1235,7 +1235,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -1269,7 +1269,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p> [{NTE}]</p>
       </td>
       <td>
-        <p>Comments on the order</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -1354,7 +1354,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -1371,7 +1371,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>

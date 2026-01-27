@@ -380,7 +380,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.  
 
 L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (3), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local "URL_VIEWER_DRIMBOX" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>.
 
 <table class="table-hl7v2">
@@ -505,7 +505,7 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
 
 <blockquote class="stu-note">
     <p>
-    <b>(3) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    <b>(6) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
     </p>
     <ul>
       <li>le séparateur de champs (|) via \F\ ;</li>
