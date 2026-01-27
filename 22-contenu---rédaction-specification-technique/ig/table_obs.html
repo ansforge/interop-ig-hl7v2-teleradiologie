@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Table OBSERVATION_TLR - Volet Téléradiologie v0.1.0</title>
+    <title>Table TLR_OBSERVATION - Volet Téléradiologie v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5"}
-    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -99,9 +99,6 @@
     <a href="specifications_fonctionnelles.html">Volume 1 - Etude fonctionnelle</a>
   </li>
   <li>
-    <a href="norme_standard.html">Normes et Standards</a>
-  </li>
-  <li>
     <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
   </li>
   <li class="dropdown">
@@ -110,10 +107,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="norme_standard.html">Normes et Standards</a>
+      </li>
+      <li>
+        <a href="diag_sequence.html">Diagramme de séquence - Spcécification technique</a>
+      </li>
+      <li>
         <a href="sub-id.html">Utilisation du champ OBX-4 – Observation Sub-ID</a>
       </li>
       <li>
         <a href="table_obs.html">Table OBSERVATION_TLR</a>
+      </li>
+      <li>
+        <a href="table_orga.html">Table TLR_TYPE_ORGANISATION</a>
       </li>
       <li>
         <a href="exemples.html">Exemples de messages</a>
@@ -144,15 +150,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Table OBSERVATION_TLR</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Table TLR_OBSERVATION</b></li>
 
           <span style="float:right;">
 
-            <a href="specifications_techniques.html">&lt;prev</a> | 
+            <a href="diag_sequence.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="sub-id.html">next&gt;</a>
+          | <a href="table_orga.html">next&gt;</a>
 
           </span>
 
@@ -175,7 +181,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Volet Téléradiologie - version de développement local (v0.1.0) construite par les outils de publication FHIR (HL7® FHIR® Standard). Voir le <a href='https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html'>répertoire des versions publiées</a></p><!--EndReleaseHeader-->
-  <h2>Table OBSERVATION_TLR</h2>
+  <h2>Table TLR_OBSERVATION</h2>
   
 
 
@@ -216,7 +222,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <p>Localisation anatomique de l’examen d’imagerie</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -227,7 +233,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <p>Protocole d’imagerie associé à l’examen</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -238,7 +244,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <p>URL d’accès à la visionneuse d’imagerie DRIMbox</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -249,7 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <p>Informations relatives au produit administré lors de l’examen</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -260,7 +266,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <p>Informations relatives à l’appareil d’imagerie utilisé</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
   </tbody>
@@ -289,7 +295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="specifications_techniques.html">&lt;prev</a>
+                <a href="diag_sequence.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -297,7 +303,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="sub-id.html">next&gt;</a>
+                <a href="table_orga.html">next&gt;</a>
 
               </td>
             </tr>
@@ -307,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 16:39+0000">2026-01-23</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:37+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"7"}
-    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -99,9 +99,6 @@
     <a href="specifications_fonctionnelles.html">Volume 1 - Etude fonctionnelle</a>
   </li>
   <li>
-    <a href="norme_standard.html">Normes et Standards</a>
-  </li>
-  <li>
     <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
   </li>
   <li class="dropdown">
@@ -110,10 +107,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="norme_standard.html">Normes et Standards</a>
+      </li>
+      <li>
+        <a href="diag_sequence.html">Diagramme de séquence - Spcécification technique</a>
+      </li>
+      <li>
         <a href="sub-id.html">Utilisation du champ OBX-4 – Observation Sub-ID</a>
       </li>
       <li>
         <a href="table_obs.html">Table OBSERVATION_TLR</a>
+      </li>
+      <li>
+        <a href="table_orga.html">Table TLR_TYPE_ORGANISATION</a>
       </li>
       <li>
         <a href="exemples.html">Exemples de messages</a>
@@ -192,19 +198,92 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#nom-du-flux" id="markdown-toc-nom-du-flux">Nom du flux</a></li>
-  <li><a href="#construction-du-flux" id="markdown-toc-construction-du-flux">Construction du flux</a></li>
+  <li><a href="#flux-1---transmission-de-la-demande-dexamen-ormo01" id="markdown-toc-flux-1---transmission-de-la-demande-dexamen-ormo01">Flux 1 - Transmission de la demande d’examen (ORM^O01)</a></li>
+  <li><a href="#flux-2---annulation-de-la-demande-dexamen-ormo01" id="markdown-toc-flux-2---annulation-de-la-demande-dexamen-ormo01">Flux 2 - Annulation de la demande d’examen (ORM^O01)</a></li>
 </ul>
 
 </div>
+<h3 id="flux-1---transmission-de-la-demande-dexamen-ormo01">Flux 1 - Transmission de la demande d’examen (ORM^O01)</h3>
 
-<h3 id="nom-du-flux">Nom du flux</h3>
+<p>L’exemple ci-dessous illustre un message <strong>HL7 v2.5.1 ORM^O01</strong> conforme au volet Téléradiologie.<br />
+Il présente une demande d’examen d’imagerie transmise par le RIS vers le SI de téléradiologie, incluant les informations administratives et de prise en charge du patient, les éléments de prescription portés par les segments <strong>ORC</strong> et <strong>OBR</strong>, ainsi que des <strong>groupes OBSERVATION (OBX)</strong> spécifiques à la téléradiologie.</p>
 
-<p>Description du flux</p>
+<p>Les segments <strong>OBX</strong> illustrés dans cet exemple véhiculent notamment :</p>
+<ul>
+  <li>la <strong>localisation anatomique</strong> de l’examen ;</li>
+  <li>des <strong>données morphologiques du patient</strong> (taille, poids) ;</li>
+  <li>le <strong>statut de grossesse</strong>, lorsque cette information est connue et pertinente.</li>
+</ul>
 
-<h3 id="construction-du-flux">Construction du flux</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
+PID|||8981/11.B^^^ATHENEA^PI~279035121518989^^^ASIP-SANTE-INS-NIR&amp;1.2.250.1.213.1.4.10&amp;ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
+PV1||O|||||||||||||||||IdentifiantRendezVous|
+ORC|NW|IdentifiantDemandeExamen|||||||DateDemande|||PSResponsable|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||IdentifiantOrganisation
+OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||PSResponsable|||||||||||||||JustificationDemande
+OBX|1|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F
+OBX|2|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.2|24028007^côté droit^SNT||||||F
+OBX|2|NM|8302-2^Body height^LN||170|cm|||||F
+OBX|3|NM|29463-7^Body weight^LN||68|kg|||||F
+OBX|4|CE|82810-3^Pregnancy status^LN||N^^expandedYes-NoIndicator||||||F
+</code></pre></div></div>
 
-<p>Explication de comment doit être construit le flux</p>
+<h3 id="flux-2---annulation-de-la-demande-dexamen-ormo01">Flux 2 - Annulation de la demande d’examen (ORM^O01)</h3>
+
+<p>L’exemple ci-dessous illustre un message <strong>HL7 v2.5.1 ORM^O01</strong> conforme au volet Téléradiologie pour <strong>l’annulation d’une demande d’examen d’imagerie</strong>.</p>
+
+<p>Le message montre comment le <strong>RIS</strong> notifie l’annulation au <strong>SI de téléradiologie</strong>. Les segments <strong>ORC</strong> et <strong>OBR</strong> sont remplis de manière similaire au flux 1, avec les spécificités suivantes :</p>
+
+<ul>
+  <li><strong>ORC-1</strong> fixé à <code class="language-plaintext highlighter-rouge">CA</code> pour indiquer l’annulation de la demande ;</li>
+  <li>possibilité de véhiculer un <strong>motif d’annulation</strong> dans <strong>ORC-16</strong>, soit par code local (CE-1/CE-3) soit par texte libre (CE-2) ;</li>
+  <li>le <strong>groupe OBSERVATION (OBX)</strong> est optionnel et peut être omis.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
+PID|||8981/11.B^^^ATHENEA^PI~279035121518989^^^ASIP-SANTE-INS-NIR&amp;1.2.250.1.213.1.4.10&amp;ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
+PV1||O|||||||||||||||||IdentifiantRendezVous|
+ORC|CA|IdentifiantDemandeExamen|||||||DateDemande|||PSResponsable|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||IdentifiantOrganisation
+OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||PSResponsable
+</code></pre></div></div>
+
+<h4 id="flux-3---réponse-à-la-demande-dexamen-dimagerie-orur01">Flux 3 - Réponse à la demande d’examen d’imagerie (ORU^R01)</h4>
+
+<p>L’exemple ci-dessous illustre un message <strong>HL7 v2.5.1 ORU^R01</strong> conforme au volet Téléradiologie.</p>
+
+<p>Le message permet de véhiculer :</p>
+<ul>
+  <li>la <strong>décision du PS effecteur</strong> vis-à-vis de la demande (acceptation ou refus) via le champ <strong>ORC-1</strong> (<code class="language-plaintext highlighter-rouge">OK</code> pour acceptation, <code class="language-plaintext highlighter-rouge">OC</code> pour refus) ;</li>
+  <li>le ou les <strong>protocoles d’imagerie</strong> associés, lorsqu’il s’agit d’une acceptation, portés dans les segments <strong>OBX</strong>.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134418||ORU^R01^ORU_R01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
+PID|||8981/11.B^^^ATHENEA^PI~279035121518989^^^ASIP-SANTE-INS-NIR&amp;1.2.250.1.213.1.4.10&amp;ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
+PV1||O|||||||||||||||||IdentifiantRendezVous|
+ORC|OK|IdentifiantDemandeExamen|||||||DateDemande|||PSEffecteur||||MotifRefus|PLATEFORME_TELERADIOLOGIE^^TLR_TYPE_ORGANISATION||||IdentifiantOrganisation
+OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||PSEffecteur
+OBX||FT|PROTOCOLE_IMAGERIE^Protocole d'imagerie médicale^TLR_OBSERVATION||Paramètres d’acquisition : kV : 120…||||||F
+</code></pre></div></div>
+
+<h4 id="flux-4---transmission-dun-complément-dinformation-post-examen-omio23">Flux 4 - Transmission d’un complément d’information post-examen (OMI^O23)</h4>
+
+<p>L’exemple ci-dessous illustre un message <strong>HL7 v2.5.1 OMI^O23</strong> conforme au volet Téléradiologie pour la <strong>transmission d’un complément d’information post-examen</strong>.</p>
+
+<p>Ces informations sont transmises au <strong>SI de téléradiologie</strong> afin de permettre la <strong>rédaction du compte rendu</strong> par le téléradiologue et sa <strong>publication dans le DMP</strong> via le RIS.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
+PID|||8981/11.B^^^ATHENEA^PI~279035121518989^^^ASIP-SANTE-INS-NIR&amp;1.2.250.1.213.1.4.10&amp;ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
+PV1||O|||||||||||||||||IdentifiantRendezVous|
+ORC|NW|IdentifiantDemandeExamen|||SC||||DateDemande|
+TQ1||||||Durée de rétention des images|Date/heure de l'examen d'imagerie
+OBR||IdentifiantDemandeExamen||24590-2^résonance magnétique cerveau^LN||||||||||||PSResponsable|
+IPC|Accession Identifier|Accession number|Study Instance UID|Scheduled Procedure Step ID|MR^Résonance magnétique^DCM
+OBX|1|TX|URL_VIEWER_DRIMBOX^URL de la visionneuse DRIMbox^TLR_OBSERVATION||URL||||||F
+OBX|2|CE|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.1|TypeProduit^^ATC|||||F
+OBX|3|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.2|0123456789|||||F
+OBX|4|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.3|1|ml||||F
+OBX|5|TX|APPAREIL_IMAGERIE^Appareil d'imagerie utilisé lors de l'examen^TLR_OBSERVATION|1.1|1234567896363||||||F
+OBX|6|TX|APPAREIL_IMAGERIE^Appareil d'imagerie utilisé lors de l'examen^TLR_OBSERVATION|1.2|Modèle||||||F
+</code></pre></div></div>
 
 
 
@@ -246,7 +325,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 16:39+0000">2026-01-23</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:37+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

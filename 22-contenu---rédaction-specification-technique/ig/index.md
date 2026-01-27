@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0 |
-| Draft as of 2026-01-23 | *Computable Name*:CISIS_TLR_HL7_V2 |
+| Draft as of 2026-01-27 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
  [Add a brief description of this IG in English] 
@@ -58,7 +58,7 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2026-01-23T16:39:48+00:00",
+  "date" : "2026-01-27T10:37:51+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -853,11 +853,33 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "diag_sequence.html"
+            }
+          ],
+          "nameUrl" : "diag_sequence.html",
+          "title" : "Diagramme de séquence - Spcécification technique",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl" : "table_obs.html"
             }
           ],
           "nameUrl" : "table_obs.html",
-          "title" : "Table OBSERVATION_TLR",
+          "title" : "Table TLR_OBSERVATION",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "table_orga.html"
+            }
+          ],
+          "nameUrl" : "table_orga.html",
+          "title" : "Table TLR_TYPE_ORGANISATION",
           "generation" : "markdown"
         },
         {

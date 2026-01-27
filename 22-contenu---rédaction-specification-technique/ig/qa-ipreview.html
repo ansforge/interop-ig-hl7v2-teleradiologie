@@ -21,7 +21,7 @@ This fragment is available on       <a href="index.html">index.html</a>
     <ul>
       <li>
 
-          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-23 
+          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-27 
           
            
             Liens: Table des matières  |
@@ -80,7 +80,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Fri, Jan 23, 2026 16:39+0000">2026-01-23</span>
+. Generated           <span title="Tue, Jan 27, 2026 10:37+0000">2026-01-27</span>
 
                     <br/>
 
@@ -110,7 +110,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Fri, Jan 23, 2026 16:39+0000">2026-01-23</span>
+. Generated           <span title="Tue, Jan 27, 2026 10:37+0000">2026-01-27</span>
 
                     <br/>
 
@@ -657,13 +657,80 @@ Pour plus d’information sur la validation des instances de ressource contre un
           <a href="specifications_techniques.html">web</a>
         </td>
         <td>
-          <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">esante.gouv.fr</a>
+          <a href="https://www.ihe.net/ihe_domains/radiology/">www.ihe.net</a>
         </td>
         <td>
-Les données utiles pour publication sur le DMP et pour l’envoi par
-MSSanté de(s) document(s) sont stockées à la fois dans le segment PID du
-message HL7, dans le document CDA-R2 conforme au           <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">volet du CI_SIS Structuration minimale des documents de santé</a>
- et dans des segments OBX du message HL7 spécifiant les métadonnées complémentaires.
+Les échanges sont basés sur des messages HL7 v2 conformes à la version           <strong>2.5.1</strong>
+. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine           <a href="https://www.ihe.net/ihe_domains/radiology/">IHE Radiology</a>
+, et notamment le profil           <a href="https://wiki.ihe.net/index.php/Scheduled_Workflow.b">IHE Scheduled Workflow (SWF.b)</a>
+, afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a>
+ sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identification nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure</a>
+, publiée par Interop’santé.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://wiki.ihe.net/index.php/Scheduled_Workflow.b">wiki.ihe.net</a>
+        </td>
+        <td>
+Les échanges sont basés sur des messages HL7 v2 conformes à la version           <strong>2.5.1</strong>
+. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine           <a href="https://www.ihe.net/ihe_domains/radiology/">IHE Radiology</a>
+, et notamment le profil           <a href="https://wiki.ihe.net/index.php/Scheduled_Workflow.b">IHE Scheduled Workflow (SWF.b)</a>
+, afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a>
+ sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identification nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure</a>
+, publiée par Interop’santé.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">www.interopsante.org</a>
+        </td>
+        <td>
+Les échanges sont basés sur des messages HL7 v2 conformes à la version           <strong>2.5.1</strong>
+. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine           <a href="https://www.ihe.net/ihe_domains/radiology/">IHE Radiology</a>
+, et notamment le profil           <a href="https://wiki.ihe.net/index.php/Scheduled_Workflow.b">IHE Scheduled Workflow (SWF.b)</a>
+, afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a>
+ sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identification nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure</a>
+, publiée par Interop’santé.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">www.interopsante.org</a>
+        </td>
+        <td>
+Les échanges sont basés sur des messages HL7 v2 conformes à la version           <strong>2.5.1</strong>
+. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine           <a href="https://www.ihe.net/ihe_domains/radiology/">IHE Radiology</a>
+, et notamment le profil           <a href="https://wiki.ihe.net/index.php/Scheduled_Workflow.b">IHE Scheduled Workflow (SWF.b)</a>
+, afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a>
+ sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identification nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure</a>
+, publiée par Interop’santé.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/">interop.esante.gouv.fr</a>
+        </td>
+        <td>
+Il est précisé que les flux décrits dans la présente spécification portent principalement sur des           <strong>données structurées nécessaires à l’orchestration du workflow</strong>
+.          <br/>
+
+La transmission de la           <strong>demande d’examen formalisée sous forme de document clinique</strong>
+, ainsi que celle d’éventuels           <strong>documents cliniques complémentaires</strong>
+, n’est pas assurée par ces flux transactionnels et fait l’objet de flux documentaires distincts s’appuyant sur le           <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/">Volet de transmission d’un document CDA-R2 en HL7v2</a>
+.
         </td>
       </tr>
       <tr>
@@ -690,6 +757,35 @@ Ces deux segments doivent être renseignés conformément à la spécification �
 Ces deux segments doivent être renseignés conformément à la spécification «           <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a>
  publiée en 2024. Si l’INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS «           <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a>
  ».
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/publications">www.interopsante.org</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/publications">www.interopsante.org</a>
+        </td>
+        <td>
+Type d'identifiant (valeur issue de la           <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a>
+ présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") :           <span class="hl7-color">FINEJ</span>
+ (FINESS d'entité juridique) ou           <span class="hl7-color">FINEG</span>
+ (FINESS d'entité géographique) ou           <span class="hl7-color">IDNST</span>
+ ou           <span class="hl7-color">UF</span>
+ (UF),           <span class="hl7-color">SVR</span>
+ (service).
         </td>
       </tr>
       <tr>
@@ -1160,6 +1256,31 @@ Plus d’information sur la validation dans la documentation des guides d’impl
       </tr>
     </table>
     <h2>Internal Images</h2>
-    <table class="grid"></table>
+    <table class="grid">
+      <tr>
+        <td>
+DiagSequ12.png          <br/>
+          <img src="DiagSequ12.png" alt="DiagSequ12.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+Sequence3.png          <br/>
+          <img src="Sequence3.png" alt="Sequence3.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+Sequence4.png          <br/>
+          <img src="Sequence4.png" alt="Sequence4.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+tlr_diagram.png          <br/>
+          <img src="tlr_diagram.png" alt="tlr_diagram.png" width="600px" height="auto"/>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

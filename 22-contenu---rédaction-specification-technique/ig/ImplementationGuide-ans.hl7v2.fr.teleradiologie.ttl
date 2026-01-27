@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-23T16:39:48+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-27T10:37:51+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -1442,6 +1442,25 @@
            ] ;
            fhir:value [
              a fhir:Url ;
+             fhir:v "diag_sequence.html"^^xsd:anyURI ;
+             fhir:l fhir:diag_sequence.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "diag_sequence.html"^^xsd:anyURI ;
+           fhir:l fhir:diag_sequence.html
+         ] ;
+         fhir:title [ fhir:v "Diagramme de séquence - Spcécification technique" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
              fhir:v "table_obs.html"^^xsd:anyURI ;
              fhir:l fhir:table_obs.html
            ]
@@ -1451,7 +1470,26 @@
            fhir:v "table_obs.html"^^xsd:anyURI ;
            fhir:l fhir:table_obs.html
          ] ;
-         fhir:title [ fhir:v "Table OBSERVATION_TLR" ] ;
+         fhir:title [ fhir:v "Table TLR_OBSERVATION" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "table_orga.html"^^xsd:anyURI ;
+             fhir:l fhir:table_orga.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "table_orga.html"^^xsd:anyURI ;
+           fhir:l fhir:table_orga.html
+         ] ;
+         fhir:title [ fhir:v "Table TLR_TYPE_ORGANISATION" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

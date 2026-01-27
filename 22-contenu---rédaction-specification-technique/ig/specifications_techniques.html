@@ -99,9 +99,6 @@
     <a href="specifications_fonctionnelles.html">Volume 1 - Etude fonctionnelle</a>
   </li>
   <li>
-    <a href="norme_standard.html">Normes et Standards</a>
-  </li>
-  <li>
     <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
   </li>
   <li class="dropdown">
@@ -110,10 +107,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="norme_standard.html">Normes et Standards</a>
+      </li>
+      <li>
+        <a href="diag_sequence.html">Diagramme de séquence - Spcécification technique</a>
+      </li>
+      <li>
         <a href="sub-id.html">Utilisation du champ OBX-4 – Observation Sub-ID</a>
       </li>
       <li>
         <a href="table_obs.html">Table OBSERVATION_TLR</a>
+      </li>
+      <li>
+        <a href="table_orga.html">Table TLR_TYPE_ORGANISATION</a>
       </li>
       <li>
         <a href="exemples.html">Exemples de messages</a>
@@ -152,7 +158,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="table_obs.html">next&gt;</a>
+          | <a href="diag_sequence.html">next&gt;</a>
 
           </span>
 
@@ -193,6 +199,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#evènements-déclenchants" id="markdown-toc-evènements-déclenchants">Evènements déclenchants</a></li>
+  <li><a href="#interactions-entre-les-acteurs" id="markdown-toc-interactions-entre-les-acteurs">Interactions entre les acteurs</a></li>
   <li><a href="#profils-de-message" id="markdown-toc-profils-de-message">Profils de message</a></li>
   <li><a href="#contraintes-applicables-aux-profils-de-message" id="markdown-toc-contraintes-applicables-aux-profils-de-message">Contraintes applicables aux profils de message</a></li>
 </ul>
@@ -202,12 +210,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>La présente spécification technique définit les modalités d’échange des informations de téléradiologie au moyen du standard <strong>HL7 version 2.5.1</strong>. Elle a pour objectif de préciser les profils de messages, segments, champs, cardinalités et règles d’usage nécessaires à l’interopérabilité entre les systèmes d’information impliqués dans les processus de téléradiologie, particulèrement les RIS et les plateformes de téléradiologie.</p>
 
-<p>Cette spécification s’applique exclusivement aux flux identifiés dans la <a href="./specifications_fonctionnelles.html">Spécification Fonctionnelle des Echanges</a>. Elle ne constitue pas une implémentation exhaustive du standard HL7 v2, mais en restreint l’usage aux éléments nécessaires pour couvrir les cas d’usage fonctionnels définis.</p>
+<p>Cette spécification s’applique exclusivement aux flux identifiés dans le <a href="./specifications_fonctionnelles.html">Volume 1 - Etude fonctionnelle</a>.
+Le choix du standard est également le fruit d’une <a href="./norme_standard.html">étude dédiée à retrouver en annexe</a>.</p>
 
-<p>Les échanges sont basés sur des messages HL7 v2 conformes à la version <strong>2.5.1</strong>. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine <strong>IHE Radiology</strong>, et notamment le profil <strong>IHE Scheduled Workflow (SWF.b)</strong>, afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil <strong>IHE PAM-FR</strong> sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identification nationale de santé (INS).</p>
+<p>Les échanges sont basés sur des messages HL7 v2 conformes à la version <strong>2.5.1</strong>. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine <a href="https://www.ihe.net/ihe_domains/radiology/">IHE Radiology</a>, et notamment le profil <a href="https://wiki.ihe.net/index.php/Scheduled_Workflow.b">IHE Scheduled Workflow (SWF.b)</a>, afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a> sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identification nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure</a>, publiée par Interop’santé.</p>
 
 <p>Il est précisé que les flux décrits dans la présente spécification portent principalement sur des <strong>données structurées nécessaires à l’orchestration du workflow</strong>.<br/>
-La transmission de la <strong>demande d’examen formalisée sous forme de document clinique</strong>, ainsi que celle d’éventuels <strong>documents cliniques complémentaires</strong>, n’est pas assurée par ces flux transactionnels et fait l’objet de <strong>flux documentaires distincts</strong>, venant les compléter.</p>
+La transmission de la <strong>demande d’examen formalisée sous forme de document clinique</strong>, ainsi que celle d’éventuels <strong>documents cliniques complémentaires</strong>, n’est pas assurée par ces flux transactionnels et fait l’objet de flux documentaires distincts s’appuyant sur le <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/">Volet de transmission d’un document CDA-R2 en HL7v2</a>.</p>
 
 <p>Cette articulation permet de maintenir une séparation claire entre :</p>
 <ul>
@@ -216,6 +225,200 @@ La transmission de la <strong>demande d’examen formalisée sous forme de docum
 </ul>
 
 <p><br/></p>
+
+<h3 id="evènements-déclenchants">Evènements déclenchants</h3>
+
+<p>La présente partie présente, pour chaque flux métier du volet Téléradiologie, le <strong>message HL7 v2</strong> et l’<strong>événement HL7 v2 associé</strong> utilisés pour supporter l’échange.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>
+        <p>Flux métier</p>
+      </th>
+      <th>
+        <p>Structure de message HL7 v2</p>
+      </th>
+      <th>
+        <p>Événement HL7 v2</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Transmission de la demande d’examen d’imagerie</strong></p>
+      </td>
+      <td>
+        <p>ORM_O01</p>
+      </td>
+      <td>
+        <p>O01 – Order message (Order Control = NW)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Annulation de la demande d’examen d’imagerie (1)</strong></p>
+      </td>
+      <td>
+        <p>ORM_O01</p>
+      </td>
+      <td>
+        <p>O01 – Order message (Order Control = CA)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Réponse à la demande d’examen d’imagerie</strong></p>
+      </td>
+      <td>
+        <p>ORU_R01</p>
+      </td>
+      <td>
+        <p>R01 – Unsolicited transmission of observation (Order Control = OK ou OC)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Transmission d’un complément d’information post-acte</strong></p>
+      </td>
+      <td>
+        <p>OMI_O23</p>
+      </td>
+      <td>
+        <p>O23 – Imaging Order Message (Order Control = NW)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote class="stu-note">
+    <p>
+    <b>(1) :</b> Le **flux 2** est un flux **optionnel** dans le cadre du volet Téléradiologie. Son implémentation <strong>n’est pas obligatoire</strong> et peut être omise sans remettre en cause la conformité globale des échanges.
+    </p>
+</blockquote>
+
+<p><br/></p>
+
+<h3 id="interactions-entre-les-acteurs">Interactions entre les acteurs</h3>
+
+<p>La présente partie décrit les interactions entre les acteurs du volet Téléradiologie, au travers de diagrammes de séquence illustrant les échanges de messages HL7 v2 identifiés précédemment.</p>
+
+<p>Les interactions sont présentées flux par flux. Chaque diagramme s’appuie sur le <strong>profil de messages HL7 v2 retenus</strong>. Le <a href="./diag_sequence.html">diagramme de séquence complet est fourni en annexe</a>.</p>
+
+<h4 id="flux-1-et-2-transmissionannulation-dune-demande-dexamen-dimagerie">Flux 1 et 2 Transmission/Annulation d’une demande d’examen d’imagerie</h4>
+
+<p>Ce diagramme décrit les échanges techniques entre le RIS de la structure d’imagerie et le SI de téléradiologie pour la transmission et la gestion d’une demande d’examen d’imagerie.</p>
+
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="DiagSequ12.png" alt="Diagramme de séquence des flux 1 et 2" style="
+            max-width: 900px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         " title="Diagramme de séquence des flux 1 et 2"/>
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 1 – Diagramme de séquence des flux 1 et 2
+    </p>
+</div>
+
+<p>La demande d’examen est transmise du RIS vers le SI de téléradiologie au moyen d’un message <strong>HL7 v2 ORM^O01</strong>.</p>
+
+<p>Les options techniques suivantes sont représentées :</p>
+
+<ul>
+  <li>lorsque la demande d’examen est disponible sous forme de document structuré, le RIS peut transmettre ce document au SI de téléradiologie via le <strong>volet de transmission de documents CDA-R2 en HL7 v2</strong> ;</li>
+  <li>lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie en s’appuyant sur le <strong>même mécanisme de transmission CDA-R2 en HL7 v2</strong>.</li>
+</ul>
+
+<p>Enfin, le diagramme illustre la <strong>possibilité d’annulation de la demande d’examen</strong> par le RIS, notifiée au SI de téléradiologie au moyen d’un message <strong>HL7 v2 ORM^O01</strong>, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.</p>
+
+<h4 id="flux-3-réponse-à-la-demande-dexamen-dimagerie">Flux 3 Réponse à la demande d’examen d’imagerie</h4>
+
+<p>Ce diagramme décrit les échanges techniques consécutifs à la consultation et à l’évaluation d’une demande d’examen par le professionel de santé effecteur au sein du SI de téléradiologie.</p>
+
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Sequence3.png" alt="Diagramme de séquence du flux 3" style="
+            max-width: 900px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         " title="Diagramme de séquence du flux 3"/>
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 2 – Diagramme de séquence du flux 3
+    </p>
+</div>
+
+<p>Après réception de la demande, le professionel de santé effecteur procède à son <strong>évaluation</strong> (acceptation ou refus).<br/>
+Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message <strong>HL7 v2 ORU^R01</strong> par le SI de téléradiologie.</p>
+
+<p>Les cas suivants sont couverts :</p>
+
+<ul>
+  <li>
+    <p><strong>Acceptation de la demande</strong> :<br/>
+le message <strong>ORU^R01</strong> contient un ou plusieurs <strong>protocoles d’imagerie</strong>, véhiculés dans les segments <strong>OBX</strong> ;<br/>
+le champ <strong>ORC-1 (Order Control)</strong> est valorisé à <code class="language-plaintext highlighter-rouge">OK</code>.</p>
+  </li>
+  <li>
+    <p><strong>Refus de la demande</strong> :<br/>
+le message <strong>ORU^R01</strong> est transmis <strong>sans protocole d’imagerie</strong> ;<br/>
+le champ <strong>ORC-1 (Order Control)</strong> est valorisé à <code class="language-plaintext highlighter-rouge">OC</code>.</p>
+  </li>
+</ul>
+
+<h4 id="flux-4-transmission-dun-complément-dinformation-post-examen">Flux 4 Transmission d’un complément d’information post-examen</h4>
+
+<p>Ce diagramme décrit les échanges techniques intervenant après l’acceptation de la demande d’examen et la transmission du protocole d’imagerie.</p>
+
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Sequence4.png" alt="Diagramme de séquence du flux 4" style="
+            max-width: 1000px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         " title="Diagramme de séquence du flux 4"/>
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 3 – Diagramme de séquence du flux 4
+    </p>
+</div>
+
+<p>À l’issue de cette acceptation, l’examen d’imagerie est réalisé au sein de la structure d’imagerie.<br/>
+Une fois l’examen effectué, le RIS transmet au SI de téléradiologie un ensemble de <strong>compléments d’information post-examen</strong>, destinés à permettre :</p>
+
+<ul>
+  <li>l’<strong>accès aux images</strong> produites ;</li>
+  <li>la <strong>rédaction du compte rendu</strong> par le professionnel de santé effecteur.</li>
+</ul>
+
+<p>Ces informations sont transmises via un message <strong>OMI^O23</strong> conforme au profil IHE SWF.</p>
+
+<p>Après rédaction du <strong>compte rendu d’examen d’imagerie</strong>, celui-ci est transmis par le SI de téléradiologie vers le RIS, afin de permettre sa <strong>publication dans le DMP du patient</strong>.</p>
 
 <p><br/></p>
 
@@ -232,29 +435,690 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
   <li>le rôle fonctionnel de chaque segment dans le cadre du flux considéré.</li>
 </ul>
 
-<p>Cette description vise à fournir une <strong>vision structurante des messages échangés</strong>, indépendamment des contraintes fines appliquées à chaque champ ou composant.</p>
+<p>Des exemples représentatifs de chacun des profils de message conformes au volet Téléradiologie sont fournis <a href="./exemples.html">en annexe</a>.</p>
+
 <h4 id="description-des-messages-hl7-v2">Description des messages HL7 v2</h4>
 
-<p>La description des messages ORU et MDM est basée sur le contenu du
-document et les métadonnées complémentaires à véhiculer dans le cadre du
-partage et de l’échange.</p>
+<p>Le développeur doit valoriser tous les segments et champs obligatoiresdes messages HL7v2 afin de répondre au standard d’interopérabilité des messages.</p>
 
-<p>Les données utiles pour publication sur le DMP et pour l’envoi par
-MSSanté de(s) document(s) sont stockées à la fois dans le segment PID du
-message HL7, dans le document CDA-R2 conforme au <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">volet du CI_SIS Structuration minimale des documents de santé</a> et dans des segments OBX du message HL7 spécifiant les métadonnées complémentaires.</p>
+<p>Ci-dessous sont représentées les structures de messages HL7v2 proposées pour la transmission de document(s) CDA-R2 en HL7v2.</p>
 
-<p>Le développeur doit valoriser tous les segments et champs obligatoires
-des messages HL7v2 afin de répondre au standard d’interopérabilité des
-messages.</p>
+<h5 id="flux-1---message-ormo01orm_o01-en-hl7-v251">Flux 1 - Message ORM^O01^ORM_O01 en HL7 v2.5.1</h5>
 
-<p>Ci-dessous sont représentées les structures de messages HL7v2 proposées
-pour la transmission de document(s) CDA-R2 en HL7v2.</p>
+<p>Le flux 1 repose sur l’échange d’un message <strong>ORM^O01</strong> conforme à la norme <strong>HL7 v2.5.1</strong>, utilisé pour la <strong>transmission d’une demande d’examen d’imagerie</strong> dans le cadre du volet Téléradiologie.</p>
 
-<h5 id="message-ormo01orm_o01-en-hl7-v251">Message ORM^O01^ORM_O01 en HL7 v2.5.1</h5>
+<p>La structure du message est <strong>conforme au profil IHE RAD – Scheduled Workflow (SWF)</strong>. Une <strong>surcouche de contraintes spécifiques Téléradiologie</strong> vient compléter ce cadre afin de couvrir des besoins fonctionnels non pris en charge nativement par IHE SWF.</p>
 
-<h6 id="profil-du-message-oru_r01">Profil du message ORU_R01</h6>
+<h6 id="description-technique">Description technique</h6>
 
-<p>Le profil du message ORU_R01 est le suivant :</p>
+<p>Le message est composé des segments principaux suivants :</p>
+
+<ul>
+  <li><strong>MSH</strong> : en-tête du message et informations de routage ;</li>
+  <li><strong>PID / PV1</strong> : identification du patient et du contexte de prise en charge ;</li>
+  <li><strong>ORC</strong> : informations de commande de l’examen, conformément à IHE SWF ;</li>
+  <li><strong>OBR</strong> : prescription de l’examen d’imagerie (modalité, indications, antécédents), conformément à IHE SWF ;</li>
+  <li><strong>Groupes OBSERVATION (OBX)</strong> : portage d’informations complémentaires spécifiques au volet Téléradiologie, non contraintes par IHE SWF.</li>
+</ul>
+
+<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+  <tr>
+    <th>
+      <p>Segment</p>
+    </th>
+    <th>
+      <p>Meaning</p>
+    </th>
+    <th>
+      <p>Usage</p>
+    </th>
+    <th>
+      <p>Card.</p>
+    </th>
+    <th>
+      <p>&sect; HL7</p>
+    </th>
+  </tr>
+    <tr>
+      <td>
+        <p>MSH</p>
+      </td>
+      <td>
+        <p>Message Header</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> PID</p>
+      </td>
+      <td>
+        <p>Patient Identification</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>3</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT_VISIT begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  PV1</p>
+      </td>
+      <td>
+        <p>Patient Visit</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>3</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT_VISIT end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>{</p>
+      </td>
+      <td>
+        <p>--- ORDER begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..*]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> ORC</p>
+      </td>
+      <td>
+        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>{</p>
+      </td>
+      <td>
+        <p>--- ORDER_DETAIL begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> OBR</p>
+      </td>
+      <td>
+        <p>Observation Request</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> [{NTE}]</p>
+      </td>
+      <td>
+        <p>Comments on the order</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> {</p>
+      </td>
+      <td>
+        <p>--- OBSERVATION begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..*]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  OBX</p>
+      </td>
+      <td>
+        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>7</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  [{NTE}]</p>
+      </td>
+      <td>
+        <p>Comment of the result</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> }</p>
+      </td>
+      <td>
+        <p>--- OBSERVATION end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="description-fonctionnelle">Description fonctionnelle</h6>
+
+<p>Le message <strong>ORM^O01</strong> du flux 1 permet au système demandeur de transmettre au système réalisateur l’ensemble des informations nécessaires à la <strong>prise en charge et à la planification d’un examen d’imagerie dans un contexte de Téléradiologie</strong>.</p>
+
+<p>Outre les éléments standards de commande et de prescription portés par les segments <strong>ORC</strong> et <strong>OBR</strong>, ce flux s’appuie sur des <strong>groupes OBSERVATION (OBX)</strong> afin de véhiculer des informations fonctionnelles complémentaires indispensables à la bonne réalisation de l’examen, telles que :</p>
+<ul>
+  <li>la <strong>localisation anatomique</strong> et, le cas échéant, une <strong>précision topographique</strong></li>
+  <li>des <strong>données patient pertinentes</strong> pour l’examen (taille, poids, statut de grossesse)</li>
+</ul>
+
+<p>Ces groupes OBSERVATION sont <strong>contraints par la présente spécification</strong>, tant sur le plan sémantique que structurel (identification des OBX, cardinalités, types de données), afin de garantir une interprétation homogène par l’ensemble des acteurs.</p>
+
+<p>Le diagramme ci-dessous illustre le <strong>fonctionnement global du message</strong>, les interactions entre les segments principaux ainsi que le rôle des <strong>OBX spécifiques Téléradiologie</strong> dans le cadre du flux 1.</p>
+
+<p><br/></p>
+
+<h5 id="flux-2---message-ormo01orm_o01-en-hl7-v251">Flux 2 - Message ORM^O01^ORM_O01 en HL7 v2.5.1</h5>
+
+<p>Le flux 2 repose sur l’échange d’un message <strong>ORM^O01</strong> conforme à la norme <strong>HL7 v2.5.1</strong>, utilisé pour <strong>l’ annulation de demande d’examen d’imagerie</strong> dans le cadre du volet Téléradiologie.</p>
+
+<p>Ce flux est <strong>structurellement très proche du flux 1</strong> et s’appuie lui aussi sur le <strong>profil IHE RAD – Scheduled Workflow (SWF)</strong>, notamment pour les segments <strong>ORC</strong> et <strong>OBR</strong>, qui conservent les mêmes principes de structuration et de valorisation que pour la demande initiale.</p>
+
+<p>La principale différence avec le flux 1 concerne l’utilisation du <strong>groupe OBSERVATION (OBX)</strong> qui est optionnel dans le cadre de ce flux.</p>
+
+<h6 id="description-technique-1">Description technique</h6>
+
+<p>Le message est composé des segments principaux suivants :</p>
+
+<ul>
+  <li><strong>MSH</strong> : en-tête du message et informations de routage</li>
+  <li><strong>PID / PV1</strong> : identification du patient et du contexte de prise en charge</li>
+  <li><strong>ORC</strong> : informations de demande, avec une action positionnée à l’annulation</li>
+  <li><strong>OBR</strong> : rappel des éléments de prescription nécessaires à l’identification de la demande annulée</li>
+</ul>
+
+<table class="table-hl7v2">
+  <tbody>
+  <tr>
+    <th>
+      <p>Segment</p>
+    </th>
+    <th>
+      <p>Meaning</p>
+    </th>
+    <th>
+      <p>Usage</p>
+    </th>
+    <th>
+      <p>Card.</p>
+    </th>
+    <th>
+      <p>&sect; HL7</p>
+    </th>
+  </tr>
+    <tr>
+      <td>
+        <p>MSH</p>
+      </td>
+      <td>
+        <p>Message Header</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> PID</p>
+      </td>
+      <td>
+        <p>Patient Identification</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>3</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT_VISIT begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  PV1</p>
+      </td>
+      <td>
+        <p>Patient Visit</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>3</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT_VISIT end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>{</p>
+      </td>
+      <td>
+        <p>--- ORDER begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..*]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> ORC</p>
+      </td>
+      <td>
+        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>{</p>
+      </td>
+      <td>
+        <p>--- ORDER_DETAIL begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> OBR</p>
+      </td>
+      <td>
+        <p>Observation Request</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> [{NTE}]</p>
+      </td>
+      <td>
+        <p>Comments on the order</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> {</p>
+      </td>
+      <td>
+        <p>--- OBSERVATION begin</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  OBX</p>
+      </td>
+      <td>
+        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>7</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  [{NTE}]</p>
+      </td>
+      <td>
+        <p>Comment of the result</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> }</p>
+      </td>
+      <td>
+        <p>--- OBSERVATION end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="description-fonctionnelle-1">Description fonctionnelle</h6>
+
+<p>Le message <strong>ORM^O01</strong> du flux 2 permet au système demandeur de notifier au système effecteur <strong>l’annulation d’une demande d’examen d’imagerie précédemment transmise</strong>.</p>
+
+<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil <strong>IHE SWF</strong>.</p>
+
+<p>Le diagramme ci-dessous illustre le <strong>fonctionnement du message d’annulation</strong> :</p>
+
+<p><br/></p>
+
+<h5 id="flux-3---message-orur01oru_r01-en-hl7-v251">Flux 3 - Message ORU^R01^ORU_R01 en HL7 v2.5.1</h5>
+
+<p>Le flux 3 repose sur l’échange d’un message <strong>ORU^R01</strong> conforme à la norme <strong>HL7 v2.5.1</strong>.<br/>
+Il est utilisé pour la <strong>réponse à une demande d’examen d’imagerie</strong>, en particulier pour notifier la <strong>décision du médecin effecteur</strong>.</p>
+
+<p>Contrairement aux flux 1, 2 et 4, ce flux <strong>ne s’appuie sur aucun profil IHE</strong> existant.<br/>
+En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale structurée en réponse à une demande d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.<br/>
+Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complété par une <strong>surcouche de contraintes spécifiques au volet Téléradiologie</strong>.</p>
+
+<h6 id="description-technique-2">Description technique</h6>
+
+<p>Le message est structuré autour des segments suivants :</p>
+
+<ul>
+  <li><strong>MSH</strong> : en-tête du message et informations de routage</li>
+  <li><strong>PID / PV1</strong> : identification du patient et du contexte de prise en charge</li>
+  <li><strong>ORC</strong> : décision du médecin effecteur sur la demande d’examen (validation ou refus), avec la possibilité de préciser un <strong>motif de refus</strong> le cas échéant</li>
+  <li><strong>OBR</strong> : rappel de la demande d’examen concernée</li>
+  <li><strong>Groupes OBSERVATION (OBX)</strong> : transmission des informations spécifiques au volet Téléradiologie, notamment le <strong>protocole d’imagerie</strong>, exprimé soit en clair, soit sous forme de contenu encapsulé.</li>
+</ul>
+
+<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments, ainsi que leur caractère requis, optionnel ou répétable.</p>
+
 <table class="table-hl7v2">
   <tbody>
   <tr>
@@ -350,10 +1214,10 @@ pour la transmission de document(s) CDA-R2 en HL7v2.</p>
         <p>--- PATIENT_VISIT begin</p>
       </td>
       <td>
-        <p>RE</p>
+        <p>R</p>
       </td>
       <td>
-        <p>[0..1]</p>
+        <p>[1..1]</p>
       </td>
       <td>
         <p> </p>
@@ -432,7 +1296,7 @@ pour la transmission de document(s) CDA-R2 en HL7v2.</p>
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : demande de traitement sur un document</p>
+        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
       </td>
       <td>
         <p>R</p>
@@ -551,7 +1415,7 @@ pour la transmission de document(s) CDA-R2 en HL7v2.</p>
         <p>  OBX</p>
       </td>
       <td>
-        <p>Document et expression des métadonnées de document relatives au masquage du document aux PS et de visibilité au patient.</p>
+        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
       </td>
       <td>
         <p>R</p>
@@ -561,23 +1425,6 @@ pour la transmission de document(s) CDA-R2 en HL7v2.</p>
       </td>
       <td>
         <p>7</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>  [{PRT}] (note 1)</p>
-      </td>
-      <td>
-        <p>Participation : Expéditeur du document, destinataire(s) MSSanté, adresse mail sur laquelle le destinataire peut répondre. Segment PRT pré-adopté de la version 2.9</p>
-      </td>
-      <td>
-        <p>R/C</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p>7 (v2.9)</p>
       </td>
     </tr>
     <tr>
@@ -616,31 +1463,424 @@ pour la transmission de document(s) CDA-R2 en HL7v2.</p>
     </tr>
   </tbody>
 </table>
-<p><strong>Note (1) :</strong> <em>le segment PRT est utilisé uniquement avec l’OBX qui porte la
-demande de traitement sur le document. Dans ce cas il est requis et
-conditionnel (sa valeur dépend de la demande exprimée : envoi de la
-demande de traitement sur le DMP et/ou envoi vers un ou des
-destinataire(s) via MSSanté).</em></p>
 
-<p>Le message ORU peut transmettre une ou deux instances de documents
-CDA-R2. Le CREATEUR peut ainsi transmettre un document au format CDA-R2
-niveau 1 et un deuxième document de contenu clinique identique au format
-CDA-R2 niveau 3. Chaque document possède son propre identifiant
-(fonctionnalité non applicable au SEGUR vague 2).</p>
+<h6 id="description-fonctionnelle-2">Description fonctionnelle</h6>
 
-<p>Dans le cadre de ce volet, spécifique à un échange entre un système
-(CREATEUR) et une PFI (GESTIONNAIRE), l’occurrence ORDER_OBSERVATION est
-utilisée pour transmettre une demande de traitement sur le(s)
-document(s) : transmission initiale/remplacement/suppression de
-document(s). Seuls les segments ORC, OBR et le groupe de segments
-OBSERVATION de l’occurrence ORDER_OBSERVATION sont à renseigner.</p>
+<p>Le message <strong>ORU^R01</strong> du flux 3 permet au système réalisateur de transmettre au système demandeur la <strong>réponse à la demande d’examen d’imagerie</strong>.</p>
 
-<p><a name="l1199">​</a>Les contraintes apportées par ce volet sur les données des différents
-segments du message ORU sont décrites à la <a href="volume2.html#contraintes-appliquées-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet">section dédiée</a>.</p>
+<p>Le segment <strong>ORC</strong> porte la <strong>décision du médecin effecteur</strong>, exprimée de manière structurée :</p>
+<ul>
+  <li>validation de la demande d’examen ;</li>
+  <li>ou refus de la demande, accompagné le cas échéant d’un <strong>motif de refus</strong> optionnel.</li>
+</ul>
 
-<h6 id="description-fonctionnelle-du-message-oru">Description fonctionnelle du message ORU</h6>
+<p>Le segment <strong>OBR</strong> rappel l’identification de la demande.</p>
 
-<div style="text-align: center;" class="figure"><a name="l1208">​</a>
+<p>Le <strong>groupe OBSERVATION (OBX)</strong> est <strong>requis dans ce flux</strong> et permet de véhiculer le <strong>protocole d’imagerie</strong>, selon l’une des modalités suivantes :</p>
+
+<ul>
+  <li>protocole exprimé en clair dans le message</li>
+  <li>protocole encapsulé sous forme de contenu binaire</li>
+</ul>
+
+<p>Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la surcouche Téléradiologie, notamment via l’utilisation de codes locaux dans <strong>OBX-3</strong>.</p>
+
+<p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 3</strong> :</p>
+
+<p><br/></p>
+
+<h5 id="flux-4---message-omio23omi_023-en-hl7-v251">Flux 4 - Message OMI^O23^OMI_023 en HL7 v2.5.1</h5>
+
+<p>Le flux 4 repose sur l’échange d’un message <strong>OMI^O23</strong> conforme à la norme <strong>HL7 v2.5.1</strong>.<br/>
+Il est utilisé pour la <strong>transmission d’informations complémentaires post-acte</strong> à la suite de la réalisation d’un examen d’imagerie dans le cadre du volet Téléradiologie.</p>
+
+<p>Ce flux s’appuie sur les principes du <strong>profil IHE RAD – Scheduled Workflow (SWF)</strong>, dans la mesure où il s’inscrit dans la continuité du cycle de vie de la demande d’examen d’imagerie et de sa réalisation.<br/>
+Les segments structurants du message, notamment <strong>ORC</strong> et <strong>OBR</strong>, sont ainsi valorisés conformément aux règles définies par IHE SWF, complétées par une <strong>surcouche de contraintes spécifiques au volet Téléradiologie</strong>.</p>
+
+<p>Le message <strong>OMI^O23</strong> permet de transmettre des informations qui ne sont pas nécessairement disponibles au moment de la prescription ou de la réponse à la demande, mais qui sont connues <strong>après la réalisation effective de l’examen</strong>.</p>
+
+<h6 id="description-technique-3">Description technique</h6>
+
+<p>Le message est structuré autour des segments suivants :</p>
+
+<ul>
+  <li><strong>MSH</strong> : en-tête du message et informations de routage</li>
+  <li><strong>PID / PV1</strong> : identification du patient et du contexte de prise en charge</li>
+  <li><strong>ORC</strong> : informations de demande initiale</li>
+  <li><strong>OBR</strong> : informations relatives à l’examen réalisé</li>
+  <li><strong>TQ1</strong> : informations temporelles, notamment la date de réalisation de l’examen et la durée de rétention des images</li>
+  <li><strong>IPC</strong> : informations relatives à l’examen d’imagerie et a la modalité</li>
+  <li><strong>Groupes OBSERVATION (OBX)</strong> : transmission des compléments d’information post-acte spécifiques au volet Téléradiologie</li>
+</ul>
+
+<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+  <tr>
+    <th>
+      <p>Segment</p>
+    </th>
+    <th>
+      <p>Meaning</p>
+    </th>
+    <th>
+      <p>Usage</p>
+    </th>
+    <th>
+      <p>Card.</p>
+    </th>
+    <th>
+      <p>&sect; HL7</p>
+    </th>
+  </tr>
+    <tr>
+      <td>
+        <p>MSH</p>
+      </td>
+      <td>
+        <p>Message Header</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> PID</p>
+      </td>
+      <td>
+        <p>Patient Identification</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>3</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT_VISIT begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  PV1</p>
+      </td>
+      <td>
+        <p>Patient Visit</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>3</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT_VISIT end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p>--- PATIENT end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>{</p>
+      </td>
+      <td>
+        <p>--- ORDER begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..*]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> ORC</p>
+      </td>
+      <td>
+        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> OBR</p>
+      </td>
+      <td>
+        <p>Observation Request</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> [{NTE}]</p>
+      </td>
+      <td>
+        <p>Comments on the order</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>[{</p>
+      </td>
+      <td>
+        <p>--- TIMING begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..*]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> TQ1</p>
+      </td>
+      <td>
+        <p>Timing Quantity</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>}]</p>
+      </td>
+      <td>
+        <p>--- TIMING end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> {</p>
+      </td>
+      <td>
+        <p>--- OBSERVATION begin</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..*]</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  OBX</p>
+      </td>
+      <td>
+        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..1]</p>
+      </td>
+      <td>
+        <p>7</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  [{NTE}]</p>
+      </td>
+      <td>
+        <p>Comment of the result</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p> }</p>
+      </td>
+      <td>
+        <p>--- OBSERVATION end</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>  IPC</p>
+      </td>
+      <td>
+        <p>Imaging Procedure Control Segment</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+      <td>
+        <p>[1..*]</p>
+      </td>
+      <td>
+        <p>4</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="description-fonctionnelle-3">Description fonctionnelle</h6>
+
+<p>Le message <strong>OMI^O23</strong> du flux 4 permet au système réalisateur de transmettre au système demandeur des <strong>compléments d’information post-acte</strong> relatifs à un examen d’imagerie déjà réalisé.</p>
+
+<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent le <strong>rattachement</strong> de ces informations à la demande d’examen initiale, conformément aux règles du profil <strong>IHE SWF</strong> et aux contraintes spécifiques définies par le volet Téléradiologie.</p>
+
+<p>Les <strong>groupes OBSERVATION (OBX)</strong> jouent un rôle central dans ce flux.<br/>
+Ils permettent notamment de véhiculer :</p>
+
+<ul>
+  <li>l’<strong>URL de la visionneuse DRIMbox</strong> donnant accès aux images ;</li>
+  <li>les informations relatives aux <strong>produits administrés</strong> (type, numéro de lot, quantité) ;</li>
+  <li>les informations sur l’<strong>appareil d’imagerie utilisé</strong> ;</li>
+  <li>la <strong>localisation anatomique</strong> et les éventuelles précisions topographiques associées.</li>
+</ul>
+
+<p>L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la surcouche Téléradiologie.</p>
+
+<p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 4</strong> :</p>
+
+<div style="text-align: center;" class="figure"><a name="l3838">​</a>
     <img src="fig17.png" alt="Figure 17" style="width:80%;" title="Figure 17 : Structure fonctionnelle du message ORU_R01"/>
     <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
 </div>
@@ -666,7 +1906,9 @@ section dédiée du document CDA Niv3).</p>
   </li>
 </ul>
 
-<p><a name="l1238">​</a>Les groupes de segments OBSERVATION suivants (répétables) véhiculent les métadonnées spécifiques à la publication sur le DMP et/ou à l’envoi par la MSSanté. Ces métadonnées sont communes aux deux formats du document. Ces métadonnées sont décrites dans la <a href="volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet">section dédiée</a>.</p>
+<p><a name="l3868">​</a>Les groupes de segments OBSERVATION suivants (répétables) véhiculent les métadonnées spécifiques à la publication sur le DMP et/ou à l’envoi par la MSSanté. Ces métadonnées sont communes aux deux formats du document. Ces métadonnées sont décrites dans la <a href="volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet">section dédiée</a>.</p>
+
+<p><br/></p>
 
 <h4 id="réponses-et-acquittements">Réponses et acquittements</h4>
 
@@ -1089,6 +2331,8 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 
 <p><em>Note 2</em> : <em>Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.</em></p>
 
+<p><br/></p>
+
 <h4 id="contraintes-spécifiques-au-volet-téléradiologie">Contraintes spécifiques au volet Téléradiologie</h4>
 
 <p>Un second niveau de contraintes est défini <strong>spécifiquement pour chaque flux</strong>, en fonction du type de message et du rôle fonctionnel attendu.<br/>
@@ -1102,14 +2346,13 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
 </ul>
 
 <p>Pour chaque flux, les contraintes précisent :</p>
+
 <ul>
   <li>les <strong>segments obligatoires et optionnels</strong> ;</li>
   <li>les <strong>champs requis, conditionnels ou interdits</strong> ;</li>
   <li>les <strong>règles de cardinalité, de codage et de valeurs attendues</strong> ;</li>
   <li>les éventuelles <strong>références aux profils IHE ou spécifications nationales</strong> applicables.</li>
 </ul>
-
-<p><br/></p>
 
 <h5 id="flux-1---transmission-de-la-demande-dexamen-dimagerie">Flux 1 - Transmission de la demande d’examen d’imagerie</h5>
 
@@ -1123,8 +2366,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
 
 <h6 id="segment-orc-common-order">Segment ORC (Common Order)</h6>
 
-<p>Le segment <strong>ORC</strong> est utilisé pour véhiculer les informations relatives à la <strong>demande d’examen d’imagerie</strong>.
-Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+<p>Le segment <strong>ORC</strong> est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.</p>
 
@@ -1165,7 +2407,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>Order control</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">NW</span> (New order/service)</p>
+        <p>Valeur fixée à « <span class="hl7-color">NW</span> » (New order/service)</p>
       </td>
     </tr>
     <tr>
@@ -1233,23 +2475,104 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Informations relatives à la structure d'imagerie d'accueil du patient</p>
+        <p>Qualifie le type d'organisation  (2)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">STRUCTURE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">TLR_TYPE_ORGANISATION</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>ORC-21</p>
+      </td>
+      <td>
+        <p>Ordering Facility Name</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.1</p>
+      </td>
+      <td>
+        <p>OrganizationName</p>
+      </td>
+      <td>
+        <p>Nom de l'organisation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.6</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
+        <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.7</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") : <span class="hl7-color">FINEJ</span> (FINESS d'entité juridique) ou <span class="hl7-color">FINEG</span> (FINESS d'entité géographique) ou <span class="hl7-color">IDNST</span> ou <span class="hl7-color">UF</span> (UF), <span class="hl7-color">SVR</span> (service).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.10</p>
+      </td>
+      <td>
+        <p>Organization number</p>
+      </td>
+      <td>
+        <p>Identifiant de l'organisation</p>
       </td>
     </tr>
   </tbody>
 </table>
 
+<blockquote class="stu-note">
+    <p>
+    <b>(2) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
+    Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une <a href="./table_orga.html">table de valeurs locale documentée</a>.
+
+    L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS.
+    Ce découplage permet de respecter les exigences IHE tout en garantissant une identification robuste.
+    </p>
+</blockquote>
+
 <h5 id="segment-obr-observation-request">Segment OBR (Observation Request)</h5>
 
-<p>Le segment <strong>OBR</strong> est utilisé pour véhiculer des informations relatives à la <strong>demande d’examen d’imagerie</strong>.<br/>
-Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
-
-<p>Ce segment permet notamment de préciser :</p>
-<ul>
-  <li>la <strong>modalité d’imagerie demandée</strong> (champ OBR-4),</li>
-  <li>les <strong>antécédents pertinents du patient pour l’examen</strong> (champ OBR-13),</li>
-  <li>ainsi que les <strong>références à la demande</strong> d’origine, par répétition des informations portées dans le segment ORC, notamment au niveau des champs <strong>OBR-2</strong> et <strong>OBR-16</strong>.</li>
-</ul>
+<p>Le segment <strong>OBR</strong> est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <p>Les champs présentés dans le tableau ci-après sont <strong>requis</strong> ou <strong>requis si connus</strong>, selon leur pertinence dans le cadre du workflow de téléradiologie.</p>
 
@@ -1311,7 +2634,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       <td>
         <p>Code de la modalité d'imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
@@ -1365,13 +2688,13 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>Reason for Study</p>
       </td>
       <td>
-        <p>JustificationDemande</p>
+        <p>Justification de la demande d'examen</p>
+        <p>Lorsque la justification peut être exprimée à l’aide d’un code, celui-ci doit être renseigné dans CE-1, avec le système de codage associé précisé en CE-3.</p>
+        <p>À défaut de codage disponible, la justification peut être transmise sous forme de texte libre dans CE-2 – Text.</p>
       </td>
     </tr>
   </tbody>
 </table>
-
-<p><br/></p>
 
 <h5 id="groupes-observation---localisation-anatomique">Groupes OBSERVATION - Localisation anatomique</h5>
 
@@ -1379,7 +2702,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 Ces informations permettent de préciser la zone anatomique à explorer et, le cas échéant, d’apporter un niveau de détail complémentaire facilitant l’interprétation et la réalisation de l’examen.</p>
 
 <p>La localisation anatomique est portée par un <strong>premier segment OBX obligatoire</strong>, pouvant être complété par un <strong>second segment OBX optionnel</strong> destiné à préciser la topographie de manière plus fine.
-Les segments OBX portant sur la localisation anatomique sont identifiés par un code local “LOCALISATION_ANATOMIQUE” dans <strong>OBX-3</strong>, documenté en annexe. Ces segments sont différenciés à l’aide du champ <strong>OBX-4 – Observation Sub-ID</strong>.</p>
+Les segments OBX portant sur la localisation anatomique sont identifiés par un code local “LOCALISATION_ANATOMIQUE” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>. Ces segments sont différenciés à l’aide du champ <strong>OBX-4 – Observation Sub-ID</strong>.</p>
 
 <h6 id="groupe-observation---localisation-anatomique-principale">Groupe OBSERVATION - Localisation anatomique principale</h6>
 
@@ -1477,7 +2800,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color"><span class="hl7-color">TLRMETADATA</span></span></p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBSERVATION</span></span></p>
       </td>
     </tr>
     <tr>
@@ -1488,7 +2811,8 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><a name="l2980">​</a><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.1</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -1521,7 +2845,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Name Of Coding System</p>
       </td>
       <td>
-        <p><span class="hl7-color">DCM</span></p>
+        <p><span class="hl7-color">SNT</span></p>
       </td>
     </tr>
     <tr>
@@ -1590,7 +2914,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Value Type</p>
       </td>
       <td>
-        <p><span class="hl7-color">CE</span>(Coded Entry)</p>
+        <p><span class="hl7-color">CE</span> (Coded Entry)</p>
       </td>
     </tr>
     <tr>
@@ -1634,7 +2958,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color"><span class="hl7-color">TLRMETADATA</span></span></p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBSERVATION</span></span></p>
       </td>
     </tr>
     <tr>
@@ -1645,7 +2969,8 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><a name="l3295">​</a><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.2</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -1694,8 +3019,6 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
   </tbody>
 </table>
-
-<p><br/></p>
 
 <h5 id="groupe-observation---taille-corporel">Groupe OBSERVATION - Taille corporel</h5>
 
@@ -1832,8 +3155,6 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
   </tbody>
 </table>
 
-<p><br/></p>
-
 <h5 id="groupe-observation---poids-corporel">Groupe OBSERVATION - Poids corporel</h5>
 
 <p>Ce groupe <strong>OBSERVATION</strong> optionnel est utilisé afin de véhiculer le <strong>poids corporel du patient</strong>, lorsque cette donnée est nécessaire pour la réalisation de l’examen d’imagerie. Le poids du patient est véhiculé par l’intermédiaire d’un segment OBX.</p>
@@ -1968,8 +3289,6 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
   </tbody>
 </table>
-
-<p><br/></p>
 
 <h5 id="groupe-observation---statut-grossesse">Groupe OBSERVATION - Statut grossesse</h5>
 
@@ -2136,6 +3455,8 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
 <p>La structure du segment ORC est <strong>identique à celle du flux 1</strong>, à l’exception du champ <strong>ORC-1 – Order Control</strong>, dont la valeur est fixée à <strong>CA (Cancel Order)</strong>.<br/>
 Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette information est disponible ; son renseignement est <strong>optionnel</strong>.</p>
 
+<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong> ou <strong>optionnel</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.</p>
+
 <table class="table-hl7v2">
   <tbody>
     <tr>
@@ -2173,7 +3494,7 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Order control</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">CA</span> (Canceled)</p>
+        <p>Valeur fixée à « <span class="hl7-color">CA</span> » (Canceled)</p>
       </td>
     </tr>
     <tr>
@@ -2223,7 +3544,7 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
     </tr>
     <tr>
       <td>
-        <p>ORC-14 (Requis si connu de l'expéditeur)</p>
+        <p>ORC-14 (Requis si connu)</p>
       </td>
       <td>
         <p>Call Back Phone Number</p>
@@ -2241,7 +3562,9 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Order Control Code Reason</p>
       </td>
       <td>
-        <p>Code du motif d'annulation de la demande d'examen</p>
+        <p>Motif d'annulation de la demande d'examen</p>
+        <p>Peut être exprimé à l’aide d’un code renseigné dans CE-1 – Identifier, avec le système de codage correspondant précisé en CE-3 – Name of Coding System (code local ou standard).</p>
+        <p>À défaut de codage disponible, un libellé en clair peut être renseigné dans CE-2 – Text.</p>
       </td>
     </tr>
     <tr>
@@ -2252,7 +3575,86 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Informations relatives à la structure d'imagerie d'accueil du patient</p>
+        <p>Qualifie le type d'organisation (voir <a href="specifications_techniques.html#segment-orc-common-order">Note 1</a>)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">STRUCTURE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">TLR_TYPE_ORGANISATION</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>ORC-21</p>
+      </td>
+      <td>
+        <p>Ordering Facility Name</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.1</p>
+      </td>
+      <td>
+        <p>OrganizationName</p>
+      </td>
+      <td>
+        <p>Nom de l'organisation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.6</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
+        <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.7</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") : <span class="hl7-color">FINEJ</span> (FINESS d'entité juridique) ou <span class="hl7-color">FINEG</span> (FINESS d'entité géographique) ou <span class="hl7-color">IDNST</span> ou <span class="hl7-color">UF</span> (UF), <span class="hl7-color">SVR</span> (service).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.10</p>
+      </td>
+      <td>
+        <p>Organization number</p>
+      </td>
+      <td>
+        <p>Identifiant de l'organisation destinataire</p>
       </td>
     </tr>
   </tbody>
@@ -2321,7 +3723,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       <td>
         <p>Code de la modalité d'imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
@@ -2365,8 +3767,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 
 <p>Ce flux repose sur l’utilisation de messages <strong>ORU^R01</strong>, conformes au standard <strong>HL7 v2.5.1</strong>.</p>
 
-<p>Contrairement aux <strong>flux 1, 2 et 4</strong>, ce flux <strong>ne s’appuie sur aucun profil IHE du domaine Radiology</strong>, aucun cas d’usage équivalent n’étant actuellement couvert par les profils IHE dans ce contexte.<br/>
-Les segments ci-dessous sont définis sur la base du standard HL7 v2.5.1, complété par une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>, décrite dans les sections suivantes.</p>
+<p>Les segments ci-dessous sont définis sur la base du standard HL7 v2.5.1, complété par une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>, décrite dans les sections suivantes.</p>
 
 <h6 id="segment-orc-common-order-2">Segment ORC (Common Order)</h6>
 
@@ -2375,7 +3776,7 @@ Les segments ci-dessous sont définis sur la base du standard HL7 v2.5.1, compl�
 <p>Le champ <strong>ORC-1 – Order Control</strong> permet d’indiquer la décision prise sur la demande, à savoir sa <strong>validation</strong> ou son <strong>refus</strong>.
 En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque cette information est disponible ; son renseignement est <strong>optionnel</strong>.</p>
 
-<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong> ou <strong>optionnel</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie..</p>
+<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong> ou <strong>optionnel</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -2449,7 +3850,9 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Order Control Code Reason</p>
       </td>
       <td>
-        <p>Code du motif de refus de la demande d'examen</p>
+        <p>Motif du refus de la demande d'examen</p>
+        <p>Peut être exprimé à l’aide d’un code renseigné dans CE-1 – Identifier, avec le système de codage correspondant précisé en CE-3 – Name of Coding System (code local ou standard).</p>
+        <p>À défaut de codage disponible, un libellé en clair peut être renseigné dans CE-2 – Text.</p>
       </td>
     </tr>
     <tr>
@@ -2460,7 +3863,86 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Informations relatives à la plateforme de Téléradiologie</p>
+        <p>Qualifie le type d'organisation (voir <a href="specifications_techniques.html#segment-orc-common-order">Note 1</a>)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">PLATEFORME_TELERADIOLOGIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">TLR_TYPE_ORGANISATION</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>ORC-21</p>
+      </td>
+      <td>
+        <p>Ordering Facility Name</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.1</p>
+      </td>
+      <td>
+        <p>OrganizationName</p>
+      </td>
+      <td>
+        <p>Nom de l'organisation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.6</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
+        <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.7</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") : <span class="hl7-color">FINEJ</span> (FINESS d'entité juridique) ou <span class="hl7-color">FINEG</span> (FINESS d'entité géographique) ou <span class="hl7-color">IDNST</span> ou <span class="hl7-color">UF</span> (UF), <span class="hl7-color">SVR</span> (service).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.10</p>
+      </td>
+      <td>
+        <p>Organization number</p>
+      </td>
+      <td>
+        <p>Identifiant de l'organisation destinataire du document</p>
       </td>
     </tr>
   </tbody>
@@ -2468,8 +3950,7 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
 
 <h5 id="segment-obr-observation-request-2">Segment OBR (Observation Request)</h5>
 
-<p>Le segment <strong>OBR</strong> est utilisé pour véhiculer des informations relatives à la <strong>réponse à la demande d’examen d’imagerie</strong>.<br/>
-Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+<p>Le segment <strong>OBR</strong> est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -2529,7 +4010,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       <td>
         <p>Code de la modalité d'imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
@@ -2567,8 +4048,6 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
   </tbody>
 </table>
 
-<p><br/></p>
-
 <h5 id="groupe-observation---protocole-dimagerie">Groupe OBSERVATION - Protocole d’imagerie</h5>
 
 <p>Le <strong>groupe OBSERVATION</strong> est requis afin de véhiculer le <strong>protocole d’imagerie</strong> associé à l’examen.<br/>
@@ -2580,7 +4059,7 @@ Le protocole d’imagerie est porté par un <strong>segment OBX unique</strong> 
 </ul>
 
 <p>Ces deux alternatives sont exclusives : un seul segment OBX est utilisé pour porter le protocole d’imagerie, avec le type de données adapté au mode de transmission retenu. Le choix de l’alternative relève des capacités des systèmes émetteurs et récepteurs et doit être cohérent avec les besoins métier du flux.
-Le segment OBX portant sur le protocole est identifié par un code local “PROTOCOLE_IMAGERIE” dans <strong>OBX-3</strong>, documenté en annexe.</p>
+Le segment OBX portant sur le protocole est identifié par un code local “PROTOCOLE_IMAGERIE” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <h6 id="protocole-dimagerie-en-clair">Protocole d’imagerie en clair</h6>
 
@@ -2678,7 +4157,7 @@ Le contenu peut inclure des retours à la ligne et une structuration légère fa
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -2690,6 +4169,17 @@ Le contenu peut inclure des retours à la ligne et une structuration légère fa
       </td>
       <td>
         <p>Protocole d'imagerie</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-11</p>
+      </td>
+      <td>
+        <p>Observation Result Status</p>
+      </td>
+      <td>
+        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
       </td>
     </tr>
   </tbody>
@@ -2792,7 +4282,7 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -2867,8 +4357,7 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
 
 <h6 id="segment-orc-common-order-3">Segment ORC (Common Order)</h6>
 
-<p>Le segment <strong>ORC</strong> est utilisé pour véhiculer les informations relatives l’ordre d’origine et d’assurer la traçabilité des informations transmises.
-Il est renseigné conformément aux spécifications du profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+<p>Le segment <strong>ORC</strong> est renseigné conformément aux spécifications du profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -2951,13 +4440,11 @@ Il est renseigné conformément aux spécifications du profil <strong>IHE Schedu
         <p>Date/Time of Transaction</p>
       </td>
       <td>
-        <p>Date à laquelle la demande d'examen a été réalisée</p>
+        <p></p>
       </td>
     </tr>
   </tbody>
 </table>
-
-<p><br/></p>
 
 <h6 id="segment-tq1-timingquantity">Segment TQ1 (Timing/Quantity)</h6>
 
@@ -3022,8 +4509,7 @@ Il est renseigné conformément aux spécifications du profil <strong>IHE Schedu
 
 <h5 id="segment-obr-observation-request-3">Segment OBR (Observation Request)</h5>
 
-<p>Le segment <strong>OBR – Observation Request</strong> est utilisé pour véhiculer les informations de contexte relatives à l’<strong>examen d’imagerie ayant été réalisé</strong>.
-Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+<p>Le segment <strong>OBR – Observation Request</strong> est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -3083,7 +4569,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       <td>
         <p>Code LOINC de l’acte d’imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a></p>
       </td>
     </tr>
@@ -3207,7 +4693,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       <td>
         <p>Code de la modalité d'imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
@@ -3241,8 +4727,8 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 <p>Ce <strong>groupe OBSERVATION</strong> est utilisé afin de véhiculer l’<strong>URL d’accès à la vieweuse DRIMbox</strong>, permettant la consultation à distance des images issues de l’examen d’imagerie.</p>
 
 <p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans <strong>OBX-5</strong> correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1, afin d’assurer l’intégrité de l’information transmise.
-Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans <strong>OBX-3</strong>, documenté en annexe.</p>
+La valeur portée dans <strong>OBX-5</strong> correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (3), afin d’assurer l’intégrité de l’information transmise.
+Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -3336,7 +4822,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -3364,15 +4850,24 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
   </tbody>
 </table>
 
-<p><br/></p>
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    </p>
+    <ul>
+      <li>le séparateur de champs (|) via \F\ ;</li>
+      <li>le séparateur de composants (^) via \S\ ;</li>
+      <li>le séparateur de répétitions (~) via \R\ ;</li>
+      <li>le séparateur de sous-composants (&amp;) via \T\ ;</li>
+      <li>le caractère d’échappement lui-même (\) via \E\.</li>
+    </ul>
+</blockquote>
 
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l6828">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
-Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont <strong>strictement identiques</strong> à ceux définis pour le flux 1.<br/>
+<p><a name="l10027">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
-
-<p><br/></p>
 
 <h5 id="groupes-observation---produit-administré">Groupes OBSERVATION - Produit administré</h5>
 
@@ -3393,8 +4888,8 @@ Pour assurer la cohérence des informations :</p>
 <p>Ce groupe OBSERVATION permet de transmettre le <strong>type de produit administré</strong>.  La valeur est codée à partir du <strong>Jeu de Valeurs ATC niveau 2</strong>, limité aux classes :</p>
 
 <ul>
-  <li><strong>V09</strong> – Produits de diagnostic</li>
-  <li><strong>V10</strong> – Produits thérapeutiques</li>
+  <li>V09 – Produits de diagnostic</li>
+  <li>V10 – Produits thérapeutiques</li>
 </ul>
 
 <p>Un segment OBX unique au sein de ce groupe porte la valeur codée dans <strong>OBX-5</strong>.<br/>
@@ -3492,7 +4987,7 @@ Ce groupe est obligatoirement associé au groupe <strong>Numéro de lot</strong>
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -3503,7 +4998,8 @@ Ce groupe est obligatoirement associé au groupe <strong>Numéro de lot</strong>
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><a name="l7142">​</a><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.1</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -3651,7 +5147,7 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.</p>
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -3662,7 +5158,8 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.</p>
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><a name="l7461">​</a><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.2</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -3692,7 +5189,7 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.</p>
 
 <h6 id="groupe-observation--quantité-de-produit-administré">Groupe OBSERVATION – Quantité de produit administré</h6>
 
-<p>Ce groupe OBSERVATION permet de transmettre la <strong>quantité réellement administrée</strong> du produit. Le segment OBX unique au sein de ce groupe porte la valeur dans <strong>OBX-5</strong> et l’unité de mesure dans <strong>OBX-6</strong> (par exemple millilitres ou milligrammes).<br/>
+<p>Ce groupe OBSERVATION permet de transmettre la quantité réellement administrée du produit. Le segment OBX unique au sein de ce groupe porte la valeur dans <strong>OBX-5</strong> et l’unité de mesure dans <strong>OBX-6</strong> (par exemple millilitres ou milligrammes).<br/>
 La quantité est <strong>optionnelle</strong> mais fortement recommandée lorsque le produit est renseigné.</p>
 
 <table class="table-hl7v2">
@@ -3787,7 +5284,7 @@ La quantité est <strong>optionnelle</strong> mais fortement recommandée lorsqu
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -3798,7 +5295,8 @@ La quantité est <strong>optionnelle</strong> mais fortement recommandée lorsqu
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><a name="l7741">​</a><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.3</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -3841,7 +5339,7 @@ La quantité est <strong>optionnelle</strong> mais fortement recommandée lorsqu
 
 <h5 id="groups-observation---appareil-dimagerie-utilisé">Groups OBSERVATION - Appareil d’imagerie utilisé</h5>
 
-<p>Les groupes <strong>OBSERVATION – Appareil d’imagerie utilisé</strong> sont <strong>optionnels</strong>. Lorsqu’ils sont présents, ils permettent de transmettre les informations relatives à l’<strong>appareil d’imagerie ayant été utilisé pour la réalisation de l’examen</strong>, en particulier dans le cas des techniques irradiantes.
+<p>Les groupes <strong>OBSERVATION – Appareil d’imagerie utilisé</strong> sont <strong>optionnels</strong>. Lorsqu’ils sont présents, ils permettent de transmettre les informations relatives à l’appareil d’imagerie ayant été utilisé pour la réalisation de l’examen, en particulier dans le cas des techniques irradiantes.
 Les informations relatives à l’appareil sont portées dans <strong>deux groupes OBSERVATION distincts</strong> :</p>
 
 <ul>
@@ -3854,7 +5352,7 @@ Les segments OBX portant sur le produit administré sont identifiés par un code
 
 <h6 id="groupe-observation--identifiant-de-lappareil-dimagerie">Groupe OBSERVATION – Identifiant de l’appareil d’imagerie</h6>
 
-<p>Ce groupe OBSERVATION permet de transmettre l’<strong>identifiant unique de l’appareil d’imagerie utilisé</strong> lors de l’examen. L’identifiant correspond au <strong>Support IUD</strong>, tel que communiqué via un dispositif d’identification automatique (AIDC) ou, le cas échéant, via son marquage en clair.
+<p>Ce groupe OBSERVATION permet de transmettre l’identifiant unique de l’appareil d’imagerie utilisé lors de l’examen. L’identifiant correspond au <strong>Support IUD</strong>, tel que communiqué via un dispositif d’identification automatique (AIDC) ou, le cas échéant, via son marquage en clair.
 Le groupe contient un <strong>segment OBX unique</strong> portant la valeur de l’identifiant dans <strong>OBX-5</strong>.</p>
 
 <table class="table-hl7v2">
@@ -3949,7 +5447,7 @@ Le groupe contient un <strong>segment OBX unique</strong> portant la valeur de l
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -3960,7 +5458,8 @@ Le groupe contient un <strong>segment OBX unique</strong> portant la valeur de l
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><a name="l8085">​</a><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.1</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -3990,7 +5489,7 @@ Le groupe contient un <strong>segment OBX unique</strong> portant la valeur de l
 
 <h6 id="groupe-observation--modèle-de-lappareil-dimagerie">Groupe OBSERVATION – Modèle de l’appareil d’imagerie</h6>
 
-<p>Ce groupe OBSERVATION permet de transmettre le <strong>modèle de l’appareil d’imagerie utilisé</strong>. La valeur est exprimée sous forme de texte libre et correspond à la dénomination du modèle fournie par le constructeur.
+<p>Ce groupe OBSERVATION permet de transmettre le modèle de l’appareil d’imagerie utilisé. La valeur est exprimée sous forme de texte libre et correspond à la dénomination du modèle fournie par le constructeur.
 Le groupe contient un <strong>segment OBX unique</strong> portant le modèle de l’appareil dans <strong>OBX-5</strong>.<br/>
 Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de l’appareil lorsqu’une information plus détaillée sur l’équipement est requise.</p>
 
@@ -4086,7 +5585,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -4097,6 +5596,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
         <p>Observation Sub-ID</p>
       </td>
       <td>
+        <p>Valeur fixée à n.2</p>
         <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
@@ -4156,7 +5656,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
               </td>
               <td style="text-align:right">&nbsp;
 
-                <a href="table_obs.html">next&gt;</a>
+                <a href="diag_sequence.html">next&gt;</a>
 
               </td>
             </tr>
@@ -4166,7 +5666,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 16:39+0000">2026-01-23</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:37+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
