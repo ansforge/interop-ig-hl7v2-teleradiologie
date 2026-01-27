@@ -38,7 +38,7 @@ La présente partie présente, pour chaque flux métier du volet Téléradiologi
   * Structure de message HL7 v2: OMI_O23
   * Événement HL7 v2: O23 – Imaging Order Message (Order Control = NW)
 
->  **(1) :** Le **flux 2** est un flux **optionnel** dans le cadre du volet Téléradiologie. Son implémentation **n’est pas obligatoire** et peut être omise sans remettre en cause la conformité globale des échanges. 
+>  **(1) :** Le flux d'annulation est un flux **optionnel** dans le cadre du volet Téléradiologie. Son implémentation **n’est pas obligatoire** et peut être omise sans remettre en cause la conformité globale des échanges. 
 
 ### Interactions entre les acteurs
 

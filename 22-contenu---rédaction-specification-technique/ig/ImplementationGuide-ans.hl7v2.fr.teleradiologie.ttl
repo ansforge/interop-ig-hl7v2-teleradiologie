@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-27T10:37:51+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-27T10:56:14+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -1451,7 +1451,7 @@
            fhir:v "diag_sequence.html"^^xsd:anyURI ;
            fhir:l fhir:diag_sequence.html
          ] ;
-         fhir:title [ fhir:v "Diagramme de séquence - Spcécification technique" ] ;
+         fhir:title [ fhir:v "Diagramme de séquence - Spécification technique" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

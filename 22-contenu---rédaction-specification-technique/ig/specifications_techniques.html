@@ -110,13 +110,13 @@
         <a href="norme_standard.html">Normes et Standards</a>
       </li>
       <li>
-        <a href="diag_sequence.html">Diagramme de séquence - Spcécification technique</a>
+        <a href="diag_sequence.html">Diagramme de séquence - Spécification technique</a>
       </li>
       <li>
         <a href="sub-id.html">Utilisation du champ OBX-4 – Observation Sub-ID</a>
       </li>
       <li>
-        <a href="table_obs.html">Table OBSERVATION_TLR</a>
+        <a href="table_obs.html">Table TLR_OBSERVATION</a>
       </li>
       <li>
         <a href="table_orga.html">Table TLR_TYPE_ORGANISATION</a>
@@ -292,7 +292,7 @@ La transmission de la <strong>demande d’examen formalisée sous forme de docum
 
 <blockquote class="stu-note">
     <p>
-    <b>(1) :</b> Le **flux 2** est un flux **optionnel** dans le cadre du volet Téléradiologie. Son implémentation <strong>n’est pas obligatoire</strong> et peut être omise sans remettre en cause la conformité globale des échanges.
+    <b>(1) :</b> Le flux d'annulation est un flux <strong>optionnel</strong> dans le cadre du volet Téléradiologie. Son implémentation <strong>n’est pas obligatoire</strong> et peut être omise sans remettre en cause la conformité globale des échanges.
     </p>
 </blockquote>
 
@@ -1880,7 +1880,7 @@ Ils permettent notamment de véhiculer :</p>
 
 <p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 4</strong> :</p>
 
-<div style="text-align: center;" class="figure"><a name="l3838">​</a>
+<div style="text-align: center;" class="figure"><a name="l3841">​</a>
     <img src="fig17.png" alt="Figure 17" style="width:80%;" title="Figure 17 : Structure fonctionnelle du message ORU_R01"/>
     <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
 </div>
@@ -1906,7 +1906,7 @@ section dédiée du document CDA Niv3).</p>
   </li>
 </ul>
 
-<p><a name="l3868">​</a>Les groupes de segments OBSERVATION suivants (répétables) véhiculent les métadonnées spécifiques à la publication sur le DMP et/ou à l’envoi par la MSSanté. Ces métadonnées sont communes aux deux formats du document. Ces métadonnées sont décrites dans la <a href="volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet">section dédiée</a>.</p>
+<p><a name="l3871">​</a>Les groupes de segments OBSERVATION suivants (répétables) véhiculent les métadonnées spécifiques à la publication sur le DMP et/ou à l’envoi par la MSSanté. Ces métadonnées sont communes aux deux formats du document. Ces métadonnées sont décrites dans la <a href="volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet">section dédiée</a>.</p>
 
 <p><br/></p>
 
@@ -4865,7 +4865,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l10027">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+<p><a name="l10030">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
 
@@ -5666,7 +5666,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:37+0000">2026-01-27</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:56+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
