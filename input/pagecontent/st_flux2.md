@@ -13,6 +13,8 @@ Le segment **ORC** est utilisé pour véhiculer l’**annulation d’une demande
 La structure du segment ORC est **identique à celle du flux 1**, à l’exception du champ **ORC-1 – Order Control**, dont la valeur est fixée à **CA (Cancel Order)**.  
 Un **motif d’annulation** peut être véhiculé lorsque cette information est disponible ; son renseignement est **optionnel**.
 
+Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, ainsi que certains champs **requis si connus** ou **optionnel**, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.
+
 <table class="table-hl7v2">
   <tbody>
     <tr>
@@ -50,7 +52,7 @@ Un **motif d’annulation** peut être véhiculé lorsque cette information est 
         <p>Order control</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">CA</span> (Canceled)</p>
+        <p>Valeur fixée à « <span class="hl7-color">CA</span> » (Canceled)</p>
       </td>
     </tr>
     <tr>
@@ -100,7 +102,7 @@ Un **motif d’annulation** peut être véhiculé lorsque cette information est 
     </tr>
     <tr>
       <td>
-        <p>ORC-14 (Requis si connu de l'expéditeur)</p>
+        <p>ORC-14 (Requis si connu)</p>
       </td>
       <td>
         <p>Call Back Phone Number</p>
@@ -118,7 +120,9 @@ Un **motif d’annulation** peut être véhiculé lorsque cette information est 
         <p>Order Control Code Reason</p>
       </td>
       <td>
-        <p>Code du motif d'annulation de la demande d'examen</p>
+        <p>Motif d'annulation de la demande d'examen</p>
+        <p>Peut être exprimé à l’aide d’un code renseigné dans CE-1 – Identifier, avec le système de codage correspondant précisé en CE-3 – Name of Coding System (code local ou standard).</p>
+        <p>À défaut de codage disponible, un libellé en clair peut être renseigné dans CE-2 – Text.</p>
       </td>
     </tr>
     <tr>
@@ -129,7 +133,86 @@ Un **motif d’annulation** peut être véhiculé lorsque cette information est 
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Informations relatives à la structure d'imagerie d'accueil du patient</p>
+        <p>Qualifie le type d'organisation (voir <a href="specifications_techniques.html#segment-orc-common-order">Note 1</a>)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">STRUCTURE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-17.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">TLR_TYPE_ORGANISATION</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>ORC-21</p>
+      </td>
+      <td>
+        <p>Ordering Facility Name</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.1</p>
+      </td>
+      <td>
+        <p>OrganizationName</p>
+      </td>
+      <td>
+        <p>Nom de l'organisation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.6</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
+        <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.7</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") : <span class="hl7-color">FINEJ</span> (FINESS d'entité juridique) ou <span class="hl7-color">FINEG</span> (FINESS d'entité géographique) ou <span class="hl7-color">IDNST</span> ou <span class="hl7-color">UF</span> (UF), <span class="hl7-color">SVR</span> (service).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-21.10</p>
+      </td>
+      <td>
+        <p>Organization number</p>
+      </td>
+      <td>
+        <p>Identifiant de l'organisation destinataire</p>
       </td>
     </tr>
   </tbody>
@@ -198,7 +281,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
       <td>
         <p>Code de la modalité d'imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>

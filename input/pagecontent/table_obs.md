@@ -21,7 +21,7 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ OBX-3
         <p>Localisation anatomique de l’examen d’imagerie</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -32,7 +32,7 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ OBX-3
         <p>Protocole d’imagerie associé à l’examen</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -43,7 +43,7 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ OBX-3
         <p>URL d’accès à la visionneuse d’imagerie DRIMbox</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -54,7 +54,7 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ OBX-3
         <p>Informations relatives au produit administré lors de l’examen</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
     <tr>
@@ -65,7 +65,7 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ OBX-3
         <p>Informations relatives à l’appareil d’imagerie utilisé</p>
       </td>
       <td>
-        <p>OBSERVATION_TLR</p>
+        <p>TLR_OBSERVATION</p>
       </td>
     </tr>
   </tbody>

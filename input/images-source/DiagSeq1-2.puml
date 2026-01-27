@@ -1,0 +1,58 @@
+@startuml tlr_diagram
+!pragma teoz true
+title Worflow volet Téléradiologie
+
+' Style: compact swimlanes and clearer layout
+skinparam dpi 110
+skinparam ArrowColor #333333
+skinparam RoundCorner 6
+skinparam activityBackgroundColor #F8F8FF
+skinparam backgroundColor #FFFFFF
+skinparam SequenceMessageAlignment center
+' Layout tweaks to reduce horizontal width and improve readability:
+' - reduce participant spacing and padding
+' - wrap long messages automatically
+' - use shorter (multi-line) participant labels
+skinparam sequenceParticipantSpacing 100
+skinparam participantPadding 8
+skinparam maxMessageSize 400
+box "Structure imagerie" #ebf5ffff
+actor "Patient" as patient #FFEFE0
+actor "PS Responsable" as medprox #FFEFE0
+actor "Manipulateur" as manip #FFEFE0
+participant "RIS" as ris #DFF2D6
+end box
+box "Environnement Téléradiologie" #F7F7F7
+participant "SI Téléradiologie" as plat #FFF7CC
+actor "PS Effecteur" as rad #FFEFE0
+end box
+
+patient -> medprox: Prise en \n charge
+medprox -> ris: Formalisation de la \ndemande d'examen
+activate ris
+ris -> plat: **<<Flux>>**\n**Transmission des éléments de la demande d'examen**\nHL7v2 - ORM^O01 (ORC-1 = NW)
+activate plat
+plat -[#grey]-> ris: Acknowledgment (ACK)
+opt Si une demande d'examen \n rédigée est présente
+    ris -> plat: **<<Flux>>**\n**Transmission de la demande (document)**\nHL7v2 - Volet Transmission de document CDA
+    plat -[#grey]-> ris: Acknowledgment (ACK)
+    deactivate ris
+    
+end
+
+
+opt Si plusieurs documents \n complémentaires sont associés \n à la demande d'examen
+    activate ris 
+    ris -> plat: **<<Flux>>**\n**Transmission des document tiers**\nHL7v2 - Volet Transmission de document CDA
+    plat -[#grey]-> ris: Acknowledgment (ACK)
+    deactivate ris
+end
+alt Annulation de la \n demande d'examen
+    activate ris
+    ris -> plat: **<<Flux>>**\n**Annulation de la demande**\nHL7v2 - ORM^O01 (ORC-1 = CA)
+    plat -[#grey]-> ris: Acknowledgment (ACK)
+    deactivate ris
+    end
+
+
+@enduml

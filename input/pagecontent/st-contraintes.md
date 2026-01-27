@@ -405,6 +405,8 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 
 *Note 2* : _Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu._
 
+<br>
+
 #### Contraintes spécifiques au volet Téléradiologie
 
 Un second niveau de contraintes est défini **spécifiquement pour chaque flux**, en fonction du type de message et du rôle fonctionnel attendu.  
@@ -416,12 +418,11 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
 - **IPC (Imaging Procedure Control)** : partage du contexte de réalisation des études et procédures d’imagerie.
 
 Pour chaque flux, les contraintes précisent :
+
 - les **segments obligatoires et optionnels** ;
 - les **champs requis, conditionnels ou interdits** ;
 - les **règles de cardinalité, de codage et de valeurs attendues** ;
 - les éventuelles **références aux profils IHE ou spécifications nationales** applicables.
-
-<br>
 
 {% include st_flux1.md %}
 

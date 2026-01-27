@@ -10,8 +10,7 @@ Les sections suivantes décrivent les contraintes appliquées aux segments du me
 
 ###### Segment ORC (Common Order)
 
-Le segment **ORC** est utilisé pour véhiculer les informations relatives l’ordre d’origine et d’assurer la traçabilité des informations transmises.
-Il est renseigné conformément aux spécifications du profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Le segment **ORC** est renseigné conformément aux spécifications du profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -94,13 +93,11 @@ Il est renseigné conformément aux spécifications du profil **IHE Scheduled Wo
         <p>Date/Time of Transaction</p>
       </td>
       <td>
-        <p>Date à laquelle la demande d'examen a été réalisée</p>
+        <p></p>
       </td>
     </tr>
   </tbody>
 </table>
-
-<br>
 
 ###### Segment TQ1 (Timing/Quantity)
 
@@ -165,8 +162,7 @@ Il est renseigné conformément aux spécifications du profil **IHE Scheduled Wo
 
 ##### Segment OBR (Observation Request)
 
-Le segment **OBR – Observation Request** est utilisé pour véhiculer les informations de contexte relatives à l’**examen d’imagerie ayant été réalisé**.
-Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Le segment **OBR – Observation Request** est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -226,7 +222,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
       <td>
         <p>Code LOINC de l’acte d’imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a></p>
       </td>
     </tr>
@@ -350,7 +346,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
       <td>
         <p>Code de la modalité d'imagerie</p>
       </td>
-      <td rowspan="2">
+      <td>
         <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
@@ -384,8 +380,8 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.  
 
 L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1, afin d’assurer l’intégrité de l’information transmise.
-Le segment OBX portant sur le protocole est identifié par un code local "URL_VIEWER_DRIMBOX" dans **OBX-3**, documenté en annexe.
+La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (3), afin d’assurer l’intégrité de l’information transmise.
+Le segment OBX portant sur le protocole est identifié par un code local "URL_VIEWER_DRIMBOX" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>.
 
 <table class="table-hl7v2">
   <tbody>
@@ -479,7 +475,7 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -507,15 +503,24 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
   </tbody>
 </table>
 
-<br>
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    </p>
+    <ul>
+      <li>le séparateur de champs (|) via \F\ ;</li>
+      <li>le séparateur de composants (^) via \S\ ;</li>
+      <li>le séparateur de répétitions (~) via \R\ ;</li>
+      <li>le séparateur de sous-composants (&) via \T\ ;</li>
+      <li>le caractère d’échappement lui-même (\) via \E\.</li>
+    </ul>
+</blockquote>
 
 ##### Groupes OBSERVATION - Localisation anatomique
 
 Les groupes **OBSERVATION – Localisation anatomique** sont **optionnel** dans le cadre du flux 4.  
-Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont **strictement identiques** à ceux définis pour le flux 1.  
+Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.  
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Localisation anatomique](./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique)
-
-<br>
 
 ##### Groupes OBSERVATION - Produit administré
 
@@ -524,7 +529,7 @@ Les groupes **OBSERVATION – Produit administré** sont **optionnels** et perme
 Chaque information du produit est portée dans **un groupe OBSERVATION** et un segment OBX distincts.  
 Les groupes sont répétables pour permettre la transmission de plusieurs produits administrés au cours du même examen.  
 Pour assurer la cohérence des informations :  
-- le **type de produit** et le **numéro de lot** sont **indissociables**,  
+- le **type de produit** et le **numéro de lot** sont **indissociables**,
 - la **quantité administrée** est facultative mais recommandée lorsque le produit est renseigné.
 
 Les segments OBX portant sur le produit administré sont identifiés par un code local "PRODUIT_ADMINISTRE" dans **OBX-3**, documenté en annexe. Ces segments sont différenciés à l’aide du champ **OBX-4 – Observation Sub-ID**.
@@ -533,8 +538,8 @@ Les segments OBX portant sur le produit administré sont identifiés par un code
 
 Ce groupe OBSERVATION permet de transmettre le **type de produit administré**.  La valeur est codée à partir du **Jeu de Valeurs ATC niveau 2**, limité aux classes :
 
-- **V09** – Produits de diagnostic  
-- **V10** – Produits thérapeutiques  
+- V09 – Produits de diagnostic  
+- V10 – Produits thérapeutiques  
 
 Un segment OBX unique au sein de ce groupe porte la valeur codée dans **OBX-5**.  
 Ce groupe est obligatoirement associé au groupe **Numéro de lot**.
@@ -631,7 +636,7 @@ Ce groupe est obligatoirement associé au groupe **Numéro de lot**.
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -642,7 +647,8 @@ Ce groupe est obligatoirement associé au groupe **Numéro de lot**.
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.1</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -790,7 +796,7 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -801,7 +807,8 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.2</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -831,7 +838,7 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.
 
 ###### Groupe OBSERVATION – Quantité de produit administré
 
-Ce groupe OBSERVATION permet de transmettre la **quantité réellement administrée** du produit. Le segment OBX unique au sein de ce groupe porte la valeur dans **OBX-5** et l’unité de mesure dans **OBX-6** (par exemple millilitres ou milligrammes).  
+Ce groupe OBSERVATION permet de transmettre la quantité réellement administrée du produit. Le segment OBX unique au sein de ce groupe porte la valeur dans **OBX-5** et l’unité de mesure dans **OBX-6** (par exemple millilitres ou milligrammes).  
 La quantité est **optionnelle** mais fortement recommandée lorsque le produit est renseigné.  
 
 <table class="table-hl7v2">
@@ -926,7 +933,7 @@ La quantité est **optionnelle** mais fortement recommandée lorsque le produit 
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -937,7 +944,8 @@ La quantité est **optionnelle** mais fortement recommandée lorsque le produit 
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.3</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -980,7 +988,7 @@ La quantité est **optionnelle** mais fortement recommandée lorsque le produit 
 
 ##### Groups OBSERVATION - Appareil d'imagerie utilisé
 
-Les groupes **OBSERVATION – Appareil d’imagerie utilisé** sont **optionnels**. Lorsqu’ils sont présents, ils permettent de transmettre les informations relatives à l’**appareil d’imagerie ayant été utilisé pour la réalisation de l’examen**, en particulier dans le cas des techniques irradiantes.
+Les groupes **OBSERVATION – Appareil d’imagerie utilisé** sont **optionnels**. Lorsqu’ils sont présents, ils permettent de transmettre les informations relatives à l’appareil d’imagerie ayant été utilisé pour la réalisation de l’examen, en particulier dans le cas des techniques irradiantes.
 Les informations relatives à l’appareil sont portées dans **deux groupes OBSERVATION distincts** :
 
 - un groupe dédié à l’**identifiant unique de l’appareil d’imagerie**,  
@@ -991,7 +999,7 @@ Les segments OBX portant sur le produit administré sont identifiés par un code
 
 ###### Groupe OBSERVATION – Identifiant de l’appareil d’imagerie
 
-Ce groupe OBSERVATION permet de transmettre l’**identifiant unique de l’appareil d’imagerie utilisé** lors de l’examen. L’identifiant correspond au **Support IUD**, tel que communiqué via un dispositif d’identification automatique (AIDC) ou, le cas échéant, via son marquage en clair.
+Ce groupe OBSERVATION permet de transmettre l’identifiant unique de l’appareil d’imagerie utilisé lors de l’examen. L’identifiant correspond au **Support IUD**, tel que communiqué via un dispositif d’identification automatique (AIDC) ou, le cas échéant, via son marquage en clair.
 Le groupe contient un **segment OBX unique** portant la valeur de l’identifiant dans **OBX-5**.  
 
 <table class="table-hl7v2">
@@ -1086,7 +1094,7 @@ Le groupe contient un **segment OBX unique** portant la valeur de l’identifian
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -1097,7 +1105,8 @@ Le groupe contient un **segment OBX unique** portant la valeur de l’identifian
         <p>Observation Sub-ID</p>
       </td>
       <td>
-        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="specifications_techniques.html#utilisation-du-champ-obx-4--observation-sub-id">Utilisation du champ OBX-4 </a></p>
+        <p>Valeur fixée à n.1</p>
+        <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
     <tr>
@@ -1127,7 +1136,7 @@ Le groupe contient un **segment OBX unique** portant la valeur de l’identifian
 
 ###### Groupe OBSERVATION – Modèle de l’appareil d’imagerie
 
-Ce groupe OBSERVATION permet de transmettre le **modèle de l’appareil d’imagerie utilisé**. La valeur est exprimée sous forme de texte libre et correspond à la dénomination du modèle fournie par le constructeur.
+Ce groupe OBSERVATION permet de transmettre le modèle de l’appareil d’imagerie utilisé. La valeur est exprimée sous forme de texte libre et correspond à la dénomination du modèle fournie par le constructeur.
 Le groupe contient un **segment OBX unique** portant le modèle de l’appareil dans **OBX-5**.  
 Ce groupe est **optionnel** et vient compléter l’identifiant de l’appareil lorsqu’une information plus détaillée sur l’équipement est requise. 
 
@@ -1223,7 +1232,7 @@ Ce groupe est **optionnel** et vient compléter l’identifiant de l’appareil 
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p><span class="hl7-color">TLRMETADATA</span></p>
+        <p><span class="hl7-color">TLR_OBSERVATION</span></p>
       </td>
     </tr>
     <tr>
@@ -1234,6 +1243,7 @@ Ce groupe est **optionnel** et vient compléter l’identifiant de l’appareil 
         <p>Observation Sub-ID</p>
       </td>
       <td>
+        <p>Valeur fixée à n.2</p>
         <p><strong>Voir règle commune d’utilisation du Sub-ID : </strong><a href ="./sub-id.html">Utilisation du champ OBX-4 </a></p>
       </td>
     </tr>
