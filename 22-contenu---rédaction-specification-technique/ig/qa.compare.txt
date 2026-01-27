@@ -8,16 +8,16 @@ Generated $--. FHIR version $-- for ans.hl7v2.fr.teleradiologie#$-- (canonical =
  /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 2
 </table>
 == n/a ==
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 222, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 223, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 224, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 230, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 231, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 232, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 247, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 248, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 249, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 255, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 256, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 257, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
 WARNING: /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/output/searchform.html#/html/body/div/div/div/a/img/div/a/img/div/p/img/footer/div/div/div/div/div/div/a/img/div/a/img/script at Line 255, column 7: The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed)
-ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/div/img at Line 1884, column 6: The image source 'fig17.png' cannot be resolved
-ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 1909, column 260: The link 'volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet' for "section dédiée" cannot be resolved
-ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 4870, column 78: The link './st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique' for "Groupes OBSERVATION – Localisation anatomique" cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/div/img at Line 1909, column 6: The image source 'fig17.png' cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 1934, column 260: The link 'volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet' for "section dédiée" cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 4909, column 78: The link './st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique' for "Groupes OBSERVATION – Localisation anatomique" cannot be resolved
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 == fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json ==

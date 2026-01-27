@@ -95,8 +95,33 @@
   <li>
     <a href="index.html">Accueil</a>
   </li>
-  <li>
-    <a href="specifications_fonctionnelles.html">Volume 1 - Etude fonctionnelle</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specifications_fonctionnelles.html#méthode">Méthode</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#cadre-juridique-et-orientations-organisationnelles">Cadre juridique et orientations organisationnelles</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#organisation-du-contexte-métier">Organisation du contexte métier</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#définition-des-processus-collaboratifs">Définition des processus colllaboratifs</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#description-des-processus-collaboratifs-et-identification-des-flux">Description des processus collaboratifs et identification des flux</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-mos">Identification des concepts véhiculés dans les flux</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#modélisation-des-flux-dinformations">Modélisation des flux d’informations</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
@@ -623,7 +648,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -708,7 +733,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -725,7 +750,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -952,7 +977,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -1037,7 +1062,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -1054,7 +1079,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -1296,7 +1321,7 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -1330,7 +1355,7 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
         <p> [{NTE}]</p>
       </td>
       <td>
-        <p>Comments on the order</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -1415,7 +1440,7 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -1432,7 +1457,7 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -1675,7 +1700,7 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
         <p> ORC</p>
       </td>
       <td>
-        <p>Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie</p>
+        <p>Common Order</p>
       </td>
       <td>
         <p>R</p>
@@ -1709,7 +1734,7 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
         <p> [{NTE}]</p>
       </td>
       <td>
-        <p>Comments on the order</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -1794,7 +1819,7 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
         <p>  OBX</p>
       </td>
       <td>
-        <p>Le cas échéant, véhicule le protocole d'imagerie</p>
+        <p>Observation</p>
       </td>
       <td>
         <p>R</p>
@@ -1811,7 +1836,7 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
         <p>  [{NTE}]</p>
       </td>
       <td>
-        <p>Comment of the result</p>
+        <p>Comment</p>
       </td>
       <td>
         <p>O</p>
@@ -1880,7 +1905,7 @@ Ils permettent notamment de véhiculer :</p>
 
 <p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 4</strong> :</p>
 
-<div style="text-align: center;" class="figure"><a name="l3841">​</a>
+<div style="text-align: center;" class="figure"><a name="l3888">​</a>
     <img src="fig17.png" alt="Figure 17" style="width:80%;" title="Figure 17 : Structure fonctionnelle du message ORU_R01"/>
     <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
 </div>
@@ -1906,7 +1931,7 @@ section dédiée du document CDA Niv3).</p>
   </li>
 </ul>
 
-<p><a name="l3871">​</a>Les groupes de segments OBSERVATION suivants (répétables) véhiculent les métadonnées spécifiques à la publication sur le DMP et/ou à l’envoi par la MSSanté. Ces métadonnées sont communes aux deux formats du document. Ces métadonnées sont décrites dans la <a href="volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet">section dédiée</a>.</p>
+<p><a name="l3918">​</a>Les groupes de segments OBSERVATION suivants (répétables) véhiculent les métadonnées spécifiques à la publication sur le DMP et/ou à l’envoi par la MSSanté. Ces métadonnées sont communes aux deux formats du document. Ces métadonnées sont décrites dans la <a href="volume2.html#contraintes-appliqu%C3%A9es-aux-messages-mdm-et-oru-dans-le-contexte-de-ce-volet">section dédiée</a>.</p>
 
 <p><br/></p>
 
@@ -2284,7 +2309,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
     </tr>
     <tr>
       <td>
-        <p>PV1-19 <i>(Note 1</i>) et (<i>Note 2</i>)</p>
+        <p>PV1-19 (2)(4) </p>
       </td>
       <td>
         <p>Identifiant de la venue</p>
@@ -2293,12 +2318,12 @@ Ces contraintes portent notamment sur les segments suivants :</p>
         <p>CX</p>
       </td>
       <td>
-        <p> C (Note 2)</p>
+        <p> C (3)</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>PV1-44 (<i>Note 1</i>)</p>
+        <p>PV1-44 (2)</p>
       </td>
       <td>
         <p>Date d'entrée du patient</p>
@@ -2312,7 +2337,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
     </tr>
     <tr>
       <td>
-        <p>PV1-45(<i>Note 1</i>)</p>
+        <p>PV1-45 (2)</p>
       </td>
       <td>
         <p>Date de sortie du patient</p>
@@ -2327,9 +2352,23 @@ Ces contraintes portent notamment sur les segments suivants :</p>
   </tbody>
 </table>
 
-<p><em>Note 1</em> : <em>A noter que ces champs sont à renseigner, s’ils sont connus, par l’acteur CREATEUR afin de pouvoir calculer des indicateurs.</em></p>
+<blockquote class="stu-note">
+    <p>
+    <b>(2) :</b> A noter que ces champs sont à renseigner, s'ils sont connus, par le système expéditeur afin de pouvoir calculer des indicateurs.
+    </p>
+</blockquote>
 
-<p><em>Note 2</em> : <em>Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.</em></p>
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.
+    </p>
+</blockquote>
+
+<blockquote class="stu-note">
+    <p>
+    <b>(4) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
+    </p>
+</blockquote>
 
 <p><br/></p>
 
@@ -2475,7 +2514,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Qualifie le type d'organisation  (2)</p>
+        <p>Qualifie le type d'organisation  (5)</p>
       </td>
     </tr>
     <tr>
@@ -2562,7 +2601,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
 
 <blockquote class="stu-note">
     <p>
-    <b>(2) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
+    <b>(5) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
     Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une <a href="./table_orga.html">table de valeurs locale documentée</a>.
 
     L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS.
@@ -4727,7 +4766,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 <p>Ce <strong>groupe OBSERVATION</strong> est utilisé afin de véhiculer l’<strong>URL d’accès à la vieweuse DRIMbox</strong>, permettant la consultation à distance des images issues de l’examen d’imagerie.</p>
 
 <p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans <strong>OBX-5</strong> correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (3), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans <strong>OBX-5</strong> correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <table class="table-hl7v2">
@@ -4852,7 +4891,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <blockquote class="stu-note">
     <p>
-    <b>(3) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    <b>(6) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
     </p>
     <ul>
       <li>le séparateur de champs (|) via \F\ ;</li>
@@ -4865,7 +4904,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l10030">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+<p><a name="l10078">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
 
@@ -5666,7 +5705,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:56+0000">2026-01-27</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 15:52+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

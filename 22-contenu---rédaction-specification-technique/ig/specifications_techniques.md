@@ -174,7 +174,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..*]
   * § HL7:  
 * Segment:  ORC
-  * Meaning: Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie
+  * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
@@ -199,12 +199,12 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..*]
   * § HL7:  
 * Segment:  OBX
-  * Meaning: Le cas échéant, véhicule le protocole d'imagerie
+  * Meaning: Observation
   * Usage: R
   * Card.: [1..1]
   * § HL7: 7
 * Segment:  [{NTE}]
-  * Meaning: Comment of the result
+  * Meaning: Comment
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
@@ -285,7 +285,7 @@ Le message est composé des segments principaux suivants :
   * Card.: [1..*]
   * § HL7:  
 * Segment:  ORC
-  * Meaning: Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie
+  * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
@@ -310,12 +310,12 @@ Le message est composé des segments principaux suivants :
   * Card.: [0..*]
   * § HL7:  
 * Segment:  OBX
-  * Meaning: Le cas échéant, véhicule le protocole d'imagerie
+  * Meaning: Observation
   * Usage: R
   * Card.: [1..1]
   * § HL7: 7
 * Segment:  [{NTE}]
-  * Meaning: Comment of the result
+  * Meaning: Comment
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
@@ -400,7 +400,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..*]
   * § HL7:  
 * Segment:  ORC
-  * Meaning: Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie
+  * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
@@ -410,7 +410,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..1]
   * § HL7: 4
 * Segment:  [{NTE}]
-  * Meaning: Comments on the order
+  * Meaning: Comment
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
@@ -435,12 +435,12 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..*]
   * § HL7:  
 * Segment:  OBX
-  * Meaning: Le cas échéant, véhicule le protocole d'imagerie
+  * Meaning: Observation
   * Usage: R
   * Card.: [1..1]
   * § HL7: 7
 * Segment:  [{NTE}]
-  * Meaning: Comment of the result
+  * Meaning: Comment
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
@@ -535,7 +535,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..*]
   * § HL7:  
 * Segment:  ORC
-  * Meaning: Common Order : **décision du médecin effecteur** vis-à-vis de la demande d’examen d’imagerie
+  * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
@@ -545,7 +545,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..1]
   * § HL7: 4
 * Segment:  [{NTE}]
-  * Meaning: Comments on the order
+  * Meaning: Comment
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
@@ -570,12 +570,12 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Card.: [1..*]
   * § HL7:  
 * Segment:  OBX
-  * Meaning: Le cas échéant, véhicule le protocole d'imagerie
+  * Meaning: Observation
   * Usage: R
   * Card.: [1..1]
   * § HL7: 7
 * Segment:  [{NTE}]
-  * Meaning: Comment of the result
+  * Meaning: Comment
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
@@ -740,22 +740,24 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
   * Contenu: Classe du patient 
   * Type donnée: IS
   * Caractère optionnel/obligatoire: R
-* Champ: PV1-19 *(Note 1*) et (*Note 2*)
+* Champ: PV1-19 (2)(4) 
   * Contenu: Identifiant de la venue
   * Type donnée: CX
-  * Caractère optionnel/obligatoire:  C (Note 2)
-* Champ: PV1-44 (*Note 1*)
+  * Caractère optionnel/obligatoire:  C (3)
+* Champ: PV1-44 (2)
   * Contenu: Date d'entrée du patient
   * Type donnée: TS
   * Caractère optionnel/obligatoire: RE
-* Champ: PV1-45(*Note 1*)
+* Champ: PV1-45 (2)
   * Contenu: Date de sortie du patient
   * Type donnée: TS
   * Caractère optionnel/obligatoire: RE
 
-**Note 1** : **A noter que ces champs sont à renseigner, s’ils sont connus, par l’acteur CREATEUR afin de pouvoir calculer des indicateurs.**
+>  **(2) :** A noter que ces champs sont à renseigner, s'ils sont connus, par le système expéditeur afin de pouvoir calculer des indicateurs. 
 
-**Note 2** : **Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.**
+>  **(3) :** Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu. 
+
+>  **(4) :** Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU. 
 
 #### Contraintes spécifiques au volet Téléradiologie
 
@@ -816,7 +818,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Numéro de téléphone à appeler pour obtenir des précisions sur la demande d'examen d'imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-17
   * ?: Entering Organization
-  * ?: Qualifie le type d'organisation (2)
+  * ?: Qualifie le type d'organisation (5)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-17.1 
   * ?: Code 
   * ?: STRUCTURE_IMAGERIE
@@ -839,7 +841,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Organization number
   * ?: Identifiant de l'organisation
 
->  **(2) :** Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés. Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une [table de valeurs locale documentée](./table_orga.md). L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS. Ce découplage permet de respecter les exigences IHE tout en garantissant une identification robuste. 
+>  **(5) :** Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés. Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une [table de valeurs locale documentée](./table_orga.md). L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS. Ce découplage permet de respecter les exigences IHE tout en garantissant une identification robuste. 
 
 ##### Segment OBR (Observation Request)
 
@@ -1484,7 +1486,7 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
 
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.
 
-L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (3), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans **OBX-3**, [documenté en annexe](./table_obs.md).
+L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans **OBX-3**, [documenté en annexe](./table_obs.md).
 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -1517,7 +1519,7 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
   * ?: Observation Result Status
   * ?: Valeur fixée à « F » 
 
->  **(3) :** Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment : 
+>  **(6) :** Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment : 
 * le séparateur de champs (|) via \F\ ;
 * le séparateur de composants (^) via \S\ ;
 * le séparateur de répétitions (~) via \R\ ;

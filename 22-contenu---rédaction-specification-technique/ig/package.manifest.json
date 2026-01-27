@@ -1,7 +1,7 @@
 {
   "version" : "0.1.0",
   "fhirVersion" : ["4.0.1"],
-  "date" : "20260127105614",
+  "date" : "20260127155230",
   "name" : "ans.hl7v2.fr.teleradiologie",
   "jurisdiction" : "urn:iso:std:iso:3166#FR"
 }
