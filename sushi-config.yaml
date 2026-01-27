@@ -29,7 +29,7 @@ pages:
     specifications_techniques.md:
         title: "Volume 2 : Détail des transactions"
     diag_sequence.md:
-        title: Diagramme de séquence - Spcécification technique
+        title: Diagramme de séquence - Spécification technique
     table_obs.md:
         title: Table TLR_OBSERVATION
     table_orga.md:
@@ -52,9 +52,9 @@ menu:
     Volume 2 – Détail des Transactions: specifications_techniques.html
     Volume 3 - Annexes:
         Normes et Standards: norme_standard.html
-        Diagramme de séquence - Spcécification technique: diag_sequence.html
+        Diagramme de séquence - Spécification technique: diag_sequence.html
         Utilisation du champ OBX-4 – Observation Sub-ID: sub-id.html
-        Table OBSERVATION_TLR: table_obs.html
+        Table TLR_OBSERVATION: table_obs.html
         Table TLR_TYPE_ORGANISATION: table_orga.html
         Exemples de messages: exemples.html
         Références documentaires: doc-ref.html

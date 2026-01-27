@@ -64,7 +64,7 @@ La présente partie présente, pour chaque flux métier du volet Téléradiologi
 
 <blockquote class="stu-note">
     <p>
-    <b>(1) :</b> Le **flux 2** est un flux **optionnel** dans le cadre du volet Téléradiologie. Son implémentation <strong>n’est pas obligatoire</strong> et peut être omise sans remettre en cause la conformité globale des échanges.
+    <b>(1) :</b> Le flux d'annulation est un flux <strong>optionnel</strong> dans le cadre du volet Téléradiologie. Son implémentation <strong>n’est pas obligatoire</strong> et peut être omise sans remettre en cause la conformité globale des échanges.
     </p>
 </blockquote>
 
