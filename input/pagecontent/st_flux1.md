@@ -4,7 +4,7 @@ Ce flux repose sur l’utilisation d'un messages **ORM^O01**, conformes au stand
 
 Les segments sont renseignés conformément au profil **IHE Scheduled Workflow (SWF)**, lorsqu’il est applicable, et font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
 
-Les **groupes OBSERVATION** (segments OBX), non contraints et optionnels dans le cadre du profil IHE SWF, sont **explicitement contraints par le volet téléradiologie**. Ces contraintes permettent notamment de structurer et de normaliser la transmission d’informations complémentaires nécessaires à la réalisation et à l’interprétation de l’examen d’imagerie.
+Les **groupes OBSERVATION** (segments OBX), non contraints et optionnels dans le cadre du profil IHE SWF, sont **explicitement contraints par le volet téléradiologie**. Ces contraintes permettent notamment de structurer et de normaliser la transmission d’informations complémentaires nécessaires à la compréhension de la demande d’examen d’imagerie.
 
 Les parties suivantes détaillent les contraintes appliquées aux segments du message ORM^O01 dans le cadre de ce flux.
 
@@ -62,7 +62,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen d'imagerie</p>
+        <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
       </td>
     </tr>
     <tr>
@@ -84,7 +84,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Verified By</p>
       </td>
       <td>
-        <p>Informations relatives au professionel de santé effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie</p>
+        <p>Informations relatives au professionnel de santé effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie</p>
         <p>Ce champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie</p>
       </td>
     </tr>
@@ -163,7 +163,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>OrganizationName</p>
       </td>
       <td>
-        <p>Nom de l'organisation</p>
+        <p>Nom de l'organisation (structure d'imagerie)</p>
       </td>
     </tr>
     <tr>
@@ -257,7 +257,7 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen (identique à l'ORC-1)</p>
+        <p>Identifiant de la demande d'examen (identique à l'ORC-2)</p>
       </td>
     </tr>
     <tr>
@@ -276,10 +276,10 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>&gt;OBR-4.1</p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie</p>
+        <p>Code</p>
       </td>
       <td>
-        <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
     <tr>
@@ -287,7 +287,7 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>&gt;OBR-4.2</p>
       </td>
       <td>
-        <p>Libellé</p>
+        <p>Display name</p>
       </td>
       <td></td>
     </tr>
@@ -296,7 +296,7 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>&gt;OBR-4.3</p>
       </td>
       <td>
-        <p>Système de codage dont est issu le code</p>
+        <p>Name of Coding system</p>
       </td>
       <td>
         <p> <span class="hl7-color">DCM</span></p>
@@ -310,7 +310,7 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>Relevant Clinical Information</p>
       </td>
       <td>
-        <p>Antécédents du patient pertinent dans le cadre de l'examen demandé</p>
+        <p>Antécédents du patient pertinents dans le cadre de l'examen demandé</p>
       </td>
     </tr>
     <tr>
@@ -332,7 +332,7 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>Reason for Study</p>
       </td>
       <td>
-        <p>Justification de la demande d'examen</p>
+        <p>Justification de la demande d'examen (type CE)</p>
         <p>Lorsque la justification peut être exprimée à l’aide d’un code, celui-ci doit être renseigné dans CE-1, avec le système de codage associé précisé en CE-3.</p>
         <p>À défaut de codage disponible, la justification peut être transmise sous forme de texte libre dans CE-2 – Text.</p>
       </td>
@@ -430,7 +430,7 @@ Ce groupe est composé d'un segment OBX obligatoire permettant d’indiquer la *
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Localisation anatomique examinée dans le cadre de l’examen d’imagerie</span></p>
@@ -588,7 +588,7 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Localisation anatomique examinée dans le cadre de l’examen d’imagerie</span></p>
@@ -664,7 +664,7 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
   </tbody>
 </table>
 
-##### Groupe OBSERVATION - Taille corporel
+##### Groupe OBSERVATION - Taille corporelle
 
 Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer la **taille corporelle du patient**, lorsque celle-ci est nécessaire à la réalisation de l’examen d’imagerie. La taille du patient est véhiculée par l'intermédiaire d'un segment OBX.
 
@@ -746,7 +746,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer la **taille 
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Body height</span></p>
@@ -881,7 +881,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **poids c
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Body weight</span></p>
@@ -1016,7 +1016,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **statut 
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Pregnancy status</span></p>

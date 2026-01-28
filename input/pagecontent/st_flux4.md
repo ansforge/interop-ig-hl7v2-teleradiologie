@@ -60,7 +60,7 @@ Le segment **ORC** est renseigné conformément aux spécifications du profil **
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen d'imagerie</p>
+        <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
       </td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@ Le segment **ORC** est renseigné conformément aux spécifications du profil **
         <p>Filler Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen d'imagerie</p>
+        <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
       </td>
     </tr>
     <tr>
@@ -201,7 +201,7 @@ Le segment **OBR – Observation Request** est renseigné conformément au profi
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen (identique à l'ORC-1)</p>
+        <p>Identifiant de la demande d'examen (identique à l'ORC-2)</p>
       </td>
     </tr>
     <tr>
@@ -220,10 +220,10 @@ Le segment **OBR – Observation Request** est renseigné conformément au profi
         <p>&gt;OBR-4.1</p>
       </td>
       <td>
-        <p>Code LOINC de l’acte d’imagerie</p>
+        <p>Code</p>
       </td>
       <td>
-        <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a></p>
+        <p>Code LOINC de l’acte d’imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a></p>
       </td>
     </tr>
     <tr>
@@ -231,7 +231,7 @@ Le segment **OBR – Observation Request** est renseigné conformément au profi
         <p>&gt;OBR-4.2</p>
       </td>
       <td>
-        <p>Libellé</p>
+        <p>Display name</p>
       </td>
     </tr>
     <tr>
@@ -239,7 +239,7 @@ Le segment **OBR – Observation Request** est renseigné conformément au profi
         <p>&gt;OBR-4.3</p>
       </td>
       <td>
-        <p>Système de codage dont est issu le code</p>
+        <p>Name of Coding system</p>
       </td>
       <td>
         <p> <span class="hl7-color">LN</span></p>
@@ -344,10 +344,10 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>&gt;IPC-5.1</p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie</p>
+        <p>Code</p>
       </td>
       <td>
-        <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
     <tr>
@@ -355,7 +355,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>&gt;IPC-5.2</p>
       </td>
       <td>
-        <p>Libellé</p>
+        <p>Display name</p>
       </td>
       <td></td>
     </tr>
@@ -364,7 +364,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>&gt;IPC-5.3</p>
       </td>
       <td>
-        <p>Système de codage dont est issu le code</p>
+        <p>Name of Coding system</p>
       </td>
       <td>
         <p> <span class="hl7-color">DCM</span></p>
@@ -461,7 +461,7 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">URL de la visionneuse DRIMbox</span></p>
@@ -526,8 +526,8 @@ Pour le détail des segments OBX, se référer à la section dédiée du flux 1 
 
 Les groupes **OBSERVATION – Produit administré** sont **optionnels** et permettent de transmettre les informations relatives aux produits administrés lors d’un examen d’imagerie.  
 
-Chaque information du produit est portée dans **un groupe OBSERVATION** et un segment OBX distincts.  
-Les groupes sont répétables pour permettre la transmission de plusieurs produits administrés au cours du même examen.  
+Chaque ensemble d'informations associées à un produit donné est portée dans **un groupe OBSERVATION** et un segment OBX distincts.  
+Les groupes sont répétables pour permettre la transmission d'informations associées à plusieurs produits administrés au cours du même examen.  
 Pour assurer la cohérence des informations :  
 - le **type de produit** et le **numéro de lot** sont **indissociables**,
 - la **quantité administrée** est facultative mais recommandée lorsque le produit est renseigné.
@@ -622,7 +622,7 @@ Ce groupe est obligatoirement associé au groupe **Numéro de lot**.
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Produit administré lors de l'examen d'imagerie</span></p>
@@ -782,7 +782,7 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Produit administré lors de l'examen d'imagerie</span></p>
@@ -919,7 +919,7 @@ La quantité est **optionnelle** mais fortement recommandée lorsque le produit 
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Produit administré lors de l'examen d'imagerie</span></p>
@@ -1080,7 +1080,7 @@ Le groupe contient un **segment OBX unique** portant la valeur de l’identifian
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Appareil d'imagerie utilisé lors de l'examen</span></p>
@@ -1218,7 +1218,7 @@ Ce groupe est **optionnel** et vient compléter l’identifiant de l’appareil 
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Appareil d'imagerie utilisé lors de l'examen</span></p>

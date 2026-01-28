@@ -63,7 +63,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen d'imagerie</p>
+        <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
       </td>
     </tr>
     <tr>
@@ -85,7 +85,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Order Control Code Reason</p>
       </td>
       <td>
-        <p>Motif du refus de la demande d'examen</p>
+        <p>Motif du refus de la demande d'examen (type CE)</p>
         <p>Peut être exprimé à l’aide d’un code renseigné dans CE-1 – Identifier, avec le système de codage correspondant précisé en CE-3 – Name of Coding System (code local ou standard).</p>
         <p>À défaut de codage disponible, un libellé en clair peut être renseigné dans CE-2 – Text.</p>
       </td>
@@ -224,7 +224,7 @@ Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workfl
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen (identique à l'ORC-1)</p>
+        <p>Identifiant de la demande d'examen (identique à l'ORC-2)</p>
       </td>
     </tr>
     <tr>
@@ -243,10 +243,10 @@ Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workfl
         <p>&gt;OBR-4.1</p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie</p>
+        <p>Code</p>
       </td>
       <td>
-        <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
     <tr>
@@ -254,7 +254,7 @@ Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workfl
         <p>&gt;OBR-4.2</p>
       </td>
       <td>
-        <p>Libellé</p>
+        <p>Display name</p>
       </td>
       <td></td>
     </tr>
@@ -263,7 +263,7 @@ Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workfl
         <p>&gt;OBR-4.3</p>
       </td>
       <td>
-        <p>Système de codage dont est issu le code</p>
+        <p>Name of coding system</p>
       </td>
       <td>
         <p> <span class="hl7-color">DCM</span></p>
@@ -285,7 +285,8 @@ Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workfl
 
 ##### Groupe OBSERVATION - Protocole d'imagerie
 
-Le **groupe OBSERVATION** est requis afin de véhiculer le **protocole d’imagerie** associé à l'examen.  
+Le **groupe OBSERVATION** est requis dans le cadre d'une demande d'examen d'imagerie acceptée (ORC-1 = OK) afin de véhiculer le **protocole d’imagerie** associé à l'examen.
+Ce groupe est **répétable** afin de permettre, le cas échéant, la transmission de plusieurs protocoles d’imagerie distincts.  
 Le protocole d’imagerie est porté par un **segment OBX unique** au sein du groupe OBSERVATION. Deux alternatives d’encodage sont proposées, en fonction du niveau de structuration et du contenu du protocole à transmettre :
 
 - **Protocole en clair** : transmission du protocole sous forme de texte lisible directement dans le message HL7, à l’aide du type de données **FT (Formatted Text)**.  
@@ -376,7 +377,7 @@ Le contenu peut inclure des retours à la ligne et une structuration légère fa
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Protocole d'imagerie médicale</span></p>
@@ -501,7 +502,7 @@ Le protocole est encodé en **base64** et peut correspondre à un document struc
         <p>&gt; OBX-3.2  </p>
       </td>
       <td>
-        <p>Libellé </p>
+        <p>Display name </p>
       </td>
       <td>
         <p><span class="hl7-color">Protocole d'imagerie médicale</span></p>

@@ -125,7 +125,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
         <p>MSH-7</p>
       </td>
       <td>
-        <p>Date/time du message</p>
+        <p>Horodatage du message</p>
       </td>
       <td>
         <p>TS</p>
@@ -307,7 +307,7 @@ Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 
     </tr>
     <tr>
       <td>
-        <p>PID-18 (<i>Note 1</i>)</p>
+        <p>PID-18 (2)</p>
       </td>
       <td>
         <p>N° de dossier administratif</p>

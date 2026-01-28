@@ -11,7 +11,7 @@ Les parties suivantes détaillent les contraintes appliquées aux segments du me
 Le segment **ORC** est utilisé pour véhiculer l’**annulation d’une demande d’examen d’imagerie**, conformément au profil **IHE Scheduled Workflow (SWF)** .
 
 La structure du segment ORC est **identique à celle du flux 1**, à l’exception du champ **ORC-1 – Order Control**, dont la valeur est fixée à **CA (Cancel Order)**.  
-Un **motif d’annulation** peut être véhiculé lorsque cette information est disponible ; son renseignement est **optionnel**.
+Un **motif d’annulation** peut être véhiculé lorsque cette information est disponible, son renseignement est **optionnel**.
 
 Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, ainsi que certains champs **requis si connus** ou **optionnel**, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.
 
@@ -120,7 +120,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Order Control Code Reason</p>
       </td>
       <td>
-        <p>Motif d'annulation de la demande d'examen</p>
+        <p>Motif d'annulation de la demande d'examen (type CE)</p>
         <p>Peut être exprimé à l’aide d’un code renseigné dans CE-1 – Identifier, avec le système de codage correspondant précisé en CE-3 – Name of Coding System (code local ou standard).</p>
         <p>À défaut de codage disponible, un libellé en clair peut être renseigné dans CE-2 – Text.</p>
       </td>
@@ -260,7 +260,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>Placer Order Number</p>
       </td>
       <td>
-        <p>Identifiant de la demande d'examen (identique à l'ORC-1)</p>
+        <p>Identifiant de la demande d'examen (identique à l'ORC-2)</p>
       </td>
     </tr>
     <tr>
@@ -279,10 +279,10 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>&gt;OBR-4.1</p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie</p>
+        <p>Code</p>
       </td>
       <td>
-        <p>Utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
       </td>
     </tr>
     <tr>
@@ -290,7 +290,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>&gt;OBR-4.2</p>
       </td>
       <td>
-        <p>Libellé</p>
+        <p>Display name</p>
       </td>
       <td></td>
     </tr>
@@ -299,7 +299,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>&gt;OBR-4.3</p>
       </td>
       <td>
-        <p>Système de codage dont est issu le code</p>
+        <p>Name of Coding system</p>
       </td>
       <td>
         <p> <span class="hl7-color">DCM</span></p>

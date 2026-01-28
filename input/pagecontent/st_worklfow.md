@@ -1,6 +1,6 @@
 ### Evènements déclenchants
 
-La présente partie présente, pour chaque flux métier du volet Téléradiologie, le **message HL7 v2** et l’**événement HL7 v2 associé** utilisés pour supporter l’échange.
+La présente partie décrit, pour chaque flux métier inclus dans le périmètre du volet Téléradiologie, le **message HL7 v2** et l’**événement HL7 v2 associé** utilisés pour supporter l’échange.
 
 <table>
   <tbody>
@@ -74,7 +74,7 @@ La présente partie présente, pour chaque flux métier du volet Téléradiologi
 
 La présente partie décrit les interactions entre les acteurs du volet Téléradiologie, au travers de diagrammes de séquence illustrant les échanges de messages HL7 v2 identifiés précédemment.
 
-Les interactions sont présentées flux par flux. Chaque diagramme s’appuie sur le **profil de messages HL7 v2 retenus**. Le [diagramme de séquence complet est fourni en annexe](./diag_sequence.html).
+Les interactions sont présentées flux par flux. Chaque diagramme s’appuie sur le **profil de messages HL7 v2 retenu**. Le [diagramme de séquence complet est fourni en annexe](./diag_sequence.html).
 
 #### Flux 1 et 2 Transmission/Annulation d'une demande d'examen d'imagerie
 
@@ -108,14 +108,14 @@ La demande d’examen est transmise du RIS vers le SI de téléradiologie au moy
 
 Les options techniques suivantes sont représentées :
 
-- lorsque la demande d’examen est disponible sous forme de document structuré, le RIS peut transmettre ce document au SI de téléradiologie via le **volet de transmission de documents CDA-R2 en HL7 v2** ;
-- lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie en s’appuyant sur le **même mécanisme de transmission CDA-R2 en HL7 v2**.
+- lorsque la demande d’examen est disponible sous forme de document structuré, le RIS peut transmettre ce document au SI de téléradiologie en s'appuyant sur les transactions définies au sein du **volet de transmission de documents CDA-R2 en HL7 v2** ;
+- lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du **volet transmission CDA-R2 en HL7 v2**.
 
 Enfin, le diagramme illustre la **possibilité d’annulation de la demande d’examen** par le RIS, notifiée au SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01**, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.
 
 #### Flux 3 Réponse à la demande d'examen d'imagerie
 
-Ce diagramme décrit les échanges techniques consécutifs à la consultation et à l’évaluation d’une demande d’examen par le professionel de santé effecteur au sein du SI de téléradiologie.
+Ce diagramme décrit les échanges techniques consécutifs à la consultation et à l’évaluation d’une demande d’examen par le professionnel de santé effecteur au sein du SI de téléradiologie.
 
 <div style="
     text-align: center;
@@ -141,18 +141,18 @@ Ce diagramme décrit les échanges techniques consécutifs à la consultation et
     </p>
 </div>
 
-Après réception de la demande, le professionel de santé effecteur procède à son **évaluation** (acceptation ou refus).  
-Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message **HL7 v2 ORU^R01** par le SI de téléradiologie.
+Après réception de la demande d'examen d'imagerie, le professionnel de santé effecteur procède à son **évaluation** (acceptation ou refus).  
+Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message **HL7 v2 ORU^R01** depuis le SI de téléradiologie.
 
 Les cas suivants sont couverts :
 
 - **Acceptation de la demande** :  
   le message **ORU^R01** contient un ou plusieurs **protocoles d’imagerie**, véhiculés dans les segments **OBX** ;  
-  le champ **ORC-1 (Order Control)** est valorisé à `OK`.
+  le champ **ORC-1 (Order Control)** est valorisé à **OK**.
 
 - **Refus de la demande** :  
   le message **ORU^R01** est transmis **sans protocole d’imagerie** ;  
-  le champ **ORC-1 (Order Control)** est valorisé à `OC`.
+  le champ **ORC-1 (Order Control)** est valorisé à **OC**.
 
 
 #### Flux 4 Transmission d'un complément d'information post-examen
@@ -184,10 +184,7 @@ Ce diagramme décrit les échanges techniques intervenant après l’acceptation
 </div>
 
 À l’issue de cette acceptation, l’examen d’imagerie est réalisé au sein de la structure d’imagerie.  
-Une fois l’examen effectué, le RIS transmet au SI de téléradiologie un ensemble de **compléments d’information post-examen**, destinés à permettre :
-
-- l’**accès aux images** produites ;
-- la **rédaction du compte rendu** par le professionnel de santé effecteur.
+Une fois l’examen effectué, le RIS transmet au SI de téléradiologie un ensemble de **compléments d’information post-examen**, destinés à permettre la **rédaction du compte rendu** par le professionnel de santé effecteur.
 
 Ces informations sont transmises via un message **OMI^O23** conforme au profil IHE SWF.
 
