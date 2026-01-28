@@ -1,5 +1,5 @@
 {
-  "date" : "Wed, 28 Jan, 2026 17:00:29 +0000",
+  "date" : "Wed, 28 Jan, 2026 17:10:08 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,47 +8,42 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 26,
-          "length" : 39
-        },
-        {
-          "activity" : "scan",
-          "start" : 27,
-          "length" : 1
+          "start" : 24,
+          "length" : 25
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 27,
-          "length" : 18
+          "start" : 25,
+          "length" : 16
         },
         {
           "activity" : "generateNarratives",
-          "start" : 27,
-          "length" : 78
+          "start" : 25,
+          "length" : 86
         },
         {
           "activity" : "validate",
-          "start" : 27,
-          "length" : 6730
-        },
-        {
-          "activity" : "scanForUsageStats",
-          "start" : 34,
-          "length" : 1
+          "start" : 25,
+          "length" : 8777
         },
         {
           "activity" : "generate1",
           "start" : 34,
-          "length" : 81
+          "length" : 68
         },
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 67
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 41,
+          "start" : 42,
+          "length" : 2
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 45,
           "length" : 3
         }
       ]
@@ -59,7 +54,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -74,7 +69,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -85,18 +80,18 @@
     },
     {
       "name" : "/input/pagecontent/table_obs.md",
-      "size" : 1722
-    },
-    {
-      "name" : "/input/pagecontent/sub-id.md",
-      "size" : 2408,
+      "size" : 1722,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/input/pagecontent/sub-id.md",
+      "size" : 2408
     },
     {
       "name" : "/input/pagecontent/st_flux4.md",
@@ -104,7 +99,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -119,7 +114,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -146,7 +141,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -161,7 +156,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -172,21 +167,14 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 3
         }
       ]
     },
     {
       "name" : "/input/pagecontent/securite.md",
-      "size" : 900,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 36,
-          "length" : 1
-        }
-      ]
+      "size" : 900
     },
     {
       "name" : "/input/pagecontent/construction_des_flux.md",
@@ -218,7 +206,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -229,18 +217,18 @@
     },
     {
       "name" : "/template/config",
-      "size" : 0,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 36,
-          "length" : 1
-        }
-      ]
+      "size" : 0
     },
     {
       "name" : "/template/config/_config.yml",
-      "size" : 31
+      "size" : 31,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 37,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images",
@@ -260,7 +248,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]
@@ -287,14 +275,7 @@
     },
     {
       "name" : "/input/images/F2_TransmissionDemande.png",
-      "size" : 52946,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 36,
-          "length" : 1
-        }
-      ]
+      "size" : 52946
     },
     {
       "name" : "/input/images/F5_TransmissionInfos.png",
@@ -302,7 +283,14 @@
     },
     {
       "name" : "/input/images/F8_Flux3Activity.png",
-      "size" : 92678
+      "size" : 92678,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 37,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images/F3_AnnulationDemande.png",
@@ -322,14 +310,7 @@
     },
     {
       "name" : "/input/images/Sequence4.png",
-      "size" : 143216,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 36,
-          "length" : 1
-        }
-      ]
+      "size" : 143216
     },
     {
       "name" : "/input/images/Sequence3.png",
@@ -337,7 +318,14 @@
     },
     {
       "name" : "/input/images/F9_Flux4Activity.png",
-      "size" : 86625
+      "size" : 86625,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 37,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images/tlr_diagram.png",
@@ -353,7 +341,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 36,
+          "start" : 37,
           "length" : 1
         }
       ]

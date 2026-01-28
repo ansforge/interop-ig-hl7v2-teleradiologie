@@ -426,8 +426,8 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * § HL7:  
 * Segment:  {
   * Meaning: --- OBSERVATION begin
-  * Usage: R
-  * Card.: [1..*]
+  * Usage: C
+  * Card.: [0..*]
   * § HL7:  
 * Segment:  OBX
   * Meaning: Observation
