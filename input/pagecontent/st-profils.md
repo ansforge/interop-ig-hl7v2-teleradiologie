@@ -969,10 +969,10 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
         <p>--- OBSERVATION begin</p>
       </td>
       <td>
-        <p>R</p>
+        <p>C</p>
       </td>
       <td>
-        <p>[1..*]</p>
+        <p>[0..*]</p>
       </td>
       <td>
         <p> </p>
