@@ -1299,9 +1299,9 @@ Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Serv
 
 ##### Segment NTE (Notes and Comments)
 
-Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer des **commentaires libres** relatifs à la **finalité de l’examen** et/ou à la **modalité d’imagerie demandée**.
+Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer un ou des **commentaires libres** relatifs à la **finalité de l’examen**.
 
-La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen ou à la modalité d’imagerie, telles que définies dans le présent volet.
+La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen telles que définies dans le présent volet.
 
 * Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: Elément requis
   * ?: Description
@@ -1317,7 +1317,7 @@ La structure et l’utilisation du segment **NTE** sont **conformes au standard 
   * ?: 
 * Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: > NTE-4.1 
   * ?: Code 
-  * ?: Valeur possible :FINALITE_EXAMENMODALITE_IMAGERIE
+  * ?: Valeur fixée à : FINALITE_EXAMEN
 * Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: > NTE-4.3 
   * ?: Name of Coding system
   * ?: HL70364
@@ -1325,6 +1325,10 @@ La structure et l’utilisation du segment **NTE** sont **conformes au standard 
 ##### Groupe OBSERVATION - Modalité d’imagerie
 
 Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer la **modalité d’imagerie souhaitée** pour l’examen demandé.
+
+Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de véhiculer un ou des **commentaires libres** relatifs à la **modalité d’imagerie demandée**.
+
+###### Segment OBX - Modalité d’imagerie
 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -1362,6 +1366,29 @@ Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer la
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-11
   * ?: Observation Result Status
   * ?: Valeur fixée à « O » (Order detail description only (no result))
+
+##### Segment NTE - Commentaire sur la modalité
+
+La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la modalité d’imagerie, telles que définies dans le présent volet.
+
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: Elément requis
+  * ?: Description
+  * ?: Valeur
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: **Segment NTE**
+  * ?: **Notes and Comments**
+  * ?:  
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: NTE-3
+  * ?: Comment
+  * ?: 
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: NTE-4
+  * ?: Comment Type
+  * ?: 
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: > NTE-4.1 
+  * ?: Code 
+  * ?: Valeur fixée à : MODALITE_IMAGERIE
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: > NTE-4.3 
+  * ?: Name of Coding system
+  * ?: HL70364
 
 ##### Groupes OBSERVATION - Localisation anatomique
 

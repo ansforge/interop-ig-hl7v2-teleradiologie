@@ -2713,9 +2713,9 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
 
 <h5 id="segment-nte-notes-and-comments">Segment NTE (Notes and Comments)</h5>
 
-<p>Le segment <strong>NTE</strong> peut être utilisé en complément du segment <strong>OBR</strong> afin de véhiculer des <strong>commentaires libres</strong> relatifs à la <strong>finalité de l’examen</strong> et/ou à la <strong>modalité d’imagerie demandée</strong>.</p>
+<p>Le segment <strong>NTE</strong> peut être utilisé en complément du segment <strong>OBR</strong> afin de véhiculer un ou des <strong>commentaires libres</strong> relatifs à la <strong>finalité de l’examen</strong>.</p>
 
-<p>La structure et l’utilisation du segment <strong>NTE</strong> sont <strong>conformes au standard HL7 v2.5.1</strong>. Des <strong>contraintes spécifiques</strong> s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen ou à la modalité d’imagerie, telles que définies dans le présent volet.</p>
+<p>La structure et l’utilisation du segment <strong>NTE</strong> sont <strong>conformes au standard HL7 v2.5.1</strong>. Des <strong>contraintes spécifiques</strong> s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen telles que définies dans le présent volet.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -2774,9 +2774,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur possible :</p>
-        <p><span class="hl7-color">FINALITE_EXAMEN</span></p>
-        <p><span class="hl7-color">MODALITE_IMAGERIE</span></p>
+        <p>Valeur fixée à : <span class="hl7-color">FINALITE_EXAMEN</span></p>
       </td>
     </tr>
     <tr>
@@ -2796,6 +2794,10 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
 <h5 id="groupe-observation---modalité-dimagerie">Groupe OBSERVATION - Modalité d’imagerie</h5>
 
 <p>Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer la <strong>modalité d’imagerie souhaitée</strong> pour l’examen demandé.</p>
+
+<p>Le segment <strong>NTE</strong> peut être utilisé en complément du segment <strong>OBX</strong> afin de véhiculer un ou des <strong>commentaires libres</strong> relatifs à la <strong>modalité d’imagerie demandée</strong>.</p>
+
+<h6 id="segment-obx---modalité-dimagerie">Segment OBX - Modalité d’imagerie</h6>
 
 <table class="table-hl7v2">
   <tbody>
@@ -2934,6 +2936,84 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
       </td>
       <td>
         <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="segment-nte---commentaire-sur-la-modalité">Segment NTE - Commentaire sur la modalité</h5>
+
+<p>La structure et l’utilisation du segment <strong>NTE</strong> sont <strong>conformes au standard HL7 v2.5.1</strong>. Des <strong>contraintes spécifiques</strong> s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la modalité d’imagerie, telles que définies dans le présent volet.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment NTE</strong></p>
+      </td>
+      <td>
+        <p><strong>Notes and Comments</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-3</p>
+      </td>
+      <td>
+        <p>Comment</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-4</p>
+      </td>
+      <td>
+        <p>Comment Type</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur fixée à : <span class="hl7-color">MODALITE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">HL70364</span></p>
       </td>
     </tr>
   </tbody>
@@ -5521,13 +5601,13 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l12801">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+<p><a name="l12966">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
 
 <h5 id="groupe-observation---modalité-dimagerie-1">Groupe OBSERVATION - Modalité d’imagerie</h5>
 
-<p><a name="l12819">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
+<p><a name="l12984">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
 Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie">Groupes OBSERVATION – Modalité d’imagerie</a></p>
 
@@ -6771,7 +6851,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 17:45+0000">2026-01-29</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 18:09+0000">2026-01-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
