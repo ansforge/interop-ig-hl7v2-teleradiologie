@@ -420,9 +420,9 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
 
 ##### Segment NTE (Notes and Comments)
 
-Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer des **commentaires libres** relatifs à la **finalité de l’examen** et/ou à la **modalité d’imagerie demandée**.
+Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer un ou des **commentaires libres** relatifs à la **finalité de l’examen**.
 
-La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen ou à la modalité d’imagerie, telles que définies dans le présent volet.
+La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen telles que définies dans le présent volet.
 
 <table class="table-hl7v2">
   <tbody>
@@ -481,9 +481,7 @@ La structure et l’utilisation du segment **NTE** sont **conformes au standard 
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur possible :</p>
-        <p><span class="hl7-color">FINALITE_EXAMEN</span></p>
-        <p><span class="hl7-color">MODALITE_IMAGERIE</span></p>
+        <p>Valeur fixée à : <span class="hl7-color">FINALITE_EXAMEN</span></p>
       </td>
     </tr>
     <tr>
@@ -503,6 +501,10 @@ La structure et l’utilisation du segment **NTE** sont **conformes au standard 
 ##### Groupe OBSERVATION - Modalité d'imagerie
 
 Ce groupe obligatoire est composé d'un segment OBX permettant d’indiquer la **modalité d'imagerie souhaitée** pour l’examen demandé.
+
+Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de véhiculer un ou des **commentaires libres** relatifs à la **modalité d’imagerie demandée**.
+
+###### Segment OBX - Modalité d'imagerie
 
 <table class="table-hl7v2">
   <tbody>
@@ -641,6 +643,84 @@ Ce groupe obligatoire est composé d'un segment OBX permettant d’indiquer la *
       </td>
       <td>
         <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+##### Segment NTE - Commentaire sur la modalité
+
+La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la modalité d’imagerie, telles que définies dans le présent volet.
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment NTE</strong></p>
+      </td>
+      <td>
+        <p><strong>Notes and Comments</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-3</p>
+      </td>
+      <td>
+        <p>Comment</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-4</p>
+      </td>
+      <td>
+        <p>Comment Type</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur fixée à : <span class="hl7-color">MODALITE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">HL70364</span></p>
       </td>
     </tr>
   </tbody>
