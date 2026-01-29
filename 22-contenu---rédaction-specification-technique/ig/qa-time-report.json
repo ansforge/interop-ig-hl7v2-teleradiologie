@@ -1,5 +1,5 @@
 {
-  "date" : "Thu, 29 Jan, 2026 18:33:06 +0000",
+  "date" : "Thu, 29 Jan, 2026 18:43:23 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,59 +8,56 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 25,
-          "length" : 46
-        },
-        {
-          "activity" : "scan",
-          "start" : 25,
-          "length" : 1
+          "start" : 30,
+          "length" : 35
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 25,
-          "length" : 14
+          "start" : 31,
+          "length" : 15
         },
         {
           "activity" : "generateNarratives",
-          "start" : 25,
-          "length" : 79
+          "start" : 31,
+          "length" : 81
         },
         {
           "activity" : "validate",
-          "start" : 25,
-          "length" : 4410
+          "start" : 31,
+          "length" : 4683
         },
         {
           "activity" : "scanForUsageStats",
-          "start" : 30,
+          "start" : 36,
           "length" : 1
         },
         {
           "activity" : "generate1",
-          "start" : 30,
-          "length" : 98
+          "start" : 36,
+          "length" : 78
         },
         {
           "activity" : "generate2",
-          "start" : 32,
-          "length" : 71
+          "start" : 39,
+          "length" : 64
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 37,
+          "start" : 46,
           "length" : 3
-        },
-        {
-          "activity" : "scanExamplesForR5",
-          "start" : 40,
-          "length" : 1
         }
       ]
     },
     {
       "name" : "/fsh-generated/includes/menu.xml",
-      "size" : 4376
+      "size" : 4376,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/data/features.yml",
@@ -72,7 +69,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 1
         }
       ]
@@ -83,7 +80,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 2
         }
       ]
@@ -106,7 +103,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 2
         }
       ]
@@ -121,7 +118,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 1
         }
       ]
@@ -148,7 +145,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 1
         }
       ]
@@ -163,7 +160,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 2
         }
       ]
@@ -174,14 +171,21 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 3
         }
       ]
     },
     {
       "name" : "/input/pagecontent/securite.md",
-      "size" : 900
+      "size" : 900,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/construction_des_flux.md",
@@ -189,14 +193,7 @@
     },
     {
       "name" : "/input/pagecontent/annexes.md",
-      "size" : 124,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 32,
-          "length" : 1
-        }
-      ]
+      "size" : 124
     },
     {
       "name" : "/input/pagecontent/exemples.md",
@@ -212,7 +209,14 @@
     },
     {
       "name" : "/input/pagecontent/index.md",
-      "size" : 1828
+      "size" : 1828,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/st_flux3.md",
@@ -224,7 +228,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 1
         }
       ]
@@ -247,18 +251,18 @@
     },
     {
       "name" : "/input/images/DiagSeq-SFE.png",
-      "size" : 185636
-    },
-    {
-      "name" : "/input/images/F1_ContexteMetier.png",
-      "size" : 59982,
+      "size" : 185636,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/input/images/F1_ContexteMetier.png",
+      "size" : 59982
     },
     {
       "name" : "/input/images/F11_Classes-Flux2.png",
@@ -266,7 +270,14 @@
     },
     {
       "name" : "/input/images/F12_Classes-Flux3.png",
-      "size" : 333997
+      "size" : 333997,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images/anImage.png",
@@ -274,14 +285,7 @@
     },
     {
       "name" : "/input/images/F6_Flux1Activity.png",
-      "size" : 82785,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 32,
-          "length" : 1
-        }
-      ]
+      "size" : 82785
     },
     {
       "name" : "/input/images/ci-sis-logo.png",
@@ -292,12 +296,19 @@
       "size" : 152941
     },
     {
-      "name" : "/input/images/Flux1-Fonc.png",
-      "size" : 182567
+      "name" : "/input/images/F2_TransmissionDemande.png",
+      "size" : 52946,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
     },
     {
-      "name" : "/input/images/F2_TransmissionDemande.png",
-      "size" : 52946
+      "name" : "/input/images/Flux2-Fonc.svg",
+      "size" : 30468
     },
     {
       "name" : "/input/images/F5_TransmissionInfos.png",
@@ -305,26 +316,26 @@
     },
     {
       "name" : "/input/images/F8_Flux3Activity.png",
-      "size" : 92678,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 32,
-          "length" : 1
-        }
-      ]
+      "size" : 92678
     },
     {
       "name" : "/input/images/F3_AnnulationDemande.png",
       "size" : 60657
     },
     {
-      "name" : "/input/images/Flux2-Fonc.png",
-      "size" : 129467
+      "name" : "/input/images/F13_Classes-Flux4.png",
+      "size" : 336923,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
     },
     {
-      "name" : "/input/images/F13_Classes-Flux4.png",
-      "size" : 336923
+      "name" : "/input/images/Flux1-Fonc.svg",
+      "size" : 70474
     },
     {
       "name" : "/input/images/F7_Flux2Activity.png",
@@ -336,18 +347,18 @@
     },
     {
       "name" : "/input/images/Sequence4.png",
-      "size" : 143216,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 32,
-          "length" : 1
-        }
-      ]
+      "size" : 143216
     },
     {
       "name" : "/input/images/Sequence3.png",
-      "size" : 122539
+      "size" : 122539,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 39,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images/F9_Flux4Activity.png",
@@ -359,18 +370,18 @@
     },
     {
       "name" : "/input/images/F10_Classes-Flux1.png",
-      "size" : 378811
-    },
-    {
-      "name" : "/temp/pages/_includes/artifacts.xml",
-      "size" : 600,
+      "size" : 378811,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 32,
+          "start" : 39,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/temp/pages/_includes/artifacts.xml",
+      "size" : 600
     }
   ]
 }
