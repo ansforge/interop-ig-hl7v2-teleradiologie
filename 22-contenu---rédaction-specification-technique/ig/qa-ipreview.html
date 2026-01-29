@@ -21,7 +21,7 @@ This fragment is available on       <a href="index.html">index.html</a>
     <ul>
       <li>
 
-          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-28 
+          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-29 
           
            
             Liens: Table des matières  |
@@ -80,7 +80,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Wed, Jan 28, 2026 17:10+0000">2026-01-28</span>
+. Generated           <span title="Thu, Jan 29, 2026 17:23+0000">2026-01-29</span>
 
                     <br/>
 
@@ -110,7 +110,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Wed, Jan 28, 2026 17:10+0000">2026-01-28</span>
+. Generated           <span title="Thu, Jan 29, 2026 17:23+0000">2026-01-29</span>
 
                     <br/>
 
@@ -876,7 +876,7 @@ Les échanges sont basés sur des messages HL7 v2 conformes à la version       
           <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/">interop.esante.gouv.fr</a>
         </td>
         <td>
-Il est pertinent de préciser que les flux décrits dans la présente spécification portent principalement sur des           <strong>données structurées nécessaires à l’orchestration du workflow</strong>
+Il est pertinent de préciser que les flux décrits dans la présente spécification portent principalement sur des           <strong>données nécessaires à l’orchestration du workflow</strong>
 .          <br/>
 
 La transmission de la           <strong>demande d’examen d’imagerie formalisée sous forme de document clinique</strong>
@@ -919,6 +919,18 @@ Ces deux segments doivent être renseignés conformément à la spécification �
           <a href="https://www.interopsante.org/publications">www.interopsante.org</a>
         </td>
         <td>
+Type d'identifiant du professionnel (valeur issue de la           <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a>
+ présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/publications">www.interopsante.org</a>
+        </td>
+        <td>
           <a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>
 .
         </td>
@@ -948,7 +960,7 @@ Type d'identifiant (valeur issue de la           <a href="https://www.interopsan
           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">ansforge.github.io</a>
         </td>
         <td>
-Code de la modalité d'imagerie, utiliser le           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a>
+Valeur issue du JDV           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a>
         </td>
       </tr>
       <tr>
@@ -981,7 +993,91 @@ Valeur issue du JDV           <a href="https://ansforge.github.io/IG-terminologi
           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">ansforge.github.io</a>
         </td>
         <td>
-Code LOINC de l’acte d’imagerie, utiliser le           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a>
+Valeur issue du JDV           <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerie-CISIS</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.3">hl7-definition.caristix.com</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.3">MSH.3</a>
+ - Sending Application​
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.5">hl7-definition.caristix.com</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.5">MSH.5</a>
+ - Receiving Application​
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.4">hl7-definition.caristix.com</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.4">MSH.4</a>
+ - Sending Facility​
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.6">hl7-definition.caristix.com</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.6">MSH.6</a>
+ - Receiving Facility​
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.11">hl7-definition.caristix.com</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.11">MSH.11</a>
+ - Processing Id​
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.1">hl7-definition.caristix.com</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.1">MSA.1</a>
+ - Acknowledgment Code
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.2">hl7-definition.caristix.com</a>
+        </td>
+        <td>
+          <a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.2">MSA.2</a>
+ - Message Control Id
         </td>
       </tr>
       <tr>

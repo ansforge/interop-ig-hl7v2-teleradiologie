@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-28T17:10:08+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-29T17:23:00+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -1490,6 +1490,25 @@
            fhir:l fhir:table_orga.html
          ] ;
          fhir:title [ fhir:v "Table TLR_TYPE_ORGANISATION" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "table_obr.html"^^xsd:anyURI ;
+             fhir:l fhir:table_obr.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "table_obr.html"^^xsd:anyURI ;
+           fhir:l fhir:table_obr.html
+         ] ;
+         fhir:title [ fhir:v "Table TLR_OBR_PROCEDURE" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

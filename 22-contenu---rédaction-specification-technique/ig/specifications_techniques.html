@@ -141,6 +141,9 @@
         <a href="sub-id.html">Utilisation du champ OBX-4 – Observation Sub-ID</a>
       </li>
       <li>
+        <a href="table_obr.html">Table TLR_OBR_PROCEDURE</a>
+      </li>
+      <li>
         <a href="table_obs.html">Table TLR_OBSERVATION</a>
       </li>
       <li>
@@ -240,7 +243,7 @@ Le choix du standard est également le fruit d’une <a href="./norme_standard.h
 
 <p>Les échanges sont basés sur des messages HL7 v2 conformes à la version <strong>2.5.1</strong>. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine <a href="https://www.ihe.net/ihe_domains/radiology/">IHE Radiology</a>, et notamment le profil <a href="https://wiki.ihe.net/index.php/Scheduled_Workflow.b">IHE Scheduled Workflow (SWF.b)</a>, afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a> sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identité nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure</a>, publiée par Interop’santé.</p>
 
-<p>Il est pertinent de préciser que les flux décrits dans la présente spécification portent principalement sur des <strong>données structurées nécessaires à l’orchestration du workflow</strong>.<br/>
+<p>Il est pertinent de préciser que les flux décrits dans la présente spécification portent principalement sur des <strong>données nécessaires à l’orchestration du workflow</strong>.<br/>
 La transmission de la <strong>demande d’examen d’imagerie formalisée sous forme de document clinique</strong>, ainsi que celle d’éventuels <strong>documents cliniques complémentaires</strong>, n’est pas assurée par ces flux transactionnels et fait l’objet de flux documentaires distincts s’appuyant sur le <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/">Volet de transmission d’un document CDA-R2 en HL7v2</a>.</p>
 
 <p><br/></p>
@@ -474,8 +477,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 <ul>
   <li><strong>MSH</strong> : en-tête du message et informations de routage ;</li>
   <li><strong>PID / PV1</strong> : identification du patient et du contexte de prise en charge ;</li>
-  <li><strong>ORC</strong> : informations liées à la demande d’examen, conformément à IHE SWF ;</li>
-  <li><strong>OBR</strong> : prescription de l’examen d’imagerie (modalité, indications, antécédents), conformément à IHE SWF ;</li>
+  <li><strong>ORC / OBR</strong> : informations liées à la demande d’examen, conformément à IHE SWF ;</li>
   <li><strong>Groupes OBSERVATION (OBX)</strong> : supporte les informations complémentaires spécifiques au volet Téléradiologie, non contraintes par IHE SWF.</li>
 </ul>
 
@@ -483,294 +485,285 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 
 <table class="table-hl7v2">
   <tbody>
-  <tr>
-    <th>
-      <p>Segment</p>
-    </th>
-    <th>
-      <p>Meaning</p>
-    </th>
-    <th>
-      <p>Usage</p>
-    </th>
-    <th>
-      <p>Card.</p>
-    </th>
-    <th>
-      <p>&sect; HL7</p>
-    </th>
-  </tr>
     <tr>
-      <td>
-        <p>MSH</p>
-      </td>
-      <td>
-        <p>Message Header</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <th><p>Segment</p></th>
+      <th><p>Meaning</p></th>
+      <th><p>Usage</p></th>
+      <th><p>Card.</p></th>
+      <th><p>&sect; HL7</p></th>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>MSH</p></td>
+      <td><p>Message Header</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p> PID</p>
-      </td>
-      <td>
-        <p>Patient Identification</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Header)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p> </p></td>
+      <td><p>--- PATIENT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p>  PV1</p>
-      </td>
-      <td>
-        <p>Patient Visit</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
+      <td><p>PID</p></td>
+      <td><p>Patient Identification</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[PD1]</p></td>
+      <td><p>Additional Demographics</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Patient)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p>{</p>
-      </td>
-      <td>
-        <p>--- ORDER begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p> </p></td>
+      <td><p>--- PATIENT_VISIT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> ORC</p>
-      </td>
-      <td>
-        <p>Common Order</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
+      <td><p>PV1</p></td>
+      <td><p>Patient Visit</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p>{</p>
-      </td>
-      <td>
-        <p>--- ORDER_DETAIL begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[PV2]</p></td>
+      <td><p>Patient Visit – Additional Info</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> OBR</p>
-      </td>
-      <td>
-        <p>Observation Request</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
+      <td><p> </p></td>
+      <td><p>--- PATIENT_VISIT end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comments on the order</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <td><p>[{</p></td>
+      <td><p>--- INSURANCE begin</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> {</p>
-      </td>
-      <td>
-        <p>--- OBSERVATION begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>IN1</p></td>
+      <td><p>Insurance</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>6</p></td>
     </tr>
     <tr>
-      <td>
-        <p>  OBX</p>
-      </td>
-      <td>
-        <p>Observation</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>7</p>
-      </td>
+      <td><p>[IN2]</p></td>
+      <td><p>Insurance Additional Info</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
     </tr>
     <tr>
-      <td>
-        <p>  [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comment</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <td><p>[IN3]</p></td>
+      <td><p>Insurance Certification</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
     </tr>
     <tr>
-      <td>
-        <p> }</p>
-      </td>
-      <td>
-        <p>--- OBSERVATION end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>}]</p></td>
+      <td><p>--- INSURANCE end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[GT1]</p></td>
+      <td><p>Guarantor</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{AL1}]</p></td>
+      <td><p>Allergy Information</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>3</p></td>
+    </tr>
+    <tr>
+      <td><p> </p></td>
+      <td><p>--- PATIENT end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>{</p></td>
+      <td><p>--- ORDER begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>ORC</p></td>
+      <td><p>Common Order</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[</p></td>
+      <td><p>--- ORDER_DETAIL begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>OBR</p></td>
+      <td><p>Order Detail / Observation Request</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[RQD]</p></td>
+      <td><p>Requisition Detail</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[RQ1]</p></td>
+      <td><p>Requisition Detail-1</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[RXO]</p></td>
+      <td><p>Pharmacy/Treatment Order</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[ODS]</p></td>
+      <td><p>Dietary Orders, Supplements, and Preferences</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[ODT]</p></td>
+      <td><p>Diet Tray Instructions</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Order Detail)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>[CTD]</p></td>
+      <td><p>Contact Data</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>11</p></td>
+    </tr>
+    <tr>
+      <td><p>[{DG1}]</p></td>
+      <td><p>Diagnosis</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{</p></td>
+      <td><p>--- OBSERVATION begin</p></td>
+      <td><p>1</p></td>
+      <td><p>[1..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>OBX</p></td>
+      <td><p>Observation / Result</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>7</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Observation)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- OBSERVATION end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>]</p></td>
+      <td><p>--- ORDER_DETAIL end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[{FT1}]</p></td>
+      <td><p>Financial Transaction</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{CTI}]</p></td>
+      <td><p>Clinical Trial Identification</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>7</p></td>
+    </tr>
+    <tr>
+      <td><p>[BLG]</p></td>
+      <td><p>Billing</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>}</p></td>
+      <td><p>--- ORDER end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
     </tr>
   </tbody>
 </table>
@@ -782,10 +775,11 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 <p>Outre les éléments standards concernant la demande et la prescription portés par les segments <strong>ORC</strong> et <strong>OBR</strong>, ce flux s’appuie sur des <strong>groupes OBSERVATION (OBX)</strong> afin de véhiculer des informations fonctionnelles complémentaires indispensables à la bonne réalisation de l’examen, telles que :</p>
 <ul>
   <li>la <strong>localisation anatomique</strong> et, le cas échéant, une <strong>précision topographique</strong></li>
+  <li>les <strong>antécédents médicaux du patient</strong></li>
   <li>des <strong>données morphologiques pertinentes</strong> pour la planification de l’examen d’imagerie (taille, poids, statut de grossesse)</li>
 </ul>
 
-<p>Ces groupes OBSERVATION sont <strong>contraints par la présente spécification</strong>, tant sur le plan sémantique que structurel (identification des OBX, cardinalités, types de données), afin de garantir une interprétation homogène par l’ensemble des acteurs.</p>
+<p>Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie <a href="./specifications_techniques.html#flux-1---transmission-de-la-demande-dexamen-dimagerie">Contraintes applicables aux profils de message</a>, notamment via l’utilisation de codes locaux dans <strong>OBX-3</strong>.</p>
 
 <p>Le diagramme ci-dessous illustre le <strong>fonctionnement global du message</strong>, les interactions entre les segments principaux ainsi que le rôle des <strong>OBX spécifiques Téléradiologie</strong> dans le cadre du flux 1.</p>
 
@@ -806,300 +800,290 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 <ul>
   <li><strong>MSH</strong> : en-tête du message et informations de routage</li>
   <li><strong>PID / PV1</strong> : identification du patient et du contexte de prise en charge</li>
-  <li><strong>ORC</strong> : informations de demande, avec une action positionnée à l’annulation</li>
-  <li><strong>OBR</strong> : rappel des éléments de prescription nécessaires à l’identification de la demande annulée</li>
+  <li><strong>ORC / OBR</strong> : informations de demande, avec une action positionnée à l’annulation</li>
 </ul>
 
 <table class="table-hl7v2">
   <tbody>
-  <tr>
-    <th>
-      <p>Segment</p>
-    </th>
-    <th>
-      <p>Meaning</p>
-    </th>
-    <th>
-      <p>Usage</p>
-    </th>
-    <th>
-      <p>Card.</p>
-    </th>
-    <th>
-      <p>&sect; HL7</p>
-    </th>
-  </tr>
     <tr>
-      <td>
-        <p>MSH</p>
-      </td>
-      <td>
-        <p>Message Header</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <th><p>Segment</p></th>
+      <th><p>Meaning</p></th>
+      <th><p>Usage</p></th>
+      <th><p>Card.</p></th>
+      <th><p>&sect; HL7</p></th>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>MSH</p></td>
+      <td><p>Message Header</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p> PID</p>
-      </td>
-      <td>
-        <p>Patient Identification</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Header)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p> </p></td>
+      <td><p>--- PATIENT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p>  PV1</p>
-      </td>
-      <td>
-        <p>Patient Visit</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
+      <td><p>PID</p></td>
+      <td><p>Patient Identification</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[PD1]</p></td>
+      <td><p>Additional Demographics</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Patient)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p>{</p>
-      </td>
-      <td>
-        <p>--- ORDER begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p> </p></td>
+      <td><p>--- PATIENT_VISIT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> ORC</p>
-      </td>
-      <td>
-        <p>Common Order</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
+      <td><p>PV1</p></td>
+      <td><p>Patient Visit</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p>{</p>
-      </td>
-      <td>
-        <p>--- ORDER_DETAIL begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[PV2]</p></td>
+      <td><p>Patient Visit – Additional Info</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> OBR</p>
-      </td>
-      <td>
-        <p>Observation Request</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
+      <td><p> </p></td>
+      <td><p>--- PATIENT_VISIT end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comments on the order</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <td><p>[{</p></td>
+      <td><p>--- INSURANCE begin</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> {</p>
-      </td>
-      <td>
-        <p>--- OBSERVATION begin</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>IN1</p></td>
+      <td><p>Insurance</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>6</p></td>
     </tr>
     <tr>
-      <td>
-        <p>  OBX</p>
-      </td>
-      <td>
-        <p>Observation</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>7</p>
-      </td>
+      <td><p>[IN2]</p></td>
+      <td><p>Insurance Additional Info</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
     </tr>
     <tr>
-      <td>
-        <p>  [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comment</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <td><p>[IN3]</p></td>
+      <td><p>Insurance Certification</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
     </tr>
     <tr>
-      <td>
-        <p> }</p>
-      </td>
-      <td>
-        <p>--- OBSERVATION end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>}]</p></td>
+      <td><p>--- INSURANCE end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[GT1]</p></td>
+      <td><p>Guarantor</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{AL1}]</p></td>
+      <td><p>Allergy Information</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>3</p></td>
+    </tr>
+    <tr>
+      <td><p> </p></td>
+      <td><p>--- PATIENT end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>{</p></td>
+      <td><p>--- ORDER begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>ORC</p></td>
+      <td><p>Common Order</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[</p></td>
+      <td><p>--- ORDER_DETAIL begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>OBR</p></td>
+      <td><p>Order Detail / Observation Request</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[RQD]</p></td>
+      <td><p>Requisition Detail</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[RQ1]</p></td>
+      <td><p>Requisition Detail-1</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[RXO]</p></td>
+      <td><p>Pharmacy/Treatment Order</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[ODS]</p></td>
+      <td><p>Dietary Orders, Supplements, and Preferences</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[ODT]</p></td>
+      <td><p>Diet Tray Instructions</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Order Detail)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>[CTD]</p></td>
+      <td><p>Contact Data</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>11</p></td>
+    </tr>
+    <tr>
+      <td><p>[{DG1}]</p></td>
+      <td><p>Diagnosis</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{</p></td>
+      <td><p>--- OBSERVATION begin</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>OBX</p></td>
+      <td><p>Observation / Result</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>7</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Observation)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- OBSERVATION end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>]</p></td>
+      <td><p>--- ORDER_DETAIL end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[{FT1}]</p></td>
+      <td><p>Financial Transaction</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{CTI}]</p></td>
+      <td><p>Clinical Trial Identification</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>7</p></td>
+    </tr>
+    <tr>
+      <td><p>[BLG]</p></td>
+      <td><p>Billing</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>}</p></td>
+      <td><p>--- ORDER end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
     </tr>
   </tbody>
 </table>
@@ -1119,7 +1103,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 <p>Le flux 3 repose sur l’échange d’un message <strong>ORU^R01</strong> conforme à la norme <strong>HL7 v2.5.1</strong>.<br/>
 Il est utilisé pour la <strong>réponse à une demande d’examen d’imagerie</strong>, en particulier pour notifier la <strong>décision du médecin effecteur</strong> (approbation/refus de la demande).</p>
 
-<p>Contrairement aux flux 1, 2 et 4, ce flux <strong>ne s’appuie sur aucun profil IHE</strong> existant.<br/>
+<p>Contrairement aux flux 1 et 2, ce flux <strong>ne s’appuie sur aucun profil IHE</strong> existant.<br/>
 En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.<br/>
 Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complété par une <strong>surcouche de contraintes spécifiques au volet Téléradiologie</strong>.</p>
 
@@ -1130,8 +1114,7 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
 <ul>
   <li><strong>MSH</strong> : en-tête du message et informations de routage</li>
   <li><strong>PID</strong> : identification du patient</li>
-  <li><strong>ORC</strong> : décision du médecin effecteur sur la demande d’examen (validation ou refus), avec la possibilité de préciser un <strong>motif de refus</strong> le cas échéant</li>
-  <li><strong>OBR</strong> : rappel de la demande d’examen concernée</li>
+  <li><strong>ORC / OBR</strong> : décision du médecin effecteur sur la demande d’examen (validation ou refus), avec la possibilité de préciser un <strong>motif de refus</strong> le cas échéant</li>
   <li><strong>Groupes OBSERVATION (OBX)</strong> : transmission des informations spécifiques au volet Téléradiologie, notamment le <strong>protocole d’imagerie</strong>, exprimé soit en clair, soit sous forme de contenu encapsulé.</li>
 </ul>
 
@@ -1139,345 +1122,257 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
 
 <table class="table-hl7v2">
   <tbody>
-  <tr>
-    <th>
-      <p>Segment</p>
-    </th>
-    <th>
-      <p>Meaning</p>
-    </th>
-    <th>
-      <p>Usage</p>
-    </th>
-    <th>
-      <p>Card.</p>
-    </th>
-    <th>
-      <p>&sect; HL7</p>
-    </th>
-  </tr>
     <tr>
-      <td>
-        <p>MSH</p>
-      </td>
-      <td>
-        <p>Message Header</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <th><p>Segment</p></th>
+      <th><p>Meaning</p></th>
+      <th><p>Usage</p></th>
+      <th><p>Card.</p></th>
+      <th><p>&sect; HL7</p></th>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_RESULT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>MSH</p></td>
+      <td><p>Message Header</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[{SFT}]</p></td>
+      <td><p>Software Segment</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p> PID</p>
-      </td>
-      <td>
-        <p>Patient Identification</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
+      <td><p>{</p></td>
+      <td><p>--- PATIENT_RESULT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT begin</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[</p></td>
+      <td><p>--- PATIENT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p>  PV1</p>
-      </td>
-      <td>
-        <p>Patient Visit</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
+      <td><p>PID</p></td>
+      <td><p>Patient Identification</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[PD1]</p></td>
+      <td><p>Additional Demographics</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Patient)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p>{</p>
-      </td>
-      <td>
-        <p>--- ORDER_OBSERVATION begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[{NK1}]</p></td>
+      <td><p>Next of Kin / Associated Parties</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> ORC</p>
-      </td>
-      <td>
-        <p>Common Order</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
+      <td><p>[</p></td>
+      <td><p>--- VISIT begin</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> OBR</p>
-      </td>
-      <td>
-        <p>Observation Request</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
+      <td><p>PV1</p></td>
+      <td><p>Patient Visit</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p> [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comment</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <td><p>[PV2]</p></td>
+      <td><p>Patient Visit – Additional Info</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
     </tr>
     <tr>
-      <td>
-        <p>[{</p>
-      </td>
-      <td>
-        <p>--- TIMING begin</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>]</p></td>
+      <td><p>--- VISIT end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> TQ1</p>
-      </td>
-      <td>
-        <p>Timing Quantity</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
+      <td><p>]</p></td>
+      <td><p>--- PATIENT end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p>}]</p>
-      </td>
-      <td>
-        <p>--- TIMING end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>{</p></td>
+      <td><p>--- ORDER_OBSERVATION begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..*]</p></td>
+      <td><p> </p></td>
     </tr>
     <tr>
-      <td>
-        <p> {</p>
-      </td>
-      <td>
-        <p>--- OBSERVATION begin</p>
-      </td>
-      <td>
-        <p>C</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>ORC</p></td>
+      <td><p>Common Order</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
     </tr>
     <tr>
-      <td>
-        <p>  OBX</p>
-      </td>
-      <td>
-        <p>Observation</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>7</p>
-      </td>
+      <td><p>OBR</p></td>
+      <td><p>Observation Request</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>7</p></td>
     </tr>
     <tr>
-      <td>
-        <p>  [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comment</p>
-      </td>
-      <td>
-        <p>O</p>
-      </td>
-      <td>
-        <p>[0..*]</p>
-      </td>
-      <td>
-        <p>2</p>
-      </td>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Order)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
     </tr>
     <tr>
-      <td>
-        <p> }</p>
-      </td>
-      <td>
-        <p>--- OBSERVATION end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
+      <td><p>[{</p></td>
+      <td><p>--- TIMING_QTY begin</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>TQ1</p></td>
+      <td><p>Timing / Quantity</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[{TQ2}]</p></td>
+      <td><p>Timing / Quantity Order Sequence</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- TIMING_QTY end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[CTD]</p></td>
+      <td><p>Contact Data</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>11</p></td>
+    </tr>
+    <tr>
+      <td><p>[{</p></td>
+      <td><p>--- OBSERVATION begin</p></td>
+      <td><p>C</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>OBX</p></td>
+      <td><p>Observation / Result</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>7</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Observation)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- OBSERVATION end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[{FT1}]</p></td>
+      <td><p>Financial Transaction</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{CTI}]</p></td>
+      <td><p>Clinical Trial Identification</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>7</p></td>
+    </tr>
+    <tr>
+      <td><p>[{</p></td>
+      <td><p>--- SPECIMEN begin</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>SPM</p></td>
+      <td><p>Specimen</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[{OBX}]</p></td>
+      <td><p>Observation related to Specimen</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- SPECIMEN end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>}</p></td>
+      <td><p>--- ORDER_OBSERVATION end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>}</p></td>
+      <td><p>--- PATIENT_RESULT end</p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+      <td><p> </p></td>
+    </tr>
+    <tr>
+      <td><p>[DSC]</p></td>
+      <td><p>Continuation Pointer</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>2</p></td>
     </tr>
   </tbody>
 </table>
@@ -1501,7 +1396,7 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
   <li>protocole encapsulé sous forme de contenu binaire</li>
 </ul>
 
-<p><a name="l3040">​</a>Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie <a href="./st-contraintes.html">Contraintes applicables aux profils de message</a>, notamment via l’utilisation de codes locaux dans <strong>OBX-3</strong>.</p>
+<p>Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie <a href="./specifications_techniques.html#flux-3---réponse-à-la-demande-dexamen-dimagerie">Contraintes applicables aux profils de message</a>, notamment via l’utilisation de codes locaux dans <strong>OBX-3</strong>.</p>
 
 <p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 3</strong> :</p>
 
@@ -1512,10 +1407,10 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
 <p>Le flux 4 repose sur l’échange d’un message <strong>OMI^O23</strong> conforme à la norme <strong>HL7 v2.5.1</strong>.<br/>
 Il est utilisé pour la <strong>transmission d’informations complémentaires post-acte</strong> à la suite de la réalisation d’un examen d’imagerie dans le cadre du volet Téléradiologie.</p>
 
-<p>Ce flux s’appuie sur les principes du <strong>profil IHE RAD – Scheduled Workflow (SWF)</strong>, dans la mesure où il s’inscrit dans la continuité du cycle de vie de la demande d’examen d’imagerie et de sa réalisation.<br/>
-Les segments structurants du message, notamment <strong>ORC</strong> et <strong>OBR</strong>, sont ainsi valorisés conformément aux règles définies par IHE SWF, complétées par une <strong>surcouche de contraintes spécifiques au volet Téléradiologie</strong>.</p>
-
 <p>Le message <strong>OMI^O23</strong> permet de transmettre des informations qui ne sont pas nécessairement disponibles au moment de la construction de la demande d’examen, mais qui sont connues <strong>après la réalisation effective de l’examen</strong>.</p>
+
+<p>Bien que le message <strong>OMI^O23</strong> soit décrit dans le <strong>profil IHE RAD – Scheduled Workflow (SWF)</strong>, le cas d’usage couvert par IHE ne répond pas entièrement aux besoins spécifiques du volet <strong>Téléradiologie</strong>.<br/>
+En conséquence, le message <strong>OMI^O23</strong> est défini sur la base du <strong>standard HL7 v2.5.1</strong> et enrichi par une <strong>surcouche de contraintes propres au volet Téléradiologie</strong>.</p>
 
 <h6 id="description-technique-3">Description technique</h6>
 
@@ -1527,11 +1422,306 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
   <li><strong>ORC</strong> : informations de demande initiale</li>
   <li><strong>OBR</strong> : informations relatives à l’examen réalisé</li>
   <li><strong>TQ1</strong> : informations temporelles, notamment la date de réalisation de l’examen et la durée de rétention des images</li>
-  <li><strong>IPC</strong> : informations relatives à l’examen d’imagerie et à la modalité</li>
+  <li><strong>IPC</strong> : informations relatives à l’examen d’imagerie</li>
   <li><strong>Groupes OBSERVATION (OBX)</strong> : transmission des compléments d’information post-acte spécifiques au volet Téléradiologie</li>
 </ul>
 
 <p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th><p>Segment</p></th>
+      <th><p>Meaning</p></th>
+      <th><p>Usage</p></th>
+      <th><p>Card.</p></th>
+      <th><p>&sect; HL7</p></th>
+    </tr>
+    <tr>
+      <td><p>MSH</p></td>
+      <td><p>Message Header</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>[{SFT}]</p></td>
+      <td><p>Software Segment</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Header)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>[</p></td>
+      <td><p>--- PATIENT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>PID</p></td>
+      <td><p>Patient Identification</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
+    </tr>
+    <tr>
+      <td><p>[PD1]</p></td>
+      <td><p>Additional Demographics</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Patient)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>[</p></td>
+      <td><p>--- PATIENT_VISIT begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[R..1]</p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>PV1</p></td>
+      <td><p>Patient Visit</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>3</p></td>
+    </tr>
+    <tr>
+      <td><p>[PV2]</p></td>
+      <td><p>Patient Visit – Additional Info</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>3</p></td>
+    </tr>
+    <tr>
+      <td><p>]</p></td>
+      <td><p>--- PATIENT_VISIT end</p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>[{</p></td>
+      <td><p>--- INSURANCE begin</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>IN1</p></td>
+      <td><p>Insurance</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[IN2]</p></td>
+      <td><p>Insurance Additional Info</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[IN3]</p></td>
+      <td><p>Insurance Additional Info – Cert.</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- INSURANCE end</p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>[GT1]</p></td>
+      <td><p>Guarantor</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{AL1}]</p></td>
+      <td><p>Allergy Information</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>3</p></td>
+    </tr>
+    <tr>
+      <td><p>]</p></td>
+      <td><p>--- PATIENT end</p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>{</p></td>
+      <td><p>--- ORDER begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..*]</p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>ORC</p></td>
+      <td><p>Common Order</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[{</p></td>
+      <td><p>--- TIMING begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..*]</p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>TQ1</p></td>
+      <td><p>Timing / Quantity</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[{TQ2}]</p></td>
+      <td><p>Timing / Quantity Order Sequence</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- TIMING end</p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>OBR</p></td>
+      <td><p>Observation Request</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Order)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>[CTD]</p></td>
+      <td><p>Contact Data</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..1]</p></td>
+      <td><p>11</p></td>
+    </tr>
+    <tr>
+      <td><p>[{DG1}]</p></td>
+      <td><p>Diagnosis</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>6</p></td>
+    </tr>
+    <tr>
+      <td><p>[{</p></td>
+      <td><p>--- OBSERVATION begin</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..*]</p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>OBX</p></td>
+      <td><p>Observation / Result</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>7</p></td>
+    </tr>
+    <tr>
+      <td><p>[{NTE}]</p></td>
+      <td><p>Notes and Comments (Observation)</p></td>
+      <td><p>O</p></td>
+      <td><p>[0..*]</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>}]</p></td>
+      <td><p>--- OBSERVATION end</p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+    </tr>
+    <tr>
+      <td><p>IPC</p></td>
+      <td><p>Imaging Procedure Control</p></td>
+      <td><p>R</p></td>
+      <td><p>[1..1]</p></td>
+      <td><p>4</p></td>
+    </tr>
+    <tr>
+      <td><p>}</p></td>
+      <td><p>--- ORDER end</p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="description-fonctionnelle-3">Description fonctionnelle</h6>
+
+<p>Le message <strong>OMI^O23</strong> du flux 4 permet au système demandeur (RIS) de transmettre au système effecteur (SI de Téléradiologie) des <strong>compléments d’information post-acte</strong> relatifs à un examen d’imagerie déjà réalisé.</p>
+
+<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent le <strong>rattachement</strong> de ces informations à la demande d’examen initiale.</p>
+
+<p>Les <strong>groupes OBSERVATION (OBX)</strong> jouent un rôle central dans ce flux.<br/>
+Ils permettent notamment de véhiculer :</p>
+
+<ul>
+  <li>des éléments constitutifs de l’<strong>URL de la visionneuse DRIMbox</strong> donnant accès aux images ;</li>
+  <li>le <strong>code de l’acte d’imagerie</strong> réalisée</li>
+  <li>la <strong>modalité d’imagerie</strong> utilisée lors de l’examen</li>
+  <li>les informations relatives aux <strong>produits administrés</strong> dans le cadre de la procédure (type, numéro de lot, quantité) ;</li>
+  <li>les informations sur l’<strong>appareil d’imagerie utilisé</strong> ;</li>
+  <li>la <strong>localisation anatomique</strong> ciblée par l’examen et les éventuelles précisions topographiques associées.</li>
+</ul>
+
+<p>L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la partie relatives aux <a href="./specifications_techniques.html#flux-4----transmission-dun-complément-dinformation-post-acte">contraintes spécifiques du volet</a>.</p>
+
+<p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 4</strong> :</p>
+
+<div style="text-align: center;" class="figure"><a name="l4935">​</a>
+    <img src="fig17.png" alt="Figure 17" style="width:80%;" title="Figure 17 : Structure fonctionnelle du message ORU_R01"/>
+    <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
+</div>
+
+<p><br/></p>
+
+<h5 id="acquittements">Acquittements</h5>
+
+<p><a name="l4950">​</a>Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un <strong>acquittement technique HL7 v2</strong> (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1.
+Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans <a href="./acquittement.html">une partie dédiée</a>.</p>
+
+<h6 id="profil-du-message-ack">Profil du message ACK</h6>
+
+<p>Le profil du message ACK est le suivant :</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -1549,7 +1739,7 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
       <p>Card.</p>
     </th>
     <th>
-      <p>&sect; HL7</p>
+      <p>HL7 &sect;</p>
     </th>
   </tr>
     <tr>
@@ -1557,7 +1747,7 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
         <p>MSH</p>
       </td>
       <td>
-        <p>Message Header</p>
+        <p>Message header</p>
       </td>
       <td>
         <p>R</p>
@@ -1571,163 +1761,10 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
     </tr>
     <tr>
       <td>
-        <p> </p>
+        <p>[{SFT}]</p>
       </td>
       <td>
-        <p>--- PATIENT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> PID</p>
-      </td>
-      <td>
-        <p>Patient Identification</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>  PV1</p>
-      </td>
-      <td>
-        <p>Patient Visit</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>3</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT_VISIT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p>--- PATIENT end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>{</p>
-      </td>
-      <td>
-        <p>--- ORDER begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> ORC</p>
-      </td>
-      <td>
-        <p>Common Order</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> OBR</p>
-      </td>
-      <td>
-        <p>Observation Request</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comment</p>
+        <p>Software segment</p>
       </td>
       <td>
         <p>O</p>
@@ -1741,101 +1778,16 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
     </tr>
     <tr>
       <td>
-        <p>[{</p>
+        <p>[UAC]</p>
       </td>
       <td>
-        <p>--- TIMING begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> TQ1</p>
-      </td>
-      <td>
-        <p>Timing Quantity</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>4</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>}]</p>
-      </td>
-      <td>
-        <p>--- TIMING end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p> {</p>
-      </td>
-      <td>
-        <p>--- OBSERVATION begin</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..*]</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>  OBX</p>
-      </td>
-      <td>
-        <p>Observation</p>
-      </td>
-      <td>
-        <p>R</p>
-      </td>
-      <td>
-        <p>[1..1]</p>
-      </td>
-      <td>
-        <p>7</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>  [{NTE}]</p>
-      </td>
-      <td>
-        <p>Comment</p>
+        <p>User Authentication credential- Utilisé uniquement dans la version 2.6</p>
       </td>
       <td>
         <p>O</p>
       </td>
       <td>
-        <p>[0..*]</p>
+        <p>[0..1]</p>
       </td>
       <td>
         <p>2</p>
@@ -1843,77 +1795,40 @@ Les segments structurants du message, notamment <strong>ORC</strong> et <strong>
     </tr>
     <tr>
       <td>
-        <p> }</p>
+        <p>MSA</p>
       </td>
       <td>
-        <p>--- OBSERVATION end</p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-      <td>
-        <p> </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>  IPC</p>
-      </td>
-      <td>
-        <p>Imaging Procedure Control Segment</p>
+        <p>Message Acknowledgement</p>
       </td>
       <td>
         <p>R</p>
       </td>
       <td>
-        <p>[1..*]</p>
+        <p>[1..1]</p>
       </td>
       <td>
-        <p>4</p>
+        <p>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>[{ERR}]</p>
+      </td>
+      <td>
+        <p>Error</p>
+      </td>
+      <td>
+        <p>C</p>
+      </td>
+      <td>
+        <p>[0..*]</p>
+      </td>
+      <td>
+        <p>2</p>
       </td>
     </tr>
   </tbody>
 </table>
-
-<h6 id="description-fonctionnelle-3">Description fonctionnelle</h6>
-
-<p>Le message <strong>OMI^O23</strong> du flux 4 permet au système demandeur (RIS) de transmettre au système effecteur (SI de Téléradiologie) des <strong>compléments d’information post-acte</strong> relatifs à un examen d’imagerie déjà réalisé.</p>
-
-<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent le <strong>rattachement</strong> de ces informations à la demande d’examen initiale, conformément aux règles du profil <strong>IHE SWF</strong> et aux contraintes spécifiques définies par le volet Téléradiologie.</p>
-
-<p>Les <strong>groupes OBSERVATION (OBX)</strong> jouent un rôle central dans ce flux.<br/>
-Ils permettent notamment de véhiculer :</p>
-
-<ul>
-  <li>des éléments constitutifs de l’<strong>URL de la visionneuse DRIMbox</strong> donnant accès aux images ;</li>
-  <li>les informations relatives aux <strong>produits administrés</strong> dans le cadre de la procédure (type, numéro de lot, quantité) ;</li>
-  <li>les informations sur l’<strong>appareil d’imagerie utilisé</strong> ;</li>
-  <li>la <strong>localisation anatomique</strong> ciblée par l’examen et les éventuelles précisions topographiques associées.</li>
-</ul>
-
-<p>L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la surcouche Téléradiologie.</p>
-
-<p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 4</strong> :</p>
-
-<div style="text-align: center;" class="figure"><a name="l3888">​</a>
-    <img src="fig17.png" alt="Figure 17" style="width:80%;" title="Figure 17 : Structure fonctionnelle du message ORU_R01"/>
-    <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
-</div>
-
-<p><br/></p>
-
-<h4 id="réponses-et-acquittements">Réponses et acquittements</h4>
-
-<p>Pour l’ensemble des flux décrits ci-dessus :</p>
-<ul>
-  <li>Les messages HL7 font l’objet d’un <strong>acquittement technique HL7 v2</strong> (ACK) ;</li>
-  <li>Les règles d’acquittement suivent les mécanismes natifs du standard HL7 v2.5.1.</li>
-</ul>
-
-<p>Les modalités d’acquittement applicatif, le cas échéant, sont précisées dans les sections dédiées de la présente spécification.</p>
 
 <p><br/></p>
 
@@ -2168,9 +2083,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
   </tbody>
 </table>
 
-<h6 id="exemples">Exemples</h6>
-
-<p>Entête MSH d’un message ORM :</p>
+<p><strong>Entête MSH d’un message ORM :</strong></p>
 
 <p><code class="language-plaintext highlighter-rouge">MSH|^~\&amp;|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2</code></p>
 
@@ -2243,8 +2156,6 @@ Ces contraintes portent notamment sur les segments suivants :</p>
   </tbody>
 </table>
 
-<p>Le PID-3 doit être identique aux identifiants de patient portés par le document CDA (recordTarget/patientRole/id).</p>
-
 <p>Pour le segment PV1, ce volet ajoute les contraintes suivantes :</p>
 
 <table class="table-hl7v2">
@@ -2282,7 +2193,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
         <p>PV1-19 (2)(4) </p>
       </td>
       <td>
-        <p>Identifiant de la venue</p>
+        <p>Identifiant du rendez-vous</p>
       </td>
       <td>
         <p>CX</p>
@@ -2348,8 +2259,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 Ces contraintes portent notamment sur les segments métiers suivants, selon les flux :</p>
 
 <ul>
-  <li><strong>ORC (Common Order)</strong> : gestion de la demande, de son cycle de vie et de ses états ;</li>
-  <li><strong>OBR (Observation Request)</strong> : description de l’examen, des actes et de leurs identifiants ;</li>
+  <li><strong>ORC / OBR (Order)</strong> : gestion de la demande, de son cycle de vie et de ses états ;</li>
   <li><strong>OBX (Observation Result)</strong> : transmission d’informations cliniques structurées ou de références documentaires ;</li>
   <li><strong>IPC (Imaging Procedure Control)</strong> : partage du contexte de réalisation des études et procédures d’imagerie.</li>
 </ul>
@@ -2462,6 +2372,94 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
       </td>
       <td>
         <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.1</p>
+      </td>
+      <td>
+        <p>Person Identifier</p>
+      </td>
+      <td>
+        <p>Identifiant du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.2</p>
+      </td>
+      <td>
+        <p>Family Name</p>
+      </td>
+      <td>
+        <p>Nom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.3</p>
+      </td>
+      <td>
+        <p>Given Name</p>
+      </td>
+      <td>
+        <p>Prénom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.9</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS</p>
+      </td>
+    </tr>    
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.1 (optionnel)</p>
+      </td>
+      <td>
+        <p>Namespace Id</p>
+      </td>
+      <td>
+        <p>Nom de l'aurotité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.2</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : <span class="hl7-color">1.2.250.1.71.4.2.1</span></p>
+      </td>
+    </tr>
+        <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.3</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.13</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -2583,7 +2581,8 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
 
 <p>Le segment <strong>OBR</strong> est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
-<p>Les champs présentés dans le tableau ci-après sont <strong>requis</strong> ou <strong>requis si connus</strong>, selon leur pertinence dans le cadre du workflow de téléradiologie.</p>
+<p>Dans le cadre du volet <strong>Téléradiologie</strong>, le champ <strong>OBR-4 – Universal Service Identifier</strong> est utilisé afin de véhiculer un <strong>code local identifiant la procédure métier portée par le message</strong>.
+Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a href="./table_obr.html">table de codes locaux</a>, commune à l’ensemble des flux du volet Téléradiologie.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -2633,49 +2632,51 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Universal Service Identifier</p>
       </td>
       <td>
-        <p> </p>
+        <p>Code local identifiant la procédure métier portée par le message </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.1</p>
+        <p>&gt; OBR-4.1  </p>
       </td>
       <td>
-        <p>Code</p>
+        <p>Code </p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p><span class="hl7-color">TRANSMISSION_DEMANDE</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.2</p>
+        <p>&gt; OBR-4.2  </p>
       </td>
       <td>
-        <p>Display name</p>
+        <p>Display name </p>
       </td>
-      <td></td>
+      <td>
+        <p><span class="hl7-color">Transmission d’une demande d’examen d'imagerie</span></p>
+      </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.3</p>
+        <p>&gt; OBR-4.3 </p>
       </td>
       <td>
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p> <span class="hl7-color">DCM</span></p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBR_PROCEDURE</span></span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>OBR-13 (Requis si connu)</p>
+        <p>OBR-13</p>
       </td>
       <td>
         <p>Relevant Clinical Information</p>
       </td>
       <td>
-        <p>Antécédents du patient pertinents dans le cadre de l'examen demandé</p>
+        <p>Justification de la demande d'examen</p>
       </td>
     </tr>
     <tr>
@@ -2689,17 +2690,232 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Informations relatives au professionnel de santé responsable (identique à l'ORC-12)</p>
       </td>
     </tr>
+  </tbody>
+</table>
+
+<h5 id="segment-nte-notes-and-comments">Segment NTE (Notes and Comments)</h5>
+
+<p>Le segment <strong>NTE</strong> peut être utilisé en complément du segment <strong>OBR</strong> afin de véhiculer des <strong>commentaires libres</strong> relatifs à la <strong>finalité de l’examen</strong> et/ou à la <strong>modalité d’imagerie demandée</strong>.</p>
+
+<p>La structure et l’utilisation du segment <strong>NTE</strong> sont <strong>conformes au standard HL7 v2.5.1</strong>. Des <strong>contraintes spécifiques</strong> s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen ou à la modalité d’imagerie, telles que définies dans le présent volet.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
     <tr>
       <td>
-        <p>OBR-31</p>
+        <p><strong>Segment NTE</strong></p>
       </td>
       <td>
-        <p>Reason for Study</p>
+        <p><strong>Notes and Comments</strong></p>
       </td>
       <td>
-        <p>Justification de la demande d'examen (type CE)</p>
-        <p>Lorsque la justification peut être exprimée à l’aide d’un code, celui-ci doit être renseigné dans CE-1, avec le système de codage associé précisé en CE-3.</p>
-        <p>À défaut de codage disponible, la justification peut être transmise sous forme de texte libre dans CE-2 – Text.</p>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-3</p>
+      </td>
+      <td>
+        <p>Comment</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-4</p>
+      </td>
+      <td>
+        <p>Comment Type</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur possible :</p>
+        <p><span class="hl7-color">FINALITE_EXAMEN</span></p>
+        <p><span class="hl7-color">MODALITE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">HL70364</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="groupe-observation---modalité-dimagerie">Groupe OBSERVATION - Modalité d’imagerie</h5>
+
+<p>Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer la <strong>modalité d’imagerie souhaitée</strong> pour l’examen demandé.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment OBX</strong></p>
+      </td>
+      <td>
+        <p><strong>Observation/Result</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-1</p>
+      </td>
+      <td>
+        <p>Set Id - Obx</p>
+      </td>
+      <td>
+        <p>Numéro de séquence du segment</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-2</p>
+      </td>
+      <td>
+        <p>Value Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">CE</span> (Coded Entry)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-3</p>
+      </td>
+      <td>
+        <p>Observation Identifier</p>
+      </td>
+      <td>
+        <p><strong> </strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">MODALITE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">Modalité d’imagerie utilisée ou prévue pour réaliser l’examen</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBSERVATION</span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-5</p>
+      </td>
+      <td>
+        <p>Observation Value</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.1</p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.3</p>
+      </td>
+      <td>
+        <p>Name Of Coding System</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">terminologie-cisis-fr</span> ou <span class="hl7-color">DCM</span> en fonction de l'appartenance du code à l'un des systèmes de codage</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-11</p>
+      </td>
+      <td>
+        <p>Observation Result Status</p>
+      </td>
+      <td>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -2865,7 +3081,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -3023,7 +3239,169 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="groupe-observation---antécédents">Groupe OBSERVATION - Antécédents</h5>
+
+<p>Ce groupe <strong>OBSERVATION</strong> optionnel et répétable permet de véhiculer les <strong>antécédents médicaux du patient jugés pertinents pour la réalisation de l’examen d’imagerie</strong>.</p>
+
+<p>Les antécédents sont transmis sous forme de texte libre dans le champ <strong>OBX-5</strong>. Le champ <strong>OBX-8</strong>, optionnel, est utilisé comme indicateur de pertinence, permettant de qualifier le niveau d’impact des antécédents transmis vis-à-vis de l’examen d’imagerie demandé.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment OBX</strong></p>
+      </td>
+      <td>
+        <p><strong>Observation/Result</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-1</p>
+      </td>
+      <td>
+        <p>Set Id - Obx</p>
+      </td>
+      <td>
+        <p>Numéro de séquence du segment</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-2</p>
+      </td>
+      <td>
+        <p>Value Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">FT</span> (Formated Text)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-3</p>
+      </td>
+      <td>
+        <p>Observation Identifier</p>
+      </td>
+      <td>
+        <p><strong> </strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">11322-5</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">History of General health Narrative</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">LN</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-5</p>
+      </td>
+      <td>
+        <p>Observation Value</p>
+      </td>
+      <td>
+        <p>Antécédents</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-8 (optionnel)</p>
+      </td>
+      <td>
+        <p>Abnormal flag</p>
+      </td>
+      <td>
+        <p>Pertinence de l'antécédent</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-8.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur possible :</p>
+        <p><span class="hl7-color">SANS_IMPACT</span></p>
+        <p><span class="hl7-color">PERTINENT</span></p>
+        <p><span class="hl7-color">MAJEUR</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">HL70078</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-11</p>
+      </td>
+      <td>
+        <p>Observation Result Status</p>
+      </td>
+      <td>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -3158,7 +3536,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -3293,7 +3671,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -3441,7 +3819,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -3542,13 +3920,90 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
     </tr>
     <tr>
       <td>
-        <p>ORC-12</p>
+        <p>&gt; ORC-12.1</p>
       </td>
       <td>
-        <p>Ordering Provider</p>
+        <p>Person Identifier</p>
       </td>
       <td>
-        <p>Informations relatives au Professionnel de santé de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie</p>
+        <p>Identifiant du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.2</p>
+      </td>
+      <td>
+        <p>Family Name</p>
+      </td>
+      <td>
+        <p>Nom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.3</p>
+      </td>
+      <td>
+        <p>Given Name</p>
+      </td>
+      <td>
+        <p>Prénom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.9</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS</p>
+      </td>
+    </tr>    
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.1 (optionnel)</p>
+      </td>
+      <td>
+        <p>Namespace Id</p>
+      </td>
+      <td>
+        <p>Nom de l'aurotité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.2</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : <span class="hl7-color">1.2.250.1.71.4.2.1</span></p>
+      </td>
+    </tr>
+        <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.3</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.13</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -3674,6 +4129,9 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
 <p>Le segment <strong>OBR</strong> est utilisé pour véhiculer des informations relatives à la <strong>demande d’examen d’imagerie</strong>.<br/>
 Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
+<p>Dans le cadre du volet <strong>Téléradiologie</strong>, le champ <strong>OBR-4 – Universal Service Identifier</strong> est utilisé afin de véhiculer un <strong>code local identifiant la procédure métier portée par le message</strong>.
+Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a href="./table_obr.html">table de codes locaux</a>, commune à l’ensemble des flux du volet Téléradiologie.</p>
+
 <table class="table-hl7v2">
   <tbody>
     <tr>
@@ -3722,38 +4180,40 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>Universal Service Identifier</p>
       </td>
       <td>
-        <p> </p>
+        <p>Code local identifiant la procédure métier portée par le message </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.1</p>
+        <p>&gt; OBR-4.1  </p>
       </td>
       <td>
-        <p>Code</p>
+        <p>Code </p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p><span class="hl7-color">ANNULATION_DEMANDE</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.2</p>
+        <p>&gt; OBR-4.2  </p>
       </td>
       <td>
-        <p>Display name</p>
+        <p>Display name </p>
       </td>
-      <td></td>
+      <td>
+        <p><span class="hl7-color">Annulation d’une demande d’examen</span></p>
+      </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.3</p>
+        <p>&gt; OBR-4.3 </p>
       </td>
       <td>
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p> <span class="hl7-color">DCM</span></p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBR_PROCEDURE</span></span></p>
       </td>
     </tr>
     <tr>
@@ -3848,7 +4308,95 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Ordering Provider</p>
       </td>
       <td>
-        <p>Informations relatives au Médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie</p>
+        <p>Informations relatives au médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.1</p>
+      </td>
+      <td>
+        <p>Person Identifier</p>
+      </td>
+      <td>
+        <p>Identifiant du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.2</p>
+      </td>
+      <td>
+        <p>Family Name</p>
+      </td>
+      <td>
+        <p>Nom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.3</p>
+      </td>
+      <td>
+        <p>Given Name</p>
+      </td>
+      <td>
+        <p>Prénom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.9</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS</p>
+      </td>
+    </tr>    
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.1 (optionnel)</p>
+      </td>
+      <td>
+        <p>Namespace Id</p>
+      </td>
+      <td>
+        <p>Nom de l'aurotité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.2</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : <span class="hl7-color">1.2.250.1.71.4.2.1</span></p>
+      </td>
+    </tr>
+        <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.3</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.13</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -3961,6 +4509,9 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
 
 <p>Le segment <strong>OBR</strong> est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
+<p>Dans le cadre du volet <strong>Téléradiologie</strong>, le champ <strong>OBR-4 – Universal Service Identifier</strong> est utilisé afin de véhiculer un <strong>code local identifiant la procédure métier portée par le message</strong>.
+Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a href="./table_obr.html">table de codes locaux</a>, commune à l’ensemble des flux du volet Téléradiologie.</p>
+
 <table class="table-hl7v2">
   <tbody>
     <tr>
@@ -4009,38 +4560,40 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Universal Service Identifier</p>
       </td>
       <td>
-        <p> </p>
+        <p>Code local identifiant la procédure métier portée par le message </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.1</p>
+        <p>&gt; OBR-4.1  </p>
       </td>
       <td>
-        <p>Code</p>
+        <p>Code </p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p><span class="hl7-color">TRANSMISSION_DEMANDE</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.2</p>
+        <p>&gt; OBR-4.2  </p>
       </td>
       <td>
-        <p>Display name</p>
+        <p>Display name </p>
       </td>
-      <td></td>
+      <td>
+        <p><span class="hl7-color">Réponse à une demande d’examen d'imagerie</span></p>
+      </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.3</p>
+        <p>&gt; OBR-4.3 </p>
       </td>
       <td>
-        <p>Name of coding system</p>
+        <p>Name of Coding system</p>
       </td>
       <td>
-        <p> <span class="hl7-color">DCM</span></p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBR_PROCEDURE</span></span></p>
       </td>
     </tr>
     <tr>
@@ -4359,15 +4912,13 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
 
 <p>Ce flux repose sur l’utilisation d’un messages <strong>OMI^O23</strong>, conformes au standard <strong>HL7 v2.5.1</strong>.</p>
 
-<p>Les segments sont renseignés conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong>, lorsqu’il est applicable, et font l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong> afin de répondre aux besoins métier du contexte de téléradiologie.</p>
-
-<p>Les <strong>groupes OBSERVATION</strong> (segments OBX), non contraints et optionnels dans le cadre du profil IHE SWF, sont <strong>explicitement contraints par le volet téléradiologie</strong> afin de permettre la transmission normalisée des informations post-acte nécessaires, telles que les produits administrés, l’appareil d’imagerie utilisé ou les informations de restitution des images.</p>
+<p>Les segments présentés danS cette partie font l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong> afin de répondre aux besoins métier du contexte de téléradiologie.</p>
 
 <p>Les sections suivantes décrivent les contraintes appliquées aux segments du message OMI^O23 dans le cadre de ce flux.</p>
 
 <h6 id="segment-orc-common-order-3">Segment ORC (Common Order)</h6>
 
-<p>Le segment <strong>ORC</strong> est renseigné conformément aux spécifications du profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+<p>Le segment <strong>ORC</strong> est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -4406,7 +4957,7 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
         <p>Order control</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">NW</span> (New order/service)</p>
+        <p>Valeur fixée à « <span class="hl7-color">SR »</span> (Response to send order/service status request)</p>
       </td>
     </tr>
     <tr>
@@ -4420,46 +4971,13 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
       </td>
     </tr>
-    <tr>
-      <td>
-        <p>ORC-3</p>
-      </td>
-      <td>
-        <p>Filler Order Number</p>
-      </td>
-      <td>
-        <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ORC-5</p>
-      </td>
-      <td>
-        <p>Order Status</p>
-      </td>
-      <td>
-        <p>Valeur fixée à « <span class="hl7-color">SC</span> (Scheduled)</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ORC-9</p>
-      </td>
-      <td>
-        <p>Date/Time of Transaction</p>
-      </td>
-      <td>
-        <p></p>
-      </td>
-    </tr>
   </tbody>
 </table>
 
 <h6 id="segment-tq1-timingquantity">Segment TQ1 (Timing/Quantity)</h6>
 
 <p>Le segment <strong>TQ1 – Timing/Quantity</strong> est utilisé pour véhiculer les informations temporelles relatives à l’<strong>examen d’imagerie réalisé</strong>.<br/>
-Il est renseigné conformément aux spécifications du profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+Il est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -4519,7 +5037,10 @@ Il est renseigné conformément aux spécifications du profil <strong>IHE Schedu
 
 <h5 id="segment-obr-observation-request-3">Segment OBR (Observation Request)</h5>
 
-<p>Le segment <strong>OBR – Observation Request</strong> est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</strong> et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+<p>Le segment <strong>OBR – Observation Request</strong> est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong>.</p>
+
+<p>Dans le cadre du volet <strong>Téléradiologie</strong>, le champ <strong>OBR-4 – Universal Service Identifier</strong> est utilisé afin de véhiculer un <strong>code local identifiant la procédure métier portée par le message</strong>.
+Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a href="./table_obr.html">table de codes locaux</a>, commune à l’ensemble des flux du volet Téléradiologie.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -4569,48 +5090,40 @@ Il est renseigné conformément aux spécifications du profil <strong>IHE Schedu
         <p>Universal Service Identifier</p>
       </td>
       <td>
-        <p> </p>
+        <p>Code local identifiant la procédure métier portée par le message </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.1</p>
+        <p>&gt; OBR-4.1  </p>
       </td>
       <td>
-        <p>Code</p>
+        <p>Code </p>
       </td>
       <td>
-        <p>Code LOINC de l’acte d’imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;OBR-4.2</p>
-      </td>
-      <td>
-        <p>Display name</p>
+        <p><span class="hl7-color">COMPLEMENT_POST_EXAMEN</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.3</p>
+        <p>&gt; OBR-4.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">Transmission d'un complément d’information post-examen</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBR-4.3 </p>
       </td>
       <td>
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p> <span class="hl7-color">LN</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>OBR-16</p>
-      </td>
-      <td>
-        <p>Ordering Provider</p>
-      </td>
-      <td>
-        <p>Informations relatives au professionnel de santé effecteur à distance (identique à l'ORC-12)</p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBR_PROCEDURE</span></span></p>
       </td>
     </tr>
   </tbody>
@@ -4660,7 +5173,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>Accession Identifier</p>
       </td>
       <td>
-        <p></p>
+        <p>Accession Number</p>
       </td>
     </tr>
     <tr>
@@ -4671,7 +5184,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>Requested Procedure ID</p>
       </td>
       <td>
-        <p>Accession number</p>
+        <p></p>
       </td>
     </tr>
     <tr>
@@ -4694,37 +5207,6 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       </td>
       <td>
         <p></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;IPC-5.1</p>
-      </td>
-      <td>
-        <p>Code</p>
-      </td>
-      <td>
-        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;IPC-5.2</p>
-      </td>
-      <td>
-        <p>Display name</p>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;IPC-5.3</p>
-      </td>
-      <td>
-        <p>Name of Coding system</p>
-      </td>
-      <td>
-        <p> <span class="hl7-color">DCM</span></p>
       </td>
     </tr>
   </tbody>
@@ -4873,11 +5355,163 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
     </ul>
 </blockquote>
 
+<h5 id="groupe-observation---acte-dimagerie">Groupe OBSERVATION - Acte d’imagerie</h5>
+
+<p>Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer le <strong>code de l’acte d’imagerie réalisée</strong>.</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment OBX</strong></p>
+      </td>
+      <td>
+        <p><strong>Observation/Result</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-1</p>
+      </td>
+      <td>
+        <p>Set Id - Obx</p>
+      </td>
+      <td>
+        <p>Numéro de séquence du segment</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-2</p>
+      </td>
+      <td>
+        <p>Value Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">CE</span> (Coded Entry)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-3</p>
+      </td>
+      <td>
+        <p>Observation Identifier</p>
+      </td>
+      <td>
+        <p><strong> </strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">CODE_ACTE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">Code de l'acte d'imagerie réalisée</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBSERVATION</span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-5</p>
+      </td>
+      <td>
+        <p>Observation Value</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.1</p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.3</p>
+      </td>
+      <td>
+        <p>Name Of Coding System</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">LN</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-11</p>
+      </td>
+      <td>
+        <p>Observation Result Status</p>
+      </td>
+      <td>
+        <p>Valeur fixée à « <span class="hl7-color">F »</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l10048">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+<p><a name="l12762">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
+
+<h5 id="groupe-observation---modalité-dimagerie-1">Groupe OBSERVATION - Modalité d’imagerie</h5>
+
+<p><a name="l12780">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
+Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
+Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie">Groupes OBSERVATION – Modalité d’imagerie</a></p>
 
 <h5 id="groupes-observation---produit-administré">Groupes OBSERVATION - Produit administré</h5>
 
@@ -5635,6 +6269,449 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
   </tbody>
 </table>
 
+<p><br/></p>
+
+<h5 id="description-des-contraintes-à-appliquer-sur-lacquittement">Description des contraintes à appliquer sur l’acquittement</h5>
+
+<h6 id="segment-msh-header">Segment MSH (Header)</h6>
+
+<p>Le segment MSH reprend une partie des informations du message initial :</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="2">
+        <p>Message initial</p>
+      </th>
+      <th colspan="2">
+        <p>Message d'acquittement</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Champ</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Champ</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.3">MSH.3</a> - Sending Application​</p>
+      </td>
+      <td>
+        <p>Application source du message à acquitter</p>
+      </td>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.5">MSH.5</a> - Receiving Application​</p>
+      </td>
+      <td>
+        <p>Application destinatrice de l'acquittement</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.4">MSH.4</a> - Sending Facility​</p>
+      </td>
+      <td>
+        <p>Etablissement source du message à acquitter</p>
+      </td>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.6">MSH.6</a> - Receiving Facility​</p>
+      </td>
+      <td>
+        <p>Etablissement destinataire de l'acquittement</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.5">MSH.5</a> - Receiving Application​</p>
+      </td>
+      <td>
+        <p>Application destinatrice du message à acquitter</p>
+      </td>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.3">MSH.3</a> - Sending Application​</p>
+      </td>
+      <td>
+        <p>Application source de l'acquittement</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.6">MSH.6</a> - Receiving Facility​</p>
+      </td>
+      <td>
+        <p>Etablissement destinataire du message à acquitter</p>
+      </td>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.4">MSH.4</a> - Sending Facility​</p>
+      </td>
+      <td>
+        <p>Etablissement source de l'acquittement</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.11">MSH.11</a> - Processing Id​</p>
+      </td>
+      <td>
+        <p>Identifiant de traitement</p>
+      </td>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.11">MSH.11</a> - Processing Id​</p>
+      </td>
+      <td>
+        <p>Identifiant de traitement</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment MSH :</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th>
+        <p>Champ</p>
+      </th>
+      <th>
+        <p>Contenu</p>
+      </th>
+      <th>
+        <p>Type donnée</p>
+      </th>
+      <th>
+        <p>Caractère optionnel/obligatoire</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-1</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">|</span> séparateur de champ</p>
+      </td>
+      <td>
+        <p>ST</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-2</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">^~\&amp;</span> : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants</p>
+      </td>
+      <td>
+        <p>ST</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-3</p>
+      </td>
+      <td>
+        <p>Application émettrice</p>
+      </td>
+      <td>
+        <p>HD</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-4</p>
+      </td>
+      <td>
+        <p>Organisation émettrice</p>
+      </td>
+      <td>
+        <p>HD</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-5</p>
+      </td>
+      <td>
+        <p>Application réceptrice</p>
+      </td>
+      <td>
+        <p>HD</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-6</p>
+      </td>
+      <td>
+        <p>Organisation réceptrice</p>
+      </td>
+      <td>
+        <p>HD</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-7</p>
+      </td>
+      <td>
+        <p>Date/time du message</p>
+      </td>
+      <td>
+        <p>TS</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-9</p>
+      </td>
+      <td>
+        <p>Type du message, selon l'évènement du message initial : 
+          <br/><span class="hl7-color">ACK^O01^ACK</span>
+          <br/><span class="hl7-color">ACK^R01^ACK</span>
+          <br/><span class="hl7-color">ACK^O23^ACK</span>  
+        </p>  
+      </td>
+      <td>
+        <p>MSG</p>
+      </td>
+      <td>
+        <p>R</p>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-10</p>
+      </td>
+      <td>
+        <p>Identifiant du message</p>
+      </td>
+      <td>
+        <p>ST</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-11</p>
+      </td>
+      <td>
+        <p>Processing Id 
+        <br/><span class="hl7-color">P</span> : en production 
+        <br/><span class="hl7-color">T</span> : message de test 
+        <br/><span class="hl7-color">D</span> : environnement de debug
+        </p>
+      </td>
+      <td>
+        <p>PT</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-12</p>
+      </td>
+      <td>
+        <p>Version du standard 
+        <br/><span class="hl7-color">2.5.1</span>
+        </p>
+      </td>
+      <td>
+        <p>VID</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-17</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">FRA</span></p>
+      </td>
+      <td>
+        <p>ID</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>MSH-18</p>
+      </td>
+      <td>
+        <p>Jeux de caractères, valeurs possibles :</p>
+        <p><span class="hl7-color">UNICODE UTF-8</span> ou <span class="hl7-color">8859/15</span></p>
+      </td>
+      <td>
+        <p>ID</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="segment-msa-message-acknowledgment">Segment MSA (Message Acknowledgment)</h6>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th>
+        <p>Champ requis</p>
+      </th>
+      <th>
+        <p>Contenu</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.1">MSA.1</a> - Acknowledgment Code</p>
+      </td>
+      <td>
+        <p>Code d'acquittement du message autorisé :</p>
+        <p>·       <span class="hl7-color">AA</span>(Original mode: Application Accept - Enhanced mode: Application acknowledgment: Accept) : le message a été compris et intégré par l'application destinatrice qui prend la responsabilité du message et libère ainsi l'application productrice de toute obligation de le renvoyer.</p>
+        <p>·       <span class="hl7-color">AE</span> (Original mode: Application Error - Enhanced mode: Application acknowledgment: Error) : le message contient des erreurs de syntaxe.   </p>
+        <p>·       <span class="hl7-color">AR</span> (Original mode: Application Reject - Enhanced mode: Application acknowledgment: Reject)  : le message est rejeté pour une raison circonstancielle. Il peut être réémis plus tard. </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><a href="https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.2">MSA.2</a> - Message Control Id</p>
+      </td>
+      <td>
+        <p>Rappel l'identifiant du message acquitté correspondant au champ MSH.10 du message initial.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="segment-err-error">Segment ERR (Error)</h6>
+
+<p>Ce segment est utilisé au niveau des messages d’acquittement dans le cas
+où le champ MSA-1 prend la valeur AE (Application error) ou AR
+(Application reject).</p>
+
+<p>Le tableau ci-dessous liste les champs à renseigner pour le segment
+ERR :</p>
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th>
+        <p>Champ</p>
+      </th>
+      <th>
+        <p>Contenu</p>
+      </th>
+      <th>
+        <p>Type donnée</p>
+      </th>
+      <th>
+        <p>Caractère optionnel/obligatoire</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p>ERR-2</p>
+      </td>
+      <td>
+        <p>Localisation de l'erreur dans le cas d'une erreur de syntaxe du message initial.</p>
+      </td>
+      <td>
+        <p>ERL</p>
+      </td>
+      <td>
+        <p>O</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>ERR-3</p>
+      </td>
+      <td>
+        <p>Code erreur HL7 dont les valeurs sont à prendre dans la table HL7 0357 (nom symbolique messageErrorCondition)</p>
+      </td>
+      <td>
+        <p>CWE</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>ERR-4</p>
+      </td>
+      <td>
+        <p>Sévérité de l'erreur dont les valeurs sont à prendre dans la table HL7 0516 (nom symbolique errorSeverity)</p>
+      </td>
+      <td>
+        <p>ID</p>
+      </td>
+      <td>
+        <p>R</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><b>Exemple</b></p>
+
+<p>Entête MSH d’un message ORM^O01 dans le cadre du flux 1 :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
+</code></pre></div></div>
+<p>Un acquittement positif retourné par le SI de téléradiologie :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5|||||FRA|8859/15
+MSA|AA|12345
+</code></pre></div></div>
+<p>Un acquittement négatif retourné par le SI de téléradiologie : version d’HL7
+inconnue</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
+MSA|AE|12345
+ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
+</code></pre></div></div>
+
 
 
 
@@ -5676,7 +6753,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 28, 2026 17:10+0000">2026-01-28</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 17:23+0000">2026-01-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

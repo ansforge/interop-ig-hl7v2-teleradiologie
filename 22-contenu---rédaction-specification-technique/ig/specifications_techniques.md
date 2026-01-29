@@ -13,7 +13,7 @@ Cette spécification s’applique exclusivement aux flux identifiés dans le [Vo
 
 Les échanges sont basés sur des messages HL7 v2 conformes à la version **2.5.1**. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine [IHE Radiology](https://www.ihe.net/ihe_domains/radiology/), et notamment le profil [IHE Scheduled Workflow (SWF.b)](https://wiki.ihe.net/index.php/Scheduled_Workflow.b), afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil [IHE PAM-FR](https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf) sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identité nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification [Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure](https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf), publiée par Interop’santé.
 
-Il est pertinent de préciser que les flux décrits dans la présente spécification portent principalement sur des **données structurées nécessaires à l’orchestration du workflow**.
+Il est pertinent de préciser que les flux décrits dans la présente spécification portent principalement sur des **données nécessaires à l’orchestration du workflow**.
  La transmission de la **demande d’examen d’imagerie formalisée sous forme de document clinique**, ainsi que celle d’éventuels **documents cliniques complémentaires**, n’est pas assurée par ces flux transactionnels et fait l’objet de flux documentaires distincts s’appuyant sur le [Volet de transmission d’un document CDA-R2 en HL7v2](https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/).
 
 ### Evènements déclenchants
@@ -122,8 +122,7 @@ Le message est composé des segments principaux suivants :
 
 * **MSH** : en-tête du message et informations de routage ;
 * **PID / PV1** : identification du patient et du contexte de prise en charge ;
-* **ORC** : informations liées à la demande d’examen, conformément à IHE SWF ;
-* **OBR** : prescription de l’examen d’imagerie (modalité, indications, antécédents), conformément à IHE SWF ;
+* **ORC / OBR** : informations liées à la demande d’examen, conformément à IHE SWF ;
 * **Groupes OBSERVATION (OBX)** : supporte les informations complémentaires spécifiques au volet Téléradiologie, non contraintes par IHE SWF.
 
 Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.
@@ -133,31 +132,86 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Usage: R
   * Card.: [1..1]
   * § HL7: 2
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Header)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
 * Segment:  
   * Meaning: --- PATIENT begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  PID
+* Segment: PID
   * Meaning: Patient Identification
   * Usage: R
   * Card.: [1..1]
   * § HL7: 3
+* Segment: [PD1]
+  * Meaning: Additional Demographics
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 3
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Patient)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
 * Segment:  
   * Meaning: --- PATIENT_VISIT begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  PV1
+* Segment: PV1
   * Meaning: Patient Visit
   * Usage: R
   * Card.: [1..1]
+  * § HL7: 3
+* Segment: [PV2]
+  * Meaning: Patient Visit – Additional Info
+  * Usage: O
+  * Card.: [0..1]
   * § HL7: 3
 * Segment:  
   * Meaning: --- PATIENT_VISIT end
   * Usage:  
   * Card.:  
   * § HL7:  
+* Segment: [{
+  * Meaning: --- INSURANCE begin
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7:  
+* Segment: IN1
+  * Meaning: Insurance
+  * Usage: R
+  * Card.: [1..1]
+  * § HL7: 6
+* Segment: [IN2]
+  * Meaning: Insurance Additional Info
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: [IN3]
+  * Meaning: Insurance Certification
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: }]
+  * Meaning: --- INSURANCE end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: [GT1]
+  * Meaning: Guarantor
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: [{AL1}]
+  * Meaning: Allergy Information
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 3
 * Segment:  
   * Meaning: --- PATIENT end
   * Usage:  
@@ -168,43 +222,103 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Usage: R
   * Card.: [1..*]
   * § HL7:  
-* Segment:  ORC
+* Segment: ORC
   * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
-* Segment: {
+* Segment: [
   * Meaning: --- ORDER_DETAIL begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  OBR
-  * Meaning: Observation Request
+* Segment: OBR
+  * Meaning: Order Detail / Observation Request
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
-* Segment:  [{NTE}]
-  * Meaning: Comments on the order
+* Segment: [RQD]
+  * Meaning: Requisition Detail
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [RQ1]
+  * Meaning: Requisition Detail-1
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [RXO]
+  * Meaning: Pharmacy/Treatment Order
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [ODS]
+  * Meaning: Dietary Orders, Supplements, and Preferences
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [ODT]
+  * Meaning: Diet Tray Instructions
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Order Detail)
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
-* Segment:  {
+* Segment: [CTD]
+  * Meaning: Contact Data
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 11
+* Segment: [{DG1}]
+  * Meaning: Diagnosis
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 6
+* Segment: [{
   * Meaning: --- OBSERVATION begin
-  * Usage: R
+  * Usage: 1
   * Card.: [1..*]
   * § HL7:  
-* Segment:  OBX
-  * Meaning: Observation
+* Segment: OBX
+  * Meaning: Observation / Result
   * Usage: R
   * Card.: [1..1]
   * § HL7: 7
-* Segment:  [{NTE}]
-  * Meaning: Comment
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Observation)
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
-* Segment:  }
+* Segment: }]
   * Meaning: --- OBSERVATION end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: ]
+  * Meaning: --- ORDER_DETAIL end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: [{FT1}]
+  * Meaning: Financial Transaction
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 6
+* Segment: [{CTI}]
+  * Meaning: Clinical Trial Identification
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 7
+* Segment: [BLG]
+  * Meaning: Billing
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: }
+  * Meaning: --- ORDER end
   * Usage:  
   * Card.:  
   * § HL7:  
@@ -216,9 +330,10 @@ Le message **ORM^O01** du flux 1 permet au système demandeur (RIS) de transmett
 Outre les éléments standards concernant la demande et la prescription portés par les segments **ORC** et **OBR**, ce flux s’appuie sur des **groupes OBSERVATION (OBX)** afin de véhiculer des informations fonctionnelles complémentaires indispensables à la bonne réalisation de l’examen, telles que :
 
 * la **localisation anatomique** et, le cas échéant, une **précision topographique**
+* les **antécédents médicaux du patient**
 * des **données morphologiques pertinentes** pour la planification de l’examen d’imagerie (taille, poids, statut de grossesse)
 
-Ces groupes OBSERVATION sont **contraints par la présente spécification**, tant sur le plan sémantique que structurel (identification des OBX, cardinalités, types de données), afin de garantir une interprétation homogène par l’ensemble des acteurs.
+Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.md#flux-1---transmission-de-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
 Le diagramme ci-dessous illustre le **fonctionnement global du message**, les interactions entre les segments principaux ainsi que le rôle des **OBX spécifiques Téléradiologie** dans le cadre du flux 1.
 
@@ -236,39 +351,93 @@ Le message est composé des segments principaux suivants :
 
 * **MSH** : en-tête du message et informations de routage
 * **PID / PV1** : identification du patient et du contexte de prise en charge
-* **ORC** : informations de demande, avec une action positionnée à l’annulation
-* **OBR** : rappel des éléments de prescription nécessaires à l’identification de la demande annulée
+* **ORC / OBR** : informations de demande, avec une action positionnée à l’annulation
 
 * Segment: MSH
   * Meaning: Message Header
   * Usage: R
   * Card.: [1..1]
   * § HL7: 2
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Header)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
 * Segment:  
   * Meaning: --- PATIENT begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  PID
+* Segment: PID
   * Meaning: Patient Identification
   * Usage: R
   * Card.: [1..1]
   * § HL7: 3
+* Segment: [PD1]
+  * Meaning: Additional Demographics
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 3
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Patient)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
 * Segment:  
   * Meaning: --- PATIENT_VISIT begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  PV1
+* Segment: PV1
   * Meaning: Patient Visit
   * Usage: R
   * Card.: [1..1]
+  * § HL7: 3
+* Segment: [PV2]
+  * Meaning: Patient Visit – Additional Info
+  * Usage: O
+  * Card.: [0..1]
   * § HL7: 3
 * Segment:  
   * Meaning: --- PATIENT_VISIT end
   * Usage:  
   * Card.:  
   * § HL7:  
+* Segment: [{
+  * Meaning: --- INSURANCE begin
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7:  
+* Segment: IN1
+  * Meaning: Insurance
+  * Usage: R
+  * Card.: [1..1]
+  * § HL7: 6
+* Segment: [IN2]
+  * Meaning: Insurance Additional Info
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: [IN3]
+  * Meaning: Insurance Certification
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: }]
+  * Meaning: --- INSURANCE end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: [GT1]
+  * Meaning: Guarantor
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: [{AL1}]
+  * Meaning: Allergy Information
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 3
 * Segment:  
   * Meaning: --- PATIENT end
   * Usage:  
@@ -279,43 +448,103 @@ Le message est composé des segments principaux suivants :
   * Usage: R
   * Card.: [1..*]
   * § HL7:  
-* Segment:  ORC
+* Segment: ORC
   * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
-* Segment: {
+* Segment: [
   * Meaning: --- ORDER_DETAIL begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  OBR
-  * Meaning: Observation Request
+* Segment: OBR
+  * Meaning: Order Detail / Observation Request
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
-* Segment:  [{NTE}]
-  * Meaning: Comments on the order
+* Segment: [RQD]
+  * Meaning: Requisition Detail
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [RQ1]
+  * Meaning: Requisition Detail-1
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [RXO]
+  * Meaning: Pharmacy/Treatment Order
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [ODS]
+  * Meaning: Dietary Orders, Supplements, and Preferences
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [ODT]
+  * Meaning: Diet Tray Instructions
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Order Detail)
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
-* Segment:  {
+* Segment: [CTD]
+  * Meaning: Contact Data
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 11
+* Segment: [{DG1}]
+  * Meaning: Diagnosis
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 6
+* Segment: [{
   * Meaning: --- OBSERVATION begin
   * Usage: O
   * Card.: [0..*]
   * § HL7:  
-* Segment:  OBX
-  * Meaning: Observation
+* Segment: OBX
+  * Meaning: Observation / Result
   * Usage: R
   * Card.: [1..1]
   * § HL7: 7
-* Segment:  [{NTE}]
-  * Meaning: Comment
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Observation)
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
-* Segment:  }
+* Segment: }]
   * Meaning: --- OBSERVATION end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: ]
+  * Meaning: --- ORDER_DETAIL end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: [{FT1}]
+  * Meaning: Financial Transaction
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 6
+* Segment: [{CTI}]
+  * Meaning: Clinical Trial Identification
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 7
+* Segment: [BLG]
+  * Meaning: Billing
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 4
+* Segment: }
+  * Meaning: --- ORDER end
   * Usage:  
   * Card.:  
   * § HL7:  
@@ -333,7 +562,7 @@ Le diagramme ci-dessous illustre le **fonctionnement du message d’annulation**
 Le flux 3 repose sur l’échange d’un message **ORU^R01** conforme à la norme **HL7 v2.5.1**.
  Il est utilisé pour la **réponse à une demande d’examen d’imagerie**, en particulier pour notifier la **décision du médecin effecteur** (approbation/refus de la demande).
 
-Contrairement aux flux 1, 2 et 4, ce flux **ne s’appuie sur aucun profil IHE** existant.
+Contrairement aux flux 1 et 2, ce flux **ne s’appuie sur aucun profil IHE** existant.
  En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.
  Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complété par une **surcouche de contraintes spécifiques au volet Téléradiologie**.
 
@@ -343,8 +572,7 @@ Le message est structuré autour des segments suivants :
 
 * **MSH** : en-tête du message et informations de routage
 * **PID** : identification du patient
-* **ORC** : décision du médecin effecteur sur la demande d’examen (validation ou refus), avec la possibilité de préciser un **motif de refus** le cas échéant
-* **OBR** : rappel de la demande d’examen concernée
+* **ORC / OBR** : décision du médecin effecteur sur la demande d’examen (validation ou refus), avec la possibilité de préciser un **motif de refus** le cas échéant
 * **Groupes OBSERVATION (OBX)** : transmission des informations spécifiques au volet Téléradiologie, notamment le **protocole d’imagerie**, exprimé soit en clair, soit sous forme de contenu encapsulé.
 
 Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments, ainsi que leur caractère requis, optionnel ou répétable.
@@ -354,37 +582,62 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Usage: R
   * Card.: [1..1]
   * § HL7: 2
-* Segment:  
+* Segment: [{SFT}]
+  * Meaning: Software Segment
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
+* Segment: {
   * Meaning: --- PATIENT_RESULT begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  
+* Segment: [
   * Meaning: --- PATIENT begin
   * Usage: R
   * Card.: [1..1]
   * § HL7:  
-* Segment:  PID
+* Segment: PID
   * Meaning: Patient Identification
   * Usage: R
   * Card.: [1..1]
   * § HL7: 3
-* Segment:  
-  * Meaning: --- PATIENT_VISIT begin
+* Segment: [PD1]
+  * Meaning: Additional Demographics
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 3
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Patient)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
+* Segment: [{NK1}]
+  * Meaning: Next of Kin / Associated Parties
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 3
+* Segment: [
+  * Meaning: --- VISIT begin
   * Usage: O
   * Card.: [0..1]
   * § HL7:  
-* Segment:  PV1
+* Segment: PV1
   * Meaning: Patient Visit
   * Usage: R
   * Card.: [1..1]
   * § HL7: 3
-* Segment:  
-  * Meaning: --- PATIENT_VISIT end
+* Segment: [PV2]
+  * Meaning: Patient Visit – Additional Info
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 3
+* Segment: ]
+  * Meaning: --- VISIT end
   * Usage:  
   * Card.:  
   * § HL7:  
-* Segment:  
+* Segment: ]
   * Meaning: --- PATIENT end
   * Usage:  
   * Card.:  
@@ -394,56 +647,111 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Usage: R
   * Card.: [1..*]
   * § HL7:  
-* Segment:  ORC
+* Segment: ORC
   * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
-* Segment:  OBR
+* Segment: OBR
   * Meaning: Observation Request
   * Usage: R
   * Card.: [1..1]
-  * § HL7: 4
-* Segment:  [{NTE}]
-  * Meaning: Comment
+  * § HL7: 7
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Order)
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
 * Segment: [{
-  * Meaning: --- TIMING begin
+  * Meaning: --- TIMING_QTY begin
   * Usage: O
   * Card.: [0..*]
   * § HL7:  
-* Segment:  TQ1
-  * Meaning: Timing Quantity
+* Segment: TQ1
+  * Meaning: Timing / Quantity
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
+* Segment: [{TQ2}]
+  * Meaning: Timing / Quantity Order Sequence
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 4
 * Segment: }]
-  * Meaning: --- TIMING end
+  * Meaning: --- TIMING_QTY end
   * Usage:  
   * Card.:  
   * § HL7:  
-* Segment:  {
+* Segment: [CTD]
+  * Meaning: Contact Data
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 11
+* Segment: [{
   * Meaning: --- OBSERVATION begin
   * Usage: C
   * Card.: [0..*]
   * § HL7:  
-* Segment:  OBX
-  * Meaning: Observation
+* Segment: OBX
+  * Meaning: Observation / Result
   * Usage: R
   * Card.: [1..1]
   * § HL7: 7
-* Segment:  [{NTE}]
-  * Meaning: Comment
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Observation)
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
-* Segment:  }
+* Segment: }]
   * Meaning: --- OBSERVATION end
   * Usage:  
   * Card.:  
   * § HL7:  
+* Segment: [{FT1}]
+  * Meaning: Financial Transaction
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 6
+* Segment: [{CTI}]
+  * Meaning: Clinical Trial Identification
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 7
+* Segment: [{
+  * Meaning: --- SPECIMEN begin
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7:  
+* Segment: SPM
+  * Meaning: Specimen
+  * Usage: R
+  * Card.: [1..1]
+  * § HL7:  
+* Segment: [{OBX}]
+  * Meaning: Observation related to Specimen
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7:  
+* Segment: }]
+  * Meaning: --- SPECIMEN end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: }
+  * Meaning: --- ORDER_OBSERVATION end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: }
+  * Meaning: --- PATIENT_RESULT end
+  * Usage:  
+  * Card.:  
+  * § HL7:  
+* Segment: [DSC]
+  * Meaning: Continuation Pointer
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 2
 
 ###### Description fonctionnelle
 
@@ -461,7 +769,7 @@ Le **groupe OBSERVATION (OBX)** est **conditionné à la valeur du champ ORC-1**
 * protocole exprimé en clair dans le message
 * protocole encapsulé sous forme de contenu binaire
 
-Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./st-contraintes.md), notamment via l’utilisation de codes locaux dans **OBX-3**.
+Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.md#flux-3---réponse-à-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
 Le diagramme ci-dessous illustre le **fonctionnement du flux 3** :
 
@@ -470,10 +778,10 @@ Le diagramme ci-dessous illustre le **fonctionnement du flux 3** :
 Le flux 4 repose sur l’échange d’un message **OMI^O23** conforme à la norme **HL7 v2.5.1**.
  Il est utilisé pour la **transmission d’informations complémentaires post-acte** à la suite de la réalisation d’un examen d’imagerie dans le cadre du volet Téléradiologie.
 
-Ce flux s’appuie sur les principes du **profil IHE RAD – Scheduled Workflow (SWF)**, dans la mesure où il s’inscrit dans la continuité du cycle de vie de la demande d’examen d’imagerie et de sa réalisation.
- Les segments structurants du message, notamment **ORC** et **OBR**, sont ainsi valorisés conformément aux règles définies par IHE SWF, complétées par une **surcouche de contraintes spécifiques au volet Téléradiologie**.
-
 Le message **OMI^O23** permet de transmettre des informations qui ne sont pas nécessairement disponibles au moment de la construction de la demande d’examen, mais qui sont connues **après la réalisation effective de l’examen**.
+
+Bien que le message **OMI^O23** soit décrit dans le **profil IHE RAD – Scheduled Workflow (SWF)**, le cas d’usage couvert par IHE ne répond pas entièrement aux besoins spécifiques du volet **Téléradiologie**.
+ En conséquence, le message **OMI^O23** est défini sur la base du **standard HL7 v2.5.1** et enrichi par une **surcouche de contraintes propres au volet Téléradiologie**.
 
 ###### Description technique
 
@@ -484,7 +792,7 @@ Le message est structuré autour des segments suivants :
 * **ORC** : informations de demande initiale
 * **OBR** : informations relatives à l’examen réalisé
 * **TQ1** : informations temporelles, notamment la date de réalisation de l’examen et la durée de rétention des images
-* **IPC** : informations relatives à l’examen d’imagerie et à la modalité
+* **IPC** : informations relatives à l’examen d’imagerie
 * **Groupes OBSERVATION (OBX)** : transmission des compléments d’information post-acte spécifiques au volet Téléradiologie
 
 Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.
@@ -494,125 +802,232 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
   * Usage: R
   * Card.: [1..1]
   * § HL7: 2
-* Segment:  
+* Segment: [{SFT}]
+  * Meaning: Software Segment
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Header)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
+* Segment: [
   * Meaning: --- PATIENT begin
   * Usage: R
   * Card.: [1..1]
-  * § HL7:  
-* Segment:  PID
+  * § HL7: 
+* Segment: PID
   * Meaning: Patient Identification
   * Usage: R
   * Card.: [1..1]
   * § HL7: 3
-* Segment:  
+* Segment: [PD1]
+  * Meaning: Additional Demographics
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 3
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Patient)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
+* Segment: [
   * Meaning: --- PATIENT_VISIT begin
   * Usage: R
-  * Card.: [1..1]
-  * § HL7:  
-* Segment:  PV1
+  * Card.: [R..1]
+  * § HL7: 
+* Segment: PV1
   * Meaning: Patient Visit
   * Usage: R
   * Card.: [1..1]
   * § HL7: 3
-* Segment:  
+* Segment: [PV2]
+  * Meaning: Patient Visit – Additional Info
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 3
+* Segment: ]
   * Meaning: --- PATIENT_VISIT end
-  * Usage:  
-  * Card.:  
-  * § HL7:  
-* Segment:  
+  * Usage: 
+  * Card.: 
+  * § HL7: 
+* Segment: [{
+  * Meaning: --- INSURANCE begin
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 
+* Segment: IN1
+  * Meaning: Insurance
+  * Usage: R
+  * Card.: [1..1]
+  * § HL7: 6
+* Segment: [IN2]
+  * Meaning: Insurance Additional Info
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: [IN3]
+  * Meaning: Insurance Additional Info – Cert.
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: }]
+  * Meaning: --- INSURANCE end
+  * Usage: 
+  * Card.: 
+  * § HL7: 
+* Segment: [GT1]
+  * Meaning: Guarantor
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 6
+* Segment: [{AL1}]
+  * Meaning: Allergy Information
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 3
+* Segment: ]
   * Meaning: --- PATIENT end
-  * Usage:  
-  * Card.:  
-  * § HL7:  
+  * Usage: 
+  * Card.: 
+  * § HL7: 
 * Segment: {
   * Meaning: --- ORDER begin
   * Usage: R
   * Card.: [1..*]
-  * § HL7:  
-* Segment:  ORC
+  * § HL7: 
+* Segment: ORC
   * Meaning: Common Order
   * Usage: R
   * Card.: [1..1]
   * § HL7: 4
-* Segment:  OBR
-  * Meaning: Observation Request
-  * Usage: R
-  * Card.: [1..1]
-  * § HL7: 4
-* Segment:  [{NTE}]
-  * Meaning: Comment
-  * Usage: O
-  * Card.: [0..*]
-  * § HL7: 2
 * Segment: [{
   * Meaning: --- TIMING begin
   * Usage: R
   * Card.: [1..*]
-  * § HL7:  
-* Segment:  TQ1
-  * Meaning: Timing Quantity
+  * § HL7: 
+* Segment: TQ1
+  * Meaning: Timing / Quantity
   * Usage: R
   * Card.: [1..1]
+  * § HL7: 4
+* Segment: [{TQ2}]
+  * Meaning: Timing / Quantity Order Sequence
+  * Usage: O
+  * Card.: [0..*]
   * § HL7: 4
 * Segment: }]
   * Meaning: --- TIMING end
-  * Usage:  
-  * Card.:  
-  * § HL7:  
-* Segment:  {
-  * Meaning: --- OBSERVATION begin
-  * Usage: R
-  * Card.: [1..*]
-  * § HL7:  
-* Segment:  OBX
-  * Meaning: Observation
+  * Usage: 
+  * Card.: 
+  * § HL7: 
+* Segment: OBR
+  * Meaning: Observation Request
   * Usage: R
   * Card.: [1..1]
-  * § HL7: 7
-* Segment:  [{NTE}]
-  * Meaning: Comment
+  * § HL7: 4
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Order)
   * Usage: O
   * Card.: [0..*]
   * § HL7: 2
-* Segment:  }
-  * Meaning: --- OBSERVATION end
-  * Usage:  
-  * Card.:  
-  * § HL7:  
-* Segment:  IPC
-  * Meaning: Imaging Procedure Control Segment
+* Segment: [CTD]
+  * Meaning: Contact Data
+  * Usage: O
+  * Card.: [0..1]
+  * § HL7: 11
+* Segment: [{DG1}]
+  * Meaning: Diagnosis
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 6
+* Segment: [{
+  * Meaning: --- OBSERVATION begin
   * Usage: R
   * Card.: [1..*]
+  * § HL7: 
+* Segment: OBX
+  * Meaning: Observation / Result
+  * Usage: R
+  * Card.: [1..1]
+  * § HL7: 7
+* Segment: [{NTE}]
+  * Meaning: Notes and Comments (Observation)
+  * Usage: O
+  * Card.: [0..*]
+  * § HL7: 2
+* Segment: }]
+  * Meaning: --- OBSERVATION end
+  * Usage: 
+  * Card.: 
+  * § HL7: 
+* Segment: IPC
+  * Meaning: Imaging Procedure Control
+  * Usage: R
+  * Card.: [1..1]
   * § HL7: 4
+* Segment: }
+  * Meaning: --- ORDER end
+  * Usage: 
+  * Card.: 
+  * § HL7: 
 
 ###### Description fonctionnelle
 
 Le message **OMI^O23** du flux 4 permet au système demandeur (RIS) de transmettre au système effecteur (SI de Téléradiologie) des **compléments d’information post-acte** relatifs à un examen d’imagerie déjà réalisé.
 
-Les segments **ORC** et **OBR** assurent le **rattachement** de ces informations à la demande d’examen initiale, conformément aux règles du profil **IHE SWF** et aux contraintes spécifiques définies par le volet Téléradiologie.
+Les segments **ORC** et **OBR** assurent le **rattachement** de ces informations à la demande d’examen initiale.
 
 Les **groupes OBSERVATION (OBX)** jouent un rôle central dans ce flux.
  Ils permettent notamment de véhiculer :
 
 * des éléments constitutifs de l’**URL de la visionneuse DRIMbox** donnant accès aux images ;
+* le **code de l’acte d’imagerie** réalisée
+* la **modalité d’imagerie** utilisée lors de l’examen
 * les informations relatives aux **produits administrés** dans le cadre de la procédure (type, numéro de lot, quantité) ;
 * les informations sur l’**appareil d’imagerie utilisé** ;
 * la **localisation anatomique** ciblée par l’examen et les éventuelles précisions topographiques associées.
 
-L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la surcouche Téléradiologie.
+L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la partie relatives aux [contraintes spécifiques du volet](./specifications_techniques.md#flux-4----transmission-dun-complément-dinformation-post-acte).
 
 Le diagramme ci-dessous illustre le **fonctionnement du flux 4** :
 
 **Figure 17 : Structure fonctionnelle du message ORU_R01**
 
-#### Réponses et acquittements
+##### Acquittements
 
-Pour l’ensemble des flux décrits ci-dessus :
+Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un **acquittement technique HL7 v2** (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1. Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans [une partie dédiée](./acquittement.md).
 
-* Les messages HL7 font l’objet d’un **acquittement technique HL7 v2** (ACK) ;
-* Les règles d’acquittement suivent les mécanismes natifs du standard HL7 v2.5.1.
+###### Profil du message ACK
 
-Les modalités d’acquittement applicatif, le cas échéant, sont précisées dans les sections dédiées de la présente spécification.
+Le profil du message ACK est le suivant :
+
+* Segment: MSH
+  * Meaning: Message header
+  * Usage: R
+  * Card.: [1..1]
+  * HL7 §: 2
+* Segment: [{SFT}]
+  * Meaning: Software segment
+  * Usage: O
+  * Card.: [0..*]
+  * HL7 §: 2
+* Segment: [UAC]
+  * Meaning: User Authentication credential- Utilisé uniquement dans la version 2.6
+  * Usage: O
+  * Card.: [0..1]
+  * HL7 §: 2
+* Segment: MSA
+  * Meaning: Message Acknowledgement
+  * Usage: R
+  * Card.: [1..1]
+  * HL7 §: 2
+* Segment: [{ERR}]
+  * Meaning: Error
+  * Usage: C
+  * Card.: [0..*]
+  * HL7 §: 2
 
 ### Contraintes applicables aux profils de message
 
@@ -693,9 +1108,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d’entê
   * Type donnée: EI
   * Caractère optionnel/obligatoire: R
 
-###### Exemples
-
-Entête MSH d’un message ORM :
+**Entête MSH d’un message ORM :**
 
 `MSH|^~\&|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2`
 
@@ -720,8 +1133,6 @@ Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 
   * Type donnée: CX
   * Caractère optionnel/obligatoire: RE
 
-Le PID-3 doit être identique aux identifiants de patient portés par le document CDA (recordTarget/patientRole/id).
-
 Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 
 * Champ: PV1-2
@@ -729,7 +1140,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
   * Type donnée: IS
   * Caractère optionnel/obligatoire: R
 * Champ: PV1-19 (2)(4) 
-  * Contenu: Identifiant de la venue
+  * Contenu: Identifiant du rendez-vous
   * Type donnée: CX
   * Caractère optionnel/obligatoire:  C (3)
 * Champ: PV1-44 (2)
@@ -752,8 +1163,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 Un second niveau de contraintes est défini **spécifiquement pour chaque flux**, en fonction du type de message et du rôle fonctionnel attendu.
  Ces contraintes portent notamment sur les segments métiers suivants, selon les flux :
 
-* **ORC (Common Order)** : gestion de la demande, de son cycle de vie et de ses états ;
-* **OBR (Observation Request)** : description de l’examen, des actes et de leurs identifiants ;
+* **ORC / OBR (Order)** : gestion de la demande, de son cycle de vie et de ses états ;
 * **OBX (Observation Result)** : transmission d’informations cliniques structurées ou de références documentaires ;
 * **IPC (Imaging Procedure Control)** : partage du contexte de réalisation des études et procédures d’imagerie.
 
@@ -801,6 +1211,30 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12
   * ?: Ordering Provider
   * ?: Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
+  * ?: Person Identifier
+  * ?: Identifiant du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.2
+  * ?: Family Name
+  * ?: Nom d'exercice du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.3
+  * ?: Given Name
+  * ?: Prénom d'exercice du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.9
+  * ?: Assigning Authority
+  * ?: Autorité d'affectation de l'identifiant du PS
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.1 (optionnel)
+  * ?: Namespace Id
+  * ?: Nom de l'aurotité d'affectation
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.2
+  * ?: Universal Id
+  * ?: Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : 1.2.250.1.71.4.2.1
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.3
+  * ?: Universal Id Type
+  * ?: ISO
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.13
+  * ?: Identifier Type Code
+  * ?: Type d'identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-14 (Requis si connu)
   * ?: Call Back Phone Number
   * ?: Numéro de téléphone à appeler pour obtenir des précisions sur la demande d'examen d'imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
@@ -835,7 +1269,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 
 Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
-Les champs présentés dans le tableau ci-après sont **requis** ou **requis si connus**, selon leur pertinence dans le cadre du workflow de téléradiologie.
+Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Service Identifier** est utilisé afin de véhiculer un **code local identifiant la procédure métier portée par le message**. Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes locaux](./table_obr.md), commune à l’ensemble des flux du volet Téléradiologie.
 
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -848,25 +1282,88 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
   * ?: Identifiant de la demande d'examen (identique à l'ORC-2)
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-4
   * ?: Universal Service Identifier
-  * ?:  
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.1
-  * ?: Code
-  * ?: Code de la modalité d'imagerie, utiliser le [JDV_modalitedemandeActeImagerie-CISIS ](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.2
-  * ?: Display name
-  * ?: 
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.3
+  * ?: Code local identifiant la procédure métier portée par le message 
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
+  * ?: Code 
+  * ?: TRANSMISSION_DEMANDE
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+  * ?: Display name 
+  * ?: Transmission d’une demande d’examen d'imagerie
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
   * ?: Name of Coding system
-  * ?:  DCM
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-13 (Requis si connu)
+  * ?: TLR_OBR_PROCEDURE
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-13
   * ?: Relevant Clinical Information
-  * ?: Antécédents du patient pertinents dans le cadre de l'examen demandé
+  * ?: Justification de la demande d'examen
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-16
   * ?: Ordering Provider
   * ?: Informations relatives au professionnel de santé responsable (identique à l'ORC-12)
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-31
-  * ?: Reason for Study
-  * ?: Justification de la demande d'examen (type CE)Lorsque la justification peut être exprimée à l’aide d’un code, celui-ci doit être renseigné dans CE-1, avec le système de codage associé précisé en CE-3.À défaut de codage disponible, la justification peut être transmise sous forme de texte libre dans CE-2 – Text.
+
+##### Segment NTE (Notes and Comments)
+
+Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer des **commentaires libres** relatifs à la **finalité de l’examen** et/ou à la **modalité d’imagerie demandée**.
+
+La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen ou à la modalité d’imagerie, telles que définies dans le présent volet.
+
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: Elément requis
+  * ?: Description
+  * ?: Valeur
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: **Segment NTE**
+  * ?: **Notes and Comments**
+  * ?:  
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: NTE-3
+  * ?: Comment
+  * ?: 
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: NTE-4
+  * ?: Comment Type
+  * ?: 
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: > NTE-4.1 
+  * ?: Code 
+  * ?: Valeur possible :FINALITE_EXAMENMODALITE_IMAGERIE
+* Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]: > NTE-4.3 
+  * ?: Name of Coding system
+  * ?: HL70364
+
+##### Groupe OBSERVATION - Modalité d’imagerie
+
+Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer la **modalité d’imagerie souhaitée** pour l’examen demandé.
+
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
+  * ?: Description
+  * ?: Valeur
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: **Segment OBX**
+  * ?: **Observation/Result**
+  * ?:  
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-1
+  * ?: Set Id - Obx
+  * ?: Numéro de séquence du segment
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-2
+  * ?: Value Type
+  * ?: CE (Coded Entry)
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-3
+  * ?: Observation Identifier
+  * ?: ** **
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
+  * ?: Code 
+  * ?: MODALITE_IMAGERIE
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+  * ?: Display name 
+  * ?: Modalité d’imagerie utilisée ou prévue pour réaliser l’examen
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
+  * ?: Name of Coding system
+  * ?: TLR_OBSERVATION
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-5
+  * ?: Observation Value
+  * ?:  
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.1
+  * ?: Code 
+  * ?: Valeur issue du JDV [JDV_modalitedemandeActeImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.3
+  * ?: Name Of Coding System
+  * ?: terminologie-cisis-fr ou DCM en fonction de l'appartenance du code à l'un des systèmes de codage
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-11
+  * ?: Observation Result Status
+  * ?: Valeur fixée à « O » (Order detail description only (no result))
 
 ##### Groupes OBSERVATION - Localisation anatomique
 
@@ -916,7 +1413,7 @@ Ce groupe est composé d’un segment OBX obligatoire permettant d’indiquer la
   * ?: SNT
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-11
   * ?: Observation Result Status
-  * ?: Valeur fixée à « F » 
+  * ?: Valeur fixée à « O » (Order detail description only (no result))
 
 ###### Groupe OBSERVATION - Précision topographique
 
@@ -960,7 +1457,53 @@ Ce groupe est composé d’un segment OBX optionnel permettant de compléter la 
   * ?: SNT
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
-  * ?: Valeur fixée à « F » 
+  * ?: Valeur fixée à « O » (Order detail description only (no result))
+
+##### Groupe OBSERVATION - Antécédents
+
+Ce groupe **OBSERVATION** optionnel et répétable permet de véhiculer les **antécédents médicaux du patient jugés pertinents pour la réalisation de l’examen d’imagerie**.
+
+Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5**. Le champ **OBX-8**, optionnel, est utilisé comme indicateur de pertinence, permettant de qualifier le niveau d’impact des antécédents transmis vis-à-vis de l’examen d’imagerie demandé.
+
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: Elément requis
+  * ?: Description
+  * ?: Valeur
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: **Segment OBX**
+  * ?: **Observation/Result**
+  * ?:  
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-1
+  * ?: Set Id - Obx
+  * ?: Numéro de séquence du segment
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-2
+  * ?: Value Type
+  * ?: FT (Formated Text)
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-3
+  * ?: Observation Identifier
+  * ?: ** **
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
+  * ?: Code 
+  * ?: 11322-5
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+  * ?: Display name 
+  * ?: History of General health Narrative
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
+  * ?: Name of Coding system
+  * ?: LN
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-5
+  * ?: Observation Value
+  * ?: Antécédents
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-8 (optionnel)
+  * ?: Abnormal flag
+  * ?: Pertinence de l'antécédent
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-8.1 
+  * ?: Code 
+  * ?: Valeur possible :SANS_IMPACTPERTINENTMAJEUR
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
+  * ?: Name of Coding system
+  * ?: HL70078
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
+  * ?: Observation Result Status
+  * ?: Valeur fixée à « O » (Order detail description only (no result))
 
 ##### Groupe OBSERVATION - Taille corporelle
 
@@ -998,7 +1541,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer la **taille 
   * ?: Unité
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
-  * ?: Valeur fixée à « F » 
+  * ?: Valeur fixée à « O » (Order detail description only (no result))
 
 ##### Groupe OBSERVATION - Poids corporel
 
@@ -1036,7 +1579,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **poids c
   * ?: Unité
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
-  * ?: Valeur fixée à « F » 
+  * ?: Valeur fixée à « O » (Order detail description only (no result))
 
 ##### Groupe OBSERVATION - Statut grossesse
 
@@ -1077,7 +1620,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **statut 
   * ?: expandedYes-NoIndicator
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
-  * ?: Valeur fixée à « F » 
+  * ?: Valeur fixée à « O » (Order detail description only (no result))
 
 ##### Flux 2 - Annulation de la demande d’examen d’imagerie
 
@@ -1114,9 +1657,30 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-11 (Requis si connu)
   * ?: Verified By
   * ?: Informations relatives au Médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
-* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12
-  * ?: Ordering Provider
-  * ?: Informations relatives au Professionnel de santé de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
+  * ?: Person Identifier
+  * ?: Identifiant du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.2
+  * ?: Family Name
+  * ?: Nom d'exercice du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.3
+  * ?: Given Name
+  * ?: Prénom d'exercice du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.9
+  * ?: Assigning Authority
+  * ?: Autorité d'affectation de l'identifiant du PS
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.1 (optionnel)
+  * ?: Namespace Id
+  * ?: Nom de l'aurotité d'affectation
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.2
+  * ?: Universal Id
+  * ?: Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : 1.2.250.1.71.4.2.1
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.3
+  * ?: Universal Id Type
+  * ?: ISO
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.13
+  * ?: Identifier Type Code
+  * ?: Type d'identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-14 (Requis si connu)
   * ?: Call Back Phone Number
   * ?: Numéro de téléphone à appeler pour obtenir des précisions sur la demande d'examen d'imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
@@ -1153,6 +1717,8 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 Le segment **OBR** est utilisé pour véhiculer des informations relatives à la **demande d’examen d’imagerie**.
  Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
+Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Service Identifier** est utilisé afin de véhiculer un **code local identifiant la procédure métier portée par le message**. Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes locaux](./table_obr.md), commune à l’ensemble des flux du volet Téléradiologie.
+
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
   * ?: Valeur
@@ -1164,16 +1730,16 @@ Le segment **OBR** est utilisé pour véhiculer des informations relatives à la
   * ?: Identifiant de la demande d'examen (identique à l'ORC-2)
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-4
   * ?: Universal Service Identifier
-  * ?:  
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.1
-  * ?: Code
-  * ?: Code de la modalité d'imagerie, utiliser le [JDV_modalitedemandeActeImagerie-CISIS ](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.2
-  * ?: Display name
-  * ?: 
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.3
+  * ?: Code local identifiant la procédure métier portée par le message 
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
+  * ?: Code 
+  * ?: ANNULATION_DEMANDE
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+  * ?: Display name 
+  * ?: Annulation d’une demande d’examen
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
   * ?: Name of Coding system
-  * ?:  DCM
+  * ?: TLR_OBR_PROCEDURE
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-16
   * ?: Ordering Provider
   * ?: Informations relatives au professionnel de santé responsable (identique à l'ORC-12)
@@ -1206,7 +1772,31 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Identifiant de la demande d'examen d'imagerie (Order Placer Number)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12
   * ?: Ordering Provider
-  * ?: Informations relatives au Médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie
+  * ?: Informations relatives au médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
+  * ?: Person Identifier
+  * ?: Identifiant du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.2
+  * ?: Family Name
+  * ?: Nom d'exercice du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.3
+  * ?: Given Name
+  * ?: Prénom d'exercice du professionnel
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.9
+  * ?: Assigning Authority
+  * ?: Autorité d'affectation de l'identifiant du PS
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.1 (optionnel)
+  * ?: Namespace Id
+  * ?: Nom de l'aurotité d'affectation
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.2
+  * ?: Universal Id
+  * ?: Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : 1.2.250.1.71.4.2.1
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.3
+  * ?: Universal Id Type
+  * ?: ISO
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.13
+  * ?: Identifier Type Code
+  * ?: Type d'identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-16 (Optionnel)
   * ?: Order Control Code Reason
   * ?: Motif du refus de la demande d'examen (type CE)Peut être exprimé à l’aide d’un code renseigné dans CE-1 – Identifier, avec le système de codage correspondant précisé en CE-3 – Name of Coding System (code local ou standard).À défaut de codage disponible, un libellé en clair peut être renseigné dans CE-2 – Text.
@@ -1239,6 +1829,8 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 
 Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
+Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Service Identifier** est utilisé afin de véhiculer un **code local identifiant la procédure métier portée par le message**. Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes locaux](./table_obr.md), commune à l’ensemble des flux du volet Téléradiologie.
+
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
   * ?: Valeur
@@ -1250,16 +1842,16 @@ Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workfl
   * ?: Identifiant de la demande d'examen (identique à l'ORC-2)
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-4
   * ?: Universal Service Identifier
-  * ?:  
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.1
-  * ?: Code
-  * ?: Code de la modalité d'imagerie, utiliser le [JDV_modalitedemandeActeImagerie-CISIS ](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.2
-  * ?: Display name
-  * ?: 
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.3
-  * ?: Name of coding system
-  * ?:  DCM
+  * ?: Code local identifiant la procédure métier portée par le message 
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
+  * ?: Code 
+  * ?: TRANSMISSION_DEMANDE
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+  * ?: Display name 
+  * ?: Réponse à une demande d’examen d'imagerie
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
+  * ?: Name of Coding system
+  * ?: TLR_OBR_PROCEDURE
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-16
   * ?: Ordering Provider
   * ?: Informations relatives au professionnel de santé effecteur à distance (identique à l'ORC-12)
@@ -1359,15 +1951,13 @@ Cette alternative permet de transmettre le **protocole d’imagerie sous forme e
 
 Ce flux repose sur l’utilisation d’un messages **OMI^O23**, conformes au standard **HL7 v2.5.1**.
 
-Les segments sont renseignés conformément au profil **IHE Scheduled Workflow (SWF)**, lorsqu’il est applicable, et font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
-
-Les **groupes OBSERVATION** (segments OBX), non contraints et optionnels dans le cadre du profil IHE SWF, sont **explicitement contraints par le volet téléradiologie** afin de permettre la transmission normalisée des informations post-acte nécessaires, telles que les produits administrés, l’appareil d’imagerie utilisé ou les informations de restitution des images.
+Les segments présentés danS cette partie font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
 
 Les sections suivantes décrivent les contraintes appliquées aux segments du message OMI^O23 dans le cadre de ce flux.
 
 ###### Segment ORC (Common Order)
 
-Le segment **ORC** est renseigné conformément aux spécifications du profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Le segment **ORC** est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -1377,24 +1967,15 @@ Le segment **ORC** est renseigné conformément aux spécifications du profil **
   * ?:  
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-1
   * ?: Order control
-  * ?: Valeur fixée à « NW (New order/service)
+  * ?: Valeur fixée à « SR » (Response to send order/service status request)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-2
   * ?: Placer Order Number
   * ?: Identifiant de la demande d'examen d'imagerie (Order Placer Number)
-* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-3
-  * ?: Filler Order Number
-  * ?: Identifiant de la demande d'examen d'imagerie (Order Placer Number)
-* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-5
-  * ?: Order Status
-  * ?: Valeur fixée à « SC (Scheduled)
-* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-9
-  * ?: Date/Time of Transaction
-  * ?: 
 
 ###### Segment TQ1 (Timing/Quantity)
 
 Le segment **TQ1 – Timing/Quantity** est utilisé pour véhiculer les informations temporelles relatives à l’**examen d’imagerie réalisé**.
- Il est renseigné conformément aux spécifications du profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+ Il est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
 * Composition du segment TQ1 : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -1411,7 +1992,9 @@ Le segment **TQ1 – Timing/Quantity** est utilisé pour véhiculer les informat
 
 ##### Segment OBR (Observation Request)
 
-Le segment **OBR – Observation Request** est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Le segment **OBR – Observation Request** est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+
+Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Service Identifier** est utilisé afin de véhiculer un **code local identifiant la procédure métier portée par le message**. Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes locaux](./table_obr.md), commune à l’ensemble des flux du volet Téléradiologie.
 
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -1424,18 +2007,16 @@ Le segment **OBR – Observation Request** est renseigné conformément au profi
   * ?: Identifiant de la demande d'examen (identique à l'ORC-2)
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-4
   * ?: Universal Service Identifier
-  * ?:  
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.1
-  * ?: Code
-  * ?: Code LOINC de l’acte d’imagerie, utiliser le [JDV_CodeDocumentImagerieCisis-CISIS ](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html)
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.2
-  * ?: Display name
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: >OBR-4.3
+  * ?: Code local identifiant la procédure métier portée par le message 
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
+  * ?: Code 
+  * ?: COMPLEMENT_POST_EXAMEN
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+  * ?: Display name 
+  * ?: Transmission d'un complément d’information post-examen
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
   * ?: Name of Coding system
-  * ?:  LN
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: OBR-16
-  * ?: Ordering Provider
-  * ?: Informations relatives au professionnel de santé effecteur à distance (identique à l'ORC-12)
+  * ?: TLR_OBR_PROCEDURE
 
 ##### Segment IPC (Imaging Procedure Control)
 
@@ -1450,25 +2031,16 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
   * ?:  
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-1
   * ?: Accession Identifier
-  * ?: 
+  * ?: Accession Number
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2
   * ?: Requested Procedure ID
-  * ?: Accession number
+  * ?: 
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-3
   * ?: Study Instance UID
   * ?: 
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4
   * ?: Scheduled Procedure Step ID
   * ?: 
-* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: >IPC-5.1
-  * ?: Code
-  * ?: Code de la modalité d'imagerie, utiliser le [JDV_modalitedemandeActeImagerie-CISIS ](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
-* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: >IPC-5.2
-  * ?: Display name
-  * ?: 
-* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: >IPC-5.3
-  * ?: Name of Coding system
-  * ?:  DCM
 
 ##### Groupe OBSERVATION - URL de viewer DRIMbox
 
@@ -1514,11 +2086,57 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
 * le séparateur de sous-composants (&) via \T\ ;
 * le caractère d’échappement lui-même (\) via \E\.
 
+##### Groupe OBSERVATION - Acte d’imagerie
+
+Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer le **code de l’acte d’imagerie réalisée**.
+
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
+  * ?: Description
+  * ?: Valeur
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: **Segment OBX**
+  * ?: **Observation/Result**
+  * ?:  
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-1
+  * ?: Set Id - Obx
+  * ?: Numéro de séquence du segment
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-2
+  * ?: Value Type
+  * ?: CE (Coded Entry)
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-3
+  * ?: Observation Identifier
+  * ?: ** **
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
+  * ?: Code 
+  * ?: CODE_ACTE_IMAGERIE
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+  * ?: Display name 
+  * ?: Code de l'acte d'imagerie réalisée
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
+  * ?: Name of Coding system
+  * ?: TLR_OBSERVATION
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-5
+  * ?: Observation Value
+  * ?:  
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.1
+  * ?: Code 
+  * ?: Valeur issue du JDV [JDV_CodeDocumentImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html)
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.3
+  * ?: Name Of Coding System
+  * ?: LN
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-11
+  * ?: Observation Result Status
+  * ?: Valeur fixée à « F »
+
 ##### Groupes OBSERVATION - Localisation anatomique
 
 Les groupes **OBSERVATION – Localisation anatomique** sont **optionnel** dans le cadre du flux 4.
  Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.
  Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Localisation anatomique](./st_flux1.md#Groupes-OBSERVATION---Localisation-anatomique)
+
+##### Groupe OBSERVATION - Modalité d’imagerie
+
+Le groupe **OBSERVATION - Modalité d’imagerie** est optionnel dans le cadre du flux 4. Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.
+ Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Modalité d’imagerie](./st_flux1.md#Groupes-OBSERVATION---Modalité-d-imagerie)
 
 ##### Groupes OBSERVATION - Produit administré
 
@@ -1750,4 +2368,142 @@ Ce groupe OBSERVATION permet de transmettre le modèle de l’appareil d’image
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
   * ?: Valeur fixée à « F » 
+
+##### Description des contraintes à appliquer sur l’acquittement
+
+###### Segment MSH (Header)
+
+Le segment MSH reprend une partie des informations du message initial :
+
+* Message initial: Champ
+  * Message d'acquittement: Description
+  * ?: Champ
+  * ?: Description
+* Message initial: [MSH.3](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.3) - Sending Application​
+  * Message d'acquittement: Application source du message à acquitter
+  * ?: [MSH.5](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.5) - Receiving Application​
+  * ?: Application destinatrice de l'acquittement
+* Message initial: [MSH.4](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.4) - Sending Facility​
+  * Message d'acquittement: Etablissement source du message à acquitter
+  * ?: [MSH.6](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.6) - Receiving Facility​
+  * ?: Etablissement destinataire de l'acquittement
+* Message initial: [MSH.5](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.5) - Receiving Application​
+  * Message d'acquittement: Application destinatrice du message à acquitter
+  * ?: [MSH.3](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.3) - Sending Application​
+  * ?: Application source de l'acquittement
+* Message initial: [MSH.6](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.6) - Receiving Facility​
+  * Message d'acquittement: Etablissement destinataire du message à acquitter
+  * ?: [MSH.4](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.4) - Sending Facility​
+  * ?: Etablissement source de l'acquittement
+* Message initial: [MSH.11](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.11) - Processing Id​
+  * Message d'acquittement: Identifiant de traitement
+  * ?: [MSH.11](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSH.11) - Processing Id​
+  * ?: Identifiant de traitement
+
+Le tableau ci-après décrit l’ensemble des champs **requis** du segment MSH :
+
+* Champ: MSH-1
+  * Contenu: | séparateur de champ
+  * Type donnée: ST
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-2
+  * Contenu: ^~\& : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants
+  * Type donnée: ST
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-3
+  * Contenu: Application émettrice
+  * Type donnée: HD
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-4
+  * Contenu: Organisation émettrice
+  * Type donnée: HD
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-5
+  * Contenu: Application réceptrice
+  * Type donnée: HD
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-6
+  * Contenu: Organisation réceptrice
+  * Type donnée: HD
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-7
+  * Contenu: Date/time du message
+  * Type donnée: TS
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-9
+  * Contenu: Type du message, selon l'évènement du message initial : ACK^O01^ACK ACK^R01^ACK ACK^O23^ACK 
+  * Type donnée: MSG
+  * Caractère optionnel/obligatoire: R 
+* Champ: MSH-10
+  * Contenu: Identifiant du message
+  * Type donnée: ST
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-11
+  * Contenu: Processing Id P : en production T : message de test D : environnement de debug 
+  * Type donnée: PT
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-12
+  * Contenu: Version du standard 2.5.1 
+  * Type donnée: VID
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-17
+  * Contenu: FRA
+  * Type donnée: ID
+  * Caractère optionnel/obligatoire: R
+* Champ: MSH-18
+  * Contenu: Jeux de caractères, valeurs possibles :UNICODE UTF-8 ou 8859/15
+  * Type donnée: ID
+  * Caractère optionnel/obligatoire: R
+
+###### Segment MSA (Message Acknowledgment)
+
+* Champ requis: [MSA.1](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.1) - Acknowledgment Code
+  * Contenu: Code d'acquittement du message autorisé :· AA(Original mode: Application Accept - Enhanced mode: Application acknowledgment: Accept) : le message a été compris et intégré par l'application destinatrice qui prend la responsabilité du message et libère ainsi l'application productrice de toute obligation de le renvoyer.· AE (Original mode: Application Error - Enhanced mode: Application acknowledgment: Error) : le message contient des erreurs de syntaxe. · AR (Original mode: Application Reject - Enhanced mode: Application acknowledgment: Reject)  : le message est rejeté pour une raison circonstancielle. Il peut être réémis plus tard. 
+* Champ requis: [MSA.2](https://hl7-definition.caristix.com/v2/HL7v2.8/Fields/MSA.2) - Message Control Id
+  * Contenu: Rappel l'identifiant du message acquitté correspondant au champ MSH.10 du message initial.
+
+###### Segment ERR (Error)
+
+Ce segment est utilisé au niveau des messages d’acquittement dans le cas où le champ MSA-1 prend la valeur AE (Application error) ou AR (Application reject).
+
+Le tableau ci-dessous liste les champs à renseigner pour le segment ERR :
+
+* Champ: ERR-2
+  * Contenu: Localisation de l'erreur dans le cas d'une erreur de syntaxe du message initial.
+  * Type donnée: ERL
+  * Caractère optionnel/obligatoire: O
+* Champ: ERR-3
+  * Contenu: Code erreur HL7 dont les valeurs sont à prendre dans la table HL7 0357 (nom symbolique messageErrorCondition)
+  * Type donnée: CWE
+  * Caractère optionnel/obligatoire: R
+* Champ: ERR-4
+  * Contenu: Sévérité de l'erreur dont les valeurs sont à prendre dans la table HL7 0516 (nom symbolique errorSeverity)
+  * Type donnée: ID
+  * Caractère optionnel/obligatoire: R
+
+**Exemple**
+
+Entête MSH d’un message ORM^O01 dans le cadre du flux 1 :
+
+```
+MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
+
+```
+
+Un acquittement positif retourné par le SI de téléradiologie :
+
+```
+MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5|||||FRA|8859/15
+MSA|AA|12345
+
+```
+
+Un acquittement négatif retourné par le SI de téléradiologie : version d’HL7 inconnue
+
+```
+MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
+MSA|AE|12345
+ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
+
+```
 
