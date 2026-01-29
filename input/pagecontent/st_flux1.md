@@ -648,7 +648,7 @@ Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de
   </tbody>
 </table>
 
-##### Segment NTE - Commentaire sur la modalité
+###### Segment NTE - Commentaire sur la modalité
 
 La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la modalité d’imagerie, telles que définies dans le présent volet.
 

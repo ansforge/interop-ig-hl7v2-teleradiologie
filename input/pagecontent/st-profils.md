@@ -332,9 +332,29 @@ Outre les éléments standards concernant la demande et la prescription portés 
 
 Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.html#flux-1---transmission-de-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
-Le diagramme ci-dessous illustre le **fonctionnement global du message**, les interactions entre les segments principaux ainsi que le rôle des **OBX spécifiques Téléradiologie** dans le cadre du flux 1.
+Le diagramme ci-dessous illustre la description fonctionnelle du flux 1 :
 
-<br>
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Flux1-Fonc.png" alt="Description fonctionnelle du flux 1" title="Figure 1 : Structure fonctionnelle du flux 1"
+         style="
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         ">
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 4 : Structure fonctionnelle du message ORM^O01^ORM_O01 du flux 1
+    </p>
+</div>
 
 ##### Flux 2 - Message ORM^O01^ORM_O01 en HL7 v2.5.1
 
@@ -643,9 +663,29 @@ Le message **ORM^O01** du flux 2 permet au système demandeur de notifier au sys
 
 Les segments **ORC** et **OBR** assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
 
-Le diagramme ci-dessous illustre le **fonctionnement du message d’annulation** :
+Le diagramme ci-dessous illustre la description fonctionnelle du message d’annulation :
 
-<br>
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Flux2-Fonc.png" alt="Description fonctionnelle du flux 2" title="Figure 5 : Structure fonctionnelle du flux 2"
+         style="
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         ">
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 5 : Structure fonctionnelle du message ORM^O01^ORM_O01 du flux 2
+    </p>
+</div>
 
 ##### Flux 3 - Message ORU^R01^ORU_R01 en HL7 v2.5.1
 
