@@ -2,15 +2,13 @@
 
 Ce flux repose sur l’utilisation d'un messages **OMI^O23**, conformes au standard **HL7 v2.5.1**.
 
-Les segments sont renseignés conformément au profil **IHE Scheduled Workflow (SWF)**, lorsqu’il est applicable, et font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
-
-Les **groupes OBSERVATION** (segments OBX), non contraints et optionnels dans le cadre du profil IHE SWF, sont **explicitement contraints par le volet téléradiologie** afin de permettre la transmission normalisée des informations post-acte nécessaires, telles que les produits administrés, l’appareil d’imagerie utilisé ou les informations de restitution des images.
+Les segments présentés danS cette partie font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
 
 Les sections suivantes décrivent les contraintes appliquées aux segments du message OMI^O23 dans le cadre de ce flux.
 
 ###### Segment ORC (Common Order)
 
-Le segment **ORC** est renseigné conformément aux spécifications du profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Le segment **ORC** est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -49,7 +47,7 @@ Le segment **ORC** est renseigné conformément aux spécifications du profil **
         <p>Order control</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">NW</span> (New order/service)</p>
+        <p>Valeur fixée à « <span class="hl7-color">SR »</span> (Response to send order/service status request)</p>
       </td>
     </tr>
     <tr>
@@ -63,46 +61,13 @@ Le segment **ORC** est renseigné conformément aux spécifications du profil **
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
       </td>
     </tr>
-    <tr>
-      <td>
-        <p>ORC-3</p>
-      </td>
-      <td>
-        <p>Filler Order Number</p>
-      </td>
-      <td>
-        <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ORC-5</p>
-      </td>
-      <td>
-        <p>Order Status</p>
-      </td>
-      <td>
-        <p>Valeur fixée à « <span class="hl7-color">SC</span> (Scheduled)</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>ORC-9</p>
-      </td>
-      <td>
-        <p>Date/Time of Transaction</p>
-      </td>
-      <td>
-        <p></p>
-      </td>
-    </tr>
   </tbody>
 </table>
 
 ###### Segment TQ1 (Timing/Quantity)
 
 Le segment **TQ1 – Timing/Quantity** est utilisé pour véhiculer les informations temporelles relatives à l’**examen d’imagerie réalisé**.  
-Il est renseigné conformément aux spécifications du profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Il est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -162,7 +127,10 @@ Il est renseigné conformément aux spécifications du profil **IHE Scheduled Wo
 
 ##### Segment OBR (Observation Request)
 
-Le segment **OBR – Observation Request** est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Le segment **OBR – Observation Request** est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+
+Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Service Identifier** est utilisé afin de véhiculer un **code local identifiant la procédure métier portée par le message**.
+Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes locaux](./table_obr.html), commune à l’ensemble des flux du volet Téléradiologie.
 
 <table class="table-hl7v2">
   <tbody>
@@ -212,48 +180,40 @@ Le segment **OBR – Observation Request** est renseigné conformément au profi
         <p>Universal Service Identifier</p>
       </td>
       <td>
-        <p> </p>
+        <p>Code local identifiant la procédure métier portée par le message </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.1</p>
+        <p>&gt; OBR-4.1  </p>
       </td>
       <td>
-        <p>Code</p>
+        <p>Code </p>
       </td>
       <td>
-        <p>Code LOINC de l’acte d’imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerieCisis-CISIS </a></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;OBR-4.2</p>
-      </td>
-      <td>
-        <p>Display name</p>
+        <p><span class="hl7-color">COMPLEMENT_POST_EXAMEN</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.3</p>
+        <p>&gt; OBR-4.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">Transmission d'un complément d’information post-examen</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBR-4.3 </p>
       </td>
       <td>
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p> <span class="hl7-color">LN</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>OBR-16</p>
-      </td>
-      <td>
-        <p>Ordering Provider</p>
-      </td>
-      <td>
-        <p>Informations relatives au professionnel de santé effecteur à distance (identique à l'ORC-12)</p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBR_PROCEDURE</span></span></p>
       </td>
     </tr>
   </tbody>
@@ -303,7 +263,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>Accession Identifier</p>
       </td>
       <td>
-        <p></p>
+        <p>Accession Number</p>
       </td>
     </tr>
     <tr>
@@ -314,7 +274,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>Requested Procedure ID</p>
       </td>
       <td>
-        <p>Accession number</p>
+        <p></p>
       </td>
     </tr>
     <tr>
@@ -337,37 +297,6 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
       </td>
       <td>
         <p></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;IPC-5.1</p>
-      </td>
-      <td>
-        <p>Code</p>
-      </td>
-      <td>
-        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;IPC-5.2</p>
-      </td>
-      <td>
-        <p>Display name</p>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt;IPC-5.3</p>
-      </td>
-      <td>
-        <p>Name of Coding system</p>
-      </td>
-      <td>
-        <p> <span class="hl7-color">DCM</span></p>
       </td>
     </tr>
   </tbody>
@@ -516,11 +445,164 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
     </ul>
 </blockquote>
 
+##### Groupe OBSERVATION - Acte d'imagerie
+
+Ce groupe obligatoire est composé d'un segment OBX permettant d’indiquer le **code de l'acte d'imagerie réalisée**.
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment OBX</strong></p>
+      </td>
+      <td>
+        <p><strong>Observation/Result</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-1</p>
+      </td>
+      <td>
+        <p>Set Id - Obx</p>
+      </td>
+      <td>
+        <p>Numéro de séquence du segment</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-2</p>
+      </td>
+      <td>
+        <p>Value Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">CE</span> (Coded Entry)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-3</p>
+      </td>
+      <td>
+        <p>Observation Identifier</p>
+      </td>
+      <td>
+        <p><strong> </strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">CODE_ACTE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">Code de l'acte d'imagerie réalisée</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBSERVATION</span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-5</p>
+      </td>
+      <td>
+        <p>Observation Value</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.1</p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.3</p>
+      </td>
+      <td>
+        <p>Name Of Coding System</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">LN</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-11</p>
+      </td>
+      <td>
+        <p>Observation Result Status</p>
+      </td>
+      <td>
+        <p>Valeur fixée à « <span class="hl7-color">F »</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ##### Groupes OBSERVATION - Localisation anatomique
 
 Les groupes **OBSERVATION – Localisation anatomique** sont **optionnel** dans le cadre du flux 4.  
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.  
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Localisation anatomique](./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique)
+
+##### Groupe OBSERVATION - Modalité d'imagerie
+
+Le groupe **OBSERVATION - Modalité d'imagerie** est optionnel dans le cadre du flux 4.
+Sa présence permet de transmettre la modalité d'imagerie utilisée lors de l'examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.  
+Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Modalité d'imagerie](./st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie)
+
 
 ##### Groupes OBSERVATION - Produit administré
 

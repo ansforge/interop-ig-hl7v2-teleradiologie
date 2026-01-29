@@ -101,6 +101,94 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
     </tr>
     <tr>
       <td>
+        <p>&gt; ORC-12.1</p>
+      </td>
+      <td>
+        <p>Person Identifier</p>
+      </td>
+      <td>
+        <p>Identifiant du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.2</p>
+      </td>
+      <td>
+        <p>Family Name</p>
+      </td>
+      <td>
+        <p>Nom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.3</p>
+      </td>
+      <td>
+        <p>Given Name</p>
+      </td>
+      <td>
+        <p>Prénom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.9</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS</p>
+      </td>
+    </tr>    
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.1 (optionnel)</p>
+      </td>
+      <td>
+        <p>Namespace Id</p>
+      </td>
+      <td>
+        <p>Nom de l'aurotité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.2</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : <span class="hl7-color">1.2.250.1.71.4.2.1</span></p>
+      </td>
+    </tr>
+        <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.3</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.13</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <p>ORC-14 (Requis si connu)</p>
       </td>
       <td>
@@ -218,7 +306,8 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 
 Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
-Les champs présentés dans le tableau ci-après sont **requis** ou **requis si connus**, selon leur pertinence dans le cadre du workflow de téléradiologie.
+Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Service Identifier** est utilisé afin de véhiculer un **code local identifiant la procédure métier portée par le message**.
+Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes locaux](./table_obr.html), commune à l’ensemble des flux du volet Téléradiologie.
 
 <table class="table-hl7v2">
   <tbody>
@@ -268,49 +357,51 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>Universal Service Identifier</p>
       </td>
       <td>
-        <p> </p>
+        <p>Code local identifiant la procédure métier portée par le message </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.1</p>
+        <p>&gt; OBR-4.1  </p>
       </td>
       <td>
-        <p>Code</p>
+        <p>Code </p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p><span class="hl7-color">TRANSMISSION_DEMANDE</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.2</p>
+        <p>&gt; OBR-4.2  </p>
       </td>
       <td>
-        <p>Display name</p>
+        <p>Display name </p>
       </td>
-      <td></td>
+      <td>
+        <p><span class="hl7-color">Transmission d’une demande d’examen d'imagerie</span></p>
+      </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.3</p>
+        <p>&gt; OBR-4.3 </p>
       </td>
       <td>
         <p>Name of Coding system</p>
       </td>
       <td>
-        <p> <span class="hl7-color">DCM</span></p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBR_PROCEDURE</span></span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>OBR-13 (Requis si connu)</p>
+        <p>OBR-13</p>
       </td>
       <td>
         <p>Relevant Clinical Information</p>
       </td>
       <td>
-        <p>Antécédents du patient pertinents dans le cadre de l'examen demandé</p>
+        <p>Justification de la demande d'examen</p>
       </td>
     </tr>
     <tr>
@@ -324,17 +415,232 @@ Les champs présentés dans le tableau ci-après sont **requis** ou **requis si 
         <p>Informations relatives au professionnel de santé responsable (identique à l'ORC-12)</p>
       </td>
     </tr>
+  </tbody>
+</table>
+
+##### Segment NTE (Notes and Comments)
+
+Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer des **commentaires libres** relatifs à la **finalité de l’examen** et/ou à la **modalité d’imagerie demandée**.
+
+La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la finalité de l’examen ou à la modalité d’imagerie, telles que définies dans le présent volet.
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du segment NTE : Usage = Optional / Cardinalité = [0..*]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
     <tr>
       <td>
-        <p>OBR-31</p>
+        <p><strong>Segment NTE</strong></p>
       </td>
       <td>
-        <p>Reason for Study</p>
+        <p><strong>Notes and Comments</strong></p>
       </td>
       <td>
-        <p>Justification de la demande d'examen (type CE)</p>
-        <p>Lorsque la justification peut être exprimée à l’aide d’un code, celui-ci doit être renseigné dans CE-1, avec le système de codage associé précisé en CE-3.</p>
-        <p>À défaut de codage disponible, la justification peut être transmise sous forme de texte libre dans CE-2 – Text.</p>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-3</p>
+      </td>
+      <td>
+        <p>Comment</p>
+      </td>
+      <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>NTE-4</p>
+      </td>
+      <td>
+        <p>Comment Type</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur possible :</p>
+        <p><span class="hl7-color">FINALITE_EXAMEN</span></p>
+        <p><span class="hl7-color">MODALITE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; NTE-4.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">HL70364</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+##### Groupe OBSERVATION - Modalité d'imagerie
+
+Ce groupe obligatoire est composé d'un segment OBX permettant d’indiquer la **modalité d'imagerie souhaitée** pour l’examen demandé.
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment OBX</strong></p>
+      </td>
+      <td>
+        <p><strong>Observation/Result</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-1</p>
+      </td>
+      <td>
+        <p>Set Id - Obx</p>
+      </td>
+      <td>
+        <p>Numéro de séquence du segment</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-2</p>
+      </td>
+      <td>
+        <p>Value Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">CE</span> (Coded Entry)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-3</p>
+      </td>
+      <td>
+        <p>Observation Identifier</p>
+      </td>
+      <td>
+        <p><strong> </strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">MODALITE_IMAGERIE</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">Modalité d’imagerie utilisée ou prévue pour réaliser l’examen</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBSERVATION</span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-5</p>
+      </td>
+      <td>
+        <p>Observation Value</p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.1</p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.3</p>
+      </td>
+      <td>
+        <p>Name Of Coding System</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">terminologie-cisis-fr</span> ou <span class="hl7-color">DCM</span> en fonction de l'appartenance du code à l'un des systèmes de codage</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-11</p>
+      </td>
+      <td>
+        <p>Observation Result Status</p>
+      </td>
+      <td>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -500,7 +806,7 @@ Ce groupe est composé d'un segment OBX obligatoire permettant d’indiquer la *
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -658,7 +964,169 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+##### Groupe OBSERVATION - Antécédents
+
+Ce groupe **OBSERVATION** optionnel et répétable permet de véhiculer les **antécédents médicaux du patient jugés pertinents pour la réalisation de l’examen d’imagerie**.
+
+Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5**. Le champ **OBX-8**, optionnel, est utilisé comme indicateur de pertinence, permettant de qualifier le niveau d’impact des antécédents transmis vis-à-vis de l’examen d’imagerie demandé.
+
+<table class="table-hl7v2">
+  <tbody>
+    <tr>
+      <th colspan="3">
+        <p>Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]</p>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <p>Elément requis</p>
+      </th>
+      <th>
+        <p>Description</p>
+      </th>
+      <th>
+        <p>Valeur</p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>Segment OBX</strong></p>
+      </td>
+      <td>
+        <p><strong>Observation/Result</strong></p>
+      </td>
+      <td>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-1</p>
+      </td>
+      <td>
+        <p>Set Id - Obx</p>
+      </td>
+      <td>
+        <p>Numéro de séquence du segment</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-2</p>
+      </td>
+      <td>
+        <p>Value Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">FT</span> (Formated Text)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-3</p>
+      </td>
+      <td>
+        <p>Observation Identifier</p>
+      </td>
+      <td>
+        <p><strong> </strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">11322-5</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.2  </p>
+      </td>
+      <td>
+        <p>Display name </p>
+      </td>
+      <td>
+        <p><span class="hl7-color">History of General health Narrative</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">LN</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-5</p>
+      </td>
+      <td>
+        <p>Observation Value</p>
+      </td>
+      <td>
+        <p>Antécédents</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-8 (optionnel)</p>
+      </td>
+      <td>
+        <p>Abnormal flag</p>
+      </td>
+      <td>
+        <p>Pertinence de l'antécédent</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-8.1  </p>
+      </td>
+      <td>
+        <p>Code </p>
+      </td>
+      <td>
+        <p>Valeur possible :</p>
+        <p><span class="hl7-color">SANS_IMPACT</span></p>
+        <p><span class="hl7-color">PERTINENT</span></p>
+        <p><span class="hl7-color">MAJEUR</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-3.3 </p>
+      </td>
+      <td>
+        <p>Name of Coding system</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">HL70078</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>OBX-11</p>
+      </td>
+      <td>
+        <p>Observation Result Status</p>
+      </td>
+      <td>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -793,7 +1261,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer la **taille 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -928,7 +1396,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **poids c
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>
@@ -1076,7 +1544,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **statut 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">F</span> » </p>
+        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
       </td>
     </tr>
   </tbody>

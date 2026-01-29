@@ -10,10 +10,10 @@ Les segments **OBX** illustrés dans cet exemple véhiculent notamment :
 
 ```
 MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
-PID|||279035121518989^^^ASIP-SATE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
+PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
 PV1||O|||||||||||||||||IdentifiantRendezVous|
-ORC|NW|IdentifiantDemandeExamen|||||||DateDemande|||PSResponsable|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||IdentifiantOrganisation
-OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||PSResponsable|||||||||||||||JustificationDemande
+ORC|NW|IdentifiantDemandeExamen|||||||20260106134418||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||^PRN^CP^^^^^^^^^+3360708091|||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
+OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|||||||||||||||JustificationDemande
 OBX|1|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F
 OBX|2|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.2|24028007^côté droit^SNT||||||F
 OBX|2|NM|8302-2^Body height^LN||170|cm|||||F
@@ -33,10 +33,10 @@ Le message montre comment le **RIS** notifie l’annulation au **SI de télérad
 
 ```
 MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
-PID|||ATHENEA^PI~279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
+PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
 PV1||O|||||||||||||||||IdentifiantRendezVous|
-ORC|CA|IdentifiantDemandeExamen|||||||DateDemande|||PSResponsable|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||IdentifiantOrganisation
-OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||PSResponsable
+ORC|CA|IdentifiantDemandeExamen|||||||20260106134418|||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
+OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
 ```
 
 #### Flux 3 - Réponse à la demande d'examen d'imagerie (ORU^R01)
@@ -49,9 +49,9 @@ Le message permet de véhiculer :
 
 ```
 MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134418||ORU^R01^ORU_R01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
-PID|||ATHENEA^PI~279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
-ORC|OK|IdentifiantDemandeExamen||||||||||PSEffecteur||||MotifRefus|PLATEFORME_TELERADIOLOGIE^^TLR_TYPE_ORGANISATION||||IdentifiantOrganisation
-OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||PSEffecteur
+PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
+ORC|OK|IdentifiantDemandeExamen||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||||MotifRefus|PLATEFORME_TELERADIOLOGIE^^TLR_TYPE_ORGANISATION||||Plateforme-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017986
+OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
 OBX|1|FT|PROTOCOLE_IMAGERIE^Protocole d'imagerie médicale^TLR_OBSERVATION||Paramètres d’acquisition : kV : 120…||||||F
 ```
 
@@ -63,11 +63,11 @@ Ces informations sont transmises au **SI de téléradiologie** afin de permettre
 
 ```
 MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
-PID|||ATHENEA^PI~279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS||PAT-TROIS^DOMINIQUE^Dominique^^^^L|PAT-TROIS^Dominique^^^^^D|19790328|F|||^^^^^^BDL^^51215~23 AV TORCATIS ^^PIA^^66380^FRA^H|||||||||||||||||||N||VALI
+PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
 PV1||O|||||||||||||||||IdentifiantRendezVous|
-ORC|NW|20260106134418|A compléter||SC||||DateDemande|
-TQ1||||||Durée de rétention des images|Date/heure de l'examen d'imagerie
-OBR||IdentifiantDemandeExamen||24590-2^résonance magnétique cerveau^LN||||||||||||PSResponsable|
+ORC|NW|20260106134418|A compléter||SC||||20260106134418|
+TQ1||||||Durée de rétention des images|20260106184418
+OBR||IdentifiantDemandeExamen||24590-2^résonance magnétique cerveau^LN||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|
 IPC|Accession Identifier|Accession number|Study Instance UID|Scheduled Procedure Step ID|MR^Résonance magnétique^DCM
 OBX|1|TX|URL_VIEWER_DRIMBOX^URL de la visionneuse DRIMbox^TLR_OBSERVATION||URL||||||F
 OBX|2|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F

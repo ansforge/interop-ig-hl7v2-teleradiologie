@@ -247,9 +247,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
   </tbody>
 </table>
 
-###### Exemples
-
-Entête MSH d'un message ORM :
+**Entête MSH d'un message ORM :**
 
 `MSH|^~\&|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2`
 
@@ -322,8 +320,6 @@ Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 
   </tbody>
 </table>
 
-Le PID-3 doit être identique aux identifiants de patient portés par le document CDA (recordTarget/patientRole/id).
-
 Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 
 <table class="table-hl7v2">
@@ -361,7 +357,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
         <p>PV1-19 (2)(4) </p>
       </td>
       <td>
-        <p>Identifiant de la venue</p>
+        <p>Identifiant du rendez-vous</p>
       </td>
       <td>
         <p>CX</p>
@@ -426,8 +422,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 Un second niveau de contraintes est défini **spécifiquement pour chaque flux**, en fonction du type de message et du rôle fonctionnel attendu.  
 Ces contraintes portent notamment sur les segments métiers suivants, selon les flux :
 
-- **ORC (Common Order)** : gestion de la demande, de son cycle de vie et de ses états ;
-- **OBR (Observation Request)** : description de l’examen, des actes et de leurs identifiants ;
+- **ORC / OBR (Order)** : gestion de la demande, de son cycle de vie et de ses états ;
 - **OBX (Observation Result)** : transmission d’informations cliniques structurées ou de références documentaires ;
 - **IPC (Imaging Procedure Control)** : partage du contexte de réalisation des études et procédures d’imagerie.
 
@@ -451,3 +446,7 @@ Pour chaque flux, les contraintes précisent :
 <br>
 
 {% include st_flux4.md %}
+
+<br>
+
+{% include acquittement.md %}

@@ -74,7 +74,95 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Ordering Provider</p>
       </td>
       <td>
-        <p>Informations relatives au Médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie</p>
+        <p>Informations relatives au médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.1</p>
+      </td>
+      <td>
+        <p>Person Identifier</p>
+      </td>
+      <td>
+        <p>Identifiant du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.2</p>
+      </td>
+      <td>
+        <p>Family Name</p>
+      </td>
+      <td>
+        <p>Nom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.3</p>
+      </td>
+      <td>
+        <p>Given Name</p>
+      </td>
+      <td>
+        <p>Prénom d'exercice du professionnel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.9</p>
+      </td>
+      <td>
+        <p>Assigning Authority</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS</p>
+      </td>
+    </tr>    
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.1 (optionnel)</p>
+      </td>
+      <td>
+        <p>Namespace Id</p>
+      </td>
+      <td>
+        <p>Nom de l'aurotité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.2</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : <span class="hl7-color">1.2.250.1.71.4.2.1</span></p>
+      </td>
+    </tr>
+        <tr>
+      <td>
+        <p>&gt; &gt; ORC-12.9.3</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-12.13</p>
+      </td>
+      <td>
+        <p>Identifier Type Code</p>
+      </td>
+      <td>
+        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -187,6 +275,9 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 
 Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
+Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Service Identifier** est utilisé afin de véhiculer un **code local identifiant la procédure métier portée par le message**.
+Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes locaux](./table_obr.html), commune à l’ensemble des flux du volet Téléradiologie.
+
 <table class="table-hl7v2">
   <tbody>
     <tr>
@@ -235,38 +326,40 @@ Le segment **OBR** est renseigné conformément au profil **IHE Scheduled Workfl
         <p>Universal Service Identifier</p>
       </td>
       <td>
-        <p> </p>
+        <p>Code local identifiant la procédure métier portée par le message </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.1</p>
+        <p>&gt; OBR-4.1  </p>
       </td>
       <td>
-        <p>Code</p>
+        <p>Code </p>
       </td>
       <td>
-        <p>Code de la modalité d'imagerie, utiliser le <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS </a></p>
+        <p><span class="hl7-color">TRANSMISSION_DEMANDE</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.2</p>
+        <p>&gt; OBR-4.2  </p>
       </td>
       <td>
-        <p>Display name</p>
+        <p>Display name </p>
       </td>
-      <td></td>
+      <td>
+        <p><span class="hl7-color">Réponse à une demande d’examen d'imagerie</span></p>
+      </td>
     </tr>
     <tr>
       <td>
-        <p>&gt;OBR-4.3</p>
+        <p>&gt; OBR-4.3 </p>
       </td>
       <td>
-        <p>Name of coding system</p>
+        <p>Name of Coding system</p>
       </td>
       <td>
-        <p> <span class="hl7-color">DCM</span></p>
+        <p><span class="hl7-color"><span class="hl7-color">TLR_OBR_PROCEDURE</span></span></p>
       </td>
     </tr>
     <tr>

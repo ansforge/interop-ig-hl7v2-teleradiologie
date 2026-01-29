@@ -34,6 +34,8 @@ pages:
         title: Table TLR_OBSERVATION
     table_orga.md:
         title: Table TLR_TYPE_ORGANISATION
+    table_obr.md:
+        title: Table TLR_OBR_PROCEDURE
     sub-id.md:
         title: Utilisation du champ OBX-4 – Observation Sub-ID
     exemples.md:
@@ -61,6 +63,7 @@ menu:
         Normes et Standards: norme_standard.html
         Diagramme de séquence - Spécification technique: diag_sequence.html
         Utilisation du champ OBX-4 – Observation Sub-ID: sub-id.html
+        Table TLR_OBR_PROCEDURE: table_obr.html
         Table TLR_OBSERVATION: table_obs.html
         Table TLR_TYPE_ORGANISATION: table_orga.html
         Exemples de messages: exemples.html

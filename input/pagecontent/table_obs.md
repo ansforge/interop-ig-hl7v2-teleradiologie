@@ -1,4 +1,4 @@
-Cette table locale définit l’ensemble des codes utilisés dans le champ OBX-3 – Observation Identifier pour qualifier les observations transmises au sein des segments OBX. Elle permet d’assurer une identification homogène et non ambiguë des informations échangées dans le cadre des flux de téléradiologie.
+Cette table locale définit l’ensemble des codes utilisés dans le champ **OBX-3 – Observation Identifier** pour qualifier les observations transmises au sein des segments OBX. Elle permet d’assurer une identification homogène et non ambiguë des informations échangées dans le cadre des flux de téléradiologie.
 
 <table>
   <tbody>
@@ -63,6 +63,28 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ OBX-3
       </td>
       <td>
         <p>Informations relatives à l’appareil d’imagerie utilisé</p>
+      </td>
+      <td>
+        <p>TLR_OBSERVATION</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>MODALITE_IMAGERIE</strong></p>
+      </td>
+      <td>
+        <p>Modalité d’imagerie utilisée ou prévue pour réaliser l’examen</p>
+      </td>
+      <td>
+        <p>TLR_OBSERVATION</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><strong>CODE_ACTE_IMAGERIE</strong></p>
+      </td>
+      <td>
+        <p>Code de l'acte d'imagerie réalisée</p>
       </td>
       <td>
         <p>TLR_OBSERVATION</p>
