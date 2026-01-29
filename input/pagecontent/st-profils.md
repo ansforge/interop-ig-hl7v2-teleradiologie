@@ -338,7 +338,7 @@ Le diagramme ci-dessous illustre la description fonctionnelle du flux 1 :
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="Flux1-Fonc.png" alt="Description fonctionnelle du flux 1" title="Figure 1 : Structure fonctionnelle du flux 1"
+    <img src="Flux1-Fonc.svg" alt="Description fonctionnelle du flux 1" title="Figure 1 : Structure fonctionnelle du flux 1"
          style="
             max-width: 700px;
             width: 100%;
@@ -669,7 +669,7 @@ Le diagramme ci-dessous illustre la description fonctionnelle du message d’ann
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="Flux2-Fonc.png" alt="Description fonctionnelle du flux 2" title="Figure 5 : Structure fonctionnelle du flux 2"
+    <img src="Flux2-Fonc.svg" alt="Description fonctionnelle du flux 2" title="Figure 5 : Structure fonctionnelle du flux 2"
          style="
             max-width: 700px;
             width: 100%;
