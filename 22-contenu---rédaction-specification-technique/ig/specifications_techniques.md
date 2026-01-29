@@ -41,20 +41,20 @@ La présente partie décrit les interactions entre les acteurs du volet Téléra
 
 Les interactions sont présentées flux par flux. Chaque diagramme s’appuie sur le **profil de messages HL7 v2 retenu**. Le [diagramme de séquence complet est fourni en annexe](./diag_sequence.md).
 
-#### Flux 1 et 2 Transmission/Annulation d’une demande d’examen d’imagerie
+#### Flux 1 et 2 - Transmission/Annulation d’une demande d’examen d’imagerie
 
 Ce diagramme décrit les échanges techniques entre le RIS de la structure d’imagerie et le SI de téléradiologie pour la transmission et la gestion d’une demande d’examen d’imagerie.
 
  Figure 1 – Diagramme de séquence des flux 1 et 2 
 
-La demande d’examen est transmise du RIS vers le SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01**.
+La demande d’examen est transmise du RIS vers le SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01^ORM_O01**.
 
 Les options techniques suivantes sont représentées :
 
-* lorsque la demande d’examen est disponible sous forme de document structuré, le RIS peut transmettre ce document au SI de téléradiologie en s’appuyant sur les transactions définies au sein du **volet de transmission de documents CDA-R2 en HL7 v2** ;
-* lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du **volet transmission CDA-R2 en HL7 v2**.
+* lorsque la demande d’examen est disponible sous forme de document structuré, le RIS **doit** transmettre ce document au SI de téléradiologie en s’appuyant sur les transactions définies au sein du [volet de transmission de documents CDA-R2 en HL7 v2](./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.md) ;
+* lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du [volet de transmission de documents CDA-R2 en HL7 v2](./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.md).
 
-Enfin, le diagramme illustre la **possibilité d’annulation de la demande d’examen** par le RIS, notifiée au SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01**, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.
+Enfin, le diagramme illustre la **possibilité d’annulation de la demande d’examen** par le RIS, notifiée au SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01^ORM_O01**, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.
 
 #### Flux 3 Réponse à la demande d’examen d’imagerie
 
@@ -63,7 +63,7 @@ Ce diagramme décrit les échanges techniques consécutifs à la consultation et
  Figure 2 – Diagramme de séquence du flux 3 
 
 Après réception de la demande d’examen d’imagerie, le professionnel de santé effecteur procède à son **évaluation** (acceptation ou refus).
- Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message **HL7 v2 ORU^R01** depuis le SI de téléradiologie.
+ Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message **HL7 v2 ORU^R01^ORU_R01** depuis le SI de téléradiologie.
 
 Les cas suivants sont couverts :
 
@@ -83,7 +83,7 @@ Ce diagramme décrit les échanges techniques intervenant après l’acceptation
 À l’issue de cette acceptation, l’examen d’imagerie est réalisé au sein de la structure d’imagerie.
  Une fois l’examen effectué, le RIS transmet au SI de téléradiologie un ensemble de **compléments d’information post-examen**, destinés à permettre la **rédaction du compte rendu** par le professionnel de santé effecteur.
 
-Ces informations sont transmises via un message **OMI^O23** conforme au profil IHE SWF.
+Ces informations sont transmises via un message **OMI^O23^OMI_023** conforme au profil IHE SWF.
 
 Après rédaction du **compte rendu d’examen d’imagerie**, celui-ci est transmis par le SI de téléradiologie vers le RIS, afin de permettre sa **publication dans le DMP du patient**.
 
@@ -575,7 +575,7 @@ Le message est structuré autour des segments suivants :
 * **ORC / OBR** : décision du médecin effecteur sur la demande d’examen (validation ou refus), avec la possibilité de préciser un **motif de refus** le cas échéant
 * **Groupes OBSERVATION (OBX)** : transmission des informations spécifiques au volet Téléradiologie, notamment le **protocole d’imagerie**, exprimé soit en clair, soit sous forme de contenu encapsulé.
 
-Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments, ainsi que leur caractère requis, optionnel ou répétable.
+Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments, ainsi que leur caractère requis, optionnel ou répétable **conformément au volet Téléradiologie**.
 
 * Segment: MSH
   * Meaning: Message Header
@@ -1045,18 +1045,16 @@ Un premier sous-ensemble de contraintes s’applique **de manière transversale 
 
 Ces contraintes communes garantissent une **cohérence globale des échanges**, une identification fiable des acteurs et du patient, ainsi qu’une homogénéité de mise en œuvre entre les flux.
 
-##### Eléments de contrôle du message ORU ou MDM
-
-###### Le segment MSH – Header du message
+##### Eléments de l’entête
 
 Les éléments de contrôle du message HL7 sont portés par le segment d’entête MSH. Le tableau ci-dessous liste les champs à renseigner pour le segment MSH :
 
 * Champ: MSH-1
-  * Contenu: | séparateur de champ
+  * Contenu: Séparateur de champ|
   * Type donnée: ST
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-2
-  * Contenu: ^~\& : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants
+  * Contenu: Séparateur de composant, Répétition, Caractère d'échappement, Séparateur de sous-composants^~\&
   * Type donnée: ST
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-3
@@ -1092,7 +1090,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d’entê
   * Type donnée: PT
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-12
-  * Contenu: Version du standard 2.5.1
+  * Contenu: Version du standard2.5.1
   * Type donnée: VID
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-17
@@ -1100,11 +1098,11 @@ Les éléments de contrôle du message HL7 sont portés par le segment d’entê
   * Type donnée: ID
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-18
-  * Contenu: Jeux de caractères, valeurs possibles :UNICODE UTF-8 ou 8859/15
+  * Contenu: Jeux de caractères, valeurs possiblesUNICODE UTF-8 ou 8859/15
   * Type donnée: ID
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-21
-  * Contenu: Identifiant du profil de messageMSH-21.1 : Entity Identifier (2.1)MSH-21.2 : Namespace IdCISIS_TLR_HL7_V2 
+  * Contenu: Identifiant du profil de messageMSH-21.1 : Version du profil de message : (1.0)MSH-21.2 : Nom du profil de message : CISIS_TLR_HL7_V2
   * Type donnée: EI
   * Caractère optionnel/obligatoire: R
 
@@ -1112,13 +1110,13 @@ Les éléments de contrôle du message HL7 sont portés par le segment d’entê
 
 `MSH|^~\&|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2`
 
-##### Les données concernant le patient et la venue du patient
+##### Les données concernant le patient et sa venue
 
 Le message HL7 est centré sur un seul patient. Les informations concernant le patient sont décrites par le segment requis PID. Le segment PV1, requis, représente la venue courante du patient.
 
-Ces deux segments doivent être renseignés conformément à la spécification « [PAM – National extension France » version 2.11](https://www.interopsante.org/publications) publiée en 2024. Si l’INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS « [Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis) ».
+Ces deux segments doivent être renseignés conformément à la spécification « [PAM – National extension France » version 2.11](https://www.interopsante.org/publications) publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS « [Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis) ».
 
-Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport à PAM.FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l’alimentation du DMP.
+Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport au profil PAM-FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l’alimentation du DMP.
 
 * Champ: PID-3
   * Contenu: Identifiants du patient

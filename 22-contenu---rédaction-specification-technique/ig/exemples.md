@@ -49,7 +49,7 @@ OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||80123456
 
 ```
 
-#### Flux 3 - Réponse à la demande d’examen d’imagerie (ORU^R01)
+### Flux 3 - Réponse à la demande d’examen d’imagerie (ORU^R01)
 
 L’exemple ci-dessous illustre un message **HL7 v2.5.1 ORU^R01** conforme au volet Téléradiologie.
 
@@ -67,7 +67,7 @@ OBX|1|FT|PROTOCOLE_IMAGERIE^Protocole d'imagerie médicale^TLR_OBSERVATION||Para
 
 ```
 
-#### Flux 4 - Transmission d’un complément d’information post-examen (OMI^O23)
+### Flux 4 - Transmission d’un complément d’information post-examen (OMI^O23)
 
 L’exemple ci-dessous illustre un message **HL7 v2.5.1 OMI^O23** conforme au volet Téléradiologie pour la **transmission d’un complément d’information post-examen**.
 

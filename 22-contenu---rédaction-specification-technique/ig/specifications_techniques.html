@@ -123,8 +123,27 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 – Détail des Transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specifications_techniques.html#introduction">Introduction</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#evènements-déclenchants">Evènements déclenchants</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#interactions-entre-les-acteurs">Interactions entre les acteurs</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#profils-de-message">Profils de message</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#contraintes-applicables-aux-profils-de-message">Contraintes applicables aux profils de message</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 3 - Annexes
@@ -326,7 +345,7 @@ La transmission de la <strong>demande d’examen d’imagerie formalisée sous f
 
 <p>Les interactions sont présentées flux par flux. Chaque diagramme s’appuie sur le <strong>profil de messages HL7 v2 retenu</strong>. Le <a href="./diag_sequence.html">diagramme de séquence complet est fourni en annexe</a>.</p>
 
-<h4 id="flux-1-et-2-transmissionannulation-dune-demande-dexamen-dimagerie">Flux 1 et 2 Transmission/Annulation d’une demande d’examen d’imagerie</h4>
+<h4 id="flux-1-et-2---transmissionannulation-dune-demande-dexamen-dimagerie">Flux 1 et 2 - Transmission/Annulation d’une demande d’examen d’imagerie</h4>
 
 <p>Ce diagramme décrit les échanges techniques entre le RIS de la structure d’imagerie et le SI de téléradiologie pour la transmission et la gestion d’une demande d’examen d’imagerie.</p>
 
@@ -351,16 +370,16 @@ La transmission de la <strong>demande d’examen d’imagerie formalisée sous f
     </p>
 </div>
 
-<p>La demande d’examen est transmise du RIS vers le SI de téléradiologie au moyen d’un message <strong>HL7 v2 ORM^O01</strong>.</p>
+<p>La demande d’examen est transmise du RIS vers le SI de téléradiologie au moyen d’un message <strong>HL7 v2 ORM^O01^ORM_O01</strong>.</p>
 
 <p>Les options techniques suivantes sont représentées :</p>
 
 <ul>
-  <li>lorsque la demande d’examen est disponible sous forme de document structuré, le RIS peut transmettre ce document au SI de téléradiologie en s’appuyant sur les transactions définies au sein du <strong>volet de transmission de documents CDA-R2 en HL7 v2</strong> ;</li>
-  <li>lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du <strong>volet transmission CDA-R2 en HL7 v2</strong>.</li>
+  <li>lorsque la demande d’examen est disponible sous forme de document structuré, le RIS <strong>doit</strong> transmettre ce document au SI de téléradiologie en s’appuyant sur les transactions définies au sein du <a href="./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">volet de transmission de documents CDA-R2 en HL7 v2</a> ;</li>
+  <li>lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du <a href="./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">volet de transmission de documents CDA-R2 en HL7 v2</a>.</li>
 </ul>
 
-<p>Enfin, le diagramme illustre la <strong>possibilité d’annulation de la demande d’examen</strong> par le RIS, notifiée au SI de téléradiologie au moyen d’un message <strong>HL7 v2 ORM^O01</strong>, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.</p>
+<p>Enfin, le diagramme illustre la <strong>possibilité d’annulation de la demande d’examen</strong> par le RIS, notifiée au SI de téléradiologie au moyen d’un message <strong>HL7 v2 ORM^O01^ORM_O01</strong>, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.</p>
 
 <h4 id="flux-3-réponse-à-la-demande-dexamen-dimagerie">Flux 3 Réponse à la demande d’examen d’imagerie</h4>
 
@@ -388,7 +407,7 @@ La transmission de la <strong>demande d’examen d’imagerie formalisée sous f
 </div>
 
 <p>Après réception de la demande d’examen d’imagerie, le professionnel de santé effecteur procède à son <strong>évaluation</strong> (acceptation ou refus).<br/>
-Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message <strong>HL7 v2 ORU^R01</strong> depuis le SI de téléradiologie.</p>
+Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message <strong>HL7 v2 ORU^R01^ORU_R01</strong> depuis le SI de téléradiologie.</p>
 
 <p>Les cas suivants sont couverts :</p>
 
@@ -433,7 +452,7 @@ le champ <strong>ORC-1 (Order Control)</strong> est valorisé à <strong>OC</str
 <p>À l’issue de cette acceptation, l’examen d’imagerie est réalisé au sein de la structure d’imagerie.<br/>
 Une fois l’examen effectué, le RIS transmet au SI de téléradiologie un ensemble de <strong>compléments d’information post-examen</strong>, destinés à permettre la <strong>rédaction du compte rendu</strong> par le professionnel de santé effecteur.</p>
 
-<p>Ces informations sont transmises via un message <strong>OMI^O23</strong> conforme au profil IHE SWF.</p>
+<p>Ces informations sont transmises via un message <strong>OMI^O23^OMI_023</strong> conforme au profil IHE SWF.</p>
 
 <p>Après rédaction du <strong>compte rendu d’examen d’imagerie</strong>, celui-ci est transmis par le SI de téléradiologie vers le RIS, afin de permettre sa <strong>publication dans le DMP du patient</strong>.</p>
 
@@ -1118,7 +1137,7 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
   <li><strong>Groupes OBSERVATION (OBX)</strong> : transmission des informations spécifiques au volet Téléradiologie, notamment le <strong>protocole d’imagerie</strong>, exprimé soit en clair, soit sous forme de contenu encapsulé.</li>
 </ul>
 
-<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments, ainsi que leur caractère requis, optionnel ou répétable.</p>
+<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments, ainsi que leur caractère requis, optionnel ou répétable <strong>conformément au volet Téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -1707,7 +1726,7 @@ Ils permettent notamment de véhiculer :</p>
 
 <p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 4</strong> :</p>
 
-<div style="text-align: center;" class="figure"><a name="l4935">​</a>
+<div style="text-align: center;" class="figure"><a name="l4976">​</a>
     <img src="fig17.png" alt="Figure 17" style="width:80%;" title="Figure 17 : Structure fonctionnelle du message ORU_R01"/>
     <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
 </div>
@@ -1716,7 +1735,7 @@ Ils permettent notamment de véhiculer :</p>
 
 <h5 id="acquittements">Acquittements</h5>
 
-<p><a name="l4950">​</a>Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un <strong>acquittement technique HL7 v2</strong> (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1.
+<p><a name="l4991">​</a>Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un <strong>acquittement technique HL7 v2</strong> (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1.
 Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans <a href="./acquittement.html">une partie dédiée</a>.</p>
 
 <h6 id="profil-du-message-ack">Profil du message ACK</h6>
@@ -1850,9 +1869,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 
 <p>Ces contraintes communes garantissent une <strong>cohérence globale des échanges</strong>, une identification fiable des acteurs et du patient, ainsi qu’une homogénéité de mise en œuvre entre les flux.</p>
 
-<h5 id="eléments-de-contrôle-du-message-oru-ou-mdm">Eléments de contrôle du message ORU ou MDM</h5>
-
-<h6 id="le-segment-msh--header-du-message">Le segment MSH – Header du message</h6>
+<h5 id="eléments-de-lentête">Eléments de l’entête</h5>
 
 <p>Les éléments de contrôle du message HL7 sont portés par le segment d’entête MSH. Le tableau ci-dessous liste les champs à renseigner pour le segment MSH :</p>
 
@@ -1877,7 +1894,8 @@ Ces contraintes portent notamment sur les segments suivants :</p>
         <p>MSH-1</p>
       </td>
       <td>
-        <p><span class="hl7-color">|</span> séparateur de champ</p>
+        <p>Séparateur de champ</p>
+        <p><span class="hl7-color">|</span></p>
       </td>
       <td>
         <p>ST</p>
@@ -1891,7 +1909,8 @@ Ces contraintes portent notamment sur les segments suivants :</p>
         <p>MSH-2</p>
       </td>
       <td>
-        <p><span class="hl7-color">^~\&amp;</span> : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants</p>
+        <p>Séparateur de composant, Répétition, Caractère d'échappement, Séparateur de sous-composants</p>
+        <p><span class="hl7-color">^~\&amp;</span></p>
       </td>
       <td>
         <p>ST</p>
@@ -2025,7 +2044,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
       </td>
       <td>
         <p>Version du standard</p>
-<br/><span class="hl7-color"> 2.5.1</span>
+<br/><span class="hl7-color">2.5.1</span>
       </td>
       <td>
         <p>VID</p>
@@ -2053,7 +2072,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
         <p>MSH-18</p>
       </td>
       <td>
-        <p>Jeux de caractères, valeurs possibles :</p>
+        <p>Jeux de caractères, valeurs possibles</p>
         <p><span class="hl7-color">UNICODE UTF-8 ou 8859/15</span></p>
       </td>
       <td>
@@ -2069,9 +2088,8 @@ Ces contraintes portent notamment sur les segments suivants :</p>
       </td>
       <td>
         <p>Identifiant du profil de message</p>
-        <p>MSH-21.1 : Entity Identifier (<span class="hl7-color">2.1</span>)</p>
-        <p>MSH-21.2 : Namespace Id</p>
-        <p><span class="hl7-color">CISIS_TLR_HL7_V2</span> </p>
+        <p>MSH-21.1 : Version du profil de message : (<span class="hl7-color">1.0</span>)</p>
+        <p>MSH-21.2 : Nom du profil de message : <span class="hl7-color">CISIS_TLR_HL7_V2</span></p>
       </td>
       <td>
         <p>EI</p>
@@ -2087,13 +2105,13 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 
 <p><code class="language-plaintext highlighter-rouge">MSH|^~\&amp;|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2</code></p>
 
-<h5 id="les-données-concernant-le-patient-et-la-venue-du-patient">Les données concernant le patient et la venue du patient</h5>
+<h5 id="les-données-concernant-le-patient-et-sa-venue">Les données concernant le patient et sa venue</h5>
 
 <p>Le message HL7 est centré sur un seul patient. Les informations concernant le patient sont décrites par le segment requis PID. Le segment PV1, requis, représente la venue courante du patient.</p>
 
-<p>Ces deux segments doivent être renseignés conformément à la spécification « <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a> publiée en 2024. Si l’INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS « <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a> ».</p>
+<p>Ces deux segments doivent être renseignés conformément à la spécification « <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a> publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS « <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a> ».</p>
 
-<p>Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport à PAM.FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l’alimentation du DMP.</p>
+<p>Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport au profil PAM-FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l’alimentation du DMP.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -5503,13 +5521,13 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l12762">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+<p><a name="l12801">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
 
 <h5 id="groupe-observation---modalité-dimagerie-1">Groupe OBSERVATION - Modalité d’imagerie</h5>
 
-<p><a name="l12780">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
+<p><a name="l12819">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
 Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie">Groupes OBSERVATION – Modalité d’imagerie</a></p>
 
@@ -6753,7 +6771,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 17:23+0000">2026-01-29</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 17:45+0000">2026-01-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

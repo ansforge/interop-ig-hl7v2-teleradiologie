@@ -3,22 +3,22 @@ CISIS_TLR_HL7_V2 : Validation Results
 
 err = 1, warn = 3, info = 1
 IG Publisher Version: 2.0.30
-Generated Thu Jan 29 17:23:46 UTC 2026. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
+Generated Thu Jan 29 17:46:11 UTC 2026. FHIR version 4.0.1 for ans.hl7v2.fr.teleradiologie#0.1.0 (canonical = https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie)
  Build Errors : 10 / 3 / 0
  /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie : 1 / 0 / 2
 </table>
 == n/a ==
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 250, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 251, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 252, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 258, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 259, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
-ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 260, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 269, column 8: The link 'definitions.json.zip' for "Définitions JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 270, column 8: The link 'definitions.xml.zip' for "Définitions XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 271, column 8: The link 'definitions.ttl.zip' for "Définitions Turtle (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 277, column 8: The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 278, column 8: The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved
+ERROR: downloads.html#/html/body/div/div/div/div/div/ul/li/a at Line 279, column 8: The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved
 WARNING: /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/output/searchform.html#/html/body/div/div/div/a/img/div/a/img/div/p/img/footer/div/div/div/div/div/div/a/img/div/a/img/script at Line 255, column 7: The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed)
-ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/div/img at Line 1711, column 6: The image source 'fig17.png' cannot be resolved
-ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 1720, column 116: The link './acquittement.html' for "une partie dédiée" cannot be resolved
-ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 5508, column 78: The link './st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique' for "Groupes OBSERVATION – Localisation anatomique" cannot be resolved
-ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 5514, column 76: The link './st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie' for "Groupes OBSERVATION – Modalité d’imagerie" cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/div/img at Line 1730, column 6: The image source 'fig17.png' cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 1739, column 116: The link './acquittement.html' for "une partie dédiée" cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 5526, column 78: The link './st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique' for "Groupes OBSERVATION – Localisation anatomique" cannot be resolved
+ERROR: specifications_techniques.html#/html/body/div/div/div/div/div/p/a at Line 5532, column 76: The link './st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie' for "Groupes OBSERVATION – Modalité d’imagerie" cannot be resolved
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 == fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json ==

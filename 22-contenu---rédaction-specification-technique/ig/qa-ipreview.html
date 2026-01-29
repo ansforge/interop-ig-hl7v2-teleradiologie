@@ -80,7 +80,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Thu, Jan 29, 2026 17:23+0000">2026-01-29</span>
+. Generated           <span title="Thu, Jan 29, 2026 17:45+0000">2026-01-29</span>
 
                     <br/>
 
@@ -110,7 +110,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Thu, Jan 29, 2026 17:23+0000">2026-01-29</span>
+. Generated           <span title="Thu, Jan 29, 2026 17:45+0000">2026-01-29</span>
 
                     <br/>
 
@@ -890,11 +890,36 @@ La transmission de la           <strong>demande d’examen d’imagerie formalis
           <a href="specifications_techniques.html">web</a>
         </td>
         <td>
+          <a href="./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html</a>
+        </td>
+        <td>
+lorsque la demande d’examen est disponible sous forme de document structuré, le RIS           <strong>doit</strong>
+ transmettre ce document au SI de téléradiologie en s’appuyant sur les transactions définies au sein du           <a href="./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">volet de transmission de documents CDA-R2 en HL7 v2</a>
+ ;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
+          <a href="./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html</a>
+        </td>
+        <td>
+lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du           <a href="./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">volet de transmission de documents CDA-R2 en HL7 v2</a>
+.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="specifications_techniques.html">web</a>
+        </td>
+        <td>
           <a href="https://www.interopsante.org/publications">www.interopsante.org</a>
         </td>
         <td>
 Ces deux segments doivent être renseignés conformément à la spécification «           <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a>
- publiée en 2024. Si l’INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS «           <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a>
+ publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS «           <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a>
  ».
         </td>
       </tr>
@@ -907,7 +932,7 @@ Ces deux segments doivent être renseignés conformément à la spécification �
         </td>
         <td>
 Ces deux segments doivent être renseignés conformément à la spécification «           <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a>
- publiée en 2024. Si l’INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS «           <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a>
+ publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS «           <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a>
  ».
         </td>
       </tr>
