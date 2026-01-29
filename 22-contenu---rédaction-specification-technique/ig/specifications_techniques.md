@@ -335,7 +335,9 @@ Outre les éléments standards concernant la demande et la prescription portés 
 
 Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.md#flux-1---transmission-de-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
-Le diagramme ci-dessous illustre le **fonctionnement global du message**, les interactions entre les segments principaux ainsi que le rôle des **OBX spécifiques Téléradiologie** dans le cadre du flux 1.
+Le diagramme ci-dessous illustre la description fonctionnelle du flux 1 :
+
+ Figure 4 : Structure fonctionnelle du message ORM^O01^ORM_O01 du flux 1 
 
 ##### Flux 2 - Message ORM^O01^ORM_O01 en HL7 v2.5.1
 
@@ -555,7 +557,9 @@ Le message **ORM^O01** du flux 2 permet au système demandeur de notifier au sys
 
 Les segments **ORC** et **OBR** assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
 
-Le diagramme ci-dessous illustre le **fonctionnement du message d’annulation** :
+Le diagramme ci-dessous illustre la description fonctionnelle du message d’annulation :
+
+ Figure 5 : Structure fonctionnelle du message ORM^O01^ORM_O01 du flux 2 
 
 ##### Flux 3 - Message ORU^R01^ORU_R01 en HL7 v2.5.1
 
@@ -1367,7 +1371,7 @@ Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de
   * ?: Observation Result Status
   * ?: Valeur fixée à « O » (Order detail description only (no result))
 
-##### Segment NTE - Commentaire sur la modalité
+###### Segment NTE - Commentaire sur la modalité
 
 La structure et l’utilisation du segment **NTE** sont **conformes au standard HL7 v2.5.1**. Des **contraintes spécifiques** s’applique toutefois lorsque ce segment est utilisé pour porter des informations relatives à la modalité d’imagerie, telles que définies dans le présent volet.
 
