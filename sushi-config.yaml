@@ -58,7 +58,12 @@ menu:
         "Description des processus collaboratifs et identification des flux": specifications_fonctionnelles.html#description-des-processus-collaboratifs-et-identification-des-flux
         "Identification des concepts véhiculés dans les flux": specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-mos
         "Modélisation des flux d’informations": specifications_fonctionnelles.html#modélisation-des-flux-dinformations
-    Volume 2 – Détail des Transactions: specifications_techniques.html
+    Volume 2 – Détail des Transactions:
+        "Introduction": specifications_techniques.html#introduction
+        "Evènements déclenchants": specifications_techniques.html#evènements-déclenchants
+        "Interactions entre les acteurs": specifications_techniques.html#interactions-entre-les-acteurs
+        "Profils de message": specifications_techniques.html#profils-de-message
+        "Contraintes applicables aux profils de message": specifications_techniques.html#contraintes-applicables-aux-profils-de-message
     Volume 3 - Annexes:
         Normes et Standards: norme_standard.html
         Diagramme de séquence - Spécification technique: diag_sequence.html

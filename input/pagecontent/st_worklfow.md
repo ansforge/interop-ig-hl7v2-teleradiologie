@@ -76,7 +76,7 @@ La présente partie décrit les interactions entre les acteurs du volet Téléra
 
 Les interactions sont présentées flux par flux. Chaque diagramme s’appuie sur le **profil de messages HL7 v2 retenu**. Le [diagramme de séquence complet est fourni en annexe](./diag_sequence.html).
 
-#### Flux 1 et 2 Transmission/Annulation d'une demande d'examen d'imagerie
+#### Flux 1 et 2 - Transmission/Annulation d'une demande d'examen d'imagerie
 
 Ce diagramme décrit les échanges techniques entre le RIS de la structure d’imagerie et le SI de téléradiologie pour la transmission et la gestion d’une demande d’examen d’imagerie.
 
@@ -104,14 +104,14 @@ Ce diagramme décrit les échanges techniques entre le RIS de la structure d’i
     </p>
 </div>
 
-La demande d’examen est transmise du RIS vers le SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01**.
+La demande d’examen est transmise du RIS vers le SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01^ORM_O01**.
 
 Les options techniques suivantes sont représentées :
 
-- lorsque la demande d’examen est disponible sous forme de document structuré, le RIS peut transmettre ce document au SI de téléradiologie en s'appuyant sur les transactions définies au sein du **volet de transmission de documents CDA-R2 en HL7 v2** ;
-- lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du **volet transmission CDA-R2 en HL7 v2**.
+- lorsque la demande d’examen est disponible sous forme de document structuré, le RIS **doit** transmettre ce document au SI de téléradiologie en s'appuyant sur les transactions définies au sein du [volet de transmission de documents CDA-R2 en HL7 v2](./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html) ;
+- lorsque plusieurs documents complémentaires sont associés à la demande, ceux-ci peuvent être transmis individuellement au SI de téléradiologie au travers de mécanismes également définis au sein du [volet de transmission de documents CDA-R2 en HL7 v2](./https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html).
 
-Enfin, le diagramme illustre la **possibilité d’annulation de la demande d’examen** par le RIS, notifiée au SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01**, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.
+Enfin, le diagramme illustre la **possibilité d’annulation de la demande d’examen** par le RIS, notifiée au SI de téléradiologie au moyen d’un message **HL7 v2 ORM^O01^ORM_O01**, en cohérence avec les règles de gestion HL7 v2 et le profil IHE SWF.
 
 #### Flux 3 Réponse à la demande d'examen d'imagerie
 
@@ -142,7 +142,7 @@ Ce diagramme décrit les échanges techniques consécutifs à la consultation et
 </div>
 
 Après réception de la demande d'examen d'imagerie, le professionnel de santé effecteur procède à son **évaluation** (acceptation ou refus).  
-Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message **HL7 v2 ORU^R01** depuis le SI de téléradiologie.
+Le résultat de cette évaluation est notifié à la structure d’imagerie par l’émission d’un message **HL7 v2 ORU^R01^ORU_R01** depuis le SI de téléradiologie.
 
 Les cas suivants sont couverts :
 
@@ -186,6 +186,6 @@ Ce diagramme décrit les échanges techniques intervenant après l’acceptation
 À l’issue de cette acceptation, l’examen d’imagerie est réalisé au sein de la structure d’imagerie.  
 Une fois l’examen effectué, le RIS transmet au SI de téléradiologie un ensemble de **compléments d’information post-examen**, destinés à permettre la **rédaction du compte rendu** par le professionnel de santé effecteur.
 
-Ces informations sont transmises via un message **OMI^O23** conforme au profil IHE SWF.
+Ces informations sont transmises via un message **OMI^O23^OMI_023** conforme au profil IHE SWF.
 
 Après rédaction du **compte rendu d’examen d'imagerie**, celui-ci est transmis par le SI de téléradiologie vers le RIS, afin de permettre sa **publication dans le DMP du patient**.

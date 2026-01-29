@@ -32,7 +32,7 @@ Dans l’exemple ci-dessous, deux produits administrés sont transmis dans un me
 Chaque produit est décrit à l’aide de trois segments OBX : type de produit, numéro de lot et quantité administrée.
 
 ```
-OBX|1|CE|PRODUIT_ADMINISTRE^Produit administré|1.1|V09^Produits de diagnostic^ATC||||
+OBX|1|CE|PRODUIT_ADMINISTRE^Produit administré^TLR_OBSERVATION|1.1|V09^Produits de diagnostic^ATC||||
 OBX|2|TX|PRODUIT_ADMINISTRE^Produit administré|1.2|LOT123456||||
 OBX|3|NM|PRODUIT_ADMINISTRE^Produit administré|1.3|120|mL|||
 OBX|4|CE|PRODUIT_ADMINISTRE^Produit administré|2.1|V10^Produits thérapeutiques^ATC||||

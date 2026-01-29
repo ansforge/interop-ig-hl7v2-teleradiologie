@@ -14,9 +14,7 @@ Ces contraintes portent notamment sur les segments suivants :
 
 Ces contraintes communes garantissent une **cohérence globale des échanges**, une identification fiable des acteurs et du patient, ainsi qu’une homogénéité de mise en œuvre entre les flux.
 
-##### Eléments de contrôle du message ORU ou MDM
-
-###### Le segment MSH -- Header du message
+##### Eléments de l'entête
 
 Les éléments de contrôle du message HL7 sont portés par le segment d'entête MSH. Le tableau ci-dessous liste les champs à renseigner pour le segment MSH :
 
@@ -41,7 +39,8 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
         <p>MSH-1</p>
       </td>
       <td>
-        <p><span class="hl7-color">|</span> séparateur de champ</p>
+        <p>Séparateur de champ</p>
+        <p><span class="hl7-color">|</span></p>
       </td>
       <td>
         <p>ST</p>
@@ -55,7 +54,8 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
         <p>MSH-2</p>
       </td>
       <td>
-        <p><span class="hl7-color">^~\&</span> : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants</p>
+        <p>Séparateur de composant, Répétition, Caractère d'échappement, Séparateur de sous-composants</p>
+        <p><span class="hl7-color">^~\&</span></p>
       </td>
       <td>
         <p>ST</p>
@@ -189,7 +189,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
       </td>
       <td>
         <p>Version du standard</p>
-<br><span class="hl7-color"> 2.5.1</span>
+<br><span class="hl7-color">2.5.1</span>
       </td>
       <td>
         <p>VID</p>
@@ -217,7 +217,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
         <p>MSH-18</p>
       </td>
       <td>
-        <p>Jeux de caractères, valeurs possibles :</p>
+        <p>Jeux de caractères, valeurs possibles</p>
         <p><span class="hl7-color">UNICODE UTF-8 ou 8859/15</span></p>
       </td>
       <td>
@@ -233,9 +233,8 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
       </td>
       <td>
         <p>Identifiant du profil de message</p>
-        <p>MSH-21.1 : Entity Identifier (<span class="hl7-color">2.1</span>)</p>
-        <p>MSH-21.2 : Namespace Id</p>
-        <p><span class="hl7-color">CISIS_TLR_HL7_V2</span> </p>
+        <p>MSH-21.1 : Version du profil de message : (<span class="hl7-color">1.0</span>)</p>
+        <p>MSH-21.2 : Nom du profil de message : <span class="hl7-color">CISIS_TLR_HL7_V2</span></p>
       </td>
       <td>
         <p>EI</p>
@@ -251,13 +250,13 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
 
 `MSH|^~\&|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2`
 
-##### Les données concernant le patient et la venue du patient
+##### Les données concernant le patient et sa venue
 
 Le message HL7 est centré sur un seul patient. Les informations concernant le patient sont décrites par le segment requis PID. Le segment PV1, requis, représente la venue courante du patient.
 
-Ces deux segments doivent être renseignés conformément à la spécification « [PAM -- National extension France » version 2.11](https://www.interopsante.org/publications) publiée en 2024. Si l'INS est véhiculé, le segment PID doit suivre les contraintes décrites dans l'annexe CI-SIS « [Prise en charge de l'identifiant National de Santé (INS) dans les standards d'interopérabilité et les volets du CI-SIS](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis) ».
+Ces deux segments doivent être renseignés conformément à la spécification « [PAM -- National extension France » version 2.11](https://www.interopsante.org/publications) publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l'annexe CI-SIS « [Prise en charge de l'identifiant National de Santé (INS) dans les standards d'interopérabilité et les volets du CI-SIS](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis) ».
 
-Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport à PAM.FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l'alimentation du DMP.
+Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport au profil PAM-FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l'alimentation du DMP.
 
 <table class="table-hl7v2">
   <tbody>

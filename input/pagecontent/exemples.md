@@ -39,7 +39,7 @@ ORC|CA|IdentifiantDemandeExamen|||||||20260106134418|||801234567897^Hoda^Adam^^^
 OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
 ```
 
-#### Flux 3 - Réponse à la demande d'examen d'imagerie (ORU^R01)
+### Flux 3 - Réponse à la demande d'examen d'imagerie (ORU^R01)
 
 L’exemple ci-dessous illustre un message **HL7 v2.5.1 ORU^R01** conforme au volet Téléradiologie.
 
@@ -55,7 +55,7 @@ OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||80123456
 OBX|1|FT|PROTOCOLE_IMAGERIE^Protocole d'imagerie médicale^TLR_OBSERVATION||Paramètres d’acquisition : kV : 120…||||||F
 ```
 
-#### Flux 4 - Transmission d'un complément d'information post-examen (OMI^O23)
+### Flux 4 - Transmission d'un complément d'information post-examen (OMI^O23)
 
 L’exemple ci-dessous illustre un message **HL7 v2.5.1 OMI^O23** conforme au volet Téléradiologie pour la **transmission d’un complément d’information post-examen**.
 
