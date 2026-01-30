@@ -19,9 +19,9 @@ Les segments **OBX** illustrés dans cet exemple véhiculent notamment :
 ```
 MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
-PV1||O|||||||||||||||||IdentifiantRendezVous|
-ORC|NW|IdentifiantDemandeExamen|||||||20260106134418||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||^PRN^CP^^^^^^^^^+3360708091|||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
-OBR||IdentifiantDemandeExamen||TRANSMISSION_DEMANDE^Transmission d’une demande d’examen d'imagerie^TLR_OBR_PROCEDURE|||||||||JustificationDemande|||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|
+PV1||O|||||||||||||||||000897406^^^CHU-X&000897406&M^VN^^20210409|
+ORC|NW|OPN101^^1.2.250.1.748.12345678.12^ISO|||||||20260106134418||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||^PRN^CP^^^^^^^^^+3360708091|||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
+OBR||OPN101^^1.2.250.1.748.12345678.12^ISO||TRANSMISSION_DEMANDE^Transmission d’une demande d’examen d'imagerie^TLR_OBR_PROCEDURE|||||||||JustificationDemande|||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|
 NTE|||Commentaire sur la finalité de l'examen|FINALITE_EXAMEN^^HL70364
 OBX|1|CE|MODALITE_IMAGERIE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|MR^Résonance magnétique^DCM||||||O
 NTE|||Commentaire sur la modalité|MODALITE_IMAGERIE^^HL70364
@@ -47,9 +47,9 @@ Le message montre comment le **RIS** notifie l’annulation au **SI de télérad
 ```
 MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
-PV1||O|||||||||||||||||IdentifiantRendezVous|
-ORC|CA|IdentifiantDemandeExamen|||||||20260106134418|||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
-OBR||IdentifiantDemandeExamen||ANNULATION_DEMANDE^Annulation d’une demande d’examen^TLR_OBR_PROCEDURE||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
+PV1||O|||||||||||||||||000897406^^^CHU-X&000897406&M^VN^^20210409|
+ORC|CA|OPN101^^1.2.250.1.748.12345678.12^ISO|||||||20260106134418|||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
+OBR||OPN101^^1.2.250.1.748.12345678.12^ISO||ANNULATION_DEMANDE^Annulation d’une demande d’examen^TLR_OBR_PROCEDURE||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
 
 ```
 
@@ -65,8 +65,8 @@ Le message permet de véhiculer :
 ```
 MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134418||ORU^R01^ORU_R01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
-ORC|OK|IdentifiantDemandeExamen||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||||MotifRefus|PLATEFORME_TELERADIOLOGIE^^TLR_TYPE_ORGANISATION||||Plateforme-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017986
-OBR||IdentifiantDemandeExamen||REPONSE_DEMANDE^Réponse à une demande d’examen d'imagerie^TLR_OBR_PROCEDURE||||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
+ORC|OK|OPN101^^1.2.250.1.748.12345678.12^ISO||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||||MotifRefus|PLATEFORME_TELERADIOLOGIE^^TLR_TYPE_ORGANISATION||||Plateforme-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017986
+OBR||OPN101^^1.2.250.1.748.12345678.12^ISO||REPONSE_DEMANDE^Réponse à une demande d’examen d'imagerie^TLR_OBR_PROCEDURE||||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
 OBX|1|ED|PROTOCOLE_IMAGERIE^Protocole d'imagerie médicale^TLR_OBSERVATION||^TEXT^^base64^Pendggfbubzbdy12gggvt||||||F
 
 ```
@@ -80,11 +80,11 @@ Ces informations sont transmises au **SI de téléradiologie** afin de permettre
 ```
 MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
-PV1||O|||||||||||||||||IdentifiantRendezVous|
-ORC|SC|IdentifiantDemandeExamen|
-TQ1||||||Durée de rétention des images|20260106184418
-OBR||IdentifiantDemandeExamen||COMPLEMENT_POST_EXAMEN^Transmission d'un complément d’information post-examen^TLR_OBR_PROCEDURE|
-IPC|Accession number|24590-2^^2.16.840.1.113883.6.1^ISO|Study Instance UID|24590-2^^2.16.840.1.113883.6.1^ISO|
+PV1||O|||||||||||||||||000897406^^^CHU-X&000897406&M^VN^^20210409|
+ORC|SC|OPN101^^1.2.250.1.748.12345678.12^ISO|
+TQ1||||||730^jours|20260106184418
+OBR||OPN101^^1.2.250.1.748.12345678.12^ISO||COMPLEMENT_POST_EXAMEN^Transmission d'un complément d’information post-examen^TLR_OBR_PROCEDURE|
+IPC|ACN101^^1.2.250.1.925.994044.27^ISO|24590-2^^2.16.840.1.113883.6.1^ISO|1.2.250.1.213.4.5.2.1.101|24590-2^^2.16.840.1.113883.6.1^ISO|
 OBX|1|TX|URL_VIEWER_DRIMBOX^URL de la visionneuse DRIMbox^TLR_OBSERVATION||URL||||||F
 OBX|2|CE|CODE_ACTE_IMAGERIE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|24590-2^résonance magnétique cerveau^LN||||||F
 OBX|3|CE|LOCALISATION_ANATOMIQUE^Code de l'acte d'imagerie réalisée^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F
