@@ -2068,12 +2068,30 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2
   * ?: Requested Procedure ID
   * ?: 
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.1
+  * ?: Entity Identifier
+  * ?: Code issu du JDV [JDV_modalitedemandeActeImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.3
+  * ?: Universal Id
+  * ?: OID du code system utilisé1.2.250.1.213.1.1.4.322 pour TerminologieCISIS1.2.840.10008.2.16.4 pour DCM
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.4
+  * ?: Universal Id Type
+  * ?: ISO
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-3
   * ?: Study Instance UID
   * ?: 
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4
   * ?: Scheduled Procedure Step ID
   * ?: 
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4.1
+  * ?: Entity Identifier
+  * ?: Code issu du JDV [JDV_modalitedemandeActeImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4.3
+  * ?: Universal Id
+  * ?: OID du code system utilisé1.2.250.1.213.1.1.4.322 pour TerminologieCISIS1.2.840.10008.2.16.4 pour DCM
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4.4
+  * ?: Universal Id Type
+  * ?: ISO
 
 ##### Groupe OBSERVATION - URL de viewer DRIMbox
 

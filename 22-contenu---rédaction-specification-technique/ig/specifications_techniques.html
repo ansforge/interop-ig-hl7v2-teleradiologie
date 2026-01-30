@@ -5357,6 +5357,41 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
     </tr>
     <tr>
       <td>
+        <p>IPC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
+        <p>Code issu du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>OID du code system utilisé</p>
+        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
+        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <p>IPC-3</p>
       </td>
       <td>
@@ -5375,6 +5410,41 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       </td>
       <td>
         <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-4.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
+        <p>Code issu du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-4.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>OID du code system utilisé</p>
+        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
+        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-4.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
       </td>
     </tr>
   </tbody>
@@ -5671,13 +5741,13 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l13009">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+<p><a name="l13161">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
 
 <h5 id="groupe-observation---modalité-dimagerie-1">Groupe OBSERVATION - Modalité d’imagerie</h5>
 
-<p><a name="l13027">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
+<p><a name="l13179">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
 Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie">Groupes OBSERVATION – Modalité d’imagerie</a></p>
 
@@ -6923,7 +6993,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 09:23+0000">2026-01-30</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 11:02+0000">2026-01-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

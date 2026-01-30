@@ -77,10 +77,10 @@ Ces informations sont transmises au **SI de téléradiologie** afin de permettre
 MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O01^ORM_O01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
 PV1||O|||||||||||||||||IdentifiantRendezVous|
-ORC|NW|20260106134418|A compléter||SC||||20260106134418|
+ORC|SC|IdentifiantDemandeExamen|
 TQ1||||||Durée de rétention des images|20260106184418
-OBR||IdentifiantDemandeExamen||24590-2^résonance magnétique cerveau^LN||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|
-IPC|Accession Identifier|Accession number|Study Instance UID|Scheduled Procedure Step ID|MR^Résonance magnétique^DCM
+OBR||IdentifiantDemandeExamen||24590-2^résonance magnétique cerveau^LN|
+IPC|Accession number||Study Instance UID|Scheduled Procedure Step ID|
 OBX|1|TX|URL_VIEWER_DRIMBOX^URL de la visionneuse DRIMbox^TLR_OBSERVATION||URL||||||F
 OBX|2|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F
 OBX|3|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.2|24028007^côté droit^SNT||||||F
