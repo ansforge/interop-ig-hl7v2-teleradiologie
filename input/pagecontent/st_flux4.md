@@ -106,7 +106,7 @@ Il est renseigné conformément au standard HL7v2.5.1 et fait l’objet d’une 
         <p>Service Duration</p>
       </td>
       <td>
-        <p>Durée de rétention des images</p>
+        <p>Durée de rétention des images (jours)</p>
       </td>
     </tr>
     <tr>
