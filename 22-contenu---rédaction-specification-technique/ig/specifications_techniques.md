@@ -31,7 +31,7 @@ La présente partie décrit, pour chaque flux métier inclus dans le périmètre
   * Événement HL7 v2: R01 – Unsolicited transmission of observation (Order Control = OK ou OC)
 * Flux métier: **Transmission d’un complément d’information post-acte**
   * Structure de message HL7 v2: OMI_O23
-  * Événement HL7 v2: O23 – Imaging Order Message (Order Control = NW)
+  * Événement HL7 v2: O23 – Imaging Order Message (Order Control = SR)
 
 >  **(1) :** Le flux d'annulation est un flux **optionnel** dans le cadre du volet Téléradiologie. Son implémentation **n’est pas obligatoire** et peut être omise sans remettre en cause la conformité globale des échanges. 
 
