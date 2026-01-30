@@ -11,7 +11,7 @@ La présente spécification technique définit les modalités d’échange des i
 
 Cette spécification s’applique exclusivement aux flux identifiés dans le [Volume 1 - Etude fonctionnelle](./specifications_fonctionnelles.md). Le choix du standard est également le fruit d’une [étude dédiée à retrouver en annexe](./norme_standard.md).
 
-Les échanges sont basés sur des messages HL7 v2 conformes à la version **2.5.1**. Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine [IHE Radiology](https://www.ihe.net/ihe_domains/radiology/), et notamment le profil [IHE Scheduled Workflow (SWF.b)](https://wiki.ihe.net/index.php/Scheduled_Workflow.b), afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil [IHE PAM-FR](https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf) sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identité nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification [Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure](https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf), publiée par Interop’santé.
+Les échanges sont basés sur des messages [HL7 v2 conformes à la version **2.5.1**](https://www.hl7.eu/HL7v2x/v251/std251/hl7.html). Lorsque cela est applicable, la spécification s’appuie sur les profils du domaine [IHE Radiology](https://www.ihe.net/ihe_domains/radiology/), et notamment le profil [IHE Scheduled Workflow (SWF.b)](https://wiki.ihe.net/index.php/Scheduled_Workflow.b), afin d’assurer la cohérence des échanges avec les workflows d’imagerie existants. Les principes définis par le profil [IHE PAM-FR](https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf) sont également pris en compte pour la gestion de l’identité patient, en particulier en ce qui concerne l’identité nationale de santé (INS). Enfin, les types de données HL7 v2 sont contraints, lorsque cela est applicable, par la spécification [Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure](https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf), publiée par Interop’santé.
 
 Il est pertinent de préciser que les flux décrits dans la présente spécification portent principalement sur des **données nécessaires à l’orchestration du workflow**.
  La transmission de la **demande d’examen d’imagerie formalisée sous forme de document clinique**, ainsi que celle d’éventuels **documents cliniques complémentaires**, n’est pas assurée par ces flux transactionnels et fait l’objet de flux documentaires distincts s’appuyant sur le [Volet de transmission d’un document CDA-R2 en HL7v2](https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/).
@@ -1231,7 +1231,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Autorité d'affectation de l'identifiant du PS
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.1 (optionnel)
   * ?: Namespace Id
-  * ?: Nom de l'aurotité d'affectation
+  * ?: Nom de l'autorité d'affectation
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.2
   * ?: Universal Id
   * ?: Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : 1.2.250.1.71.4.2.1
@@ -1367,7 +1367,7 @@ Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de
   * ?:  
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.1
   * ?: Code 
-  * ?: Valeur issue du JDV [JDV_modalitedemandeActeImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
+  * ?: Valeur issue du [JDV_modalitedemandeActeImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.3
   * ?: Name Of Coding System
   * ?: terminologie-cisis-fr ou DCM en fonction de l'appartenance du code à l'un des systèmes de codage
@@ -1440,7 +1440,7 @@ Ce groupe est composé d’un segment OBX obligatoire permettant d’indiquer la
   * ?:  
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.1
   * ?: Code 
-  * ?: Valeur issue du JDV [JDV_RegionAnatomique-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-region-anatomique-cisis.html)
+  * ?: Valeur issue du [JDV_RegionAnatomique-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-region-anatomique-cisis.html)
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.3
   * ?: Name Of Coding System
   * ?: SNT
@@ -1484,7 +1484,7 @@ Ce groupe est composé d’un segment OBX optionnel permettant de compléter la 
   * ?:  
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-5.1
   * ?: Code 
-  * ?: Valeur issue du JDV [JDV_ModificateurTopographique-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modificateur-topographique-cisis.html)
+  * ?: Valeur issue du [JDV_ModificateurTopographique-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modificateur-topographique-cisis.html)
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-5.3
   * ?: Name Of Coding System
   * ?: SNT
@@ -1704,7 +1704,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Autorité d'affectation de l'identifiant du PS
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.1 (optionnel)
   * ?: Namespace Id
-  * ?: Nom de l'aurotité d'affectation
+  * ?: Nom de l'autorité d'affectation
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.2
   * ?: Universal Id
   * ?: Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : 1.2.250.1.71.4.2.1
@@ -1820,7 +1820,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Autorité d'affectation de l'identifiant du PS
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.1 (optionnel)
   * ?: Namespace Id
-  * ?: Nom de l'aurotité d'affectation
+  * ?: Nom de l'autorité d'affectation
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > > ORC-12.9.2
   * ?: Universal Id
   * ?: Autorité d'affectation de l'identifiant du PS (OID de gestion de personnes) : 1.2.250.1.71.4.2.1
@@ -2070,10 +2070,10 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
   * ?: 
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.1
   * ?: Entity Identifier
-  * ?: Code issu du JDV [JDV_modalitedemandeActeImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
+  * ?: Code issu du [JDV_CodeDocumentImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html)
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.3
   * ?: Universal Id
-  * ?: OID du code system utilisé1.2.250.1.213.1.1.4.322 pour TerminologieCISIS1.2.840.10008.2.16.4 pour DCM
+  * ?: OID du code system utilisé2.16.840.1.113883.6.1
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.4
   * ?: Universal Id Type
   * ?: ISO
@@ -2085,7 +2085,7 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
   * ?: 
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4.1
   * ?: Entity Identifier
-  * ?: Code issu du JDV [JDV_modalitedemandeActeImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html)
+  * ?: Code issu du [JDV_CodeDocumentImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html)
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4.3
   * ?: Universal Id
   * ?: OID du code system utilisé1.2.250.1.213.1.1.4.322 pour TerminologieCISIS1.2.840.10008.2.16.4 pour DCM
@@ -2170,7 +2170,7 @@ Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer le
   * ?:  
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.1
   * ?: Code 
-  * ?: Valeur issue du JDV [JDV_CodeDocumentImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html)
+  * ?: Valeur issue du [JDV_CodeDocumentImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html)
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.3
   * ?: Name Of Coding System
   * ?: LN
@@ -2181,13 +2181,12 @@ Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer le
 ##### Groupes OBSERVATION - Localisation anatomique
 
 Les groupes **OBSERVATION – Localisation anatomique** sont **optionnel** dans le cadre du flux 4.
- Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.
- Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Localisation anatomique](./st_flux1.md#Groupes-OBSERVATION---Localisation-anatomique)
+ Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1 **à l’exception du champ OBX-11 prenant la valeur “F” dans le cadre de ce flux**. Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Localisation anatomique](./specifications_techniques.md#groupes-observation---localisation-anatomique)
 
 ##### Groupe OBSERVATION - Modalité d’imagerie
 
-Le groupe **OBSERVATION - Modalité d’imagerie** est optionnel dans le cadre du flux 4. Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.
- Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Modalité d’imagerie](./st_flux1.md#Groupes-OBSERVATION---Modalité-d-imagerie)
+Le groupe **OBSERVATION - Modalité d’imagerie** est optionnel dans le cadre du flux 4. Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1 **à l’exception du champ OBX-11 prenant la valeur “F” dans le cadre de ce flux**.
+ Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Modalité d’imagerie](./specifications_techniques.md#groupe-observation---modalité-dimagerie)
 
 ##### Groupes OBSERVATION - Produit administré
 
