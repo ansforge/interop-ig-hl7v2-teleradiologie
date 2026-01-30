@@ -1,6 +1,6 @@
 ##### Flux 2 - Annulation de la demande d'examen d'imagerie
 
-Ce flux repose sur l’utilisation d'un messages **ORM^O01**, conformes au standard **HL7 v2.5.1**.
+Ce flux repose sur l’utilisation d'un message **ORM^O01**, conforme au standard **HL7 v2.5.1**.
 
 Les segments sont renseignés conformément au profil **IHE Scheduled Workflow (SWF)**, lorsqu’il est applicable, et font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
 
