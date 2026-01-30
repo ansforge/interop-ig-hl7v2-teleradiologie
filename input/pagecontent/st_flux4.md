@@ -279,6 +279,41 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
+        <p>IPC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
+        <p>Code issu du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>OID du code system utilisé</p>
+        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
+        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <p>IPC-3</p>
       </td>
       <td>
@@ -297,6 +332,41 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
       </td>
       <td>
         <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-4.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
+        <p>Code issu du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-4.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>OID du code system utilisé</p>
+        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
+        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-4.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
       </td>
     </tr>
   </tbody>
