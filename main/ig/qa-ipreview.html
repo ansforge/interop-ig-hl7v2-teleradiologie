@@ -21,7 +21,7 @@ This fragment is available on       <a href="index.html">index.html</a>
     <ul>
       <li>
 
-          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-26 
+          IG &copy; 2020+ Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on FHIR 4.0.1. Generated 2026-01-30 
           
            
             Liens: Table des matières  |
@@ -31,6 +31,18 @@ Historique des versions
 
           
          (        <a href="toc.html">src</a>
+)
+      </li>
+      <li>
+ConformanceLab (Interoplab) : plateforme de validation FHIR&reg; permettant aux organisations de configurer, gérer et publier leur propre environnement de tests et de certification basé sur TestScript. (        <a href="norme_standard.html">src</a>
+)
+      </li>
+      <li>
+Inferno : framework extensible de tests automatisés pour HL7&reg; FHIR&reg;, successeur de l’outil Crucible, permettant de définir et d’exécuter des tests rigoureux de conformité ; (        <a href="norme_standard.html">src</a>
+)
+      </li>
+      <li>
+Touchstone (AEGIS) : plateforme d’accélération des implémentations FHIR&reg;, reposant sur le moteur de tests TestScript, proposant des serveurs de référence (WildFHIR) et un large catalogue de scripts de tests open source ; (        <a href="norme_standard.html">src</a>
 )
       </li>
       <li>
@@ -53,7 +65,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://esante.gouv.fr/">esante.gouv.fr</a>
@@ -71,7 +83,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://esante.gouv.fr">esante.gouv.fr</a>
@@ -80,7 +92,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Mon, Jan 26, 2026 08:13+0000">2026-01-26</span>
+. Generated           <span title="Fri, Jan 30, 2026 09:13+0000">2026-01-30</span>
 
                     <br/>
 
@@ -101,7 +113,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://github.com/ansforge/interop-ig-teleradiologie/issues/new">github.com</a>
@@ -110,7 +122,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
 
           IG &copy; 2020+           <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>
 .  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Mon, Jan 26, 2026 08:13+0000">2026-01-26</span>
+. Generated           <span title="Fri, Jan 30, 2026 09:13+0000">2026-01-30</span>
 
                     <br/>
 
@@ -131,7 +143,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://solidarites-sante.gouv.fr">solidarites-sante.gouv.fr</a>
@@ -151,7 +163,7 @@ Volet Téléradiologie - version de développement local (v0.1.0) construite par
       </tr>
       <tr>
         <td>
-          <a href="annexes.html">web</a>
+          <a href="artifacts.html">web</a>
         </td>
         <td>
           <a href="https://esante.gouv.fr/">esante.gouv.fr</a>
@@ -192,6 +204,451 @@ Pour cela, il suffit de télécharger le           <a href="package.tgz">package
 Pour plus d’information sur la validation des instances de ressource contre un profil issu de cette spécification, consulter la documentation de l’opération           <a href="https://www.hl7.org/fhir/resource-operation-validate.html">$validate</a>
  et la           <a href="https://interop.esante.gouv.fr/ig/documentation/valider_res.html">documentation de l’ANS</a>
 .
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.dicomstandard.org/">www.dicomstandard.org</a>
+        </td>
+        <td>
+Le standard           <a href="https://www.dicomstandard.org/">DICOM (Digital Imaging and Communications in Medicine)</a>
+ est un standard international dédié à la gestion, au stockage, à la transmission et à la visualisation des images médicales. Il définit à la fois un format de fichier pour l’imagerie médicale et un ensemble de services réseau permettant l’échange de ces images et des métadonnées associées entre équipements et systèmes d’information d’imagerie (modalités, PACS, visionneuses). DICOM est nativement orienté vers les besoins associés aux domaines de l’imagerie médicale, notamment la radiologie, la médecine nucléaire, la radiothérapie et l’imagerie interventionnelle. Il constitue le socle technique permettant l’échange d’images médicales et d’informations associées au sein des systèmes d’imagerie.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">esante.gouv.fr</a>
+        </td>
+        <td>
+Le standard HL7 CDA R2 est très répandu à l’international et largement adopté dans le contexte français. Le standard HL7 CDA est le format de référence utilisé dans les volets métiers du CI-SIS disponibles sur           <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">l’espace de Publication du CI-SIS</a>
+. Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://interop.esante.gouv.fr/ig/doctrine/">interop.esante.gouv.fr</a>
+        </td>
+        <td>
+Afin de capitaliser l’expérience acquise et de favoriser la réutilisation des développements, la           <a href="https://interop.esante.gouv.fr/ig/doctrine/">doctrine du CI-SIS</a>
+ incite à l’utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">esante.gouv.fr</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">Structuration minimale de documents de santé</a>
+, qui définit la structure des données de l’entête d’un document CDA
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda">esante.gouv.fr</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda">Modèles de contenus CDA</a>
+, qui définit la structure des données du corps du document.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://docs.art-decor.org/">docs.art-decor.org</a>
+        </td>
+        <td>
+La suite d’outil open source           <a href="https://docs.art-decor.org/">ART-DECOR</a>
+ permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d’un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s’agit d’un langage permettant de valider la structure d’un document XML via un ensemble d’assertions. Les schematrons peuvent être utilisés de deux manières :
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ihe-europe.net/testing-IHE/gazelle">www.ihe-europe.net</a>
+        </td>
+        <td>
+En mode intégré : via des plateformes de test comme           <a href="https://www.ihe-europe.net/testing-IHE/gazelle">Gazelle</a>
+ (ANS et IHE)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/">www.interopsante.org</a>
+        </td>
+        <td>
+Dans le cadre français, l’association           <a href="https://www.interopsante.org/">Interop’Sante</a>
+ a publié un           <a href="https://hl7.fr/ig/fhir/core/">guide d’implémentation FHIR</a>
+ qui définit des profils FHIR pour répondre aux besoins spécifiques du système de santé français. Ces profils adaptent les ressources FHIR standard pour inclure des contraintes et des extensions spécifiques au contexte français.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://hl7.fr/ig/fhir/core/">hl7.fr</a>
+        </td>
+        <td>
+Dans le cadre français, l’association           <a href="https://www.interopsante.org/">Interop’Sante</a>
+ a publié un           <a href="https://hl7.fr/ig/fhir/core/">guide d’implémentation FHIR</a>
+ qui définit des profils FHIR pour répondre aux besoins spécifiques du système de santé français. Ces profils adaptent les ressources FHIR standard pour inclure des contraintes et des extensions spécifiques au contexte français.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">esante.gouv.fr</a>
+        </td>
+        <td>
+L’ANS exploite les ressources de ce standard dans la majorité des volets de la couche Service
+disponibles sur           <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">l’espace de Publication</a>
+ du CI-SIS.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation">participez.esante.gouv.fr</a>
+        </td>
+        <td>
+Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d’une version R5, les ressources présentées dans la suite du document s’appuient sur la version R4, conformément à la stratégie nationale en vigueur. Cette stratégie relative au choix des versions FHIR a été définie dans le cadre de travaux conduits conjointement par Interop’Santé et l’Agence du Numérique en Santé en 2023-2024, puis validée à l’issue d’une           <a href="https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation">concertation</a>
+ portée par l’ANS.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools">marketplace.visualstudio.com</a>
+        </td>
+        <td>
+L’extension pour Visual Studio Code           <a href="https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools">FHIR Tools</a>
+, facilitant l’édition, la validation et la navigation dans les ressources FHIR ;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ihe-europe.net/testing-IHE/gazelle">www.ihe-europe.net</a>
+        </td>
+        <td>
+La           <a href="https://www.ihe-europe.net/testing-IHE/gazelle">plateforme Gazelle</a>
+ est également utilisée pour tester les ressources FHIR. L’outil           <a href="https://ahdis.github.io/matchbox/">matchbox</a>
+ est accessible via le           <a href="https://interop.esante.gouv.fr/evs/home.seam">service de Validation EVS Client</a>
+. Il permet de vérifier si :
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://ahdis.github.io/matchbox/">ahdis.github.io</a>
+        </td>
+        <td>
+La           <a href="https://www.ihe-europe.net/testing-IHE/gazelle">plateforme Gazelle</a>
+ est également utilisée pour tester les ressources FHIR. L’outil           <a href="https://ahdis.github.io/matchbox/">matchbox</a>
+ est accessible via le           <a href="https://interop.esante.gouv.fr/evs/home.seam">service de Validation EVS Client</a>
+. Il permet de vérifier si :
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://interop.esante.gouv.fr/evs/home.seam">interop.esante.gouv.fr</a>
+        </td>
+        <td>
+La           <a href="https://www.ihe-europe.net/testing-IHE/gazelle">plateforme Gazelle</a>
+ est également utilisée pour tester les ressources FHIR. L’outil           <a href="https://ahdis.github.io/matchbox/">matchbox</a>
+ est accessible via le           <a href="https://interop.esante.gouv.fr/evs/home.seam">service de Validation EVS Client</a>
+. Il permet de vérifier si :
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/Livre-Blanc-TLR_vFinale.pdf">industriels.esante.gouv.fr</a>
+        </td>
+        <td>
+HL7 v2 est un standard hautement mature, initialement publié à la fin des années 1980 et ayant fait l’objet de nombreuses évolutions successives au travers de plusieurs versions majeures, témoignant de sa stabilité, de sa robustesse. Dans l’écosystème français, il est solidement ancré dans le contexte intra-hospitalier au sein pratiques des systèmes d’information de santé, en particulier dans le domaine de l’imagerie médicale. Ce constat repose à la fois sur son usage historique largement répandu et sur les travaux menés dans le cadre du volet Téléradiologie, notamment au travers d’ateliers associant éditeurs de RIS et plateformes de téléradiologie. Ces échanges ont permis de confronter les besoins opérationnels aux capacités des standards existants et ont confirmé le niveau de maturité et d’industrialisation de HL7 v2 pour ce type de cas d’usage.
+Par ailleurs, le           <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/Livre-Blanc-TLR_vFinale.pdf">Livre blanc Téléradiologie</a>
+ élaboré par l’Agence du Numérique en Santé en collaboration avec l’écosystème éditeur s’appuie sur des flux fondés sur le standard HL7 v2, renforçant ainsi ce constat.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm">esante.gouv.fr</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm">Transport d’un document CDA en HL7v2</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-de-transmission-au-lps-dun-document-cda">esante.gouv.fr</a>
+        </td>
+        <td>
+          <a href="https://esante.gouv.fr/volet-de-transmission-au-lps-dun-document-cda">Transmission au LPS d’un document CDA provenant d’un courriel MSSanté</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">www.interopsante.org</a>
+        </td>
+        <td>
+L’ancrage d’HL7 v2 au niveau français est également la conséquence des travaux de l’organisme InteropSanté, qui publie et maintient des spécifications nationales fondées sur HL7 v2, telles que           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">les contraintes françaises du profil IHE PAM</a>
+,           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">les contraintes françaises sur les types de données HL7 v2</a>
+, ainsi que les profils           <a href="https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf">ILW.FR</a>
+ et           <a href="https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf">LTW.FR</a>
+ encadrant les échanges de demandes et de résultats d’examens de biologie, en contexte intra-établissement et inter-organisations.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">www.interopsante.org</a>
+        </td>
+        <td>
+L’ancrage d’HL7 v2 au niveau français est également la conséquence des travaux de l’organisme InteropSanté, qui publie et maintient des spécifications nationales fondées sur HL7 v2, telles que           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">les contraintes françaises du profil IHE PAM</a>
+,           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">les contraintes françaises sur les types de données HL7 v2</a>
+, ainsi que les profils           <a href="https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf">ILW.FR</a>
+ et           <a href="https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf">LTW.FR</a>
+ encadrant les échanges de demandes et de résultats d’examens de biologie, en contexte intra-établissement et inter-organisations.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf">www.interopsante.org</a>
+        </td>
+        <td>
+L’ancrage d’HL7 v2 au niveau français est également la conséquence des travaux de l’organisme InteropSanté, qui publie et maintient des spécifications nationales fondées sur HL7 v2, telles que           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">les contraintes françaises du profil IHE PAM</a>
+,           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">les contraintes françaises sur les types de données HL7 v2</a>
+, ainsi que les profils           <a href="https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf">ILW.FR</a>
+ et           <a href="https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf">LTW.FR</a>
+ encadrant les échanges de demandes et de résultats d’examens de biologie, en contexte intra-établissement et inter-organisations.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf">www.interopsante.org</a>
+        </td>
+        <td>
+L’ancrage d’HL7 v2 au niveau français est également la conséquence des travaux de l’organisme InteropSanté, qui publie et maintient des spécifications nationales fondées sur HL7 v2, telles que           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">les contraintes françaises du profil IHE PAM</a>
+,           <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">les contraintes françaises sur les types de données HL7 v2</a>
+, ainsi que les profils           <a href="https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf">ILW.FR</a>
+ et           <a href="https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf">LTW.FR</a>
+ encadrant les échanges de demandes et de résultats d’examens de biologie, en contexte intra-établissement et inter-organisations.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/hapifhir/hapi-hl7v2">github.com</a>
+        </td>
+        <td>
+Bibibliothèques logicielles dans la plupart des langages de développement courants (Java, .NET, Python, JavaScript…), telles que           <a href="https://github.com/hapifhir/hapi-hl7v2">HAPI HL7</a>
+,           <a href="https://github.com/nHapiNET/nHapi">NHapi</a>
+ ou           <a href="https://crs4.github.io/hl7apy/">hl7apy</a>
+, facilitant la génération, le parsing, la validation et le transport des messages HL7 v2 au sein des systèmes d’information
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://github.com/nHapiNET/nHapi">github.com</a>
+        </td>
+        <td>
+Bibibliothèques logicielles dans la plupart des langages de développement courants (Java, .NET, Python, JavaScript…), telles que           <a href="https://github.com/hapifhir/hapi-hl7v2">HAPI HL7</a>
+,           <a href="https://github.com/nHapiNET/nHapi">NHapi</a>
+ ou           <a href="https://crs4.github.io/hl7apy/">hl7apy</a>
+, facilitant la génération, le parsing, la validation et le transport des messages HL7 v2 au sein des systèmes d’information
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://crs4.github.io/hl7apy/">crs4.github.io</a>
+        </td>
+        <td>
+Bibibliothèques logicielles dans la plupart des langages de développement courants (Java, .NET, Python, JavaScript…), telles que           <a href="https://github.com/hapifhir/hapi-hl7v2">HAPI HL7</a>
+,           <a href="https://github.com/nHapiNET/nHapi">NHapi</a>
+ ou           <a href="https://crs4.github.io/hl7apy/">hl7apy</a>
+, facilitant la génération, le parsing, la validation et le transport des messages HL7 v2 au sein des systèmes d’information
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ihe-europe.net/testing-IHE/gazelle">www.ihe-europe.net</a>
+        </td>
+        <td>
+          <a href="https://www.ihe-europe.net/testing-IHE/gazelle">Les plateformes Gazelle</a>
+ (ANS et IHE) sont également utilisées pour tester les profils de message. L’outil GazelleHL7Validator intègre les fichiers de définitions. Accessible via le service de Validation EVS Client, il permet de vérifier si :
+              <ul>
+
+                  <li>Le message est bien structuré</li>
+
+                  <li>Le message respecte les règles spécifiées dans les fichiers de définition</li>
+
+    
+          </ul>
+
+  
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">interop.esante.gouv.fr</a>
+        </td>
+        <td>
+Le standard HL7 v2 est d’ores et déjà présent au sein du workflow global de la téléradiologie par l’intermédiaire du           <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">volet de transmission d’un document CDA-R2 en HL7v2</a>
+, utilisé pour la transmission du compte-rendu d’imagerie depuis la plateforme de téléradiologie vers le RIS de la structure d’imagerie. Par ailleurs, le volet téléradiologie envisage également la transmission, en complément des éléments structurés de la demande d’examen, de documents associés tels que la demande d’examen formalisée ou tout document complémentaire permettant d’enrichir le contexte clinique. Ces flux complémentaires reposent également sur le volet de Transport de documents CDA en HL7 v2, renforçant ainsi la cohérence globale des échanges autour de ce standard.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ihe.net/ihe_domains/radiology/">www.ihe.net</a>
+        </td>
+        <td>
+Au-delà de ces usages existants, plusieurs profils IHE du           <a href="https://www.ihe.net/ihe_domains/radiology/">domaine IHE RADIOLOGY</a>
+ s’appuient historiquement sur HL7 v2 pour structurer les échanges liés aux workflows d’imagerie. Le profil           <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf">IHE Scheduled Workflow (SWF.b)</a>
+ définit notamment les transactions permettant d’orchestrer le cycle de vie d’un acte d’imagerie, depuis la prescription jusqu’à la production des résultats. Bien que le profil SWF.b ne couvre pas l’intégralité des cas d’usage spécifiques à la téléradiologie, en particulier les étapes de validation médicale distante ou de protocolisation, il propose néanmoins un ensemble de briques fonctionnelles pertinentes, telles que la gestion des demandes d’examen, des statuts associés ou des identifiants d’actes. Ces briques peuvent être mobilisées et adaptées dans le cadre des flux de téléradiologie, sans nécessiter l’adoption exhaustive du profil IHE.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf">www.ihe.net</a>
+        </td>
+        <td>
+Au-delà de ces usages existants, plusieurs profils IHE du           <a href="https://www.ihe.net/ihe_domains/radiology/">domaine IHE RADIOLOGY</a>
+ s’appuient historiquement sur HL7 v2 pour structurer les échanges liés aux workflows d’imagerie. Le profil           <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf">IHE Scheduled Workflow (SWF.b)</a>
+ définit notamment les transactions permettant d’orchestrer le cycle de vie d’un acte d’imagerie, depuis la prescription jusqu’à la production des résultats. Bien que le profil SWF.b ne couvre pas l’intégralité des cas d’usage spécifiques à la téléradiologie, en particulier les étapes de validation médicale distante ou de protocolisation, il propose néanmoins un ensemble de briques fonctionnelles pertinentes, telles que la gestion des demandes d’examen, des statuts associés ou des identifiants d’actes. Ces briques peuvent être mobilisées et adaptées dans le cadre des flux de téléradiologie, sans nécessiter l’adoption exhaustive du profil IHE.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">www.interopsante.org</a>
+        </td>
+        <td>
+De même, le profil           <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a>
+ (Patient Administration Management France), bien qu’orienté vers la gestion administrative des patients et non vers les processus métiers propres à la téléradiologie, constitue une référence nationale pour la gestion de l’identité patient et des traits d’identification, notamment autour de l’INS. Les segments et champs HL7 v2 définis par ce profil peuvent ainsi être réutilisés pour garantir une gestion cohérente et conforme de l’identité du patient dans les flux de téléradiologie, indépendamment des messages métiers échangés.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://interop.esante.gouv.fr/ig/doctrine/">interop.esante.gouv.fr</a>
+        </td>
+        <td>
+La           <a href="https://interop.esante.gouv.fr/ig/doctrine/">doctrine du CI-SIS</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.himss.org/sites/hde/files/FileDownloads/2013-09-23-EvaluatingHITStandards-FINAL.pdf">www.himss.org</a>
+        </td>
+        <td>
+«           <a href="https://www.himss.org/sites/hde/files/FileDownloads/2013-09-23-EvaluatingHITStandards-FINAL.pdf">Evaluating HIT Standards</a>
+ » document sur la comparaison des standards publiés par l’organisation           <a href="https://www.himss.org/">HIMSS.</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://www.himss.org/">www.himss.org</a>
+        </td>
+        <td>
+«           <a href="https://www.himss.org/sites/hde/files/FileDownloads/2013-09-23-EvaluatingHITStandards-FINAL.pdf">Evaluating HIT Standards</a>
+ » document sur la comparaison des standards publiés par l’organisation           <a href="https://www.himss.org/">HIMSS.</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="norme_standard.html">web</a>
+        </td>
+        <td>
+          <a href="https://joinup.ec.europa.eu/collection/common-assessment-method-standards-and-specifications-camss">joinup.ec.europa.eu</a>
+        </td>
+        <td>
+La méthode           <a href="https://joinup.ec.europa.eu/collection/common-assessment-method-standards-and-specifications-camss">CAMSS</a>
+ (Common Assessment method for standards and specifications) soutenue par le programme de la commission européenne concernant les solutions d’interopérabilité pour les administrations publiques. Cette initiative vise à promouvoir la collaboration entre les états membres de l’union européenne dans la définition d’une méthode d’évaluation commune de standards pour le développement des services administratifs en ligne.
         </td>
       </tr>
       <tr>
@@ -802,406 +1259,6 @@ Identification nationale principale du professionnel. Cette identification est o
         </td>
         <td>
 Identification nationale de l’Entité initiée pour les besoins du SI-CPS. Cette identification est obtenue par la concaténation du type d’identifiant national de structure (provenant de la nomenclature CodeSystem-TRE-G07-TypeIdentifiantStructure) et de l’identifiant de la structure. Voir           <a href="https://mos.esante.gouv.fr/4.html#_86304fbf-ab15-4640-993a-242c61794854">Modèle des objets de santé (MOS) – idNat_struct</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://interop.esante.gouv.fr/">interop.esante.gouv.fr</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf">esante.gouv.fr</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf">industriels.esante.gouv.fr</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil">github.com</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite">industriels.esante.gouv.fr</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1">interop.esante.gouv.fr</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1">interop.esante.gouv.fr</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="tests.html">web</a>
-        </td>
-        <td>
-          <a href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur">industriels.esante.gouv.fr</a>
-        </td>
-        <td>
-          <rect rx="4.1667" ry="4.1667" width="66.6667" x="10.4167" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="26.0417" font-size="12.5" textLength="35.4167" y="214.6464" font-family="Verdana" fill="#EEEEEE">Tests</text>
-          <rect rx="4.1667" ry="4.1667" width="130.2083" x="129.1667" y="54.1504" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#343852" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/" href="https://interop.esante.gouv.fr/" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/" xlink:href="https://interop.esante.gouv.fr/" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="98.9583" y="81.3782" font-family="Verdana" fill="#FD7E14">Espace de test</text>          </a>
-          <rect rx="4.1667" ry="4.1667" width="58.3333" x="311.4583" y="20.8333" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:actuate="onRequest" title="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" xlink:href="https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="27.0833" y="48.0611" font-family="Verdana" fill="#FD7E14">CGU</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,43.7337 301.0417,43.7337 L311.4583,43.7337 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="78.125" x="311.4583" y="87.4674" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" xlink:href="https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="327.0833" font-size="12.5" textLength="46.875" y="114.6952" font-family="Verdana" fill="#FD7E14">Manuel</text>          </a>
-          <path d="M259.375,77.0508 L269.7917,77.0508 C285.4167,77.0508 285.4167,110.3678 301.0417,110.3678 L311.4583,110.3678 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,77.0508 118.75,77.0508 L129.1667,77.0508 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="92.7083" x="129.1667" y="120.7845" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#D20050" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:actuate="onRequest" title="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" xlink:href="https://github.com/ansforge/FIG_ans-ig-sample/wiki/Valider-une-ressource-contre-un-profil" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="144.7917" font-size="12.5" textLength="61.4583" y="148.0123" font-family="Verdana" fill="#FD7E14">HAPI FHIR</text>          </a>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,143.6849 118.75,143.6849 L129.1667,143.6849 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="129.1667" y="187.4186" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#EAB9BF" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="84.375" y="214.6464" font-family="Verdana" fill="#EEEEEE">Projectathon</text>
-          <rect rx="4.1667" ry="4.1667" width="115.625" x="296.875" y="154.1016" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" xlink:href="https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="84.375" y="181.3293" font-family="Verdana" fill="#FD7E14">Présentation</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,177.002 286.4583,177.002 L296.875,177.002 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="296.875" y="220.7357" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=2&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="312.5" font-size="12.5" textLength="125" y="247.9635" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M244.7917,210.319 L255.2083,210.319 C270.8333,210.319 270.8333,243.6361 286.4583,243.6361 L296.875,243.6361 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,210.319 118.75,210.319 L129.1667,210.319 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="198.9583" x="129.1667" y="320.6868" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#383837" height="45.8008"></rect>
-          <text lengthAdjust="spacing" x="144.7917" font-size="12.5" textLength="167.7083" y="347.9146" font-family="Verdana" fill="#EEEEEE">Verification de conformité</text>
-          <rect rx="4.1667" ry="4.1667" width="156.25" x="380.2083" y="287.3698" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:actuate="onRequest" title="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" xlink:href="https://interop.esante.gouv.fr/gazelle/testing/testsDefinition/testsList.seam?testType=5&amp;testStatus=1" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="125" y="314.5976" font-family="Verdana" fill="#FD7E14">Consulter les Tests</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,310.2702 369.7917,310.2702 L380.2083,310.2702 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <rect rx="4.1667" ry="4.1667" width="148.9583" x="380.2083" y="354.0039" style="stroke:#EEEEEE;stroke-width:1.0416666666666667;" fill="#999999" height="45.8008"></rect>
-          <a xlink:type="simple" xlink:show="new" xlink:title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:actuate="onRequest" title="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" xlink:href="https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur" target="_top">
-<text lengthAdjust="spacing" text-decoration="underline" x="395.8333" font-size="12.5" textLength="117.7083" y="381.2317" font-family="Verdana" fill="#FD7E14">Programme Ségur</text>          </a>
-          <path d="M328.125,343.5872 L338.5417,343.5872 C354.1667,343.5872 354.1667,376.9043 369.7917,376.9043 L380.2083,376.9043 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
-          <path d="M77.0833,210.319 L87.5,210.319 C103.125,210.319 103.125,343.5872 118.75,343.5872 L129.1667,343.5872 " style="stroke:#446E9B;stroke-width:3.125;" fill="none"></path>
         </td>
       </tr>
       <tr>

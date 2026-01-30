@@ -1,7 +1,6 @@
 # Exemples de messages - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
-* [**Annexes**](annexes.md)
 * **Exemples de messages**
 
 ## Exemples de messages
