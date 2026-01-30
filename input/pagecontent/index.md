@@ -46,7 +46,7 @@ La partie [« Volume 2 - Détail des transactions »](./specifications_technique
 
 La pratique de la téléradiologie correspond aux actes de télédiagnostic radiologiques réalisés par un radiologue exerçant à distance de la structure au sein de laquelle l'examen d'imagerie a été produit. Un tel service peut être mis en œuvre de manière ponctuelle, en situation d'urgence, ou de façon régulière dans un contexte de planification.
 
-L'étude menée porte sur la modélisation et la spécification des interactions mises en œuvre entre les différents systèmes d'information afin de permettre **le partage d'éléments nécessaire à l'établissement d'un diagnostic distant** basé sur l'interprétation de données d'imagerie médicale.
+L'étude menée porte sur la modélisation et la spécification des interactions mises en œuvre entre les différents systèmes d'information afin de permettre le partage d'éléments nécessaire à l'établissement d'un diagnostic distant basé sur l'interprétation de données d'imagerie médicale.
 
 Il est à noter que les spécifications d'interopérabilité présentées dans ce volet correspondent à des référentiels qui n'ont ni vocation à définir la structure interne et l'urbanisation des systèmes d'information ni vocation à aborder la gestion des habilitations. Cette gestion des habilitations relatives à l'accès aux données d'imagerie d'un patient doit faire l'objet d'une étude préalable avant toute implémentation de ces interfaces, dans le respect du cadre réglementaire de l'échange et du partage de données de santé applicables.
 
@@ -54,7 +54,7 @@ Les contraintes de sécurité concernant les flux de données associés à la pr
 
 #### Lectorat cible
 
-Le présent guide d'implémentation s'adresse principalement aux chefs de projets et développeurs ainsi que toute personne concernée par des travaux spécifiant des **interfaces interopérables entre structures d'imagerie et plateformes de téléradiologie**.
+Le présent guide d'implémentation s'adresse principalement aux chefs de projets et développeurs ainsi que toute personne concernée par des travaux spécifiant des interfaces interopérables entre structures d'imagerie et plateformes de téléradiologie.
 
 ### Standards utilisés
 
