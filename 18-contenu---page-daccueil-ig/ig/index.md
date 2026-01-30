@@ -74,7 +74,7 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2026-01-30T13:10:03+00:00",
+  "date" : "2026-01-30T13:17:07+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -869,36 +869,23 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "annexes.html"
+              "valueUrl" : "exemples.html"
             }
           ],
-          "nameUrl" : "annexes.html",
-          "title" : "Annexes",
-          "generation" : "markdown",
-          "page" : [
+          "nameUrl" : "exemples.html",
+          "title" : "Exemples de messages",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
             {
-              "extension" : [
-                {
-                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "exemples.html"
-                }
-              ],
-              "nameUrl" : "exemples.html",
-              "title" : "Exemples de messages",
-              "generation" : "markdown"
-            },
-            {
-              "extension" : [
-                {
-                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "doc-ref.html"
-                }
-              ],
-              "nameUrl" : "doc-ref.html",
-              "title" : "Références documentaires",
-              "generation" : "markdown"
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "doc-ref.html"
             }
-          ]
+          ],
+          "nameUrl" : "doc-ref.html",
+          "title" : "Références documentaires",
+          "generation" : "markdown"
         },
         {
           "extension" : [

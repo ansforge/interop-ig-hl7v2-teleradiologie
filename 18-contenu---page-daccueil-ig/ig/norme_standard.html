@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>Normes et Standards - Volet Téléradiologie v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
-    <link href="fhir.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="fhir.css"/>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
-    <!-- Project extras -->
-    <link href="assets/css/project.css" rel="stylesheet"/>
-    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
-    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
-  	<link href="assets/css/prism.css" rel="stylesheet" />
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- Placeholder for child template CSS declarations -->
+      <!-- Placeholder for child template CSS declarations -->
 
-    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+    <![endif] -->
 
-    <!-- Favicons -->
-    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
     <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
@@ -43,15 +43,15 @@
 
     <style type="text/css">h2{--heading-prefix:"3"}
     h3,h4,h5,h6{--heading-prefix:"3"}</style>
-    <div id="segment-header" class="segment">  <!-- segment-header -->
-      <div class="container">  <!-- container -->
-        <!-- Placeholder for child template header declarations -->
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <img height="50" alt="HL7 v2" src="assets/images/hl7v2-logo.png"/>
+    <img src="assets/images/hl7v2-logo.png" alt="HL7 v2" height="50"/>
   </div>
-  <div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-    <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+  <div style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; " id="ans-nav">
+    <a no-external="true" id="hl7-logo" href="https://esante.gouv.fr/"><img src="assets/images/logo-ANS.svg" alt="ANS Logo" height="50"/></a>
+    <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
   </div>
 
   <div id="ig-search">
@@ -65,41 +65,63 @@
 
 
 
-  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+  <img src="assets/images/fra.svg" alt="France flag" title="France" height="16"/>
 
 
             </span>
           </p>
         </div>
-      </div> <!-- /container -->
-    </div>  <!-- /segment-header -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
 
-    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
       <div id="stripe"> </div>
-      <div class="container">  <!-- container -->
-        <!-- HEADER CONTENT -->
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
 
         <nav class="navbar navbar-inverse">
-          <!--status-bar-->
+            <!-- status-bar -->
           <div class="container">
-            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
-            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-              <!-- menu.xml  -->
+                <!-- menu.xml -->
 
-<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+<ul class="nav navbar-nav">
   <li>
     <a href="index.html">Accueil</a>
   </li>
-  <li>
-    <a href="specifications_fonctionnelles.html">Volume 1 - Etude fonctionnelle</a>
-  </li>
-  <li>
-    <a href="norme_standard.html">Normes et Standards</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1 - Etude fonctionnelle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specifications_fonctionnelles.html#méthode">Méthode</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#cadre-juridique-et-orientations-organisationnelles">Cadre juridique et orientations organisationnelles</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#organisation-du-contexte-métier">Organisation du contexte métier</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#définition-des-processus-collaboratifs">Définition des processus colllaboratifs</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#description-des-processus-collaboratifs-et-identification-des-flux">Description des processus collaboratifs et identification des flux</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-mos">Identification des concepts véhiculés dans les flux</a>
+      </li>
+      <li>
+        <a href="specifications_fonctionnelles.html#modélisation-des-flux-dinformations">Modélisation des flux d’informations</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
@@ -109,6 +131,9 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li>
+        <a href="norme_standard.html">Normes et Standards</a>
+      </li>
       <li>
         <a href="exemples.html">Exemples de messages</a>
       </li>
@@ -127,18 +152,18 @@
     <a href="downloads.html">Téléchargements</a>
   </li>
 </ul>
-            </div>  <!-- /.nav-collapse -->
-          </div>  <!-- /.container -->
-        </nav>  <!-- /.navbar -->
-      <!-- /HEADER CONTENT -->
-      </div>  <!-- /container -->
-    </div>  <!-- /segment-navbar -->
-    <!--status-bar-->
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
 
-    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
-      <div class="container">  <!-- container -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Normes et Standards</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Normes et Standards</b></li>
 
           <span style="float:right;">
 
@@ -151,12 +176,12 @@
           </span>
 
         </ul>
-      </div>  <!-- /container -->
-    </div>  <!-- /segment-breadcrumb -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
 
     <a name="top"> </a>
-    <div id="segment-content" class="segment">  <!-- segment-content -->
-      <div class="container">  <!-- container -->
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
 
@@ -168,7 +193,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Volet Téléradiologie - version de développement local (v0.1.0) construite par les outils de publication FHIR (HL7® FHIR® Standard). Voir le <a href='https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html'>répertoire des versions publiées</a></p><!--EndReleaseHeader-->
+    <!-- ReleaseHeader --><p id="publish-box">Volet Téléradiologie - version de développement local (v0.1.0) construite par les outils de publication FHIR (HL7&reg; FHIR&reg; Standard). Voir le <a href="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html">répertoire des versions publiées</a></p>  <!-- EndReleaseHeader -->
   <h2>Normes et Standards</h2>
   
 
@@ -183,33 +208,1226 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-    <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#présentation-synthétique-du-volet-téléradiologie" id="markdown-toc-présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</a></li>
+  <li><a href="#normes-et-standards-étudiés" id="markdown-toc-normes-et-standards-étudiés">Normes et Standards étudiés</a></li>
+  <li><a href="#synthèse-de-létude" id="markdown-toc-synthèse-de-létude">Synthèse de l’étude</a></li>
+  <li><a href="#analyse-et-conclusion" id="markdown-toc-analyse-et-conclusion">Analyse et conclusion</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+</ul>
+
 </div>
+<p style="padding: 5px; border-radius: 5px; border: 2px solid maroon; background: #ffffe6; width: 65%">
+<b>Résumé de l'étude</b><br/>
+Cette étude compare les principaux standards d’interopérabilité susceptibles de répondre aux besoins d’échange du volet Téléradiologie, au regard de critères fonctionnels, techniques et réglementaires. DICOM et HL7 CDA ont été écartés comme supports principaux, leur positionnement ne correspondant pas aux échanges transactionnels attendus. HL7 FHIR offre une couverture fonctionnelle complète et s’inscrit dans les orientations de long terme, mais sa mise en œuvre opérationnelle reste exigeante. À court terme, HL7 v2 apparaît comme la solution la plus pragmatique, en raison de sa maturité, de son adoption par l’écosystème et de l’existence de profils IHE largement industrialisés.
+</p>
+
+<p><br/></p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p><a name="l399">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\specifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.</p>
+
+<p>Les normes et standards étudiés au sein de cette étude sont les suivants :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Standard</strong></th>
+      <th><strong>Modèle de contenu</strong></th>
+      <th><strong>Mécanisme de transport associé</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HL7 Version 2.x (v2)</td>
+      <td>✔</td>
+      <td>Transport externe requis</td>
+    </tr>
+    <tr>
+      <td>DICOM</td>
+      <td>✔</td>
+      <td>✔  (DICOM Upper Layer / DIMSE sur TCP/IP, DICOMweb)</td>
+    </tr>
+    <tr>
+      <td>HL7 CDA</td>
+      <td>✔</td>
+      <td>Transport externe requis</td>
+    </tr>
+    <tr>
+      <td>HL7 FHIR</td>
+      <td>✔</td>
+      <td>✔ (HTTP(S), REST)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;">Table 1 : Normes et standards étudiés</p>
+
+<p>Les standards seront analysés notamment par rapport à leur capacité en matière de structuration du contenu et, le cas échéant, de modalités de transport. Cette étude s’inscrit dans un contexte de mise en œuvre opérationnelle contraint. Un objectif central du volet Téléradiologie est de permettre le versement dans le DMP des demandes d’examen d’imagerie et des comptes rendus produits en contexte de téléradiologie.
+Deux contraintes encadrent cet objectif :</p>
+
+<ul>
+  <li>Le format imposé par le DMP : à ce jour, le DMP n’accepte que des documents cliniques structurés au format CDA.</li>
+  <li>La compatibilité avec l’existant : les délais de mise en œuvre imposent de minimiser les impacts sur les systèmes déjà déployés, notamment les RIS et les plateformes de téléradiologie.</li>
+</ul>
+
+<p>Ces éléments constituent des critères de choix déterminants, au même titre que la couverture fonctionnelle et technique des standards étudiés, et seront pris en compte dans l’analyse comparative et la conclusion de la présente étude.</p>
+
+<p>Les versions des normes et standards étudiés dans le présent document sont celles disponibles à la date de réalisation de l’étude (décembre 2025).</p>
+
+<p>L’étude présente un rappel synthétique du contexte du volet Téléradiologie. Elle propose ensuite, pour chacune des normes et standards étudiés, une analyse détaillée comprenant une description générale, leur maturité et leur niveau d’adoption au sein des systèmes de santé, l’existence d’outillage dédié, ainsi que leur pertinence au regard des cas d’usage identifiés.</p>
+
+<p>Une synthèse comparative est ensuite proposée afin de faciliter la lecture et la mise en perspective des normes et standards évalués. Enfin, une analyse métier et technique croisée permet d’éclairer les choix de standardisation envisageables.</p>
+
+<p>Cette étude s’appuie sur les recommandations et principes du Cadre d’interopérabilité des systèmes d’information de santé (CI-SIS), qui référence les normes et standards internationaux applicables au développement des volets métiers, et constitue le référentiel institutionnel national de doctrine pour l’interopérabilité du système de santé.</p>
+
+<p><br/></p>
+
+<h3 id="présentation-synthétique-du-volet-téléradiologie">Présentation synthétique du volet Téléradiologie</h3>
+
+<p>Cette étude s’inscrit dans le cadre des besoins d’interopérabilité associés au volet « Téléradiologie ». Ce volet a pour objectif de décrire les échanges, et leur contenu, nécessaires à la prise en charge d’un patient lorsque l’interprétation radiologique est réalisée à distance, entre une structure d’imagerie (lieu de réalisation de l’acte) et une plateforme de téléradiologie (lieu d’interprétation).</p>
+
+<p>Les échanges d’informations interviennent principalement entre :</p>
+
+<ul>
+  <li>Le RIS (Système d’Information Radiologique) de la structure d’accueil du patient</li>
+  <li>Le système d’information de la plateforme de téléradiologie</li>
+</ul>
+
+<p>La présente étude couvre les échanges décrits dans la Spécification fonctionnelle des échanges - Téléradiologie, à savoir :</p>
+
+<ul>
+  <li>La transmission d’une demande d’examen d’imagerie</li>
+  <li>L’annulation d’une demande d’examen</li>
+  <li>La réponse à une demande d’examen (acceptation avec protocole d’imagerie ou refus)</li>
+  <li>La transmission d’informations complémentaires post-examen</li>
+</ul>
+
+<p><a name="l549">​</a>Les concepts métiers à véhiculer dans ces flux sont décrits en <a href="./specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS">étape 4 et 5</a> de la spécification fonctionnelle et couvrent plusieurs catégories de données essentielles à la pratique de la téléradiologie :</p>
+
+<ul>
+  <li>Données administratives et d’identification : identités patient et professionnels de santé, identifiants de demandes et d’examens, informations de structure</li>
+  <li>Données cliniques et de prescription : motif d’examen, indications, contexte clinique fourni par le médecin de proximité</li>
+  <li>Données de protocole d’imagerie : éléments nécessaires à la réalisation de l’acte, fournis par le radiologue distant</li>
+  <li>Données techniques et informations post-acte : conditions de réalisation, données documentaires</li>
+</ul>
+
+<p>Le choix final des normes ou standards devra permettre de couvrir l’intégralité des données véhiculées dans le cadre de la téléradiologie, ainsi que les scénarios d’échanges entre la structure d’imagerie et le service d’interprétation distant.</p>
+
+<p><br/></p>
+
+<h3 id="normes-et-standards-étudiés">Normes et Standards étudiés</h3>
+
+<p>Cette section présente les normes et standards susceptibles d’être utilisés pour structurer et, le cas échéant, transporter les données échangées dans le cadre du volet Téléradiologie. Les concepts métiers étudiés dans cette étude sont issus de la Spécification fonctionnelle des échanges Téléradiologie.</p>
+
+<h4 id="standard-dicom">Standard DICOM</h4>
+
+<h5 id="présentation">Présentation</h5>
+
+<p>Le standard <a href="https://www.dicomstandard.org/">DICOM (Digital Imaging and Communications in Medicine)</a> est un standard international dédié à la gestion, au stockage, à la transmission et à la visualisation des images médicales. Il définit à la fois un format de fichier pour l’imagerie médicale et un ensemble de services réseau permettant l’échange de ces images et des métadonnées associées entre équipements et systèmes d’information d’imagerie (modalités, PACS, visionneuses). DICOM est nativement orienté vers les besoins associés aux domaines de l’imagerie médicale, notamment la radiologie, la médecine nucléaire, la radiothérapie et l’imagerie interventionnelle. Il constitue le socle technique permettant l’échange d’images médicales et d’informations associées au sein des systèmes d’imagerie.</p>
+
+<h5 id="maturité-et-adoption">Maturité et adoption</h5>
+
+<p>Le standard DICOM bénéficie d’un très haut niveau de maturité et d’une adoption quasi universelle dans le domaine de l’imagerie médicale. Il est implémenté par l’ensemble des constructeurs de modalités, de PACS, de solutions d’archivage et de visualisation d’images médicales. Son adoption massive et son interopérabilité éprouvée en font un standard incontournable pour la gestion des images médicales, tant au niveau national qu’international.
+La maturité et l’adoption du standard DICOM sont étroitement liées aux travaux menés depuis plus de vingt ans dans le cadre du domaine IHE Radiology, qui constitue historiquement l’un des premiers et des plus structurants domaines d’IHE. Créé à la fin des années 1990, le domaine IHE Radiology a précisément pour objectif de favoriser l’interopérabilité des systèmes d’imagerie médicale en s’appuyant sur une utilisation du standard DICOM.</p>
+
+<p>Dans ce cadre, DICOM est utilisé comme socle pour la gestion et l’échange des objets d’imagerie (images, études, séries, métadonnées techniques). De nombreux profils IHE du domaine Radiology reposent ainsi directement sur DICOM, parmi lesquels figurent notamment :</p>
+<ul>
+  <li>Scheduled Workflow (SWF), pour l’orchestration du cycle de vie des examens d’imagerie</li>
+  <li>Post-Processing Workflow (PWF), pour la gestion des traitements d’images</li>
+  <li>Consistent Presentation of Images (CPI), pour garantir une présentation cohérente des images entre systèmes</li>
+</ul>
+
+<p>Ces profils, largement implémentés, témoignent de l’adoption massive et de la robustesse de DICOM dans les environnements d’imagerie médicale. Ils illustrent également le rôle central de DICOM dans les architectures d’imagerie, en particulier pour la manipulation, la circulation et la consultation des données d’imagerie.</p>
+
+<h5 id="outillage">Outillage</h5>
+
+<p>L’écosystème DICOM est riche et largement industrialisé. Il comprend notamment :</p>
+
+<ul>
+  <li>des modalités d’imagerie conformes DICOM</li>
+  <li>des PACS et archives d’imagerie</li>
+  <li>des visionneuses DICOM</li>
+  <li>des services réseau standardisés (C-STORE, C-FIND, C-MOVE, etc.)</li>
+</ul>
+
+<p>Ces outils sont spécifiquement conçus pour la manipulation d’images médicales et de leurs métadonnées, dans des architectures d’imagerie dédiées.</p>
+
+<h5 id="transport">Transport</h5>
+
+<p>Le standard DICOM intègre nativement des mécanismes de transport dédiés à l’échange d’objets d’imagerie médicale et de métadonnées associées. Ces mécanismes sont historiquement fondés sur des échanges point à point entre systèmes d’imagerie, reposant sur des services applicatifs définis par le standard et véhiculés sur des protocoles réseau standards.</p>
+
+<p>DICOM supporte également des mécanismes plus récents basés sur les technologies web, regroupés sous l’appellation DICOMweb, permettant l’accès, la recherche et le transfert d’objets d’imagerie via des interfaces HTTP(S).</p>
+
+<p>L’ensemble de ces mécanismes est spécifiquement et exclusivement conçu pour le transport et la manipulation d’objets d’imagerie.</p>
+
+<h5 id="dicom-adapté-au-cas-dusage-téléradiologie">DICOM adapté au cas d’usage Téléradiologie</h5>
+
+<p>Dans le cadre du volet Téléradiologie, le standard DICOM joue un rôle essentiel pour la mise à disposition et l’archivage des images médicales produites lors de la réalisation de l’acte d’imagerie. Toutefois, ce rôle se situe en dehors du périmètre des flux fonctionnels étudiés dans le présent volet. Le standard DICOM n’est pas conçu pour prendre en charge des échanges transactionnels ou décisionnels de type métier, ni pour gérer le cycle de vie des demandes ou des décisions médicales associées. À ce titre, il ne permet pas de répondre aux besoins fonctionnels identifiés dans les spécifications du volet Téléradiologie. Les mécanismes d’accès aux images (PACS, visionneuses, plateformes d’échange) sont généralement intégrés dans des architectures d’imagerie existantes.</p>
+
+<h5 id="synthèse">Synthèse</h5>
+
+<p>Le standard DICOM est un composant fondamental des systèmes d’imagerie médicale et demeure indispensable pour la gestion, l’archivage et la consultation des images médicales.<br/>
+Néanmoins, il n’est pas adapté pour répondre aux flux fonctionnels du volet Téléradiologie tels que définis dans les spécifications, lesquels relèvent principalement d’échanges transactionnels, organisationnels et décisionnels entre systèmes d’information.</p>
+
+<p><br/></p>
+
+<h4 id="standard-cda">Standard CDA</h4>
+
+<h5 id="présentation-1">Présentation</h5>
+
+<p>Le standard <a href="https://hl7.org/cda/stds/online-navigation/index.html">HL7 Clinical Document Architecture (CDA)</a> est un standard de structuration de documents cliniques spécifiant à la fois la structure et la sémantique des informations médicales, en vue de leur compréhension entre acteurs du système de santé. Il repose sur la syntaxe XML et ne définit pas de mécanisme de transport des documents.</p>
+
+<p>Le standard HL7 CDA est porté par HL7, organisme accrédité par l’ANSI. La version 2 du standard (CDA R2) a par ailleurs été adoptée comme norme internationale ISO. Un document CDA est un document complet pouvant contenir du texte, des images et tout autre type de contenu multimédia. Les propriétés d’un document CDA sont les suivantes :</p>
+
+<ul>
+  <li>Persistance&nbsp;: Tout au long de son existence, le CDA doit rester cohérent, accessible et inaltérable. La durée de vie du document dépendant du cadre législatif.</li>
+  <li>Intendance&nbsp;: L’organisation émettrice du document dématérialisé doit en assurer la gestion et le suivi, en mettant à disposition les éventuelles mises à jour.</li>
+  <li>Responsabilité : tout document doit être authentifié par une signature. La personne signataire prend la responsabilité du contenue du document.</li>
+  <li>Cohérence : Le document embarque le contexte (médical et de gestion) de son contenu.</li>
+  <li>Intégralité : Chaque document est complet. Le contenu et le contexte restent indissociables.</li>
+  <li>Lisibilité : Le document doit pouvoir être restitué aux personnes habilitées à le lire, dans une présentation prédéterminée par l’auteur du document, au travers d’un outil de visualisation banalisé tel qu’un navigateur Internet.</li>
+</ul>
+
+<p>Un document CDA contient deux parties :</p>
+
+<ul>
+  <li>Un entête (header) : contient les informations nécessaires à l’identification et à la gestion du document. Elle fournit des éléments d’authentification du document, le contexte de soin, les participants, etc.</li>
+  <li>Le corps (body) : contient les informations médicales véhiculées par le document. Il peut être construit suivant 3 niveaux :
+    <ul>
+      <li>Niveau 1 : le corps contient un texte non structuré ou une image</li>
+      <li>Niveau 2 : le corps est organisé en sections contenant un bloc narratif</li>
+      <li>Niveau 3 : le corps se présente sous la forme d’un ensemble hiérarchisé de sections pouvant contenir des données structurées dans des entrées, en plus d’un bloc narratif.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="maturité-et-adoption-1">Maturité et adoption</h5>
+
+<p>Le standard HL7 CDA R2 est très répandu à l’international et largement adopté dans le contexte français. Le standard HL7 CDA est le format de référence utilisé dans les volets métiers du CI-SIS disponibles sur <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">l’espace de Publication du CI-SIS</a>. Ce standard est également utilisé dans de nombreux profils spécifiés par IHE (profils des domaines IHE PCC, IHE PALM, IHE PHARM, …). Le niveau 3 est un format international de structuration et de transmission des documents médicaux. Il permet notamment une intégration automatique des informations contenues dans le document, dans le logiciel métier concerné. Ce niveau permet non seulement une interopérabilité syntaxique, mais également sémantique.</p>
+
+<p>Afin de capitaliser l’expérience acquise et de favoriser la réutilisation des développements, la <a href="https://interop.esante.gouv.fr/ig/doctrine/">doctrine du CI-SIS</a> incite à l’utilisation du standard CDA R2 niveau 3 pour structurer les documents, notamment en se conformant aux volets de référence suivants :</p>
+
+<ul>
+  <li><a href="https://esante.gouv.fr/volet-structuration-minimale-de-documents-de-sante">Structuration minimale de documents de santé</a>, qui définit la structure des données de l’entête d’un document CDA</li>
+  <li><a href="https://esante.gouv.fr/volet-de-reference-modeles-de-contenus-cda">Modèles de contenus CDA</a>, qui définit la structure des données du corps du document.</li>
+</ul>
+
+<p>Par ailleurs, au moment de la présente étude, les orientations nationales et européennes en matière d’interopérabilité évoluent vers des approches plus adaptées aux échanges de données structurées et aux usages transactionnels. Dans ce contexte, le recours au standard CDA tend à être réservé aux documents cliniques établis, et son utilisation pour la mise en œuvre de nouveaux flux d’échange apparaît de moins en moins pertinente.</p>
+
+<h5 id="outillage-1">Outillage</h5>
+
+<p>Un document CDA peut être testé contre un schéma XSD via un éditeur de texte tel que Notepad++. Ce schéma permet uniquement de vérifier la structure du document ainsi que la conformité par rapport au standard.</p>
+
+<p>La suite d’outil open source <a href="https://docs.art-decor.org/">ART-DECOR</a> permet de créer et maintenir les modèles CDA et les jeux de valeurs. Elle permet de tester la conformité d’un document CDA, mais cette fois-ci par rapport à un modèle, grâce à la génération de schématrons. Il s’agit d’un langage permettant de valider la structure d’un document XML via un ensemble d’assertions. Les schematrons peuvent être utilisés de deux manières :</p>
+
+<ul>
+  <li>En mode autonome : exécution directe des schematrons sur un document</li>
+  <li>En mode intégré : via des plateformes de test comme <a href="https://www.ihe-europe.net/testing-IHE/gazelle">Gazelle</a> (ANS et IHE)</li>
+</ul>
+
+<p>L’outil Schematron Validator, accessible via le service EVS Client de Gazelle, combine la validation XSD et schematron. Il permet de vérifier qu’un document :</p>
+
+<ul>
+  <li>Est bien formé (structure XML valide),</li>
+  <li>Est conforme au schéma XSD,</li>
+  <li>Respecte les règles métier définies dans le modèle.</li>
+</ul>
+
+<h5 id="cda-adapté-au-cas-dusage-téléradiologie">CDA adapté au cas d’usage Téléradiologie</h5>
+
+<p>Le standard CDA est conçu pour structurer et échanger des documents cliniques persistants, porteurs de sens médical, tels que des comptes rendus, des lettres médicales ou des synthèses de prise en charge. Il vise à garantir la lisibilité humaine, la pérennité et la réutilisabilité clinique des documents échangés. Dans le cadre du volet Téléradiologie, les flux étudiés correspondent majoritairement à des échanges transactionnels et organisationnels (annulation de demande, décision de protocolisation, transmission d’informations post-acte), intervenant au fil du workflow de prise en charge. Ces échanges ne constituent pas des documents cliniques à proprement parlé mais relèvent d’une logique d’échanges métiers structurés, contextualisés et à durée de vie limitée.</p>
+
+<p>Bien qu’il soit théoriquement possible de représenter les concepts métiers au sein de documents CDA, une telle approche ne serait pas adaptée à la finalité du standard. Le CDA est en effet conçu pour structurer des documents cliniques persistants, destinés à être partagés, archivés et réutilisés dans le temps, ce qui ne correspond pas à la nature des flux de téléradiologie, essentiellement transactionnels, contextuels et à durée de vie courte. La structuration documentaire apportée par CDA est en revanche pleinement pertinente en fin de workflow, à travers le compte-rendu d’imagerie, qui constitue le livrable clinique de référence, destiné à être partagé et archivé, notamment au sein du DMP du patient.</p>
+
+<h5 id="synthèse-1">Synthèse</h5>
+
+<p>Le standard CDA est adapté à la structuration et à l’échange de documents cliniques pérennes, tels que le compte-rendu d’imagerie, qui constitue l’aboutissement du workflow de téléradiologie. En revanche, les flux intermédiaires étudiés dans ce volet relèvent d’échanges transactionnels et métiers qui ne s’inscrivent pas dans une logique documentaire.</p>
+
+<p>De plus, les orientations actuelles en matière d’interopérabilité privilégient le recours à FHIR pour les nouveaux besoins d’échange.</p>
+
+<p><br/></p>
+
+<h4 id="standard-fhir">Standard FHIR</h4>
+<h5 id="présentation-2">Présentation</h5>
+<p><a href="https://www.hl7.org/fhir/">FHIR</a> (Fast Healthcare Interoperability Resources) est un standard élaboré par HL7 qui s’appuie sur un ensemble de ressources, des blocs de données modulaires, qui correspondent à des objets métiers, médicaux ou administratifs. Ces objets sont caractérisés par des éléments de données, des contraintes et des relations avec d’autres objets métiers.</p>
+
+<p>Les ressources et éléments définis dans FHIR sont restreints et ont pour objectif de répondre aux besoins communs, afin de maintenir une simplicité d’utilisation du standard. Pour répondre aux besoins spécifiques, des extensions doivent être créées dans des guides d’implémentations (IG).</p>
+
+<p>Dans le cadre français, l’association <a href="https://www.interopsante.org/">Interop’Sante</a> a publié un <a href="https://hl7.fr/ig/fhir/core/">guide d’implémentation FHIR</a> qui définit des profils FHIR pour répondre aux besoins spécifiques du système de santé français. Ces profils adaptent les ressources FHIR standard pour inclure des contraintes et des extensions spécifiques au contexte français.</p>
+<h5 id="maturité-et-adoption-2">Maturité et adoption</h5>
+<p>FHIR a mis en œuvre un modèle de maturité de ressources afin de fournir aux développeurs une
+idée de la maturité d’une ressource avant son utilisation et son implémentation. D’une manière
+générale, le standard FHIR dans sa version R4 offre encore peu de ressources à l’état normatif donc pouvant être considérées comme stables.</p>
+
+<p>Dans sa version R5, seules 2 ressources supplémentaires sont passées à l’état normatif.</p>
+
+<p>L’ANS exploite les ressources de ce standard dans la majorité des volets de la couche Service
+disponibles sur <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">l’espace de Publication</a> du CI-SIS.</p>
+
+<p>Il convient de souligner que, bien que le standard HL7 FHIR dispose à ce jour d’une version R5, les ressources présentées dans la suite du document s’appuient sur la version R4, conformément à la stratégie nationale en vigueur. Cette stratégie relative au choix des versions FHIR a été définie dans le cadre de travaux conduits conjointement par Interop’Santé et l’Agence du Numérique en Santé en 2023-2024, puis validée à l’issue d’une <a href="https://participez.esante.gouv.fr/project/fhir-r5-ou-r4/presentation/presentation">concertation</a> portée par l’ANS.</p>
+
+<h5 id="outillage-2">Outillage</h5>
+
+<p>Des outils nombreux et matures sont disponibles pour implémenter et tester des systèmes basés sur le standard FHIR, couvrant la validation syntaxique, sémantique et la conformité aux guides d’implémentation.</p>
+
+<p>Parmi les outils facilitant le développement et la validation des ressources FHIR figurent notamment :</p>
+
+<ul>
+  <li>L’extension pour Visual Studio Code <a href="https://marketplace.visualstudio.com/items?itemName=Yannick-Lagger.vscode-fhir-tools">FHIR Tools</a>, facilitant l’édition, la validation et la navigation dans les ressources FHIR ;</li>
+  <li>Un ensemble <a href="http://hl7.org/fhir/R4/validation.html">d’outils de validation</a> permettant de vérifier la conformité des ressources aux spécifications FHIR et aux profils déclarés ;</li>
+  <li>Des <a href="https://confluence.hl7.org/display/FHIR/Public+Test+Servers">serveurs FHIR publics de test</a>, dont HAPI, qui constitue à la fois un serveur de référence et une librairie de développement FHIR en Java.</li>
+</ul>
+
+<p>Plusieurs frameworks et plateformes de tests spécialisés complètent cet outillage :</p>
+
+<ul>
+  <li>Inferno : framework extensible de tests automatisés pour HL7&reg; FHIR&reg;, successeur de l’outil Crucible, permettant de définir et d’exécuter des tests rigoureux de conformité ;</li>
+  <li>Touchstone (AEGIS) : plateforme d’accélération des implémentations FHIR&reg;, reposant sur le moteur de tests <em>TestScript</em>, proposant des serveurs de référence (<em>WildFHIR</em>) et un large catalogue de scripts de tests open source ;</li>
+  <li>Asbestos (IHE/NIST) : outil de test basé sur <em>TestScript</em>, principalement utilisé pour la validation des implémentations des profils IHE, notamment IHE MHD ; son code source est disponible sur GitHub ;</li>
+  <li>Matchbox (AHDIS) : moteur de validation open source, disponible sur GitHub, largement utilisé pour vérifier la conformité des ressources FHIR aux profils nationaux et internationaux ;</li>
+  <li>ConformanceLab (Interoplab) : plateforme de validation FHIR&reg; permettant aux organisations de configurer, gérer et publier leur propre environnement de tests et de certification basé sur <em>TestScript</em>.</li>
+</ul>
+
+<p>La <a href="https://www.ihe-europe.net/testing-IHE/gazelle">plateforme Gazelle</a> est également utilisée pour tester les ressources FHIR. L’outil <a href="https://ahdis.github.io/matchbox/">matchbox</a> est accessible via le <a href="https://interop.esante.gouv.fr/evs/home.seam">service de Validation EVS Client</a>. Il permet de vérifier si :</p>
+
+<ul>
+  <li>La structure XML ou JSON des ressources est valide ;</li>
+  <li>Les ressources sont conformes aux exigences FHIR ;</li>
+  <li>Les ressources sont conformes aux exigences des profils issues des guides d’implémentation.</li>
+</ul>
+
+<p>Pour tester des requêtes HTTP FHIR, il est possible d’utiliser des serveurs publiquement accessibles à des fins de test, notamment HAPI, via des outils de test d’API tels que Postman ou Insomnia. La plateforme Gazelle, via le service de Validation EVS Client, permet aux éditeurs de valider les ressources et les requêtes FHIR en les comparant à des modèles. La plateforme offre également la possibilité d’utiliser des simulateurs FHIR permettant aux éditeurs de tester leur système de façon autonome. Enfin, des évènements de tests, tels que les Projectathons permettent aux éditeurs de tester en situation réelle leur conformité aux spécifications ainsi que leur capacité à échanger avec des partenaires.</p>
+
+<h5 id="ressources-fhir-adaptées-au-cas-dusage">Ressources FHIR adaptées au cas d’usage</h5>
+
+<p>Dans le cadre de cette étude, l’analyse de l’adaptation du standard HL7 FHIR au volet « Téléradiologie » est menée à un niveau global de couverture des concepts métiers. Elle repose sur la mise en correspondance des concepts identifiés dans les spécifications fonctionnelles avec les ressources FHIR existantes, ou, le cas échéant, avec des attributs portés par ces ressources.
+Les ressources suivantes pourraient être utilisées et profilées si besoin pour représenter le contenu des flux d’informations. Si des profils de ces ressources existent déjà dans le guide d’implémentation FRCORE il est recommandé de les utiliser ou d’en hériter.</p>
+
+<ul>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/patient.html">Patient</a> (NM N) : La ressource Patient permet de représenter les données
+concernant l’identification et les coordonnées (télécommunication et adresse) du patient ainsi que ses contacts.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/organization.html">Organization</a> (NM 3) : La ressource Organization permet de représenter une personne morale telle que le centre de téléradiologie.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/practitioner.html">Practitioner</a> (NM 3) : La ressource Practitioner permet de représenter un professionnel de santé.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/practitionerrole.html">PractitionerRole</a> (NM 2) : La ressource PractitionerRole permet de représenter la spécialité d’un professionnel de santé.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a> (NM 2) : La ressource ServiceRequest permet de représenter une demande de service, comme par exemple une demande de diagnostic, de traitement ou d’opération à effectuer.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/appointment.html">Appointment</a> (NM 3) : La ressource Appointment permet de représenter un rendez vous ou une demande de rendez vous avec un professionnel de santé, un dispositif médical ou une unité de soin.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/appointmentresponse.html">AppointmentResponse</a> (NM 3) : La ressource AppointmentResponse permet de représenter la réponse à une demande de rendez vous.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/condition.html">Condition</a> (NM 3) : La ressource Condition permet de représenter une affection, un problème, un diagnostic rencontré par un patient.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/documentreference.html">DocumentReference</a> (NM 3) : La ressource DocumentReference permet de représenter un document stocké dans différents formats ou bien une référence vers ce document.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/imagingstudy.html">ImagingStudy</a> (NM 3) : La ressource ImagingStudy permet de représenter les métadonnées d’un objet DICOM.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/guidanceresponse.html">GuidanceResponse</a> (NM 2) : La ressource GuidanceResponse permet de représenter la réponse à la demande d’imagerie avec les éléments joints par le professionnel de santé effecteur.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/endpoint.html">Endpoint</a> (NM 2) : La ressource Endpoint permet de représenter un endpoint accessible comme un serveur (web,fhir,dicom,..)</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/device.html">Device</a> (NM 2) : La ressource Device permet de représenter un équipement utilisé lors de la prise en charge du patient, que ce soit un DM ou un autre équipement .</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/medicationadministration.html">MedicationAdministration</a> (NM 2) : La ressource MedicationAdministration permet de représenter l’injection ou la consommation d’un médicament pour un patient par un professionnel de santé.</p>
+  </li>
+  <li>
+    <p>Ressource <a href="https://hl7.org/fhir/R4/bodystructure.html">BodyStructure</a> (NM 1) : La ressource BodyStructure permet de représenter une structure anatomique du corps humain.</p>
+  </li>
+</ul>
+
+<p>Suivant l’analyse des concepts métier identifiés dans la spécification fonctionnelle du volet ‘Téléradiologie’, on peut les mettre en correspondance avec les ressources FHIR présentées ci-dessus :</p>
+
+<table>
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 56%"/>
+</colgroup>
+<thead>
+<tr>
+<th><strong>Concept métier</strong></th>
+<th><strong>Couverture par des ressources FHIR</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Patient</strong></td>
+<td>Patient</td>
+</tr>
+<tr>
+<td><strong>PSResponsable</strong></td>
+<td>Practitioner</td>
+</tr>
+<tr>
+<td><strong>PSEffecteur</strong></td>
+<td>Practitioner</td>
+</tr>
+<tr>
+<td><strong>IdentifiantDemandeExamen</strong></td>
+<td>ServiceRequest</td>
+</tr>
+<tr>
+<td><strong>StructureImagerie</strong></td>
+<td>Organization</td>
+</tr>
+<tr>
+<td><strong>PlateformeTeleradiologie</strong></td>
+<td>Organization</td>
+</tr>
+<tr>
+<td><strong>NatureDemande</strong></td>
+<td>ServiceRequest</td>
+</tr>
+<tr>
+<td><strong>DateDemande</strong></td>
+<td>ServiceRequest</td>
+</tr>
+<tr>
+<td><strong>IdentifiantRDV</strong></td>
+<td>Appointment</td>
+</tr>
+<tr>
+<td><strong>DateHeurePriseCharge</strong></td>
+<td>Appointment</td>
+</tr>
+<tr>
+<td><strong>JustificationDemande</strong></td>
+<td>Condition</td>
+</tr>
+<tr>
+<td><strong>Antecedents</strong></td>
+<td>Condition</td>
+</tr>
+<tr>
+<td><strong>MotifAnnulation</strong></td>
+<td>Appointment</td>
+</tr>
+<tr>
+<td><strong>MotifRefus</strong></td>
+<td>AppointmentResponse</td>
+</tr>
+<tr>
+<td><strong>DocumentDemandeExamen</strong></td>
+<td>DocumentReference</td>
+</tr>
+<tr>
+<td><strong>DocumentsTiers</strong></td>
+<td>DocumentReference</td>
+</tr>
+<tr>
+<td><strong>LocalisationAnatomique</strong></td>
+<td>BodyStructure</td>
+</tr>
+<tr>
+<td><strong>ModaliteImagerie</strong></td>
+<td>ImagingStudy</td>
+</tr>
+<tr>
+<td><strong>DecisionEffecteur</strong></td>
+<td>GuidanceResponse</td>
+</tr>
+<tr>
+<td><strong>ProtocoleImagerie</strong></td>
+<td>ImagingStudy</td>
+</tr>
+<tr>
+<td><strong>URLViewerDRIMBOX</strong></td>
+<td>Endpoint</td>
+</tr>
+<tr>
+<td><strong>DuréeRétentionImages</strong></td>
+<td>ImagingStudy</td>
+</tr>
+<tr>
+<td><strong>DateRéalisationExamen</strong></td>
+<td>ImagingStudy</td>
+</tr>
+<tr>
+<td><strong>IdentificationMatériel</strong></td>
+<td>Device</td>
+</tr>
+<tr>
+<td><strong>ProduitsAdministres</strong></td>
+<td>MedicationAdministration</td>
+</tr>
+<tr>
+<td><strong>AccessionNumber</strong></td>
+<td>ImagingStudy</td>
+</tr>
+<tr>
+<td><strong>StudyInstanceUID</strong></td>
+<td>ImagingStudy</td>
+</tr>
+<tr>
+<td><strong>codeEvenement</strong></td>
+<td>ImagingStudy</td>
+</tr>
+<tr>
+<td><strong>roleProfessionnel</strong></td>
+<td>PractitionerRole</td>
+</tr>
+
+</tbody>
+</table>
+<p style="text-align:center;">Table 2 : Mise en correspondance des concepts métier avec les ressources FHIR</p>
+
+<h5 id="transport-1">Transport</h5>
+<p>FHIR propose plusieurs paradigmes d’échange pour répondre à différents cas d’usage :</p>
+
+<ul>
+  <li><a href="https://build.fhir.org/http.html">REST</a> – Le plus répandu. Les ressources sont exposées via une API HTTP classique (GET, POST, PUT, DELETE). Adapté aux échanges synchrones et aux architectures web modernes.</li>
+  <li><a href="https://build.fhir.org/messaging.html">Messaging</a> – Échange de messages structurés (Bundle de type “message”) déclenchés par un événement. Proche du fonctionnement HL7 v2, adapté aux workflows asynchrones.</li>
+  <li><a href="https://build.fhir.org/documents.html">Documents</a> – Échange de documents cliniques complets et signés (Bundle de type “document”), similaire au CDA. Utilisé quand l’intégrité et la persistance du document sont essentielles.</li>
+  <li><a href="https://hl7.org/fhir/R4/services.html">Services</a> (SOA/RPC) – Appels d’opérations personnalisées.</li>
+</ul>
+
+<p>l’échange et l’interrogation des ressources peut se faire via différentes <a href="https://build.fhir.org/exchange-module.html">interactions</a></p>
+
+<p>Différents niveaux <a href="https://hl7.org/fhir/R4/http.html">d’interactions</a> sont possibles via REST :</p>
+
+<ul>
+  <li>Instance (s’applique à une ressource en particulier) ;</li>
+  <li>Type (s’applique à un ensemble de ressources de même type) ;</li>
+  <li>Système (s’applique à l’ensemble du système).</li>
+</ul>
+
+<p>Les interactions qui pourront s’appliquer dans le cas du volet « Téléradiologie » sont les interactions au niveau instance suivantes :</p>
+
+<ul>
+  <li><a href="https://hl7.org/fhir/R4/http.html#create">Create</a> pour l’ajout d’une nouvelle ressource sur le serveur grâce à la méthode HTTP POST ;</li>
+  <li><a href="https://hl7.org/fhir/R4/http.html#delete">Delete</a> pour la suppression d’une ressource sur le serveur grâce à la méthode HTTP DELETE;</li>
+  <li><a href="https://hl7.org/fhir/R4/http.html#update">Update</a> pour le remplacement d’une ressource existante sur le serveur grâce à la méthode HTTP PUT ou PATCH.
+Enfin, le corps des requêtes HTTP est une ressource FHIR qui peut être <a href="https://hl7.org/fhir/R4/http.html#mime-type">formatée</a> en XML, JSON ou RDF (Turtle).</li>
+</ul>
+
+<h6 id="adaptation-au-cas-dusage">Adaptation au cas d’usage</h6>
+
+<p>Il est important de noter que, pour les interactions décrites ci-dessous, les acteurs doivent être en mesure non seulement d’envoyer des données, mais également d’en recevoir. En termes d’architecture, chaque acteur devra par conséquent être à la fois client et serveur.
+Chaque acteur devra également travailler la gestion des authentifications, des autorisations, et autres besoins de sécurité fondamentaux ; ces aspects sortent du périmètre de la présente étude.</p>
+
+<p>Le paradigme Messaging de FHIR pourrait être envisagé pour la gestion des accusés de réception et une communication asynchrone. Le paradigme REST permettrait de gérer les échanges de ressources simplement via des requêtes HTTP.</p>
+
+<p>Pour chaque flux d’information identifié dans le volet “Téléradiologie”, les échanges FHIR via RESTpourraient s’articuler comme suit :</p>
+
+<h6 id="transmettre-une-demande-dexamen-dimagerie">Transmettre une demande d’examen d’imagerie</h6>
+
+<p>La transmission d’une demande d’examen d’imagerie peut être réalisée grâce à l’envoi d’une ressource, par exemple DocumentReference ou ServiceRequest via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
+
+<p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 1.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
+
+<div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 632 180" zoomAndPan="magnify" preserveAspectRatio="none" width="632px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:632px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="135" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="135"></line><line y1="36.2969" x1="473" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="473"></line><rect rx="2.5" ry="2.5" width="261" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="261" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="305" x="321" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="328" font-size="14" textLength="291" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="305" x="321" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="328" font-size="14" textLength="291" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="461.5,78.5625,471.5,82.5625,461.5,86.5625,465.5,82.5625"></polygon><line y1="82.5625" x1="135.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="467.5"></line><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 1.1</text><text font-weight="bold" lengthAdjust="spacing" x="195.5" font-size="13" textLength="195" y="62.3638" font-family="sans-serif" fill="#000000">TransmissionDemandeIMG</text><text lengthAdjust="spacing" x="390.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="146.5" font-size="13" textLength="70" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP POST</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="146.5,122.8281,136.5,126.8281,146.5,130.8281,142.5,126.8281"></polygon><line y1="126.8281" x1="140.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="472.5"></line><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 1.2</text><text font-weight="bold" lengthAdjust="spacing" x="205.5" font-size="13" textLength="261" y="106.6294" font-family="sans-serif" fill="#000000">Resultat TransmissionDemandeIMG</text><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="156.5" font-size="13" textLength="79" y="121.7622" font-family="sans-serif" fill="#B22222">201 Created</text></g></svg> </div>
+
+<p style="text-align:center;">Figure 1 - Diagramme d'échange FHIR pour le flux 1 - Transmission d'une demande d'examen d'imagerie</p>
+
+<p>Ce flux permettrait de couvrir l’ensemble des processus suivants :</p>
+
+<ul>
+  <li>Créer une demande d’examen d’imagerie</li>
+  <li>Transmettre la demande d’examen d’imagerie</li>
+  <li>Recevoir la demande d’imagerie</li>
+</ul>
+
+<h6 id="annulation-dune-demande-dexamen-dimagerie">Annulation d’une demande d’examen d’imagerie</h6>
+
+<p>L’annulation d’une demande d’examen d’imagerie peut être réalisée grâce à la suppression d’une ressource créée dans le flux 1, par exemple DocumentReference ou ServiceRequest via une requête DELETE reposant sur l’interaction “<a href="https://build.fhir.org/http.html#delete">delete</a>”.</p>
+
+<p>Si la suppression de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">200 OK</code>. En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
+
+<div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 614 180" zoomAndPan="magnify" preserveAspectRatio="none" width="614px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:614px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="135" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="135"></line><line y1="36.2969" x1="455" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="455"></line><rect rx="2.5" ry="2.5" width="261" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="261" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="305" x="303" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="291" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="305" x="303" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="291" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="443.5,78.5625,453.5,82.5625,443.5,86.5625,447.5,82.5625"></polygon><line y1="82.5625" x1="135.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="449.5"></line><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 2.1</text><text font-weight="bold" lengthAdjust="spacing" x="195.5" font-size="13" textLength="177" y="62.3638" font-family="sans-serif" fill="#000000">AnnulationDemandeIMG</text><text lengthAdjust="spacing" x="372.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="146.5" font-size="13" textLength="84" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP DELETE</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="146.5,122.8281,136.5,126.8281,146.5,130.8281,142.5,126.8281"></polygon><line y1="126.8281" x1="140.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="454.5"></line><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 2.2</text><text font-weight="bold" lengthAdjust="spacing" x="205.5" font-size="13" textLength="243" y="106.6294" font-family="sans-serif" fill="#000000">Resultat AnnulationDemandeIMG</text><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="156.5" font-size="13" textLength="46" y="121.7622" font-family="sans-serif" fill="#B22222">200 OK</text></g></svg> </div>
+
+<p style="text-align:center;">Figure 2 - Diagramme d'échange FHIR pour le flux 2 - Annulation d'une demande d'examen d'imagerie</p>
+
+<p>Ce flux permettrait de couvrir l’ensemble des processus suivants :</p>
+
+<ul>
+  <li>Créer une annulation d’une demande d’examen d’imagerie</li>
+  <li>Transmettre l’annulation de la demande d’examen d’imagerie</li>
+  <li>Recevoir l’annulation de la demande d’examen d’imagerie</li>
+</ul>
+
+<h6 id="réponse-à-une-demande-dexamen-dimagerie">Réponse à une demande d’examen d’imagerie</h6>
+
+<p>La réponse à une demande d’examen d’imagerie peut être réalisée grâce à l’envoi d’une ressource, par exemple ImagingStudy ou GuidanceResponse via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
+
+<p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 3.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
+
+<div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 600 180" zoomAndPan="magnify" preserveAspectRatio="none" width="600px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:600px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="142" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="142"></line><line y1="36.2969" x1="448" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="448"></line><rect rx="2.5" ry="2.5" width="275" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="275" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="261" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="291" x="303" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="310" font-size="14" textLength="277" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Structure(s) d'imagerie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="436.5,78.5625,446.5,82.5625,436.5,86.5625,440.5,82.5625"></polygon><line y1="82.5625" x1="142.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="442.5"></line><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 3.1</text><text font-weight="bold" lengthAdjust="spacing" x="202.5" font-size="13" textLength="163" y="62.3638" font-family="sans-serif" fill="#000000">ReponseDemandeIMG</text><text lengthAdjust="spacing" x="365.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="149.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="153.5" font-size="13" textLength="85" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP CREATE</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="153.5,122.8281,143.5,126.8281,153.5,130.8281,149.5,126.8281"></polygon><line y1="126.8281" x1="147.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="447.5"></line><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 3.2</text><text font-weight="bold" lengthAdjust="spacing" x="212.5" font-size="13" textLength="229" y="106.6294" font-family="sans-serif" fill="#000000">Resultat ReponseDemandeIMG</text><text lengthAdjust="spacing" x="159.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="163.5" font-size="13" textLength="79" y="121.7622" font-family="sans-serif" fill="#B22222">201 Created</text></g></svg> </div>
+
+<p style="text-align:center;">Figure 3 - Diagramme d'échange FHIR pour le flux 3 - Réponse à une demande d'examen d'imagerie</p>
+
+<p>Ce flux permettrait de couvrir l’ensemble des processus suivants :</p>
+
+<ul>
+  <li>Etablir le protocole d’imagerie</li>
+  <li>Générer la réponse métier à la demande</li>
+  <li>Transmettre la réponse métier à la demande</li>
+  <li>Recevoir la réponse métier à la demande</li>
+</ul>
+
+<h6 id="transmettre-un-complément-dinformation-post-examen">Transmettre un complément d’information post-examen</h6>
+
+<p>Le complément d’information post-examen d’imagerie peut être réalisé grâce à l’envoi d’une ressource, par exemple ImagingStudy ou DocumentReference via une requête POST reposant sur l’interaction “<a href="https://build.fhir.org/http.html#create">create</a>”.</p>
+
+<p>Si la création de la ressource s’est correctement effectuée, le consommateur retourne un code http <code class="language-plaintext highlighter-rouge">201 created</code> accompagné de la ressource créée (flux 4.2). En cas d’échec, le consommateur doit répondre avec le code HTTP approprié. Une ressource <a href="https://hl7.org/fhir/operationoutcome.html">OperationOutcome</a> doit également y être associée pour véhiculer les messages d’erreurs identifiant la nature de l’erreur.</p>
+
+<div style="text-align:center;">   <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 655 180" zoomAndPan="magnify" preserveAspectRatio="none" width="655px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:655px;height:180px;background:#FFFFFF;" version="1.1" height="180px"><defs></defs><g><line y1="36.2969" x1="135" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="135"></line><line y1="36.2969" x1="496" y2="144.8281" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="496"></line><rect rx="2.5" ry="2.5" width="261" x="5" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="24.9951" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="261" x="5" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="12" font-size="14" textLength="247" y="163.8232" font-family="sans-serif" fill="#000000">Producteur : Structure(s) d'imagerie</text><rect rx="2.5" ry="2.5" width="305" x="344" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="351" font-size="14" textLength="291" y="24.9951" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><rect rx="2.5" ry="2.5" width="305" x="344" y="143.8281" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.2969"></rect><text lengthAdjust="spacing" x="351" font-size="14" textLength="291" y="163.8232" font-family="sans-serif" fill="#000000">Consommateur : Plateforme téléradiologie</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="484.5,78.5625,494.5,82.5625,484.5,86.5625,488.5,82.5625"></polygon><line y1="82.5625" x1="135.5" y2="82.5625" style="stroke:#181818;stroke-width:1.0;" x2="490.5"></line><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="49" y="62.3638" font-family="sans-serif" fill="#000000">Flux 4.1</text><text font-weight="bold" lengthAdjust="spacing" x="195.5" font-size="13" textLength="209" y="62.3638" font-family="sans-serif" fill="#000000">TrasmissionComplémentIMG</text><text lengthAdjust="spacing" x="404.5" font-size="13" textLength="4" y="62.3638" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="142.5" font-size="13" textLength="4" y="77.4966" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="146.5" font-size="13" textLength="70" y="77.4966" font-family="sans-serif" fill="#B22222">HTTP POST</text><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="146.5,122.8281,136.5,126.8281,146.5,130.8281,142.5,126.8281"></polygon><line y1="126.8281" x1="140.5" y2="126.8281" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="495.5"></line><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="49" y="106.6294" font-family="sans-serif" fill="#000000">Flux 4.2</text><text font-weight="bold" lengthAdjust="spacing" x="205.5" font-size="13" textLength="284" y="106.6294" font-family="sans-serif" fill="#000000">Resultat TransmissionComplémentIMG</text><text lengthAdjust="spacing" x="152.5" font-size="13" textLength="4" y="121.7622" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="156.5" font-size="13" textLength="79" y="121.7622" font-family="sans-serif" fill="#B22222">201 Created</text></g></svg> </div>
+
+<p style="text-align:center;">Figure 4 - Diagramme d'échange FHIR pour le flux 4 - Transmission d'un complément d'information post-examen</p>
+
+<p>Ce flux permettrait de couvrir l’ensemble des processus suivants :</p>
+
+<ul>
+  <li>Réaliser le ou les actes d’imagerie</li>
+  <li>Générer un complément d’information post-examen</li>
+  <li>Transmettre un complément d’information post-examen</li>
+  <li>Recevoir un complément d’information post-examen</li>
+</ul>
+
+<h5 id="synthèse-2">Synthèse</h5>
+
+<p>FHIR est un standard moderne, largement adopté dans le domaine de la santé, permettant l’échange de données de santé de manière structurée et interopérable avec cependant un nombre limité de ressources à l’état normatif.</p>
+
+<p>L’analyse des ressources FHIR applicables au volet « Téléradiologie » montre que ce standard permet de couvrir l’ensemble des concepts métier identifiés. Le paradigme Messaging permet d’avoir un échange asynchrone entre les acteurs ainsi qu’une gestion des acquittements similaire à HL7v2. Pour un échange de ressources plus rapide et simple à mettre en place, le paradigme REST est également envisageable. Enfin, l’utilisation de FHIR implique que chaque acteur dispose d’un serveur FHIR, capable de jouer à la fois les rôles de client et de serveur, afin de supporter l’ensemble des échanges requis.</p>
+
+<p><br/></p>
+
+<h4 id="standard-hl7-version-2-hl7-v2">Standard HL7 version 2 (HL7 v2)</h4>
+
+<h5 id="présentation-3">Présentation</h5>
+
+<p><a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185">HL7 version 2 (HL7 v2)</a> est un standard de messagerie développé par l’organisation Health Level Seven International, destiné à l’échange d’informations entre systèmes d’information de santé. Il repose sur l’échange de messages structurés, composés de segments, de champs et de sous-composants, organisés selon des déclencheurs événementiels (triggers). Le standard définit la structure logique des messages ainsi que les règles de codage associées, sans imposer de modèle d’information unique. Cette approche confère à HL7 v2 une grande souplesse d’implémentation et explique en partie son adoption massive dans l’écosystème des systèmes d’information de santé.</p>
+
+<p>Il est important de souligner que HL7 v2 n’impose pas le protocole de transport ni l’architecture des échanges. Le standard n’émet aucune hypothèse sur :</p>
+
+<ul>
+  <li>la conception ou l’architecture des systèmes émetteurs et récepteurs</li>
+  <li>le mode de communication sous-jacent (synchrone ou asynchrone)</li>
+  <li>les mécanismes de transport, de sécurisation ou de routage des messages</li>
+</ul>
+
+<p>Ainsi, le choix du protocole de transport est laissé à l’initiative des implémenteurs. Néanmoins, dans les usages historiques et recommandés, HL7 v2 est fréquemment associé au protocole MLLP (Minimal Lower Layer Protocol), qui permet l’échange de messages sur des connexions persistantes et facilite la gestion des accusés de réception techniques. Ces accusés de réception (ACK), permettent au système récepteur de notifier l’émetteur de la bonne réception et du traitement du message transmis. Les ACK peuvent être de nature :</p>
+
+<ul>
+  <li>technique, attestant de la bonne réception et de la conformité syntaxique du message</li>
+  <li>applicative, indiquant l’acceptation ou le rejet du message au regard de règles métier ou fonctionnelles.</li>
+</ul>
+
+<p>L’intérêt de ces mécanismes d’accusés de réception réside dans la fiabilité des échanges et dans la maîtrise du cycle de vie des messages.</p>
+
+<h5 id="maturité-et-adoption-3">Maturité et adoption</h5>
+
+<p>HL7 v2 est un standard hautement mature, initialement publié à la fin des années 1980 et ayant fait l’objet de nombreuses évolutions successives au travers de plusieurs versions majeures, témoignant de sa stabilité, de sa robustesse. Dans l’écosystème français, il est solidement ancré dans le contexte intra-hospitalier au sein pratiques des systèmes d’information de santé, en particulier dans le domaine de l’imagerie médicale. Ce constat repose à la fois sur son usage historique largement répandu et sur les travaux menés dans le cadre du volet Téléradiologie, notamment au travers d’ateliers associant éditeurs de RIS et plateformes de téléradiologie. Ces échanges ont permis de confronter les besoins opérationnels aux capacités des standards existants et ont confirmé le niveau de maturité et d’industrialisation de HL7 v2 pour ce type de cas d’usage.
+Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files/media/document/Livre-Blanc-TLR_vFinale.pdf">Livre blanc Téléradiologie</a> élaboré par l’Agence du Numérique en Santé en collaboration avec l’écosystème éditeur s’appuie sur des flux fondés sur le standard HL7 v2, renforçant ainsi ce constat.</p>
+
+<p>De plus, le CI-SIS incite à l’utilisation du standard HL7v2 pour le transport des documents CDA en intra-hospitalier notamment en se conformant aux volets de référence suivants :</p>
+
+<ul>
+  <li><a href="https://esante.gouv.fr/volet-transport-dun-document-cda-r2-en-hl7-oru-oul-mdm">Transport d’un document CDA en HL7v2</a></li>
+  <li><a href="https://esante.gouv.fr/volet-de-transmission-au-lps-dun-document-cda">Transmission au LPS d’un document CDA provenant d’un courriel MSSanté</a></li>
+</ul>
+
+<p>L’ancrage d’HL7 v2 au niveau français est également la conséquence des travaux de l’organisme InteropSanté, qui publie et maintient des spécifications nationales fondées sur HL7 v2, telles que <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">les contraintes françaises du profil IHE PAM</a>, <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">les contraintes françaises sur les types de données HL7 v2</a>, ainsi que les profils <a href="https://www.interopsante.org/f/794889b493c4434447de15737a285529b2967ca7/IHE_ILW_FR_Vol1_1.4.pdf">ILW.FR</a> et <a href="https://www.interopsante.org/f/8e4f8de143d65c6fd3f5f2c372729f2c3ff636fd/IHE_LTW_FR_Vol1_1.4_TI.pdf">LTW.FR</a> encadrant les échanges de demandes et de résultats d’examens de biologie, en contexte intra-établissement et inter-organisations.</p>
+
+<p>Ces spécifications contribuent à une mise en œuvre homogène, interopérable et industrialisée du standard HL7 v2 au niveau national.</p>
+
+<h5 id="outillage-3">Outillage</h5>
+
+<p>L’écosystème HL7 v2 bénéficie d’un outillage industriel éprouvé, largement diffusé auprès des acteurs du secteur :</p>
+
+<ul>
+  <li>Moteurs d’interfaces HL7 (Mirth Connect, Rhapsody, Cloverleaf, etc.), permettant la transformation, le routage et la supervision des flux</li>
+  <li>Bibibliothèques logicielles dans la plupart des langages de développement courants (Java, .NET, Python, JavaScript…), telles que <a href="https://github.com/hapifhir/hapi-hl7v2">HAPI HL7</a>, <a href="https://github.com/nHapiNET/nHapi">NHapi</a> ou <a href="https://crs4.github.io/hl7apy/">hl7apy</a>, facilitant la génération, le parsing, la validation et le transport des messages HL7 v2 au sein des systèmes d’information</li>
+  <li><a href="https://hl7v2-igamt-2.nist.gov/home">Suite d’outil open source du NIST</a> permettant de créer et maintenir des guides d’implémentation HL7v2. Elle permet également de tester la conformité d’un message par rapport au guide généré</li>
+  <li><a href="https://www.ihe-europe.net/testing-IHE/gazelle">Les plateformes Gazelle</a> (ANS et IHE) sont également utilisées pour tester les profils de message. L’outil GazelleHL7Validator intègre les fichiers de définitions. Accessible via le service de Validation EVS Client, il permet de vérifier si :
+    <ul>
+      <li>Le message est bien structuré</li>
+      <li>Le message respecte les règles spécifiées dans les fichiers de définition</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Cet outillage contribue à une mise en œuvre maîtrisée et sécurisée des échanges HL7 v2, y compris dans des environnements hétérogènes ou multi-éditeurs.</p>
+
+<h5 id="hl7v2-adapté-au-cas-dusage-téléradiologie">HL7v2 adapté au cas d’usage Téléradiologie</h5>
+
+<p>Le standard HL7 v2 est d’ores et déjà présent au sein du workflow global de la téléradiologie par l’intermédiaire du <a href="https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2/index.html">volet de transmission d’un document CDA-R2 en HL7v2</a>, utilisé pour la transmission du compte-rendu d’imagerie depuis la plateforme de téléradiologie vers le RIS de la structure d’imagerie. Par ailleurs, le volet téléradiologie envisage également la transmission, en complément des éléments structurés de la demande d’examen, de documents associés tels que la demande d’examen formalisée ou tout document complémentaire permettant d’enrichir le contexte clinique. Ces flux complémentaires reposent également sur le volet de Transport de documents CDA en HL7 v2, renforçant ainsi la cohérence globale des échanges autour de ce standard.</p>
+
+<p>Au-delà de ces usages existants, plusieurs profils IHE du <a href="https://www.ihe.net/ihe_domains/radiology/">domaine IHE RADIOLOGY</a> s’appuient historiquement sur HL7 v2 pour structurer les échanges liés aux workflows d’imagerie. Le profil <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SWF.b_Rev1-7_2019-08-09.pdf">IHE Scheduled Workflow (SWF.b)</a> définit notamment les transactions permettant d’orchestrer le cycle de vie d’un acte d’imagerie, depuis la prescription jusqu’à la production des résultats. Bien que le profil SWF.b ne couvre pas l’intégralité des cas d’usage spécifiques à la téléradiologie, en particulier les étapes de validation médicale distante ou de protocolisation, il propose néanmoins un ensemble de briques fonctionnelles pertinentes, telles que la gestion des demandes d’examen, des statuts associés ou des identifiants d’actes. Ces briques peuvent être mobilisées et adaptées dans le cadre des flux de téléradiologie, sans nécessiter l’adoption exhaustive du profil IHE.</p>
+
+<p>De même, le profil <a href="https://www.interopsante.org/f/07f0be9ab9647f72a3e896fd14620eeba4b1f504/Publication-IHE_FRANCE_PAM_National_Extension_v2.11.2.pdf">IHE PAM-FR</a> (Patient Administration Management France), bien qu’orienté vers la gestion administrative des patients et non vers les processus métiers propres à la téléradiologie, constitue une référence nationale pour la gestion de l’identité patient et des traits d’identification, notamment autour de l’INS. Les segments et champs HL7 v2 définis par ce profil peuvent ainsi être réutilisés pour garantir une gestion cohérente et conforme de l’identité du patient dans les flux de téléradiologie, indépendamment des messages métiers échangés.</p>
+
+<p>Dans cette perspective, l’analyse présentée ci-après vise à démontrer la capacité du standard HL7 v2 à couvrir les concepts métiers identifiés dans les spécifications fonctionnelles du volet Téléradiologie. Les tableaux de couverture proposés s’appuient à la fois sur les usages courants d’HL7 v2 et sur les briques définies dans les profils IHE SWF.b et PAM-FR, afin d’illustrer de manière concrète et opérationnelle la couverture fonctionnelle du standard pour chacun des flux identifiés.</p>
+
+<p>Contrairement à l’approche retenue pour HL7 FHIR, où la couverture des concepts métiers est analysée de manière globale au travers des ressources du modèle d’information, l’adaptation du standard HL7 v2 au volet « Téléradiologie » est étudiée flux par flux. Cette approche s’explique par la nature même du standard, dans lequel la structuration des échanges repose sur des profils de messages distincts, susceptibles de varier selon le type de flux et l’étape du workflow concernée. En conséquence, l’ordre et la logique de couverture des concepts métiers diffèrent de ceux présentés pour FHIR.</p>
+
+<h6 id="flux-1---transmission-de-la-demande-dexamen-dimagerie">Flux 1 - Transmission de la demande d’examen d’imagerie</h6>
+
+<p>Dans le cadre du flux de transmission de la demande d’examen d’imagerie, les concepts métiers identifiés dans les spécifications fonctionnelles peuvent être portés par un message HL7 v2 de type ORM, historiquement utilisé pour la prescription et la gestion des actes d’imagerie. Les mappings présentés ci-dessous s’appuient sur les usages courants d’HL7 v2, ainsi que sur les recommandations issues des profils IHE SWF.b et PAM-FR lorsque celles-ci sont pertinentes, notamment pour la gestion de l’identité patient et des acteurs impliqués.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Concept métier</strong></th>
+      <th><strong>Message HL7v2</strong></th>
+      <th><strong>Segment</strong></th>
+      <th><strong>Champ(s) HL7 v2</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>StructureImagerie</strong></td>
+      <td>ORM^O01</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+    </tr>
+    <tr>
+      <td><strong>PlateformeTeleradiologie</strong></td>
+      <td>ORM^O01</td>
+      <td>MSH - Message Header/ ORC - Common Order</td>
+      <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
+    </tr>
+    <tr>
+      <td><strong>Patient</strong></td>
+      <td>ORM^O01</td>
+      <td>PID - Patient Identification</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><strong>PSResponsable</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-10 Entered By, ORC-12 Ordering Provider</td>
+    </tr>
+    <tr>
+      <td><strong>PSEffecteur</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
+      <td>ORC-11 Verified By / OBR-32 Principal Result Interpreter</td>
+    </tr>
+    <tr>
+      <td><strong>roleProfessionnel</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
+      <td>ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / OBR-32 Principal Result Interpreter</td>
+    </tr>
+    <tr>
+      <td><strong>IdentifiantDemandeExamen</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-2 Placer Order Number</td>
+    </tr>
+    <tr>
+      <td><strong>NatureDemande</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-1 Order Control</td>
+    </tr>
+    <tr>
+      <td><strong>DateDemande</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-9 Date/Time of Transaction</td>
+    </tr>
+    <tr>
+      <td><strong>IdentifiantRDV</strong></td>
+      <td>ORM^O01</td>
+      <td>PV1 - Patient Visit</td>
+      <td>PV1-19 Visit Number</td>
+    </tr>
+    <tr>
+      <td><strong>DateHeurePriseCharge</strong></td>
+      <td>ORM^O01</td>
+      <td>PV1 - Patient Visit</td>
+      <td>PV1-44 Admit Date/Time</td>
+    </tr>
+    <tr>
+      <td><strong>JustificationDemande</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order / NTE - Notes and Comments</td>
+      <td>OBR-31 Reason for Study, NTE-3 Comment</td>
+    </tr>
+    <tr>
+      <td><strong>LocalisationAnatomique</strong></td>
+      <td>ORM^O01</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = CE / TX, OBX-5</td>
+    </tr>
+    <tr>
+      <td><strong>ModaliteImagerie</strong></td>
+      <td>ORM^O01</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = CE / TX, OBX-5</td>
+    </tr>
+    <tr>
+      <td><strong>Antecedents</strong></td>
+      <td>ORM^O01</td>
+      <td>OBR - Observation Request</td>
+      <td>OBR-13 Relevant Clinical Information</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;">Table 3 : Couverture des concepts métier du flux 1 par le standard HL7v2</p>
+
+<h6 id="flux-2---annulation-de-la-demande-dexamen-dimagerie">Flux 2 - Annulation de la demande d’examen d’imagerie</h6>
+
+<p>Le flux d’annulation de la demande d’examen d’imagerie vise à notifier la plateforme de téléradiologie de l’invalidation d’une demande précédemment transmise. HL7 v2 prévoit nativement ce cas d’usage au travers du profil de message ORM^O01. Le segment ORC (Common Order) et plus particulièrement son champ ORC-1 Order Control- Order Control, permet de gérer le cycle de vie des ordres, incluant leur création, modification et annulation. Ce mécanisme, largement utilisé dans les workflows d’imagerie décrits par le profil IHE SWF.b, garantit une gestion cohérente et tracée des annulations sans introduire de nouveaux messages spécifiques.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Concept métier</strong></th>
+      <th><strong>Message HL7v2</strong></th>
+      <th><strong>Segment</strong></th>
+      <th><strong>Champ(s) HL7 v2</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>StructureImagerie</strong></td>
+      <td>ORM^O01</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+    </tr>
+    <tr>
+      <td><strong>PlateformeTeleradiologie</strong></td>
+      <td>ORM^O01</td>
+      <td>MSH - Message Header</td>
+      <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
+    </tr>
+    <tr>
+      <td><strong>Patient</strong></td>
+      <td>ORM^O01</td>
+      <td>PID - Patient Identification</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><strong>PSEffecteur</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-11 Verified By / OBR-32 Principal Result Interpreter</td>
+    </tr>
+    <tr>
+      <td><strong>roleProfessionnel</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-10 Entered By / ORC-11 Verified By / ORC-12 Ordering Provider / OBR-32 Principal Result Interpreter</td>
+    </tr>
+    <tr>
+      <td><strong>IdentifiantDemandeExamen</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-2 Placer Order Number</td>
+    </tr>
+    <tr>
+      <td><strong>NatureDemande</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-1 Order Control</td>
+    </tr>
+    <tr>
+      <td><strong>MotifAnnulation</strong></td>
+      <td>ORM^O01</td>
+      <td>ORC - Common Order / NTE - Notes and Comments</td>
+      <td>ORC-16 Order Control Code Reason, NTE-3 Comment</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;">Table 4 : couverture des concepts métier du flux 2 par le standard HL7v2</p>
+
+<h6 id="flux-3---réponse-à-la-demande-dexamen-dimagerie">Flux 3 - Réponse à la demande d’examen d’imagerie</h6>
+
+<p>Le flux de réponse à la demande d’examen d’imagerie correspond à la décision rendue par le médecin effecteur distant à l’issue de l’analyse de la demande initiale. Cette réponse peut se traduire par une acceptation de la demande, accompagnée d’un protocole d’imagerie, ou par un refus, éventuellement assorti d’un motif explicatif. HL7 v2 ne définit pas de message spécifique dédié à la notion de « réponse à une demande » dans un contexte de téléradiologie. En revanche, le standard propose plusieurs mécanismes permettant de porter cette information, notamment via des profils de message comme ORM^O01 ou ORU^R01 qui assurent la gestion des statuts d’ordre (segment ORC) et l’ajout d’informations cliniques ou opérationnelles dans les segments OBR, OBX ou NTE. Ces mécanismes sont historiquement mobilisés dans les workflows d’imagerie décrits par le profil IHE SWF.b.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Concept métier</strong></th>
+      <th><strong>Message HL7v2</strong></th>
+      <th><strong>Segment</strong></th>
+      <th><strong>Champ(s) HL7 v2</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PlateformeTeleradiologie</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+    </tr>
+    <tr>
+      <td><strong>StructureImagerie</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
+    </tr>
+    <tr>
+      <td><strong>Patient</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>PID - Patient Identification</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><strong>PSEffecteur</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-10 Entered By, ORC-12 Ordering Provider</td>
+    </tr>
+    <tr>
+      <td><strong>roleProfessionnel</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>ORC - Common Order / OBR - Observation Request</td>
+      <td>ORC-10 Entered By / ORC-11 Verified By</td>
+    </tr>
+    <tr>
+      <td><strong>IdentifiantDemandeExamen</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-2 Placer Order Number</td>
+    </tr>
+    <tr>
+      <td><strong>DecisionEffecteur</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-1 Order Control</td>
+    </tr>
+    <tr>
+      <td><strong>MotifRefus</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>ORC - Common Order / NTE - Notes and Comments</td>
+      <td>ORC-16 Order Control Code Reason, NTE-3 Comment</td>
+    </tr>
+    <tr>
+      <td><strong>ProtocoleImagerie</strong></td>
+      <td>ORM^O01 / ORU^R01</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = ED/TX, OBX-5</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;">Table 5 : couverture des concepts métier du flux 3 par le standard HL7v2</p>
+
+<h6 id="flux-4---transmission-dun-complément-dinformation-post-acte-dimagerie">Flux 4 - Transmission d’un complément d’information post-acte d’imagerie</h6>
+
+<p>Le flux de transmission d’un complément d’information post-acte d’imagerie intervient à l’issue de la réalisation de l’examen. Il vise à transmettre au radiologue effecteur distant des éléments permettant de compléter le contexte d’interprétation et de rédaction du compte-rendu d’imagerie. Dans les implémentations HL7 v2 existantes, ce type de flux est fréquemment pris en charge au moyen de messages ORU^R01, utilisés pour la transmission d’observations et de résultats. Ce message permet de véhiculer une grande variété d’informations via des segments OBX, mais ne dispose pas de segments dédiés pour porter nativement les identifiants DICOM de l’examen. À l’inverse, le message OMI^O23, introduit pour répondre spécifiquement aux besoins du domaine de l’imagerie, propose le segment IPC (Imaging Procedure Control), permettant de structurer explicitement les informations techniques liées à la procédure d’imagerie, notamment l’Accession Number et le StudyInstanceUID. Ainsi, le message OMI^O23 est préconisé pour la couverture de flux.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Concept métier</strong></th>
+      <th><strong>Message HL7v2</strong></th>
+      <th><strong>Segment</strong></th>
+      <th><strong>Champ(s) HL7 v2</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>StructureImagerie</strong></td>
+      <td>OMI^O23</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-3 Sending Application, MSH-4 Sending Facility / <br/>ORC-21 Ordering Facility Name, ORC-22 Ordering Facility Address</td>
+    </tr>
+    <tr>
+      <td><strong>PlateformeTeleradiologie</strong></td>
+      <td>OMI^O23</td>
+      <td>MSH - Message Header / ORC - Common Order</td>
+      <td>MSH-5 Receiving Application, MSH-6 Receiving Facility</td>
+    </tr>
+    <tr>
+      <td><strong>Patient</strong></td>
+      <td>OMI^O23</td>
+      <td>PID - Patient Identification</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><strong>IdentifiantDemandeExamen</strong></td>
+      <td>OMI^O23</td>
+      <td>ORC - Common Order</td>
+      <td>ORC-2 Placer Order Number</td>
+    </tr>
+    <tr>
+      <td><strong>IdentifiantRDV</strong></td>
+      <td>OMI^O23</td>
+      <td>PV1 - Patient Visit</td>
+      <td>PV1-19 Visit Number</td>
+    </tr>
+    <tr>
+      <td><strong>AccessionNumber</strong></td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-2 Requested Procedure ID</td>
+    </tr>
+    <tr>
+      <td><strong>StudyInstanceUID</strong></td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-3 Study Instance UID</td>
+    </tr>
+    <tr>
+      <td><strong>DateRéalisationExamen</strong></td>
+      <td>OMI^O23</td>
+      <td>OBR - Observation Request</td>
+      <td>OBR-7 Observation Date/Time</td>
+    </tr>
+    <tr>
+      <td><strong>LocalisationAnatomique</strong></td>
+      <td>OMI^O23</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = CE / TX, OBX-5</td>
+    </tr>
+    <tr>
+      <td><strong>ModaliteImagerie</strong></td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-5 Modality</td>
+    </tr>
+    <tr>
+      <td><strong>URLViewerDRIMBOX</strong></td>
+      <td>OMI^O23</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = ST / ED, OBX-5</td>
+    </tr>
+    <tr>
+      <td><strong>DuréeRétentionImages</strong></td>
+      <td>OMI^O23</td>
+      <td>TQ - Timing/Quantity</td>
+      <td>TQ1-6 Service Duration</td>
+    </tr>
+    <tr>
+      <td><strong>IdentificationMatériel</strong></td>
+      <td>OMI^O23</td>
+      <td>IPC - Imaging Procedure Control</td>
+      <td>IPC-5 Modality</td>
+    </tr>
+    <tr>
+      <td><strong>ProduitsAdministres</strong></td>
+      <td>OMI^O23</td>
+      <td>OBX - Observation/Result</td>
+      <td>OBX-2 = CE / TX, OBX-5</td>
+    </tr>
+    <tr>
+      <td><strong>CodeEvenement (LOINC / CCAM)</strong></td>
+      <td>OMI^O23</td>
+      <td>OBR - Observation Request</td>
+      <td>OBR-4 Universal Service Identifier</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;">Table 6 : couverture des concepts métier du flux 4 par le standard HL7v2</p>
+
+<h5 id="synthèse-3">Synthèse</h5>
+
+<p>L’analyse des différents flux du volet Téléradiologie met en évidence la capacité du standard HL7 v2 à couvrir les concepts métiers échangés au sein des flux identifiés dans les spécifications fonctionnelles. Ce standard bénéficie d’un haut niveau de maturité, d’un large outillage industriel et d’une interopérabilité éprouvée dans le domaine de l’imagerie médicale. La capacité d’HL7 v2 à suivre les différentes étapes du traitement d’une demande d’examen et à gérer des accusés de réception contribue à sécuriser et tracer les échanges entre systèmes distants. L’utilisation conjointe de HL7 v2 et du protocole MLLP permet ainsi de répondre efficacement aux exigences de robustesse et de synchronisation attendues pour ce type de flux transactionnels. Par ailleurs, l’analyse montre que les profils IHE, en particulier IHE Scheduled Workflow (SWF.b) et IHE PAM-FR, apportent un cadre de référence pertinent pour l’usage d’HL7 v2 dans le domaine de l’imagerie. Les briques proposées par ces profils peuvent être mobilisées de manière ciblée, notamment pour la gestion du cycle de vie des demandes et pour la prise en compte des exigences nationales relatives à l’identité patient et à l’INS.</p>
+
+<p><br/></p>
+
+<h3 id="synthèse-de-létude">Synthèse de l’étude</h3>
+
+<h4 id="synthèse-de-la-couverture-des-objets-métiers-par-chaque-standard-étudié">Synthèse de la couverture des objets métiers par chaque standard étudié</h4>
+
+<p>L’analyse de la couverture des objets métiers montre que les standards HL7 v2 et HL7 FHIR permettent de représenter l’ensemble des concepts métiers identifiés pour le volet Téléradiologie.</p>
+
+<h4 id="synthèse-comparative-des-normes-et-standards-étudiés">Synthèse comparative des normes et standards étudiés</h4>
+
+<p>Cette section présente une synthèse comparative des normes et standards analysés dans les sections précédentes. Les items de cette synthèse sont inspirés des documents suivants :</p>
+
+<ul>
+  <li>La <a href="https://interop.esante.gouv.fr/ig/doctrine/">doctrine du CI-SIS</a></li>
+  <li>« <a href="https://www.himss.org/sites/hde/files/FileDownloads/2013-09-23-EvaluatingHITStandards-FINAL.pdf">Evaluating HIT Standards</a> » document sur la comparaison des standards publiés par l’organisation <a href="https://www.himss.org/">HIMSS.</a></li>
+  <li>La méthode <a href="https://joinup.ec.europa.eu/collection/common-assessment-method-standards-and-specifications-camss">CAMSS</a> (Common Assessment method for standards and specifications) soutenue par le programme de la commission européenne concernant les solutions d’interopérabilité pour les administrations publiques. Cette initiative vise à promouvoir la collaboration entre les états membres de l’union européenne dans la définition d’une méthode d’évaluation commune de standards pour le développement des services administratifs en ligne.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Critères d’évaluation</strong></th>
+      <th><strong>DICOM</strong></th>
+      <th><strong>CDA</strong></th>
+      <th><strong>FHIR</strong></th>
+      <th><strong>HL7v2</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Couverture métier</td>
+      <td>&nbsp;</td>
+      <td>Non étudiée</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Adoption par l’écosystème Téléradiologie</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>&nbsp;</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Rétrocompatibilité du standard ou de la norme</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>&nbsp;</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Outillage<br/><br/><em>Des outils de tests sont mis en œuvre pour valider l’adhérence au standard.</em></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Tests<br/><br/><em>Des tests sont effectués pour des versions de travail (dites STU -Standards for Trial Use) et/ou pour les guides d’implémentation normatifs.</em></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Processus de prise en compte des améliorations</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Existence de guides d’implémentation<br/><br/><em>Les guides référencent les standards de base avec au moins un cas d’usage et une optionalité sur les paramètres pour permettre les extensions.</em></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Adapté aux dispositifs mobiles</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Stabilité de la documentation</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Adoption par le marché et utilisation</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Neutralité<br/><br/><em>les spécifications ne limitent pas la concurrence et l’innovation; les spécifications sont basées sur des développements scientifiques et technologiques de pointe.</em></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Qualité<br/><br/><em>la qualité est suffisante pour permettre le développement de produits et de services interopérables concurrents.</em></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Accessibilité<br/><br/><em>Les spécifications sont disponibles au public à des conditions raisonnables (y compris pour un prix raisonnable ou gratuitement).</em></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;">Table 7 : Synthèse comparative des normes et standards étudiés</p>
+
+<p><br/></p>
+
+<h3 id="analyse-et-conclusion">Analyse et conclusion</h3>
+
+<h4 id="normes-et-standards-étudiés-1">Normes et Standards étudiés</h4>
+
+<p>Cette section a pour objectif de comparer les normes et standards étudiés dans ce document, en vue de choisir le plus approprié pour la spécification du volet « Téléradiologie ».</p>
+
+<h5 id="dicom">DICOM</h5>
+
+<p>Le standard DICOM est indispensable pour la gestion et la mise à disposition des images médicales, mais ne couvre pas les échanges fonctionnels et organisationnels du volet Téléradiologie.</p>
+
+<h5 id="cda">CDA</h5>
+
+<p>Le standard HL7 CDA est adapté à la production et à l’échange de documents cliniques persistants, en particulier le compte-rendu d’imagerie, qui constitue le livrable clinique final du workflow. En dehors de la structuration du contenu de la demande d’examen déjà couvert par un volet CI-SIS dédié, l’utilisation de CDA pour les échanges intermédiaires n’est pas adapté au contexte de téléradiologie. De plus, les orientations européennes envisagées à moyen terme limitent l’intérêt d’engager de nouveaux travaux basés sur le standard CDA.</p>
+
+<h5 id="fhir">FHIR</h5>
+
+<p>Le standard HL7 FHIR permet de couvrir l’ensemble des concepts métier du volet Téléradiologie au travers de ressources structurées, largement adoptées dans le domaine de la santé. La mise en œuvre de FHIR suppose par ailleurs que chaque acteur dispose d’une infrastructure FHIR complète, capable d’assurer les rôles de client et de serveur pour supporter les flux d’échange.</p>
+
+<h5 id="hl7v2">HL7v2</h5>
+
+<p>L’analyse des flux du volet Téléradiologie montre que le standard HL7 v2 permet de couvrir l’ensemble des échanges identifiés. Il offre des mécanismes natifs de gestion des statuts et d’accusés de réception, adaptés aux flux transactionnels, notamment lorsqu’il est utilisé avec le protocole MLLP. Les profils IHE SWF.b et IHE PAM-FR fournissent par ailleurs des cadres de référence réutilisables pour le cycle de vie des demandes d’imagerie et la gestion de l’identité patient.</p>
+
+<p>Largement adopté dans l’écosystème de l’imagerie médicale et déjà utilisé dans les volets de transport de documents CDA, HL7 v2 constitue une solution opérationnelle à court terme limitant les impacts sur les systèmes existants et compatible avec les contraintes de déploiement du volet.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>La présente étude a pour objectif d’identifier et de comparer les normes et standards susceptibles de répondre à la mise en œuvre des flux d’échange définis dans les spécifications fonctionnelles du volet Téléradiologie. L’analyse a porté sur un ensemble de standards largement utilisés dans le domaine de l’interopérabilité en santé, évalués au regard de plusieurs critères complémentaires : <strong>la capacité à structurer les contenus métiers, la couverture des cas d’usage identifiés, la maturité et le niveau d’adoption au sein de l’écosystème, l’existence d’outillage, ainsi que l’adéquation aux contraintes organisationnelles, techniques et réglementaires du contexte national.</strong></p>
+
+<p>Parmi les standards étudiés, <strong>DICOM et HL7 CDA ont été écartés comme supports principaux des flux du volet Téléradiologie.</strong> DICOM est spécifiquement dédié à la gestion, au stockage et à l’échange des objets d’imagerie médicale et ne vise pas la structuration des échanges métiers intervenant tout au long du workflow. Le standard HL7 CDA est, quant à lui, conçu pour la production de documents cliniques persistants, et pertinent en fin de parcours pour le compte-rendu d’imagerie. En revanche, son usage pour des échanges transactionnels intermédiaires à durée de vie courte ne correspond pas à son positionnement naturel. Par ailleurs, les orientations européennes et nationales récentes en matière d’interopérabilité privilégient désormais le standard HL7 FHIR pour les nouveaux besoins d’échange de données de santé structurées, ce qui limite la pertinence d’engager de nouveaux travaux fondés sur CDA dans ce contexte.</p>
+
+<p><strong>L’analyse met en évidence que le standard HL7 FHIR présente une couverture fonctionnelle et technique complète des besoins du volet Téléradiologie.</strong> Sa granularité, son modèle de données explicite et sa capacité à supporter des échanges transactionnels en font un standard particulièrement adapté aux cas d’usage identifiés. Par ailleurs, son alignement avec les orientations européennes en matière d’interopérabilité confirme son rôle structurant dans les trajectoires d’évolution à moyen et long terme des systèmes d’information de santé.</p>
+
+<p><strong>L’étude montre également que le standard HL7 v2 est en mesure de couvrir l’ensemble des concepts métiers du volet Téléradiologie.</strong> Il propose des mécanismes natifs adaptés à la gestion des échanges transactionnels, notamment pour le suivi de l’état de traitement des demandes et les accusés de réception. Son usage est bien maîtrisé par l’écosystème, en particulier dans le domaine de l’imagerie médicale, et s’appuie sur un outillage industriel éprouvé ainsi que sur des profils IHE largement diffusés.</p>
+
+<p><strong>En conclusion, au regard des contraintes analysées dans cette étude, le standard HL7 v2 apparaît comme le plus à même de répondre aux besoins du volet Téléradiologie dans un contexte de mise en œuvre à court terme. HL7 v2 permet de couvrir l’ensemble des concepts métiers identifiés, tout en s’appuyant sur des mécanismes éprouvés pour la gestion de flux transactionnels. Sa maturité, son adoption éprouvée dans le domaine de l’imagerie médicale, ainsi que la disponibilité de profils IHE tels que PAM-FR et SWF.b permettent de capitaliser sur des briques existantes et largement industrialisées. Ce choix garantit ainsi une mise en œuvre pragmatique, limitant les impacts pour les éditeurs de RIS et de plateformes de téléradiologie tout en assurant la compatibilité avec les capacités actuelles du DMP.</strong></p>
 
 
 
 
 </div>
-        </div>  <!-- /inner-wrapper -->
-      </div>  <!-- /row -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-content -->
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
 
-  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
-  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
 
-<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
   <a name="bottom"> </a>
-  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
-    <div class="container">  <!-- container -->
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
 
       <div style="background-color:var(--footer-nav-bg-color)">
         <table style="width:100%">
           <tbody>
             <tr>
-              <td style="text-align:left">&#xA0;
+              <td style="text-align:left">&nbsp;
 
                 <a href="specifications_fonctionnelles.html">&lt;prev</a>
 
@@ -217,7 +1435,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               <td style="text-align:center">
                 <a href="#top">top</a>
               </td>
-              <td style="text-align:right">&#xA0;
+              <td style="text-align:right">&nbsp;
 
                 <a href="specifications_techniques.html">next&gt;</a>
 
@@ -229,50 +1447,50 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 13:10+0000">2026-01-30</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 13:17+0000">2026-01-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
-<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html">Historique des versions </a>
- | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/interop-ig-teleradiologie/issues/new">New Issue</a>
+<a style="color: var(--footer-hyperlink-text-color)" href="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html" target="_blank">Historique des versions </a>
+ | <a style="color: var(--footer-hyperlink-text-color)" href="https://github.com/ansforge/interop-ig-teleradiologie/issues/new" target="_blank">New Issue</a>
 
-          </span>
+          
         </p>
-      </div>  <!-- /inner-wrapper -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-footer -->
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
   
-  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
-    <div class="container">  <!-- container -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-post-footer -->
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
   
-  <!-- JS and analytics only. -->
-  <!-- Bootstrap core JavaScript
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
   ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
-  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
-  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
-  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
-  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
 
-  <!-- Ajout ANS -->
+    <!-- Ajout ANS -->
   <script src="assets/js/app.js" type="text/javascript"> </script>
   <script src="assets/js/vendor.js" type="text/javascript"> </script>
-  <!-- Fin ajout ANS -->
+    <!-- Fin ajout ANS -->
 
-  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
   
 
-  <!-- Analytics Below
+    <!-- Analytics Below
   ================================================== -->
 
 
-  <!-- AJOUT ANS -->
+    <!-- AJOUT ANS -->
 
-<footer class="footer footer-principal" role="contentinfo">
+<footer role="contentinfo" class="footer footer-principal">
   <div class="footer__region1">
     <div class="container">
       <div class="row">
@@ -280,17 +1498,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <div class="col-md-6 col-lg-4 text-center text-md-left">
           <div class="logos">        
             <div class="logo logo--0">
-              <a href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+              <a rel="nofollow" href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank">
                 
-                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" height="77" loading="lazy" />
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" loading="lazy" height="77"/>
                 
               </a>
             </div>
         
             <div class="logo logo--1">
-              <a href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+              <a rel="nofollow" href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank">
                 
-                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" height="74" loading="lazy" />
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" loading="lazy" height="74"/>
               </a>
             </div>
           </div>
@@ -300,7 +1518,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           <p class="footer__title">Agence du Numérique en Santé</p>
           <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
 
-          <!-- <div class="m-social">
+            <!-- <div class="m-social">
             <ul class="m-social__list">        
               <li class="m-social__item">
                 <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
@@ -342,12 +1560,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           <ul class="footer-list">
             <li class="footer-list__item footer-list__item--hasIcon">
               <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
-                <svg class="svg-icon svg-angle-right" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+                <svg aria-hidden="true" focusable="false" class="svg-icon svg-angle-right"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
               </li>
-              <!-- <li class="footer-list__item">
+                <!-- <li class="footer-list__item">
                 <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
-              </li>
-               -->
+              </li> -->
             </ul>
           </div>
 
@@ -355,7 +1572,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </div>
     </div>
     
-    <!-- <div class="footer__region2">
+      <!-- <div class="footer__region2">
       <div class="container">
         <div class="footer-contentinfo">
           <ul class="footer-list footer-list--inline">
@@ -367,4 +1584,3 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </footer>
   </body>
 </html>
-
