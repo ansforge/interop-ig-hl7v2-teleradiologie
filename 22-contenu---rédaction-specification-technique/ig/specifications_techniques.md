@@ -558,7 +558,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
 
 Le message **ORM^O01** du flux 2 permet au système demandeur de notifier au système effecteur **l’annulation d’une demande d’examen d’imagerie précédemment transmise**.
 
-Les segments **ORC** et **OBR** assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
+Les segments **ORC** et **OBR** assurent l’identification de la demande concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
 
 Le diagramme ci-dessous présente la **description fonctionnelle du message d’annulation** :
 
@@ -570,7 +570,7 @@ Le flux 3 repose sur l’échange d’un message **ORU^R01** conforme à la norm
  Il est utilisé pour la **réponse à une demande d’examen d’imagerie**, en particulier pour notifier la **décision du médecin effecteur** (approbation/refus de la demande).
 
 Contrairement aux flux 1 et 2, ce flux **ne s’appuie sur aucun profil IHE** existant.
- En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.
+ En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d’examen d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.
  Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complété par une **surcouche de contraintes spécifiques au volet Téléradiologie**.
 
 ###### Description technique
@@ -1116,7 +1116,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d’entê
   * Type donnée: EI
   * Caractère optionnel/obligatoire: R
 
-**Entête MSH d’un message ORM :**
+**Exemple d’en-tête MSH d’un message ORM :**
 
 `MSH|^~\&|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2`
 
@@ -1219,7 +1219,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
   * ?: Person Identifier
-  * ?: Identifiant du professionnel
+  * ?: Identifiant du professionnel (au format PS_IdNat)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.2
   * ?: Family Name
   * ?: Nom d'exercice du professionnel
@@ -1240,7 +1240,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: ISO
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.13
   * ?: Identifier Type Code
-  * ?: Type d'identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
+  * ?: Type d'Identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-14 (Requis si connu)
   * ?: Call Back Phone Number
   * ?: Numéro de téléphone à appeler pour obtenir des précisions sur la demande d'examen d'imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
@@ -1261,13 +1261,13 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Nom de l'organisation (structure d'imagerie)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.6
   * ?: Assigning Authority
-  * ?: Autorité d'affectation de l'identifiant de l'organisation1.2.250.1.71.4.2.2 (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).[Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France](https://www.interopsante.org/publications).
+  * ?: Autorité d'affectation de l'Identifiant de l'organisation1.2.250.1.71.4.2.2 (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).[Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France](https://www.interopsante.org/publications).
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.7
   * ?: Identifier Type Code
   * ?: Type d'identifiant (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") : FINEJ (FINESS d'entité juridique) ou FINEG (FINESS d'entité géographique) ou IDNST ou UF (UF), SVR (service).
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.10
   * ?: Organization number
-  * ?: Identifiant de l'organisation
+  * ?: Identifiant de l'organisation (au format Struct_IdNat)
 
 >  **(4) :** Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés. Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une [table de valeurs locale documentée](./table_orga.md). L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS. Ce découplage permet de respecter les exigences IHE tout en garantissant une identification robuste. 
 
@@ -1670,7 +1670,7 @@ Le segment **ORC** est utilisé pour véhiculer l’**annulation d’une demande
 La structure du segment ORC est **identique à celle du flux 1**, à l’exception du champ **ORC-1 – Order Control**, dont la valeur est fixée à **CA (Cancel Order)**.
  Un **motif d’annulation** peut être véhiculé lorsque cette information est disponible, son renseignement est **optionnel**.
 
-Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, ainsi que certains champs **requis si connus** ou **optionnel**, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.
+Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, ainsi que certains champs **requis si connus** ou **optionnels**, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.
 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -1690,9 +1690,12 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-11 (Requis si connu)
   * ?: Verified By
   * ?: Informations relatives au Médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12
+  * ?: Ordering Provider
+  * ?: Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
   * ?: Person Identifier
-  * ?: Identifiant du professionnel
+  * ?: Identifiant du professionnel (au format PS_IdNat)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.2
   * ?: Family Name
   * ?: Nom d'exercice du professionnel
@@ -1713,7 +1716,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: ISO
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.13
   * ?: Identifier Type Code
-  * ?: Type d'identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
+  * ?: Type d'Identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-14 (Requis si connu)
   * ?: Call Back Phone Number
   * ?: Numéro de téléphone à appeler pour obtenir des précisions sur la demande d'examen d'imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
@@ -1737,13 +1740,13 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Nom de l'organisation
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.6
   * ?: Assigning Authority
-  * ?: Autorité d'affectation de l'identifiant de l'organisation1.2.250.1.71.4.2.2 (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).[Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France](https://www.interopsante.org/publications).
+  * ?: Autorité d'affectation de l'Identifiant de l'organisation1.2.250.1.71.4.2.2 (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).[Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France](https://www.interopsante.org/publications).
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.7
   * ?: Identifier Type Code
   * ?: Type d'identifiant (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") : FINEJ (FINESS d'entité juridique) ou FINEG (FINESS d'entité géographique) ou IDNST ou UF (UF), SVR (service).
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.10
   * ?: Organization number
-  * ?: Identifiant de l'organisation destinataire
+  * ?: Identifiant de l'organisation (au format Struct_IdNat) 
 
 ##### Segment OBR (Observation Request)
 
@@ -1789,7 +1792,7 @@ Le segment **ORC** est utilisé pour véhiculer la **décision du médecin effec
 
 Le champ **ORC-1 – Order Control** permet d’indiquer la décision prise sur la demande, à savoir sa **validation** ou son **refus**. En cas de refus, un **motif de refus** peut être transmis lorsque cette information est disponible ; son renseignement est **optionnel**.
 
-Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, ainsi que certains champs **requis si connus** ou **optionnel**, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.
+Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, ainsi que certains champs **requis si connus** ou **optionnels**, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.
 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -1808,7 +1811,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Informations relatives au médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
   * ?: Person Identifier
-  * ?: Identifiant du professionnel
+  * ?: Identifiant du professionnel (au format PS_IdNat)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.2
   * ?: Family Name
   * ?: Nom d'exercice du professionnel
@@ -1829,7 +1832,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: ISO
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.13
   * ?: Identifier Type Code
-  * ?: Type d'identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
+  * ?: Type d'Identifiant du professionnel (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-16 (Optionnel)
   * ?: Order Control Code Reason
   * ?: Motif du refus de la demande d'examen (type CE)Peut être exprimé à l’aide d’un code renseigné dans CE-1 – Identifier, avec le système de codage correspondant précisé en CE-3 – Name of Coding System (code local ou standard).À défaut de codage disponible, un libellé en clair peut être renseigné dans CE-2 – Text.
@@ -1850,13 +1853,13 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Nom de l'organisation
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.6
   * ?: Assigning Authority
-  * ?: Autorité d'affectation de l'identifiant de l'organisation1.2.250.1.71.4.2.2 (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).[Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France](https://www.interopsante.org/publications).
+  * ?: Autorité d'affectation de l'Identifiant de l'organisation (au format Struct_IdNat)1.2.250.1.71.4.2.2 (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).[Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France](https://www.interopsante.org/publications).
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.7
   * ?: Identifier Type Code
   * ?: Type d'identifiant (valeur issue de la [Table 0203 - Interop'Santé](https://www.interopsante.org/publications) présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France") : FINEJ (FINESS d'entité juridique) ou FINEG (FINESS d'entité géographique) ou IDNST ou UF (UF), SVR (service).
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.10
   * ?: Organization number
-  * ?: Identifiant de l'organisation destinataire du document
+  * ?: Identifiant de l'organisation (au format Struct_IdNat)
 
 ##### Segment OBR (Observation Request)
 
@@ -1984,7 +1987,7 @@ Cette alternative permet de transmettre le **protocole d’imagerie sous forme e
 
 Ce flux repose sur l’utilisation d’un messages **OMI^O23**, conformes au standard **HL7 v2.5.1**.
 
-Les segments présentés danS cette partie font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
+Les segments présentés dans cette partie font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
 
 Les sections suivantes décrivent les contraintes appliquées aux segments du message OMI^O23 dans le cadre de ce flux.
 
@@ -2097,7 +2100,7 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
 
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.
 
-L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans **OBX-3**, [documenté en annexe](./table_obs.md).
+L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans **OBX-3**, [documenté en annexe](./table_obs.md).
 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -2243,7 +2246,7 @@ Un segment OBX unique au sein de ce groupe porte la valeur codée dans **OBX-5**
   * ?:  
 * Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-5.1
   * ?: Code 
-  * ?: Valeur issue du JDV ATC niveau 2 “V09” ou “V10”.</a>
+  * ?: Valeur issue du JDV ATC niveau 2 “V09” ou “V10”.
 * Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-5.3
   * ?: Name Of Coding System
   * ?: ATC
@@ -2375,7 +2378,7 @@ Ce groupe OBSERVATION permet de transmettre l’identifiant unique de l’appare
   * ?: Valeur fixée à n.1**Voir règle commune d’utilisation du Sub-ID : **[Utilisation du champ OBX-4 ](./sub-id.md)
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-5
   * ?: Observation Value
-  * ?: Identifiant de l'appareil d'imagerie : SupportIUD voir SFE 2.1.7.4.3
+  * ?: Identifiant de l'appareil d'imagerie : [SupportIUD voir SFE 2.1.7.4.3](./specifications_fonctionnelles.md#classe-appareilimagerieutilise).
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
   * ?: Valeur fixée à « F » 
@@ -2531,7 +2534,7 @@ Le tableau ci-dessous liste les champs à renseigner pour le segment ERR :
   * Type donnée: ID
   * Caractère optionnel/obligatoire: R
 
-**Exemple**
+**Exemples**
 
 Entête MSH d’un message ORM^O01 dans le cadre du flux 1 :
 

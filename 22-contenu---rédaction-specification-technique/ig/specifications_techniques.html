@@ -353,7 +353,7 @@ La transmission de la <strong>demande d’examen d’imagerie formalisée sous f
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="DiagSequ12.png" alt="Diagramme de séquence des flux 1 et 2" title="Diagramme de séquence des flux 1 et 2" style="
+    <img src="Sequence1-2.svg" alt="Diagramme de séquence des flux 1 et 2" title="Diagramme de séquence des flux 1 et 2" style="
             max-width: 900px;
             width: 100%;
             height: auto;
@@ -389,7 +389,7 @@ La transmission de la <strong>demande d’examen d’imagerie formalisée sous f
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="Sequence3.png" alt="Diagramme de séquence du flux 3" title="Diagramme de séquence du flux 3" style="
+    <img src="Sequence3.svg" alt="Diagramme de séquence du flux 3" title="Diagramme de séquence du flux 3" style="
             max-width: 900px;
             width: 100%;
             height: auto;
@@ -432,7 +432,7 @@ le champ <strong>ORC-1 (Order Control)</strong> est valorisé à <strong>OC</str
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="Sequence4.png" alt="Diagramme de séquence du flux 4" title="Diagramme de séquence du flux 4" style="
+    <img src="Sequence4.svg" alt="Diagramme de séquence du flux 4" title="Diagramme de séquence du flux 4" style="
             max-width: 1000px;
             width: 100%;
             height: auto;
@@ -1133,7 +1133,7 @@ Les éléments reliés par des flèches traduisent des <strong>dépendances fonc
 
 <p>Le message <strong>ORM^O01</strong> du flux 2 permet au système demandeur de notifier au système effecteur <strong>l’annulation d’une demande d’examen d’imagerie précédemment transmise</strong>.</p>
 
-<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil <strong>IHE SWF</strong>.</p>
+<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent l’identification de la demande concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil <strong>IHE SWF</strong>.</p>
 
 <p>Le diagramme ci-dessous présente la <strong>description fonctionnelle du message d’annulation</strong> :</p>
 
@@ -1164,7 +1164,7 @@ Les éléments reliés par des flèches traduisent des <strong>dépendances fonc
 Il est utilisé pour la <strong>réponse à une demande d’examen d’imagerie</strong>, en particulier pour notifier la <strong>décision du médecin effecteur</strong> (approbation/refus de la demande).</p>
 
 <p>Contrairement aux flux 1 et 2, ce flux <strong>ne s’appuie sur aucun profil IHE</strong> existant.<br />
-En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.<br />
+En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d’examen d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.<br />
 Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complété par une <strong>surcouche de contraintes spécifiques au volet Téléradiologie</strong>.</p>
 
 <h6 id="description-technique-2">Description technique</h6>
@@ -2177,7 +2177,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
   </tbody>
 </table>
 
-<p><strong>Entête MSH d’un message ORM :</strong></p>
+<p><strong>Exemple d’en-tête MSH d’un message ORM :</strong></p>
 
 <p><code class="language-plaintext highlighter-rouge">MSH|^~\&amp;|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2</code></p>
 
@@ -2470,7 +2470,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Person Identifier</p>
       </td>
       <td>
-        <p>Identifiant du professionnel</p>
+        <p>Identifiant du professionnel (au format PS_IdNat)</p>
       </td>
     </tr>
     <tr>
@@ -2547,7 +2547,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Identifier Type Code</p>
       </td>
       <td>
-        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
+        <p>Type d'Identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -2625,7 +2625,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Assigning Authority</p>
       </td>
       <td>
-        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p>Autorité d'affectation de l'Identifiant de l'organisation</p>
         <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
         <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
       </td>
@@ -2649,7 +2649,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Organization number</p>
       </td>
       <td>
-        <p>Identifiant de l'organisation</p>
+        <p>Identifiant de l'organisation (au format Struct_IdNat)</p>
       </td>
     </tr>
   </tbody>
@@ -4010,7 +4010,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
 <p>La structure du segment ORC est <strong>identique à celle du flux 1</strong>, à l’exception du champ <strong>ORC-1 – Order Control</strong>, dont la valeur est fixée à <strong>CA (Cancel Order)</strong>.<br />
 Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette information est disponible, son renseignement est <strong>optionnel</strong>.</p>
 
-<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong> ou <strong>optionnel</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.</p>
+<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong> ou <strong>optionnels</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -4088,13 +4088,24 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
     </tr>
     <tr>
       <td>
+        <p>ORC-12</p>
+      </td>
+      <td>
+        <p>Ordering Provider</p>
+      </td>
+      <td>
+        <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <p>&gt; ORC-12.1</p>
       </td>
       <td>
         <p>Person Identifier</p>
       </td>
       <td>
-        <p>Identifiant du professionnel</p>
+        <p>Identifiant du professionnel (au format PS_IdNat)</p>
       </td>
     </tr>
     <tr>
@@ -4171,7 +4182,7 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Identifier Type Code</p>
       </td>
       <td>
-        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
+        <p>Type d'Identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -4262,7 +4273,7 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Assigning Authority</p>
       </td>
       <td>
-        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p>Autorité d'affectation de l'Identifiant de l'organisation</p>
         <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
         <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
       </td>
@@ -4286,7 +4297,7 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Organization number</p>
       </td>
       <td>
-        <p>Identifiant de l'organisation destinataire</p>
+        <p>Identifiant de l'organisation (au format Struct_IdNat) </p>
       </td>
     </tr>
   </tbody>
@@ -4413,7 +4424,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
 <p>Le champ <strong>ORC-1 – Order Control</strong> permet d’indiquer la décision prise sur la demande, à savoir sa <strong>validation</strong> ou son <strong>refus</strong>.
 En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque cette information est disponible ; son renseignement est <strong>optionnel</strong>.</p>
 
-<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong> ou <strong>optionnel</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.</p>
+<p>Le tableau ci-après décrit l’ensemble des champs <strong>requis</strong> du segment ORC, ainsi que certains champs <strong>requis si connus</strong> ou <strong>optionnels</strong>, dont l’usage est jugé pertinent au regard du workflow de téléradiologie.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -4487,7 +4498,7 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Person Identifier</p>
       </td>
       <td>
-        <p>Identifiant du professionnel</p>
+        <p>Identifiant du professionnel (au format PS_IdNat)</p>
       </td>
     </tr>
     <tr>
@@ -4564,7 +4575,7 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Identifier Type Code</p>
       </td>
       <td>
-        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
+        <p>Type d'Identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -4643,7 +4654,7 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Assigning Authority</p>
       </td>
       <td>
-        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p>Autorité d'affectation de l'Identifiant de l'organisation (au format Struct_IdNat)</p>
         <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
         <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
       </td>
@@ -4667,7 +4678,7 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Organization number</p>
       </td>
       <td>
-        <p>Identifiant de l'organisation destinataire du document</p>
+        <p>Identifiant de l'organisation (au format Struct_IdNat)</p>
       </td>
     </tr>
   </tbody>
@@ -5080,7 +5091,7 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
 
 <p>Ce flux repose sur l’utilisation d’un messages <strong>OMI^O23</strong>, conformes au standard <strong>HL7 v2.5.1</strong>.</p>
 
-<p>Les segments présentés danS cette partie font l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong> afin de répondre aux besoins métier du contexte de téléradiologie.</p>
+<p>Les segments présentés dans cette partie font l’objet d’une <strong>surcouche de contraintes spécifiques à la téléradiologie</strong> afin de répondre aux besoins métier du contexte de téléradiologie.</p>
 
 <p>Les sections suivantes décrivent les contraintes appliquées aux segments du message OMI^O23 dans le cadre de ce flux.</p>
 
@@ -5456,7 +5467,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 <p>Ce <strong>groupe OBSERVATION</strong> est utilisé afin de véhiculer l’<strong>URL d’accès à la vieweuse DRIMbox</strong>, permettant la consultation à distance des images issues de l’examen d’imagerie.</p>
 
 <p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans <strong>OBX-5</strong> correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans <strong>OBX-5</strong> correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <table class="table-hl7v2">
@@ -5902,7 +5913,7 @@ Ce groupe est obligatoirement associé au groupe <strong>Numéro de lot</strong>
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur issue du JDV ATC niveau 2 “V09” ou “V10”.&lt;/a&gt;</p>
+        <p>Valeur issue du JDV ATC niveau 2 “V09” ou “V10”.</p>
       </td>
     </tr>
     <tr>
@@ -6351,7 +6362,7 @@ Le groupe contient un <strong>segment OBX unique</strong> portant la valeur de l
         <p>Observation Value</p>
       </td>
       <td>
-        <p>Identifiant de l'appareil d'imagerie : SupportIUD voir SFE 2.1.7.4.3</p>
+        <p>Identifiant de l'appareil d'imagerie : <a href="./specifications_fonctionnelles.html#classe-appareilimagerieutilise">SupportIUD voir SFE 2.1.7.4.3</a>.</p>
       </td>
     </tr>
     <tr>
@@ -6932,7 +6943,7 @@ ERR :</p>
   </tbody>
 </table>
 
-<p><b>Exemple</b></p>
+<p><b>Exemples</b></p>
 
 <p>Entête MSH d’un message ORM^O01 dans le cadre du flux 1 :</p>
 
@@ -6992,7 +7003,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 14:17+0000">2026-01-30</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 14:39+0000">2026-01-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
