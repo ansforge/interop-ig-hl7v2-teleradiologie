@@ -2,7 +2,7 @@
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="tlr_diagram.png"
+    <img src="tlr_diagram.svg"
          alt="Diagramme de séquence complet du workflow de Téléradiologie"
          title="Diagramme de séquence complet du workflow de Téléradiologie"
          style="

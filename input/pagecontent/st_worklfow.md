@@ -84,7 +84,7 @@ Ce diagramme décrit les échanges techniques entre le RIS de la structure d’i
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="DiagSequ12.png"
+    <img src="Sequence1-2.svg"
          alt="Diagramme de séquence des flux 1 et 2"
          title="Diagramme de séquence des flux 1 et 2"
          style="
@@ -121,7 +121,7 @@ Ce diagramme décrit les échanges techniques consécutifs à la consultation et
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="Sequence3.png"
+    <img src="Sequence3.svg"
          alt="Diagramme de séquence du flux 3"
          title="Diagramme de séquence du flux 3"
          style="
@@ -163,7 +163,7 @@ Ce diagramme décrit les échanges techniques intervenant après l’acceptation
     text-align: center;
     margin: 1.5em auto;
 ">
-    <img src="Sequence4.png"
+    <img src="Sequence4.svg"
          alt="Diagramme de séquence du flux 4"
          title="Diagramme de séquence du flux 4"
          style="

@@ -422,7 +422,7 @@ ERR :
   </tbody>
 </table>
 
-<b>Exemple</b>
+<b>Exemples</b>
 
 Entête MSH d'un message ORM^O01 dans le cadre du flux 1 :
 

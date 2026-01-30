@@ -664,7 +664,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
 
 Le message **ORM^O01** du flux 2 permet au système demandeur de notifier au système effecteur **l’annulation d’une demande d’examen d’imagerie précédemment transmise**.
 
-Les segments **ORC** et **OBR** assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
+Les segments **ORC** et **OBR** assurent l’identification de la demande concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
 
 Le diagramme ci-dessous présente la **description fonctionnelle du message d’annulation** :
 
@@ -696,7 +696,7 @@ Le flux 3 repose sur l’échange d’un message **ORU^R01** conforme à la norm
 Il est utilisé pour la **réponse à une demande d’examen d’imagerie**, en particulier pour notifier la **décision du médecin effecteur** (approbation/refus de la demande).
 
 Contrairement aux flux 1 et 2, ce flux **ne s’appuie sur aucun profil IHE** existant.  
-En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.  
+En effet, les cas d’usage couverts par ce flux, notamment la transmission d’une décision médicale en réponse à une demande d'examen d’imagerie, ne disposent pas d’un équivalent direct dans les profils IHE RAD.  
 Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complété par une **surcouche de contraintes spécifiques au volet Téléradiologie**.
 
 ###### Description technique

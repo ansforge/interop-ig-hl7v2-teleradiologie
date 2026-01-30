@@ -107,7 +107,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Person Identifier</p>
       </td>
       <td>
-        <p>Identifiant du professionnel</p>
+        <p>Identifiant du professionnel (au format PS_IdNat)</p>
       </td>
     </tr>
     <tr>
@@ -184,7 +184,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Identifier Type Code</p>
       </td>
       <td>
-        <p>Type d'identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
+        <p>Type d'Identifiant du professionnel (valeur issue de la <a href="https://www.interopsante.org/publications">Table 0203 - Interop'Santé</a> présent dan le document "Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure dans le périmètre d’IHE France")</p>
       </td>
     </tr>
     <tr>
@@ -262,7 +262,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Assigning Authority</p>
       </td>
       <td>
-        <p>Autorité d'affectation de l'identifiant de l'organisation</p>
+        <p>Autorité d'affectation de l'Identifiant de l'organisation</p>
         <p><span class="hl7-color">1.2.250.1.71.4.2.2</span> (OID de gestion des structures pour préciser une entité juridique ou une entité géographique), N° FINESS ou N° FINEG pour identifier une organisation intra-établissement (service, UF, pôle…).</p>
         <p><a href="https://www.interopsante.org/publications">Cf Contraintes sur les types de données HL7 v2.5 applicables aux profils d'intégration du cadre technique IT Infrastructure dans le périmètre d'IHE France</a>.</p>
       </td>
@@ -286,7 +286,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Organization number</p>
       </td>
       <td>
-        <p>Identifiant de l'organisation</p>
+        <p>Identifiant de l'organisation (au format Struct_IdNat)</p>
       </td>
     </tr>
   </tbody>

@@ -2,7 +2,7 @@
 
 Ce flux repose sur l’utilisation d'un messages **OMI^O23**, conformes au standard **HL7 v2.5.1**.
 
-Les segments présentés danS cette partie font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
+Les segments présentés dans cette partie font l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie** afin de répondre aux besoins métier du contexte de téléradiologie.
 
 Les sections suivantes décrivent les contraintes appliquées aux segments du message OMI^O23 dans le cadre de ce flux.
 
@@ -378,7 +378,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.  
 
 L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local "URL_VIEWER_DRIMBOX" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>.
 
 <table class="table-hl7v2">
@@ -821,7 +821,7 @@ Ce groupe est obligatoirement associé au groupe **Numéro de lot**.
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur issue du JDV ATC niveau 2 “V09” ou “V10”.</a></p>
+        <p>Valeur issue du JDV ATC niveau 2 “V09” ou “V10”.</p>
       </td>
     </tr>
     <tr>
@@ -1268,7 +1268,7 @@ Le groupe contient un **segment OBX unique** portant la valeur de l’identifian
         <p>Observation Value</p>
       </td>
       <td>
-        <p>Identifiant de l'appareil d'imagerie : SupportIUD voir SFE 2.1.7.4.3</p>
+        <p>Identifiant de l'appareil d'imagerie : <a href="./specifications_fonctionnelles.html#classe-appareilimagerieutilise">SupportIUD voir SFE 2.1.7.4.3</a>.</p>
       </td>
     </tr>
     <tr>
