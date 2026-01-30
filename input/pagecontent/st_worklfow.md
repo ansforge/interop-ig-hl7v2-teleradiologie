@@ -56,7 +56,7 @@ La présente partie décrit, pour chaque flux métier inclus dans le périmètre
         <p>OMI_O23</p>
       </td>
       <td>
-        <p>O23 – Imaging Order Message (Order Control = NW)</p>
+        <p>O23 – Imaging Order Message (Order Control = SR)</p>
       </td>
     </tr>
   </tbody>
