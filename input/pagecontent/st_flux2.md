@@ -141,7 +141,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Namespace Id</p>
       </td>
       <td>
-        <p>Nom de l'aurotité d'affectation</p>
+        <p>Nom de l'autorité d'affectation</p>
       </td>
     </tr>
     <tr>

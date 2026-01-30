@@ -151,7 +151,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Namespace Id</p>
       </td>
       <td>
-        <p>Nom de l'aurotité d'affectation</p>
+        <p>Nom de l'autorité d'affectation</p>
       </td>
     </tr>
     <tr>
@@ -620,7 +620,7 @@ Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+        <p>Valeur issue du <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
       </td>
     </tr>
     <tr>
@@ -864,7 +864,7 @@ Ce groupe est composé d'un segment OBX obligatoire permettant d’indiquer la *
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-region-anatomique-cisis.html">JDV_RegionAnatomique-CISIS</a></p>
+        <p>Valeur issue du <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-region-anatomique-cisis.html">JDV_RegionAnatomique-CISIS</a></p>
       </td>
     </tr>
     <tr>
@@ -1022,7 +1022,7 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modificateur-topographique-cisis.html">JDV_ModificateurTopographique-CISIS</a></p>
+        <p>Valeur issue du <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modificateur-topographique-cisis.html">JDV_ModificateurTopographique-CISIS</a></p>
       </td>
     </tr>
     <tr>

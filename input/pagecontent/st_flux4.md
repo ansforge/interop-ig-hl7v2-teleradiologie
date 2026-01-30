@@ -285,7 +285,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>Entity Identifier</p>
       </td>
       <td>
-        <p>Code issu du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+        <p>Code issu du <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerie-CISIS</a></p>
       </td>
     </tr>
     <tr>
@@ -297,8 +297,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
       </td>
       <td>
         <p>OID du code system utilisé</p>
-        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
-        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+        <p><span class="hl7-color">2.16.840.1.113883.6.1</span></p>
       </td>
     </tr>
     <tr>
@@ -342,7 +341,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>Entity Identifier</p>
       </td>
       <td>
-        <p>Code issu du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-modalite-demande-acte-imagerie-cisis.html">JDV_modalitedemandeActeImagerie-CISIS</a></p>
+        <p>Code issu du <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerie-CISIS</a></p>
       </td>
     </tr>
     <tr>
@@ -633,7 +632,7 @@ Ce groupe obligatoire est composé d'un segment OBX permettant d’indiquer le *
         <p>Code </p>
       </td>
       <td>
-        <p>Valeur issue du JDV <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerie-CISIS</a></p>
+        <p>Valeur issue du <a href="https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html">JDV_CodeDocumentImagerie-CISIS</a></p>
       </td>
     </tr>
     <tr>
@@ -664,14 +663,14 @@ Ce groupe obligatoire est composé d'un segment OBX permettant d’indiquer le *
 ##### Groupes OBSERVATION - Localisation anatomique
 
 Les groupes **OBSERVATION – Localisation anatomique** sont **optionnel** dans le cadre du flux 4.  
-Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.  
-Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Localisation anatomique](./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique)
+Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1 **à l'exception du champ OBX-11 prenant la valeur "F" dans le cadre de ce flux**.
+Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Localisation anatomique](./specifications_techniques.html#groupes-observation---localisation-anatomique)
 
 ##### Groupe OBSERVATION - Modalité d'imagerie
 
 Le groupe **OBSERVATION - Modalité d'imagerie** est optionnel dans le cadre du flux 4.
-Sa présence permet de transmettre la modalité d'imagerie utilisée lors de l'examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.  
-Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Modalité d'imagerie](./st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie)
+Sa présence permet de transmettre la modalité d'imagerie utilisée lors de l'examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1 **à l'exception du champ OBX-11 prenant la valeur "F" dans le cadre de ce flux**.  
+Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : [Groupes OBSERVATION – Modalité d'imagerie](./specifications_techniques.html#groupe-observation---modalité-dimagerie)
 
 
 ##### Groupes OBSERVATION - Produit administré

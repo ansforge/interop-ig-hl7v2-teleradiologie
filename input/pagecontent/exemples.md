@@ -13,12 +13,16 @@ MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
 PV1||O|||||||||||||||||IdentifiantRendezVous|
 ORC|NW|IdentifiantDemandeExamen|||||||20260106134418||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||^PRN^CP^^^^^^^^^+3360708091|||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
-OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|||||||||||||||JustificationDemande
-OBX|1|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F
-OBX|2|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.2|24028007^côté droit^SNT||||||F
-OBX|2|NM|8302-2^Body height^LN||170|cm|||||F
-OBX|3|NM|29463-7^Body weight^LN||68|kg|||||F
-OBX|4|CE|82810-3^Pregnancy status^LN||N^^expandedYes-NoIndicator||||||F
+OBR||IdentifiantDemandeExamen||TRANSMISSION_DEMANDE^Transmission d’une demande d’examen d'imagerie^TLR_OBR_PROCEDURE|||||||||JustificationDemande|||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|
+NTE|||Commentaire sur la finalité de l'examen|FINALITE_EXAMEN^^HL70364
+OBX|1|CE|MODALITE_IMAGERIE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|MR^Résonance magnétique^DCM||||||O
+NTE|||Commentaire sur la modalité|MODALITE_IMAGERIE^^HL70364
+OBX|2|CE|LOCALISATION_ANATOMIQUE^Modalité d’imagerie utilisée ou prévue pour réaliser l’examen^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||O
+OBX|3|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION||24028007^côté droit^SNT||||||O
+OBX|4|FT|11322-5^History of General health Narrative^LN||Antécédents majeur du patient|||MAJEUR^^HL70078|||O
+OBX|5|NM|8302-2^Body height^LN||170|cm|||||O
+OBX|6|NM|29463-7^Body weight^LN||68|kg|||||O
+OBX|7|CE|82810-3^Pregnancy status^LN||N^^expandedYes-NoIndicator||||||O
 ```
 
 ### Flux 2 - Annulation de la demande d'examen (ORM^O01)
@@ -36,7 +40,7 @@ MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
 PV1||O|||||||||||||||||IdentifiantRendezVous|
 ORC|CA|IdentifiantDemandeExamen|||||||20260106134418|||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS|||||STRUCTURE_IMAGERIE^^TLR_TYPE_ORGANISATION||||Structure-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017985
-OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
+OBR||IdentifiantDemandeExamen||ANNULATION_DEMANDE^Annulation d’une demande d’examen^TLR_OBR_PROCEDURE||||||||||||801234567897^Hoda^Adam^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
 ```
 
 ### Flux 3 - Réponse à la demande d'examen d'imagerie (ORU^R01)
@@ -51,8 +55,8 @@ Le message permet de véhiculer :
 MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134418||ORU^R01^ORU_R01|20260106134418|P|2.5.1|||||FRA|UNICODE UTF-8|||1.0^CISIS_TLR_HL7_V2
 PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^20101207||PAT-TROIS^DOMINIQUE^DOMINIQUE^^^^L||19790328|F|||28 Av de Breteuil^^PARIS^^75007^FRA^H^^^^^^^~^^^^^^BDL^^63220|||||||405660^^^AUT-AFFECTATION&1204567809&M^AN^^20101205|||||||||||||N|VALI
 ORC|OK|IdentifiantDemandeExamen||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS||||MotifRefus|PLATEFORME_TELERADIOLOGIE^^TLR_TYPE_ORGANISATION||||Plateforme-Y^^^^^ASIP-SANTE-ST&1.2.250.1.71.4.2.2&ISO^FINEG^^^300017986
-OBR||IdentifiantDemandeExamen||MR^Résonance magnétique^DCM||||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
-OBX|1|FT|PROTOCOLE_IMAGERIE^Protocole d'imagerie médicale^TLR_OBSERVATION||Paramètres d’acquisition : kV : 120…||||||F
+OBR||IdentifiantDemandeExamen||REPONSE_DEMANDE^Réponse à une demande d’examen d'imagerie^TLR_OBR_PROCEDURE||||||||||||801234564895^Eric^Thomas^^^DR^^^ASIP-SANTE- PS&1.2.250.1.71.4.2.1&ISO^D^^^IDNPS
+OBX|1|ED|PROTOCOLE_IMAGERIE^Protocole d'imagerie médicale^TLR_OBSERVATION||^TEXT^^base64^Pendggfbubzbdy12gggvt||||||F
 ```
 
 ### Flux 4 - Transmission d'un complément d'information post-examen (OMI^O23)
@@ -67,14 +71,16 @@ PID|||279035121518989^^^ASIP-SANTE-INS-NIR&1.2.250.1.213.1.4.10&ISO^INS^^2010120
 PV1||O|||||||||||||||||IdentifiantRendezVous|
 ORC|SC|IdentifiantDemandeExamen|
 TQ1||||||Durée de rétention des images|20260106184418
-OBR||IdentifiantDemandeExamen||24590-2^résonance magnétique cerveau^LN|
-IPC|Accession number||Study Instance UID|Scheduled Procedure Step ID|
+OBR||IdentifiantDemandeExamen||COMPLEMENT_POST_EXAMEN^Transmission d'un complément d’information post-examen^TLR_OBR_PROCEDURE|
+IPC|Accession number|24590-2^^2.16.840.1.113883.6.1^ISO|Study Instance UID|24590-2^^2.16.840.1.113883.6.1^ISO|
 OBX|1|TX|URL_VIEWER_DRIMBOX^URL de la visionneuse DRIMbox^TLR_OBSERVATION||URL||||||F
-OBX|2|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F
-OBX|3|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.2|24028007^côté droit^SNT||||||F
-OBX|4|CE|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.1|TypeProduit^^ATC|||||F
-OBX|5|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.2|0123456789|||||F
-OBX|6|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.3|1|ml||||F
-OBX|7|TX|APPAREIL_IMAGERIE^Appareil d'imagerie utilisé lors de l'examen^TLR_OBSERVATION|1.1|1234567896363||||||F
-OBX|8|TX|APPAREIL_IMAGERIE^Appareil d'imagerie utilisé lors de l'examen^TLR_OBSERVATION|1.2|Modèle||||||F
+OBX|2|CE|CODE_ACTE_IMAGERIE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|24590-2^résonance magnétique cerveau^LN||||||F
+OBX|3|CE|LOCALISATION_ANATOMIQUE^Code de l'acte d'imagerie réalisée^TLR_OBSERVATION|1.1|77407^tête et/ou cou^SNT||||||F
+OBX|4|CE|LOCALISATION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.2|24028007^côté droit^SNT||||||F
+OBX|5|CE|MODALITE_IMAGERIE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|MR^Résonance magnétique^DCM||||||F
+OBX|6|CE|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.1|TypeProduit^^ATC|||||F
+OBX|7|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.2|0123456789|||||F
+OBX|8|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.3|1|ml||||F
+OBX|9|TX|APPAREIL_IMAGERIE^Appareil d'imagerie utilisé lors de l'examen^TLR_OBSERVATION|1.1|1234567896363||||||F
+OBX|10|TX|APPAREIL_IMAGERIE^Appareil d'imagerie utilisé lors de l'examen^TLR_OBSERVATION|1.2|Modèle||||||F
 ```
