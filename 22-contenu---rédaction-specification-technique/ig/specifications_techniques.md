@@ -125,7 +125,7 @@ Le message est composé des segments principaux suivants :
 * **ORC / OBR** : informations liées à la demande d’examen, conformément à IHE SWF ;
 * **Groupes OBSERVATION (OBX)** : supporte les informations complémentaires spécifiques au volet Téléradiologie, non contraintes par IHE SWF.
 
-Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.
+Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable **conformément au volet Téléradiologie**.
 
 * Segment: MSH
   * Meaning: Message Header
@@ -335,7 +335,8 @@ Outre les éléments standards concernant la demande et la prescription portés 
 
 Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.md#flux-1---transmission-de-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
-Le diagramme ci-dessous illustre la description fonctionnelle du flux 1 :
+Le diagramme ci-dessous présente la **description fonctionnelle du message de transmission de la demande**.
+ Les éléments reliés par des flèches traduisent des **dépendances fonctionnelles** : un élément cible **ne peut être présent que si l’élément source associé est également présent**.
 
  Figure 4 : Structure fonctionnelle du message ORM^O01^ORM_O01 du flux 1 
 
@@ -354,6 +355,8 @@ Le message est composé des segments principaux suivants :
 * **MSH** : en-tête du message et informations de routage
 * **PID / PV1** : identification du patient et du contexte de prise en charge
 * **ORC / OBR** : informations de demande, avec une action positionnée à l’annulation
+
+Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable **conformément au volet Téléradiologie**.
 
 * Segment: MSH
   * Meaning: Message Header
@@ -557,7 +560,7 @@ Le message **ORM^O01** du flux 2 permet au système demandeur de notifier au sys
 
 Les segments **ORC** et **OBR** assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
 
-Le diagramme ci-dessous illustre la description fonctionnelle du message d’annulation :
+Le diagramme ci-dessous présente la **description fonctionnelle du message d’annulation** :
 
  Figure 5 : Structure fonctionnelle du message ORM^O01^ORM_O01 du flux 2 
 
@@ -775,7 +778,9 @@ Le **groupe OBSERVATION (OBX)** est **conditionné à la valeur du champ ORC-1**
 
 Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.md#flux-3---réponse-à-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
-Le diagramme ci-dessous illustre le **fonctionnement du flux 3** :
+Le diagramme ci-dessous illustre la **description fonctionnelle du flux 3** :
+
+ Figure 3 : Structure fonctionnelle du message ORU^R01^ORU_R01 du flux 3 
 
 ##### Flux 4 - Message OMI^O23^OMI_023 en HL7 v2.5.1
 
@@ -799,7 +804,7 @@ Le message est structuré autour des segments suivants :
 * **IPC** : informations relatives à l’examen d’imagerie
 * **Groupes OBSERVATION (OBX)** : transmission des compléments d’information post-acte spécifiques au volet Téléradiologie
 
-Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.
+Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable **conformément au volet Téléradiologie**.
 
 * Segment: MSH
   * Meaning: Message Header
@@ -991,21 +996,22 @@ Les **groupes OBSERVATION (OBX)** jouent un rôle central dans ce flux.
 * la **modalité d’imagerie** utilisée lors de l’examen
 * les informations relatives aux **produits administrés** dans le cadre de la procédure (type, numéro de lot, quantité) ;
 * les informations sur l’**appareil d’imagerie utilisé** ;
-* la **localisation anatomique** ciblée par l’examen et les éventuelles précisions topographiques associées.
+* la **localisation anatomique** ciblée par l’examen et les éventuelles **précisions topographiques associées**.
 
 L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la partie relatives aux [contraintes spécifiques du volet](./specifications_techniques.md#flux-4----transmission-dun-complément-dinformation-post-acte).
 
-Le diagramme ci-dessous illustre le **fonctionnement du flux 4** :
+Le diagramme ci-dessous présente la **description fonctionnelle du message OMI^O23^OMI_O23**.
+ Les éléments reliés par des flèches traduisent des **dépendances fonctionnelles** : un élément cible **ne peut être présent que si l’élément source associé est également présent**.
 
-**Figure 17 : Structure fonctionnelle du message ORU_R01**
+ Figure 4 : Structure fonctionnelle du message OMI^O23^OMI_023 du flux 4 
 
 ##### Acquittements
 
-Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un **acquittement technique HL7 v2** (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1. Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans [une partie dédiée](./acquittement.md).
+Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un **acquittement technique HL7 v2** (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1. Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans [une partie dédiée](./specifications_techniques.md#description-des-contraintes-à-appliquer-sur-lacquittement).
 
 ###### Profil du message ACK
 
-Le profil du message ACK est le suivant :
+Le profil du message ACK conformément au standard HL7 v2.5.1 est le suivant :
 
 * Segment: MSH
   * Meaning: Message header
@@ -1098,7 +1104,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d’entê
   * Type donnée: VID
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-17
-  * Contenu: FRA
+  * Contenu: Code du paysFRA
   * Type donnée: ID
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-18
@@ -1141,10 +1147,10 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
   * Contenu: Classe du patient 
   * Type donnée: IS
   * Caractère optionnel/obligatoire: R
-* Champ: PV1-19 (2)(4) 
+* Champ: PV1-19 (2)(3) 
   * Contenu: Identifiant du rendez-vous
   * Type donnée: CX
-  * Caractère optionnel/obligatoire:  C (3)
+  * Caractère optionnel/obligatoire:  C - Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.
 * Champ: PV1-44 (2)
   * Contenu: Date d'entrée du patient
   * Type donnée: TS
@@ -1156,9 +1162,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 
 >  **(2) :** A noter que ces champs sont à renseigner, s'ils sont connus, par le système expéditeur afin de pouvoir calculer des indicateurs. 
 
->  **(3) :** Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu. 
-
->  **(4) :** Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU. 
+>  **(3) :** Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU. 
 
 #### Contraintes spécifiques au volet Téléradiologie
 
@@ -1242,7 +1246,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Numéro de téléphone à appeler pour obtenir des précisions sur la demande d'examen d'imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-17
   * ?: Entering Organization
-  * ?: Qualifie le type d'organisation (5)
+  * ?: Qualifie le type d'organisation (4)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-17.1 
   * ?: Code 
   * ?: STRUCTURE_IMAGERIE
@@ -1265,7 +1269,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Organization number
   * ?: Identifiant de l'organisation
 
->  **(5) :** Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés. Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une [table de valeurs locale documentée](./table_orga.md). L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS. Ce découplage permet de respecter les exigences IHE tout en garantissant une identification robuste. 
+>  **(4) :** Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés. Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une [table de valeurs locale documentée](./table_orga.md). L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS. Ce découplage permet de respecter les exigences IHE tout en garantissant une identification robuste. 
 
 ##### Segment OBR (Observation Request)
 
@@ -1288,7 +1292,7 @@ Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Serv
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
   * ?: Code 
   * ?: TRANSMISSION_DEMANDE
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 (optionnel) 
   * ?: Display name 
   * ?: Transmission d’une demande d’examen d'imagerie
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
@@ -1301,7 +1305,7 @@ Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Serv
   * ?: Ordering Provider
   * ?: Informations relatives au professionnel de santé responsable (identique à l'ORC-12)
 
-##### Segment NTE (Notes and Comments)
+##### Segment NTE - Finalité de l’examen
 
 Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer un ou des **commentaires libres** relatifs à la **finalité de l’examen**.
 
@@ -1352,7 +1356,7 @@ Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
   * ?: MODALITE_IMAGERIE
-* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Modalité d’imagerie utilisée ou prévue pour réaliser l’examen
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
@@ -1422,7 +1426,7 @@ Ce groupe est composé d’un segment OBX obligatoire permettant d’indiquer la
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
   * ?: LOCALISATION_ANATOMIQUE
-* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Localisation anatomique examinée dans le cadre de l’examen d’imagerie
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
@@ -1466,7 +1470,7 @@ Ce groupe est composé d’un segment OBX optionnel permettant de compléter la 
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: LOCALISATION_ANATOMIQUE
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Localisation anatomique examinée dans le cadre de l’examen d’imagerie
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -1512,7 +1516,7 @@ Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5*
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: 11322-5
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: History of General health Narrative
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -1556,7 +1560,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer la **taille 
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: 8302-2
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Body height
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -1594,7 +1598,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **poids c
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: 29463-7
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Body weight
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -1632,7 +1636,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **statut 
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: 82810-3
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Pregnancy status
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -1763,7 +1767,7 @@ Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Serv
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
   * ?: Code 
   * ?: ANNULATION_DEMANDE
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 (optionnel) 
   * ?: Display name 
   * ?: Annulation d’une demande d’examen
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
@@ -1874,8 +1878,8 @@ Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Serv
   * ?: Code local identifiant la procédure métier portée par le message 
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
   * ?: Code 
-  * ?: TRANSMISSION_DEMANDE
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+  * ?: REPONSE_DEMANDE
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 (optionnel)
   * ?: Display name 
   * ?: Réponse à une demande d’examen d'imagerie
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
@@ -1918,7 +1922,7 @@ Cette alternative permet de transmettre le **protocole d’imagerie en clair**, 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
   * ?: PROTOCOLE_IMAGERIE
-* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Protocole d'imagerie médicale
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
@@ -1954,7 +1958,7 @@ Cette alternative permet de transmettre le **protocole d’imagerie sous forme e
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
   * ?: PROTOCOLE_IMAGERIE
-* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Protocole d'imagerie médicale
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
@@ -2040,7 +2044,7 @@ Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Serv
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
   * ?: Code 
   * ?: COMPLEMENT_POST_EXAMEN
-* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 
+* Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 (optionnel)
   * ?: Display name 
   * ?: Transmission d'un complément d’information post-examen
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.3 
@@ -2075,7 +2079,7 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
 
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.
 
-L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans **OBX-3**, [documenté en annexe](./table_obs.md).
+L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans **OBX-3**, [documenté en annexe](./table_obs.md).
 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -2095,7 +2099,7 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
   * ?: URL_VIEWER_DRIMBOX
-* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: URL de la visionneuse DRIMbox
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
@@ -2108,7 +2112,7 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
   * ?: Observation Result Status
   * ?: Valeur fixée à « F » 
 
->  **(6) :** Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment : 
+>  **(5) :** Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment : 
 * le séparateur de champs (|) via \F\ ;
 * le séparateur de composants (^) via \S\ ;
 * le séparateur de répétitions (~) via \R\ ;
@@ -2137,7 +2141,7 @@ Ce groupe obligatoire est composé d’un segment OBX permettant d’indiquer le
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
   * ?: CODE_ACTE_IMAGERIE
-* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Code de l'acte d'imagerie réalisée
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
@@ -2208,7 +2212,7 @@ Un segment OBX unique au sein de ce groupe porte la valeur codée dans **OBX-5**
 * Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: PRODUIT_ADMINISTRE
-* Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Produit administré lors de l'examen d'imagerie
 * Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.3 
@@ -2254,7 +2258,7 @@ Ce groupe OBSERVATION permet de transmettre le **numéro de lot** du produit adm
 * Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: PRODUIT_ADMINISTRE
-* Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Produit administré lors de l'examen d'imagerie
 * Composition du groupe OBSERVATION: Usage = C / Cardinalité = [0..1]: > OBX-3.3 
@@ -2293,7 +2297,7 @@ Ce groupe OBSERVATION permet de transmettre la quantité réellement administré
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: PRODUIT_ADMINISTRE
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Produit administré lors de l'examen d'imagerie
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -2343,7 +2347,7 @@ Ce groupe OBSERVATION permet de transmettre l’identifiant unique de l’appare
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: APPAREIL_IMAGERIE
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Appareil d'imagerie utilisé lors de l'examen
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -2382,7 +2386,7 @@ Ce groupe OBSERVATION permet de transmettre le modèle de l’appareil d’image
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
   * ?: APPAREIL_IMAGERIE
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 
+* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Appareil d'imagerie utilisé lors de l'examen
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
@@ -2432,11 +2436,11 @@ Le segment MSH reprend une partie des informations du message initial :
 Le tableau ci-après décrit l’ensemble des champs **requis** du segment MSH :
 
 * Champ: MSH-1
-  * Contenu: | séparateur de champ
+  * Contenu: |séparateur de champ
   * Type donnée: ST
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-2
-  * Contenu: ^~\& : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants
+  * Contenu: ^~\&séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants
   * Type donnée: ST
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-3
@@ -2472,11 +2476,11 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment MSH :
   * Type donnée: PT
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-12
-  * Contenu: Version du standard 2.5.1 
+  * Contenu: Version du standard2.5.1
   * Type donnée: VID
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-17
-  * Contenu: FRA
+  * Contenu: Code du paysFRA
   * Type donnée: ID
   * Caractère optionnel/obligatoire: R
 * Champ: MSH-18
@@ -2503,7 +2507,7 @@ Le tableau ci-dessous liste les champs à renseigner pour le segment ERR :
   * Caractère optionnel/obligatoire: O
 * Champ: ERR-3
   * Contenu: Code erreur HL7 dont les valeurs sont à prendre dans la table HL7 0357 (nom symbolique messageErrorCondition)
-  * Type donnée: CWE
+  * Type donnée: CE
   * Caractère optionnel/obligatoire: R
 * Champ: ERR-4
   * Contenu: Sévérité de l'erreur dont les valeurs sont à prendre dans la table HL7 0516 (nom symbolique errorSeverity)
@@ -2532,7 +2536,7 @@ Un acquittement négatif retourné par le SI de téléradiologie : version d’H
 ```
 MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
 MSA|AE|12345
-ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
+ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
 ```
 

@@ -500,7 +500,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
   <li><strong>Groupes OBSERVATION (OBX)</strong> : supporte les informations complémentaires spécifiques au volet Téléradiologie, non contraintes par IHE SWF.</li>
 </ul>
 
-<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.</p>
+<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable <strong>conformément au volet Téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -800,7 +800,8 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 
 <p>Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie <a href="./specifications_techniques.html#flux-1---transmission-de-la-demande-dexamen-dimagerie">Contraintes applicables aux profils de message</a>, notamment via l’utilisation de codes locaux dans <strong>OBX-3</strong>.</p>
 
-<p>Le diagramme ci-dessous illustre la description fonctionnelle du flux 1 :</p>
+<p>Le diagramme ci-dessous présente la <strong>description fonctionnelle du message de transmission de la demande</strong>.<br/>
+Les éléments reliés par des flèches traduisent des <strong>dépendances fonctionnelles</strong> : un élément cible <strong>ne peut être présent que si l’élément source associé est également présent</strong>.</p>
 
 <div style="
     text-align: center;
@@ -840,6 +841,8 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
   <li><strong>PID / PV1</strong> : identification du patient et du contexte de prise en charge</li>
   <li><strong>ORC / OBR</strong> : informations de demande, avec une action positionnée à l’annulation</li>
 </ul>
+
+<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable <strong>conformément au volet Téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -1132,7 +1135,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 
 <p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil <strong>IHE SWF</strong>.</p>
 
-<p>Le diagramme ci-dessous illustre la description fonctionnelle du message d’annulation :</p>
+<p>Le diagramme ci-dessous présente la <strong>description fonctionnelle du message d’annulation</strong> :</p>
 
 <div style="
     text-align: center;
@@ -1455,9 +1458,28 @@ Le message ORU^R01 est donc défini sur la base du standard HL7 v2.5.1, complét
 
 <p>Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie <a href="./specifications_techniques.html#flux-3---réponse-à-la-demande-dexamen-dimagerie">Contraintes applicables aux profils de message</a>, notamment via l’utilisation de codes locaux dans <strong>OBX-3</strong>.</p>
 
-<p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 3</strong> :</p>
+<p>Le diagramme ci-dessous illustre la  <strong>description fonctionnelle du flux 3</strong> :</p>
 
-<p><br/></p>
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Flux3-Fonc.svg" alt="Description fonctionnelle du flux 3" style="
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         " title="Figure 3 : Structure fonctionnelle du flux 3"/>
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 3 : Structure fonctionnelle du message ORU^R01^ORU_R01 du flux 3
+    </p>
+</div>
 
 <h5 id="flux-4---message-omio23omi_023-en-hl7-v251">Flux 4 - Message OMI^O23^OMI_023 en HL7 v2.5.1</h5>
 
@@ -1483,7 +1505,7 @@ En conséquence, le message <strong>OMI^O23</strong> est défini sur la base du 
   <li><strong>Groupes OBSERVATION (OBX)</strong> : transmission des compléments d’information post-acte spécifiques au volet Téléradiologie</li>
 </ul>
 
-<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.</p>
+<p>Le tableau ci-dessous décrit la <strong>structure HL7 v2 du message</strong>, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable <strong>conformément au volet Téléradiologie</strong>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -1757,28 +1779,43 @@ Ils permettent notamment de véhiculer :</p>
   <li>la <strong>modalité d’imagerie</strong> utilisée lors de l’examen</li>
   <li>les informations relatives aux <strong>produits administrés</strong> dans le cadre de la procédure (type, numéro de lot, quantité) ;</li>
   <li>les informations sur l’<strong>appareil d’imagerie utilisé</strong> ;</li>
-  <li>la <strong>localisation anatomique</strong> ciblée par l’examen et les éventuelles précisions topographiques associées.</li>
+  <li>la <strong>localisation anatomique</strong> ciblée par l’examen et les éventuelles <strong>précisions topographiques associées</strong>.</li>
 </ul>
 
 <p>L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la partie relatives aux <a href="./specifications_techniques.html#flux-4----transmission-dun-complément-dinformation-post-acte">contraintes spécifiques du volet</a>.</p>
 
-<p>Le diagramme ci-dessous illustre le <strong>fonctionnement du flux 4</strong> :</p>
+<p>Le diagramme ci-dessous présente la <strong>description fonctionnelle du message OMI^O23^OMI_O23</strong>.<br/>
+Les éléments reliés par des flèches traduisent des <strong>dépendances fonctionnelles</strong> : un élément cible <strong>ne peut être présent que si l’élément source associé est également présent</strong>.</p>
 
-<div style="text-align: center;" class="figure"><a name="l4977">​</a>
-    <img src="fig17.png" alt="Figure 17" style="width:80%;" title="Figure 17 : Structure fonctionnelle du message ORU_R01"/>
-    <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Flux4-Fonc.svg" alt="Description fonctionnelle du flux 4" style="
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         " title="Figure 4 : Structure fonctionnelle du flux 4"/>
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 4 : Structure fonctionnelle du message OMI^O23^OMI_023 du flux 4
+    </p>
 </div>
-
-<p><br/></p>
 
 <h5 id="acquittements">Acquittements</h5>
 
-<p><a name="l4992">​</a>Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un <strong>acquittement technique HL7 v2</strong> (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1.
-Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans <a href="./acquittement.html">une partie dédiée</a>.</p>
+<p>Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un <strong>acquittement technique HL7 v2</strong> (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1.
+Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans <a href="./specifications_techniques.html#description-des-contraintes-à-appliquer-sur-lacquittement">une partie dédiée</a>.</p>
 
 <h6 id="profil-du-message-ack">Profil du message ACK</h6>
 
-<p>Le profil du message ACK est le suivant :</p>
+<p>Le profil du message ACK conformément au standard HL7 v2.5.1 est le suivant :</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -2096,6 +2133,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
         <p>MSH-17</p>
       </td>
       <td>
+        <p>Code du pays</p>
         <p><span class="hl7-color">FRA</span></p>
       </td>
       <td>
@@ -2246,7 +2284,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
     </tr>
     <tr>
       <td>
-        <p>PV1-19 (2)(4) </p>
+        <p>PV1-19 (2)(3) </p>
       </td>
       <td>
         <p>Identifiant du rendez-vous</p>
@@ -2255,7 +2293,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
         <p>CX</p>
       </td>
       <td>
-        <p> C (3)</p>
+        <p> C - Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.</p>
       </td>
     </tr>
     <tr>
@@ -2297,13 +2335,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 
 <blockquote class="stu-note">
     <p>
-    <b>(3) :</b> Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.
-    </p>
-</blockquote>
-
-<blockquote class="stu-note">
-    <p>
-    <b>(4) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
+    <b>(3) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
     </p>
 </blockquote>
 
@@ -2538,7 +2570,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Qualifie le type d'organisation  (5)</p>
+        <p>Qualifie le type d'organisation  (4)</p>
       </td>
     </tr>
     <tr>
@@ -2625,7 +2657,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
 
 <blockquote class="stu-note">
     <p>
-    <b>(5) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
+    <b>(4) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
     Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une <a href="./table_orga.html">table de valeurs locale documentée</a>.
 
     L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS.
@@ -2704,7 +2736,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -2749,7 +2781,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
   </tbody>
 </table>
 
-<h5 id="segment-nte-notes-and-comments">Segment NTE (Notes and Comments)</h5>
+<h5 id="segment-nte---finalité-de-lexamen">Segment NTE - Finalité de l’examen</h5>
 
 <p>Le segment <strong>NTE</strong> peut être utilisé en complément du segment <strong>OBR</strong> afin de véhiculer un ou des <strong>commentaires libres</strong> relatifs à la <strong>finalité de l’examen</strong>.</p>
 
@@ -2912,7 +2944,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -2973,7 +3005,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -3144,7 +3176,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -3217,7 +3249,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -3302,7 +3334,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -3375,7 +3407,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -3462,7 +3494,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -3537,7 +3569,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -3622,7 +3654,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -3672,7 +3704,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -3757,7 +3789,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -3807,7 +3839,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -3892,7 +3924,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -3955,7 +3987,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -4332,7 +4364,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -4707,12 +4739,12 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">TRANSMISSION_DEMANDE</span></p>
+        <p><span class="hl7-color">REPONSE_DEMANDE</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)</p>
       </td>
       <td>
         <p>Display name </p>
@@ -4839,7 +4871,7 @@ Le contenu peut inclure des retours à la ligne et une structuration légère fa
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -4964,7 +4996,7 @@ Le protocole est encodé en <strong>base64</strong> et peut correspondre à un d
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -5242,7 +5274,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)</p>
       </td>
       <td>
         <p>Display name </p>
@@ -5355,7 +5387,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 <p>Ce <strong>groupe OBSERVATION</strong> est utilisé afin de véhiculer l’<strong>URL d’accès à la vieweuse DRIMbox</strong>, permettant la consultation à distance des images issues de l’examen d’imagerie.</p>
 
 <p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans <strong>OBX-5</strong> correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans <strong>OBX-5</strong> correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <table class="table-hl7v2">
@@ -5433,7 +5465,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -5480,7 +5512,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <blockquote class="stu-note">
     <p>
-    <b>(6) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    <b>(5) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
     </p>
     <ul>
       <li>le séparateur de champs (|) via \F\ ;</li>
@@ -5570,7 +5602,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -5639,13 +5671,13 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <h5 id="groupes-observation---localisation-anatomique-1">Groupes OBSERVATION - Localisation anatomique</h5>
 
-<p><a name="l12967">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
+<p><a name="l13009">​</a>Les groupes <strong>OBSERVATION – Localisation anatomique</strong> sont <strong>optionnel</strong> dans le cadre du flux 4.<br/>
 Leur présence permet de transmettre les informations relatives à la localisation anatomique concernée par l’examen réalisé, ainsi que, le cas échéant, une précision topographique associée. La structure, le contenu et les contraintes applicables à ces groupes OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail des segments OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique">Groupes OBSERVATION – Localisation anatomique</a></p>
 
 <h5 id="groupe-observation---modalité-dimagerie-1">Groupe OBSERVATION - Modalité d’imagerie</h5>
 
-<p><a name="l12985">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
+<p><a name="l13027">​</a>Le groupe <strong>OBSERVATION - Modalité d’imagerie</strong> est optionnel dans le cadre du flux 4.
 Sa présence permet de transmettre la modalité d’imagerie utilisée lors de l’examen. La structure, le contenu et les contraintes applicables à ce groupe OBSERVATION sont strictement identiques à ceux définis pour le flux 1.<br/>
 Pour le détail du segment OBX, se référer à la section dédiée du flux 1 : <a href="./st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie">Groupes OBSERVATION – Modalité d’imagerie</a></p>
 
@@ -5750,7 +5782,7 @@ Ce groupe est obligatoirement associé au groupe <strong>Numéro de lot</strong>
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -5910,7 +5942,7 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.</p>
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -6047,7 +6079,7 @@ La quantité est <strong>optionnelle</strong> mais fortement recommandée lorsqu
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -6210,7 +6242,7 @@ Le groupe contient un <strong>segment OBX unique</strong> portant la valeur de l
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -6348,7 +6380,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -6533,7 +6565,8 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
         <p>MSH-1</p>
       </td>
       <td>
-        <p><span class="hl7-color">|</span> séparateur de champ</p>
+        <p><span class="hl7-color">|</span></p>
+        <p>séparateur de champ</p>
       </td>
       <td>
         <p>ST</p>
@@ -6547,7 +6580,8 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
         <p>MSH-2</p>
       </td>
       <td>
-        <p><span class="hl7-color">^~\&amp;</span> : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants</p>
+        <p><span class="hl7-color">^~\&amp;</span></p>
+        <p>séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants</p>
       </td>
       <td>
         <p>ST</p>
@@ -6682,9 +6716,8 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
         <p>MSH-12</p>
       </td>
       <td>
-        <p>Version du standard 
-        <br/><span class="hl7-color">2.5.1</span>
-        </p>
+        <p>Version du standard</p>
+        <p><span class="hl7-color">2.5.1</span></p>
       </td>
       <td>
         <p>VID</p>
@@ -6698,6 +6731,7 @@ Ce groupe est <strong>optionnel</strong> et vient compléter l’identifiant de 
         <p>MSH-17</p>
       </td>
       <td>
+        <p>Code du pays</p>
         <p><span class="hl7-color">FRA</span></p>
       </td>
       <td>
@@ -6806,7 +6840,7 @@ ERR :</p>
         <p>Code erreur HL7 dont les valeurs sont à prendre dans la table HL7 0357 (nom symbolique messageErrorCondition)</p>
       </td>
       <td>
-        <p>CWE</p>
+        <p>CE</p>
       </td>
       <td>
         <p>R</p>
@@ -6845,7 +6879,7 @@ inconnue</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MSH|^~\&amp;|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
 MSA|AE|12345
-ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
+ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 </code></pre></div></div>
 
 
@@ -6889,7 +6923,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 18:43+0000">2026-01-29</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 09:23+0000">2026-01-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

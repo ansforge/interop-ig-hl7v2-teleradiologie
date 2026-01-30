@@ -7,15 +7,15 @@ Generic: line 0, col 0, Error - The link 'definitions.ttl.zip' for "Définitions
 Generic: line 0, col 0, Error - The link 'examples.xml.zip' for "Exemples XML (zip)" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Error - The link 'examples.json.zip' for "Exemples JSON (zip)" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Error - The link 'examples.ttl.zip' for "Exemples Turtle (zip)" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link '.\specifications_fonctionnelles.html' for "Spécifications fonctionnelles des échanges - Téléradiologie" cannot be resolved (NOTFOUND)
+Generic: line 0, col 0, Error - The link './specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS' for "étape 4 et 5" cannot be resolved (valid targets: 122 targets) - case is wrong ('identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-mos') (NOTFOUND)
 Generic: line 0, col 0, Warning - The <script> containing the javascript '$( document ).ready('... is illegal and not allowed on the HL7 ci-build - need to put the script in a  .js file in a trusted template if this IG is to build on the HL7 ci-build (if it is justified and needed) (INVALID)
-Generic: line 0, col 0, Error - The image source 'fig17.png' cannot be resolved (NOTFOUND)
-Generic: line 0, col 0, Error - The link './acquittement.html' for "une partie dédiée" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Error - The link './st_flux1.html#Groupes-OBSERVATION---Localisation-anatomique' for "Groupes OBSERVATION – Localisation anatomique" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Error - The link './st_flux1.html#Groupes-OBSERVATION---Modalité-d-imagerie' for "Groupes OBSERVATION – Modalité d’imagerie" cannot be resolved (NOTFOUND)
 Generic: line 0, col 0, Warning - An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide (NOTFOUND)
 Generic: line 0, col 0, Warning - The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide (NOTFOUND)
-/home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json: line 1, col 1143, Info - Reference to draft CodeSystem urn:iso:std:iso:3166|20210120 (BUSINESSRULE)
+/home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json: line 1, col 1143, Error - The value set 'http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1' validation (local) took too long to process (>60sec) (TOOCOSTLY)
 /home/runner/work/interop-ig-hl7v2-teleradiologie/interop-ig-hl7v2-teleradiologie/igSource/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json: line 1, col 14836, Error - ImplementationGuide.definition.resource: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1) (STRUCTURE)
 
-err = 1, warn = 3, info = 1
+err = 2, warn = 3, info = 0
 IG Publisher Version: 2.0.30
