@@ -2021,7 +2021,7 @@ Le segment **TQ1 – Timing/Quantity** est utilisé pour véhiculer les informat
   * ?:  
 * Composition du segment TQ1 : Usage = Required / Cardinalité = [1..1]: TQ1-6
   * ?: Service Duration
-  * ?: Durée de rétention des images
+  * ?: Durée de rétention des images (jours)
 * Composition du segment TQ1 : Usage = Required / Cardinalité = [1..1]: TQ1-7
   * ?: Start date/time
   * ?: Date/heure de l'examen d'imagerie
