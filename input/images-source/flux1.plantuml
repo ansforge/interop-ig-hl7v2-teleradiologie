@@ -1,0 +1,5 @@
+@startuml
+
+"Producteur : Structure(s) d'imagerie" -> "Consommateur : Plateforme téléradiologie" : Flux 1.1 **TransmissionDemandeIMG** \n <color #FireBrick>HTTP POST</color>
+"Producteur : Structure(s) d'imagerie" <-- "Consommateur : Plateforme téléradiologie" : Flux 1.2 **Resultat TransmissionDemandeIMG**\n <color #FireBrick>201 Created</color>
+@enduml
