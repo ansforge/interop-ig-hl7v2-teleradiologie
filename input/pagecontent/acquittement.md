@@ -124,7 +124,8 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment MSH :
         <p>MSH-1</p>
       </td>
       <td>
-        <p><span class="hl7-color">|</span> séparateur de champ</p>
+        <p><span class="hl7-color">|</span></p>
+        <p>séparateur de champ</p>
       </td>
       <td>
         <p>ST</p>
@@ -138,7 +139,8 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment MSH :
         <p>MSH-2</p>
       </td>
       <td>
-        <p><span class="hl7-color">^~\&</span> : séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants</p>
+        <p><span class="hl7-color">^~\&</span></p>
+        <p>séparateur de composant, répétition, caractère d'échappement, séparateur de sous-composants</p>
       </td>
       <td>
         <p>ST</p>
@@ -273,9 +275,8 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment MSH :
         <p>MSH-12</p>
       </td>
       <td>
-        <p>Version du standard 
-        <br><span class="hl7-color">2.5.1</span>
-        </p>
+        <p>Version du standard</p>
+        <p><span class="hl7-color">2.5.1</span></p>
       </td>
       <td>
         <p>VID</p>
@@ -289,6 +290,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment MSH :
         <p>MSH-17</p>
       </td>
       <td>
+        <p>Code du pays</p>
         <p><span class="hl7-color">FRA</span></p>
       </td>
       <td>
@@ -397,7 +399,7 @@ ERR :
         <p>Code erreur HL7 dont les valeurs sont à prendre dans la table HL7 0357 (nom symbolique messageErrorCondition)</p>
       </td>
       <td>
-        <p>CWE</p>
+        <p>CE</p>
       </td>
       <td>
         <p>R</p>
@@ -439,5 +441,5 @@ inconnue
 ```
 MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
 MSA|AE|12345
-ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition| E
+ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 ```

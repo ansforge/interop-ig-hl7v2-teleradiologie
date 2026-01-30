@@ -196,7 +196,7 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)</p>
       </td>
       <td>
         <p>Display name </p>
@@ -309,7 +309,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.  
 
 L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans **OBX-5** correspond à une URL complète, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local "URL_VIEWER_DRIMBOX" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>.
 
 <table class="table-hl7v2">
@@ -387,7 +387,7 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -434,7 +434,7 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
 
 <blockquote class="stu-note">
     <p>
-    <b>(6) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    <b>(5) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
     </p>
     <ul>
       <li>le séparateur de champs (|) via \F\ ;</li>
@@ -524,7 +524,7 @@ Ce groupe obligatoire est composé d'un segment OBX permettant d’indiquer le *
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -701,7 +701,7 @@ Ce groupe est obligatoirement associé au groupe **Numéro de lot**.
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -861,7 +861,7 @@ Ce groupe doit être présent si le groupe Type de produit est renseigné.
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -998,7 +998,7 @@ La quantité est **optionnelle** mais fortement recommandée lorsque le produit 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -1159,7 +1159,7 @@ Le groupe contient un **segment OBX unique** portant la valeur de l’identifian
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -1297,7 +1297,7 @@ Ce groupe est **optionnel** et vient compléter l’identifiant de l’appareil 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>

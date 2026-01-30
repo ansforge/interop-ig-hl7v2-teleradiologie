@@ -207,7 +207,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Entering Organization</p>
       </td>
       <td>
-        <p>Qualifie le type d'organisation  (5)</p>
+        <p>Qualifie le type d'organisation  (4)</p>
       </td>
     </tr>
     <tr>
@@ -294,7 +294,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 
 <blockquote class="stu-note">
     <p>
-    <b>(5) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
+    <b>(4) :</b> Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés.
     Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une <a href="./table_orga.html">table de valeurs locale documentée</a>.
 
     L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS.
@@ -373,7 +373,7 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -418,7 +418,7 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
   </tbody>
 </table>
 
-##### Segment NTE (Notes and Comments)
+##### Segment NTE - Finalité de l'examen
 
 Le segment **NTE** peut être utilisé en complément du segment **OBR** afin de véhiculer un ou des **commentaires libres** relatifs à la **finalité de l’examen**.
 
@@ -581,7 +581,7 @@ Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -642,7 +642,7 @@ Le segment **NTE** peut être utilisé en complément du segment **OBX** afin de
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -813,7 +813,7 @@ Ce groupe est composé d'un segment OBX obligatoire permettant d’indiquer la *
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -886,7 +886,7 @@ Ce groupe est composé d'un segment OBX obligatoire permettant d’indiquer la *
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -971,7 +971,7 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -1044,7 +1044,7 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -1131,7 +1131,7 @@ Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5*
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -1206,7 +1206,7 @@ Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5*
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -1291,7 +1291,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer la **taille 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -1341,7 +1341,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer la **taille 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -1426,7 +1426,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **poids c
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -1476,7 +1476,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **poids c
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>
@@ -1561,7 +1561,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **statut 
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -1624,7 +1624,7 @@ Ce groupe **OBSERVATION** optionnel est utilisé afin de véhiculer le **statut 
         <p>Observation Result Status</p>
       </td>
       <td>
-        <p>Valeur fixée à « <span class="hl7-color">O » (Order detail description only (no result))</span></p>
+        <p>Valeur fixée à « <span class="hl7-color">O</span> » (Order detail description only (no result))</p>
       </td>
     </tr>
   </tbody>

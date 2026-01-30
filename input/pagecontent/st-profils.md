@@ -34,7 +34,7 @@ Le message est composé des segments principaux suivants :
 - **ORC / OBR** : informations liées à la demande d’examen, conformément à IHE SWF ;
 - **Groupes OBSERVATION (OBX)** : supporte les informations complémentaires spécifiques au volet Téléradiologie, non contraintes par IHE SWF.
 
-Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.
+Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable **conformément au volet Téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -332,7 +332,8 @@ Outre les éléments standards concernant la demande et la prescription portés 
 
 Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.html#flux-1---transmission-de-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
-Le diagramme ci-dessous illustre la description fonctionnelle du flux 1 :
+Le diagramme ci-dessous présente la **description fonctionnelle du message de transmission de la demande**.  
+Les éléments reliés par des flèches traduisent des **dépendances fonctionnelles** : un élément cible **ne peut être présent que si l’élément source associé est également présent**.
 
 <div style="
     text-align: center;
@@ -371,6 +372,8 @@ Le message est composé des segments principaux suivants :
 - **MSH** : en-tête du message et informations de routage
 - **PID / PV1** : identification du patient et du contexte de prise en charge
 - **ORC / OBR** : informations de demande, avec une action positionnée à l’annulation
+
+Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable **conformément au volet Téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -663,7 +666,7 @@ Le message **ORM^O01** du flux 2 permet au système demandeur de notifier au sys
 
 Les segments **ORC** et **OBR** assurent l’identification de la demandee concernée et portent les informations nécessaires à sa mise à jour dans les systèmes récepteurs, conformément aux règles définies par le profil **IHE SWF**.
 
-Le diagramme ci-dessous illustre la description fonctionnelle du message d’annulation :
+Le diagramme ci-dessous présente la **description fonctionnelle du message d’annulation** :
 
 <div style="
     text-align: center;
@@ -981,9 +984,29 @@ Le **groupe OBSERVATION (OBX)** est **conditionné à la valeur du champ ORC-1**
 
 Ces OBSERVATION sont structurées et identifiées conformément aux règles définies dans la partie [Contraintes applicables aux profils de message](./specifications_techniques.html#flux-3---réponse-à-la-demande-dexamen-dimagerie), notamment via l’utilisation de codes locaux dans **OBX-3**.
 
-Le diagramme ci-dessous illustre le **fonctionnement du flux 3** :
+Le diagramme ci-dessous illustre la  **description fonctionnelle du flux 3** :
 
-<br>
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Flux3-Fonc.svg" alt="Description fonctionnelle du flux 3" title="Figure 3 : Structure fonctionnelle du flux 3"
+         style="
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         ">
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 3 : Structure fonctionnelle du message ORU^R01^ORU_R01 du flux 3
+    </p>
+</div>
 
 ##### Flux 4 - Message OMI^O23^OMI_023 en HL7 v2.5.1
 
@@ -1007,7 +1030,7 @@ Le message est structuré autour des segments suivants :
 - **IPC** : informations relatives à l'examen d'imagerie
 - **Groupes OBSERVATION (OBX)** : transmission des compléments d’information post-acte spécifiques au volet Téléradiologie
 
-Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable.
+Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des segments ainsi que leur caractère requis, optionnel ou répétable **conformément au volet Téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -1280,27 +1303,43 @@ Ils permettent notamment de véhiculer :
 - la **modalité d'imagerie** utilisée lors de l'examen
 - les informations relatives aux **produits administrés** dans le cadre de la procédure (type, numéro de lot, quantité) ;
 - les informations sur l’**appareil d’imagerie utilisé** ;
-- la **localisation anatomique** ciblée par l'examen et les éventuelles précisions topographiques associées.
+- la **localisation anatomique** ciblée par l'examen et les éventuelles **précisions topographiques associées**.
 
 L’utilisation de ces groupes OBSERVATION est encadrée par des règles de structuration, de codification et de liaison entre segments, définies dans la partie relatives aux [contraintes spécifiques du volet](./specifications_techniques.html#flux-4----transmission-dun-complément-dinformation-post-acte).
 
-Le diagramme ci-dessous illustre le **fonctionnement du flux 4** :
+Le diagramme ci-dessous présente la **description fonctionnelle du message OMI^O23^OMI_O23**.  
+Les éléments reliés par des flèches traduisent des **dépendances fonctionnelles** : un élément cible **ne peut être présent que si l’élément source associé est également présent**.
 
-<div class="figure" style='text-align: center;'>
-    <img src="fig17.png" alt="Figure 17" title="Figure 17 : Structure fonctionnelle du message ORU_R01" style="width:80%;">
-    <figcaption><b>Figure 17 : Structure fonctionnelle du message ORU_R01</b></figcaption>
+<div style="
+    text-align: center;
+    margin: 1.5em auto;
+">
+    <img src="Flux4-Fonc.svg" alt="Description fonctionnelle du flux 4" title="Figure 4 : Structure fonctionnelle du flux 4"
+         style="
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+         ">
+
+    <p style="
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 0.5em;
+    ">
+        Figure 4 : Structure fonctionnelle du message OMI^O23^OMI_023 du flux 4
+    </p>
 </div>
-
-<br>
 
 ##### Acquittements
 
 Pour l’ensemble des flux décrits ci-dessus, les messages HL7 font l’objet d’un **acquittement technique HL7 v2** (ACK). Les mécanismes d’acquittement s’appuient sur les fonctionnalités natives du standard HL7 v2.5.1.
-Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans [une partie dédiée](./acquittement.html).
+Les règles applicables à la structure et au contenu des messages d’acquittement sont décrites ultérieurement dans [une partie dédiée](./specifications_techniques.html#description-des-contraintes-à-appliquer-sur-lacquittement).
 
 ###### Profil du message ACK
 
-Le profil du message ACK est le suivant :
+Le profil du message ACK conformément au standard HL7 v2.5.1 est le suivant :
 
 <table class="table-hl7v2">
   <tbody>

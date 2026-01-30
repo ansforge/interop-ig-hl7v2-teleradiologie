@@ -367,7 +367,7 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>

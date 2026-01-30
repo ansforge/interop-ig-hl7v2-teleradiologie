@@ -203,6 +203,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
         <p>MSH-17</p>
       </td>
       <td>
+        <p>Code du pays</p>
         <p><span class="hl7-color">FRA</span></p>
       </td>
       <td>
@@ -353,7 +354,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
     </tr>
     <tr>
       <td>
-        <p>PV1-19 (2)(4) </p>
+        <p>PV1-19 (2)(3) </p>
       </td>
       <td>
         <p>Identifiant du rendez-vous</p>
@@ -362,7 +363,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
         <p>CX</p>
       </td>
       <td>
-        <p> C (3)</p>
+        <p> C - Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.</p>
       </td>
     </tr>
     <tr>
@@ -404,13 +405,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 
 <blockquote class="stu-note">
     <p>
-    <b>(3) :</b> Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.
-    </p>
-</blockquote>
-
-<blockquote class="stu-note">
-    <p>
-    <b>(4) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
+    <b>(3) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
     </p>
 </blockquote>
 

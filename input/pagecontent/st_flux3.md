@@ -337,12 +337,12 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">TRANSMISSION_DEMANDE</span></p>
+        <p><span class="hl7-color">REPONSE_DEMANDE</span></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>&gt; OBR-4.2  </p>
+        <p>&gt; OBR-4.2 (optionnel)</p>
       </td>
       <td>
         <p>Display name </p>
@@ -467,7 +467,7 @@ Le contenu peut inclure des retours à la ligne et une structuration légère fa
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
@@ -592,7 +592,7 @@ Le protocole est encodé en **base64** et peut correspondre à un document struc
     </tr>
     <tr>
       <td>
-        <p>&gt; OBX-3.2  </p>
+        <p>&gt; OBX-3.2 (optionnel)  </p>
       </td>
       <td>
         <p>Display name </p>
