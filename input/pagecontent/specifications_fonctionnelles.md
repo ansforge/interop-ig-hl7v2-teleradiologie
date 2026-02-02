@@ -148,7 +148,7 @@ Les lecteurs cibles de la présente spécification sont principalement des chefs
 
 La pratique de la téléradiologie peut être découpée en plusieurs groupes de processus associés à un contexte collaboratif entre un site demandeur d’une expertise médicale (structure d’imagerie) et un site distant en mesure de répondre à ce besoin (plateforme de téléradiologie). Dans ce cadre, trois groupes de processus sont distingués :
 
-- Le premier groupe concerne la demande d’examen d’imagerie. Il couvre les actions nécessaires à la création, la transmission, l’annulation, la validation, le refus, la modification ou la publication d’une demande d’examen d’imagerie.
+- Le premier groupe concerne la demande d’examen d’imagerie. Il couvre les actions nécessaires à la création, la transmission, l’annulation, la validation, le refus, la modification ou la publication d’une demande d’examen d’imagerie. Il est à noter qu'au sein de la présente étude le terme "demande d'examen d'imagerie" peut recouvrir aussi bien une donnée documentaire qu'un ensemble d'informations ordonnées permettant d'apprécier la prise en charge d'un patient en vue de la réalisation d'un acte d'imagerie.    
 
 - Le deuxième groupe est relatif à la réalisation du ou des actes d’imagerie. Il englobe les actions nécessaires à la préparation, au déroulement et au partage d’un ou plusieurs examens d’imagerie.
 
@@ -237,11 +237,11 @@ Les différents processus collaboratifs retenus dans le périmètre de la prése
 </tr>
 <tr>
 <td><strong>Contraintes fonctionnelles</strong></td>
-<td>Si la demande d’examen rédigée est connue (contexte de planification), en complément des éléments clés associés à la demande d'examen d'imagerie véhiculés dans la transaction, le Créateur initie au moins une transaction supplémentaire correspondant au document Demande d'examen d'imagerie complet (numérisé).</td>
+<td>Si la demande d’examen rédigée est connue (contexte de planification), en complément des éléments clés associés à la demande d'examen d'imagerie véhiculés dans la transaction, le Créateur peut initier au moins une transaction supplémentaire correspondant au document Demande d'examen d'imagerie complet (numérisé).</td>
 </tr>
 <tr>
 <td><strong>Scénario nominal</strong></td>
-<td>Le Créateur transmet une demande d’examen d’imagerie au Consommateur. Cette demande peut être accompagnée d’un ou plusieurs documents complémentaires.<br />
+<td>Le Créateur transmet les éléments composant une demande d’examen d’imagerie au Consommateur. Cette demande peut être accompagnée d’un ou plusieurs documents complémentaires.<br />
 Le Consommateur réceptionne et analyse la demande d’examen d’imagerie. Si applicable, le consommateur prend également connaissance des informations portées le(s) document(s) annexes.</td>
 </tr>
 </tbody>
@@ -690,12 +690,12 @@ Le diagramme d’activité ci-dessous illustre l’action de transmission des in
 <tr>
 <td>DocumentDemandeExamen</td>
 <td>Document correspondant à la demande d’examen d’imagerie rédigée.</td>
-<td>Flux 1</td>
+<td>N.A.</td>
 </tr>
 <tr>
 <td>DocumentsTiers</td>
 <td>Documents complémentaires associés à la demande d’examen d’imagerie.</td>
-<td>Flux 1</td>
+<td>N.A.</td>
 </tr>
 <tr>
 <td>LocalisationAnatomique</td>
@@ -718,8 +718,8 @@ Le diagramme d’activité ci-dessous illustre l’action de transmission des in
 <td>Flux 3</td>
 </tr>
 <tr>
-<td>URLViewerDRIMBOX</td>
-<td>Eléments permettant la construction d’une URL d’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. Ce concept permet l’intégration au maillage DRIM-M du compte-rendu d’imagerie rédigé suite à la réalisation de l’acte d’imagerie.</td>
+<td>URL_Partielle_Viewer</td>
+<td>Adresse partielle à compléter afin de permettre l’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. Il est nécessaire de compléter cette donnée avec l'identifiant du compte-rendu d'imagerie afin d'obtenir un lien d'accès fonctionnel. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. Ce concept permet l’intégration au maillage DRIM-M du compte-rendu d’imagerie rédigé suite à la réalisation de l’acte d’imagerie.</td>
 <td>Flux 4</td>
 </tr>
 <tr>
@@ -919,7 +919,7 @@ Le tableau présenté ci-dessous contient les éléments suivants :
 <td></td>
 </tr>
 <tr>
-<td>URLViewerDRIMBOX</td>
+<td>URL_Partielle_Viewer</td>
 <td></td>
 <td></td>
 <td></td>
@@ -999,6 +999,12 @@ Le tableau présenté ci-dessous contient les éléments suivants :
     </p>
 </div>
 
+<blockquote class="stu-note">
+    <p>
+    <b>(1) :</b> Il est important de préciser que les classes "DocumentDemande" et "DocumentTiers" ne sont mentionnées au sein de la modélisation ci-dessus qu'à des fins de valorisation du contexte global. En effet, le flux n°1 mis en oeuvre ne véhicule aucune données documentaire mais peut être complété par un ou plusieurs flux annexes véhiculant ces éléments. Ces flux annexes mis en oeuvre pour le transport des données correspondant aux classes "DocumentDemande" et "DocumentTiers" ne sont pas couvert au titre du périmètre de la présente étude. Il peut néanmoins être précisé que la mise en oeuvre de ces flux doit s’appuyer sur le Volet CI-SIS de transmission d’un document CDA-R2 en HL7v2.
+    </p>
+</blockquote>
+
 ##### Classe DemandeExamenImagerie
 
 Représente l’ensemble des informations nécessaires pour formaliser la demande de réalisation d’un examen d’imagerie. Regroupe les éléments cliniques, administratifs et organisationnels transmis par le prescripteur afin de justifier l’examen et de permettre au médecin effecteur d’en évaluer la pertinence et la faisabilité.
@@ -1015,7 +1021,7 @@ Représente l’ensemble des informations nécessaires pour formaliser la demand
 
 ##### Classe DocumentDemande
 
-Document formalisant la demande d’examen d’imagerie.
+Document formalisant la demande d’examen d’imagerie. Information véhiculée au travers d'un flux complémentaire dédié.
 
 | **Nom** | **Description** |
 |----|----|
@@ -1026,7 +1032,7 @@ Document formalisant la demande d’examen d’imagerie.
 
 ##### Classe DocumentTiers
 
-Documents complémentaires associés à la demande d’examen. Représente tout élément additionnel utile à l’évaluation ou à la prise en charge du patient, tels que des comptes rendus, résultats, justificatifs ou documents cliniques pertinents.
+Documents complémentaires associés à la demande d’examen. Représente tout élément additionnel utile à l’évaluation ou à la prise en charge du patient, tels que des comptes rendus, résultats, justificatifs ou documents cliniques pertinents. Information véhiculée au travers d'un flux complémentaire dédié.
 
 | **Nom** | **Description** |
 |----|----|
@@ -1325,7 +1331,7 @@ Regroupe les informations relatives aux images produites lors d’un examen d’
 
 | **Nom** | **Description** |
 |----|----|
-| urlViewerDrimBox : Texte \[1..1\] | Eléments permettant la construction d’une URL d’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. |
+| urlPartielleViewer : Texte \[1..1\] | Eléments permettant la construction d’une URL d’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. |
 | dureeRetentionImages : Duree \[1..1\] | Durée de rétention propre à l’archive impliquée concernant les images médicales associées à l’acte ou aux actes d’imagerie effectué. Cette information doit apparaître explicitement au sein du compte-rendu d’imagerie. |
 
 <p style="text-align:center;">Table 37 : Attributs de la classe « Images»</p>
