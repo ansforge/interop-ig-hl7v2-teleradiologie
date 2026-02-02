@@ -2088,7 +2088,7 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
   * ?: Universal Id Type
   * ?: ISO
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-3
-  * ?: Study Instance UID
+  * ?: Study Instance UID (5)
   * ?: 
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-4
   * ?: Scheduled Procedure Step ID
@@ -2103,11 +2103,13 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
   * ?: Universal Id Type
   * ?: ISO
 
+>  **(5) :** Bien que le type de donnée du champ IPC-3 soit EI (Entity Identifier) et que la spécification d'Interop'santé concernant [les types de données utilisables en France](https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf) prévoit le renseignement des couples EI.1 + EI.2 ou EI.1 + EI.3 + EI.4, cette contrainte ne s’applique pas dans le cas du Study Instance UID. En effet, le Study Instance UID est un identifiant globalement unique et n’est pas associé à une autorité d’affectation distincte. À ce titre, seul le composant EI.1 (Entity Identifier) est requis pour véhiculer cet identifiant. Cette approche est conforme aux principes décrits dans le [volet Partage de documents de santé](https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_service_volet-partage-documents-sante_v1.16.4.pdf) section 3.4.56.5. 
+
 ##### Groupe OBSERVATION - URL de viewer DRIMbox
 
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.
 
-L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_PARTIELLE_VIEWER” dans **OBX-3**, [documenté en annexe](./table_obs.md).
+L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_PARTIELLE_VIEWER” dans **OBX-3**, [documenté en annexe](./table_obs.md).
 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -2140,7 +2142,7 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
   * ?: Observation Result Status
   * ?: Valeur fixée à « F » 
 
->  **(5) :** Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment : 
+>  **(6) :** Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment : 
 * le séparateur de champs (|) via \F\ ;
 * le séparateur de composants (^) via \S\ ;
 * le séparateur de répétitions (~) via \R\ ;

@@ -5439,7 +5439,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>IPC-3</p>
       </td>
       <td>
-        <p>Study Instance UID</p>
+        <p>Study Instance UID (5)</p>
       </td>
       <td>
         <p></p>
@@ -5494,6 +5494,14 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
   </tbody>
 </table>
 
+<blockquote class="stu-note">
+    <p>
+    <b>(5) :</b> Bien que le type de donnée du champ IPC-3 soit EI (Entity Identifier) et que la spécification d'Interop'santé concernant <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">les types de données utilisables en France</a> prévoit le renseignement des couples EI.1 + EI.2 ou EI.1 + EI.3 + EI.4, cette contrainte ne s’applique pas dans le cas du Study Instance UID.  
+    En effet, le Study Instance UID est un identifiant globalement unique et n’est pas associé à une autorité d’affectation distincte. À ce titre, seul le composant EI.1 (Entity Identifier) est requis pour véhiculer cet identifiant.
+    Cette approche est conforme aux principes décrits dans le <a href="https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_service_volet-partage-documents-sante_v1.16.4.pdf">volet Partage de documents de santé</a> section 3.4.56.5.
+    </p>
+</blockquote>
+
 <p><br /></p>
 
 <h5 id="groupe-observation---url-de-viewer-drimbox">Groupe OBSERVATION - URL de viewer DRIMbox</h5>
@@ -5501,7 +5509,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 <p>Ce <strong>groupe OBSERVATION</strong> est utilisé afin de véhiculer l’<strong>URL d’accès à la vieweuse DRIMbox</strong>, permettant la consultation à distance des images issues de l’examen d’imagerie.</p>
 
 <p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans <strong>OBX-5</strong> correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans <strong>OBX-5</strong> correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local “URL_PARTIELLE_VIEWER” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <table class="table-hl7v2">
@@ -5626,7 +5634,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
 
 <blockquote class="stu-note">
     <p>
-    <b>(5) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    <b>(6) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
     </p>
     <ul>
       <li>le séparateur de champs (|) via \F\ ;</li>
@@ -7037,7 +7045,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 2, 2026 10:51+0000">2026-02-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 2, 2026 11:25+0000">2026-02-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
