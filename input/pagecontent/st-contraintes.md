@@ -257,8 +257,6 @@ Le message HL7 est centré sur un seul patient. Les informations concernant le p
 
 Ces deux segments doivent être renseignés conformément à la spécification « [PAM -- National extension France » version 2.11](https://www.interopsante.org/publications) publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l'annexe CI-SIS « [Prise en charge de l'identifiant National de Santé (INS) dans les standards d'interopérabilité et les volets du CI-SIS](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis) ».
 
-Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport au profil PAM-FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l'alimentation du DMP.
-
 <table class="table-hl7v2">
   <tbody>
     <tr>
@@ -305,7 +303,7 @@ Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 
     </tr>
     <tr>
       <td>
-        <p>PID-18 (2)</p>
+        <p>PID-18</p>
       </td>
       <td>
         <p>N° de dossier administratif</p>
@@ -354,7 +352,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
     </tr>
     <tr>
       <td>
-        <p>PV1-19 (2)(3) </p>
+        <p>PV1-19 (2) </p>
       </td>
       <td>
         <p>Identifiant du rendez-vous</p>
@@ -368,7 +366,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
     </tr>
     <tr>
       <td>
-        <p>PV1-44 (2)</p>
+        <p>PV1-44</p>
       </td>
       <td>
         <p>Date d'entrée du patient</p>
@@ -382,7 +380,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
     </tr>
     <tr>
       <td>
-        <p>PV1-45 (2)</p>
+        <p>PV1-45</p>
       </td>
       <td>
         <p>Date de sortie du patient</p>
@@ -399,13 +397,7 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
 
 <blockquote class="stu-note">
     <p>
-    <b>(2) :</b> A noter que ces champs sont à renseigner, s'ils sont connus, par le système expéditeur afin de pouvoir calculer des indicateurs.
-    </p>
-</blockquote>
-
-<blockquote class="stu-note">
-    <p>
-    <b>(3) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
+    <b>(2) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
     </p>
 </blockquote>
 

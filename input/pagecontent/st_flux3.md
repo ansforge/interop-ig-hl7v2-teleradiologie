@@ -197,7 +197,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">PLATEFORME_TELERADIOLOGIE</span></p>
+        <p><span class="hl7-color">PLATEFORME_TLR</span></p>
       </td>
     </tr>
     <tr>
@@ -219,7 +219,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Ordering Facility Name</p>
       </td>
       <td>
-        <p></p>
+        <p>Informations relatives à la structure émettrice</p>
       </td>
     </tr>
     <tr>

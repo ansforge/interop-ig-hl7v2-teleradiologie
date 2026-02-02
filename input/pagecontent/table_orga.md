@@ -31,7 +31,7 @@ La table ci-dessous définit les valeurs locales autorisées pour ORC-17 dans le
     </tr>
     <tr>
       <td>
-        <p><strong>PLATEFORME_TELERADIOLOGIE</strong></p>
+        <p><strong>PLATEFORME_TLR</strong></p>
       </td>
       <td>
         <p></p>

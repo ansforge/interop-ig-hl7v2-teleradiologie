@@ -254,7 +254,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Ordering Facility Name</p>
       </td>
       <td>
-        <p></p>
+        <p>Informations relatives à la structure émettrice</p>
       </td>
     </tr>
     <tr>

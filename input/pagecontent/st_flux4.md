@@ -191,7 +191,7 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">COMPLEMENT_POST_EXAMEN</span></p>
+        <p><span class="hl7-color">COMPLEMENT_POST_ACTE</span></p>
       </td>
     </tr>
     <tr>
@@ -263,7 +263,40 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>Accession Identifier</p>
       </td>
       <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Accession Number</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
       </td>
     </tr>
     <tr>
@@ -297,7 +330,8 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
       </td>
       <td>
         <p>OID du code system utilisé</p>
-        <p><span class="hl7-color">2.16.840.1.113883.6.1</span></p>
+        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
+        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
       </td>
     </tr>
     <tr>
@@ -379,7 +413,7 @@ Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès �
 
 L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
 La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
-Le segment OBX portant sur le protocole est identifié par un code local "URL_VIEWER_DRIMBOX" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>.
+Le segment OBX portant sur le protocole est identifié par un code local "URL_PARTIELLE_VIEWER" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>.
 
 <table class="table-hl7v2">
   <tbody>
@@ -451,7 +485,7 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_VI
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">URL_VIEWER_DRIMBOX</span></p>
+        <p><span class="hl7-color">URL_PARTIELLE_VIEWER</span></p>
       </td>
     </tr>
     <tr>

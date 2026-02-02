@@ -49,7 +49,7 @@ Ces codes permettent d’identifier de manière explicite la **procédure métie
     </tr>
     <tr>
       <td>
-        <p><strong>COMPLEMENT_POST_EXAMEN</strong></p>
+        <p><strong>COMPLEMENT_POST_ACTE</strong></p>
       </td>
       <td>
         <p>Transmission d’un complément d'information post-examen</p>

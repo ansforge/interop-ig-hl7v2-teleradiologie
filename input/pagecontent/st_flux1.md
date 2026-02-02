@@ -96,7 +96,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Ordering Provider</p>
       </td>
       <td>
-        <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie</p>
+        <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie (3)</p>
       </td>
     </tr>
     <tr>
@@ -240,7 +240,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Ordering Facility Name</p>
       </td>
       <td>
-        <p></p>
+        <p>Informations relatives à la structure émettrice</p>
       </td>
     </tr>
     <tr>
@@ -291,6 +291,14 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
     </tr>
   </tbody>
 </table>
+
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Le champ ORC-12, de type XCN (Extended Composite ID Number and Name for Persons), ne permet pas de véhiculer explicitement le code profession du professionnel de santé. Or, cette information est requise dans le cadre de la rédaction du compte rendu d’imagerie.  
+    En conséquence, il est considéré que le code profession du professionnel de santé est déduit par la plateforme de téléradiologie au moyen d’une interrogation de l’annuaire de référence, à partir de l’identifiant national du professionnel de santé (PS_IdNat) transmis dans ORC-12. Cette approche garantit la cohérence avec les référentiels nationaux tout en respectant les contraintes du type de données HL7 v2 utilisé.
+    Par ailleurs, les informations relatives au professionnel de santé demandeur étant véhiculées dans le cadre du flux 1, il est considéré que la plateforme de téléradiologie enregistre ces informations lors de la réception de ce flux afin de les réutiliser lors de la rédaction du compte rendu d’imagerie, suite à la réception du flux 4.
+    </p>
+</blockquote>
 
 <blockquote class="stu-note">
     <p>
@@ -732,7 +740,7 @@ Ces groupes **OBSERVATION** sont utilisés afin de véhiculer les informations r
 Ces informations permettent de préciser la zone anatomique à explorer et, le cas échéant, d’apporter un niveau de détail complémentaire facilitant l’interprétation et la réalisation de l’examen.
 
 La localisation anatomique est portée par un **premier segment OBX obligatoire**, pouvant être complété par un **second segment OBX optionnel** destiné à préciser la topographie de manière plus fine.
-Les segments OBX portant sur la localisation anatomique sont identifiés par un code local "LOCALISATION_ANATOMIQUE" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>. Ces segments sont différenciés à l’aide du champ **OBX-4 – Observation Sub-ID**.
+Les segments OBX portant sur la localisation anatomique sont identifiés par un code local "REGION_ANATOMIQUE" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>. Ces segments sont différenciés à l’aide du champ **OBX-4 – Observation Sub-ID**.
 
 ###### Groupe OBSERVATION - Localisation anatomique principale
 
@@ -808,7 +816,7 @@ Ce groupe est composé d'un segment OBX obligatoire permettant d’indiquer la *
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">LOCALISATION_ANATOMIQUE</span></p>
+        <p><span class="hl7-color">REGION_ANATOMIQUE</span></p>
       </td>
     </tr>
     <tr>
@@ -966,7 +974,7 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">LOCALISATION_ANATOMIQUE</span></p>
+        <p><span class="hl7-color">REGION_ANATOMIQUE</span></p>
       </td>
     </tr>
     <tr>

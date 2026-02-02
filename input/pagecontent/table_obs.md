@@ -15,10 +15,10 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ **OBX
     </tr>
     <tr>
       <td>
-        <p><strong>LOCALISATION_ANATOMIQUE</strong></p>
+        <p><strong>REGION_ANATOMIQUE</strong></p>
       </td>
       <td>
-        <p>Localisation anatomique de l’examen d’imagerie</p>
+        <p>Région anatomique de l’examen d’imagerie</p>
       </td>
       <td>
         <p>TLR_OBSERVATION</p>
@@ -37,10 +37,10 @@ Cette table locale définit l’ensemble des codes utilisés dans le champ **OBX
     </tr>
     <tr>
       <td>
-        <p><strong>URL_VIEWER_DRIMBOX</strong></p>
+        <p><strong>URL_PARTIELLE_VIEWER</strong></p>
       </td>
       <td>
-        <p>URL d’accès à la visionneuse d’imagerie DRIMbox</p>
+        <p>URL partielle d’accès à la visionneuse d’imagerie DRIMbox</p>
       </td>
       <td>
         <p>TLR_OBSERVATION</p>
