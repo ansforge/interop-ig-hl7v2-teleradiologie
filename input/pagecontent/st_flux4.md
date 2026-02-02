@@ -350,7 +350,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
         <p>IPC-3</p>
       </td>
       <td>
-        <p>Study Instance UID</p>
+        <p>Study Instance UID (5)</p>
       </td>
       <td>
         <p></p>
@@ -405,6 +405,14 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
   </tbody>
 </table>
 
+<blockquote class="stu-note">
+    <p>
+    <b>(5) :</b> Bien que le type de donnée du champ IPC-3 soit EI (Entity Identifier) et que la spécification d'Interop'santé concernant <a href="https://www.interopsante.org/f/db43469b624f3039f9610d8cb6b27830ed6a9fe1/IHE_France_Constraints_on_HL7_data_types_for_ITI_V1.8.2.pdf">les types de données utilisables en France</a> prévoit le renseignement des couples EI.1 + EI.2 ou EI.1 + EI.3 + EI.4, cette contrainte ne s’applique pas dans le cas du Study Instance UID.  
+    En effet, le Study Instance UID est un identifiant globalement unique et n’est pas associé à une autorité d’affectation distincte. À ce titre, seul le composant EI.1 (Entity Identifier) est requis pour véhiculer cet identifiant.
+    Cette approche est conforme aux principes décrits dans le <a href = "https://esante.gouv.fr/sites/default/files/media_entity/documents/ci-sis_service_volet-partage-documents-sante_v1.16.4.pdf">volet Partage de documents de santé</a> section 3.4.56.5.
+    </p>
+</blockquote>
+
 <br>
 
 ##### Groupe OBSERVATION - URL de viewer DRIMbox
@@ -412,7 +420,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.  
 
 L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
+La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise.
 Le segment OBX portant sur le protocole est identifié par un code local "URL_PARTIELLE_VIEWER" dans **OBX-3**, <a href="./table_obs.html">documenté en annexe</a>.
 
 <table class="table-hl7v2">
@@ -537,7 +545,7 @@ Le segment OBX portant sur le protocole est identifié par un code local "URL_PA
 
 <blockquote class="stu-note">
     <p>
-    <b>(5) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
+    <b>(6) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
     </p>
     <ul>
       <li>le séparateur de champs (|) via \F\ ;</li>
