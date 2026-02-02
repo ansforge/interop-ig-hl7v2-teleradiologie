@@ -268,7 +268,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-2.1</p>
+        <p>IPC-1.1</p>
       </td>
       <td>
         <p>Entity Identifier</p>
@@ -279,7 +279,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-2.3</p>
+        <p>IPC-1.3</p>
       </td>
       <td>
         <p>Universal Id</p>
@@ -290,7 +290,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-2.4</p>
+        <p>IPC-1.4</p>
       </td>
       <td>
         <p>Universal Id Type</p>

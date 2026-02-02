@@ -91,13 +91,13 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
     </tr>
     <tr>
       <td>
-        <p>ORC-12</p>
+        <p>ORC-12 </p>
       </td>
       <td>
         <p>Ordering Provider</p>
       </td>
       <td>
-        <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie</p>
+        <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie <a href="./specifications_techniques.html#segment-orc-common-order">(Voir note 3)</a></p>
       </td>
     </tr>
     <tr>
