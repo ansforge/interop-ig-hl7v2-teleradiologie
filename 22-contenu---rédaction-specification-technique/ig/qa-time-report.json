@@ -1,5 +1,5 @@
 {
-  "date" : "Mon, 02 Feb, 2026 11:25:28 +0000",
+  "date" : "Mon, 02 Feb, 2026 14:30:34 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,43 +8,38 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 24,
-          "length" : 32
+          "start" : 33,
+          "length" : 31
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 26,
-          "length" : 14
+          "start" : 34,
+          "length" : 17
         },
         {
           "activity" : "generateNarratives",
-          "start" : 26,
-          "length" : 86
+          "start" : 34,
+          "length" : 82
         },
         {
           "activity" : "validate",
-          "start" : 26,
-          "length" : 7094
+          "start" : 34,
+          "length" : 9073
         },
         {
           "activity" : "generate1",
-          "start" : 33,
-          "length" : 76
+          "start" : 43,
+          "length" : 72
         },
         {
           "activity" : "generate2",
-          "start" : 35,
-          "length" : 71
+          "start" : 46,
+          "length" : 90
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 40,
+          "start" : 52,
           "length" : 3
-        },
-        {
-          "activity" : "scanExamplesForR5",
-          "start" : 43,
-          "length" : 2
         }
       ]
     },
@@ -54,7 +49,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
@@ -65,19 +60,7 @@
     },
     {
       "name" : "/input/pagecontent/acquittement.md",
-      "size" : 10406,
-      "processes" : [
-        {
-          "activity" : "validate",
-          "start" : 33,
-          "length" : 1
-        },
-        {
-          "activity" : "generate2",
-          "start" : 35,
-          "length" : 1
-        }
-      ]
+      "size" : 10406
     },
     {
       "name" : "/input/pagecontent/st_flux1.md",
@@ -85,8 +68,8 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
-          "length" : 1
+          "start" : 46,
+          "length" : 2
         }
       ]
     },
@@ -100,7 +83,19 @@
     },
     {
       "name" : "/input/pagecontent/sub-id.md",
-      "size" : 2424
+      "size" : 2424,
+      "processes" : [
+        {
+          "activity" : "validate",
+          "start" : 43,
+          "length" : 1
+        },
+        {
+          "activity" : "generate2",
+          "start" : 46,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/st_flux4.md",
@@ -108,8 +103,8 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
-          "length" : 2
+          "start" : 46,
+          "length" : 1
         }
       ]
     },
@@ -119,24 +114,33 @@
     },
     {
       "name" : "/input/pagecontent/st_flux2.md",
-      "size" : 11785
+      "size" : 11872,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 46,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/specifications_techniques.md",
-      "size" : 136
+      "size" : 136,
+      "processes" : [
+        {
+          "activity" : "validate",
+          "start" : 34,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/norme_standard_cda.md",
       "size" : 7687,
       "processes" : [
         {
-          "activity" : "validate",
-          "start" : 26,
-          "length" : 1
-        },
-        {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
@@ -155,18 +159,18 @@
     },
     {
       "name" : "/input/pagecontent/tests.md",
-      "size" : 1123
-    },
-    {
-      "name" : "/input/pagecontent/norme_standard.md",
-      "size" : 1099,
+      "size" : 1123,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/input/pagecontent/norme_standard.md",
+      "size" : 1099
     },
     {
       "name" : "/input/pagecontent/norme_standard-presTLR.md",
@@ -182,7 +186,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
@@ -193,8 +197,8 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
-          "length" : 2
+          "start" : 46,
+          "length" : 1
         }
       ]
     },
@@ -204,8 +208,8 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
-          "length" : 3
+          "start" : 46,
+          "length" : 4
         }
       ]
     },
@@ -223,8 +227,8 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
-          "length" : 2
+          "start" : 46,
+          "length" : 1
         }
       ]
     },
@@ -238,18 +242,18 @@
     },
     {
       "name" : "/input/pagecontent/norme_standard_dicom.md",
-      "size" : 5259
-    },
-    {
-      "name" : "/input/pagecontent/exemples.md",
-      "size" : 8544,
+      "size" : 5259,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/input/pagecontent/exemples.md",
+      "size" : 8544
     },
     {
       "name" : "/input/pagecontent/downloads.md",
@@ -257,7 +261,14 @@
     },
     {
       "name" : "/input/pagecontent/change-log.md",
-      "size" : 17
+      "size" : 17,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 46,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/pagecontent/norme_standard-intro.md",
@@ -265,29 +276,22 @@
     },
     {
       "name" : "/input/pagecontent/index.md",
-      "size" : 1828,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 35,
-          "length" : 1
-        }
-      ]
+      "size" : 1828
     },
     {
       "name" : "/input/pagecontent/st_flux3.md",
-      "size" : 17683
-    },
-    {
-      "name" : "/input/pagecontent/st-contraintes.md",
-      "size" : 9867,
+      "size" : 17770,
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
+    },
+    {
+      "name" : "/input/pagecontent/st-contraintes.md",
+      "size" : 9867
     },
     {
       "name" : "/input/pagecontent/norme_standard_hl7v2.md",
@@ -295,14 +299,21 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
     },
     {
       "name" : "/input/pagecontent/table_obr.md",
-      "size" : 1493
+      "size" : 1493,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 46,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/template/config",
@@ -310,14 +321,7 @@
     },
     {
       "name" : "/template/config/_config.yml",
-      "size" : 31,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 35,
-          "length" : 1
-        }
-      ]
+      "size" : 31
     },
     {
       "name" : "/input/images",
@@ -336,13 +340,8 @@
       "size" : 314194,
       "processes" : [
         {
-          "activity" : "scan",
-          "start" : 26,
-          "length" : 1
-        },
-        {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]
@@ -357,7 +356,19 @@
     },
     {
       "name" : "/input/images/Flux4-Fonc.svg",
-      "size" : 91495
+      "size" : 91495,
+      "processes" : [
+        {
+          "activity" : "load-configure",
+          "start" : 34,
+          "length" : 1
+        },
+        {
+          "activity" : "generate2",
+          "start" : 46,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images/anImage.png",
@@ -365,14 +376,7 @@
     },
     {
       "name" : "/input/images/F6_Flux1Activity.png",
-      "size" : 82785,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 35,
-          "length" : 1
-        }
-      ]
+      "size" : 82785
     },
     {
       "name" : "/input/images/ci-sis-logo.png",
@@ -392,7 +396,14 @@
     },
     {
       "name" : "/input/images/tlr_diagram.svg",
-      "size" : 60043
+      "size" : 60043,
+      "processes" : [
+        {
+          "activity" : "generate2",
+          "start" : 46,
+          "length" : 1
+        }
+      ]
     },
     {
       "name" : "/input/images/Flux2-Fonc.svg",
@@ -400,14 +411,7 @@
     },
     {
       "name" : "/input/images/F5_TransmissionInfos.png",
-      "size" : 47485,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 35,
-          "length" : 1
-        }
-      ]
+      "size" : 47485
     },
     {
       "name" : "/input/images/F8_Flux3Activity.png",
@@ -422,8 +426,8 @@
       "size" : 336923,
       "processes" : [
         {
-          "activity" : "validate",
-          "start" : 33,
+          "activity" : "generate2",
+          "start" : 46,
           "length" : 1
         }
       ]
@@ -434,14 +438,7 @@
     },
     {
       "name" : "/input/images/Flux1-Fonc.svg",
-      "size" : 79334,
-      "processes" : [
-        {
-          "activity" : "generate2",
-          "start" : 35,
-          "length" : 1
-        }
-      ]
+      "size" : 79334
     },
     {
       "name" : "/input/images/F7_Flux2Activity.png",
@@ -461,7 +458,7 @@
       "processes" : [
         {
           "activity" : "generate2",
-          "start" : 35,
+          "start" : 46,
           "length" : 1
         }
       ]

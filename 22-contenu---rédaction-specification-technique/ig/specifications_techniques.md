@@ -1688,9 +1688,9 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-11 (Requis si connu)
   * ?: Verified By
   * ?: Informations relatives au Médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
-* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12 
   * ?: Ordering Provider
-  * ?: Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie
+  * ?: Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie [(Voir note 3)](./specifications_techniques.md#segment-orc-common-order)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
   * ?: Person Identifier
   * ?: Identifiant du professionnel (au format PS_IdNat)
@@ -1804,9 +1804,9 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-2
   * ?: Placer Order Number
   * ?: Identifiant de la demande d'examen d'imagerie (Order Placer Number)
-* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12
+* Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12 
   * ?: Ordering Provider
-  * ?: Informations relatives au médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie
+  * ?: Informations relatives au médecin effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerie [(Voir note 3)](./specifications_techniques.md#segment-orc-common-order)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
   * ?: Person Identifier
   * ?: Identifiant du professionnel (au format PS_IdNat)
@@ -2066,13 +2066,13 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-1
   * ?: Accession Identifier
   * ?: 
-* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.1
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-1.1
   * ?: Entity Identifier
   * ?: Accession Number
-* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.3
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-1.3
   * ?: Universal Id
   * ?: Identifiant de l'autorité d'affectation
-* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.4
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-1.4
   * ?: Universal Id Type
   * ?: ISO
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2
