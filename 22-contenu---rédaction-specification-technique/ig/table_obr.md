@@ -17,7 +17,7 @@ La table ci-dessous définit la **liste des codes locaux utilisés pour valorise
 * Code: **REPONSE_DEMANDE**
   * Libellé: Réponse à une demande d’examen (acceptation ou refus)
   * CodeSystem: TLR_OBR_PROCEDURE
-* Code: **COMPLEMENT_POST_EXAMEN**
+* Code: **COMPLEMENT_POST_ACTE**
   * Libellé: Transmission d’un complément d'information post-examen
   * CodeSystem: TLR_OBR_PROCEDURE
 

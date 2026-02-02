@@ -2187,8 +2187,6 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 
 <p>Ces deux segments doivent être renseignés conformément à la spécification « <a href="https://www.interopsante.org/publications">PAM – National extension France » version 2.11</a> publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS « <a href="https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis">Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS</a> ».</p>
 
-<p>Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport au profil PAM-FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l’alimentation du DMP.</p>
-
 <table class="table-hl7v2">
   <tbody>
     <tr>
@@ -2235,7 +2233,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
     </tr>
     <tr>
       <td>
-        <p>PID-18 (2)</p>
+        <p>PID-18</p>
       </td>
       <td>
         <p>N° de dossier administratif</p>
@@ -2284,7 +2282,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
     </tr>
     <tr>
       <td>
-        <p>PV1-19 (2)(3) </p>
+        <p>PV1-19 (2) </p>
       </td>
       <td>
         <p>Identifiant du rendez-vous</p>
@@ -2298,7 +2296,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
     </tr>
     <tr>
       <td>
-        <p>PV1-44 (2)</p>
+        <p>PV1-44</p>
       </td>
       <td>
         <p>Date d'entrée du patient</p>
@@ -2312,7 +2310,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
     </tr>
     <tr>
       <td>
-        <p>PV1-45 (2)</p>
+        <p>PV1-45</p>
       </td>
       <td>
         <p>Date de sortie du patient</p>
@@ -2329,13 +2327,7 @@ Ces contraintes portent notamment sur les segments suivants :</p>
 
 <blockquote class="stu-note">
     <p>
-    <b>(2) :</b> A noter que ces champs sont à renseigner, s'ils sont connus, par le système expéditeur afin de pouvoir calculer des indicateurs.
-    </p>
-</blockquote>
-
-<blockquote class="stu-note">
-    <p>
-    <b>(3) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
+    <b>(2) :</b> Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU.
     </p>
 </blockquote>
 
@@ -2459,7 +2451,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Ordering Provider</p>
       </td>
       <td>
-        <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie</p>
+        <p>Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie (3)</p>
       </td>
     </tr>
     <tr>
@@ -2603,7 +2595,7 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
         <p>Ordering Facility Name</p>
       </td>
       <td>
-        <p></p>
+        <p>Informations relatives à la structure émettrice</p>
       </td>
     </tr>
     <tr>
@@ -2654,6 +2646,14 @@ Ces contraintes portent notamment sur les segments métiers suivants, selon les 
     </tr>
   </tbody>
 </table>
+
+<blockquote class="stu-note">
+    <p>
+    <b>(3) :</b> Le champ ORC-12, de type XCN (Extended Composite ID Number and Name for Persons), ne permet pas de véhiculer explicitement le code profession du professionnel de santé. Or, cette information est requise dans le cadre de la rédaction du compte rendu d’imagerie.  
+    En conséquence, il est considéré que le code profession du professionnel de santé est déduit par la plateforme de téléradiologie au moyen d’une interrogation de l’annuaire de référence, à partir de l’identifiant national du professionnel de santé (PS_IdNat) transmis dans ORC-12. Cette approche garantit la cohérence avec les référentiels nationaux tout en respectant les contraintes du type de données HL7 v2 utilisé.
+    Par ailleurs, les informations relatives au professionnel de santé demandeur étant véhiculées dans le cadre du flux 1, il est considéré que la plateforme de téléradiologie enregistre ces informations lors de la réception de ce flux afin de les réutiliser lors de la rédaction du compte rendu d’imagerie, suite à la réception du flux 4.
+    </p>
+</blockquote>
 
 <blockquote class="stu-note">
     <p>
@@ -3095,7 +3095,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
 Ces informations permettent de préciser la zone anatomique à explorer et, le cas échéant, d’apporter un niveau de détail complémentaire facilitant l’interprétation et la réalisation de l’examen.</p>
 
 <p>La localisation anatomique est portée par un <strong>premier segment OBX obligatoire</strong>, pouvant être complété par un <strong>second segment OBX optionnel</strong> destiné à préciser la topographie de manière plus fine.
-Les segments OBX portant sur la localisation anatomique sont identifiés par un code local “LOCALISATION_ANATOMIQUE” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>. Ces segments sont différenciés à l’aide du champ <strong>OBX-4 – Observation Sub-ID</strong>.</p>
+Les segments OBX portant sur la localisation anatomique sont identifiés par un code local “REGION_ANATOMIQUE” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>. Ces segments sont différenciés à l’aide du champ <strong>OBX-4 – Observation Sub-ID</strong>.</p>
 
 <h6 id="groupe-observation---localisation-anatomique-principale">Groupe OBSERVATION - Localisation anatomique principale</h6>
 
@@ -3171,7 +3171,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">LOCALISATION_ANATOMIQUE</span></p>
+        <p><span class="hl7-color">REGION_ANATOMIQUE</span></p>
       </td>
     </tr>
     <tr>
@@ -3329,7 +3329,7 @@ Les segments OBX portant sur la localisation anatomique sont identifiés par un 
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">LOCALISATION_ANATOMIQUE</span></p>
+        <p><span class="hl7-color">REGION_ANATOMIQUE</span></p>
       </td>
     </tr>
     <tr>
@@ -4251,7 +4251,7 @@ Un <strong>motif d’annulation</strong> peut être véhiculé lorsque cette inf
         <p>Ordering Facility Name</p>
       </td>
       <td>
-        <p></p>
+        <p>Informations relatives à la structure émettrice</p>
       </td>
     </tr>
     <tr>
@@ -4610,7 +4610,7 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">PLATEFORME_TELERADIOLOGIE</span></p>
+        <p><span class="hl7-color">PLATEFORME_TLR</span></p>
       </td>
     </tr>
     <tr>
@@ -4632,7 +4632,7 @@ En cas de refus, un <strong>motif de refus</strong> peut être transmis lorsque 
         <p>Ordering Facility Name</p>
       </td>
       <td>
-        <p></p>
+        <p>Informations relatives à la structure émettrice</p>
       </td>
     </tr>
     <tr>
@@ -5280,7 +5280,7 @@ Les valeurs autorisées dans <strong>OBR-4</strong> sont définies dans une <a h
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">COMPLEMENT_POST_EXAMEN</span></p>
+        <p><span class="hl7-color">COMPLEMENT_POST_ACTE</span></p>
       </td>
     </tr>
     <tr>
@@ -5352,7 +5352,40 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
         <p>Accession Identifier</p>
       </td>
       <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Accession Number</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>IPC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">ISO</span></p>
       </td>
     </tr>
     <tr>
@@ -5386,7 +5419,8 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
       </td>
       <td>
         <p>OID du code system utilisé</p>
-        <p><span class="hl7-color">2.16.840.1.113883.6.1</span></p>
+        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
+        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
       </td>
     </tr>
     <tr>
@@ -5468,7 +5502,7 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 
 <p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
 La valeur portée dans <strong>OBX-5</strong> correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise.
-Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
+Le segment OBX portant sur le protocole est identifié par un code local “URL_PARTIELLE_VIEWER” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -5540,7 +5574,7 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
         <p>Code </p>
       </td>
       <td>
-        <p><span class="hl7-color">URL_VIEWER_DRIMBOX</span></p>
+        <p><span class="hl7-color">URL_PARTIELLE_VIEWER</span></p>
       </td>
     </tr>
     <tr>
@@ -7003,7 +7037,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 14:50+0000">2026-01-30</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 2, 2026 10:51+0000">2026-02-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

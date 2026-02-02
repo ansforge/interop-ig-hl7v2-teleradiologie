@@ -1126,8 +1126,6 @@ Le message HL7 est centré sur un seul patient. Les informations concernant le p
 
 Ces deux segments doivent être renseignés conformément à la spécification « [PAM – National extension France » version 2.11](https://www.interopsante.org/publications) publiée en 2024. Le segment PID doit suivre les contraintes décrites dans l’annexe CI-SIS « [Prise en charge de l’identifiant National de Santé (INS) dans les standards d’interopérabilité et les volets du CI-SIS](https://esante.gouv.fr/annexe-prise-en-charge-de-lins-dans-les-volets-du-ci-sis) ».
 
-Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 par rapport au profil PAM-FR. Il doit être renseigné si connu afin de pouvoir calculer des indicateurs, dans le contexte de l’alimentation du DMP.
-
 * Champ: PID-3
   * Contenu: Identifiants du patient
   * Type donnée: CX
@@ -1136,7 +1134,7 @@ Pour le segment PID, ce volet ajoute une contrainte particulière sur le PID-18 
   * Contenu: Nom du patient
   * Type donnée: XPN
   * Caractère optionnel/obligatoire: R
-* Champ: PID-18 (2)
+* Champ: PID-18
   * Contenu: N° de dossier administratif
   * Type donnée: CX
   * Caractère optionnel/obligatoire: RE
@@ -1147,22 +1145,20 @@ Pour le segment PV1, ce volet ajoute les contraintes suivantes :
   * Contenu: Classe du patient 
   * Type donnée: IS
   * Caractère optionnel/obligatoire: R
-* Champ: PV1-19 (2)(3) 
+* Champ: PV1-19 (2) 
   * Contenu: Identifiant du rendez-vous
   * Type donnée: CX
   * Caractère optionnel/obligatoire:  C - Le champ PV1-19 est requis lorsque le PV1-2 prend la valeur E, I, O ou R. Si PV1-2 prend la valeur N alors PV1-19 est requis si connu.
-* Champ: PV1-44 (2)
+* Champ: PV1-44
   * Contenu: Date d'entrée du patient
   * Type donnée: TS
   * Caractère optionnel/obligatoire: RE
-* Champ: PV1-45 (2)
+* Champ: PV1-45
   * Contenu: Date de sortie du patient
   * Type donnée: TS
   * Caractère optionnel/obligatoire: RE
 
->  **(2) :** A noter que ces champs sont à renseigner, s'ils sont connus, par le système expéditeur afin de pouvoir calculer des indicateurs. 
-
->  **(3) :** Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU. 
+>  **(2) :** Dans le cadre du volet Téléradiologie, le champ PV1-19 Visit Number est utilisé pour véhiculer l’identifiant du rendez-vous issu des flux SIU. 
 
 #### Contraintes spécifiques au volet Téléradiologie
 
@@ -1216,7 +1212,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Informations relatives au professionnel de santé effecteur à distance qui analyse la pertinence de l’examen demandé en lien avec le médecin demandeur, valide la demande d’examen et défini le protocole d’imagerieCe champ est à renseigner s'il est connu de l'expéditeur au moment de l'envoi de la demande d'examen d'imagerie
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-12
   * ?: Ordering Provider
-  * ?: Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie
+  * ?: Informations relatives au professionnel de santé responsable de la structure d’imagerie qui accueille le patient et supervise la réalisation de l’acte d’imagerie (3)
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-12.1
   * ?: Person Identifier
   * ?: Identifiant du professionnel (au format PS_IdNat)
@@ -1255,7 +1251,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: TLR_TYPE_ORGANISATION
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-21
   * ?: Ordering Facility Name
-  * ?: 
+  * ?: Informations relatives à la structure émettrice
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.1
   * ?: OrganizationName
   * ?: Nom de l'organisation (structure d'imagerie)
@@ -1268,6 +1264,8 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.10
   * ?: Organization number
   * ?: Identifiant de l'organisation (au format Struct_IdNat)
+
+>  **(3) :** Le champ ORC-12, de type XCN (Extended Composite ID Number and Name for Persons), ne permet pas de véhiculer explicitement le code profession du professionnel de santé. Or, cette information est requise dans le cadre de la rédaction du compte rendu d’imagerie. En conséquence, il est considéré que le code profession du professionnel de santé est déduit par la plateforme de téléradiologie au moyen d’une interrogation de l’annuaire de référence, à partir de l’identifiant national du professionnel de santé (PS_IdNat) transmis dans ORC-12. Cette approche garantit la cohérence avec les référentiels nationaux tout en respectant les contraintes du type de données HL7 v2 utilisé. Par ailleurs, les informations relatives au professionnel de santé demandeur étant véhiculées dans le cadre du flux 1, il est considéré que la plateforme de téléradiologie enregistre ces informations lors de la réception de ce flux afin de les réutiliser lors de la rédaction du compte rendu d’imagerie, suite à la réception du flux 4. 
 
 >  **(4) :** Conformément au profil IHE RAD – Scheduled Workflow (SWF), le champ ORC-17 – Entering Organization est renseigné dans les flux concernés. Dans le cadre du volet Téléradiologie, ce champ est utilisé pour qualifier le type d’organisation à l’origine du message (par exemple : structure d’imagerie, plateforme de téléradiologie), sur la base d’une [table de valeurs locale documentée](./table_orga.md). L’identification de l’organisation est portée dans le champ ORC-21 – Ordering Facility Name, de type XON, permettant de véhiculer un identifiant structuré et pérenne, conformément aux principes retenus dans le CI-SIS. Ce découplage permet de respecter les exigences IHE tout en garantissant une identification robuste. 
 
@@ -1402,7 +1400,7 @@ La structure et l’utilisation du segment **NTE** sont **conformes au standard 
 
 Ces groupes **OBSERVATION** sont utilisés afin de véhiculer les informations relatives à la **localisation anatomique concernée par la demande d’examen d’imagerie**. Ces informations permettent de préciser la zone anatomique à explorer et, le cas échéant, d’apporter un niveau de détail complémentaire facilitant l’interprétation et la réalisation de l’examen.
 
-La localisation anatomique est portée par un **premier segment OBX obligatoire**, pouvant être complété par un **second segment OBX optionnel** destiné à préciser la topographie de manière plus fine. Les segments OBX portant sur la localisation anatomique sont identifiés par un code local “LOCALISATION_ANATOMIQUE” dans **OBX-3**, [documenté en annexe](./table_obs.md). Ces segments sont différenciés à l’aide du champ **OBX-4 – Observation Sub-ID**.
+La localisation anatomique est portée par un **premier segment OBX obligatoire**, pouvant être complété par un **second segment OBX optionnel** destiné à préciser la topographie de manière plus fine. Les segments OBX portant sur la localisation anatomique sont identifiés par un code local “REGION_ANATOMIQUE” dans **OBX-3**, [documenté en annexe](./table_obs.md). Ces segments sont différenciés à l’aide du champ **OBX-4 – Observation Sub-ID**.
 
 ###### Groupe OBSERVATION - Localisation anatomique principale
 
@@ -1425,7 +1423,7 @@ Ce groupe est composé d’un segment OBX obligatoire permettant d’indiquer la
   * ?: ** **
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
-  * ?: LOCALISATION_ANATOMIQUE
+  * ?: REGION_ANATOMIQUE
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Localisation anatomique examinée dans le cadre de l’examen d’imagerie
@@ -1469,7 +1467,7 @@ Ce groupe est composé d’un segment OBX optionnel permettant de compléter la 
   * ?: ** **
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.1 
   * ?: Code 
-  * ?: LOCALISATION_ANATOMIQUE
+  * ?: REGION_ANATOMIQUE
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: Localisation anatomique examinée dans le cadre de l’examen d’imagerie
@@ -1734,7 +1732,7 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: TLR_TYPE_ORGANISATION
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-21
   * ?: Ordering Facility Name
-  * ?: 
+  * ?: Informations relatives à la structure émettrice
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.1
   * ?: OrganizationName
   * ?: Nom de l'organisation
@@ -1841,13 +1839,13 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
   * ?: Qualifie le type d'organisation (voir [Note 1](specifications_techniques.md#segment-orc-common-order))
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-17.1 
   * ?: Code 
-  * ?: PLATEFORME_TELERADIOLOGIE
+  * ?: PLATEFORME_TLR
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-17.3 
   * ?: Name of Coding system
   * ?: TLR_TYPE_ORGANISATION
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: ORC-21
   * ?: Ordering Facility Name
-  * ?: 
+  * ?: Informations relatives à la structure émettrice
 * Composition du segment ORC : Usage = Required / Cardinalité = [1..1]: > ORC-21.1
   * ?: OrganizationName
   * ?: Nom de l'organisation
@@ -2046,7 +2044,7 @@ Dans le cadre du volet **Téléradiologie**, le champ **OBR-4 – Universal Serv
   * ?: Code local identifiant la procédure métier portée par le message 
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.1 
   * ?: Code 
-  * ?: COMPLEMENT_POST_EXAMEN
+  * ?: COMPLEMENT_POST_ACTE
 * Composition du segment OBR : Usage = Required / Cardinalité = [1..1]: > OBR-4.2 (optionnel)
   * ?: Display name 
   * ?: Transmission d'un complément d’information post-examen
@@ -2067,7 +2065,16 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
   * ?:  
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-1
   * ?: Accession Identifier
+  * ?: 
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.1
+  * ?: Entity Identifier
   * ?: Accession Number
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.3
+  * ?: Universal Id
+  * ?: Identifiant de l'autorité d'affectation
+* Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.4
+  * ?: Universal Id Type
+  * ?: ISO
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2
   * ?: Requested Procedure ID
   * ?: 
@@ -2076,7 +2083,7 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
   * ?: Code issu du [JDV_CodeDocumentImagerie-CISIS](https://ansforge.github.io/IG-terminologie-de-sante/ig/main/ValueSet-jdv-code-document-imagerie-cisis.html)
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.3
   * ?: Universal Id
-  * ?: OID du code system utilisé2.16.840.1.113883.6.1
+  * ?: OID du code system utilisé1.2.250.1.213.1.1.4.322 pour TerminologieCISIS1.2.840.10008.2.16.4 pour DCM
 * Composition du segment IPC : Usage = Required / Cardinalité = [1..1]: IPC-2.4
   * ?: Universal Id Type
   * ?: ISO
@@ -2100,7 +2107,7 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
 
 Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.
 
-L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_VIEWER_DRIMBOX” dans **OBX-3**, [documenté en annexe](./table_obs.md).
+L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (5), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_PARTIELLE_VIEWER” dans **OBX-3**, [documenté en annexe](./table_obs.md).
 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -2119,7 +2126,7 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
   * ?: ** **
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.1 
   * ?: Code 
-  * ?: URL_VIEWER_DRIMBOX
+  * ?: URL_PARTIELLE_VIEWER
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
   * ?: URL de la visionneuse DRIMbox

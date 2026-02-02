@@ -15,7 +15,7 @@ La table ci-dessous définit les valeurs locales autorisées pour ORC-17 dans le
 * Code: **STRUCTURE_IMAGERIE**
   * Libellé: 
   * CodeSystem: TLR_TYPE_ORGANISATION
-* Code: **PLATEFORME_TELERADIOLOGIE**
+* Code: **PLATEFORME_TLR**
   * Libellé: 
   * CodeSystem: TLR_TYPE_ORGANISATION
 
