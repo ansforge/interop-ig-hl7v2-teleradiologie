@@ -5506,11 +5506,11 @@ Il est renseigné conformément au profil <strong>IHE Scheduled Workflow (SWF)</
 
 <h5 id="groupe-observation---url-de-viewer-drimbox">Groupe OBSERVATION - URL de viewer DRIMbox</h5>
 
-<p>Ce <strong>groupe OBSERVATION</strong> est utilisé afin de véhiculer l’<strong>URL d’accès à la vieweuse DRIMbox</strong>, permettant la consultation à distance des images issues de l’examen d’imagerie.</p>
+<p>Ce <strong>groupe OBSERVATION</strong> est utilisé afin de véhiculer l’<strong>URL d’accès à la vieweuse DRIMbox</strong>, permettant la consultation à distance des images issues de l’examen d’imagerie. Il est important de noter que la valeur associée correspond à une adresse partielle à compléter afin de permettre l’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. En effet, il est nécessaire de compléter cette donnée avec l’identifiant du compte-rendu d’imagerie afin d’obtenir un lien d’accès fonctionnel. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. Ce concept permet l’intégration au maillage DRIM-M du compte-rendu d’imagerie rédigé suite à la réalisation de l’acte d’imagerie.</p>
 
-<p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte.
-La valeur portée dans <strong>OBX-5</strong> correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise.
-Le segment OBX portant sur le protocole est identifié par un code local “URL_PARTIELLE_VIEWER” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
+<p>L’URL de la vieweuse est portée par un <strong>segment OBX unique</strong> au sein du groupe OBSERVATION. Elle est transmise sous forme de texte encodé en base 64 afin d’éviter toute contrainte liée à la présence de caractères spéciaux.
+La valeur portée dans <strong>OBX-5</strong> correspond à l’encodage en base 64 d’une URL partielle, incluant les éléments suivants : FQDN du point d’accès, service cible, paramètres StudyInstanceUID et AccessionNumber. Pour plus de précisions concernant le formalisme à appliquer dans le cadre de la construction de cette URL, se référer à la section 4.2.2 de la spécification projet DRIMBox visionneuse.<br />
+Le segment OBX portant sur l’adresse d’accès à la visionneuse est identifié par un code local “URL_PARTIELLE_VIEWER” dans <strong>OBX-3</strong>, <a href="./table_obs.html">documenté en annexe</a>.</p>
 
 <table class="table-hl7v2">
   <tbody>
@@ -5631,19 +5631,6 @@ Le segment OBX portant sur le protocole est identifié par un code local “URL_
     </tr>
   </tbody>
 </table>
-
-<blockquote class="stu-note">
-    <p>
-    <b>(6) :</b> Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment :
-    </p>
-    <ul>
-      <li>le séparateur de champs (|) via \F\ ;</li>
-      <li>le séparateur de composants (^) via \S\ ;</li>
-      <li>le séparateur de répétitions (~) via \R\ ;</li>
-      <li>le séparateur de sous-composants (&amp;) via \T\ ;</li>
-      <li>le caractère d’échappement lui-même (\) via \E\.</li>
-    </ul>
-</blockquote>
 
 <h5 id="groupe-observation---acte-dimagerie">Groupe OBSERVATION - Acte d’imagerie</h5>
 
@@ -6282,7 +6269,7 @@ Les informations relatives à l’appareil sont portées dans <strong>deux group
 </ul>
 
 <p>Ces groupes peuvent être utilisés conjointement ou indépendamment, selon le niveau d’information disponible, l’identifiant de l’appareil constituant l’information principale de référence.
-Les segments OBX portant sur le produit administré sont identifiés par un code local “APPAREIL_IMAGERIE” dans <strong>OBX-3</strong>, documenté en annexe. Ces segments sont différenciés à l’aide du champ <strong>OBX-4 – Observation Sub-ID</strong>.</p>
+Les segments OBX portant sur l’appareil d’imagerie sont identifiés par un code local “APPAREIL_IMAGERIE” dans <strong>OBX-3</strong>, documenté en annexe. Ces segments sont différenciés à l’aide du champ <strong>OBX-4 – Observation Sub-ID</strong>.</p>
 
 <h6 id="groupe-observation--identifiant-de-lappareil-dimagerie">Groupe OBSERVATION – Identifiant de l’appareil d’imagerie</h6>
 
@@ -7045,7 +7032,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 2, 2026 14:30+0000">2026-02-02</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 2, 2026 14:49+0000">2026-02-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

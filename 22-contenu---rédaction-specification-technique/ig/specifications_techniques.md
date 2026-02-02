@@ -2107,9 +2107,10 @@ Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du *
 
 ##### Groupe OBSERVATION - URL de viewer DRIMbox
 
-Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie.
+Ce **groupe OBSERVATION** est utilisé afin de véhiculer l’**URL d’accès à la vieweuse DRIMbox**, permettant la consultation à distance des images issues de l’examen d’imagerie. Il est important de noter que la valeur associée correspond à une adresse partielle à compléter afin de permettre l’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. En effet, il est nécessaire de compléter cette donnée avec l’identifiant du compte-rendu d’imagerie afin d’obtenir un lien d’accès fonctionnel. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. Ce concept permet l’intégration au maillage DRIM-M du compte-rendu d’imagerie rédigé suite à la réalisation de l’acte d’imagerie.
 
-L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte. La valeur portée dans **OBX-5** correspond à une URL, pouvant inclure des paramètres de requête nécessaires à l’accès sécurisé à la vieweuse. Les caractères spéciaux éventuellement présents dans l’URL sont encodés conformément aux règles d’échappement HL7 v2.5.1 (6), afin d’assurer l’intégrité de l’information transmise. Le segment OBX portant sur le protocole est identifié par un code local “URL_PARTIELLE_VIEWER” dans **OBX-3**, [documenté en annexe](./table_obs.md).
+L’URL de la vieweuse est portée par un **segment OBX unique** au sein du groupe OBSERVATION. Elle est transmise sous forme de texte encodé en base 64 afin d’éviter toute contrainte liée à la présence de caractères spéciaux. La valeur portée dans **OBX-5** correspond à l’encodage en base 64 d’une URL partielle, incluant les éléments suivants : FQDN du point d’accès, service cible, paramètres StudyInstanceUID et AccessionNumber. Pour plus de précisions concernant le formalisme à appliquer dans le cadre de la construction de cette URL, se référer à la section 4.2.2 de la spécification projet DRIMBox visionneuse.
+ Le segment OBX portant sur l’adresse d’accès à la visionneuse est identifié par un code local “URL_PARTIELLE_VIEWER” dans **OBX-3**, [documenté en annexe](./table_obs.md).
 
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: Elément requis
   * ?: Description
@@ -2141,13 +2142,6 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-11
   * ?: Observation Result Status
   * ?: Valeur fixée à « F » 
-
->  **(6) :** Les séquences d’échappement sont encadrées par le caractère d’échappement défini dans MSH-2 ( `\`) et permettent de représenter notamment : 
-* le séparateur de champs (|) via \F\ ;
-* le séparateur de composants (^) via \S\ ;
-* le séparateur de répétitions (~) via \R\ ;
-* le séparateur de sous-composants (&) via \T\ ;
-* le caractère d’échappement lui-même (\) via \E\.
 
 ##### Groupe OBSERVATION - Acte d’imagerie
 
@@ -2352,7 +2346,7 @@ Les groupes **OBSERVATION – Appareil d’imagerie utilisé** sont **optionnels
 * un groupe dédié à l’**identifiant unique de l’appareil d’imagerie**,
 * un groupe dédié au **modèle de l’appareil d’imagerie**.
 
-Ces groupes peuvent être utilisés conjointement ou indépendamment, selon le niveau d’information disponible, l’identifiant de l’appareil constituant l’information principale de référence. Les segments OBX portant sur le produit administré sont identifiés par un code local “APPAREIL_IMAGERIE” dans **OBX-3**, documenté en annexe. Ces segments sont différenciés à l’aide du champ **OBX-4 – Observation Sub-ID**.
+Ces groupes peuvent être utilisés conjointement ou indépendamment, selon le niveau d’information disponible, l’identifiant de l’appareil constituant l’information principale de référence. Les segments OBX portant sur l’appareil d’imagerie sont identifiés par un code local “APPAREIL_IMAGERIE” dans **OBX-3**, documenté en annexe. Ces segments sont différenciés à l’aide du champ **OBX-4 – Observation Sub-ID**.
 
 ###### Groupe OBSERVATION – Identifiant de l’appareil d’imagerie
 
