@@ -174,7 +174,7 @@ Suivant l’analyse des concepts métier identifiés dans la spécification fonc
 <td>ImagingStudy</td>
 </tr>
 <tr>
-<td><strong>URLViewerDRIMBOX</strong></td>
+<td><strong>URLPartielleViewer</strong></td>
 <td>Endpoint</td>
 </tr>
 <tr>

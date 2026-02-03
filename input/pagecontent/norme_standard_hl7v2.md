@@ -131,7 +131,7 @@ Le flux de transmission d'un complément d'information post-acte d'imagerie inte
 | **DateRéalisationExamen** | OMI^O23 | OBR - Observation Request| OBR-7 Observation Date/Time |
 | **LocalisationAnatomique** | OMI^O23 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
 | **ModaliteImagerie** | OMI^O23 | IPC - Imaging Procedure Control| IPC-5 Modality |
-| **URLViewerDRIMBOX** | OMI^O23 | OBX - Observation/Result| OBX-2 = ST / ED, OBX-5 |
+| **URLPartielleViewer** | OMI^O23 | OBX - Observation/Result| OBX-2 = ST / ED, OBX-5 |
 | **DuréeRétentionImages** | OMI^O23 | TQ - Timing/Quantity| TQ1-6 Service Duration |
 | **IdentificationMatériel** | OMI^O23 | IPC - Imaging Procedure Control| IPC-5 Modality |
 | **ProduitsAdministres** | OMI^O23 | OBX - Observation/Result| OBX-2 = CE / TX, OBX-5 |
