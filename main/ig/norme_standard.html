@@ -123,8 +123,27 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 – Détail des Transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specifications_techniques.html#introduction">Introduction</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#evènements-déclenchants">Evènements déclenchants</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#interactions-entre-les-acteurs">Interactions entre les acteurs</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#profils-de-message">Profils de message</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#contraintes-applicables-aux-profils-de-message">Contraintes applicables aux profils de message</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 3 - Annexes
@@ -133,6 +152,21 @@
     <ul class="dropdown-menu">
       <li>
         <a href="norme_standard.html">Normes et Standards</a>
+      </li>
+      <li>
+        <a href="diag_sequence.html">Diagramme de séquence - Spécification technique</a>
+      </li>
+      <li>
+        <a href="sub-id.html">Utilisation du champ OBX-4 – Observation Sub-ID</a>
+      </li>
+      <li>
+        <a href="table_obr.html">Table TLR_OBR_PROCEDURE</a>
+      </li>
+      <li>
+        <a href="table_obs.html">Table TLR_OBSERVATION</a>
+      </li>
+      <li>
+        <a href="table_orga.html">Table TLR_TYPE_ORGANISATION</a>
       </li>
       <li>
         <a href="exemples.html">Exemples de messages</a>
@@ -229,7 +263,7 @@ Cette étude compare les principaux standards d’interopérabilité susceptible
 
 <h3 id="introduction">Introduction</h3>
 
-<p><a name="l399">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\specifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.</p>
+<p><a name="l464">​</a>Le présent document présente l’ensemble des normes et standards susceptibles de répondre à la mise en œuvre des flux identifiés dans le document « <a href=".\specifications_fonctionnelles.html">Spécifications fonctionnelles des échanges - Téléradiologie</a> ». L’objectif de cette étude est d’identifier, qualifier et comparer les standards pertinents pour supporter les échanges nécessaires à la pratique de la téléradiologie.</p>
 
 <p>Les normes et standards étudiés au sein de cette étude sont les suivants :</p>
 
@@ -307,7 +341,7 @@ Deux contraintes encadrent cet objectif :</p>
   <li>La transmission d’informations complémentaires post-examen</li>
 </ul>
 
-<p><a name="l549">​</a>Les concepts métiers à véhiculer dans ces flux sont décrits en <a href="./specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS">étape 4 et 5</a> de la spécification fonctionnelle et couvrent plusieurs catégories de données essentielles à la pratique de la téléradiologie :</p>
+<p><a name="l614">​</a>Les concepts métiers à véhiculer dans ces flux sont décrits en <a href="./specifications_fonctionnelles.html#identification-des-concepts-véhiculés-dans-les-flux-dinformations-et-correspondance-avec-les-classes-et-attributs-du-MOS">étape 4 et 5</a> de la spécification fonctionnelle et couvrent plusieurs catégories de données essentielles à la pratique de la téléradiologie :</p>
 
 <ul>
   <li>Données administratives et d’identification : identités patient et professionnels de santé, identifiants de demandes et d’examens, informations de structure</li>
@@ -1447,7 +1481,7 @@ Par ailleurs, le <a href="https://industriels.esante.gouv.fr/sites/default/files
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 13:36+0000">2026-02-03</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 13:40+0000">2026-02-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

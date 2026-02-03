@@ -123,8 +123,27 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="specifications_techniques.html">Volume 2 – Détail des Transactions</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2 – Détail des Transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="specifications_techniques.html#introduction">Introduction</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#evènements-déclenchants">Evènements déclenchants</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#interactions-entre-les-acteurs">Interactions entre les acteurs</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#profils-de-message">Profils de message</a>
+      </li>
+      <li>
+        <a href="specifications_techniques.html#contraintes-applicables-aux-profils-de-message">Contraintes applicables aux profils de message</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 3 - Annexes
@@ -133,6 +152,21 @@
     <ul class="dropdown-menu">
       <li>
         <a href="norme_standard.html">Normes et Standards</a>
+      </li>
+      <li>
+        <a href="diag_sequence.html">Diagramme de séquence - Spécification technique</a>
+      </li>
+      <li>
+        <a href="sub-id.html">Utilisation du champ OBX-4 – Observation Sub-ID</a>
+      </li>
+      <li>
+        <a href="table_obr.html">Table TLR_OBR_PROCEDURE</a>
+      </li>
+      <li>
+        <a href="table_obs.html">Table TLR_OBSERVATION</a>
+      </li>
+      <li>
+        <a href="table_orga.html">Table TLR_TYPE_ORGANISATION</a>
       </li>
       <li>
         <a href="exemples.html">Exemples de messages</a>
@@ -295,7 +329,7 @@ The project scope focuses on modeling and specifying interactions between inform
 
 <p>Ce document fait partie de la couche Service du <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">Cadre d’Interopérabilité des Systèmes d’Information de santé (CI-SIS)</a>. Les spécifications associées entendent définir et harmoniser les modalités de partage des données de santé propres au domaine de la téléradiologie (pour plus de précisions, se référer à la section « Périmètre du projet » ci-dessous).</p>
 
-<p><a name="l474">​</a>La partie <a href="./specifcations_fonctionnelles.html">« Volume 1 - Etude fonctionnelle »</a> associée à ce guide d’implémentation décrit, à titre d’exemple et de façon non-exhaustive, un ensemble de cas d’usage. Sur la base de ces cas d’usage, sont ensuite définis des acteurs du système d’information (au sens d’IHE) et des transactions applicables entre ces acteurs. Les processus collaboratifs applicables au domaine de la téléradiologie sont ensuite décrits et les flux entre les acteurs précédemment identifiés sont également définis.</p>
+<p><a name="l539">​</a>La partie <a href="./specifcations_fonctionnelles.html">« Volume 1 - Etude fonctionnelle »</a> associée à ce guide d’implémentation décrit, à titre d’exemple et de façon non-exhaustive, un ensemble de cas d’usage. Sur la base de ces cas d’usage, sont ensuite définis des acteurs du système d’information (au sens d’IHE) et des transactions applicables entre ces acteurs. Les processus collaboratifs applicables au domaine de la téléradiologie sont ensuite décrits et les flux entre les acteurs précédemment identifiés sont également définis.</p>
 
 <p>La partie <a href="./specifications_techniques.html">« Volume 2 - Détail des transactions »</a> associée à ce guide d’implémentation décrit les règles d’implémentation des standards retenus au sein de la partie « Normes et Standards » afin de permettre la mise en œuvre des processus collaboratifs mentionnés au sein de l’étude fonctionnelle.</p>
 
@@ -372,7 +406,7 @@ The project scope focuses on modeling and specifying interactions between inform
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 13:36+0000">2026-02-03</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 13:40+0000">2026-02-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

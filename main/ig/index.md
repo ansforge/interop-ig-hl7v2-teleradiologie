@@ -74,7 +74,7 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2026-02-03T13:36:10+00:00",
+  "date" : "2026-02-03T13:40:05+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {
@@ -863,6 +863,61 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
           ],
           "nameUrl" : "specifications_techniques.html",
           "title" : "Volume 2 : Détail des transactions",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "diag_sequence.html"
+            }
+          ],
+          "nameUrl" : "diag_sequence.html",
+          "title" : "Diagramme de séquence - Spécification technique",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "table_obs.html"
+            }
+          ],
+          "nameUrl" : "table_obs.html",
+          "title" : "Table TLR_OBSERVATION",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "table_orga.html"
+            }
+          ],
+          "nameUrl" : "table_orga.html",
+          "title" : "Table TLR_TYPE_ORGANISATION",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "table_obr.html"
+            }
+          ],
+          "nameUrl" : "table_obr.html",
+          "title" : "Table TLR_OBR_PROCEDURE",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "sub-id.html"
+            }
+          ],
+          "nameUrl" : "sub-id.html",
+          "title" : "Utilisation du champ OBX-4 – Observation Sub-ID",
           "generation" : "markdown"
         },
         {
