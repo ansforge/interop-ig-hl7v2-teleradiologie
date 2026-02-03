@@ -718,7 +718,7 @@ Le diagramme d’activité ci-dessous illustre l’action de transmission des in
 <td>Flux 3</td>
 </tr>
 <tr>
-<td>URL_Partielle_Viewer</td>
+<td>URLPartielleViewer</td>
 <td>Adresse partielle à compléter afin de permettre l’accès à la visionneuse DICOM implémentée par une solution DRIMBox associée au système RIS. Il est nécessaire de compléter cette donnée avec l'identifiant du compte-rendu d'imagerie afin d'obtenir un lien d'accès fonctionnel. Une fois l’URL assemblée, celle-ci doit être mentionnée au sein du compte-rendu d’imagerie. Ce concept permet l’intégration au maillage DRIM-M du compte-rendu d’imagerie rédigé suite à la réalisation de l’acte d’imagerie.</td>
 <td>Flux 4</td>
 </tr>
