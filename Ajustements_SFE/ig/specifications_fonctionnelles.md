@@ -447,7 +447,7 @@ Le tableau présenté ci-dessous contient les éléments suivants :
 | ModaliteImagerie |  |  |  |
 | DecisionEffecteur |  |  |  |
 | ProtocoleImagerie |  |  |  |
-| URL_Partielle_Viewer |  |  |  |
+| URLPartielleViewer |  |  |  |
 | DuréeRétentionImages |  |  |  |
 | DateRéalisationExamen |  |  | DateHeure |
 | IdentificationMatériel |  |  |  |
