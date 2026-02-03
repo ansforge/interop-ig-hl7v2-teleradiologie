@@ -919,7 +919,7 @@ Le tableau présenté ci-dessous contient les éléments suivants :
 <td></td>
 </tr>
 <tr>
-<td>URL_Partielle_Viewer</td>
+<td>URLPartielleViewer</td>
 <td></td>
 <td></td>
 <td></td>
