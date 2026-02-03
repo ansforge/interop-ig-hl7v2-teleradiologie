@@ -9,8 +9,8 @@
     "first" : true,
     "desc" : "A mettre a jour.",
     "ci-build" : "https://ansforge.github.io/interop-ig-hl7v2-teleradiologie/main/ig",
-    "category" : "A mettre à jour",
-    "introduction" : "A mettre à jour",
+    "category" : "Imaging",
+    "introduction" : "Ce guide décrit les échanges de données de santé dans le domaine de la téléradiologie",
     "changes": "change-log.html"
 
   }
