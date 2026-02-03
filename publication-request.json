@@ -11,6 +11,6 @@
     "ci-build" : "https://ansforge.github.io/interop-ig-hl7v2-teleradiologie/main/ig",
     "category" : "A mettre à jour",
     "introduction" : "A mettre à jour",
-    "changes": "change_notes.html"
+    "changes": "change-log.html"
 
   }
