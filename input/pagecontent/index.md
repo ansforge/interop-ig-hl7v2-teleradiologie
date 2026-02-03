@@ -10,7 +10,7 @@ The project scope focuses on modeling and specifying interactions between inform
 {% if site.data.info.releaselabel == 'ci-build' %}
 <div style="width: 65%">
     <blockquote class="stu-note">
-    <p>Cet Implementation Guide n'est pas la version courante, il s'agit de la version en intégration continue soumise à des changements fréquents uniquement destinée à suivre les travaux en cours. La version courante sera accessible via l'URL canonique suite à la première release : http://interop.esante.gouv.fr/ig/fhir/[code - ig]</p>
+    <p>Attention ! Cette version du guide d'implémentation est en concertation.</p>
     </blockquote>
 </div>
 {% endif %}
