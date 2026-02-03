@@ -2132,13 +2132,22 @@ L’URL de la vieweuse est portée par un **segment OBX unique** au sein du grou
   * ?: URL_PARTIELLE_VIEWER
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.2 (optionnel) 
   * ?: Display name 
-  * ?: URL de la visionneuse DRIMbox
+  * ?: URL partielle d’accès à la visionneuse d’imagerie DRIMbox
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-3.3 
   * ?: Name of Coding system
   * ?: TLR_OBSERVATION
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-5
   * ?: Observation Value
-  * ?: URL du viewer DRIMbox
+  * ?:  
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.2
+  * ?: Type
+  * ?: TEXT (Machine readable text document)
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.4
+  * ?: Encoding
+  * ?: Base64
+* Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: > OBX-5.5
+  * ?: Data
+  * ?: URL partielle d’accès à la visionneuse d’imagerie DRIMbox
 * Composition du groupe OBSERVATION: Usage = Required / Cardinalité = [1..1]: OBX-11
   * ?: Observation Result Status
   * ?: Valeur fixée à « F » 
