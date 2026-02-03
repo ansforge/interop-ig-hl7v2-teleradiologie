@@ -1,0 +1,16 @@
+{
+    "package-id" : "ans.hl7v2.fr.teleradiologie",
+    "version" : "0.1.0-ballot",
+    "path" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/0.1.0-ballot",
+    "mode" : "milestone",
+    "status" : "release",
+    "sequence" : "STU1",
+    "title" : "Volet Téléradiologie",
+    "first" : true,
+    "desc" : "A mettre a jour.",
+    "ci-build" : "https://ansforge.github.io/interop-ig-hl7v2-teleradiologie/main/ig",
+    "category" : "Imaging",
+    "introduction" : "Ce guide décrit les échanges de données de santé dans le domaine de la téléradiologie",
+    "changes": "change-log.html"
+
+  }
