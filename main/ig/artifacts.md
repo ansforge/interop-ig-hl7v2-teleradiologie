@@ -1,4 +1,4 @@
-# Artifacts Summary - Volet Téléradiologie v0.1.0
+# Artifacts Summary - Volet Téléradiologie v0.1.0-ballot
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**

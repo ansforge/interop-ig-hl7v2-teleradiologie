@@ -1,4 +1,4 @@
-# ans.hl7v2.fr.teleradiologie#0.1.0: Volet Téléradiologie
+# ans.hl7v2.fr.teleradiologie#0.1.0-ballot: Volet Téléradiologie
 
 ## Pages
 
