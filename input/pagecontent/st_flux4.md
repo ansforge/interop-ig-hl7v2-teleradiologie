@@ -504,7 +504,7 @@ Le segment OBX portant sur l'adresse d'accès à la visionneuse est identifié p
         <p>Display name </p>
       </td>
       <td>
-        <p><span class="hl7-color">URL de la visionneuse DRIMbox</span></p>
+        <p><span class="hl7-color">URL partielle d’accès à la visionneuse d’imagerie DRIMbox</span></p>
       </td>
     </tr>
     <tr>
@@ -526,7 +526,40 @@ Le segment OBX portant sur l'adresse d'accès à la visionneuse est identifié p
         <p>Observation Value</p>
       </td>
       <td>
-        <p>URL du viewer DRIMbox</p>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.2</p>
+      </td>
+      <td>
+        <p>Type</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">TEXT</span> (Machine readable text document)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.4</p>
+      </td>
+      <td>
+        <p>Encoding</p>
+      </td>
+      <td>
+        <p><span class="hl7-color">Base64</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; OBX-5.5</p>
+      </td>
+      <td>
+        <p>Data</p>
+      </td>
+      <td>
+        <p>URL partielle d’accès à la visionneuse d’imagerie DRIMbox</p>
       </td>
     </tr>
     <tr>
