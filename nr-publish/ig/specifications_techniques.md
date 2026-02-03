@@ -1,4 +1,4 @@
-# Volume 2 : Détail des transactions - Volet Téléradiologie v0.1.0
+# Volume 2 : Détail des transactions - Volet Téléradiologie v0.1.0-ballot
 
 * [**Table of Contents**](toc.md)
 * **Volume 2 : Détail des transactions**

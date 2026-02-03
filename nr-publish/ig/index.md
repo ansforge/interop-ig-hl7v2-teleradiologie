@@ -1,4 +1,4 @@
-# Accueil - Volet Téléradiologie v0.1.0
+# Accueil - Volet Téléradiologie v0.1.0-ballot
 
 * [**Table of Contents**](toc.md)
 * **Accueil**
@@ -7,7 +7,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0 |
+| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0-ballot |
 | Draft as of 2026-02-03 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
@@ -70,11 +70,11 @@ Pas dusage de PI externe (autre que celles de la spécification FHIR)
   "resourceType" : "ImplementationGuide",
   "id" : "ans.hl7v2.fr.teleradiologie",
   "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
-  "version" : "0.1.0",
+  "version" : "0.1.0-ballot",
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2026-02-03T19:50:32+00:00",
+  "date" : "2026-02-03T19:52:35+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [
     {

@@ -1,4 +1,4 @@
-# Références documentaires - Volet Téléradiologie v0.1.0
+# Références documentaires - Volet Téléradiologie v0.1.0-ballot
 
 * [**Table of Contents**](toc.md)
 * **Références documentaires**

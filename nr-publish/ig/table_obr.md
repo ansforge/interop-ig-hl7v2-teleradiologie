@@ -1,4 +1,4 @@
-# Table TLR_OBR_PROCEDURE - Volet Téléradiologie v0.1.0
+# Table TLR_OBR_PROCEDURE - Volet Téléradiologie v0.1.0-ballot
 
 * [**Table of Contents**](toc.md)
 * **Table TLR_OBR_PROCEDURE**
