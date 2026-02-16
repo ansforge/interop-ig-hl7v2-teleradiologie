@@ -63,7 +63,39 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Placer Order Number</p>
       </td>
       <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p></p>
       </td>
     </tr>
     <tr>

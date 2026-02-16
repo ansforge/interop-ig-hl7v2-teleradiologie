@@ -249,7 +249,7 @@ Les éléments de contrôle du message HL7 sont portés par le segment d'entête
 
 **Exemple d'en-tête MSH d'un message ORM :**
 
-`MSH|^~\&|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||2.1^ CISIS_TLR_HL7_V2`
+`MSH|^~\&|RIS|CHU_X|SI-TLR|PLAT-TLR|202310030830||ORM^O01^ORM_O01|12345|P|2.5.1|||||FRA|8859/15|||1.0^CISIS_TLR_HL7_V2`
 
 ##### Les données concernant le patient et sa venue
 
