@@ -1,0 +1,9 @@
+[
+  {
+    "id" : "ans.hl7v2.fr.teleradiologie",
+    "type" : "ImplementationGuide",
+    "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
+    "version" : "0.1.0-ballot",
+    "name" : "CISIS_TLR_HL7_V2"
+  }
+]
