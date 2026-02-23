@@ -4,19 +4,19 @@
 
 * [Accueil](index.md)
 * [Références documentaires](doc-ref.md)
-* [Volume 2 : Détail des transactions](specifications_techniques.md)
+* [Historique des versions](change-log.md)
 * [Table TLR_OBR_PROCEDURE](table_obr.md)
-* [Volume 1 : Etude fonctionnelle](specifications_fonctionnelles.md)
-* [Table TLR_TYPE_ORGANISATION](table_orga.md)
+* [Diagramme de séquence - Spécification technique](diag_sequence.md)
 * [Artifacts Summary](artifacts.md)
-* [Téléchargements](downloads.md)
+* [Volume 2 : Détail des transactions](specifications_techniques.md)
+* [Table TLR_TYPE_ORGANISATION](table_orga.md)
 * [Test](tests.md)
 * [Utilisation du champ OBX-4 – Observation Sub-ID](sub-id.md)
-* [Diagramme de séquence - Spécification technique](diag_sequence.md)
 * [Table TLR_OBSERVATION](table_obs.md)
+* [Volume 1 : Etude fonctionnelle](specifications_fonctionnelles.md)
 * [Normes et Standards](norme_standard.md)
 * [Exemples de messages](exemples.md)
-* [Historique des versions](change-log.md)
+* [Téléchargements](downloads.md)
 
 ## Resources
 

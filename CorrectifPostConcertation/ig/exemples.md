@@ -89,7 +89,7 @@ OBX|2|CE|CODE_ACTE_IMAGERIE^Code de l'acte d'imagerie réalisée^TLR_OBSERVATION
 OBX|3|CE|REGION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.1|774007^tête et/ou cou^SCT||||||F
 OBX|4|CE|REGION_ANATOMIQUE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION|1.2|24028007^côté droit^SCT||||||F
 OBX|5|CE|MODALITE_IMAGERIE^Localisation anatomique examinée dans le cadre de l’examen d’imagerie^TLR_OBSERVATION||MR^Résonance magnétique^DCM||||||F
-OBX|6|CE|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.1|TypeProduit^^ATC||||||F
+OBX|6|CE|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.1|V09^^ATC||||||F
 OBX|7|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.2|0123456789||||||F
 OBX|8|NM|PRODUIT_ADMINISTRE^Produit administré lors de l'examen d'imagerie^TLR_OBSERVATION|1.3|1|ml|||||F
 OBX|9|TX|APPAREIL_IMAGERIE^Appareil d'imagerie utilisé lors de l'examen^TLR_OBSERVATION|1.1|1234567896363||||||F
