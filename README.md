@@ -113,7 +113,6 @@ Le tableau ci-dessous décrit, pour chaque flux métier inclus dans le périmèt
 Les workflows associés à ce repository (.github/workflows) permettent :
 
 * D'executer Sushi pour vérifier la grammaire
-* De faire les tests avec le validator_cli
 * De publier les pages : https://ansforge.github.io/{nom du repo}/{nom de la branche}/ig
 
 # Notes
@@ -134,4 +133,4 @@ Un commentaire ? Une remarque ? Utilisez les GitHub [issues](https://docs.github
 * **INS** : Identité Nationale de Santé  
 * **PACS** : Picture Archiving and Communication System  
 * **PS** : Professionnel de Santé  
-* **RIS** : Radiology Information System 
+* **RIS** : Radiology Information System
