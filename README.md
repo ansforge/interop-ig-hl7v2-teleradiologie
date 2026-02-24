@@ -24,7 +24,7 @@ Le volet couvre les échanges suivants :
 - Réponse à une demande d’examen (acceptation avec protocole d’imagerie ou refus)  
 - Transmission d’informations complémentaires post-examen  
 
-Ces échanges visent à véhiculer plusieurs catégories de données essentielles à la pratique de la téléradiologie :  
+Ces échanges visent à véhiculer plusieurs catégories de données essentielles à la pratique de la téléradiologie et à la rédaction, in fine, du compte-rendu d'imagerie associé :  
 
 - **Données administratives et d’identification** : identités du patient et des professionnels de santé, identifiants de demandes et d’examens, informations de structure  
 - **Données cliniques et de prescription** : motif d’examen, indications, contexte clinique fourni par le médecin prescripteur  
