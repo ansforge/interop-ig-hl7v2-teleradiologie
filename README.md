@@ -44,7 +44,7 @@ Il précise :
 Les échanges sont basés sur des messages conformes à HL7 v2.5.1. Lorsque cela est applicable, la spécification :
 - s’appuie sur les profils du domaine IHE Radiology, notamment le profil **Scheduled Workflow (SWF.b)**, afin d’assurer la cohérence avec les workflows d’imagerie existants ;
 - prend en compte les principes du profil **IHE PAM-FR** pour la gestion de l’identité patient, en particulier l’Identité Nationale de Santé (INS) ;
-- applique, lorsque pertinent, les contraintes définies par la spécification *Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure* publiée par Interop’Santé.
+- applique, lorsque pertinent, les contraintes définies par la spécification **Contraintes sur les types de données HL7 v2.5 applicables aux profils d’intégration du cadre technique IT Infrastructure** publiée par Interop’Santé.
 
 Le tableau ci-dessous décrit, pour chaque flux métier inclus dans le périmètre du volet Téléradiologie, le message HL7 v2 et l’événement HL7 v2 associé utilisés pour supporter l’échange.
 
@@ -74,7 +74,7 @@ Le tableau ci-dessous décrit, pour chaque flux métier inclus dans le périmèt
     </tr>
     <tr>
       <td>
-        <p><strong>Annulation de la demande d’examen d’imagerie (1)</strong></p>
+        <p><strong>Annulation de la demande d’examen d’imagerie</strong></p>
       </td>
       <td>
         <p>ORM_O01</p>
