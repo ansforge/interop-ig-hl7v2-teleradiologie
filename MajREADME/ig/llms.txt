@@ -1,0 +1,25 @@
+# ans.hl7v2.fr.teleradiologie#0.1.0-ballot: Volet Téléradiologie
+
+## Pages
+
+* [Accueil](index.md)
+* [Références documentaires](doc-ref.md)
+* [Historique des versions](change-log.md)
+* [Table TLR_OBR_PROCEDURE](table_obr.md)
+* [Diagramme de séquence - Spécification technique](diag_sequence.md)
+* [Artifacts Summary](artifacts.md)
+* [Volume 2 : Détail des transactions](specifications_techniques.md)
+* [Table TLR_TYPE_ORGANISATION](table_orga.md)
+* [Test](tests.md)
+* [Utilisation du champ OBX-4 – Observation Sub-ID](sub-id.md)
+* [Table TLR_OBSERVATION](table_obs.md)
+* [Volume 1 : Etude fonctionnelle](specifications_fonctionnelles.md)
+* [Normes et Standards](norme_standard.md)
+* [Exemples de messages](exemples.md)
+* [Téléchargements](downloads.md)
+
+## Resources
+
+### ImplementationGuides
+
+* [Volet Téléradiologie](index.md)
