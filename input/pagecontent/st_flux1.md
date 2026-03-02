@@ -62,7 +62,39 @@ Le tableau ci-après décrit l’ensemble des champs **requis** du segment ORC, 
         <p>Placer Order Number</p>
       </td>
       <td>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
       </td>
     </tr>
     <tr>
@@ -883,7 +915,7 @@ Ce groupe est composé d'un segment OBX obligatoire permettant d’indiquer la *
         <p>Name Of Coding System</p>
       </td>
       <td>
-        <p><span class="hl7-color">SNT</span></p>
+        <p><span class="hl7-color">SCT</span></p>
       </td>
     </tr>
     <tr>
@@ -1041,7 +1073,7 @@ Ce groupe est composé d'un segment OBX optionnel permettant de compléter la lo
         <p>Name Of Coding System</p>
       </td>
       <td>
-        <p><span class="hl7-color">SNT</span></p>
+        <p><span class="hl7-color">SCT</span></p>
       </td>
     </tr>
     <tr>

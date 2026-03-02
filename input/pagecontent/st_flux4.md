@@ -58,7 +58,39 @@ Le segment **ORC** est renseigné conformément au standard HL7v2.5.1 et fait l�
         <p>Placer Order Number</p>
       </td>
       <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.1</p>
+      </td>
+      <td>
+        <p>Entity Identifier</p>
+      </td>
+      <td>
         <p>Identifiant de la demande d'examen d'imagerie (Order Placer Number)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.3</p>
+      </td>
+      <td>
+        <p>Universal Id</p>
+      </td>
+      <td>
+        <p>Identifiant de l'autorité d'affectation</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>&gt; ORC-2.4</p>
+      </td>
+      <td>
+        <p>Universal Id Type</p>
+      </td>
+      <td>
+        <p></p>
       </td>
     </tr>
   </tbody>
@@ -224,7 +256,7 @@ Les valeurs autorisées dans **OBR-4** sont définies dans une [table de codes l
 ##### Segment IPC (Imaging Procedure Control)
 
 Le segment **IPC – Imaging Procedure Control** est utilisé dans le cadre du **flux 4** pour véhiculer les informations spécifiques à la **procédure d’imagerie réalisée**.  
-Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
+Il est renseigné conformément à HL7v2.5.1 et fait l’objet d’une **surcouche de contraintes spécifiques à la téléradiologie**.
 
 <table class="table-hl7v2">
   <tbody>
@@ -268,7 +300,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-1.1</p>
+        <p>&gt; IPC-1.1</p>
       </td>
       <td>
         <p>Entity Identifier</p>
@@ -279,7 +311,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-1.3</p>
+        <p>&gt; IPC-1.3</p>
       </td>
       <td>
         <p>Universal Id</p>
@@ -290,7 +322,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-1.4</p>
+        <p>&gt; IPC-1.4</p>
       </td>
       <td>
         <p>Universal Id Type</p>
@@ -312,7 +344,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-2.1</p>
+        <p>&gt; IPC-2.1</p>
       </td>
       <td>
         <p>Entity Identifier</p>
@@ -323,20 +355,19 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-2.3</p>
+        <p>&gt; IPC-2.3</p>
       </td>
       <td>
         <p>Universal Id</p>
       </td>
       <td>
         <p>OID du code system utilisé</p>
-        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
-        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+        <p><span class="hl7-color">2.16.840.1.113883.6.1</span> (LOINC)</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>IPC-2.4</p>
+        <p>&gt; IPC-2.4</p>
       </td>
       <td>
         <p>Universal Id Type</p>
@@ -369,7 +400,7 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-4.1</p>
+        <p>&gt; IPC-4.1</p>
       </td>
       <td>
         <p>Entity Identifier</p>
@@ -380,20 +411,19 @@ Il est renseigné conformément au profil **IHE Scheduled Workflow (SWF)** et fa
     </tr>
     <tr>
       <td>
-        <p>IPC-4.3</p>
+        <p>&gt; IPC-4.3</p>
       </td>
       <td>
         <p>Universal Id</p>
       </td>
       <td>
         <p>OID du code system utilisé</p>
-        <p><span class="hl7-color">1.2.250.1.213.1.1.4.322</span> pour TerminologieCISIS</p>
-        <p><span class="hl7-color">1.2.840.10008.2.16.4</span> pour DCM</p>
+        <p><span class="hl7-color">2.16.840.1.113883.6.1</span> (LOINC)</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>IPC-4.4</p>
+        <p>&gt; IPC-4.4</p>
       </td>
       <td>
         <p>Universal Id Type</p>
@@ -471,7 +501,7 @@ Le segment OBX portant sur l'adresse d'accès à la visionneuse est identifié p
         <p>Value Type</p>
       </td>
       <td>
-        <p><span class="hl7-color">TX</span> (Text Data)</p>
+        <p><span class="hl7-color">ED</span> (Encapsulated Data)</p>
       </td>
     </tr>
     <tr>
