@@ -252,14 +252,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="espace-de-test">Espace de test</h4>
 
-<p>L’espace de test est composé de deux outils :</p>
+<p>L’espace de test s’appuie sur l’outil <strong>EVSClient</strong>, mis à disposition pour vérifier la conformité des formats d’échange aux spécifications nationales.</p>
 
+<p>EVSClient permet notamment la validation :</p>
 <ul>
-  <li>EVSClient, qui permet de vérifier la conformité : des documents CDA, des archives IHE_XDM.ZIP utilisées pour les échanges, des ressources FHIR…</li>
-  <li>Gazelle Test Management, qui permet de tester des scénarios complets avec plusieurs interactions d’échanges de données.</li>
+  <li>des documents CDA</li>
+  <li>des messages HL7 v2</li>
+  <li>des archives IHE_XDM.ZIP utilisées pour les échanges documentaires</li>
+  <li>des ressources FHIR</li>
 </ul>
 
-<p>Ces outils sont accessibles en ligne sur le site <a href="https://interop.esante.gouv.fr/">https://interop.esante.gouv.fr/</a> et notamment utilisés lors des Projectathons organisés par l’ANS pour les éditeurs.</p>
+<p>Dans le cadre du volet <strong>Téléradiologie</strong>, EVSClient permet de vérifier la conformité des messages HL7 v2 échangés au regard des profils définis dans la <a href="./specifications_techniques.html">spécification technique</a>.</p>
+
+<p>Les validateurs suivants sont mis à disposition :</p>
+
+<ul>
+  <li>ORM^O01^ORM_O01 — Flux de transmission de la demande d’examen d’imagerie ;</li>
+  <li>ORM^O01^ORM_O01 — Flux d’annulation de la demande d’examen d’imagerie ;</li>
+  <li>ORU^R01^ORU_R01 — Flux de réponse métier à la demande d’examen d’imagerie ;</li>
+  <li>OMI^O23^OMI_O23 — Flux de transmission d’un complément d’information post-examen.</li>
+</ul>
+
+<p>Ces validateurs sont accessibles en ligne à l’adresse suivante : https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45</p>
 
 
 
@@ -302,7 +316,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 09:16+0000">2026-03-03</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 09:59+0000">2026-03-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
