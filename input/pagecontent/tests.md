@@ -4,9 +4,21 @@
 
 #### Espace de test
 
-L'espace de test est composé de deux outils :
+L’espace de test s’appuie sur l’outil **EVSClient**, mis à disposition pour vérifier la conformité des formats d’échange aux spécifications nationales.
 
-* EVSClient, qui permet de vérifier la conformité : des documents CDA, des archives IHE_XDM.ZIP utilisées pour les échanges, des ressources FHIR...
-* Gazelle Test Management, qui permet de tester des scénarios complets avec plusieurs interactions d'échanges de données.
+EVSClient permet notamment la validation :
+- des documents CDA
+- des messages HL7 v2
+- des archives IHE_XDM.ZIP utilisées pour les échanges documentaires
+- des ressources FHIR
 
-Ces outils sont accessibles en ligne sur le site [https://interop.esante.gouv.fr/](https://interop.esante.gouv.fr/) et notamment utilisés lors des Projectathons organisés par l’ANS pour les éditeurs.
+Dans le cadre du volet **Téléradiologie**, EVSClient permet de vérifier la conformité des messages HL7 v2 échangés au regard des profils définis dans la [spécification technique](./specifications_techniques.html).
+
+Les validateurs suivants sont mis à disposition :
+
+- ORM^O01^ORM_O01 — Flux de transmission de la demande d’examen d’imagerie ;
+- ORM^O01^ORM_O01 — Flux d’annulation de la demande d’examen d’imagerie ;
+- ORU^R01^ORU_R01 — Flux de réponse métier à la demande d’examen d’imagerie ;
+- OMI^O23^OMI_O23 — Flux de transmission d’un complément d’information post-examen.
+
+Ces validateurs sont accessibles en ligne à l’adresse suivante : https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45
