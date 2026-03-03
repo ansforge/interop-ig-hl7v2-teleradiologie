@@ -9,9 +9,9 @@
 
 #### Espace de test
 
-L’espace de test s’appuie sur l’outil **EVSClient**, mis à disposition pour vérifier la conformité des formats d’échange aux spécifications nationales.
+L’espace de test mis à disposition par l’ANS s’appuie sur l’outil **EVSClient**, utilisé afin de vérifier la conformité des formats d’échange aux spécifications nationales.
 
-EVSClient permet notamment la validation :
+Dans sa globalité, le service EVSClient permet notamment la validation :
 
 * des documents CDA
 * des messages HL7 v2
