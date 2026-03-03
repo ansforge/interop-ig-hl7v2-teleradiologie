@@ -16,9 +16,10 @@ Dans le cadre du volet **Téléradiologie**, EVSClient permet de vérifier la co
 
 Les validateurs suivants sont mis à disposition :
 
-- ORM^O01^ORM_O01 — Flux de transmission de la demande d’examen d’imagerie ;
-- ORM^O01^ORM_O01 — Flux d’annulation de la demande d’examen d’imagerie ;
-- ORU^R01^ORU_R01 — Flux de réponse métier à la demande d’examen d’imagerie ;
-- OMI^O23^OMI_O23 — Flux de transmission d’un complément d’information post-examen.
+- ORM^O01^ORM_O01 — Flux de transmission de la demande d’examen d’imagerie
+- ORM^O01^ORM_O01 — Flux d’annulation de la demande d’examen d’imagerie
+- ORU^R01^ORU_R01 — Flux de réponse métier à la demande d’examen d’imagerie
+- OMI^O23^OMI_O23 — Flux de transmission d’un complément d’information post-examen
+- ACK - Acquittement applicatif dans le cadre de le téléradiologie
 
-Ces validateurs sont accessibles en ligne à l’adresse suivante : https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45
+Ces validateurs sont accessibles en ligne à l’adresse suivante : [https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45](https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45)
