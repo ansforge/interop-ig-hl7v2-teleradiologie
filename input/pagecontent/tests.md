@@ -23,3 +23,26 @@ Les validateurs suivants sont mis à disposition :
 - ACK - Acquittement applicatif dans le cadre du volet téléradiologie
 
 Ces validateurs sont accessibles en ligne à l’adresse suivante : [https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45](https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45)
+
+Le mode opératoire pour utiliser les validateurs est le suivant :
+
+1. **Charger le message à valider**
+   - Coller le message HL7 v2 dans la zone de texte prévue à cet effet
+   - ou charger un fichier via le bouton « **+ Add...** », les formats acceptés sont : `.txt`, `.hl7`, `.er7`
+
+2. **Sélectionner le profil de message HL7**
+   - Dans l’encart « **Sélection du profil de message HL7** », choisir le validateur correspondant au flux à tester
+   - Les validateurs Téléradiologie disponibles sont les suivants :
+
+   | Acteur                         | Transaction                     | Type de message              |
+   |----------------------------------|----------------------------------|--------------------------------|
+   | Créateur Téléradiologie          | TransmissionDemandeIMG          | ORM^O01^ORM_O01 (NW)          |
+   | Créateur Téléradiologie          | AnnulationDemandeIMG            | ORM^O01^ORM_O01 (CA)          |
+   | Créateur Téléradiologie          | ReponseDemandeIMG               | ORU^R01^ORU_R01 (OK / OC)     |
+   | Créateur Téléradiologie          | TransmissionComplementIMG       | OMI^O23^OMI_O23 (SR)          |
+   | Consommateur Téléradiologie      | ACK_TLR                         | ACK                           |
+
+   Le bouton « **Deviner le profil de message** » peut être utilisé pour proposer automatiquement un premier filtrage du profil applicable.
+
+3. **Lancer la validation**
+   - Cliquer sur l’icône en forme de flèche pour exécuter la validation
