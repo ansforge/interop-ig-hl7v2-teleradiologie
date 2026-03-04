@@ -276,6 +276,67 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Ces validateurs sont accessibles en ligne à l’adresse suivante : <a href="https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45">https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45</a></p>
 
+<p>Le mode opératoire pour utiliser les validateurs est le suivant :</p>
+
+<ol>
+  <li><strong>Charger le message à valider</strong>
+    <ul>
+      <li>Coller le message HL7 v2 dans la zone de texte prévue à cet effet</li>
+      <li>ou charger un fichier via le bouton « <strong>+ Add…</strong> », les formats acceptés sont : <code class="language-plaintext highlighter-rouge">.txt</code>, <code class="language-plaintext highlighter-rouge">.hl7</code>, <code class="language-plaintext highlighter-rouge">.er7</code></li>
+    </ul>
+  </li>
+  <li><strong>Sélectionner le profil de message HL7</strong>
+    <ul>
+      <li>Dans l’encart « <strong>Sélection du profil de message HL7</strong> », choisir le validateur correspondant au flux à tester</li>
+      <li>Les validateurs Téléradiologie disponibles sont les suivants :</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Acteur</th>
+          <th>Transaction</th>
+          <th>Type de message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Créateur Téléradiologie</td>
+          <td>TransmissionDemandeIMG</td>
+          <td>ORM^O01^ORM_O01 (NW)</td>
+        </tr>
+        <tr>
+          <td>Créateur Téléradiologie</td>
+          <td>AnnulationDemandeIMG</td>
+          <td>ORM^O01^ORM_O01 (CA)</td>
+        </tr>
+        <tr>
+          <td>Créateur Téléradiologie</td>
+          <td>ReponseDemandeIMG</td>
+          <td>ORU^R01^ORU_R01 (OK / OC)</td>
+        </tr>
+        <tr>
+          <td>Créateur Téléradiologie</td>
+          <td>TransmissionComplementIMG</td>
+          <td>OMI^O23^OMI_O23 (SR)</td>
+        </tr>
+        <tr>
+          <td>Consommateur Téléradiologie</td>
+          <td>ACK_TLR</td>
+          <td>ACK</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Le bouton « <strong>Deviner le profil de message</strong> » peut être utilisé pour proposer automatiquement un premier filtrage du profil applicable.</p>
+  </li>
+  <li><strong>Lancer la validation</strong>
+    <ul>
+      <li>Cliquer sur l’icône en forme de flèche pour exécuter la validation</li>
+    </ul>
+  </li>
+</ol>
+
 
 
 
@@ -317,7 +378,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 11:04+0000">2026-03-03</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 4, 2026 10:33+0000">2026-03-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
