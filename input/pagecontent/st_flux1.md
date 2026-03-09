@@ -1211,31 +1211,10 @@ Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5*
       </td>
       <td>
         <p>Pertinence de l'antécédent</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt; OBX-8.1  </p>
-      </td>
-      <td>
-        <p>Code </p>
-      </td>
-      <td>
         <p>Valeur possible :</p>
         <p><span class="hl7-color">SANS_IMPACT</span></p>
         <p><span class="hl7-color">PERTINENT</span></p>
         <p><span class="hl7-color">MAJEUR</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>&gt; OBX-3.3 </p>
-      </td>
-      <td>
-        <p>Name of Coding system</p>
-      </td>
-      <td>
-        <p><span class="hl7-color">HL70078</span></p>
       </td>
     </tr>
     <tr>
