@@ -1534,13 +1534,7 @@ Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5*
   * ?: Antécédents
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-8 (optionnel)
   * ?: Abnormal flag
-  * ?: Pertinence de l'antécédent
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-8.1 
-  * ?: Code 
-  * ?: Valeur possible :SANS_IMPACTPERTINENTMAJEUR
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
-  * ?: Name of Coding system
-  * ?: HL70078
+  * ?: Pertinence de l'antécédentValeur possible :SANS_IMPACTPERTINENTMAJEUR
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
   * ?: Valeur fixée à « O » (Order detail description only (no result))
