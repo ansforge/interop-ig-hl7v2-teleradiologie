@@ -792,6 +792,7 @@ Pour chaque flux identifié, le <strong>type de message HL7 v2</strong> associé
 <p>Le message <strong>ORM^O01</strong> du flux 1 permet au système demandeur (RIS) de transmettre au système effecteur (SI Téléradiologie) l’ensemble des informations associées à la prise en charge du patient ainsi que les éléments relatifs à une demande d’examen d’imagerie le concernant.</p>
 
 <p>Outre les éléments standards concernant la demande et la prescription portés par les segments <strong>ORC</strong> et <strong>OBR</strong>, ce flux s’appuie sur des <strong>groupes OBSERVATION (OBX)</strong> afin de véhiculer des informations fonctionnelles complémentaires indispensables à la bonne réalisation de l’examen, telles que :</p>
+
 <ul>
   <li>la <strong>localisation anatomique</strong> et, le cas échéant, une <strong>précision topographique</strong></li>
   <li>les <strong>antécédents médicaux du patient</strong></li>
@@ -1768,7 +1769,23 @@ En conséquence, le message <strong>OMI^O23</strong> est défini sur la base du 
 
 <p>Le message <strong>OMI^O23</strong> du flux 4 permet au système demandeur (RIS) de transmettre au système effecteur (SI de Téléradiologie) des <strong>compléments d’information post-acte</strong> relatifs à un examen d’imagerie déjà réalisé.</p>
 
-<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent le <strong>rattachement</strong> de ces informations à la demande d’examen initiale.</p>
+<p>Les segments <strong>ORC</strong> et <strong>OBR</strong> assurent le rattachement de ces informations à la demande d’examen initiale.</p>
+
+<p>Dans le cadre du flux 4, <strong>chaque occurrence du groupe ORDER représente un examen d’imagerie</strong>.</p>
+
+<p>Un examen est identifié par son <strong>StudyInstanceUID</strong> et est associé :</p>
+
+<ul>
+  <li>à un <strong>Accession Number</strong></li>
+  <li>à une <strong>URL de visionneuse</strong> permettant d’accéder aux images correspondantes</li>
+  <li>à la <strong>demande d’examen initiale</strong>, identifiée par l’<strong>Order Placer Number</strong>.</li>
+</ul>
+
+<p>Ainsi, <strong>un groupe ORDER correspond à un examen d’imagerie rattaché à une demande d’examen</strong>.</p>
+
+<p>Dans le cas où un même flux doit véhiculer des informations associées à plusieurs examens, le système émetteur <strong>répète le groupe ORDER autant de fois que nécessaire</strong>, chaque occurrence portant les identifiants propres à l’examen correspondant (StudyInstanceUID, Accession Number, URL de visionneuse), tout en conservant l’Order Placer Number permettant de rattacher ces examens à la demande initiale.</p>
+
+<p>Cette structuration permet de conserver l’association explicite entre la demande d’examen, chaque examen réalisé et l’URL permettant d’accéder aux images correspondantes.</p>
 
 <p>Les <strong>groupes OBSERVATION (OBX)</strong> jouent un rôle central dans ce flux.<br />
 Ils permettent notamment de véhiculer :</p>
@@ -7190,7 +7207,7 @@ ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 11, 2026 13:10+0000">2026-03-11</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d&#39;Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0-ballot based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 11, 2026 14:22+0000">2026-03-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
