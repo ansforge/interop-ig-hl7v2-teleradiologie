@@ -1,5 +1,5 @@
 {
-  "date" : "Mon, 02 Mar, 2026 10:52:18 +0000",
+  "date" : "Thu, 12 Mar, 2026 17:10:04 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [{
     "name" : "/fsh-generated/resources/ImplementationGuide-ans.hl7v2.fr.teleradiologie.json",
@@ -7,42 +7,47 @@
     "processes" : [{
       "activity" : "load",
       "start" : 27,
-      "length" : 27
+      "length" : 25
     },
     {
       "activity" : "checkR4R4B",
       "start" : 28,
-      "length" : 18
+      "length" : 19
     },
     {
       "activity" : "generateNarratives",
       "start" : 28,
-      "length" : 77
+      "length" : 69
     },
     {
       "activity" : "validate",
       "start" : 28,
-      "length" : 4021
+      "length" : 5111
+    },
+    {
+      "activity" : "validate",
+      "start" : 33,
+      "length" : 1
     },
     {
       "activity" : "generate1",
-      "start" : 32,
-      "length" : 84
+      "start" : 34,
+      "length" : 74
     },
     {
       "activity" : "generate2",
-      "start" : 34,
-      "length" : 80
+      "start" : 36,
+      "length" : 65
     },
     {
       "activity" : "generateValidationPack",
-      "start" : 40,
-      "length" : 3
+      "start" : 43,
+      "length" : 2
     },
     {
       "activity" : "scanExamplesForR5",
-      "start" : 42,
-      "length" : 2
+      "start" : 46,
+      "length" : 1
     }]
   },
   {
@@ -50,7 +55,7 @@
     "size" : 4376,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -60,29 +65,29 @@
   },
   {
     "name" : "/input/pagecontent/doc-ref.md",
-    "size" : 2267,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
-    }]
+    "size" : 2267
   },
   {
     "name" : "/input/pagecontent/norme_standard_cda.md",
-    "size" : 7687
-  },
-  {
-    "name" : "/input/pagecontent/exemples.md",
-    "size" : 8698,
+    "size" : 7687,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
   {
+    "name" : "/input/pagecontent/exemples.md",
+    "size" : 8698
+  },
+  {
     "name" : "/input/pagecontent/norme_standard-etude.md",
-    "size" : 528
+    "size" : 528,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 37,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/sub-id.md",
@@ -98,23 +103,23 @@
   },
   {
     "name" : "/input/pagecontent/construction_des_flux.md",
-    "size" : 0,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
-    }]
+    "size" : 0
   },
   {
     "name" : "/input/pagecontent/tests.md",
-    "size" : 1123
+    "size" : 1123,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 37,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/pagecontent/norme_standard_fhir.md",
     "size" : 20927,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -127,7 +132,7 @@
     "size" : 20939,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -140,44 +145,34 @@
     "size" : 2525,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
   {
     "name" : "/input/pagecontent/index.md",
-    "size" : 5856,
-    "processes" : [{
-      "activity" : "scan",
-      "start" : 28,
-      "length" : 1
-    }]
+    "size" : 5856
   },
   {
     "name" : "/input/pagecontent/st_worklfow.md",
     "size" : 7118,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
   {
     "name" : "/input/pagecontent/st_flux3.md",
-    "size" : 18284,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
-    }]
+    "size" : 18284
   },
   {
     "name" : "/input/pagecontent/st-profils.md",
-    "size" : 41875,
+    "size" : 42949,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
-      "length" : 2
+      "start" : 37,
+      "length" : 3
     }]
   },
   {
@@ -193,7 +188,7 @@
     "size" : 10406,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -211,20 +206,15 @@
   },
   {
     "name" : "/input/pagecontent/downloads.md",
-    "size" : 1727,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
-    }]
+    "size" : 1727
   },
   {
     "name" : "/input/pagecontent/st_flux1.md",
     "size" : 40066,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
+      "start" : 37,
+      "length" : 2
     }]
   },
   {
@@ -232,7 +222,7 @@
     "size" : 2222,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -249,7 +239,7 @@
     "size" : 1239,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -263,20 +253,15 @@
   },
   {
     "name" : "/input/pagecontent/st_flux2.md",
-    "size" : 12392,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
-    }]
+    "size" : 12392
   },
   {
     "name" : "/input/pagecontent/specifications_fonctionnelles.md",
     "size" : 78493,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
-      "length" : 3
+      "start" : 37,
+      "length" : 4
     }]
   },
   {
@@ -284,8 +269,8 @@
     "size" : 37188,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
+      "start" : 37,
+      "length" : 2
     }]
   },
   {
@@ -294,16 +279,16 @@
   },
   {
     "name" : "/template/config/_config.yml",
-    "size" : 31,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
-    }]
+    "size" : 31
   },
   {
     "name" : "/input/images",
-    "size" : 0
+    "size" : 0,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 37,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/images/F10_Classes-Flux1.png",
@@ -319,12 +304,7 @@
   },
   {
     "name" : "/input/images/Flux2-Fonc.svg",
-    "size" : 38133,
-    "processes" : [{
-      "activity" : "generate2",
-      "start" : 34,
-      "length" : 1
-    }]
+    "size" : 38133
   },
   {
     "name" : "/input/images/F5_TransmissionInfos.png",
@@ -332,7 +312,12 @@
   },
   {
     "name" : "/input/images/F3_AnnulationDemande.png",
-    "size" : 60657
+    "size" : 60657,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 37,
+      "length" : 1
+    }]
   },
   {
     "name" : "/input/images/F13_Classes-Flux4.png",
@@ -355,7 +340,7 @@
     "size" : 333997,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -380,7 +365,7 @@
     "size" : 91495,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
@@ -405,7 +390,7 @@
     "size" : 60043,
     "processes" : [{
       "activity" : "generate2",
-      "start" : 34,
+      "start" : 37,
       "length" : 1
     }]
   },
