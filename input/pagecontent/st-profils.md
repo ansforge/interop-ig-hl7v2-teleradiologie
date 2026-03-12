@@ -326,6 +326,7 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
 Le message **ORM^O01** du flux 1 permet au système demandeur (RIS) de transmettre au système effecteur (SI Téléradiologie) l’ensemble des informations associées à la prise en charge du patient ainsi que les éléments relatifs à une demande d'examen d'imagerie le concernant.
 
 Outre les éléments standards concernant la demande et la prescription portés par les segments **ORC** et **OBR**, ce flux s’appuie sur des **groupes OBSERVATION (OBX)** afin de véhiculer des informations fonctionnelles complémentaires indispensables à la bonne réalisation de l’examen, telles que :
+
 - la **localisation anatomique** et, le cas échéant, une **précision topographique**
 - les **antécédents médicaux du patient**
 - des **données morphologiques pertinentes** pour la planification de l’examen d'imagerie (taille, poids, statut de grossesse)
@@ -1293,7 +1294,21 @@ Le tableau ci-dessous décrit la **structure HL7 v2 du message**, l’ordre des 
 
 Le message **OMI^O23** du flux 4 permet au système demandeur (RIS) de transmettre au système effecteur (SI de Téléradiologie) des **compléments d’information post-acte** relatifs à un examen d’imagerie déjà réalisé.
 
-Les segments **ORC** et **OBR** assurent le **rattachement** de ces informations à la demande d’examen initiale.
+Les segments **ORC** et **OBR** assurent le rattachement de ces informations à la demande d’examen initiale.
+
+Dans le cadre du flux 4, **chaque occurrence du groupe ORDER représente un examen d’imagerie**.
+
+Un examen est identifié par son **StudyInstanceUID** et est associé :
+
+- à un **Accession Number**
+- à une **URL de visionneuse** permettant d’accéder aux images correspondantes
+- à la **demande d’examen initiale**, identifiée par l’**Order Placer Number**.
+
+Ainsi, **un groupe ORDER correspond à un examen d’imagerie rattaché à une demande d’examen**.
+
+Dans le cas où un même flux doit véhiculer des informations associées à plusieurs examens, le système émetteur **répète le groupe ORDER autant de fois que nécessaire**, chaque occurrence portant les identifiants propres à l’examen correspondant (StudyInstanceUID, Accession Number, URL de visionneuse), tout en conservant l’Order Placer Number permettant de rattacher ces examens à la demande initiale.
+
+Cette structuration permet de conserver l’association explicite entre la demande d’examen, chaque examen réalisé et l’URL permettant d’accéder aux images correspondantes.
 
 Les **groupes OBSERVATION (OBX)** jouent un rôle central dans ce flux.  
 Ils permettent notamment de véhiculer :
