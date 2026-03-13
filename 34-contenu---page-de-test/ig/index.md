@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0-ballot |
-| Draft as of 2026-03-11 | *Computable Name*:CISIS_TLR_HL7_V2 |
+| Draft as of 2026-03-13 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
  This implementation guide is part of the Service layer of the French Health Information Systems Interoperability Framework (CI-SIS) and aims to harmonize health data exchange practices in the field of teleradiology. Based on use cases described in Volume 1 – Functional Study, the guide defines system actors, applicable transactions, collaborative workflows, and data flows. Volume 2 – Transaction Details specifies the technical implementation rules for the selected standards enabling these workflows. The project scope focuses on modeling and specifying interactions between information systems required to share imaging data for remote radiological diagnosis. 
@@ -74,7 +74,7 @@ Pas d’usage de PI externe (autre que celles de la spécification FHIR)
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
   "status" : "draft",
-  "date" : "2026-03-11T11:04:19+00:00",
+  "date" : "2026-03-13T15:44:07+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
