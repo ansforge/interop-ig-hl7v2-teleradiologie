@@ -1548,13 +1548,7 @@ Les antécédents sont transmis sous forme de texte libre dans le champ **OBX-5*
   * ?: Antécédents
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-8 (optionnel)
   * ?: Abnormal flag
-  * ?: Pertinence de l'antécédent
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-8.1 
-  * ?: Code 
-  * ?: Valeur possible :SANS_IMPACTPERTINENTMAJEUR
-* Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: > OBX-3.3 
-  * ?: Name of Coding system
-  * ?: HL70078
+  * ?: Pertinence de l'antécédentValeur possible :SANS_IMPACTPERTINENTMAJEUR
 * Composition du groupe OBSERVATION: Usage = Optional / Cardinalité = [0..1]: OBX-11
   * ?: Observation Result Status
   * ?: Valeur fixée à « O » (Order detail description only (no result))
@@ -2608,7 +2602,7 @@ MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O
 Un acquittement positif retourné par le SI de téléradiologie :
 
 ```
-MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5|||||FRA|8859/15
+MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5.1|||||FRA|8859/15
 MSA|AA|12345
 
 ```
@@ -2616,7 +2610,7 @@ MSA|AA|12345
 Un acquittement négatif retourné par le SI de téléradiologie : version d’HL7 inconnue
 
 ```
-MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
+MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5.1|||||FRA|8859/15
 MSA|AE|12345
 ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 
