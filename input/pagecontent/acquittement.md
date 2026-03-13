@@ -432,14 +432,14 @@ MSH|^~\&|StructureApp|StructureFacility|TLRapp|TLRfacility|20260106134418||ORM^O
 Un acquittement positif retourné par le SI de téléradiologie :
 
 ```
-MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5|||||FRA|8859/15
+MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12346|P|2.5.1|||||FRA|8859/15
 MSA|AA|12345
 ```
 Un acquittement négatif retourné par le SI de téléradiologie : version d'HL7
 inconnue
 
 ```
-MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5|||||FRA|8859/15
+MSH|^~\&|TLRapp|TLRfacility|StructureApp|StructureFacility|20260106134419||ACK^R01^ACK|12347|P|2.5.1|||||FRA|8859/15
 MSA|AE|12345
 ERR||MSH^1^12|203^ Unsupported version^messageErrorCondition|E
 ```
