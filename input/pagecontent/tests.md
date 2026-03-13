@@ -1,28 +1,48 @@
-### Outils de tests
+### Organisation des tests
 
+<div style="text-align: center;">{%include tests.svg%}</div>
 
 #### Espace de test
 
-Cet outil permet de vérifier la conformité  :
+L’espace de test mis à disposition par l'ANS s’appuie sur l’outil **EVSClient**, utilisé afin de vérifier la conformité des formats d’échange aux spécifications nationales.
 
+Dans sa globalité, le service EVSClient permet notamment la validation :
 - des documents CDA
-- des archives IHE_XDM.ZIP utilisés pour les échanges
-- Des ressources FHIR
+- des messages HL7 v2
+- des archives IHE_XDM.ZIP utilisées pour les échanges documentaires
+- des ressources FHIR
 
-Il est accessible en ligne :
+Dans le cadre du volet **Téléradiologie**, EVSClient permet de vérifier la conformité des messages HL7 v2 échangés au regard des profils définis dans la [spécification technique](./specifications_techniques.html).
 
-- [https://interop.esante.gouv.fr/](https://interop.esante.gouv.fr/)
+Les validateurs suivants sont mis à disposition :
 
-Il est notamment utilisé lors des Projectathons organisés par l’ANS pour les éditeurs.
+- ORM^O01^ORM_O01 — Flux de transmission de la demande d’examen d’imagerie
+- ORM^O01^ORM_O01 — Flux d’annulation de la demande d’examen d’imagerie
+- ORU^R01^ORU_R01 — Flux de réponse métier à la demande d’examen d’imagerie
+- OMI^O23^OMI_O23 — Flux de transmission d’un complément d’information post-examen
+- ACK - Acquittement applicatif dans le cadre du volet téléradiologie
 
-#### HAPI FHIR
+Ces validateurs sont accessibles en ligne à l’adresse suivante : [https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45](https://interop.esante.gouv.fr/evs/hl7v2/validator.seam?standard=45)
 
-Ce serveur FHIR open source est particulièrement utile pour importer des profils et tester la validité des ressources générées contre les profils..
+Le mode opératoire pour utiliser les validateurs est le suivant :
 
-Plus d'information sur la validation dans la documentation des guides d'implémentation : [https://interop.esante.gouv.fr/ig/documentation/](https://interop.esante.gouv.fr/ig/documentation/)
+1. **Charger le message à valider**
+   - Coller le message HL7 v2 dans la zone de texte prévue à cet effet
+   - ou charger un fichier via le bouton « **+ Add...** », les formats acceptés sont : `.txt`, `.hl7`, `.er7`
 
-### Projectathon
+2. **Sélectionner le profil de message HL7**
+   - Dans l’encart « **Sélection du profil de message HL7** », choisir le validateur correspondant au flux à tester
+   - Les validateurs Téléradiologie disponibles sont les suivants :
 
-L’ANS organise régulièrement des Projectathons pour permettre à un industriel de vérifier la conformité de l’implémentation des spécifications d’interopérabilité et de réaliser des tests d’interopérabilité  avec d’autres éditeurs.
+   | Acteur                         | Transaction                     | Type de message              |
+   |----------------------------------|----------------------------------|--------------------------------|
+   | Créateur Téléradiologie          | TransmissionDemandeIMG          | ORM^O01^ORM_O01 (NW)          |
+   | Créateur Téléradiologie          | AnnulationDemandeIMG            | ORM^O01^ORM_O01 (CA)          |
+   | Créateur Téléradiologie          | ReponseDemandeIMG               | ORU^R01^ORU_R01 (OK / OC)     |
+   | Créateur Téléradiologie          | TransmissionComplementIMG       | OMI^O23^OMI_O23 (SR)          |
+   | Consommateur Téléradiologie      | ACK_TLR                         | ACK                           |
 
-Vous serez informé par l’ANS des prochains projectathons (date, lieu,…) pour pouvoir y participer.
+   Le bouton « **Deviner le profil de message** » peut être utilisé pour proposer automatiquement un premier filtrage du profil applicable.
+
+3. **Lancer la validation**
+   - Cliquer sur l’icône en forme de flèche pour exécuter la validation

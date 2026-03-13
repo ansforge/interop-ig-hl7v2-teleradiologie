@@ -1,0 +1,27 @@
+@startmindmap
+<style>
+.black {
+  HyperlinkColor #000000
+}
+.white {
+  HyperlinkColor #FFFFFF
+}
+</style>
+
+
+!theme spacelab
+* Tests
+
+**[#430C05] Libre service
+***[#D46F4D] <color:blue>[[https://interop.esante.gouv.fr/ Espace de test]]</color> <<black>>
+****[#00353F] [[https://esante.gouv.fr/sites/default/files/media_entity/documents/CGU_espace_de_tests_v1.1.pdf CGU]] <<white>>
+****[#00353F] [[https://industriels.esante.gouv.fr/sites/default/files/media/document/manuel_gazelle_evs%20V0.3_1.pdf Manuel]] <<white>>
+
+**[#430C05] Projectathon
+***[#FFBF66] [[https://industriels.esante.gouv.fr/produits-et-services/ci-sis-cadre-d-interoperabilite-des-systemes-d-information-de-sante/projectathon-interoperabilite Présentation]] <<black>>
+
+**[#430C05] Verification de conformité
+***[#08C5D1] [[https://industriels.esante.gouv.fr/segur-du-numerique-en-sante/toutes-les-ressources-du-segur Programme Ségur]] <<black>>
+@endmindmap 
+
+
