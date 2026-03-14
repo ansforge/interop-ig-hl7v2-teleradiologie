@@ -16,7 +16,7 @@ jurisdiction: urn:iso:std:iso:3166#FR "FRANCE"
 
 parameters: #Parameters list - https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html
     shownav: 'true'
-    related-ig: module:ans.hl7v2.fr.trans-cda-r2=ans.hl7v2.fr.trans-cda-r2
+    related-ig: related-ig: module:ans.hl7v2.fr.trans-cda-r2=ans.hl7v2.fr.trans-cda-r2|2.1.2|https://interop.esante.gouv.fr/ig/hl7v2/trans-cda-r2
 
 
 pages:
