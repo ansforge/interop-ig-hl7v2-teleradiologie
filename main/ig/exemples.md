@@ -1,4 +1,4 @@
-# Exemples de messages - Volet Téléradiologie v0.1.0-ballot
+# Exemples de messages - Volet Téléradiologie v0.1.0
 
 * [**Table of Contents**](toc.md)
 * **Exemples de messages**

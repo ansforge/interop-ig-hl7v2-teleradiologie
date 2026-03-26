@@ -1,6 +1,6 @@
 {
-  "version" : "0.1.0-ballot",
-  "date" : "20260313155817",
+  "version" : "0.1.0",
+  "date" : "20260326134759",
   "notForPublication" : true,
   "name" : "ans.hl7v2.fr.teleradiologie.r4b"
 }
