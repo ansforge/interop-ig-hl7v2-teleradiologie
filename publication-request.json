@@ -6,7 +6,7 @@
     "status" : "draft",
     "sequence" : "STU1",
     "title" : "Volet Téléradiologie",
-    "first" : true,
+    "first" : false,
     "desc" : "trial-use",
     "ci-build" : "https://ansforge.github.io/interop-ig-hl7v2-teleradiologie/main/ig",
     "category" : "Imaging",
