@@ -1,6 +1,6 @@
 {
   "package": "ans.hl7v2.fr.teleradiologie",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "FR",
   "extensions": [],

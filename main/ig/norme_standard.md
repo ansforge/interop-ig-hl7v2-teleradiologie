@@ -1,4 +1,4 @@
-# Normes et Standards - Volet Téléradiologie v0.1.0
+# Normes et Standards - Volet Téléradiologie v0.2.0
 
 * [**Table of Contents**](toc.md)
 * **Normes et Standards**

@@ -1,4 +1,4 @@
-# Accueil - Volet Téléradiologie v0.1.0
+# Accueil - Volet Téléradiologie v0.2.0
 
 * [**Table of Contents**](toc.md)
 * **Accueil**
@@ -7,13 +7,11 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.1.0 |
-| Draft as of 2026-06-12 | *Computable Name*:CISIS_TLR_HL7_V2 |
+| *Official URL*:https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie | *Version*:0.2.0 |
+| Active as of 2026-06-12 | *Computable Name*:CISIS_TLR_HL7_V2 |
 
  **Brief description of this Implementation Guide**
  This implementation guide is part of the Service layer of the French Health Information Systems Interoperability Framework (CI-SIS) and aims to harmonize health data exchange practices in the field of teleradiology. Based on use cases described in Volume 1 – Functional Study, the guide defines system actors, applicable transactions, collaborative workflows, and data flows. Volume 2 – Transaction Details specifies the technical implementation rules for the selected standards enabling these workflows. The project scope focuses on modeling and specifying interactions between information systems required to share imaging data for remote radiological diagnosis. 
-
-> Attention ! Cette version du guide d'implémentation est en concertation.
 
  **QUESTIONS OUVERTES:**
  
@@ -70,11 +68,11 @@ Pas d’usage de PI externe (autre que celles de la spécification FHIR)
   "resourceType" : "ImplementationGuide",
   "id" : "ans.hl7v2.fr.teleradiologie",
   "url" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie",
-  "version" : "0.1.0",
+  "version" : "0.2.0",
   "name" : "CISIS_TLR_HL7_V2",
   "title" : "Volet Téléradiologie",
-  "status" : "draft",
-  "date" : "2026-06-12T09:41:03+00:00",
+  "status" : "active",
+  "date" : "2026-06-12T09:46:32+00:00",
   "publisher" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
   "contact" : [{
     "name" : "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris",
@@ -87,7 +85,7 @@ Pas d’usage de PI externe (autre que celles de la spécification FHIR)
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
       "code" : "FR",
-      "display" : "FRANCE"
+      "display" : "France (la)"
     }]
   }],
   "packageId" : "ans.hl7v2.fr.teleradiologie",
@@ -132,7 +130,7 @@ Pas d’usage de PI externe (autre que celles de la spécification FHIR)
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "trial-implementation"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -422,7 +420,7 @@ Pas d’usage de PI externe (autre que celles de la spécification FHIR)
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "trial-implementation"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },

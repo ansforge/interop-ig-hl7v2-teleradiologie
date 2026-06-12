@@ -17,11 +17,11 @@
      fhir:v "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie"^^xsd:anyURI ;
      fhir:l <https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie>
   ] ; # 
-  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "CISIS_TLR_HL7_V2"] ; # 
   fhir:title [ fhir:v "Volet Téléradiologie"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-06-12T09:41:03+00:00"^^xsd:dateTime] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-12T09:46:32+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris" ] ;
@@ -37,7 +37,7 @@
          fhir:l <urn:iso:std:iso:3166>
        ] ;
        fhir:code [ fhir:v "FR" ] ;
-       fhir:display [ fhir:v "FRANCE" ]
+       fhir:display [ fhir:v "France (la)" ]
      ] )
   ] ) ; # 
   fhir:packageId [ fhir:v "ans.hl7v2.fr.teleradiologie"] ; # 
@@ -122,7 +122,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "ci-build"
+           fhir:v "trial-implementation"
          ]
        ] ) ;
        fhir:url [
@@ -755,7 +755,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "ci-build"
+           fhir:v "trial-implementation"
          ]
        ] ) ;
        fhir:url [

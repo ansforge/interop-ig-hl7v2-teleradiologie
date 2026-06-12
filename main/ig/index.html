@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Accueil - Volet Téléradiologie v0.1.0</title>
+    <title>Accueil - Volet Téléradiologie v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,11 +61,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Volet Téléradiologie</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.2.0 - trial-implementation
 
 
 
-  <img src="assets/images/fra.svg" alt="France flag" title="France" height="16"/>
+  France (la)
 
 
             </span>
@@ -227,7 +227,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Volet Téléradiologie - version de développement local (intégration continue v0.1.0) construite par les outils de publication FHIR (HL7&reg; FHIR&reg; Standard). Voir le <a href="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html">répertoire des versions publiées</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Volet Téléradiologie - version de développement local (intégration continue v0.2.0) construite par les outils de publication FHIR (HL7&reg; FHIR&reg; Standard). Voir le <a href="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/history.html">répertoire des versions publiées</a></p>  <!-- EndReleaseHeader -->
   <h2>Accueil</h2>
   
 
@@ -236,13 +236,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-  <table class="colsd">
+  <table class="colsi">
 
     <tr>
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie<button data-clipboard-text="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie" title="Click to copy URL" class="btn-copy"></button></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.0<button data-clipboard-text="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie|0.1.0" title="Click to copy versioned URL" class="btn-copy"></button></span>
+      <span class="copy-text">0.2.0<button data-clipboard-text="https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/ImplementationGuide/ans.hl7v2.fr.teleradiologie|0.2.0" title="Click to copy versioned URL" class="btn-copy"></button></span>
       </td>
     </tr>
 
@@ -256,7 +256,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <td colspan="4">
         
-          Draft
+          Active
           
             as of 2026-06-12
           
@@ -300,12 +300,6 @@ Based on use cases described in Volume 1 – Functional Study, the guide defines
 The project scope focuses on modeling and specifying interactions between information systems required to share imaging data for remote radiological diagnosis.
 </p>
 
-<div style="width: 65%">
-    <blockquote class="stu-note">
-    <p>Attention ! Cette version du guide d'implémentation est en concertation.</p>
-    </blockquote>
-</div>
-
 <div class="figure">
     <img src="ci-sis-logo.png" alt="CI-SIS" style="width:100%;" title="Logo du CI-SIS"/>
 </div>
@@ -329,7 +323,7 @@ The project scope focuses on modeling and specifying interactions between inform
 
 <p>Ce document fait partie de la couche Service du <a href="https://esante.gouv.fr/offres-services/ci-sis/espace-publication">Cadre d’Interopérabilité des Systèmes d’Information de santé (CI-SIS)</a>. Les spécifications associées entendent définir et harmoniser les modalités de partage des données de santé propres au domaine de la téléradiologie (pour plus de précisions, se référer à la section « Périmètre du projet » ci-dessous).</p>
 
-<p><a name="l539">​</a>La partie <a href="./specifcations_fonctionnelles.html">« Volume 1 - Etude fonctionnelle »</a> associée à ce guide d’implémentation décrit, à titre d’exemple et de façon non-exhaustive, un ensemble de cas d’usage. Sur la base de ces cas d’usage, sont ensuite définis des acteurs du système d’information (au sens d’IHE) et des transactions applicables entre ces acteurs. Les processus collaboratifs applicables au domaine de la téléradiologie sont ensuite décrits et les flux entre les acteurs précédemment identifiés sont également définis.</p>
+<p><a name="l528">​</a>La partie <a href="./specifcations_fonctionnelles.html">« Volume 1 - Etude fonctionnelle »</a> associée à ce guide d’implémentation décrit, à titre d’exemple et de façon non-exhaustive, un ensemble de cas d’usage. Sur la base de ces cas d’usage, sont ensuite définis des acteurs du système d’information (au sens d’IHE) et des transactions applicables entre ces acteurs. Les processus collaboratifs applicables au domaine de la téléradiologie sont ensuite décrits et les flux entre les acteurs précédemment identifiés sont également définis.</p>
 
 <p>La partie <a href="./specifications_techniques.html">« Volume 2 - Détail des transactions »</a> associée à ce guide d’implémentation décrit les règles d’implémentation des standards retenus au sein de la partie « Normes et Standards » afin de permettre la mise en œuvre des processus collaboratifs mentionnés au sein de l’étude fonctionnelle.</p>
 
@@ -406,7 +400,7 @@ The project scope focuses on modeling and specifying interactions between inform
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 12, 2026 09:41+0000">2026-06-12</span>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">Agence du Numérique en Santé (ANS) - 2-10 Rue d'Oradour-sur-Glane, 75015 Paris</a>.  Package ans.hl7v2.fr.teleradiologie#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 12, 2026 09:46+0000">2026-06-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
             Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

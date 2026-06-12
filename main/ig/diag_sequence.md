@@ -1,4 +1,4 @@
-# Diagramme de séquence - Spécification technique - Volet Téléradiologie v0.1.0
+# Diagramme de séquence - Spécification technique - Volet Téléradiologie v0.2.0
 
 * [**Table of Contents**](toc.md)
 * **Diagramme de séquence - Spécification technique**
