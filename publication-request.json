@@ -1,6 +1,6 @@
 {
     "package-id" : "ans.hl7v2.fr.teleradiologie",
-    "version" : "0.1.0",
+    "version" : "0.2.0",
     "path" : "https://interop.esante.gouv.fr/ig/hl7v2/teleradiologie/0.1.0",
     "mode" : "milestone",
     "status" : "release",
