@@ -6,4 +6,4 @@
 
 ## Preview
 
-https://ansforge.github.io/IG-fhir-[nom repo]/[ajouter_nom_de_la_branche]/ig
+https://ansforge.github.io/interop-ig-hl7v2-teleradiologie/[ajouter_nom_de_la_branche]/ig
